@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Structured Audio metamodel</TITLE>
+<META NAME="description" CONTENT="The Structured Audio metamodel">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node176.html">
+<LINK REL="previous" HREF="node174.html">
+<LINK REL="up" HREF="node174.html">
+<LINK REL="next" HREF="node176.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2402"
+  HREF="node176.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2400"
+  HREF="node174.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2394"
+  HREF="node174.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2403"
+  HREF="node176.html">Structured Audio and the</A>
+<B> Up:</B> <A NAME="tex2html2401"
+  HREF="node174.html">Beyond Structured Audio</A>
+<B> Previous:</B> <A NAME="tex2html2395"
+  HREF="node174.html">Beyond Structured Audio</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00632100000000000000">
+The Structured Audio metamodel</A>
+</H3>
+
+<P>
+Structured audio is a way of representing audio information in which
+semantic information and high-level algorithmic models are used. Examples
+of existing and well-known structured audio formats include MIDI,
+any music synthesis language and the linear-prediction coding (LPC)
+model for speech signals. The term Structured Audio was introduced
+by Vercoe as a way of interrelating research on sound synthesis, audio
+coding, and sound recognition [<A
+ HREF="node207.html#VercoeStructuredAudio">Vercoe et&nbsp;al., 1998</A>]. 
+
+<P>
+A structured media representation encodes a signal according to a
+model making assumptions about the input signal and deriving a parameter
+space. This property, though, does not suffice to make a representation
+structured. As a matter of fact any media representation has an implicit
+or explicit model but the less dimensions its related parameter space
+has and the more meaning these parameters have, the more structured
+the representation. Semantic parameters that represent high-level
+attributes give control over perceptual and structural aspects of
+the sound and provide for more interesting manipulations. Structured
+audio representations are parametric in the sense that they are based
+on a model by which two sounds can be distinguished according to some
+parameter values.
+
+<P>
+Audio compression or encoding technology mostly relies on two kind
+of coders: entropic or lossless coders and perceptual or lossy coders.
+Entropic coders exploit information-theoretic or Shannon's redundancy
+and perceptual coders exploit perceptual redundancy or irrelevancy
+(if sound X and sound Y are perceptually indistinguishable, it does
+not matter which one is transmitted).
+
+<P>
+Structured audio coders exploit yet another kind of redundancy: structural
+redundancy. Most sound signals contain structural redundancy in different
+ways. Many notes, for example, in a musical track sound the same or
+nearly the same. Not only a middle C note may be substituted by its
+model but neighboring notes such as C# may be obtained by transforming
+the original model algorithmically [<A
+ HREF="node207.html#ScheirerSAKolmogorov">Scheirer, 2001</A>]. Another
+example of structural redundancy is that many sounds are more simply
+represented as processes than as waveform. A reverberated speech signal,
+for instance, may be better transmitted by encoding separately the
+flat speech and the description of the reverberation algorithm)[<A
+ HREF="node207.html#VercoeStructuredAudio">Vercoe et&nbsp;al., 1998</A>]. 
+
+<P>
+Although structured audio is not perceptual encoding, a fundamental
+issue in structured audio is how listeners perceive the sound and
+thus how structural parameters affect perception. Structured audio
+is not interested in usual engineering properties such as perfect
+reconstruction. A minimum squares measure of the error is not useful
+because humans do not perceive sound this way.
+
+<P>
+So, in a structured audio application sound is coded not based on
+perceptual or information-theory related compression but rather representing
+its structure. This structural description of sound is then transmitted
+to a receiver which reconstructs the sound by executing real-time
+synthesis algorithms. All audio signals are more or less structured
+and neither entropy nor perceptual encoders exploit this feature.
+It is interesting to note, as Scheirer suggests in [<A
+ HREF="node207.html#ScheirerSAKolmogorov">Scheirer, 2001</A>],
+that using structured audio it is possible to transmit data at a lower
+rate than that suggested by the Shannon rate distortion theory, which
+only becomes an unsurpassable limit if really random signals were
+to be transmitted and that is in practice seldom the case. 
+
+<P>
+A coding format consists on two parts: a bitstream description that
+specifies the syntax and semantics of data sequences and a decoding
+process, which is an algorithm that describes how to turn the bitstream
+into a sound. A bitstream is a sequence of data that follows some
+particular coding format and represents a compressed sound when its
+length is shorter than the sound it represents.
+
+<P>
+What makes structured audio coding different is that the model is
+not fixed but rather dynamically described as part of the transmission
+stream. As a matter of fact, structured audio can be considered a
+framework or metamodel that can be used to implement all other coding
+techniques [<A
+ HREF="node207.html#ScheirerGeneralizedWithSA">Scheirer and Kim, 1999</A>]. It can be proven that
+the best-known performance of a fixed audio coding method serves as
+the worst-case estimate of structured audio coding [<A
+ HREF="node207.html#ScheirerSAKolmogorov">Scheirer, 2001</A>]. 
+
+<P>
+Structured Audio allows ultra-low bitrate transmission of audio signals.
+It also provides perceptually driven access to audio data. Bearing
+in mind these two main benefits, many applications may be envisioned:
+low bandwidth transmission; sound generation from process models (e.g.
+as in video games or virtual reality applications); flexible music
+synthesis by allowing the composer to create and transmit synthesis
+algorithms along with the event list; interactive music applications;
+content-based transformations and manipulations; and content-based
+retrieval.
+
+<P>
+Arguably, out of these applications the most important one is the
+transmission of ultra-low bitrate audio signals. Structured audio
+provides excellent compression when models that can be controlled
+with few parameters are available. This may be so, for example, if
+the space of sounds to encode is reduced. For example, if only plucked
+strings are to be transmitted, a plucked string model can be transmitted
+first and then send only the parameters that control this model. The
+more structured sounds are the more they can be compressed<A NAME="tex2html79"
+  HREF="footnode.html#foot5683"><SUP><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">6</SPAN></SUP></A>. Compression rates of up to 10000:1 can be accomplished with structured
+audio on some particular signals [<A
+ HREF="node207.html#ScheirerSAKolmogorov">Scheirer, 2001</A>].
+
+<P>
+The structured audio metamodel made its way into the MPEG4 standard
+mainly thanks to the work of Eric D. Scheirer from the MIT's Machine
+Listening Group. Now seen in some perspective it seems to us that
+Structured Audio was not mature enough to make it into an standard.
+It has hardly found any practical application and it has become outdated
+very soon after. Furthermore, its limitations and too strict specifications
+make it hard to adapt to future needs.
+
+<P>
+It is far beyond the scope of this document to give a thorough overview
+of the standard and we refer the reader interested in structured audio
+in MPEG-4 to [<A
+ HREF="node207.html#ScheirerAudioBIFS">Scheirer et&nbsp;al., 1998</A>,<A
+ HREF="node207.html#ScheirerAudioBIFS_IEEETransactions">Scheirer, 1999a</A>,<A
+ HREF="node207.html#ScheirerGeneralizedWithSA">Scheirer and Kim, 1999</A>,<A
+ HREF="node207.html#ScheirerMP4SA_ICASSP">Scheirer, 1998b</A>,<A
+ HREF="node207.html#ScheirerSAOL_CMJ">Scheirer, 1999b</A>,<A
+ HREF="node207.html#ScheirerSAOLICMC">Scheirer, 1998a</A>,<A
+ HREF="node207.html#ScheirerSNHC">Scheirer et&nbsp;al., 2000</A>].
+Nevertheless, it is important to highlight that there are five major
+elements in the MPEG-4 Structured Audio (SA for short) toolset: a
+Structured Audio Orchestra Language (SAOL), a Structured Audio Score
+Language (SASL), a Structured Audio Sound Bank Format (SASBF), a normative
+scheduler, and a normative reference to several MIDI standards that
+can be used in addition or instead of SASL. englishNote
+that the two most important components, SAOL and SASL, were already
+introduced in section <A HREF="node84.html#sub:SAOL-and-SASL">2.6.1</A>.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2402"
+  HREF="node176.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2400"
+  HREF="node174.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2394"
+  HREF="node174.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2403"
+  HREF="node176.html">Structured Audio and the</A>
+<B> Up:</B> <A NAME="tex2html2401"
+  HREF="node174.html">Beyond Structured Audio</A>
+<B> Previous:</B> <A NAME="tex2html2395"
+  HREF="node174.html">Beyond Structured Audio</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

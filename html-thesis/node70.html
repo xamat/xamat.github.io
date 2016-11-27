@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The NeXT Sound Kit</TITLE>
+<META NAME="description" CONTENT="The NeXT Sound Kit">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node69.html">
+<LINK REL="up" HREF="node66.html">
+<LINK REL="next" HREF="node71.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1156"
+  HREF="node71.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1154"
+  HREF="node66.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1150"
+  HREF="node69.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1157"
+  HREF="node71.html">Music Processing Frameworks</A>
+<B> Up:</B> <A NAME="tex2html1155"
+  HREF="node66.html">General Purpose</A>
+<B> Previous:</B> <A NAME="tex2html1151"
+  HREF="node69.html">FORMES</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00333400000000000000"></A><A NAME="sub:NeXT-Sound-Kit"></A>
+<BR>
+The NeXT Sound Kit
+</H3>
+
+<P>
+The NeXT computer offered a complete system for manipulating sound
+and music divided in two ``kits'' [<A
+ HREF="node207.html#JeffeNeXTMusicKit">Jaffe and Boynton, 1991</A>]. The
+Sound Kit provided object-oriented access to the basic sound capabilities
+of the NeXT computer, allowing sound recording, playback, display
+and editing. The Music Kit provided classes for composing, storing,
+performing and synthesizing music. It allowed the communication with
+external synthesizers or the creation of internal software synthesizers.
+
+<P>
+Both kits were implemented in objective-C. They were mostly independent
+but could also be used together. The Sound Kit, for instance, could
+be used to record sound that could then be used in a Music Kit performance. 
+
+<P>
+Although NeXT computers were discontinued after the company was bought
+by Apple the current Macintosh operating system, OsX, borrows many
+ideas from NeXTStep and it includes some toolkits such as Core Audio
+that can be considered as successors of NeXT's initiatives. On the
+other hand, the Music Kit is still maintained. We will now explain
+the Sound Kit and leave the Music Kit for the next section on music-oriented
+environments (see <A HREF="node72.html#sub:NeXT-Music-Kit">2.4</A>). 
+
+<P>
+The most important class in the Sound Kit is the <TT>Sound</TT> class.
+It offers an Objective-C wrapper around the data structure that contains
+raw sound data. <TT>Sound</TT> objects can be instantiated from a
+sound file, or from the pasteboard, or can be created empty for recording. 
+
+<P>
+The Sound Kit makes extensive use of the virtual memory and interprocess
+message passing provided by the Mach operating system allowing for
+efficient manipulation of large sounds. Sound data is rarely moved,
+is rather mapped into virtual memory. Copying operations employ ``copy
+on write''. Reading from a sound file is instantaneous, the data
+is not brought in from disk until they are required by the application.
+For storing a sound the Sound Kit uses a file format provided by NeXT.
+This format lets applications share data.
+
+<P>
+Playback and recording are performed asynchronously by background
+threads. The <TT>Sound</TT> class can contain DSP code to be synthesized
+instead of data, its use is transparent. 
+
+<P>
+Finally, the <TT>SoundView</TT> class provides a mechanism for displaying
+data in a single Sound object.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1156"
+  HREF="node71.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1154"
+  HREF="node66.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1150"
+  HREF="node69.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1157"
+  HREF="node71.html">Music Processing Frameworks</A>
+<B> Up:</B> <A NAME="tex2html1155"
+  HREF="node66.html">General Purpose</A>
+<B> Previous:</B> <A NAME="tex2html1151"
+  HREF="node69.html">FORMES</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

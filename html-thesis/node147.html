@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Composing with DSPOOM Objects: Networks and Processing Composites</TITLE>
+<META NAME="description" CONTENT="Composing with DSPOOM Objects: Networks and Processing Composites">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node142.html">
+<LINK REL="up" HREF="node136.html">
+<LINK REL="next" HREF="node148.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2077"
+  HREF="node148.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2075"
+  HREF="node136.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2071"
+  HREF="node146.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2078"
+  HREF="node148.html">Processing Composites</A>
+<B> Up:</B> <A NAME="tex2html2076"
+  HREF="node136.html">DSPOOM as a Classification</A>
+<B> Previous:</B> <A NAME="tex2html2072"
+  HREF="node146.html">Descriptors</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00513000000000000000"></A><A NAME="sub:DSPOOM::Networks_and_Composites"></A>
+<BR>
+Composing with DSPOOM Objects: Networks and Processing Composites
+</H2>
+
+<P>
+The DSPOOM metamodel offers different mechanisms for composing with
+Processing objects. In this section we will show their features and
+intent. Composition in DSPOOM is not an absolute need as any model
+can be fully specified by a number of independent though coordinated
+Processing objects. Nevertheless, building self-contained sub-models
+(thus abstract subsystems) offers a number of advantages, namely:
+
+<P>
+
+<OL>
+<LI><SPAN ID="txt2975">Complexity and detail hiding</SPAN>. Submodels can act as intermediate
+layers that hide complexity from the user. This way we can choose
+what details will be promoted from one level to another and what formal
+view we want to offer the user of each layer.
+</LI>
+<LI><SPAN ID="txt2976">Flow control automation</SPAN>. By building coherent and homogeneous
+compositions we are able to apply standardized approaches to automatic
+flow control in which an ``intelligent'' entity is able to manage
+data flow and process execution.
+</LI>
+<LI><SPAN ID="txt2978">Efficiency and optimization</SPAN>. A composition can be a specialized
+grouping of Processing objects with a specific purpose and goal. By
+using information about the context in which each individual and possibly
+generic Processing object is used, we can manage to optimize the overall
+execution. 
+</LI>
+</OL>
+The two mechanisms for composing with Processing objects in a DSPOOM
+model are <SPAN  CLASS="textit">Networks</SPAN> and <SPAN  CLASS="textit">Processing Composites</SPAN>. Networks
+are dynamic compositions that can be modified at run time in any way
+by adding new Processing objects or modifying connections. Processing
+Composites are static compositions that are built on compile time
+and cannot be modified thereafter. These DSPOOM constructs were already
+graphically illustrated in figure <A HREF="node136.html#fig:Basic-elements-in">4.1</A>.
+
+<P>
+Note that both mechanisms address the first of the three benefits
+previously enumerated. But while Networks promote the ability to use
+automatic flow control (benefit number 2), Processing Composites strive
+for efficiency (benefit number 3). As R. Dannenberg points out in
+[<A
+ HREF="node207.html#DannenbergAuraICMC04">Dannenberg, 2004</A>] it may seem at first sight that static
+composition is not useful in the general case as, although it can
+be more efficient, it is far less flexible. But experience indicates
+that static composition is preferred in many occasions due to a number
+of different advantages: it avoids dynamic patching and therefore
+becomes more efficient, it enables inlining and other performance
+tricks, it allows better debugging and finally and most important,
+users can reason better about their code when it is static.
+
+<P>
+In general the dynamic composition offered by Networks follows the
+Dataflow Architecture pattern while the static composition in Processing
+Composites follows the Adaptive Pipeline pattern (see <A HREF="node45.html#sub:Patterns-of-Graphical">1.5.3</A>).
+Networks are also somehow related to Max's, CSL's and OSW's <SPAN  CLASS="textit">patches</SPAN>
+( see <A HREF="node77.html#sub:Max">2.5</A>, <A HREF="node67.html#sub:CSL">2.3.3</A>, and <A HREF="node64.html#sub:Open-Sound-World">2.3.2</A>)
+while Processing Composites are similar to Aura's <SPAN  CLASS="textit">instruments</SPAN>
+(see <A HREF="node65.html#sub:W_Aura">2.3.2</A>).
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html2079"
+  HREF="node148.html">Processing Composites</A>
+<LI><A NAME="tex2html2080"
+  HREF="node149.html">Networks</A>
+<UL>
+<LI><A NAME="tex2html2081"
+  HREF="node150.html">Data Nodes </A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2077"
+  HREF="node148.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2075"
+  HREF="node136.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2071"
+  HREF="node146.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2078"
+  HREF="node148.html">Processing Composites</A>
+<B> Up:</B> <A NAME="tex2html2076"
+  HREF="node136.html">DSPOOM as a Classification</A>
+<B> Previous:</B> <A NAME="tex2html2072"
+  HREF="node146.html">Descriptors</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

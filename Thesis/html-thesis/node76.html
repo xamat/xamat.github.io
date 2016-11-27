@@ -1,0 +1,263 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Kyma </TITLE>
+<META NAME="description" CONTENT="Kyma ">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node77.html">
+<LINK REL="previous" HREF="node75.html">
+<LINK REL="up" HREF="node75.html">
+<LINK REL="next" HREF="node77.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1221"
+  HREF="node77.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1219"
+  HREF="node75.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1213"
+  HREF="node75.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1222"
+  HREF="node77.html">Max</A>
+<B> Up:</B> <A NAME="tex2html1220"
+  HREF="node75.html">Audio and Music Visual</A>
+<B> Previous:</B> <A NAME="tex2html1214"
+  HREF="node75.html">Audio and Music Visual</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00351000000000000000"></A><A NAME="sub:Kyma"></A>
+<BR>
+Kyma 
+</H2>
+
+<P>
+Kyma [<A
+ HREF="node207.html#ScalettiKyma-WTO">Scaletti, 1991</A>,<A
+ HREF="node207.html#ScalettiKymaOOPSLA">Scaletti and Johnson, 1988</A>,<A
+ HREF="node207.html#ScalettiKyma2002">Scaletti, 2002</A>]
+is a visual sound design language that was started by Carla Scaletti
+at the Illinois University at Urbana Champaign and is now commercialized
+by the authors through Symbolic Sound Corporation [<A
+ HREF="node207.html#www-SymbolicSound">www-SymbolicSound, </A>].
+Although Kyma is much more than a graphical application and it contains
+a complete conceptual model very much in the line of the already commented
+MODE or Siren, it is best known and only used as a graphical application,
+and for that reason it has been included in this category, even at
+the risk of disappointing the author who clearly states that Kyma
+would still be Kyma without the graphical interface[<A
+ HREF="node207.html#ScalettiKyma2002">Scaletti, 2002</A>]
+but also qualifies it as a ``visual language'' [<A
+ HREF="node207.html#www-SymbolicSound">www-SymbolicSound, </A>].
+
+<P>
+Kyma is an object-oriented music composition and sound synthesis environment
+written in Smalltalk-80 that can be used with a microprogrammable
+digital signal processor called Capybara. According to the authors
+[<A
+ HREF="node207.html#www-SymbolicSound">www-SymbolicSound, </A>] Kyma is being used to do sound design for
+music, film, advertising, television, virtual environments, speech
+and hearing research, computer games, and other virtual environments.
+Although this may be so, the truth is that Kyma has been designed
+and it is mostly used as a music composition tool.
+
+<P>
+The first version of Kyma was started in 1986 on a Macintosh. In 1987
+it was modified to make use of the Platypus signal processor. In 1989
+they decided it made no sense to keep the project in the university
+so they founded a company, Symbolic Sound Corporation, that started
+operating on their student apartment and moved to their first office
+in 1992. Since the first version of Kyma in 1986, there have been
+five major software revisions, a port from MacOS to Windows in 1992,
+and ports to five different hardware accelerators including the currently
+supported Capybara. Currently Kyma runs either on a Macintosh or PC
+and on the Capybara, a general-purpose multiprocessor computer that
+can support from 4 to 28 parallel processors.
+
+<P>
+Kyma provides ways to create and manipulate sound objects graphically
+with real-time sonic feedback via software synthesis. In order to
+offer real-time synthesis without having to compromise flexibility,
+the authors decided for a specialized hardware DSP for being both
+efficient and programmable. But, as the authors acknowledge, the main
+reason for using the Platypus platform was that in the computer with
+Smalltalk they couldn't even get 20k samples per second.
+
+<P>
+When designing Kyma, the authors intentionally kept away from Music-N
+languages and music notation based systems [<A
+ HREF="node207.html#ScalettiKymaOOPSLA">Scaletti and Johnson, 1988</A>].
+According to them the main reasons that on the one hand, Music-N languages
+seldom offer immediate feedback and can be frustrating for composers
+trying to experiment new sounds and they make it difficult to control
+higher level-aspects of music such as phrases or lower-level features
+such as those related to timbre, which have to be controlled from
+a different file. And on the other hand, environments based on music
+notation do not offer enough flexibility as an acoustic event cannot
+be fully specified with traditional music notation. 
+
+<P>
+In Kyma there is no clear distinction between Instrument and Score.
+Everything in Kyma, from a single timbre to the structure of the whole
+composition is a <SPAN  CLASS="textit">Sound Object</SPAN>. The sound object in Kyma is
+inspired on the <SPAN  CLASS="textit">objet sonore</SPAN> of Pierre Schaeffer [<A
+ HREF="node207.html#SchaefferObjects">Schaeffer, 1966</A>].
+A Sound Object can be manipulated, transformed, and combined into
+new Sound Objects. Objects that were encapsulated into another object
+can be brought back to the top level object, and top level objects
+can be combined and hidden in a yet higher-level object. Sound objects
+are uniform so any given Sound object can be substituted for any other
+Sound object.
+
+<P>
+A Kyma Sound Object can be either a <TT>SoundAtom</TT> or a <TT>Transform</TT>.
+While a <TT>SoundAtom</TT> is a regular sound or collection of samples,
+a <TT>Transform</TT> is the sound result of applying a given function
+to its <SPAN  CLASS="textit">subsounds</SPAN>. In this sense, a Sound in Kyma is represented
+as a directed acyclic graph (DAG) with a single root node. Each edge
+in the graph represents the relation ``is a function of''. A subsound
+can be shared among several <TT>superSounds</TT>. A Sound DAG is similar
+to an expression tree in that the evaluation of the higher nodes depends
+on the result of the lower nodes.
+
+<P>
+In order to hear a Sound object it is necessary to ``evaluate''
+it, that is, convert it to a sample stream. Every sound object knows
+how to compute its next sample. The nodes of the DAG are evaluated
+in post-order. When a Sound object DAG includes Delay nodes the DAG
+is first expanded into a series of time-tagged DAG's.
+
+<P>
+A <TT>SoundAtom</TT> has no <TT>subSounds</TT>. For instance a <TT>LiveSound</TT>
+is defined as the input from the analog-to-digital converter. A <TT>PotentialSound</TT>
+is one that does not respond directly to a <TT>Play</TT> message.
+When it receives such a message it creates an new <TT>Sound</TT> from
+its <TT>Subsound</TT> and then sends it the <TT>play</TT> message.
+A <TT>PotentialSound</TT> node expands into a subgraph during evaluation.
+An interesting example of <TT>PotentialSound</TT> is the <TT>FrequencyTransform</TT>,
+it contains as an attribute a function of time, frequency and the
+duration of its subsound.
+
+<P>
+A Kyma <TT>Lifted</TT> object is a <TT>Sound</TT> object with variables.
+A lifted object can work as an ``instrument'' that is instantiated
+and scheduled from a score as in the Music-N style languages. In Kyma
+a <TT>MusicN</TT> is a <TT>Sound</TT> object whose parameters include
+a score and a collection of subsounds to be used as instruments. Any
+variable parameter of a subsound can be set from the score. In the
+score language an event is specified as the subsound name, a start
+time and any number of (parameter, value) pairs. Parameter values
+can also be subsounds.
+
+<P>
+A Kyma <TT>Transform</TT> can be unary or N-ary. An N-ary <TT>Transform</TT>
+has an <TT>OrderedCollection</TT> of sounds (named <TT>subSounds</TT>).
+The primary N-ary transform are <TT>Mixer</TT>, <TT>Concatenation</TT>
+and <TT>Multiplier</TT>. On the other hand, an unary transform has
+a single sound in its attribute <TT>subSounds</TT> (e.g. Delayed,
+Amplitude Scaled...).
+
+<P>
+It takes a finite amount of time to compute a sound object, therefore,
+real-time cannot be guaranteed. Kyma attacks this problem in two ways:
+one option is to lower the sample rate and try again, the other is
+to allow the output samples to be stored on disk (the sample file
+on the disk can be treated just like any other object). 
+
+<P>
+The conceptual object-oriented model in Kyma is a central issue and
+it is in fact the only thing that has not changed since its first
+versions. According to the authors, this demonstrates its flexibility
+and how well it suits the creative process. For example, in the first
+versions although structures could be time-varying, parameter values
+were constant. But they realized that making parameters event-driven
+the language would be more interactive and would open to external
+control such as MIDI. In version 4.5 they added an event language.
+The improvement on the quality of the new sounds demonstrated it had
+been a good decision. But the original data structure was robust enough
+to accommodate to this major shift.
+
+<P>
+One of the ideas behind Kyma is that one can easily plug new algorithms.
+Kyma has proven open enough to accommodate new algorithms that the
+authors have developed during the years. It is important to note that
+Kyma is not designed to allow the user to extend the environment by
+adding new objects and does not offer access to its source code. This
+is one of the reasons we cannot classify as a framework.
+
+<P>
+But apart from its conceptual model, Kyma has an extensive and flexible
+user interface. The current graphical representation has evolved over
+the years. The abstract structure came first, and the graphics evolved
+in order to represent the structure. 
+
+<P>
+In the first versions a Sound was specified as Smalltalk code. This
+quickly evolved into a ``selection-from-list'' interface. In order
+to reduce the need for typing, the interface was changed to the ``Russian
+Doll'' style where Sounds were represented as containers of other
+sounds. Double clicking opened a new window showing this sound. This
+interface was good at reveling the recursiveness but not the overall
+structure. Then it was changed to the box interconnection paradigm
+ala Max with flow direction from top to bottom, representing a DAG
+(directed acyclic graph). Later the direction was changed from left
+to right. Although the underlying structures did not change, changing
+something as simple as the direction made people understand the structure
+differently and therefore create differently. Apart from the central
+structural representation, Kyma also includes a timeline representation. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1221"
+  HREF="node77.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1219"
+  HREF="node75.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1213"
+  HREF="node75.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1222"
+  HREF="node77.html">Max</A>
+<B> Up:</B> <A NAME="tex2html1220"
+  HREF="node75.html">Audio and Music Visual</A>
+<B> Previous:</B> <A NAME="tex2html1214"
+  HREF="node75.html">Audio and Music Visual</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

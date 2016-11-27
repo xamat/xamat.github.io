@@ -1,0 +1,54 @@
+body {
+  padding-top: 50px;
+
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+	background-image: url(me4.jpg);
+	background-position:right top; 
+	background-size:60px 00px;
+	background-repeat:no-repeat;
+	height: 390px;
+}
+
+#banner {
+	color:#FFF;
+	text-align: center;
+	background-color:#FFF;
+	margin:0;
+	font-family: Georgia;
+	
+	background-image: url('me4.jpg');
+	background-position:center top; 
+	background-size:800px 500px;
+	background-repeat:no-repeat;
+	height:500px;
+	
+
+}
+
+#sidebar {
+	min-width:210px;
+	margin-top:0px;
+	margin-bottom:20px;
+		
+	margin-right:20px;
+	float:left;
+	line-height:140%;
+	background-color:#EEE;
+	border: 5px solid #E5E5E5;
+}
+
+#sidebar h3, #sidebar p {
+	padding:0 10px;
+}
+
+.signature {
+ font-size:               12px;
+ font-weight:              bold;
+ font-family:             "courier new", courier, "mono" ;
+ color:                   #e0b2bf;
+ margin:                  0px 0px 10px 10px;
+ text-align:		  center;	
+}

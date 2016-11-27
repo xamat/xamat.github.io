@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Summary and Conclusions</TITLE>
+<META NAME="description" CONTENT="Summary and Conclusions">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node80.html">
+<LINK REL="up" HREF="node51.html">
+<LINK REL="next" HREF="node92.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1379"
+  HREF="node92.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1377"
+  HREF="node51.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1373"
+  HREF="node90.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1380"
+  HREF="node92.html">The CLAM Framework</A>
+<B> Up:</B> <A NAME="tex2html1378"
+  HREF="node51.html">Environments for Audio and</A>
+<B> Previous:</B> <A NAME="tex2html1374"
+  HREF="node90.html">NEXT MusicKit ScoreFile Language</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00370000000000000000">
+Summary and Conclusions</A>
+</H1>
+
+<P>
+In this chapter we have presented a thorough overview of audio and
+music processing environments. Although all of them have different
+scopes and motivations, we have presented a classification in different
+categories. These categories are summarized in the following list:
+
+<P>
+
+<OL>
+<LI><SPAN  CLASS="textit">General purpose signal processing and multimedia frameworks</SPAN>:
+software frameworks for manipulating signals or multimedia components
+in a generic way. The most important examples in this category are
+<SPAN ID="txt1696">Ptolemy</SPAN> and <SPAN ID="txt1697">ET++</SPAN>.
+</LI>
+<LI><SPAN  CLASS="textit">Audio processing frameworks</SPAN>: software frameworks that offer
+tools and practices that are particularized to the audio domain.
+
+<P>
+
+<OL>
+<LI><SPAN  CLASS="textit">Analysis Oriented</SPAN>: Audio processing frameworks that focus on
+the extraction of data and descriptors from an input signal. <SPAN ID="txt1701">Marsyas</SPAN>
+is the most important framework analyzed in this subcategory.
+</LI>
+<LI>Synthesis Oriented: Audio processing frameworks that focus on generating
+output audio from input control signals or scores. Here it is important
+to mention <SPAN ID="txt1702">STK</SPAN>.
+</LI>
+<LI>General Purpose: General purpose Audio processing frameworks offer
+tools both for analysis and synthesis. Out of the ones presented in
+this subcategory both <SPAN ID="txt1703">SndObj</SPAN> and <SPAN ID="txt1704">CSL</SPAN> are in
+a similar position, having in any case some advantages and disadvantages
+but no being very mature.
+</LI>
+</OL>
+</LI>
+<LI><SPAN  CLASS="textit">Music processing frameworks</SPAN>: These are software frameworks
+that instead of focusing on signal-level processing applications they
+focus more on the manipulation of symbolic data related to music.
+<SPAN ID="txt1707">Siren</SPAN> is probably the most prominent example in this category.
+</LI>
+<LI><SPAN  CLASS="textit">Audio and Music visual languages and applications</SPAN>: Some environments
+base most of their tools around a graphical metaphor that they offer
+as an interface with the end user. In this section we include important
+examples such as the <SPAN ID="txt1709">Max</SPAN> family or <SPAN ID="txt1710">Kyma</SPAN>.
+</LI>
+<LI><SPAN  CLASS="textit">Music languages</SPAN>: In this category we present different languages
+that can be used to express musical information. We have excluded
+those having a graphical metaphor, which are already in the previous
+category.
+
+<P>
+
+<OL>
+<LI><SPAN  CLASS="textit">N-Music languages</SPAN>: Music-N languages base their proposal on
+the separation of musical information into statical information about
+<SPAN  CLASS="textit">instruments</SPAN> and dynamic information about the <SPAN  CLASS="textit">score</SPAN>,
+understanding this score as a sequence of time-ordered note events.
+Music-N languages are also based on the concept of <SPAN  CLASS="textit">unit generator</SPAN>.
+The most important language included in this section, because of its
+acceptance, is <SPAN ID="txt1717">CSound</SPAN>.
+</LI>
+<LI><SPAN  CLASS="textit">Score languages</SPAN>: These languages are simply ways of expressing
+information in a musical score, usually based on a textual or readable
+format. 
+</LI>
+</OL>
+</LI>
+</OL>
+As a conclusion we must observe that many different environments exist
+and as already commented most of them with different goals, motivations
+and scope. Many of these environments are the result of a single person's
+effort and therefore offer a very personal view on music or audio
+processing. Few of them can truly qualify as software frameworks as
+defined in section <A HREF="node23.html#sec:Frameworks">1.3</A> and also very few employ
+software engineering methodologies or advanced programming techniques.
+
+<P>
+On the other hand, a few of them (namely Max/Pd and CSound) have been
+able to build a relatively important community of users that is constantly
+adding new features to these environments and may be seen as an added
+value.
+
+<P>
+The basis that we have set in our analysis of the state of the art
+for our particular domain will be used for both constructing our proposals
+and also comparing the final results. In particular, in section <A HREF="node130.html#sec:IsCLAMDifferent">3.3</A>
+we will compare our CLAM framework to many of these environments.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1379"
+  HREF="node92.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1377"
+  HREF="node51.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1373"
+  HREF="node90.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1380"
+  HREF="node92.html">The CLAM Framework</A>
+<B> Up:</B> <A NAME="tex2html1378"
+  HREF="node51.html">Environments for Audio and</A>
+<B> Previous:</B> <A NAME="tex2html1374"
+  HREF="node90.html">NEXT MusicKit ScoreFile Language</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

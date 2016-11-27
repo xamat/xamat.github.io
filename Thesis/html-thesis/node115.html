@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Dynamic Types</TITLE>
+<META NAME="description" CONTENT="Dynamic Types">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node116.html">
+<LINK REL="previous" HREF="node114.html">
+<LINK REL="up" HREF="node114.html">
+<LINK REL="next" HREF="node116.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1726"
+  HREF="node116.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1724"
+  HREF="node114.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1718"
+  HREF="node114.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1727"
+  HREF="node116.html">Processing Data</A>
+<B> Up:</B> <A NAME="tex2html1725"
+  HREF="node114.html">Data Infrastructure</A>
+<B> Previous:</B> <A NAME="tex2html1719"
+  HREF="node114.html">Data Infrastructure</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H4><A NAME="SECTION00422210000000000000">
+Dynamic Types</A>
+</H4>
+
+<P>
+Though it might be a quite controversial issue and its name may after
+this explanation seem not the most appropriate<A NAME="tex2html22"
+  HREF="footnode.html#foot5593"><SUP><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">2</SPAN></SUP></A>, there are three main reasons for the decision of implementing and
+using Dynamic Types (DTs for short) in CLAM.
+
+<P>
+
+<OL>
+<LI>There is a need in some core classes of the library, of working with
+classes with a large number of attributes, i.e.: the descriptors of
+audio segments, where in most cases only a small subset is needed.
+In this sense it could represent a waste of space if memory is always
+allocated for all attributes. DT can instantiate and de-instantiate
+attributes at run-time, and do it in such a way that its interface
+is the same as if they where normal C++ attributes. 
+</LI>
+<LI>We want support for working with hierarchic or tree structures. That
+means not only composition of DTs but also aggregates of them (lists,
+vectors, etc. of DTs). With such compositions of DTs, we can use assignation,
+and two clone member functions: <TT>ShallowCopy()</TT> and <TT>DeepCopy()</TT>,
+the good thing is that they come free; we don't need to write these
+members in none of the DT concrete classes. 
+</LI>
+<LI>We need introspection of each DT object. That is the ability to know
+the name and type of each dynamic attribute, to iterate through theses
+attributes, and to have some type specific handlers for each. One
+clear application of introspection is storage support for loading
+from, and storing to a file, of a tree of DTs. Of course all this
+is implemented generically, so it appears transparent to the user.
+XML support, for instance, is implemented. Other profits we take from
+introspection in DT are debugging aids. 
+</LI>
+</OL>
+All Processing Data classes in CLAM are DT, as well as the configuration
+classes for both Processings and Processings Data.
+
+<P>
+For instantiating and de-instantiating dynamic attributes the developer
+declaring a Dynamic Type class has to use a set of macros that then,
+on pre-compile time, expand all of the functionality.
+
+<P>
+We will describe how Dynamic Type classes work and how they can be
+used through an example. Imagine we want to model a musical note with
+a DT<A NAME="tex2html23"
+  HREF="footnode.html#foot1944"><SUP><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN></SUP></A>. We declare the DT class like this:
+<BR>
+<P>
+<BR>
+<IMG
+ WIDTH="512" HEIGHT="149" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="\begin{spacing}{0.8}
+\textsf{\footnotesize class Note : public DynamicType}{\foo...
+...esize\par
+}
+\par
+\textsf{\footnotesize\};}\\
+{\footnotesize\par
+}
+\end{spacing}">
+<BR>
+
+<P>
+As it can be seen, three different macros are used in Dynamic Types:
+<TT>DYNAMIC_TYPE</TT> for expanding the concrete DT constructors,
+<TT>DYN_ATTRIBUTE</TT> for declaring each dynamic attribute and <TT>DYN_CONTAINER_ATTRIBUTE</TT>
+for declaring any STL interface compliant container.
+
+<P>
+1. <TT>DYNAMIC_TYPE</TT> is a macro that expands the default constructor
+of the concrete DT being declared. The first parameter is the total
+number of dynamic attributes, and the second one the class name. If
+the writer of a DT derived class sees the need of writing a customized
+default constructor or other constructors it can be done using special
+purpose initializers. english
+
+<P>
+2. <TT>DYN_ATTRIBUTE</TT> is used to declare a dynamic attribute.
+It has four parameters, the first one is the attribute order (needed
+for technical reasons of the DT implementation), the second one is
+the accessibility (public, protected or private) the third one is
+the type: it can be any C++ valid type including typedef definitions
+but not references or pointers. englishThe forth
+and last parameter is the attribute name, it is important to begin
+in upper-case because this name (let's call it XXX) will be used to
+form the attribute accessors <TT>GetXXX()</TT> and <TT>SetXXX()</TT>,
+thus the XXX must start in upper-case.
+
+<P>
+3. <TT>DYN_CONTAINER_ATTR</TT>: The purpose of this one is to give
+storage (only XML by now) support to attributes declared as containers
+of objects. For that, we need that container to fulfill the STL container
+interface, so all the STL collection of containers is usable. This
+macro has five parameters, one more that <TT>DYN_ATTRIBUTE</TT>:
+the attribute numeration, accessibility, the type, the name of the
+attribute and finally the new one: the label of each contained element
+that will be stored.
+<BR>
+Returning to the example above, each <TT>DYN_ATTRIBUTE</TT> macro
+will expand a set of usable methods:
+<BR>
+<P>
+<BR>
+<IMG
+ WIDTH="312" HEIGHT="42" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.png"
+ ALT="\begin{spacing}{0.8}
+\textsf{\footnotesize float\&amp; GetPitch(), void SetPitch(con...
+...h(Storage\&amp;), bool LoadPitch(Storage\&amp;);
+}\\
+{\footnotesize\par
+}
+\end{spacing}">
+<BR>
+
+<P>
+Of course <TT>GetPitch</TT> and <TT>SetPitch</TT> are the usual accessors
+to the data. <TT>AddPitch</TT> and <TT>RemovePitch</TT> will
+instantiate and de-instantiate the attribute, combined with <TT>UpdateData</TT>
+that will be explained latter on. <TT>HasPitch</TT> returns whether
+Pitch is instantiate at this moment. Finally <TT>StorePitch</TT> and
+<TT>LoadPitch</TT> are for storage purposes.
+
+<P>
+Once, the concrete DT Note has been declared, we can use it like this:
+<BR>
+<P>
+<BR>
+<IMG
+ WIDTH="462" HEIGHT="39" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="\begin{spacing}{0.8}
+\textsf{\footnotesize Note myNote; // create an instance of...
+...); myNote.AddNSines(); myNote.AddSines();}\\
+{\footnotesize\par
+}
+\end{spacing}">
+<BR>
+
+<P>
+Or in the case that we want all of them, is better to use <TT>AddAll</TT>.
+This method is not macro generated as <TT>AddPitch</TT>, but is available
+in any concrete DT.
+<BR>
+<P>
+<SPAN  CLASS="textsf"><SMALL CLASS="FOOTNOTESIZE">myNote.AddAll();</SMALL></SPAN>
+<BR>
+<P>
+
+
+<P>
+As this kind of operations requires memory management we want to update
+the data, with its possible reallocations only once for every modification
+of the DT shape or structure (what can mean lots of individual adds
+and removes). We'll use the DynamicType member UpdateData for that
+purpose:
+<BR>
+<P>
+<BR>
+<IMG
+ WIDTH="311" HEIGHT="42" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="\begin{spacing}{0.8}
+\textsf{\footnotesize std::cout &lt; {}&lt; myNote.HasPitch()
+//...
+...&lt; myNote.HasPitch()
+// writes out: 'true'}\\
+{\footnotesize\par
+}
+\end{spacing}">
+<BR>
+
+<P>
+And now all the instantiated attributes can be used normally using
+the accessors <TT>GetXXX</TT> and <TT>SetXXX</TT>. For example:
+<BR>
+<P>
+<BR>
+<IMG
+ WIDTH="375" HEIGHT="119" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.png"
+ ALT="\begin{spacing}{0.8}
+\textsf{\footnotesize myNote.SetNSines(10);}{\footnotesize\...
+...otesize int j=myNote.GetNSines();&nbsp; // ok.}\\
+{\footnotesize\par
+}
+\end{spacing}">
+<BR>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1726"
+  HREF="node116.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1724"
+  HREF="node114.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1718"
+  HREF="node114.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1727"
+  HREF="node116.html">Processing Data</A>
+<B> Up:</B> <A NAME="tex2html1725"
+  HREF="node114.html">Data Infrastructure</A>
+<B> Previous:</B> <A NAME="tex2html1719"
+  HREF="node114.html">Data Infrastructure</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

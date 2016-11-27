@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>SpectralPeak and SpectralPeakArray</TITLE>
+<META NAME="description" CONTENT="SpectralPeak and SpectralPeakArray">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node106.html">
+<LINK REL="previous" HREF="node104.html">
+<LINK REL="up" HREF="node102.html">
+<LINK REL="next" HREF="node106.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1612"
+  HREF="node106.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1610"
+  HREF="node102.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1604"
+  HREF="node104.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1613"
+  HREF="node106.html">Fundamental</A>
+<B> Up:</B> <A NAME="tex2html1611"
+  HREF="node102.html">Data repository</A>
+<B> Previous:</B> <A NAME="tex2html1605"
+  HREF="node104.html">Spectrum</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H4><A NAME="SECTION00421230000000000000">
+SpectralPeak and SpectralPeakArray</A>
+</H4>
+
+<P>
+A <TT>SpectralPeak</TT> is a very basic storage PD class that has
+the following attributes: scale, frequency, magnitude, phase, bin
+position, and bin width. It has also some operators such as product,
+distance and log/linear scale converting routines. By itself it is
+seldom used and should be preferably used through the <TT>SpectralPeakArray</TT>
+class.
+
+<P>
+The <TT>SpectralPeakArray</TT> is not, as its name may imply, just
+a simple array of <TT>SpectralPeaks</TT>. As a matter of fact, the
+<TT>SpectralPeakArray</TT> class does not hold <TT>SpectralPeak</TT>
+inside but rather a set of buffers containing magnitude, frequency,
+phase, bin position, bin width and index. This representation has
+been chosen for efficiency reasons in order to be able to operate
+on contiguous memory.
+
+<P>
+Apart from these buffers, it includes other attributes such as <TT>Scale</TT>,
+<TT>nPeaks</TT> (number of peaks currently available) and <TT>nMaxPeaks</TT>
+(maximum number of peaks allowed). 
+
+<P>
+Even though the most efficient way to deal with a peak array is working
+directly on the buffers , two accessory interfaces are offered: first,
+you can access/modify any of the attributes of a given peak by using
+the interface offered by methods like <TT>GetMag(index)</TT> or <TT>SetPhase(index)</TT>;
+but also, you can use an interface using <TT>SpectralPeak</TT> objects
+through the <TT>GetSpectralPeak(index)</TT> and <TT>SetSpectralPeak(index)</TT>
+methods. Note that these methods do not return a pre-existing peak
+but rather construct the peak object on the fly. Therefore, they are
+far from efficient.
+
+<P>
+Another particularity that needs mention is the <TT>IndexArray</TT>.
+It is a multi-purpose array of indices that is used for fundamental
+detection, peak continuation and track assigning. It is sometimes
+indeed a very convenient way of dealing with many insertions/deletions
+of peaks into the array as they can be substituted by a simple change
+in index. The <TT>SpectralPeakArray</TT> class offers an accessory
+interface (consisting of several methods) for working through indices.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1612"
+  HREF="node106.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1610"
+  HREF="node102.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1604"
+  HREF="node104.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1613"
+  HREF="node106.html">Fundamental</A>
+<B> Up:</B> <A NAME="tex2html1611"
+  HREF="node102.html">Data repository</A>
+<B> Previous:</B> <A NAME="tex2html1605"
+  HREF="node104.html">Spectrum</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

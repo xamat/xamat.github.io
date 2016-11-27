@@ -1,0 +1,1636 @@
+\begin{thebibliography}{}
+
+\bibitem[Abbot, 1983]{AbbotObjectsFromEnglish}
+Abbot, R. (1983).
+\newblock Program design by informal english descriptions.
+\newblock {\em Program Design by Informal English Descriptions},
+  26(11):882--894.
+
+\bibitem[Ackermann, 1994a]{AckermannMETICMC}
+Ackermann, P. (1994a).
+\newblock {Design and Implementation of an Object Oriented Media Composition
+  Framework}.
+\newblock In {\em {Proceedings of the 1994 International Computer Music
+  Conference ICMC94}}. Computer Music Association.
+
+\bibitem[Ackermann, 1994b]{AckermannMET++Time}
+Ackermann, P. (1994b).
+\newblock {Direct Manipulation of Temporal Structures in a Multimedia
+  Application Framework}.
+\newblock In {\em {Proceedings of the 1994 ACM Multimedia Conference}}.
+
+\bibitem[Adair, 1995]{AdairBuildingOOFrameworks}
+Adair, D. (1995).
+\newblock {Building Object-Oriented Frameworks (Part 1)}.
+\newblock {\em {AIXpert}}.
+
+\bibitem[Adaptive et~al., 2003]{MOF2}
+Adaptive et~al. (2003).
+\newblock {Meta Object Facility (MOF) 2.0 Core Proposal}.
+\newblock Technical report, ACM's Object Management Group.
+\newblock Modification to the MOF 1.4 standard still to be adopted.
+
+\bibitem[Agha, 1986]{AghaActors}
+Agha, G. (1986).
+\newblock {\em {Actors: A model of concurrent computation in Distributed
+  Systems}}.
+\newblock MIT Press, Cambridge, MA.
+
+\bibitem[Agon and Assayag, 2002]{OpenMusicAgon02c}
+Agon, C. and Assayag, G. (2002).
+\newblock {Object-Oriented Programming in OpenMusic}.
+\newblock In {\em {Topos of Music}}. Verlag Ed.
+
+\bibitem[Agon et~al., 2000]{OpenMusicAgon00a}
+Agon, C., Stroppa, M., and Assayag, G. (2000).
+\newblock {High Level Musical Control of Sound Synthesis in OpenMusic}.
+\newblock In {\em {Proceedings of the 2000 International Computer Music
+  Conference (ICMC '00)}}, Berlin, Allemagne.
+
+\bibitem[Alexandrescu, 2001]{Alexandrescu}
+Alexandrescu, A. (2001).
+\newblock {\em {Modern C++ Design}}.
+\newblock Addison-Wesley, Pearson Education.
+
+\bibitem[Amatriain et~al., 2002a]{xamatOOPSLAPoster}
+Amatriain, X., Arumí, P., and Ramírez, M. (2002a).
+\newblock {CLAM, Yet Another Library for Audio and Music Processing?}
+\newblock In {\em {Proceedings of the 2002 Conference on Object Oriented
+  Programming, Systems and Application (OOPSLA 2002)(Companion Material)}},
+  Seattle, USA. ACM.
+
+\bibitem[Amatriain et~al., 2003]{xamatJNMR}
+Amatriain, X., Bonada, J., Loscos, A., Arcos, J.~L., and Verfaille, V. (2003).
+\newblock {Content-based Transformations}.
+\newblock {\em {Journal of New Music Research}}, 32(1).
+
+\bibitem[Amatriain et~al., 2001]{xamatMosart}
+Amatriain, X., Bonada, J., Loscos, A., and Serra, X. (2001).
+\newblock {Spectral Modeling for Higher-level Sound Transformations}.
+\newblock In {\em {Proceedings of the first MOSART Workshop on Current Research
+  Directions in Computer Music}}.
+
+\bibitem[Amatriain et~al., 2002b]{xamatDAFXChapter}
+Amatriain, X., Bonada, J., Loscos, A., and Serra, X. (2002b).
+\newblock {\em {DAFX: Digital Audio Effects (Udo Zölzer ed.)}}, chapter
+  {Spectral Processing}, pages 373--438.
+\newblock John Wiley and Sons, Ltd.
+
+\bibitem[Amatriain et~al., 1998]{METRIX_DAFX}
+Amatriain, X., Bondada, J., and Serra, X. (1998).
+\newblock {METRIX: A Musical Data Definition Language and Data Structure for a
+  Spectral Modeling Based Synthesizer}.
+\newblock In {\em {Proceedings of the 1st International Conference on Digital
+  Audio Effects (DAFX98)}}, Barcelona.
+
+\bibitem[Amatriain et~al., 2002c]{xamatOOPSLADemo}
+Amatriain, X., de~Boer, M., Robledo, E., and Garcia, D. (2002c).
+\newblock {CLAM: An OO Framework for Developing Audio and Music Applications}.
+\newblock In {\em {Proceedings of the 2002 Conference on Object Oriented
+  Programming, Systems and Application (OOPSLA 2002)(Companion Material)}},
+  Seattle, USA. ACM.
+
+\bibitem[Amatriain and Herrera, 2001a]{xamatContentTransmissionDAFX}
+Amatriain, X. and Herrera, P. (2001a).
+\newblock {Audio Content Transmission}.
+\newblock In {\em {Proceedings for the 4th International Conference on Digital
+  Audio Effects (DAFX01)}}, Limerick.
+
+\bibitem[Amatriain and Herrera, 2001b]{xamatAES}
+Amatriain, X. and Herrera, P. (2001b).
+\newblock {Transmitting Audio Content as Sound Objects}.
+\newblock In {\em {Proceedings of the AES 22nd Conference on Virtual,
+  Synthetic, and Entertainment Audio}}, Helsinki. Audio Engineering Society.
+
+\bibitem[Ambler, 2003]{AmblerAgileMDD}
+Ambler, S.~W. (2003).
+\newblock {Agile Model Driven Development Is Good Enough}.
+\newblock {\em {IEEE Software}}.
+
+\bibitem[Anderson, 1983]{AndersonCognition}
+Anderson, J. (1983).
+\newblock {\em {The Architecture of Cognition}}.
+\newblock Harvard University Press, Cambridge, Massachusets.
+
+\bibitem[Arcos et~al., 1998]{SaxexJNMR}
+Arcos, J.~L., de~Mántaras, R.~L., and Serra, X. (1998).
+\newblock {Saxex: a Case-Based Reasoning System for Generating Expressive
+  Musical Performances}.
+\newblock {\em {Journal of New Music Research}}, 27(3).
+
+\bibitem[Assayag and Agon, 2000]{OpenMusicAssayag00a}
+Assayag, G. and Agon, C. (2000).
+\newblock {OpenMusic : un langage de programmation visuelle pour la
+  composition}.
+\newblock In {\em {Encyclopédie pour l'ingénieur informaticien}}. Hermés.
+
+\bibitem[Barton, 1994]{BartonMetamodelingReview}
+Barton, R. (1994).
+\newblock {Metamodeling: A State of the Art review}.
+\newblock In {\em {Proceedings of the 1994 Winter Simulation Conference}}.
+
+\bibitem[Bastide, 1995]{BastideOOPetriNets}
+Bastide, R. (1995).
+\newblock Approaches in unifying petri nets and the object-oriented approach.
+\newblock In {\em Proceedings of the Application and Theory of Petri Nets 1995
+  - Workshop on Object-Oriented Programming and Models of Concurrency}.
+
+\bibitem[Beck, 1999]{BeckXP}
+Beck, K. (1999).
+\newblock {\em {Extreme Programming Explained}}.
+\newblock Addison Wesley.
+
+\bibitem[Beck, 2002]{BeckMetaphorMetaphor}
+Beck, K. (2002).
+\newblock {The Metaphor Metaphor}.
+\newblock Invited Talk at the 2002 Conference on Object Oriented Programming,
+  Systems, Languages and Applications (OOPSLA '02).
+
+\bibitem[Beck and Johnson, 1994]{BeckPatternsGenerate}
+Beck, K. and Johnson, R. (1994).
+\newblock {Patterns Generate Architectures}.
+\newblock In {\em {Proceedings of the 8th European Conference on
+  Object-Oriented Programming}}, Bologna, Italy.
+
+\bibitem[Bencina, 1998]{BencinaAudioMulchOasisRose}
+Bencina, R. (1998).
+\newblock {Oasis Rose the Composition - Real-time DSP with AudioMulch}.
+\newblock In {\em {Proceedings of the Australian Computer Music Conference}},
+  Camberra.
+
+\bibitem[Bencina, 2003]{BencinaPortAudio03}
+Bencina, R. (2003).
+\newblock Port audio and media synchronization.
+\newblock In {\em Proceedings of the 2003 Australasian Computer Music
+  Association (ACMC'03)}.
+
+\bibitem[Bencina and Burk, 2001]{BencinaPortAudio}
+Bencina, R. and Burk, P. (2001).
+\newblock {Port Audio: an Open Source Cross Platform Audio API}.
+\newblock In {\em {Proceedings of the 2001 International Computer Music
+  Conference (ICMC '01)}}. Computer Music Associaciation.
+
+\bibitem[Blanchette and Summerfield, 2004]{QTProgramming}
+Blanchette, J. and Summerfield, M. (2004).
+\newblock {\em {C++ GUI Programming with QT 3}}.
+\newblock Pearson Education.
+
+\bibitem[Bonada, 1997]{PFCBonada}
+Bonada, J. (1997).
+\newblock Desenvolupament d`un entorn gráfic per a l`análisi, transformació i
+  síntesi de sons mitjanant models espectrals.
+\newblock Master's thesis, UPC. Barcelona.
+
+\bibitem[Bonada, 2000]{TimeMachineICMC}
+Bonada, J. (2000).
+\newblock {Automatic Technique in Frequency Domain for near-Lossless Time-Scale
+  Modification of Audio}.
+\newblock In {\em {Proceedings of the 2000 International Computer Music
+  Conference (ICMC '00)}}, San Francisco. Computer Music Association.
+
+\bibitem[Booch, 1994a]{BoochDesigningFrameworks}
+Booch, G. (1994a).
+\newblock {Designing an Application Framework}.
+\newblock {\em {Dr. Dobb's Journal}}, 19(2):24.
+
+\bibitem[Booch, 1994b]{BoochOODesign}
+Booch, G. (1994b).
+\newblock {\em {Object-Oriented Analysis and Design with Applications}}.
+\newblock Benjamin/Cummings, second edition edition.
+
+\bibitem[Bosch et~al., 1999]{BoschFrameworksProblemsExperiences}
+Bosch, J., Molin, M., Mattson, M., and Bengtsson, P. (1999).
+\newblock {\em {Building Application Frameworks}}, chapter Object-oriented
+  frameworks - Problems \& Experiences.
+\newblock Wiley and Sons.
+
+\bibitem[Boulding, 1969]{BouldingGeneralSystemTheory}
+Boulding, K. (1969).
+\newblock {\em {Modern Systems Research for the Behavioral Scientist, A
+  Sourcebook}}, chapter General Systems Theory - The Skeleton of Science.
+\newblock Aldine Publishing Company, Chicago.
+
+\bibitem[Bregman, 1990]{BregmanCASA}
+Bregman, A. (1990).
+\newblock {\em {Auditory Scene Analysis: the Perceptual Organization of
+  Sound}}.
+\newblock MIT Press, Cambridge, MA,.
+
+\bibitem[Buck and Lee, 1994]{BuckTokenFlow}
+Buck, J. and Lee, E.~A. (1994).
+\newblock {\em {Advanced Topics in Dataflow Computing and Multithreading}},
+  chapter The Token Flow Model.
+\newblock IEEE Computer Society Press.
+
+\bibitem[Budd, 1991]{BuddOOProgramming}
+Budd, T. (1991).
+\newblock {\em {An Introduction to Object-Oriented Programming}}.
+\newblock Addison-Wesley.
+
+\bibitem[Burk, 1998]{BurkJSyn}
+Burk, P. (1998).
+\newblock {JSyn- A Real-time Synthesis API for Java}.
+\newblock In {\em {Proceedings of the 1998 International Computer Music
+  Conference (ICMC '98)}}. Computer Music Associaciation.
+
+\bibitem[Buschman et~al., 1996]{BuschmanPatternOrientedArchitecture}
+Buschman, F., Meunier, R., Rohnert, H., Sommerlad, P., and Stal, M. (1996).
+\newblock {\em {Pattern-Oriented Software Architecture - A System of
+  Patterns}}.
+\newblock John Wiley \& Sons.
+
+\bibitem[Camurri, 1999]{CamurriMusicContentProcessing}
+Camurri, A. (1999).
+\newblock {Music Content Processing And Multimedia: Case Studies and Emerging
+  Applications of Intelligent Interactive Systems}.
+\newblock {\em {Journal of New Music Research}}, 28(4):351--363.
+
+\bibitem[Casey, 2001]{CaseySoundRecognitioninMPEG7}
+Casey, M. (2001).
+\newblock {MPEG-7 Sound-Recognition Tools}.
+\newblock {\em {IEEE Transactions on Circuits and Systems for Video
+  Technology}}, 11(6).
+
+\bibitem[Caughlin, 1997]{CaughlinAutomatingMetamodelling}
+Caughlin, D. (1997).
+\newblock {Automating the Metamodeling Process}.
+\newblock In {\em {Proceedings of the 1997 Winter Simulation Conference}}.
+
+\bibitem[Chai and Vercoe, 2000]{ChaiUserModels}
+Chai, W. and Vercoe, B. (2000).
+\newblock {Using User Models in Information Retrieval Systems}.
+\newblock In {\em {Proceedings of the 1st International Symposium on Music
+  Information Retrieval (ISMIR 00)}}.
+
+\bibitem[Chaudhary et~al., 1999]{ChaudrayOSW}
+Chaudhary, A., Freed, A., and Wright, M. (1999).
+\newblock {An Open Architecture for Real-Time Audio Processing Software}.
+\newblock In {\em {Proceedings of the Audio Engineering Society 107th
+  Convention}}.
+
+\bibitem[Cherry, 1957]{CherryHumanCommunication}
+Cherry, E. (1957).
+\newblock {\em {On Human Communication}}.
+\newblock Wiley, New York.
+
+\bibitem[Chiariglione, 2000]{ChiariglioneValueContent}
+Chiariglione, L. (2000).
+\newblock {The Value of Content}.
+\newblock {\em {Technology Reviews}}.
+
+\bibitem[Chion, 1983]{ChionGuideDesObjectsSonores}
+Chion, M. (1983).
+\newblock {\em {Guide des Objets Sonores. Pierre Schaeffer et la Reserche
+  Musicale}}.
+\newblock INA-GRM/BUCHET, Chastel.
+
+\bibitem[Cockburn, 2002]{CockburnAgile}
+Cockburn, A. (2002).
+\newblock {\em {Agile Software Development}}.
+\newblock Addison-Wesley.
+
+\bibitem[Cook, 1996]{CookSTK96}
+Cook, P. (1996).
+\newblock {Synthesis Toolkit in C++}.
+\newblock In {\em {Proceedings of the 1996 SIGGRAPH}}.
+
+\bibitem[Cook, 2004]{CookSkini}
+Cook, P. (2004).
+\newblock {\em {Synthesis toolKit Instrument Network Interface (SKINI) 0.9
+  Implementation notes}}.
+\newblock Princeton University.
+
+\bibitem[Cook and Scavone, 1999]{CookSTK99}
+Cook, P. and Scavone, G. (1999).
+\newblock {The Synthesis Toolkik (STK)}.
+\newblock In {\em {Proceedings of the 1999 International Computer Music
+  Conference (ICMC99)}}, Beijing, China. Computer Music Association.
+
+\bibitem[Cook and Scavone, 2003]{CookSTKDocumentation}
+Cook, P. and Scavone, G. (2003).
+\newblock {\em {STK software documentation}}.
+\newblock http://www-ccrma-stanford.edu/software/stk.
+
+\bibitem[Dahl and Nygaard, 1966]{DahlNygaardSimula}
+Dahl, O. and Nygaard, K. (1966).
+\newblock {Simula: An Algol-based Simulation Language}.
+\newblock In {\em {Communications of the ACM}}, volume~9.
+
+\bibitem[Danks, 1997]{DanksGEM}
+Danks, M. (1997).
+\newblock {Real-time image and video processing in GEM}.
+\newblock In {\em {Proceedings of the 1997 International Music Conference (ICMC
+  '97)}}, pages 220--223. Computer Music Association.
+
+\bibitem[Dannenberg, 1993]{DannenbergNyquist}
+Dannenberg, R. (1993).
+\newblock {The Implementation of Nyquist, a Sound Synthesis Language}.
+\newblock In {\em {Proceedings of the 1993 International Computer Music
+  Conference (ICMC '93)}}, pages 168--171. Computer Music Association.
+
+\bibitem[Dannenberg, 2004]{DannenbergAuraICMC04}
+Dannenberg, R. (2004).
+\newblock Combining visual and textual representations for flexible interactive
+  audio signal processing.
+\newblock In {\em {Proceedings of the 2004 International Computer Music
+  Conferenc (ICMC'04)}}.
+\newblock in press.
+
+\bibitem[Dannenberg and Brandt, 1996a]{DannenbergAuraICMC96}
+Dannenberg, R.~B. and Brandt, E. (1996a).
+\newblock {A Flexible Real-Time Software Synthesis System}.
+\newblock In {\em {Proceedings of the 1996 International Computer Music
+  Conference (ICMC96)}}, pages 270--273.
+
+\bibitem[Dannenberg and Brandt, 1996b]{DannenbergAuraICMC}
+Dannenberg, R.~B. and Brandt, E. (1996b).
+\newblock {A Portable, High-Performance System for Interactive Audio
+  Processing}.
+\newblock In {\em {Proceedings of the 1996 International Computer Music
+  Conference (ICMC96)}}, pages 270--273. International Computer Music
+  Association.
+
+\bibitem[Dannenberg and Rubine, 1995]{DannenbergWICMC}
+Dannenberg, R.~B. and Rubine, D. (1995).
+\newblock {Toward Modular, Portable. Real-Time Software}.
+\newblock In {\em {Proceedings of the 1995 International Computer Music
+  Conference (ICMC95)}}, pages 65--72. International Computer Music
+  Association.
+
+\bibitem[Darnell, 1972]{DarnellHummanCommunication}
+Darnell, D. (1972).
+\newblock {\em {Approaches to Human Communication}}.
+\newblock Spartan Books, New York.
+
+\bibitem[de~Champeaux et~al., 1993]{ChampeauxOOSystemDevelopment}
+de~Champeaux, D., Lea, D., and Faure, P. (1993).
+\newblock {\em Object-Oriented System Development}.
+\newblock Addison Wesley.
+
+\bibitem[DeGreene, 1970]{DeGreeneSystemsPsychology}
+DeGreene, K. (1970).
+\newblock {\em {Systems Psychology}}, chapter {Systems and Psychology}.
+\newblock McGraw-Hill.
+
+\bibitem[Devedzic, 2002]{DevedzicUnderstandingOntology}
+Devedzic, V. (2002).
+\newblock {Understanding Ontological Engineering}.
+\newblock {\em {Communications of the ACM}}, 45(4).
+
+\bibitem[Dobrian et~al., 2000]{MSP-Dobrian}
+Dobrian, C. et~al. (2000).
+\newblock {\em {MSP: Getting Started, Tutorial and Topics, and Reference}}.
+
+\bibitem[Déchelle, 2000]{Dechelle00a}
+Déchelle, F. (2000).
+\newblock {jMax : Un environnement pour la réalisation d'applications musicales
+  sur Linux}.
+\newblock In {\em {Journées d'Informatique musicale}}, Bordeaux, France.
+
+\bibitem[Déchelle, 2003]{OpenMusicDechelle03a}
+Déchelle, F. (2003).
+\newblock {Various IRCAM free software: jMax and OpenMusic}.
+\newblock In {\em {Linux Audio Developers Meeting}}, Karlsruhe, Allemagne.
+
+\bibitem[Déchelle et~al., 1998]{Dechelle98a}
+Déchelle, F., Borghesi, R., de~Cecco, M., Maggi, E., Rovan, J.~B., and Schnell,
+  N. (1998).
+\newblock {jMax: a new JAVA-based Editing and Control System for Real-time
+  Musical Applications}.
+\newblock In {\em {Proceedings of the 1998 International Computer Music
+  Conference(ICMC '98)}}.
+
+\bibitem[Déchelle et~al., 1999a]{Dechelle99c}
+Déchelle, F., Borghesi, R., de~Cecco, M., Maggi, E., Rovan, J.~B., and Schnell,
+  N. (1999a).
+\newblock {jMax: An Environment for Real-Time Musical Applications}.
+\newblock {\em {Computer Music Journal}}, 23-3:50--58.
+
+\bibitem[Déchelle et~al., 1999b]{Dechelle99a}
+Déchelle, F., Borghesi, R., de~Cecco, M., Maggi, E., Rovan, J.~B., and Schnell,
+  N. (1999b).
+\newblock {jMax Recent Developments}.
+\newblock In {\em {Proceedings of the 1999 International Computer Music
+  Conference(ICMC '99)}}, Pekin, Chine.
+
+\bibitem[Déchelle et~al., 2000]{Dechelle00b}
+Déchelle, F., Borghesi, R., Orio, N., and Schnell, N. (2000).
+\newblock {The jMax environment: an overview of new features}.
+\newblock In {\em {ICMC: International Computer Music Conference}}, Allemagne,
+  Berlin.
+
+\bibitem[Déchelle and Tisserand, 2003]{Dechelle03b}
+Déchelle, F. and Tisserand, P. (2003).
+\newblock {Free software at IRCAM: jMax, OpenMusic}.
+\newblock In {\em AGNULA - Bring Your Own Laptop}, Prato, Italie.
+
+\bibitem[Ebrahimi and Christopoulos, 1998]{MPEG7BeyondDatabase}
+Ebrahimi, T. and Christopoulos, C. (1998).
+\newblock {Can MPEG-7 be used beyond database application?}
+\newblock Technical Report M3861, MPEG, Atlantic City.
+
+\bibitem[Edwards, 1995]{EdwardsPatternForPullDriven}
+Edwards, S. (1995).
+\newblock {Streams: a Pattern for "Pull-Driven}.
+\newblock In Coplien, J.~O. and Schmidt, D.~C., editors, {\em {Pattern
+  Languages of Program Design}}, volume vol.1, chapter~21. Addison-Wesley.
+
+\bibitem[Fletcher and Munson, 1933]{FletcherLoudness}
+Fletcher, H. and Munson, W. (1933).
+\newblock {Loudness, its Definition, Measurement and Calculation}.
+\newblock {\em {Journal of the Acoustical Society of America}}, 5:82--108.
+
+\bibitem[Fogel, 1999]{FogelCVS}
+Fogel, K. (1999).
+\newblock {\em {Open Source Development with CVS}}.
+\newblock CoriolisOpen Press.
+
+\bibitem[{Free Software Foundation}, ]{FSF}
+{Free Software Foundation}.
+\newblock {Gnu general public license (gpl) terms and conditions}.
+\newblock http://www.gnu.org/copyleft/gpl.html.
+
+\bibitem[Frigo and Johnson, 1998]{FFTW98}
+Frigo, M. and Johnson, S.~G. (1998).
+\newblock {FFTW}: An adaptive software architecture for the {FFT}.
+\newblock In {\em Proc. 1998 IEEE Intl. Conf. Acoustics Speech and Signal
+  Processing}, volume~3, pages 1381--1384. IEEE.
+
+\bibitem[Gamma et~al., 1995]{GOF}
+Gamma, E., Helm, R., Johnson, R., and Vlissides, J. (1995).
+\newblock {\em {Design Patterns - Elements of Reusable Object-Oriented
+  Software}}.
+\newblock Addison-Wesley.
+
+\bibitem[Garcia and Amatrian, 2001]{DavidXML}
+Garcia, D. and Amatrian, X. (2001).
+\newblock {XML as a means of control for audio processing, synthesis and
+  analysis}.
+\newblock In {\em {Proceedings of the MOSART Workshop on Current Research
+  Directions in Computer Music}}, Barcelona, Spain.
+
+\bibitem[Garlan and Shaw, 1993]{GarlanSoftwareArchitecture}
+Garlan, D. and Shaw, M. (1993).
+\newblock {\em {Advances in Software Engineering and Knowledge Engineering}},
+  volume~1, chapter An introduction to Software Architecture.
+\newblock World Scientific Publishing Company.
+
+\bibitem[Graham, 1991]{GrahamOOMethods}
+Graham, I. (1991).
+\newblock {\em {Object Oriented Methods}}.
+\newblock Addison-Wesley.
+
+\bibitem[Griffin, 1997]{GriffinCommunicationTheory}
+Griffin, E. (1997).
+\newblock {\em {A First Look at Communication Theory}}.
+\newblock McGraw-Hill, Inc., third edition edition.
+
+\bibitem[Gómez et~al., 2003a]{EmiliaTabasco}
+Gómez, E., Grachten, M., Amatriain, X., and Arcos, J. (2003a).
+\newblock Melodic characterization of monophonic recordings for expressive
+  tempo transformations.
+\newblock In {\em {Proceedings of Stockholm Music Acoustics Conference 2003}}.
+
+\bibitem[Gómez et~al., 2003b]{EmiliaMelodicTransformations}
+Gómez, E., Peterschmitt, G., Amatriain, X., and Herrera, P. (2003b).
+\newblock Content-based melodic transformations of audio for a music processing
+  application.
+\newblock In {\em {Proceedings of 6th International Conference on Digital Audio
+  Effects}}.
+
+\bibitem[Halbert and O'Brien, 1987]{HalbertTypesAndInheritance}
+Halbert, D. and O'Brien, P. (1987).
+\newblock {Using Types and Inheritance in Object-oriented Programs}.
+\newblock {\em {IEEE Software}}.
+
+\bibitem[Hall and Fagen, 1956]{HallFagenDefinitionOfSystem}
+Hall, A. and Fagen, R. (1956).
+\newblock {\em {Yearbook of the Society for the Advancement of General Systems
+  Theory}}, volume General Systems I, chapter {Definition of System}.
+\newblock Ann Arbor.
+
+\bibitem[Hebel, 1991]{HebertJavelina}
+Hebel, K.~J. (1991).
+\newblock {\em {The Well-tempered Object. Musical Applications of
+  Object-Oriented Software Technology}}, chapter Javelina: An Environment for
+  Digital Signal Processor Software Development, pages 171--187.
+\newblock MIT Press.
+
+\bibitem[Helmuth, 1990]{HelmuthPATCHMIX}
+Helmuth, M. (1990).
+\newblock {PATCHMIX A C++ Interface to Cmix}.
+\newblock In {\em {Proceedings of the 1990 International Computer Music
+  Conference (ICMC '90)}}, pages 273--275. Computer Music Association.
+
+\bibitem[Herrera et~al., 2000]{HerreraInstrumentSegmentation}
+Herrera, P., Amatriain, X., Batlle, E., and Serra, X. (2000).
+\newblock Towards instrument segmentation for music content description: a
+  critical review of instrument classification techniques.
+\newblock In {\em Proceedings of the 1st International Symposium on Music
+  Information Retrieval}.
+
+\bibitem[Hewit, 1977]{HewitActors}
+Hewit, C. (1977).
+\newblock {Viewing control structures as patterns of passing messages}.
+\newblock {\em {Journal of Artificial Intelligence}}, 8(3):323--363.
+
+\bibitem[Hickey, 1995]{HickeyCallbacks}
+Hickey, R. (1995).
+\newblock {Callbacks in C++ using Template Functors}.
+\newblock {\em {C++ Report}}.
+
+\bibitem[Honing, 1990]{HoningPOCO}
+Honing, H. (1990).
+\newblock Poco: An environment for analysing, modifying and generating
+  expression in music.
+\newblock In {\em Proceedings of the 1990 International Music Conference (ICMC
+  '90)}, pages 364--368.
+
+\bibitem[Huron, 1995]{HumdrumManual}
+Huron, D. (1995).
+\newblock {\em The Humdrum Toolkit: Reference Manual}.
+\newblock Center for Computer Assisted Research in the Humanities.
+
+\bibitem[Hylands et~al., 2003]{PtolemyOverview}
+Hylands, C. et~al. (2003).
+\newblock {Overview of the Ptolemy Project}.
+\newblock Technical report, Department of Electrical Engineering and Computer
+  Science, University of California, Berklee, California.
+
+\bibitem[Jackson, 1995]{JacksonSoftwareRequirements}
+Jackson, M. (1995).
+\newblock {\em {Software Requirements and Specifications}}.
+\newblock Addison-Wesley, Harlow, England.
+
+\bibitem[Jaffe and Boynton, 1991]{JeffeNeXTMusicKit}
+Jaffe, D. and Boynton, L. (1991).
+\newblock {\em {The Well-tempered Object. Musical Applications of
+  Object-Oriented Software Technology}}, chapter {An Overview of the Sound and
+  Music Kits for the NeXT Computer}, pages 107--118.
+\newblock MIT Press.
+
+\bibitem[Jafry, 2000]{WaveWarpDAFX}
+Jafry, Y. (2000).
+\newblock {A Modular Real-Time PC-Based Audio Processing Tool for Effects
+  Developers, Engineers, Musicians, and Educators}.
+\newblock In {\em {Proceedings of the 2000 Conference on Digital Audio Effects
+  (Dafx-00)}}.
+
+\bibitem[Jaimes et~al., 2000]{MPEG7MultipleLevel}
+Jaimes, A., Benitez, A., and Chang, S. (2000).
+\newblock {Multiple Level Classification of Descriptions for Audio Content}.
+\newblock Technical Report M6114, MPEG, Geneva.
+
+\bibitem[Janneck and Esser, 2002]{JanneckHigherOrderPetriNets}
+Janneck, J.~W. and Esser, R. (2002).
+\newblock Higher-order petri net modelling - techniques and applications.
+\newblock In {\em Proceedings of the Workshop on Software Engineering and
+  Formal Methods, Petri Nets 2002}, Adelaide, Australia.
+
+\bibitem[Johnson, 1992]{JohnsonDocumentingFrameworks}
+Johnson, R.~E. (1992).
+\newblock {Documenting Frameworks with Patterns}.
+\newblock In {\em {Proceedings of the 7th Conference on Object Oriented
+  Programming, Systems, Languages and Applications (OOPSLA '92)}}, Vancouver,
+  Canada.
+
+\bibitem[Johnson, 1993]{JohnsonDesignFrameworksOOPSLATutorial}
+Johnson, R.~E. (1993).
+\newblock {How to Design Frameworks}.
+\newblock Tutorial Notes for the 1993 Conference on Object Oriented
+  Programming, Systems, Languages and Systems (OOPSLA '93).
+
+\bibitem[Johnson, 1997]{JohnsonComponents}
+Johnson, R.~E. (1997).
+\newblock {Components, Frameworks, Patterns}.
+\newblock In {\em {Proceedings of the 1997 symposium on Software reusability}}.
+
+\bibitem[Johnson and Foote, 1988]{JohnsonReusableClasses}
+Johnson, R.~E. and Foote, J. (1988).
+\newblock {Designing Reusable Classes}.
+\newblock {\em {Journal of Object Oriented Programming}}, 1(2):22--35.
+
+\bibitem[Kahn, 1974]{KahnProcessNetworks}
+Kahn, G. (1974).
+\newblock {The semantics of a simple language for parallel programming}.
+\newblock {\em {Information Processing}}, pages 471--475.
+
+\bibitem[Karjalainen, 1999]{KarjalainenImmersionAndContent}
+Karjalainen, M. (1999).
+\newblock {Immersion and Content - A Framework for Audio Research}.
+\newblock In {\em {Proceedings of the 1999 IEEE Workshop of Applications of
+  Signal Processing to Audio and Acoustics}}. IEEE.
+
+\bibitem[Kay, 1993]{Kay}
+Kay, A. (1993).
+\newblock {The Early History of Smalltalk}.
+\newblock In {\em {Proceedings of 2nd ACM SIGPLAN History of Programming
+  Languages Conference}}, volume~28 of {\em ACM SIGPLAN Notices}, pages 69--75.
+
+\bibitem[Kodish, 1993]{GeneralSemantics}
+Kodish, B. (1993).
+\newblock Getting off hayakawa's ladder.
+\newblock {\em General Semantics Bulletin}, (57):65--76.
+
+\bibitem[Kruchten, 2000]{RUP}
+Kruchten, P. (2000).
+\newblock {\em {The Rational Unified Process: An Introduction}}.
+\newblock Addison-Wesley, second edition.
+
+\bibitem[Kuhn, 1962]{KuhnScientificRevolution}
+Kuhn, T. (1962).
+\newblock {\em {The Structure of Scientific Revolutions}}.
+\newblock University of Chicaho Press.
+
+\bibitem[Landis and Niklasson, 1995]{EricssonOOFrameworks}
+Landis, N. and Niklasson, A. (1995).
+\newblock {Development of Object-Oriented Frameworks}.
+\newblock Master's thesis, Lund University.
+
+\bibitem[Lanski, 1990]{CmixLanski90}
+Lanski, P. (1990).
+\newblock The architecture and musical logic and cmix.
+\newblock In {\em {Proceedings of the 1990 International Computer Music
+  Conference (ICMC 90)}}.
+
+\bibitem[Larman, 2002]{LarmanUMLandPatterns}
+Larman, C. (2002).
+\newblock {\em {Applying UML and Patterns: An Introduction to Object-Oriented
+  Analysis and Design and the Unified Process}}.
+\newblock Prentice-Hall, second edition.
+
+\bibitem[Lassfolk, 1995]{SPKit}
+Lassfolk, K. (1995).
+\newblock Sound processing kit.
+\newblock In {\em {Proceedings of the 1995 International Computer Music
+  Conference (ICMC 95)}}.
+
+\bibitem[Law and Kelton, 2000]{LawSimulationModelling}
+Law, A.~M. and Kelton, W.~D. (2000).
+\newblock {\em {Simulation Modeling and Analysis}}.
+\newblock McGrawHill, 3rd edition.
+
+\bibitem[Lazzarini, 1998]{LazzariniOrganizedSound98}
+Lazzarini, V. (1998).
+\newblock {A Proposed Design for an Audio Processing System}.
+\newblock {\em {Organized Sound}}.
+
+\bibitem[Lazzarini, 2000a]{LazzariniBrazil00}
+Lazzarini, V. (2000a).
+\newblock {Some Applications of the SndObj Library}.
+\newblock In {\em {Proceedings of the VII Brazilian Computer Music Symposium}}.
+
+\bibitem[Lazzarini, 2000b]{LazzariniSndObjOrganized00}
+Lazzarini, V. (2000b).
+\newblock {The Sound Object Library}.
+\newblock {\em {Organized Sound}}, 5(1):35--49.
+
+\bibitem[Lazzarini, 2001]{LazzariniSndObjDafx01}
+Lazzarini, V. (2001).
+\newblock {Sound Processing with the SndObj Library: An Overview}.
+\newblock In {\em {Proceedings of the 4th International Conference on Digital
+  Audio Effects (DAFX '01)}}.
+
+\bibitem[Lazzarini and Accorsi, 1998]{LazzariniBrazil98}
+Lazzarini, V. and Accorsi, F. (1998).
+\newblock {Designing a Sound Object Library}.
+\newblock In {\em {Proceedings of the V Brazilian Computer Music Symposium}}.
+
+\bibitem[Lazzaro and Wawrzynek, 2001]{LazzaroSfront}
+Lazzaro, J. and Wawrzynek, J. (2001).
+\newblock {Compiling MPEG 4 Structured Audio into C}.
+\newblock In {\em {Proceedings of the Second IEEE MPEG-4 Workshop and
+  Exhibition}}, San Jose, California.
+
+\bibitem[Lee and Park, 1995]{LeeAndTomasDataflowNetworks}
+Lee, E. and Park, T. (1995).
+\newblock {Dataflow Process Networks}.
+\newblock In {\em {Proceedings of the IEEE}}, volume~83, pages 773--799.
+
+\bibitem[Lindermann, 1991]{LinermannANIMAL}
+Lindermann, E. (1991).
+\newblock {ANIMAL - a Rapid Prototyping Environment for Computer Music
+  Systems}.
+\newblock {\em {Computer Music Journal}}, 15(3):78--100.
+
+\bibitem[Lindsay and Kriechbaum, 1999]{LindsayMultipleRepresentationsInMPEG7}
+Lindsay, A. and Kriechbaum, W. (1999).
+\newblock {There's More Than One Way to Hear It: Multiple Representations of
+  Music in MPEG-7}.
+\newblock {\em {Journal of New Music Research}}.
+
+\bibitem[Liu et~al., 2004]{LiuActorOrientation}
+Liu, J., Eker, J., Janneck, J.~W., Liu, X., and Lee, E.~A. (2004).
+\newblock {Actor-oriented Control System Design: A Responsible Framework
+  Perspective}.
+\newblock {\em {IEEE Transactions on Control System Technology}}, 12(2).
+
+\bibitem[Makhoul, 1975]{LPC}
+Makhoul, J. (1975).
+\newblock {Linear Prediction: A Tutorial Review}.
+\newblock In {\em {Proceedings of the IEEE}}, volume~63, pages 561--580.
+
+\bibitem[Manjunath et~al., 2002]{MPEG7Book}
+Manjunath, B., Salembier, P., and Sikora, T., editors (2002).
+\newblock {\em {Introduction to MPEG 7: Multimedia Content Description
+  Language}}.
+\newblock John Wiley and Sons, Ltd, West Sussex, England.
+
+\bibitem[Manolescu, 1997]{ManulescuDataflowPatterns}
+Manolescu, D.~A. (1997).
+\newblock {A Dataflow Pattern Language}.
+\newblock In {\em {Proceedings of the 4th Pattern Languages of Programming
+  Conference}}.
+
+\bibitem[Martínez, 2002]{MPEG7Overview}
+Martínez, J. (2002).
+\newblock {Overview of MPEG-7 Standard (version 5.0)}.
+\newblock Technical Report ISO/IEC JTC1/SC29/WG11 N4031, MPEG.
+\newblock available at http://www.cselt.it/mpeg/standards/mpeg-7/mpeg-7.htm.
+
+\bibitem[Mathews and Pasquale, 1981]{MathewsRTSKED}
+Mathews, M. and Pasquale, J. (1981).
+\newblock {RTSKED, a Scheduled Performance Language for the Crumar General
+  Development System}.
+\newblock In {\em {Proceedings of the 1981 International Computer Music
+  Conference (ICMC '81)}}, page 286.
+
+\bibitem[Mathews, 1969]{MathewsTechnology}
+Mathews, M.~V. (1969).
+\newblock {\em {The Technology of Computer Music}}.
+\newblock MIT Press.
+
+\bibitem[Mc~Millen, 1994]{ZIPI}
+Mc~Millen, K. (1994).
+\newblock {ZIPI: Origins and Motivations}.
+\newblock {\em {Computer Music Journal}}, 18(4):48--96.
+
+\bibitem[McCartney, 2002]{McCartneySupercolliderCMJ}
+McCartney, J. (2002).
+\newblock {Rethinking the Computer Music Language: SuperCollider}.
+\newblock {\em {Computer Music Journal}}, 26(4):61--68.
+
+\bibitem[McReynolds et~al., 1999]{McReynolsSubjectProcessAndObject}
+McReynolds, D., Duggins, S., Galli, D., and Mayer, J. (1999).
+\newblock {Distributed Characteristics of Subject Oriented Programming: An
+  Evaluation with the Process and Object Paradigms}.
+\newblock In {\em {Proceedings of the 1999 ACM Southeast Regional Conference}}.
+
+\bibitem[Mead, 1910]{MeadMeaning}
+Mead, G.~H. (1910).
+\newblock Social consciousness and the consciousness of meaning.
+\newblock {\em Psychological Bulletin}, (7):397--405.
+
+\bibitem[Meequel et~al., 1997]{MeequelFromModelsToFrameworks}
+Meequel, J., Horton, T.~B., France, R.~B., Mellone, C., and Dalvi, S. (1997).
+\newblock {From Domain Models to Architecture Frameworks}.
+\newblock {\em {ACM SIGSOFT Software Engineering Notes}}, 22(3).
+
+\bibitem[Meller et~al., 2003]{MellerModelDrivenDevelopment}
+Meller, S.~J., Clark, A.~M., and Futagami, T. (2003).
+\newblock {Model Driven Development}.
+\newblock {\em {IEEE Software}}.
+
+\bibitem[Mellinger et~al., 1991]{MellingerVirtualDSP}
+Mellinger, D.~K., Garnett, G.~E., and Mont-Reynaud, B. (1991).
+\newblock {\em {The Well-tempered Object. Musical Applications of
+  Object-Oriented Software Technology}}, chapter Virtual Digital Signal
+  Processing in an Object-Oriented System, pages 188--194.
+\newblock MIT Press.
+
+\bibitem[Meunier, 1995]{MeunierPipesAndFilter}
+Meunier, R. (1995).
+\newblock {The Pipes and Filter Architecture}.
+\newblock In Coplien, J.~O. and Schmidt, D.~C., editors, {\em {Pattern
+  Languages of Program Design}}, volume vol.1, chapter~22. Addison-Wesley.
+
+\bibitem[Microsystems, ]{Javadoc}
+Microsystems, S.
+\newblock How to write doc comments for the javadoc tool.
+\newblock Published online at java.sun.com/j2se/javadoc/writingdoccomments.
+
+\bibitem[Mili et~al., 1995]{OOPSLAMetamodeling}
+Mili, H., Pachet, F., Benyahia, I., and Eddy, F. (1995).
+\newblock {Metamodeling in OO. OOPSLA '95 Workshop summary}.
+
+\bibitem[MMA, 1998]{MIDISpecification}
+MMA (1998).
+\newblock {\em {MIDI 1.0 Detailed Specification}}.
+\newblock MIDI Manufacturers Association, Los Angeles.
+
+\bibitem[Moore et~al., 1997]{MooreLoudness}
+Moore, B., Glasberg, B., and Baer, T. (1997).
+\newblock {A Model for the Prediction of Thresholds, Loudness, and Partial
+  Loudness}.
+\newblock {\em {Journal of the Audio Engineering Society}}, 45(4):224--240.
+
+\bibitem[Moser and Nierstrasz,
+  1996]{MoserNierstraszOOFrameworksAndProductivity}
+Moser, S. and Nierstrasz, O. (1996).
+\newblock {The Effect of Object-Oriented Frameworks on Developer Productivity}.
+\newblock {\em {IEEE Computer}}, pages 45--51.
+
+\bibitem[Murata, 1989]{MurataPetriNets}
+Murata, T. (1989).
+\newblock {Petri Nets: Properties, Analysis and Applications}.
+\newblock In {\em {Proceedings of the IEEE}}, volume~77.
+
+\bibitem[Nakatani and Okuno, 1998]{NakataniCASASoundOntology}
+Nakatani, T. and Okuno, H. (1998).
+\newblock {Sound Ontology for Computational Auditory Scene Analysis}.
+\newblock In {\em {Proceeding for the 1998 conference of the American
+  Association for Artificial Intelligence}}.
+
+\bibitem[Nelson, 1994]{NelsonForum}
+Nelson, C. (1994).
+\newblock {A Forum for Fitting the Task}.
+\newblock {\em {IEEE Computer}}, 27(3):104.
+
+\bibitem[NeXT, 1990]{NextScoreFile}
+NeXT (1990).
+\newblock {\em {ScoreFile Language Reference. Release 2.0}}.
+\newblock NeXT Computer Inc.
+
+\bibitem[Niu et~al., 2004]{NiuOOPetriNets}
+Niu, J., Zou, J., and Ren, A. (2004).
+\newblock Oopn: An object-oriented petri nets and its integrated environment.
+\newblock Technical report, City University of New York.
+
+\bibitem[Noble et~al., 2002]{NobleMetaphorAndMetonymyInOO}
+Noble, J., Biddle, R., and Tempero, E. (2002).
+\newblock {Metaphor and Metonymy in Object-Oriented Design Patterns}.
+\newblock In {\em {Proceedings of the 25th Australasian Computer Science
+  Conference (ASC2002)}}, Melbourne, Australia.
+
+\bibitem[Nygaard, 1986]{NyggardBasicOOConcepts}
+Nygaard, K. (1986).
+\newblock {Basic Concepts in OO Programming}.
+\newblock In {\em {Proceedings of the 1986 SIGPLAN workshop on Object-oriented
+  programming}}, pages 128--132.
+
+\bibitem[Nygaard, 2001]{NygaardTeachingOO}
+Nygaard, K. (2001).
+\newblock {OO is Easy to Learn but Seldom Taught}.
+\newblock Invited talk in the 2001 Conference on Object Oriented Programming,
+  Systems, Languages and Applications, OOPSLA 01.
+
+\bibitem[Nygaard and Dahl, 1978]{NygaardDevelopmentOfSimula}
+Nygaard, K. and Dahl, O. (1978).
+\newblock {The Development of the Simula Languages}.
+\newblock In {\em {Proceedings of the 1st Conference on the History of
+  Programming Languages}}.
+
+\bibitem[Ogden and Richards, 1946]{RichardsMeaningOfMeaning}
+Ogden, C.~K. and Richards, I.~A. (1946).
+\newblock {\em {The Meaning of Meaning}}.
+\newblock Harcourt, Brace \& World, New York.
+
+\bibitem[OMG, 2003]{UML2.0}
+OMG (2003).
+\newblock {Unified Modeling Language (UML) Specification: Infrastructure,
+  version 2.0}.
+
+\bibitem[Opdyke, 1992]{OpdykeThesis}
+Opdyke, W. (1992).
+\newblock {\em {Refactoring Object-Oriented Frameworks}}.
+\newblock PhD thesis, University of Illinois at Urbana-Champaign.
+
+\bibitem[Opdyke and Johnson, 1990]{OpdykeJohnsonRefactoringInFrameworks}
+Opdyke, W. and Johnson, R. (1990).
+\newblock {Refactoring, an Aid in Designing Application Frameworks and Evolving
+  Object-oriented Systems}.
+\newblock In {\em {Proceeding of Symposium on Object Oriented Programming
+  Emphasizing Practical Applications (SOOPA)}}.
+
+\bibitem[Openheim and Willsky, 1997]{Openheim}
+Openheim, A.~V. and Willsky, A.~S. (1997).
+\newblock {\em {Signals and Systems}}.
+\newblock Prentice Hall, second edition.
+
+\bibitem[O'Riordan, 2002]{C++Performance}
+O'Riordan, M. (2002).
+\newblock {Technical Report on C++ Performance}.
+\newblock Technical Report N1396, ISO/IEC JTC1/SC22/WG21.
+
+\bibitem[Oswood, 1976]{OswoodMeasuringMeaning}
+Oswood, C.~E. (1976).
+\newblock {\em {Focus on Meaning Volume 1: Explorations in Semantic Space}}.
+\newblock Moulon, The Hague.
+
+\bibitem[Parks, 1995]{ParksProcessNetworksPhD}
+Parks, T.~M. (1995).
+\newblock {\em {Bounded Schedule of Process Networks}}.
+\newblock PhD thesis, University of California at Berkeley.
+
+\bibitem[Peeters et~al., 2000]{MPEG7InstrumentSoundDescriptionICMC}
+Peeters, G., McAdams, S., and Herrera, P. (2000).
+\newblock {Instrument Sound Description in the Context of MPEG-7}.
+\newblock In {\em {Proceedings of the 2000 International Computer Music
+  Conference}}, San Francisco. Computer Music Association.
+
+\bibitem[Petri, 1962]{PetriThesis}
+Petri, C. (1962).
+\newblock {\em {Kommunikation mit Automaten}}.
+\newblock PhD thesis, Technische Universitat Darmstadt, Germany.
+
+\bibitem[Petters et~al., 1999]{MPEG7TimbreCE}
+Petters, G., Herrera, P., and Amatriain, X. (1999).
+\newblock {Audio CE for Instrument Description (Timbre Similarity)}.
+\newblock Technical report, MPEG.
+
+\bibitem[Pfeiffer, 1999]{PfeifferPerceptiveAdaptation}
+Pfeiffer, S. (1999).
+\newblock {The Importance of Perceptive Adaptation of Sound Features in Audio
+  Content Processing}.
+\newblock In {\em {SPIE Storage and Retrieval for Image and Video Databases
+  VII}}, pages 328--337, San Jose, California, USA.
+
+\bibitem[Philipsen, 1995]{CMM}
+Philipsen, G. (1995).
+\newblock {\em Watershed Research Traditions in Human Communications Theory},
+  chapter The Coordinated Management of Meaning Theory of Pearce, Cronenn and
+  Associates.
+\newblock State University of New York Press.
+
+\bibitem[Pope, 1991a]{Welltemperedobject}
+Pope, S., editor (1991a).
+\newblock {\em {The Well-tempered object, Musical Applications of
+  Object-Oriented Technology}}.
+\newblock MIT Press.
+
+\bibitem[Pope, 1998a]{PopeSirenOOPSLA}
+Pope, S. (1998a).
+\newblock {The Siren Music/Sound Package for Squeak Smalltalk}.
+\newblock In {\em {Proceedings of the 1998 Conference on Object Oriented
+  Programming, Systems and Application (OOPSLA 98)(Companion Material)}}.
+
+\bibitem[Pope et~al., 2001]{PopeCRAM}
+Pope, S., Engberg, A., Holm, F., and Wolf, A. (2001).
+\newblock {The Distributed Processing Environment for High-Performance
+  Distributed Multimedia Applications}.
+\newblock In {\em {Proceedings of the 2001 IEEE Multimedia Technology and
+  Applications Conference}}.
+
+\bibitem[Pope, 1987]{PopeSmalltalkMusikKit}
+Pope, S.~T. (1987).
+\newblock {A Smalltalk-80-based Music Toolkit}.
+\newblock In {\em {Proceedings of the 1987 International Computer Music
+  Conference (ICMC '87)}}. Computer Music Association.
+\newblock Also in Journal of Object-Oriented Programming 1(1): 6-14.
+
+\bibitem[Pope, 1991b]{PopeOOinMODE}
+Pope, S.~T. (1991b).
+\newblock {Object-Oriented Design Elements in the MODE System}.
+\newblock {\em {Journal of Object-Oriented Programming}}.
+
+\bibitem[Pope, 1991c]{PopeMODE91}
+Pope, S.~T. (1991c).
+\newblock {\em {The Well-tempered Object. Musical Applications of
+  Object-Oriented Software Technology}}, chapter Introduction to MODE: The
+  Musical Object Development Environment, pages 83--106.
+\newblock MIT Press.
+
+\bibitem[Pope, 1991d]{PopeMachineTonguesIX}
+Pope, S.~T. (1991d).
+\newblock {\em {The well-tempered Object. Musical Applications of
+  Object-Oriented Software Technology}}, chapter Machine Tongues XI:
+  Object-Oriented Software Design, pages 32--48.
+\newblock MIT Press.
+
+\bibitem[Pope, 1992]{PopeSmoke}
+Pope, S.~T. (1992).
+\newblock {The SmOKe Music Representation, Description Language, and
+  Interchange Format}.
+\newblock In {\em {Proceedings of the 1992 International Computer Music
+  Conference (ICMC '92)}}. Computer Music Association.
+\newblock Also in Journal of Object-Oriented Programming 1(1): 6-14.
+
+\bibitem[Pope, 1994]{PopeMODE94}
+Pope, S.~T. (1994).
+\newblock {The Musical Object Development Environment: MODE (Ten Years of Music
+  Software in Smalltalk)}.
+\newblock In {\em {Proceedings of the 1994 International Computer Music
+  Conference (ICMC94)}}. Computer Music Association.
+
+\bibitem[Pope, 1997]{PopeOOMusic}
+Pope, S.~T. (1997).
+\newblock {\em {Musical Signal}}, chapter Object-oriented Music Representation.
+\newblock Swets and Zeitlinger.
+
+\bibitem[Pope, 1998b]{PopeEventGenerators}
+Pope, S.~T. (1998b).
+\newblock {Modeling Musical Structures as EventGenerators}.
+\newblock In {\em {Proceedings of the 1998 International Computer Music
+  Conference (ICMC98)}}. Computer Music Association.
+
+\bibitem[Pope, 2001]{PopeSirenBookChapter}
+Pope, S.~T. (2001).
+\newblock {\em {Squeak: Open Personal Computing and Multimedia}}, chapter Music
+  and Sound Processing in Squeak Using Siren.
+\newblock Prentice Hall.
+
+\bibitem[Pope, 2003]{PopeSirenRecentDevelopments}
+Pope, S.~T. (2003).
+\newblock {Recent Developments in Siren: Modeling, Control and Interaction for
+  Large-scale Distributed Music Software}.
+\newblock In {\em {Proceedings of the 2003 International Computer Music
+  Conference (ICMC '03)}}. Computer Music Association.
+\newblock Also in Journal of Object-Oriented Programming 1(1): 6-14.
+
+\bibitem[Pope, 2004]{PopeSuperCollider}
+Pope, S.~T. (2004).
+\newblock {Sound and Music Processing in SuperCollider}.
+\newblock Unpublished book draft.
+
+\bibitem[Pope and Ramakrishnan, 2003]{PopeCSL}
+Pope, S.~T. and Ramakrishnan, C. (2003).
+\newblock {The Create Signal Library ("Sizzle"): Design, Issues and
+  Applications}.
+\newblock In {\em {Proceedings of the 2003 International Computer Music
+  Conference (ICMC '03)}}.
+
+\bibitem[Posnak et~al., 1996]{PosnakAdaptivePipeline}
+Posnak, E.~J., Lavender, R.~G., and Vin, H.~M. (1996).
+\newblock {Adaptive pipeline: an object structural pattern for adaptive
+  applications}.
+\newblock In {\em {Proceedings of the 3rd Pattern Languages of Programming
+  Conference}}, Monticello, Illinois.
+
+\bibitem[Puckette, 1988]{PuckettePatcher}
+Puckette, M. (1988).
+\newblock {The Patcher}.
+\newblock In {\em {Proceedings of the 1988 International Music Conference (ICMC
+  '88)}}, pages 420--429.
+
+\bibitem[Puckette, 1991a]{PucketteMAXEventSignal}
+Puckette, M. (1991a).
+\newblock {Combining Event and Signal Processing in the MAX Graphical
+  Programming Environment}.
+\newblock {\em {Computer Music Journal}}.
+
+\bibitem[Puckette, 1991b]{PucketteFTS}
+Puckette, M. (1991b).
+\newblock {FTS: A Real-time Monitor for Multiprocessor Music Synthesis}.
+\newblock {\em {Computer Music Journal}}, 15(3):58--67.
+
+\bibitem[Puckette, 1996]{PuckettePD96}
+Puckette, M. (1996).
+\newblock {Pure Data: Another Integrated Computer Music Environment}.
+\newblock In {\em {Proceedings of the Second Intercollege Computer Music
+  Concerts}}, pages 37--41, Tachikawa.
+
+\bibitem[Puckette, 1997a]{PuckettePD97}
+Puckette, M. (1997a).
+\newblock {Pure Data}.
+\newblock In {\em {Proceedings of the 1997 International Music Conference (ICMC
+  '97)}}, pages 224--227. Computer Music Association.
+
+\bibitem[Puckette, 1997b]{PuckettePDRecentProgress}
+Puckette, M. (1997b).
+\newblock {Pure Data: Recent Progress}.
+\newblock In {\em {Proceedings of the Third Intercollege Computer Music
+  Festiva}}, pages 1--4, Tokyo, Japan.
+
+\bibitem[Puckette, 2002]{PucketteMax2002}
+Puckette, M. (2002).
+\newblock {Max at Seventeen}.
+\newblock {\em {Computer Music Journal}}, 26(4):31--43.
+
+\bibitem[Puckette, 2004]{PDDocumentation}
+Puckette, M. (2004).
+\newblock {\em {Pd Documentation}}.
+
+\bibitem[Puckette et~al., 1998]{PucketteAnalysisInPD-MSP}
+Puckette, M., Apel, T., and Zicarelli, D. (1998).
+\newblock {Real-time Audio Analysis Tools for Pd and MSP}.
+\newblock In {\em {Proceedings of the 1998 International Music Conference (ICMC
+  '98)}}. Computer Music Association.
+
+\bibitem[Purnhagen and Meine, 2000]{HILN-MP4Parametric}
+Purnhagen, H. and Meine, N. (2000).
+\newblock Hiln - the mpeg-4 parametric audio coding tools.
+\newblock In {\em {Proceedings of ISCAS 2000}}.
+
+\bibitem[Reggio, 2002]{ReggioMetamodelingUML}
+Reggio, G. (2002).
+\newblock {Metamodeling Behavioural Aspects: the Case of UML State Machines}.
+\newblock {\em {Integrated Design and Process Technology}}.
+
+\bibitem[Riddell and Bencina, 1996]{CmixICMC96}
+Riddell, A. and Bencina, R. (1996).
+\newblock Cmix on non-unix platforms.
+\newblock In {\em {Proceedings of the 1996 International Computer Music
+  Conference (ICMC 96)}}.
+
+\bibitem[Roberts and Johnson, 1996]{EvolvingFrameworksRobertsJohnson}
+Roberts, D. and Johnson, R. (1996).
+\newblock {Evolve Frameworks into Domain-Specific Languages}.
+\newblock In {\em {Procedings of the 3rd International Conference on Pattern
+  Languages for Programming}}, Monticelli, IL, USA.
+
+\bibitem[Robledo, 2002]{RAPPID}
+Robledo, E. (2002).
+\newblock {RAPPID: Robust Real Time Audio Processing with CLAM}.
+\newblock In {\em {Proceedings of 5th International Conference on Digital Audio
+  Effects}}, Hamburg, Germany.
+
+\bibitem[Rodet and Cointe, 1984]{RodetFORMES-CMJ}
+Rodet, X. and Cointe, P. (1984).
+\newblock {FORMES: Composition and Scheduling of Processes}.
+\newblock {\em {Computer Music Journal}}, 8(3).
+
+\bibitem[Rodet and Cointe, 1991]{RodetFORMES}
+Rodet, X. and Cointe, P. (1991).
+\newblock {\em {The well-tempered Object. Musical Applications of
+  Object-Oriented Software Technology}}, chapter FORMES: Composition and
+  Scheduling of Processes, pages 64--82.
+\newblock MIT Press.
+
+\bibitem[Rovan et~al., 1997]{ButchGesturalMapping}
+Rovan, J.~B., Wanderlay, M., Dubnov, S., and Depalle, P. (1997).
+\newblock {Instrumental Gestural Mapping Strategies as Expressivity
+  Determinants in Computer Music Performance}.
+\newblock In {\em {Proceedings of Kansei- The Technology of Emotion Workshop}},
+  Genova.
+
+\bibitem[Rowe, 1965]{RoweSystemCybernetics}
+Rowe, W. (1965).
+\newblock {Why System Science and Cybernetics?}
+\newblock {\em {IEEE Transactions on Systems and Cybernetics}}, 1:2--3.
+
+\bibitem[Sarria and Diago, 2003]{OpenMusicSarria03a}
+Sarria, G. and Diago, J. (2003).
+\newblock {OpenMusic for Linux and MacOS X}.
+\newblock Technical report.
+
+\bibitem[Scaletti, 1991]{ScalettiKyma-WTO}
+Scaletti, C. (1991).
+\newblock {\em {The Well-tempered Object. Musical Applications of
+  Object-Oriented Software Technology}}, chapter The Kyma/Platypus Computer
+  Music Workstation, pages 119--140.
+\newblock MIT Press.
+
+\bibitem[Scaletti, 2002]{ScalettiKyma2002}
+Scaletti, C. (2002).
+\newblock {Computer Music Languages, Kyma, and the Future}.
+\newblock {\em {Computer Music Journal}}, 26(4):69--82.
+
+\bibitem[Scaletti and Hebel, 1991]{ScalettiObjectAudioRepresentation}
+Scaletti, C. and Hebel, K. (1991).
+\newblock {\em {Representations of Musical Signals}}, chapter An Object-based
+  Representation for Digital Audio Signals.
+\newblock MIT Press.
+
+\bibitem[Scaletti and Johnson, 1988]{ScalettiKymaOOPSLA}
+Scaletti, C. and Johnson, R.~E. (1988).
+\newblock {An Interactive Environment for Object-Oriented Music Composition and
+  Sound Synthesis}.
+\newblock In {\em {Proceedings of the 1988 Conference on Objec-Oriented
+  Programming, Systems, Languages, and Applications (OOPSLA'88)}}, pages
+  25--30.
+
+\bibitem[Scavone, 2002]{RtAudioICMC02}
+Scavone, G. (2002).
+\newblock {RtAudio: A Cross-Platform C++ Class for Realtime Audio
+  Input/Output}.
+\newblock In {\em Proceedings of the 2002 International Computer Music
+  (ICMC'02)}.
+
+\bibitem[Schaeffer, 1966]{SchaefferObjects}
+Schaeffer, P. (1966).
+\newblock {\em {Traité des Objets Musicaux}}.
+\newblock Editions Du Seuil.
+
+\bibitem[Scheirer, 1998a]{ScheirerSAOLICMC}
+Scheirer, E. (1998a).
+\newblock {The MPEG-4 Structured Audio Orchestra Language}.
+\newblock In {\em {Proceeding for the 1998 International Computer Music
+  Conference (ICMC 98)}}, San Francisco. Computer Music Association.
+
+\bibitem[Scheirer, 1998b]{ScheirerMP4SA_ICASSP}
+Scheirer, E. (1998b).
+\newblock {The MPEG-4 Structured Audio Standard}.
+\newblock In {\em {Proceedings of the IEEE ICASSP 1998}}, Seattle, Washington,
+  USA.
+
+\bibitem[Scheirer, 1999a]{ScheirerAudioBIFS_IEEETransactions}
+Scheirer, E. (1999a).
+\newblock {AudioBIFS: Describing Audio Scenes with the MPEG-4 Multimedia
+  Standard}.
+\newblock {\em {IEEE Transactions on Multimedia}}, 1(3):237--250.
+
+\bibitem[Scheirer, 1999b]{ScheirerSAOL_CMJ}
+Scheirer, E. (1999b).
+\newblock {SAOL: the MPEG-4 Structured Audio Orchestra Language}.
+\newblock {\em {Computer Music Journal}}, 23(2):31--51.
+
+\bibitem[Scheirer, 1999c]{ScheirerStructuredAudioMultimediaSystems}
+Scheirer, E. (1999c).
+\newblock {Structured Audio and Effects Processing in the MPEG-4 Multimedia
+  Standard}.
+\newblock {\em {Multimedia Systems}}, (7):11--22.
+
+\bibitem[Scheirer, 2000]{Scheirer}
+Scheirer, E. (2000).
+\newblock {\em {Music Listening Systems}}.
+\newblock PhD thesis, Massachusets Institute of Technology (MIT).
+
+\bibitem[Scheirer, 2001]{ScheirerSAKolmogorov}
+Scheirer, E. (2001).
+\newblock {Structured Audio, Kolmogorov Complexity, and Generalized Audio
+  Coding}.
+\newblock {\em {IEEE Transactions on Speech and Audio Processing}}, 9(8).
+
+\bibitem[Scheirer and Kim, 1999]{ScheirerGeneralizedWithSA}
+Scheirer, E. and Kim, Y. (1999).
+\newblock {Generalized Audio Coding with MPEG-4 Structured Audio}.
+\newblock In {\em {Proceedints of the AES 17th Audio Conference on High Quality
+  Audio Coding}}, Villa Castelletti Signa, Italy.
+
+\bibitem[Scheirer et~al., 2000]{ScheirerSNHC}
+Scheirer, E., Lee, Y., and Yang, J. (2000).
+\newblock {Synthetic and SNHC audio in MPEG-4}.
+\newblock {\em {Signal Processing: Image Communication}}, (15):445--461.
+
+\bibitem[Scheirer et~al., 1998]{ScheirerAudioBIFS}
+Scheirer, E., Väänänen, R., and Huopaniemi, J. (1998).
+\newblock {AudioBIFS: The MPEG-4 Standard for Effects Processing}.
+\newblock In {\em {Proceedings of the first Digital Audio Effects Workshop
+  (DAFX '98)}}, Barcelona.
+
+\bibitem[Schoner et~al., 1998]{SchonerDataDrivenModelingInstrument}
+Schoner, B., Cooper, C., Douglas, C., and Gershenfeld, N. (1998).
+\newblock {Data-driven Modeling and Synthesis of Acoustical Instruments}.
+\newblock In {\em {Proceedings of the 1998 International Computer Music
+  Conference (ICMC 98)}}, San Francisco. Computer Music Association.
+
+\bibitem[Schottstaedt, 2004]{SndManual}
+Schottstaedt, B. (2004).
+\newblock {\em Snd Sound Editor Manual}.
+\newblock Available at http://ccrma.stanford.edu/software/snd/snd/snd.html.
+
+\bibitem[Schottstaedt, 2000]{SchottstaedtCommonLispMusic}
+Schottstaedt, W. (2000).
+\newblock {\em {Common Lisp Music Documentation}}.
+\newblock CCRMA-Stanford University,
+  http://www-ccrma-stanford.edu/software/clm.
+
+\bibitem[Schwarz and Wright, 2000]{SchwarzSDIF}
+Schwarz, D. and Wright, M. (2000).
+\newblock {Extensions and Applications of the SDIF Sound Description
+  Interchange Format}.
+\newblock In {\em {Proceedings of the 2000 International Computer Music
+  Conference (ICMC '00)}}.
+
+\bibitem[Seidewitz, 2003]{SeidewitzWhatModelsMean}
+Seidewitz, E. (2003).
+\newblock {What Models Mean}.
+\newblock {\em {IEEE Software}}.
+
+\bibitem[Seppänen and Kananoja, 1998a]{SonicFlowFunctSpec}
+Seppänen, J. and Kananoja, S. (1998a).
+\newblock {\em {Sonic Flow: A Program for the Design and Simulation of Audio
+  Signal Processing Networks. Functional Specification}}.
+
+\bibitem[Seppänen and Kananoja, 1998b]{SonicFlowTechSpec}
+Seppänen, J. and Kananoja, S. (1998b).
+\newblock {\em {Sonic Flow: A Program for the Design and Simulation of Audio
+  Signal Processing Networks. Technical Specification}}.
+
+\bibitem[Serra, 1989]{SerraPhd}
+Serra, X. (1989).
+\newblock {\em {A System for Sound Analysis/Transformation/Synthesis based on a
+  Deterministic plus Stochastic Decomposition}}.
+\newblock PhD thesis, Stanford University.
+
+\bibitem[Serra, 1990]{SerraSMSCMJ}
+Serra, X. (1990).
+\newblock {Spectral Modeling Synthesis: A Sound Analysis/Synthesis System based
+  on a Deterministic plus Stochastic Decomposition}.
+\newblock {\em {Computer Music Journal}}, 14(4):12--24.
+
+\bibitem[Serra, 1996]{SerraSMSBook}
+Serra, X. (1996).
+\newblock {\em {Musical Signal Processing}}, chapter Musical Sound Modeling
+  with Sinusoids plus Noise.
+\newblock Swets Zeitlinger Publishers.
+
+\bibitem[Serra and Bonada, 1998]{SerraHighLevelTransDAFX}
+Serra, X. and Bonada, J. (1998).
+\newblock {Sound Transformations Based on the SMS High Level Attributes}.
+\newblock In {\em {Proceedings of the 1st International Conference on Digital
+  Audio Effects (DAFX98)}}, Barcelona, Spain.
+
+\bibitem[Shannon and Weaver, 1949]{ShannonWeaver}
+Shannon, C. and Weaver, W. (1949).
+\newblock {\em {The Mathematical Theory of Communication}}.
+\newblock University of Illinois Press, Urbana.
+
+\bibitem[Shaw, 1996]{ShawPatternsForSoftwareArchitecture}
+Shaw, M. (1996).
+\newblock {Some Patterns for Software Architecture}.
+\newblock In Vlissides, J.~M., Coplien, J.~O., and Kerth, N.~L., editors, {\em
+  {Pattern Languages of Program Design}}, volume vol.2, chapter~16.
+  Addison-Wesley.
+
+\bibitem[Shreiner, 2004]{OpenGL}
+Shreiner, D., editor (2004).
+\newblock {\em {OpenGL 1.4 Reference Manual 4th Edition}}.
+\newblock Addison Wesley Professional.
+
+\bibitem[Simon, 1996]{SimonArtificial}
+Simon, H.~A. (1996).
+\newblock {\em {The Sciences of the Artificial}}.
+\newblock MIT Press, 3erd edition edition.
+
+\bibitem[Snyder and Oswood, 1967]{OswoodSemanticDifferential}
+Snyder, J.~G. and Oswood, C.~E., editors (1967).
+\newblock {\em {Semantic Differential Technique}}.
+\newblock Aldine, Chicago.
+
+\bibitem[Solà, 1997]{SolaPiano}
+Solà, J. (1997).
+\newblock {Disseny i Implementació d'un Sintetitzador de Piano}.
+\newblock Master's thesis, Universitat Politècnica de Catalunya (UPC).
+
+\bibitem[Strom, 1986]{StromComparingOOandProcess}
+Strom, R. (1986).
+\newblock {A Comparison of the Object-Oriented and Process Paradigm}.
+\newblock In {\em {Sigplan Notices}}, volume~21.
+
+\bibitem[Stroustrup, 1995]{StroustrupWhyC++}
+Stroustrup, B. (1995).
+\newblock {Why C++ is not only an Object-Oriented Programming Language}.
+\newblock In {\em {Proceedings of the 1995 Conference on Object Oriented
+  Programming, Systems and Languages (OOPSLA 95)}}.
+
+\bibitem[Stroustrup, 1997]{StroustrupC++}
+Stroustrup, B. (1997).
+\newblock {\em {The C++ Programming Language}}.
+\newblock Addison Wesley, special edition edition.
+
+\bibitem[Taligent, 1994]{TaligentBuildingOOFrameworks}
+Taligent (1994).
+\newblock {Building Object-Oriented Frameworks, A Taligent White Paper}.
+\newblock Technical report, Taligent Inc.
+
+\bibitem[Taube, 1990]{TaubeCommonMusic90}
+Taube, H. (1990).
+\newblock {Common Music:A Music Composition Language in Common Lisp and CLOS}.
+\newblock {\em {Computer Music Journal}}, 15(2).
+
+\bibitem[Taube, 1998]{TaubeCommonMusic98}
+Taube, H. (1998).
+\newblock {Introduction to Common Music}.
+\newblock {\em {Computer Music Journal}}, 18(4):48--96.
+
+\bibitem[Temperley, 2004]{Melisma}
+Temperley, D. (2004).
+\newblock {\em The Cognition of Basic Musical Structures}.
+\newblock MIT Press.
+
+\bibitem[Todoroff, 2002]{TodoroffControlOfDAFX}
+Todoroff, T. (2002).
+\newblock {\em {DAFX: Digital Audio Effects}}, chapter {Control of Digital
+  Audio Effects}.
+\newblock John Wiley and Sons, Ltd.
+
+\bibitem[Tolonen, 2000]{TolonenObjectBased}
+Tolonen, T. (2000).
+\newblock {Object-Based Source Modeling for Musical Signals}.
+\newblock In {\em {Proceedings of the 109th Audio Engineering Society
+  Convention}}, Los Angeles.
+
+\bibitem[Tzanetakis, 2002]{TzanetakisPhD}
+Tzanetakis, G. (2002).
+\newblock {\em {Manipulation, Analysis and Retrieval Systems for Audio
+  Signals}}.
+\newblock PhD thesis, Princeton University.
+
+\bibitem[Tzanetakis and Cook, 1999]{TzanetakisEuromicron99}
+Tzanetakis, G. and Cook, P. (1999).
+\newblock {A Framework for Audio Analysis based on Classification and Temporal
+  Segmentation}.
+\newblock In {\em {Proceedings of Euromicron 99, Workshop on Music Technology
+  and Audio Processing}}.
+
+\bibitem[Tzanetakis and Cook, 2000]{TzanetakisMarsyasOS}
+Tzanetakis, G. and Cook, P. (2000).
+\newblock {Marsyas: A Framework for Audio Analysis}.
+\newblock {\em {Organized Sound}}, 4(3).
+
+\bibitem[Tzanetakis and Cook, 2002]{TzanetakisMarsyasBook}
+Tzanetakis, G. and Cook, P. (2002).
+\newblock {\em {Audio Information Retrieval using Marsyas}}.
+\newblock Kluewe Academic Publisher.
+
+\bibitem[van Dijk et~al., 2002]{DijkContextAwareProcessNetworks}
+van Dijk, H.~W., Sips, H.~J., and Deprettere, E.~F. (2002).
+\newblock {On Context-aware Process Networks}.
+\newblock In {\em {Proceedings of the International Symposium on Mobile
+  Multimedia \& Applications (MMSA 2002))}}.
+
+\bibitem[Varró and Patarizca, 2002]{VarroMathematicalMetamodelling}
+Varró, D. and Patarizca, A. (2002).
+\newblock {VPM: Mathematics of Metamodeling is Metamodeling Mathematics}.
+\newblock {\em {SoSyM Journal - Special section on UML}}.
+
+\bibitem[Vercoe, 1992]{VercoeCSound}
+Vercoe, B.~L. (1992).
+\newblock {\em {CSound . The CSound Manual Version 3.48. A Manual for the Audio
+  Processing System and supporting program with Tutorials}}.
+
+\bibitem[Vercoe et~al., 1998]{VercoeStructuredAudio}
+Vercoe, B.~L., Gardner, W.~G., and Scheirer, E. (1998).
+\newblock {Structured Audio: Creation, Transmission, and Rendering of
+  Parametric Sound Representations}.
+\newblock In {\em {Proceedings of the IEEE}}, volume~86.
+
+\bibitem[Vinet et~al., 2002]{Cuidado}
+Vinet, H., Herrera, P., and Pachet, F. (2002).
+\newblock The cuidado project.
+\newblock In {\em Proceedings of the 3rd International Symposium on Music
+  Information Retrieval (ISMIR 2002)}.
+
+\bibitem[W3C, 1999]{XSLTWeb}
+W3C (1999).
+\newblock {World Wide Web Consortium (W3C)'s XSL Transformations (XSLT) Version
+  1.0}.
+\newblock www.w3.org/TR/xslt.
+
+\bibitem[Wanderley and Battier, 2000]{WanderlayGesturalControl}
+Wanderley, M. and Battier, M., editors (2000).
+\newblock {\em {Trends in Gestural Control of Music}}.
+\newblock Ircam, Paris.
+
+\bibitem[Webb et~al., 1999]{WebbProcessNetworks}
+Webb, D., Wendelborn, A., and Maciunas, K. (1999).
+\newblock {Process Networks as Higher-level Notation for Metacomputing}.
+
+\bibitem[Weinand et~al., 1989]{WeinandET++89}
+Weinand, A., Gamma, E., and Marty, R. (1989).
+\newblock {Design and Implementation of ET++, a Seamless Object-Oriented
+  Application Framework}.
+\newblock {\em {Structured Programming}}, 10(2).
+
+\bibitem[Wessel, 1979]{WesselTimbreSpace}
+Wessel, D. (1979).
+\newblock {Timbre Space as a Musical Control Structure}.
+\newblock {\em {Computer Music Journal}}, 2(3).
+
+\bibitem[West, 2002]{WestMetaphor}
+West, D. (2002).
+\newblock {Metaphor, Architecture and XP}.
+\newblock In {\em {Proceedings of the 2002 XP Conference}}.
+
+\bibitem[Wright, 1998a]{WrightOSC-ICMC}
+Wright, M. (1998a).
+\newblock {Implementation and Performance Issues with Open Sound Control}.
+\newblock In {\em {Proceedings of the 1998 International Computer Music
+  Conference (ICMC '98)}}. Computer Music Association.
+
+\bibitem[Wright, 1998b]{WrightSDIFNewApplications}
+Wright, M. (1998b).
+\newblock New applications of the sound description interchange format.
+\newblock In {\em {Proceedings of the 1998 International Computer Music
+  Conference (ICMC98)}}.
+
+\bibitem[Wright, 1999]{WrightSDIFAudioApplications}
+Wright, M. (1999).
+\newblock Audio applications of the sound description interchange format.
+\newblock In {\em {Proceedings of the 107th AES Convention}}.
+
+\bibitem[www-Agnula, ]{www-Agnula}
+www-Agnula.
+\newblock {AGNULA (A GNU Linux Audio Distribution) homepage,
+  http://www.agnula.org}.
+
+\bibitem[www-AudioMulch, ]{www-AudioMulch}
+www-AudioMulch.
+\newblock {AudioMulch webpage: http://www.audiomulch.com}.
+
+\bibitem[www-BarryVercoe, ]{www-BarryVercoe}
+www-BarryVercoe.
+\newblock {Professor Barry Vercoe's home page}.
+\newblock http://web.media.mit.edu/~bv.
+
+\bibitem[www-CLAM, ]{www-CLAM}
+www-CLAM.
+\newblock {CLAM website: http://www.iua.upf.es/mtg/clam}.
+
+\bibitem[www-Doxygen, ]{www-Doxygen}
+www-Doxygen.
+\newblock Doxygen documentation system homepage: www.doxygen.org.
+
+\bibitem[www-FFTW, ]{www-FFTW}
+www-FFTW.
+\newblock Faster fourier transform of the west (fftw) homepage:
+  http://www.fftw.org.
+
+\bibitem[www-FLTK, ]{www-FLTK}
+www-FLTK.
+\newblock The fast light toolkit (fltk) homepage: http://www.fltk.org.
+
+\bibitem[www-id3lib, ]{www-id3lib}
+www-id3lib.
+\newblock The id3 tagging library homepage: http://id3lib.sourceforge.net/.
+
+\bibitem[www-JaffeMusicKit, ]{www-JaffeMusicKit}
+www-JaffeMusicKit.
+\newblock David jaffe's musickit site: www.jaffe.com/mk97.html.
+
+\bibitem[www-libsndfile, ]{www-libsndfile}
+www-libsndfile.
+
+\bibitem[www-Mantis, ]{www-Mantis}
+www-Mantis.
+\newblock Mantis bug-tracker homepage: www.mantisbt.org.
+
+\bibitem[www-Metamodel, ]{www-Metamodel}
+www-Metamodel.
+\newblock Community site for meta-modeling and semantic modeling.
+\newblock http://www.metamodel.com.
+
+\bibitem[www-MTG, ]{www-MTG}
+www-MTG.
+\newblock {Homepage of the Music Technology Group (MTG) from the Universitat
+  Pompeu Fabra}.
+
+\bibitem[www-MusicKit, ]{www-MusicKit}
+www-MusicKit.
+\newblock The music kit homepage at sourceforge:
+  www.sourceforge.net/projects/musickit.
+
+\bibitem[www-OSW, ]{www-OSW}
+www-OSW.
+\newblock {Open Sound World (OSW) webpage: http://www.cnmat.berkeley.edu/OSW}.
+
+\bibitem[www-PD, ]{www-PD}
+www-PD.
+\newblock {Pure Data (PD) homepage: http://www.pure-data.org/}.
+
+\bibitem[www-PortAudio, ]{www-PortAudio}
+www-PortAudio.
+\newblock {PortAudio homepage: www.portaudio.com}.
+
+\bibitem[www-PortMIDI, ]{www-PortMIDI}
+www-PortMIDI.
+\newblock {Port Music homepage: http://www-2.cs.cmu.edu/~music/portmusic/}.
+
+\bibitem[www-Ptolemy, ]{www-Ptolemy}
+www-Ptolemy.
+\newblock Ptolemy project home page.
+\newblock http://ptolemy.eecs.berkely.edu.
+
+\bibitem[www-QT, ]{www-QT}
+www-QT.
+\newblock Qt homepage by trolltech.
+\newblock http://www.trolltech.com.
+
+\bibitem[www-RtAudio, ]{www-RtAudio}
+www-RtAudio.
+\newblock {RtAudio homepage: www.music.mcgill.ca/~gary/rtaudio}.
+
+\bibitem[www-Siren, ]{www-Siren}
+www-Siren.
+\newblock {Siren Webpage: http://www.create.ucsb.edu/Siren}.
+
+\bibitem[www-SndObj, ]{www-SndObj}
+www-SndObj.
+\newblock {SndObj library homepage:
+  http://www.may.ie/academic/music/musictec/SndObj/main.html}.
+
+\bibitem[www-SoundsLogical, ]{www-SoundsLogical}
+www-SoundsLogical.
+\newblock {Sounds Logical (makers of WaveWarp) webpage:
+  http://www.soundslogical.com}.
+
+\bibitem[www-SymbolicSound, ]{www-SymbolicSound}
+www-SymbolicSound.
+\newblock {Symbolic Sound Corporation (creators of Kyma) webpage:
+  http://www.symbolicsound.com}.
+
+\bibitem[www-XML, ]{www-XML}
+www-XML.
+\newblock World wide web consortium (w3c)'s xml homepage:
+  http://www.w3.org/xml/.
+
+\bibitem[www-XMLMusic, ]{www-XMLMusic}
+www-XMLMusic.
+\newblock Xml and music: http://xml.coverpages.org/xmlmusic.html.
+
+\bibitem[www-XMLSchema, ]{www-XMLSchema}
+www-XMLSchema.
+\newblock {World Wide Web Consortium (W3C)'s XML-Schema homepage,
+  http://www.w3.org/XML/Schema}.
+
+\bibitem[Xercesc, ]{www-Xercesc}
+Xercesc.
+\newblock Xerces c++ parser homepage: http://xml.apache.org/xerces-c.
+
+\bibitem[Zicarelli, 2002]{ZicarelliMax2002}
+Zicarelli, D. (2002).
+\newblock {How I Learned to Love a Program that Does Nothing}.
+\newblock {\em {Computer Music Journal}}, 26(4):44--51.
+
+\end{thebibliography}

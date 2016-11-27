@@ -1,0 +1,332 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Object-Oriented Content Transmission Metamodel </TITLE>
+<META NAME="description" CONTENT="The Object-Oriented Content Transmission Metamodel ">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node182.html">
+<LINK REL="previous" HREF="node135.html">
+<LINK REL="up" HREF="Thesis_forHTML.html">
+<LINK REL="next" HREF="node156.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2154"
+  HREF="node156.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2152"
+  HREF="Thesis_forHTML.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2146"
+  HREF="node154.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2155"
+  HREF="node156.html">Motivation</A>
+<B> Up:</B> <A NAME="tex2html2153"
+  HREF="Thesis_forHTML.html">Thesis_forHTML</A>
+<B> Previous:</B> <A NAME="tex2html2147"
+  HREF="node154.html">Summary and Conclusions</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00600000000000000000"></A><A NAME="ch:_OOCTM"></A>
+<BR>
+The Object-Oriented Content Transmission Metamodel 
+</H1>
+
+<P>
+The basic DSPOOM metamodel has proven to be useful for modeling DSP
+processes and applications. The present chapter is concerned with
+the applicability of the metamodel to more abstract processes that
+are related to the DSP domain but also to higher-level semantic domains.
+It turns out that this new metamodel, instance of the basic DSPOOM,
+fits well to the idea of Content Transmission. We introduced the idea
+of Content Transmission in [<A
+ HREF="node207.html#xamatContentTransmissionDAFX">Amatriain and Herrera, 2001a</A>] and
+later developed it in [<A
+ HREF="node207.html#xamatAES">Amatriain and Herrera, 2001b</A>], where the Object-oriented
+Content Transmission Metamodel (OOCTM) was first presented as such.
+In the present chapter we will highlight its main features.
+
+<P>
+As audio and music processing applications tend to increase their
+level of abstraction and to approach the end-user level it seems clear
+that one of the focuses is to step up from the signal processing realm
+and directly address the content level of an audio source. The term
+content-processing is therefore becoming commonly accepted [<A
+ HREF="node207.html#CamurriMusicContentProcessing">Camurri, 1999</A>,<A
+ HREF="node207.html#ChiariglioneValueContent">Chiariglione, 2000</A>,<A
+ HREF="node207.html#KarjalainenImmersionAndContent">Karjalainen, 1999</A>].
+Content processing is a general term that includes applications such
+as content analysis, content-based transformations or content-based
+retrieval. 
+
+<P>
+While manual annotation has been used for many years in different
+applications, the focus now is on finding automatic content extraction
+and content processing tools. An increasing number of projects focus
+on the extraction of meaningful features from an audio signal. Meanwhile,
+standards like MPEG7 [<A
+ HREF="node207.html#MPEG7Overview">Mart&#237;nez, 2002</A>,<A
+ HREF="node207.html#MPEG7Book">Manjunath et&nbsp;al., 2002</A>] are trying to
+find a convenient way of describing audiovisual content. Nevertheless,
+content description is usually thought of as an additional information
+stream attached to the actual content and the only envisioned scenario
+is that of a search and retrieval framework.
+
+<P>
+The basic idea when implementing a content processing scheme is to
+have a previous analysis step in which the content of the signal is
+identified and described. Then this description can be classified,
+transmitted, or transformed. Content description is usually thought
+of as an additional stream of information to be attached to the actual
+content. However, if we are able to find a thorough and reliable description
+we can think of forgetting about the signal and concentrate on processing
+only its description. And, as it will later be discussed, the goal
+of finding an appropriate content description is very much related
+to the task of identifying and describing the so-called <SPAN  CLASS="textit">Sound
+Objects</SPAN>.
+
+<P>
+Bearing these previous ideas in mind, a metamodel of content transmission
+(see Figure <A HREF="#fig:OOCTM_diagram">5.1</A>) is proposed as a general framework
+for content-based applications. As we will later see any content-based
+application can be modeled as a subset of this metamodel. 
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:OOCTM_diagram"></A><A NAME="5659"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.1:</STRONG>
+The Object Oriented Content Transmission Metamodel</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="500" HEIGHT="189" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.png"
+ ALT="\includegraphics[%
+width=0.90\textwidth,
+keepaspectratio]{images/ch5-OOCTM/ps/OOCTMBasicBlockDiagram.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The metamodel is based on an analysis-synthesis process. Therefore,
+the only data involved in the transmission step is the content description
+taking the form of metadata. A multilevel content description tree
+is used as an efficient representation of the identified Sound Object
+hierarchy. Several technologies are available for representing content
+description, but, taking into account our experience in MPEG-7s standardization
+process [<A
+ HREF="node207.html#MPEG7TimbreCE">Petters et&nbsp;al., 1999</A>], we would in a general situation recommend
+an XML-based metadata language such as MPEG-7s DDL.
+
+<P>
+A property derived from our OOCTM is that if there is a suitable content
+description, the actual content itself may no longer be needed and
+we can concentrate on transmitting only its description. Thus, the
+receiver should be able to interpret the information that, in the
+form of metadata, is available at its inputs, and synthesize new content
+relying only on this description. It is possibly in the music field
+where this last step has been further developed, and that fact allows
+us to think of such a transmission scheme being available on the near
+future.
+
+<P>
+The OOCTM does not worry about encoding fidelity or signal distortion
+in the classical sense. A signal has been correctly encoded and transmitted
+if its meaning has not changed substantially. And what ``substantially''
+means depends on the particular application: in some applications
+we may need to keep signal-level fidelity while in others we may just
+be interested in the approximate content in abstract terms.
+
+<P>
+Audio representations can be classified according to the following
+properties [<A
+ HREF="node207.html#VercoeStructuredAudio">Vercoe et&nbsp;al., 1998</A>]: encodability, synthesizability,
+generecity, meaningfulness, accuracy, efficiency and compactness.
+A representation is said to be <SPAN  CLASS="textit">encodable</SPAN> if it can be directly
+derived from the waveform. On the other hand it is said to be <SPAN  CLASS="textit">synthesizable</SPAN>
+if an ``appropriate'' sound can be obtained from the representation.
+A description that is both encodable and synthesizable is said to
+be <SPAN  CLASS="textit">invertible</SPAN><A NAME="tex2html59"
+  HREF="footnode.html#foot5660"><SUP><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">1</SPAN></SUP></A>. 
+
+<P>
+The more <SPAN  CLASS="textit">general</SPAN> a representation is the more kind of sounds
+it will be applicable to. Sound representations that are highly semantic
+(or <SPAN  CLASS="textit">meaningful</SPAN>) use parameters with clear high-level meaning
+and are easier to manipulate. <SPAN  CLASS="textit">Accuracy</SPAN> is a measure of how
+perceptually similar the synthesized sound is to the original one
+while <SPAN  CLASS="textit">efficiency</SPAN> is a measure of how far redundancy can be
+exploited in a given representation. Finally, <SPAN  CLASS="textit">compactness</SPAN>
+is just the ratio between accuracy and redundancy and it is a measure
+of how redundancy can be exploited while maintaining a certain level
+of accuracy.
+
+<P>
+Throughout this chapter we will use the word ``descriptor'' very
+often. Although this concept has already been brought up in different
+parts of the Thesis it is interesting to reproduce again its definition.
+We will use the one given in the MPEG-7 standard where a <SPAN  CLASS="textit">descriptor</SPAN>
+is defined as ``a representation of a <SPAN  CLASS="textit">feature</SPAN> that defines
+its syntax and semantics''. And a feature is defined as a ``a
+distinctive characteristic of the data which signifies something to
+somebody''.
+
+<P>
+The OOCTM is related to some existing models and metamodels. It is
+interesting to note that such a transmission model can be seen as
+a step beyond Shannon and Weavers traditional communication model
+[<A
+ HREF="node207.html#ShannonWeaver">Shannon and Weaver, 1949</A>]. We will further discuss this issue in section
+<A HREF="node170.html#sub:Beyond-Shannon_SPMamp_Weaver_s-Model">5.3.1</A>. The metamodel is also quite
+related to Structured Audio, a metamodel for audio and music transmission
+included in the MPEG-4 standard [<A
+ HREF="node207.html#ScheirerStructuredAudioMultimediaSystems">Scheirer, 1999c</A>].
+We will comment and exploit this relation in section <A HREF="node174.html#sec:Structured-Audio">5.3.2</A>.
+
+<P>
+In the next sections, we will particularize this metamodel to the
+case of audio and music content transmission and will give some details
+on each of the components functionality.
+<BR>
+<BR>
+<BR>
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html2156"
+  HREF="node156.html">Motivation </A>
+<UL>
+<LI><A NAME="tex2html2157"
+  HREF="node157.html">What is Content?</A>
+<LI><A NAME="tex2html2158"
+  HREF="node158.html">On Sound Objects</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2159"
+  HREF="node159.html">General Building Blocks</A>
+<UL>
+<LI><A NAME="tex2html2160"
+  HREF="node160.html">The Semantic Transmitter</A>
+<UL>
+<LI><A NAME="tex2html2161"
+  HREF="node161.html">The Analysis Step (Content Identification)</A>
+<UL>
+<LI><A NAME="tex2html2162"
+  HREF="node162.html">Low-level Descriptors</A>
+<LI><A NAME="tex2html2163"
+  HREF="node163.html">High-level Descriptors</A>
+</UL>
+<LI><A NAME="tex2html2164"
+  HREF="node164.html">The Coding Step (Content Description)</A>
+</UL>
+<LI><A NAME="tex2html2165"
+  HREF="node165.html">The Semantic Receiver</A>
+<UL>
+<LI><A NAME="tex2html2166"
+  HREF="node166.html">The Decoding Step (Content Interpretation)</A>
+<LI><A NAME="tex2html2167"
+  HREF="node167.html">The Synthesis Step</A>
+<LI><A NAME="tex2html2168"
+  HREF="node168.html">A Combined Receiver Scheme (Content-based Synthesis)</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html2169"
+  HREF="node169.html">OOCTM and related Models</A>
+<UL>
+<LI><A NAME="tex2html2170"
+  HREF="node170.html">Beyond Shannon&amp;Weaver's Model of Information Transmission</A>
+<UL>
+<LI><A NAME="tex2html2171"
+  HREF="node171.html">The Shannon&amp;Weaver Model</A>
+<LI><A NAME="tex2html2172"
+  HREF="node172.html">The Object-Oriented Content Transmission Metamodel as a Metamodel
+for Information Transmission</A>
+<LI><A NAME="tex2html2173"
+  HREF="node173.html">Other Models of Communication that care about Meaning</A>
+</UL>
+<LI><A NAME="tex2html2174"
+  HREF="node174.html">Beyond Structured Audio</A>
+<UL>
+<LI><A NAME="tex2html2175"
+  HREF="node175.html">The Structured Audio metamodel</A>
+<LI><A NAME="tex2html2176"
+  HREF="node176.html">Structured Audio and the Object-Oriented Content Transmission Metamodel</A>
+</UL>
+<LI><A NAME="tex2html2177"
+  HREF="node177.html">Beyond Parametric Encoding: Content Analysis</A>
+<LI><A NAME="tex2html2178"
+  HREF="node178.html">Beyond Sound Effects: Content-based transformations</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2179"
+  HREF="node179.html">Sample application</A>
+<UL>
+<LI><A NAME="tex2html2180"
+  HREF="node180.html">Limitations and Opportunities</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2181"
+  HREF="node181.html">Summary and Conclusions</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2154"
+  HREF="node156.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2152"
+  HREF="Thesis_forHTML.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2146"
+  HREF="node154.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2155"
+  HREF="node156.html">Motivation</A>
+<B> Up:</B> <A NAME="tex2html2153"
+  HREF="Thesis_forHTML.html">Thesis_forHTML</A>
+<B> Previous:</B> <A NAME="tex2html2147"
+  HREF="node154.html">Summary and Conclusions</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

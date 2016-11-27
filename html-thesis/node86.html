@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Nyquist</TITLE>
+<META NAME="description" CONTENT="Nyquist">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node85.html">
+<LINK REL="up" HREF="node81.html">
+<LINK REL="next" HREF="node87.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1332"
+  HREF="node87.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1330"
+  HREF="node81.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1326"
+  HREF="node85.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1333"
+  HREF="node87.html">Score Languages</A>
+<B> Up:</B> <A NAME="tex2html1331"
+  HREF="node81.html">Music-N Languages</A>
+<B> Previous:</B> <A NAME="tex2html1327"
+  HREF="node85.html">Common Lisp Music</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00361500000000000000"></A><A NAME="sub:Nyquist"></A>
+<BR>
+Nyquist
+</H3>
+
+<P>
+Nyquist [<A
+ HREF="node207.html#DannenbergNyquist">Dannenberg, 1993</A>] is a music representation language
+that is as a matter of fact not a Music-N language. Nevertheless,
+as it can be understood as an evolution of the basic Music-N paradigm,
+we have decided to include it in this category. Nyquist is distributed
+as Open Source software.
+
+<P>
+Nyquist can be seen as the natural evolution from Artic, Canon and
+Fugue. All of them have been designed by Roger B. Dannenberg and use
+functional programming for describing temporal behavior. Using some
+general mechanisms composers can create temporal structures such as
+notes, chords, phrases, trills, and synthesis elements such as granular
+synthesis, envelopes and vibrato functions. Previous implementations
+had great limitations that made them unpractical, for instance Canon
+did not handle sampled audio and Fugue needed vast amounts of memory
+and was hard to extend.
+
+<P>
+Nyquist does not need to preprocess an orchestra or patch. Lisp-based
+Nyquist programs can construct new patches on the fly and users can
+execute synthesis commands interactively. Nyquist can work both in
+real-time and non-real-time modes.
+
+<P>
+Nyquist uses a declarative and functional style in which expressions
+are evaluated to create and modify sounds. For instance, for summing
+two sinusoids the following expression should be introduced: <TT>(s-add
+(osc) (osc))</TT>.
+
+<P>
+In Fugue space was allocated for the entire result when adding two
+signals, this was only practical for small sounds. In Nyquist the
+addition and synthesis is performed incrementally so that at any time
+there are only a few blocks of samples in memory. This approach is
+similar to Music-N languages such as CSound and, in fact, Music-N
+<SPAN  CLASS="textit">unit generators</SPAN> are very similar to Nyquist functions. The
+main difference is that in Music-N the order of execution is explicit
+while in Nyquist it is deduced from data dependencies. Also Nyquist
+sounds are more flexible and can be considered as values that can
+be assigned to variables or passed as parameters.
+
+<P>
+A Nyquist expression can be represented as a graph of ``suspended
+computation'' that is, a structure that represents a computation
+waiting to happen. When samples are needed, the <SPAN  CLASS="textit">suspension</SPAN>
+recognizes it needs samples from the different nodes and asks for
+a block of samples (note that this works by pull or lazy evaluation).
+Since the order is determined at evaluation the computation graph
+may change dynamically. In particular, when a new note is played the
+graph is expanded.
+
+<P>
+In Nyquist samples are stored in a linked list of sample blocks that
+is accessed sequentially by following list pointers. Each reader of
+a sound uses a sound object header to remember the current position
+in the list and other state information. Incremental lazy evaluation
+is still used, placing the suspension at the end of the list. When
+a reader needs to read beyond the last block of the list the suspension
+is asked to compute a new block which is inserted between the end
+of the list and the suspension. All readers in the list see and share
+the same samples regardless of when they are produced or which reader
+reads first. To prevent lists from exhausting storage resources, reference
+counting is used to move blocks from the head of the list to a free
+list from which they can be allocated for reuse.
+
+<P>
+Nyquist can add sounds with different start times so signal addition
+must be efficient in the frequent case where one signal is zero. When
+one operand is zero, the sound block from the other operand can be
+simply linked into the result with no multiplication or zero filling.
+Most signal generators produce a signal only over some interval and
+Nyquist semantics say that the sound is zero outside the interval.
+A signal that goes to zero is represented by a list node that points
+to itself, creating a virtually infinite list of zeros. When a suspension
+detects that its future output will be zero, it links its sound list
+to this terminal node and then deletes itself.
+
+<P>
+Nyquist sounds also have <SPAN  CLASS="textit">logical stop times</SPAN> (LST). A seq operator
+allows to add sound together setting the start time of one sound to
+the LST of the other. The LST may be earlier or later than the terminating
+time (e.g. in a note it may correspond to the release time, leaving
+out the decay).
+
+<P>
+Nyquist allows various transformations such as shifting in time, scaling,
+and stretching. The sound headers contain transformation information:
+to scale a sound, the header is copied and the copy scale-factor field
+is modified. A drawback is that all operators must apply the transformation
+to raw samples. Different strategies are used in order to minimize
+the cost.
+
+<P>
+Sample rate is specified in the header of each sound and Nyquist allows
+arbitrarily mixed sample rates. It is the responsibility of the suspension
+to interpolate samples linearly when rate conversion is necessary.
+
+<P>
+Multichannel signals are represented by Lisp arrays and Nyquist operators
+are generalized in the expected ways.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1332"
+  HREF="node87.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1330"
+  HREF="node81.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1326"
+  HREF="node85.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1333"
+  HREF="node87.html">Score Languages</A>
+<B> Up:</B> <A NAME="tex2html1331"
+  HREF="node81.html">Music-N Languages</A>
+<B> Previous:</B> <A NAME="tex2html1327"
+  HREF="node85.html">Common Lisp Music</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

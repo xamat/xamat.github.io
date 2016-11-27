@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>MetriX</TITLE>
+<META NAME="description" CONTENT="MetriX">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node203.html">
+<LINK REL="previous" HREF="node185.html">
+<LINK REL="up" HREF="node182.html">
+<LINK REL="next" HREF="node187.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2526"
+  HREF="node187.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2524"
+  HREF="node182.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2518"
+  HREF="node185.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2527"
+  HREF="node187.html">Basics in MetriX</A>
+<B> Up:</B> <A NAME="tex2html2525"
+  HREF="node182.html">An Object-Oriented Music Model</A>
+<B> Previous:</B> <A NAME="tex2html2519"
+  HREF="node185.html">Songs and scores</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00740000000000000000"></A><A NAME="sec:MetriX"></A>
+<BR>
+MetriX
+</H1>
+
+<P>
+MetriX was designed in order to have a working synthesis system that
+implemented the model presented in the previous section [<A
+ HREF="node207.html#METRIX_DAFX">Amatriain et&nbsp;al., 1998</A>].
+MetriX was at first designed as a textual-based language and then
+ported to XML (see <A HREF="node200.html#sub:MetriX-ML">6.4.4</A>). 
+
+<P>
+This language, together with a related C++ library conform the MetriX
+framework. This C++ library was originally written from scratch and
+just reusing some existing code for the actual synthesis of the sound.
+Now it has been integrated into the CLAM framework The main goal in
+MetriX is to offer a powerful and intuitive interface to control all
+aspects involved in the creation of a synthetic musical piece. For
+doing so we rely on our object-oriented music model.
+
+<P>
+The MetriX language is in fact made up of two sub-languages: a MetriX
+Score Definition Language (MSDL) and a MetriX Instrument Definition
+Language (MIDL). Therefore, following the tradition of Music-N Languages
+(see section <A HREF="node81.html#sub:Music-N-Languages">2.6.1</A>) such as CSound (see <A HREF="node83.html#sub:CSound">2.6.1</A>),
+MetriX makes a distinction between the process of defining and creating
+an Instrument and the process of controlling this Instrument through
+a music score. The original MetriX language was implemented in textual
+format and later evolved into XML to become more object-oriented. 
+
+<P>
+Figure <A HREF="#fig:MetriX-classification">6.8</A> reproduces the classification
+map already used in chapters <A HREF="node51.html#cha:Environments-for-Audio">2</A> and
+<A HREF="node92.html#ch:_CLAM">3</A> but now including MetriX in the position that best
+explains its scope.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:MetriX-classification"></A><A NAME="5708"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.8:</STRONG>
+MetriX classification in respect to other environments</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="554" HEIGHT="319" ALIGN="BOTTOM" BORDER="0"
+ SRC="img84.png"
+ ALT="\includegraphics[%
+width=1.0\textwidth]{images/ch6-MetriX/ps/SimilarFrameworks_with_Metrix.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+MetriX can be considered in some sense a Music-N language (see section
+<A HREF="node81.html#sub:Music-N-Languages">2.6.1</A>): our concept of <SPAN  CLASS="textit">Generator</SPAN> is
+very much related, although not strictly equivalent, to Music-N's
+<SPAN  CLASS="textit">unit generator</SPAN> and we also have a clear distinction between
+the <SPAN  CLASS="textit">score</SPAN> and the <SPAN  CLASS="textit">Instrument definition</SPAN>. Nevertheless,
+we have already seen in the previous section how our object-oriented
+music model introduces many differences with classical Music-N models.
+We will illustrate more differences in the following sections. Because
+of this, we could label our model as ``Enhanced Object-Oriented
+Music-N model''.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html2528"
+  HREF="node187.html">Basics in MetriX</A>
+<UL>
+<LI><A NAME="tex2html2529"
+  HREF="node188.html">Instruments and Generators</A>
+<LI><A NAME="tex2html2530"
+  HREF="node189.html">Mappings, Parameters and breakpoint functions</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2531"
+  HREF="node190.html">MIDL: The MetriX Instrument Definition Language</A>
+<UL>
+<LI><A NAME="tex2html2532"
+  HREF="node191.html">Generators</A>
+<LI><A NAME="tex2html2533"
+  HREF="node192.html">Timbre Space</A>
+<LI><A NAME="tex2html2534"
+  HREF="node193.html">Break-point Functions</A>
+<LI><A NAME="tex2html2535"
+  HREF="node194.html">Parameters </A>
+<LI><A NAME="tex2html2536"
+  HREF="node195.html">Example</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2537"
+  HREF="node196.html">MSDL: The MetriX Score Definition Language</A>
+<UL>
+<LI><A NAME="tex2html2538"
+  HREF="node197.html">The Score Header</A>
+<LI><A NAME="tex2html2539"
+  HREF="node198.html">The Score Body</A>
+<LI><A NAME="tex2html2540"
+  HREF="node199.html">Example</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2541"
+  HREF="node200.html">MetriX in XML= MetriXML</A>
+<UL>
+<LI><A NAME="tex2html2542"
+  HREF="node201.html">MetriXML Instrument Definition</A>
+<LI><A NAME="tex2html2543"
+  HREF="node202.html">MetriXML Score Definition</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2526"
+  HREF="node187.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2524"
+  HREF="node182.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2518"
+  HREF="node185.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2527"
+  HREF="node187.html">Basics in MetriX</A>
+<B> Up:</B> <A NAME="tex2html2525"
+  HREF="node182.html">An Object-Oriented Music Model</A>
+<B> Previous:</B> <A NAME="tex2html2519"
+  HREF="node185.html">Songs and scores</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

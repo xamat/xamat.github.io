@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Dataflow Networks</TITLE>
+<META NAME="description" CONTENT="Dataflow Networks">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node39.html">
+<LINK REL="previous" HREF="node37.html">
+<LINK REL="up" HREF="node35.html">
+<LINK REL="next" HREF="node39.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html785"
+  HREF="node39.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html783"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html777"
+  HREF="node37.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html786"
+  HREF="node39.html">Synchronous Dataflow Networks</A>
+<B> Up:</B> <A NAME="tex2html784"
+  HREF="node35.html">A brief catalogue of</A>
+<B> Previous:</B> <A NAME="tex2html778"
+  HREF="node37.html">Kahn Process Networks</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00251300000000000000"></A><A NAME="sub:Dataflow-Networks"></A>
+<BR>
+Dataflow Networks
+</H3>
+
+<P>
+Dataflow Networks is a graphical MoC very closely related to Process
+Networks. In this model arcs also represent FIFO queues. But now the
+nodes of the graph, instead of representing processes, represent <SPAN  CLASS="textit">actors</SPAN>.
+Instead of responding to the simple the blocking-read semantics of
+Process Networks, actors use <SPAN  CLASS="textit">firing rules</SPAN> that specify how
+many tokens must be available on every input for the actor to fire
+(see figure <A HREF="#fig:Dataflow-Process-Network">1.5</A>). When an actor fires,
+it consumes a finite number of tokens and produces also a finite number
+of output tokens. A process can be formed by repeated firings of a
+dataflow actor.
+
+<P>
+An actor may have more than one firing rule. The evaluation of the
+firing rules is sequential in the sense that rules are sequentially
+evaluated until at least one of them is satisfied. Thus an actor can
+only fire if one or more than one of its firing rules are satisfied.
+In general, though, synchronous dataflow actors have a single firing
+rule of the same kind: a number of tokens that must be available at
+each of the inputs. For example, an adder with two inputs has a single
+firing rule saying that each input must at least have one token.
+
+<P>
+As pointed out by [<A
+ HREF="node207.html#ParksProcessNetworksPhD">Parks, 1995</A>] breaking down processes
+into smaller units such as dataflow actors firings, makes efficient
+implementations possible. Restricting the type of dataflow actors
+to those that have a predictable consumption and production pattern
+makes it possible to perform static, off-line analysis to bound the
+memory. 
+
+<P>
+In Dataflow Networks instead of suspending a process on blocking read
+or non-blocking write, processes are freely interleaved by a scheduler
+that determines the sequence of actor firings. The biggest advantage
+is that the cost of process suspension and resumption is avoided[<A
+ HREF="node207.html#LeeAndTomasDataflowNetworks">Lee and Park, 1995</A>]. 
+
+<P>
+In many signal processing applications the firing sequence can be
+determined statically at compile time. The class of dataflow process
+networks where this is possible are called ``synchronous dataflow
+networks'' and will be commented in next section. 
+
+<P>
+Dataflow graphs have data-driven semantics. The availability of operands
+enables the operator and hence sequencing constraints follow only
+from data availability. This feature has its limitations. The principal
+strength of dataflow networks is that they do not over-specify an
+algorithm by imposing unnecessary sequencing constraints between operators
+[<A
+ HREF="node207.html#BuckTokenFlow">Buck and Lee, 1994</A>].
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:Dataflow-Process-Network"></A><A NAME="5533"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.5:</STRONG>
+Dataflow Process Network</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="307" HEIGHT="284" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="\includegraphics[%
+width=0.55\textwidth]{images/ch1-Foundations/ps/DPN.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html785"
+  HREF="node39.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html783"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html777"
+  HREF="node37.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html786"
+  HREF="node39.html">Synchronous Dataflow Networks</A>
+<B> Up:</B> <A NAME="tex2html784"
+  HREF="node35.html">A brief catalogue of</A>
+<B> Previous:</B> <A NAME="tex2html778"
+  HREF="node37.html">Kahn Process Networks</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

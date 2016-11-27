@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Synchronous Dataflow Networks</TITLE>
+<META NAME="description" CONTENT="Synchronous Dataflow Networks">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node40.html">
+<LINK REL="previous" HREF="node38.html">
+<LINK REL="up" HREF="node35.html">
+<LINK REL="next" HREF="node40.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html795"
+  HREF="node40.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html793"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html787"
+  HREF="node38.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html796"
+  HREF="node40.html">Boolean Dataflow Networks</A>
+<B> Up:</B> <A NAME="tex2html794"
+  HREF="node35.html">A brief catalogue of</A>
+<B> Previous:</B> <A NAME="tex2html788"
+  HREF="node38.html">Dataflow Networks</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00251400000000000000"></A><A NAME="sub:Synchronous-Dataflow-Networks"></A>
+<BR>
+Synchronous Dataflow Networks
+</H3>
+
+<P>
+Synchronous Dataflow Networks (SDF) is a special case of Dataflow
+Networks in which the number of tokens consumed and produced by an
+actor is known before the execution begins. The same behavior repeats
+in a particular actor every time it is fired. Arcs can have initial
+tokens. Every initial token represents an offset between the token
+produced and the token consumed at the other end. It is a unit delay
+and is represented by a diamond in the middle of the arc. Figure <A HREF="#fig:A-Synchronous-Dataflow">1.6</A>
+illustrates a Synchronous Dataflow Network.
+
+<P>
+Schedule can be performed statically. As the execution of the graph
+is going to be repeated the compiler should just construct one ``complete
+cycle'' of the periodic schedule. A ``complete cycle'' is defined
+as the sequence of actor firings that returns the graph to its original
+state. From the static information of the network we can construct
+a ``topology matrix'' that contains relations between produced/consumed
+tokens in every arc. The element ij is defined as the number of tokens
+produced on the ith arc by the jth actor. Although it is only a partial
+info because there is no information on the number of initial tokens
+on each arc we can use the matrix to build the static schedule. For
+doing so we must find the smallest integer vector that satisfies the
+equation matrix*vector=0. It must be noted though that in complex
+networks these equations may not have a solution.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:A-Synchronous-Dataflow"></A><A NAME="5535"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.6:</STRONG>
+A Synchronous Dataflow Process Network</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="250" HEIGHT="182" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="\includegraphics[%
+width=0.45\textwidth,
+keepaspectratio]{images/ch1-Foundations/ps/SDPN.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html795"
+  HREF="node40.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html793"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html787"
+  HREF="node38.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html796"
+  HREF="node40.html">Boolean Dataflow Networks</A>
+<B> Up:</B> <A NAME="tex2html794"
+  HREF="node35.html">A brief catalogue of</A>
+<B> Previous:</B> <A NAME="tex2html788"
+  HREF="node38.html">Dataflow Networks</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

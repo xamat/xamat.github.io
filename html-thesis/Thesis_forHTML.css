@@ -1,0 +1,133 @@
+/* Century Schoolbook font is very similar to Computer Modern Math: cmmi */
+.MATH    { font-family: "Century Schoolbook", serif; }
+.MATH I  { font-family: "Century Schoolbook", serif; font-style: italic }
+.BOLDMATH { font-family: "Century Schoolbook", serif; font-weight: bold }
+
+/* implement both fixed-size and relative sizes */
+SMALL.XTINY		{ font-size : xx-small }
+SMALL.TINY		{ font-size : x-small  }
+SMALL.SCRIPTSIZE	{ font-size : smaller  }
+SMALL.FOOTNOTESIZE	{ font-size : small    }
+SMALL.SMALL		{  }
+BIG.LARGE		{  }
+BIG.XLARGE		{ font-size : large    }
+BIG.XXLARGE		{ font-size : x-large  }
+BIG.HUGE		{ font-size : larger   }
+BIG.XHUGE		{ font-size : xx-large }
+
+/* heading styles */
+H1		{  }
+H2		{  }
+H3		{  }
+H4		{  }
+H5		{  }
+
+/* mathematics styles */
+DIV.displaymath		{ }	/* math displays */
+TD.eqno			{ }	/* equation-number cells */
+
+
+/* document-specific styles come next */
+DIV.navigation		{   }
+DIV.center		{   }
+DIV.small		{   }
+DIV.LaTeX		{   }
+DIV.quote		{   }
+DIV.logo-LaTeX		{   }
+SPAN.textit		{ font-style: italic  }
+SPAN.arabic		{   }
+SPAN.textbf		{ font-weight: bold  }
+SPAN.textsf		{ font-style: italic  }
+#hue2049		{ color: #ff0000;  }
+#hue5221		{ color: #000000;  }
+#hue5223		{ color: #000000;  }
+#hue5225		{ color: #000000;  }
+#hue5227		{ color: #000000;  }
+#hue5235		{ color: #000000;  }
+#hue5237		{ color: #000000;  }
+#hue5239		{ color: #000000;  }
+#hue5241		{ color: #000000;  }
+#hue5243		{ color: #000000;  }
+#hue5250		{ color: #000000;  }
+#hue5252		{ color: #000000;  }
+#hue5254		{ color: #000000;  }
+#hue5256		{ color: #000000;  }
+#hue5258		{ color: #000000;  }
+#hue5260		{ color: #000000;  }
+#hue5262		{ color: #000000;  }
+#hue5264		{ color: #000000;  }
+#hue5266		{ color: #000000;  }
+#hue5268		{ color: #000000;  }
+#hue5821		{ color: #000000;  }
+#hue5822		{ color: #000000;  }
+#hue5823		{ color: #000000;  }
+#txt124		{ text-decoration: underline;  }
+#txt125		{ text-decoration: underline;  }
+#txt129		{ text-decoration: underline;  }
+#txt131		{ text-decoration: underline;  }
+#txt133		{ text-decoration: underline;  }
+#txt134		{ text-decoration: underline;  }
+#txt137		{ text-decoration: underline;  }
+#txt139		{ text-decoration: underline;  }
+#txt140		{ text-decoration: underline;  }
+#txt147		{ text-decoration: underline;  }
+#txt1696		{ text-decoration: underline;  }
+#txt1697		{ text-decoration: underline;  }
+#txt1701		{ text-decoration: underline;  }
+#txt1702		{ text-decoration: underline;  }
+#txt1703		{ text-decoration: underline;  }
+#txt1704		{ text-decoration: underline;  }
+#txt1707		{ text-decoration: underline;  }
+#txt1709		{ text-decoration: underline;  }
+#txt1710		{ text-decoration: underline;  }
+#txt1717		{ text-decoration: underline;  }
+#txt1781		{ text-decoration: underline;  }
+#txt1782		{ text-decoration: underline;  }
+#txt1784		{ text-decoration: underline;  }
+#txt1785		{ text-decoration: underline;  }
+#txt2218		{ text-decoration: underline;  }
+#txt2239		{ text-decoration: underline;  }
+#txt2280		{ text-decoration: underline;  }
+#txt2409		{ text-decoration: underline;  }
+#txt2419		{ text-decoration: underline;  }
+#txt2435		{ text-decoration: underline;  }
+#txt2438		{ text-decoration: underline;  }
+#txt2936		{ text-decoration: underline;  }
+#txt2937		{ text-decoration: underline;  }
+#txt2938		{ text-decoration: underline;  }
+#txt2939		{ text-decoration: underline;  }
+#txt2940		{ text-decoration: underline;  }
+#txt2941		{ text-decoration: underline;  }
+#txt2975		{ text-decoration: underline;  }
+#txt2976		{ text-decoration: underline;  }
+#txt2978		{ text-decoration: underline;  }
+#txt5046		{ text-decoration: underline;  }
+#txt5049		{ text-decoration: underline;  }
+#txt5052		{ text-decoration: underline;  }
+#txt5054		{ text-decoration: underline;  }
+#txt5056		{ text-decoration: underline;  }
+#txt5058		{ text-decoration: underline;  }
+#txt5060		{ text-decoration: underline;  }
+#txt5062		{ text-decoration: underline;  }
+#txt5064		{ text-decoration: underline;  }
+#txt5066		{ text-decoration: underline;  }
+#txt5068		{ text-decoration: underline;  }
+#txt5070		{ text-decoration: underline;  }
+#txt5072		{ text-decoration: underline;  }
+#txt5074		{ text-decoration: underline;  }
+#txt5076		{ text-decoration: underline;  }
+#txt5078		{ text-decoration: underline;  }
+#txt5080		{ text-decoration: underline;  }
+#txt5082		{ text-decoration: underline;  }
+#txt5084		{ text-decoration: underline;  }
+#txt5086		{ text-decoration: underline;  }
+#txt63		{ text-decoration: underline;  }
+#txt64		{ text-decoration: underline;  }
+#txt65		{ text-decoration: underline;  }
+#txt68		{ text-decoration: underline;  }
+#txt69		{ text-decoration: underline;  }
+#txt70		{ text-decoration: underline;  }
+#txt72		{ text-decoration: underline;  }
+#txt73		{ text-decoration: underline;  }
+#txt75		{ text-decoration: underline;  }
+#txt815		{ text-decoration: underline;  }

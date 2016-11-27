@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Parameters </TITLE>
+<META NAME="description" CONTENT="Parameters ">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node195.html">
+<LINK REL="previous" HREF="node193.html">
+<LINK REL="up" HREF="node190.html">
+<LINK REL="next" HREF="node195.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2627"
+  HREF="node195.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2625"
+  HREF="node190.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2619"
+  HREF="node193.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2628"
+  HREF="node195.html">Example</A>
+<B> Up:</B> <A NAME="tex2html2626"
+  HREF="node190.html">MIDL: The MetriX Instrument</A>
+<B> Previous:</B> <A NAME="tex2html2620"
+  HREF="node193.html">Break-point Functions</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00742400000000000000">
+Parameters </A>
+</H3>
+
+<P>
+In this part of the score, low-level and high-level control parameters
+are initialized. Only these parameters will be accessible from within
+the related Score File once this particular Instrument is instantiated.
+
+<P>
+To initialize a low-level control parameter only its range (maximum
+and minimum value) and default value must be specified. The specific
+synthesis engine shall be in charge of interpreting this low-level
+parameters and apply low-level transformations on the synthesis data
+accordingly. Although these parameters are not exclusive nor limited
+to a particular synthesis scheme they have only been implemented,
+as a proof of concept, to control an SMS-based synthesizer.
+
+<P>
+A high-level control parameter must also include its range and default
+value in its definition. But besides that, it must also specify the
+way it relates to low level parameters or to the timbre space location,
+a relation that is usually referred to as <SPAN  CLASS="textit">mapping function</SPAN>.
+A single high-level control parameter may influence any number of
+low-level parameters. For defining the high-to-low level mapping all
+standard formulas as well as the previously defined break-point-functions
+may be used. 
+
+<P>
+MetriX includes a set of standard low-level and high-level control
+parameters but the list is dynamical and can be enhanced for a particular
+case.
+
+<P>
+In [<A
+ HREF="node207.html#ScalettiKymaOOPSLA">Scaletti and Johnson, 1988</A>] the authors argue that Music-N makes
+it very difficult to control things at a higher or lower level. With
+this separation between low and high-level parameters that can then
+be controlled from the score we are indeed giving a solution to this
+problem. It is also important to acknowledge that this clear separation
+between low and high-level parameters was somehow inspired by that
+in ZIPI (see section <A HREF="node88.html#sub:ZIPI">2.6.2</A>).
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2627"
+  HREF="node195.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2625"
+  HREF="node190.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2619"
+  HREF="node193.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2628"
+  HREF="node195.html">Example</A>
+<B> Up:</B> <A NAME="tex2html2626"
+  HREF="node190.html">MIDL: The MetriX Instrument</A>
+<B> Previous:</B> <A NAME="tex2html2620"
+  HREF="node193.html">Break-point Functions</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

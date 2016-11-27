@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Computation Graphs</TITLE>
+<META NAME="description" CONTENT="Computation Graphs">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node43.html">
+<LINK REL="previous" HREF="node41.html">
+<LINK REL="up" HREF="node35.html">
+<LINK REL="next" HREF="node43.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html825"
+  HREF="node43.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html823"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html817"
+  HREF="node41.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html826"
+  HREF="node43.html">Context-Aware Process Networks</A>
+<B> Up:</B> <A NAME="tex2html824"
+  HREF="node35.html">A brief catalogue of</A>
+<B> Previous:</B> <A NAME="tex2html818"
+  HREF="node41.html">Dynamic Dataflow Networks</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00251700000000000000"></A><A NAME="sub:Computation-Graphs"></A>
+<BR>
+Computation Graphs
+</H3>
+
+<P>
+Computation graphs are a model of parallel computation similar to
+Process Networks. It is represented by a finite graph with a set of
+nodes, each associated with a function, a set of arcs , where a branch
+is a queue of data directed from one node to another. Four non-negative
+integers (A, U, W and T) are associated with each arc. 'A' is the
+number of tokens initially present in the arc, U is the number of
+tokens produced by the function associated with the node, W is the
+number of tokens consumed by the function associated with the node,
+T is a threshold that specifies the number of tokens that must be
+present in the arc before the function can be fired (obviously, T&gt;=W).
+
+<P>
+Questions of termination and boundness are solvable for Computation
+Graphs, which turn out to be a restricted version of PN. It is interesting
+to note that Synchronous Dataflow Networks is a special case of Computation
+Graphs where T=W for all arcs.
+
+<P>
+<BR><HR>
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

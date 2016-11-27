@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Objects</TITLE>
+<META NAME="description" CONTENT="Objects">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node9.html">
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="node7.html">
+<LINK REL="next" HREF="node9.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html457"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html455"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html449"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html458"
+  HREF="node9.html">The Object Oriented Way</A>
+<B> Up:</B> <A NAME="tex2html456"
+  HREF="node7.html">The Object-Oriented Paradigm</A>
+<B> Previous:</B> <A NAME="tex2html450"
+  HREF="node7.html">The Object-Oriented Paradigm</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00211000000000000000"></A><A NAME="sec:_Objects"></A>
+<BR>
+Objects
+</H2>
+
+<P>
+When we look up the word <SPAN  CLASS="textit">object</SPAN> in a dictionary we may find
+definitions such as ``a thing that can be seen or touched''; ``a
+person or thing to which action, thought, etc. is directed''; or
+in more philosophical terms ``anything that can be perceived by
+the mind''. 
+
+<P>
+In Software Engineering or Computer Science, though, the term has
+acquired a new or more specialized meaning. A software object is still
+an entity. The difference is that this object ``lives'' in the
+computer or software world and not in the real world. But to be useful
+in some way, the software object must have a more or less direct mapping
+to a real object in the application domain. A software object may
+represent a physical object in a particular domain but it may also
+represent an abstract concept or idea. According to the Object Management
+Group (OMG) of the ACM an object is ``an entity that has unique
+identity, a set of operations that can be applied to it, and state
+that stores the effect of the operations'' [<A
+ HREF="node207.html#UML2.0">OMG, 2003</A>].
+
+<P>
+Therefore, an <SPAN  CLASS="textit">object</SPAN> is made up of three basic components:
+an <SPAN  CLASS="textit">identity</SPAN>, a <SPAN  CLASS="textit">state</SPAN>, and a <SPAN  CLASS="textit">behavior</SPAN> [<A
+ HREF="node207.html#BoochOODesign">Booch, 1994b</A>].
+The identity is the property that enables distinguishing two objects
+with an identical state and behavior. The identity is unique and may
+not be shared between different objects, even at different time and
+does not change during the object lifetime. The object state represents
+the different possible internal conditions that the object may experience
+during its lifetime. Finally the object behavior is the way a particular
+object will respond to received messages.
+
+<P>
+A <SPAN  CLASS="textit">class</SPAN> is an abstract group of objects that behave the same
+way. Every existing object is the instance of a class. Not every class
+though may have instances. A class that cannot be instantiated is
+called an <SPAN  CLASS="textit">abstract class</SPAN>. A class is basically made up of a
+unique name, a number of <SPAN  CLASS="textit">attributes</SPAN> and a set of <SPAN  CLASS="textit">operations</SPAN>
+(the implementation of which is called <SPAN  CLASS="textit">method</SPAN>). The attribute
+values of a concrete object in a given moment define this object state.
+Thus attributes in a class define the possible states in which an
+instance of that class may be. On the other hand, the behavior of
+an object depends on the class operations plus the particular state
+of the object as operations may respond differently to input messages
+depending on the current state. And again according to the OMG, a
+class is ``a classifier that describes a set of objects that share
+the same specifications of features, constraints, and semantics [<A
+ HREF="node207.html#UML2.0">OMG, 2003</A>].
+
+<P>
+An object oriented system may be viewed exclusively as a set of objects
+that are related and exchange messages, all collaborating to accomplish
+a common goal that is related to the functional requirements of the
+system (we will thoroughly define what a <SPAN  CLASS="textit">system</SPAN> is in section
+<A HREF="node17.html#sec:_Systems">1.2.1</A>). An OO message is made of a <SPAN  CLASS="textit">receiver</SPAN>,
+a <SPAN  CLASS="textit">selector</SPAN> and an optional <SPAN  CLASS="textit">list of arguments</SPAN>. The receiver
+is the object that will receive the message. The selector informs
+the receiving object of which of all the possible messages it can
+interpret is being sent. And finally the the optional list of arguments
+holds the values with which the receiver will interpret the message.
+
+<P>
+The way that objects are related in run-time is defined by the way
+the classes are associated in the logical view of the system. There
+are basically four kinds of class relationships: association, aggregation/composition,
+dependency and inheritance. Each relationship is established between
+two classes and, apart of the ``kind'' of relationship, we should
+describe its navigability (whether objects in both ends of the relation
+are able to see each other or this navigation is restricted in only
+one direction) , and cardinality (how many instances of each class
+can participate in the relationship). Other less important attributes
+in the relationship such as its name, roles of the participants or
+visibility may also be included.
+
+<P>
+An association is the most basic - and weakest - form of relationship.
+It basically represents that instances of one class know of the whole
+or part of instances of the other class. That means that instances
+of one end can access operations or attributes in the other end. All
+other relations, except for inheritance, can be viewed as particular
+cases of an association.
+
+<P>
+A stronger form of association is known as <SPAN  CLASS="textit">aggregation.</SPAN> An
+aggregation represents a relationship between some ``parts'' and
+a ``whole''. In an aggregation, instances in one end of the relationship
+``contain'' or are ``made up'' objects of the other end. A
+particular case of aggregation is a composition. In a composition
+the life of the parts is connected to the life of its whole. When
+a part is instantiated, it must be already created as belonging to
+a whole and when the whole is destroyed, its parts are also destroyed.
+
+<P>
+Probably the most powerful technique associated to object oriented
+methods is the inheritance relationship. If a given class A derives
+from class B, class A is said to be a subclass of B while B is said
+to be a superclass or a base class for A. A derived class inherits
+all the behavior implemented in its base class but is also allowed
+to add or override behavior. A rule of thumb for identifying if a
+given class can be modeled as a subclass of another one is the 'is
+a rule': if the sentence ``A is a B'' makes sense, then probably
+A is a subclass of B (e.g. ``A dog is a mammal'').
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html457"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html455"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html449"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html458"
+  HREF="node9.html">The Object Oriented Way</A>
+<B> Up:</B> <A NAME="tex2html456"
+  HREF="node7.html">The Object-Oriented Paradigm</A>
+<B> Previous:</B> <A NAME="tex2html450"
+  HREF="node7.html">The Object-Oriented Paradigm</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

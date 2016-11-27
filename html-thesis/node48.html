@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Module data protocol</TITLE>
+<META NAME="description" CONTENT="Module data protocol">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node49.html">
+<LINK REL="previous" HREF="node47.html">
+<LINK REL="up" HREF="node45.html">
+<LINK REL="next" HREF="node49.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html885"
+  HREF="node49.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html883"
+  HREF="node45.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html877"
+  HREF="node47.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html886"
+  HREF="node49.html">Out-of-band and in-band partitions</A>
+<B> Up:</B> <A NAME="tex2html884"
+  HREF="node45.html">Patterns of Graphical MOC's</A>
+<B> Previous:</B> <A NAME="tex2html878"
+  HREF="node47.html">Payloads</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00253300000000000000">
+Module data protocol</A>
+</H3>
+
+<P>
+Collaborating modules pass data-blocks (payloads) but depending on
+the application, the requirements for these payloads could be very
+different: some may need asynchronous user events, some may have different
+priority levels, some may contain large amounts of data. On the other
+hand, sometimes the receiving module operates at a slower rate than
+the transmitter, to avoid data loss the receiver must be able to determine
+the flow control.
+
+<P>
+Besides, we must take into account a number of possible problems.
+Large payloads make buffering very difficult. Payloads with time-sensitive
+data have to be transferred in such a way that no deadlines are violated.
+Asynchronous or priorized events are sent from one module to another-
+Shared resources for inter-module communication might not be available
+or the synchronization overhead not acceptable. And flow control has
+to be determined by receiving module.
+
+<P>
+There are three basic ways to assign flow control among modules that
+exchange Payloads:
+
+<P>
+
+<UL>
+<LI>Pull (functional): The downstream module requests information from
+the upstream module with a method call that returns the values as
+result. This mechanism can be implemented via a sequential protocol,
+may be multithreaded and may process in-place. The receiving module
+determines flow control. It is applicable in systems where the sender
+operates faster than the receiver. This mechanism cannot deal with
+asynchronous or priorized events.
+</LI>
+<LI><SPAN  CLASS="textit">Push</SPAN> (event driven): The upstream module issues a message whenever
+new values are available. The mechanism can be implemented: as procedure
+calls containing new data as arguments; as non-returning point to
+point messages or broadcast; as priorized interrupts; or as continuation-style
+program jumps. Usually the sending module does not know whether the
+receiver is ready or not. To prevent data loss the receiver can have
+a queue. If there are asynchronous or high-priority events, the queue
+must let them pass, else a simple FIFO queue can do.
+</LI>
+<LI><SPAN  CLASS="textit">Indirect</SPAN> (shared resources): Requires a shared repository accessible
+to both modules. When the sender is ready to pass a payload to the
+receiver, it writes in the shared repository. When ready to process,
+the receiver takes a payload from the repository. The sender and the
+receiver can process at different rates. If not all the payloads are
+required by the receiver, the upstream module can overwrite data.
+</LI>
+</UL>
+It must be noted though that having more than one input port complicates
+flow control and requires additional policies.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html885"
+  HREF="node49.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html883"
+  HREF="node45.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html877"
+  HREF="node47.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html886"
+  HREF="node49.html">Out-of-band and in-band partitions</A>
+<B> Up:</B> <A NAME="tex2html884"
+  HREF="node45.html">Patterns of Graphical MOC's</A>
+<B> Previous:</B> <A NAME="tex2html878"
+  HREF="node47.html">Payloads</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Out-of-band and in-band partitions</TITLE>
+<META NAME="description" CONTENT="Out-of-band and in-band partitions">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node48.html">
+<LINK REL="up" HREF="node45.html">
+<LINK REL="next" HREF="node50.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html893"
+  HREF="node50.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html891"
+  HREF="node45.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html887"
+  HREF="node48.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html894"
+  HREF="node50.html">Summary and Conclusions</A>
+<B> Up:</B> <A NAME="tex2html892"
+  HREF="node45.html">Patterns of Graphical MOC's</A>
+<B> Previous:</B> <A NAME="tex2html888"
+  HREF="node48.html">Module data protocol</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00253400000000000000">
+Out-of-band and in-band partitions</A>
+</H3>
+
+<P>
+An interactive application has a dual functionality: first it interfaces
+with the user handling event-driven programming associated with the
+user interface and the response times have to be in the order of hundreds
+of milliseconds; second it handles the data processing according to
+the domain requirements
+
+<P>
+User actions are non-deterministic so user interface code has to cover
+many possibilities. Data processing has strict requirements and the
+sequence of operations (algorithm) is known before hand. Human users
+require response in the order of hundreds of milliseconds but applications
+emphasize performance that is irrelevant for the user interface. Generally,
+a large fraction of the running time is spent waiting for user input.
+The user interface code and data processing code are part of the same
+application and they collaborate with each other.
+
+<P>
+The solution is to organize the application into two different partitions:
+
+<P>
+
+<UL>
+<LI>Out-of-band partition: typically responsible for user interaction.
+</LI>
+<LI>In-band partition: it contains the code that performs data processing.
+This partition does not take into account any aspects of user interaction
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html893"
+  HREF="node50.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html891"
+  HREF="node45.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html887"
+  HREF="node48.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html894"
+  HREF="node50.html">Summary and Conclusions</A>
+<B> Up:</B> <A NAME="tex2html892"
+  HREF="node45.html">Patterns of Graphical MOC's</A>
+<B> Previous:</B> <A NAME="tex2html888"
+  HREF="node48.html">Module data protocol</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

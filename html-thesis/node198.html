@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Score Body</TITLE>
+<META NAME="description" CONTENT="The Score Body">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node199.html">
+<LINK REL="previous" HREF="node197.html">
+<LINK REL="up" HREF="node196.html">
+<LINK REL="next" HREF="node199.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2668"
+  HREF="node199.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2666"
+  HREF="node196.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2660"
+  HREF="node197.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2669"
+  HREF="node199.html">Example</A>
+<B> Up:</B> <A NAME="tex2html2667"
+  HREF="node196.html">MSDL: The MetriX Score</A>
+<B> Previous:</B> <A NAME="tex2html2661"
+  HREF="node197.html">The Score Header</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00743200000000000000">
+The Score Body</A>
+</H3>
+
+<P>
+The Body is the part of the Score where the actual musical information
+to control a digital Instrument is included. It is made up of a list
+of events; sorted by the time they take place in order to keep real-time
+compatibility.
+
+<P>
+An event is a group of words that define a message sent to the synthesizer
+controller. The standard event statement is made up of four statements
+sorted this way: T V P:PV, where T is Time Statement, V is Variable
+Statement, P is Parameter Statement, and PV is Parameter Value Statement.
+
+<P>
+These, together, conform a message that means: Modify Parameter (P)
+referring to variable (V) according to its new value (PV) at the moment
+specified (T).
+
+<P>
+The Time Statement includes features such as the possibility to use
+standard time, SMPTE timecode or musical Beat notation and relative
+increments.
+
+<P>
+Variable statements can refer to user defined variables or directly
+to Instruments or Generators initialized.
+
+<P>
+There is a clear relation between the structure of a MetriX statement
+and an object-oriented message. The Variable is the receiving object,
+the Parameter is the message selector or operation that the receptor
+should execute and the Parameter Value is simply the arguments passed
+in the message. As already mentioned, a musical score can be seen
+as the set of messages that are sent to musical objects during a performance.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2668"
+  HREF="node199.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2666"
+  HREF="node196.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2660"
+  HREF="node197.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2669"
+  HREF="node199.html">Example</A>
+<B> Up:</B> <A NAME="tex2html2667"
+  HREF="node196.html">MSDL: The MetriX Score</A>
+<B> Previous:</B> <A NAME="tex2html2661"
+  HREF="node197.html">The Score Header</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

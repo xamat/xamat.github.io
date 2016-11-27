@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Kinds of Processing Classes: Generators, Sinks and Transforms</TITLE>
+<META NAME="description" CONTENT="Kinds of Processing Classes: Generators, Sinks and Transforms">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node140.html">
+<LINK REL="up" HREF="node137.html">
+<LINK REL="next" HREF="node142.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2017"
+  HREF="node142.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2015"
+  HREF="node137.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2011"
+  HREF="node140.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2018"
+  HREF="node142.html">Processing Data Objects</A>
+<B> Up:</B> <A NAME="tex2html2016"
+  HREF="node137.html">Processing Objects</A>
+<B> Previous:</B> <A NAME="tex2html2012"
+  HREF="node140.html">Data and Control Flow</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00511400000000000000"></A><A NAME="sub:Generators__Sinks_and_Transforms"></A>
+<BR>
+Kinds of Processing Classes: Generators, Sinks and Transforms
+</H3>
+
+<P>
+In the Kahn Process Network model of computation (see <A HREF="node37.html#sub:Kahn-Process-Networks">1.5.1</A>)
+two kinds of subgraphs are of special importance: <SPAN  CLASS="textit">data sources</SPAN>
+and <SPAN  CLASS="textit">data sinks</SPAN> [<A
+ HREF="node207.html#ParksProcessNetworksPhD">Parks, 1995</A>]. In section
+<A HREF="node45.html#sub:Patterns-of-Graphical">1.5.3</A> we also saw how the <SPAN  CLASS="textit">Data Flow
+Architecture</SPAN> pattern classified modules into <SPAN  CLASS="textit">sink</SPAN>, <SPAN  CLASS="textit">filters</SPAN>,
+and <SPAN  CLASS="textit">sources</SPAN>. In a similar way in DSPOOM we identify <SPAN  CLASS="textit">Generating</SPAN>
+Processing objects, which are data sources, and <SPAN  CLASS="textit">Sink</SPAN> Processing
+objects<A NAME="tex2html49"
+  HREF="footnode.html#foot5644"><SUP><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">2</SPAN></SUP></A>. Figure <A HREF="#fig:Generators-and-Sinks">4.5</A> illustrates a CLAM system
+with such components.
+
+<P>
+We define a <SPAN  CLASS="textit">Generating Processing object</SPAN> as a Processing object
+that generates data but does not consume it. This means that a Generating
+Processing objects has no input ports. So, instead of transforming
+input data, what it does is to respond to the Do operation by generating
+data that is related to its internal state. In such objects, input
+controls play a very important role because they are the responsibles
+for changing the processing internal state and this way modify the
+data that is generated. Nevertheless this does not mean that if a
+generating object does not receive an input Control between two consecutive
+calls it will generate the exact same data. The object internal state
+may also respond to internally generated control data. An oscillator,
+for instance, will have an internal oscillating function or table
+so it will not generate the same samples in two consecutive calls.
+This behavior highlights the fact that generating objects can be used
+for converting an asynchronous data flow (usually coming from an external
+system or interface) into a synchronous one.
+
+<P>
+One special case of generating objects are the random generators.
+These generating objects are the exception to the rule in the sense
+that the output they generate does not respond to the internal state
+but rather to a randomized variable. 
+
+<P>
+<SPAN  CLASS="textit">Sink</SPAN> objects are the opposite to generating objects: they consume
+data without generating any. Thus, they have input but not output
+ports. The basic responsibility of a sink object is usually taking
+internal data from our system and translating it to some other format
+to transmit it to another system or directly to the user. Examples
+of sink objects are visualizers, audio players or passivators.
+
+<P>
+On the other hand, regular DSPOOM Processing classes are just coupled
+to a single data type that is used both as input and output. Processing
+objects that have a different processing data type as input are called
+<SPAN  CLASS="textit">Transforms</SPAN>. Examples of such processing objects are an FFT
+(input is audio and output is a spectrum) or a Sinusoidal Synthesizer
+(input is an array of spectral peaks and output is a spectrum).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:Generators-and-Sinks"></A><A NAME="5645"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.5:</STRONG>
+Generators and Sinks</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="444" HEIGHT="278" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.png"
+ ALT="\includegraphics[%
+width=0.80\textwidth]{images/ch4-DSPOOM/ps/GeneratorSink.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2017"
+  HREF="node142.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2015"
+  HREF="node137.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2011"
+  HREF="node140.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2018"
+  HREF="node142.html">Processing Data Objects</A>
+<B> Up:</B> <A NAME="tex2html2016"
+  HREF="node137.html">Processing Objects</A>
+<B> Previous:</B> <A NAME="tex2html2012"
+  HREF="node140.html">Data and Control Flow</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

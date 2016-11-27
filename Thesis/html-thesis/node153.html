@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>DSPOOM as a Graphical Model of Computation</TITLE>
+<META NAME="description" CONTENT="DSPOOM as a Graphical Model of Computation">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node154.html">
+<LINK REL="previous" HREF="node151.html">
+<LINK REL="up" HREF="node135.html">
+<LINK REL="next" HREF="node154.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2136"
+  HREF="node154.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2134"
+  HREF="node135.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2128"
+  HREF="node152.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2137"
+  HREF="node154.html">Summary and Conclusions</A>
+<B> Up:</B> <A NAME="tex2html2135"
+  HREF="node135.html">The Digital Signal Processing</A>
+<B> Previous:</B> <A NAME="tex2html2129"
+  HREF="node152.html">Why almost-degenerated objects are</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00530000000000000000"></A><A NAME="sec:DSPOOM-graphical-MoC"></A>
+<BR>
+DSPOOM as a Graphical Model of Computation
+</H1>
+
+<P>
+As we have seen DSPOOM offers a completely object-oriented metamodel
+for digital signal processing. Nevertheless, the consequence of applying
+object-oriented modeling techniques to the signal domain not surprisingly
+yields a Graphical Model of Computation.
+
+<P>
+We will now compare DSPOOM graphical model to those introduced in
+section <A HREF="node34.html#sec:GraphicalMoCs">1.5</A>. In order to do so we will first
+summarize the main properties of its graphical model:
+
+<P>
+
+<OL>
+<LI>In the DSPOOM graphical MoC the main nodes in the graph correspond
+to Processing objects.
+</LI>
+<LI>By connecting Ports from different Processing objects we are defining
+the arcs in the graphical model.
+</LI>
+<LI>These arcs in the graph are interpreted as unbounded FIFO queues where
+data tokens are written and read.
+</LI>
+<LI>Processing objects produce/consume from the FIFO queues in a synchronous
+manner, when told to do so by the flow control entity.
+</LI>
+<LI>The data consumption/production rate of Processing objects is not
+fixed
+</LI>
+<LI>This consumption rate may vary at run time.
+</LI>
+<LI>By connecting controls from different Processing objects we are also
+defining a secondary set of arcs.
+</LI>
+<LI>Controls are transmitted using an event-driven mechanism as soon as
+they are generated.
+</LI>
+<LI>Controls are not enqueued and they overwrite past values even if they
+have not been read.
+</LI>
+</OL>
+The first four properties in the list simply confirm the fact that
+DSPOOM's graphical MoC is appropriate for signal processing as those
+properties are shared by most existing graphical models that have
+been used in this domain.
+
+<P>
+The fact that Processing objects can produce/consume different quantities
+of data tokens leads us to observe that our model can be more easily
+assimilated to Dataflow Networks (see <A HREF="node38.html#sub:Dataflow-Networks">1.5.1</A>).
+The ``firing rules'' of Dataflow Networks are translated into
+region sizes in the DSPOOM models. The quantity of data tokens to
+be produced or consumed by a Processing object Port is specified by
+giving its region a particular size. This is precisely what Dataflow
+Networks firing rules usually specify.
+
+<P>
+But common Dataflow Networks such as Synchronous Dataflow Networks
+have firing rules that are statically defined (see <A HREF="node39.html#sub:Synchronous-Dataflow-Networks">1.5.1</A>).
+In order to have regions resizeable at run-time like those found in
+DSPOOM we have to turn to Dynamic Dataflow Networks (see section <A HREF="node41.html#sub:Dynamic-Dataflow-Networks">1.5.1</A>). 
+
+<P>
+Note though, that the DSPOOM metamodel does not require all modeled
+applications to have dynamically resizeable regions. That is why a
+DSPOOM compliant model can be also assimilated to a Synchronous Dataflow
+Network. Therefore, whether a DSPOOM model can be statically scheduled
+or not is not a fundamental issue. As for the general case we will
+ensure that scheduling can be dynamically performed. But in many applications,
+and under some usually acceptable restrictions, static scheduling
+can be performed. 
+
+<P>
+As a first conclusion, by looking at the first six properties and
+taking into account the previous discussion we may conclude that DSPOOM's
+graphical MoC is a:
+<BR>
+<P>
+<SPAN  CLASS="textbf">``(possibly Dynamic) Dataflow Network''</SPAN>
+<BR>
+<P>
+But the control mechanism in DSPOOM introduces some differences. Its
+event-driven syntax introduces an extension to the basic Process Network
+and Dataflow language. This extension though is almost identical to
+that in Context-aware Process Networks (see section <A HREF="node43.html#sub:Context-Aware-Process-Networks">1.5.1</A>).
+The asynchronous coordination introduced in that model in order to
+be able to use context information to control KPN execution has the
+same requirements and features than DSPOOM's control mechanism. The
+interpretation given to controls in DSPOOM is slightly different as
+controls are seen as events directly travelling from Processing object
+to Processing object, without the need of an intermediate register
+such as the one deployed in Context-aware Process Networks. But then
+again, these are only implementation details as the basic and fundamental
+behavior, illustrated by our properties 7 to 9, are fully compatible. 
+
+<P>
+Because of all this, we can say that DSPOOM's graphical model of computation
+is equivalent to a:
+<BR>
+<P>
+<SPAN  CLASS="textbf">``Context-aware (and possibly Dynamic) Dataflow Network''</SPAN>
+<BR>
+<P>
+Note that until now we have consciously not mentioned the Data Node
+issue exposed in section <A HREF="node147.html#sub:DSPOOM::Networks_and_Composites">4.1.3</A>.
+We consider that issue as an implementation detail as far as DSPOOM's
+graphical MoC is concerned. Anyway, it is interesting to discuss how
+this affects the basic graphical model.
+
+<P>
+DSPOOM's Data Node introduces a variant on the basic graphical MoC
+adding a secondary node type. In this layer, nodes in the graph can
+be either Processing Nodes or Data Nodes. 
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:DSPOOM-Data-Node"></A><A NAME="5657"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.10:</STRONG>
+DSPOOM Data Node</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="555" HEIGHT="204" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.png"
+ ALT="\includegraphics[%
+width=1.0\textwidth]{images/ch4-DSPOOM/ps/Node.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Because the benefits and applications of making this issue explicit
+in DSPOOM's graphical MoC are not sufficiently clear we have chosen
+not to base the model on its existence. Nevertheless it is interesting
+to note, as a pointer for future work, that its inclusion makes our
+graphical model resemble a Petri Net and particularly an <SPAN  CLASS="textit">Object-Oriented
+Petri Net</SPAN> (see section <A HREF="node36.html#sub:Petri-Nets">1.5.1</A>), where Data Nodes are
+<SPAN  CLASS="textit">places</SPAN> and Processing objects are <SPAN  CLASS="textit">transitions</SPAN>.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2136"
+  HREF="node154.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2134"
+  HREF="node135.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2128"
+  HREF="node152.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2137"
+  HREF="node154.html">Summary and Conclusions</A>
+<B> Up:</B> <A NAME="tex2html2135"
+  HREF="node135.html">The Digital Signal Processing</A>
+<B> Previous:</B> <A NAME="tex2html2129"
+  HREF="node152.html">Why almost-degenerated objects are</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

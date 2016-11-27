@@ -1,0 +1,816 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>IADIS Conference Template</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Linux)">
+	<META NAME="AUTHOR" CONTENT="mtg">
+	<META NAME="CREATED" CONTENT="20040326;11370000">
+	<META NAME="CHANGED" CONTENT="20040512;17102800">
+	<STYLE>
+	<!--
+		@page { size: 21cm 29.7cm; margin-left: 2cm; margin-right: 2.5cm; margin-top: 3.3cm; margin-bottom: 4cm }
+		P { margin-bottom: 0.21cm; direction: ltr; color: #000000; widows: 2; orphans: 2 }
+		P.western { font-family: "Times New Roman", serif; font-size: 12pt; so-language: en-US }
+		P.cjk { font-family: "Times New Roman", serif; font-size: 12pt }
+		P.ctl { font-family: "Times New Roman", serif; font-size: 12pt; so-language: ar-SA }
+		P.sdfootnote-western { margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0cm; direction: ltr; color: #000000; font-family: "Times New Roman", serif; font-size: 10pt; so-language: en-US; widows: 2; orphans: 2 }
+		P.sdfootnote-cjk { margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0cm; direction: ltr; color: #000000; font-family: "Times New Roman", serif; font-size: 10pt; widows: 2; orphans: 2 }
+		P.sdfootnote-ctl { margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0cm; direction: ltr; color: #000000; font-family: "Times New Roman", serif; font-size: 10pt; so-language: ar-SA; widows: 2; orphans: 2 }
+		A:link { color: #0000ff; text-decoration: underline }
+		A:visited { color: #800000; text-decoration: underline }
+		A.sdfootnoteanc { font-size: 57% }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" LINK="#0000ff" VLINK="#800000" DIR="LTR">
+<P LANG="en-GB" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0.85cm">
+<FONT SIZE=4 STYLE="font-size: 16pt"><B>Free Software in education:
+is there an alternative?</B></FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 1.48cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><B>ABSTRACT</B></FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">
+<FONT SIZE=2 STYLE="font-size: 9pt">This paper reviews the
+suitability of Free Software with particular regard to education. The
+characteristics of Free Software and Open Source and their respective
+licenses are explained. The pragmatic advantages of Free Software are
+outlined, with a focus on technical, economical and business related
+issues. It is proposed that the choice of software is not morally
+neutral, and that free software is a more coherent choice. The
+education specific aspects of Free Software are examined, and
+arguments put forward as to why Free Software is the best option for
+education and research. Practical guidance is provided on Free
+applications which can substitute for proprietary applications.
+Finally a four step route map is proposed for individuals or
+institutions who wish to move from a proprietary to a Free software
+environment.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.64cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><B>KEYWORDS</B></FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">
+<FONT SIZE=2 STYLE="font-size: 9pt">Free Software, Education, Open
+Source, GNU/Linux</FONT></P>
+<OL>
+	<LI><P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.85cm; margin-bottom: 0.42cm">
+	<FONT SIZE=3 STYLE="font-size: 13pt"><B>INTRODUCTION. What is &ldquo;free
+	software&rdquo;?</B></FONT></P>
+</OL>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>In this paper we use the term Free Software in the sense
+defined by the Free Software Foundation. According to this widely
+accepted definition, in order to qualify as Free Software any piece
+of software must observe the following four freedoms [FSF-a]:</FONT></P>
+<UL>
+	<LI><P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">
+	<FONT SIZE=2>Freedom 1: Unlimited use for any purpose</FONT></P>
+	<LI><P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">
+	<FONT SIZE=2>Freedom 2: Freedom to study and modify it for your own
+	needs</FONT></P>
+	<LI><P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">
+	<FONT SIZE=2>Freedom 3: Freedom to copy it</FONT></P>
+	<LI><P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">
+	<FONT SIZE=2>Freedom 4: Freedom to distribute it with any
+	modifications.</FONT></P>
+</UL>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>It is clear that in this sense &ldquo;free&rdquo; is not
+used as meaning &ldquo;no economic cost&rdquo; but rather as granting
+specified freedoms to its user. Because of this Free Software is
+often referred to as &ldquo;Libre Software&rdquo;, using the Spanish
+word &ldquo;libre&rdquo; with its unambiguous meaning. The opposite
+of Free Software is Proprietary Software. It is important to stress
+that Free Software is not necessarily non-commercial, and that
+neither does the absence of payment for use mean that software is
+Free in the sense we have defined (for example Microsoft Internet
+Explorer). </FONT>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Freedom in Free Software is established through
+copyright (which in this case is referred to as &ldquo;copyleft&rdquo;).
+Copyright allows its owner to license the product, and it is in this
+license that the four freedoms can be granted and guaranteed. It is
+therefore a myth that the Free Software movement is opposed to
+copyright and authorship, on the contrary, it is one of the main
+goals of the Free Software Foundation to protect software authors and
+their copyright.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Hundreds of licenses are available for publishing a
+piece of Free software, and there are many others which seem to be
+Free but are not, because they do not grant the 4 freedoms defined
+above. In case of doubt the Free Software Foundation provide guidance
+on whether they consider a particular license to be Free [FSF-b].</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>In a broad sense, Free software licenses can be
+classified into 3 categories: GPL-like, LGPL-like and BSD-like. </FONT>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>GPL, the Gnu Public License [FSF-c], provides the
+strongest protection both for the author&rsquo;s decision to make the
+software Free, and for the freedoms granted. The basic characteristic
+of GPL-like licenses is that all derived software or applications
+that use the licensed software must use the same license, thus
+guaranteeing that all related software will remain Free. Thus GPL
+&ldquo;vaccinates&rdquo; software against non-Free usage (although
+GPL&rsquo;s detractors choose to describe it as &ldquo;viral&rdquo;).<U>
+</U></FONT>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>The LGPL or Lesser GNU Public License is similar to the
+GPL but does not protect the software from being used in a
+proprietary application. In this sense it provides less protection
+for freedom and the author&rsquo;s rights.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Finally the BSD or Berkeley Source Distribution license
+[Berkeley] is the least protective as it allows the licensed code to
+be used or derived in any way, be it in Free or in proprietary
+software.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.42cm; margin-bottom: 0.42cm">
+<FONT SIZE=3 STYLE="font-size: 13pt"><B>Open Source</B></FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>The terms Free Software and Open Source are often
+misused and confused. Although &ldquo;open source&rdquo; per se
+refers only to the fact that the software is distributed with its
+original source code available, the term is currently related to the
+Open Source Initiative (OSI) that was started in 1998, (see [FSF-d]
+and [OSI-a] to see how both organizations compare their initiatives).
+The Open Source Initiative advocates abandoning the &ldquo;ideological&rdquo;
+issues informing Free Software, and concentrates on the practical
+factors that make open source software more reliable from a technical
+point of view.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.42cm; margin-bottom: 0.42cm">
+<FONT SIZE=3 STYLE="font-size: 13pt"><B>Personalities</B></FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Three people have greatly influenced the discourse
+surrounding Free Software, and have served as a focus for the range
+of positions taken on the issues: Richard Stallman, Eric Raymond, and
+Linus Torvald.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Richard Stallman is the founder of GNU and the Free
+Software Foundation. In 1983 he initiated the GNU (acronym of GNU&rsquo;s
+Not Unix) Project for developing a Free UNIX-like operating system.
+In 1985 he defined Free Software described above, and in that same
+year he introduced the GPL license.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Eric Raymond is the founder of the Open Source
+Initiative. He started the project in 1998 after disagreeing with
+Stallman&rsquo;s &ldquo;utopic&rdquo; view on the subject.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Finally, Linus Torvald is probably the most well-known
+personality related to Free Software, and is the creator and main
+maintainer of the Linux kernel . In 1991 the Linux kernel was
+incorporated to the developing GNU system, which still lacked a
+kernel, and gave place to the GNU/Linux operating system used by
+millions of people around the world. The Linux kernel is licensed
+with the GPL license.</FONT></P>
+<OL START=2>
+	<LI><P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.85cm; margin-bottom: 0.42cm">
+	<FONT SIZE=3 STYLE="font-size: 13pt"><B>Pragmatic advantages of free
+	software</B></FONT></P>
+</OL>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>In this section we review the main practical advantages
+of Free Software, leaving the more ethical or social issues for next
+section, in which we concentrate on Free Software in education. The
+practical advantages can be divided into three broad areas:
+technical, economical and business related.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>First, we concentrate on the technical advantages, which
+can be summarized as better quality, more security, more stability,
+collective ownership and effort, and price. </FONT>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Free Software can achive higher quality because the code
+can be revised by many different programmers with a wide range of
+perspectives. As a result the adopted solution will probably be the
+best in the technical sense, not being subject to obscure strategic
+or business-related issues. Needless to say, releasing a Free
+software package by no means guarantees immediate collaboration from
+developers, but the opportunity is made explicity, and there is a
+natural tendency for useful and well designed packages to attract the
+largest developer communities.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Free Software is also more secure. This may not seem
+obvious: how can software whose code is completely accessible be
+secure? The technical reasons are complex to explain but can be
+understood through the &ldquo;key&amp;lock&rdquo; metaphor. Knowing
+all the technical details of a lock, and even being able to build
+one, does not mean that an existing lock can be opened. The same is
+true of cryptographic algorithms and security policies. On the other
+hand, having many developers look into the code as potential users
+increases the likelihood of that any security holes will be swiftly
+identified.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Another widespread misconception regarding Free Software
+is that it is less stable than proprietary software. It is certainly
+true that many software packages evolve so fast that it is difficult
+to keep up to date, but it is entirely up to users to choose if they
+want to upgrade to the latest version or not. On the other hand a
+piece of Free Software is guaranteed never to disappear. It is very
+common for a business to buy proprietary software and then find out
+some years later that the original developing company has disappeared
+and no support is available. This never happen with Free Software,
+because if the original developers are no longer available, another
+software company can provide support after looking at the source
+code.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>The final technical advantage is cost. While Free
+software does not necessarily have to be non-commercial, but in the
+In the Free Software model, users pay for services and support. There
+are many companies which run successful businesses on this basis, for
+example [MySQL], [Trolltech] and [Redhat]. This cost is always easier
+to evaluate than that of a closed product which has a license price
+corresponding to opaque strategic calculations.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>These technical advantages apply equally to non-Free but
+Open Source software, but is often suggested that the Free Software
+model is not compatible with general economical interests and
+disastrous for technology companies. In the following paragraphs we
+will argue that this is not the case.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Firstly, let us examine what makes proprietary software
+so prone to favour monopolies. When using a given proprietary tool I
+am asking all the people who professionally relate to me and with
+whom I have to interchange data or knowledge to use that same tool.
+If those people adopt the tool, then a transmission chain rapidly
+spreads this requirement, and before long a whole economic sector or
+region has to use the same software tool. Frequently this particular
+tool only works well with other tools from the same company, and this
+intensifies the effect. Eventually the monopoly also extends to
+hardware platforms. Furthermore, in many cases the monopoly holders
+are foreign companies, so all the money companies and users invest in
+software leaves the country or region.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>In contrast, Free Software is independent and promotes
+equal rights, and all companies are invited to take the source code,
+study and sell services related to it. As a result, Free Software
+promotes the creation of a local and maintainable software industry,
+making markets flexible and adaptable and favouring national economy.
+</FONT>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Free Software does not mean the death of the software
+industry (see [OSI2003] or [Kenwood2001]). Even at present the
+percentage of software engineers whose salary directly depends on the
+sale of commercial proprietary software is small. Free software
+promotes the model of paying for services rather than licenses, and
+so builds on this existing revenue flow. This can be a commercial
+model, as is shown by the fact that major companies such as IBM are
+already working in this direction.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Although all the pragmatic reasons mentioned so far are
+of great importance, others may be of even more significance, and we
+will discuss them in the context of education and universities.</FONT></P>
+<OL START=3>
+	<LI><P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.85cm; margin-bottom: 0.42cm">
+	<FONT SIZE=3 STYLE="font-size: 13pt"><B>Ethical and social
+	advantages of free software</B></FONT></P>
+</OL>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Access to software is increasingly a determining factor
+in people&rsquo;s ability to communicate, learn, and work. We access
+the internet through software, we read, write and study through
+software, and when we look for a job we are required to have software
+skills. Furthermore, as more and more activity is centred around
+software related services, software itself is bound to condition the
+vision of the world for our new generations. The &ldquo;windows&rdquo;
+paradigm, for instance, has already modified the way we understand
+information, the way we think and the way we relate with the world. </FONT>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>From this perspective, the key issue is who is taking
+the decisions which decide the way that coming generations will
+understand the world? It seems clear to us that such issues are too
+important to be in the hands of a single company with no social
+commitment other than maximising shareholder value. Depending on ones
+political view of the world two different possible situations may be
+identified. In the first vital software such as operating systems, or
+internet browsers would be the result of standardization processes
+that would at least set the basis or guidelines that could then be
+developed by different companies on common grounds. In the second
+situation, Free Software would be enforced and no proprietary or
+closed solution could be commercialized. We believe that both
+situations would at the end be fairly equivalent although our
+experience of some standardization processes leads us to think that
+the second possibility (enforcing Free Software) may be more
+practical and agile, but would also encounter more resistance and
+legal issues.</FONT></P>
+<OL START=4>
+	<LI><P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.85cm; margin-bottom: 0.42cm; page-break-after: avoid">
+	<FONT SIZE=3 STYLE="font-size: 13pt"><B>Free software and education</B></FONT></P>
+</OL>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm; page-break-after: avoid">
+<FONT SIZE=2>In many ways the values espoused by Free Software also
+inform education in democratic societies: freedom of thought and
+expression, equal opportunities, community effort and benefit,
+without which education becomes indoctrination. A key factor in
+learning is access to information, and the state intervenes in this
+respect by providing public schools and libraries in most countries.
+Today, not only are documents stored as software, but, more
+importantly, software provides the main access channel to
+information. Moreover, software increasingly provides the environment
+within which learning is carried out. </FONT>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Democracy education institutions have a duty to present
+a range of points of view on any given issue, and to promote critical
+thought and discussion. In order to respect this plurality one should
+avoid promoting the idea that there is only one effective software
+solution, and that this solution belongs to a particular company.
+There are however more significant underlying issues. Firstly, the
+software infrastructure and tools have a significant impact on the
+organisation of institutions and the processes which they support,
+and consequently they should be under the control of the communities
+which use them. Secondly, in universities we aspire to &ldquo;teach
+to learn&rdquo;. Proprietary software discourages this because it
+withholds information from users, and does not allow them to explore
+the potential of the software or to extend it. It may appear that
+this argument exaggerates the importance of accessing the source
+code, as it may be suggested that only professional software
+engineers will be able to really make use of it. There are, however,
+many levels of interaction with software, as is shown by those web
+authors using proprietary tools who end up editing HTML. Free
+software can ensure that appropriate tools are available at all
+levels so that users can take control of the environment which they
+use. </FONT>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>The practical advantages described in the previous
+section also apply in an educational environment: a school or
+university can profit from lower costs, and provide more effective
+support for the national or local economy. An additional practical
+issue for schools is that important for learners to have the same
+software at school and at home. When proprietary software is used,
+most students are unwilling or unable to pay for the software and so
+they use unauthorised copies. In this way the education system
+becomes complicit in the use of illegal software.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Finally, many of the arguments in favour of Free
+software can also be applied to Free educational content, and a
+number of initiatives have been established which take this approach
+[MIT] [Cedergren2003]. </FONT>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.42cm; margin-bottom: 0.42cm">
+<FONT SIZE=3 STYLE="font-size: 13pt"><B>Free Software and Research</B></FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Research is an important activity in many educational
+institutions, especially at the university level, and Free Software
+has a number of advantages in this respect.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>The scientific method in itself depends to a great
+extent in the free exchange of knowledge and ideas. Scientists and
+researchers are realizing more and more that current duplication of
+effort because of fear of losing intellectual property makes no
+sense, and hampering research and scientific progress. In many cases,
+however, publishing research results or the algorithm is not enough,
+as today the implementation is often an important part of the result.
+We need to know whether a particular algorithm can work in different
+systems, how it performs in different situations, and its speed in
+different implementations. Software can be, and in many cases is,
+considered another sort of &ldquo;publication&rdquo;.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>With Free Software we are inviting others to compare,
+use and enhance our results. And more importantly, we are
+contributing to the preservation of human knowledge.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.42cm; margin-bottom: 0.42cm">
+<FONT SIZE=3 STYLE="font-size: 13pt"><B>European initiatives in Free
+Software</B></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2><SPAN LANG="en-GB">The European Union has recently
+recognised the importance of supporting the use of Free and Open
+Source Software in education by supporting two projects within the
+Framework 6 programme with this aim: SIGOSSEE and JOIN!</SPAN><SUP><A CLASS="sdfootnoteanc" NAME="sdfootnote1anc" HREF="#sdfootnote1sym"><SUP>1</SUP></A></SUP><SPAN LANG="en-GB">,
+both of which commenced in 2004. </SPAN></FONT>
+</P>
+<OL START=5>
+	<LI><P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.85cm; margin-bottom: 0.42cm">
+	<FONT SIZE=3 STYLE="font-size: 13pt"><B>Free applications in an
+	educational environment</B></FONT></P>
+</OL>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm; page-break-after: avoid">
+<FONT SIZE=2>In this section we briefly comment on some Free
+alternatives to tools which are widely used in education, in order to
+demonstrate that Free Software is a viable option. We refer readers
+interested in substituting a particular application to the Free
+software listings such as that maintained by the GNU project, the
+JOIN! project mentioned above, or to simply search the Internet for
+&ldquo;Free Software Application X&rdquo;.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Probably the most widely used application in education,
+and beyond, is Microsoft Office. This proprietary package is used by
+staff, faculty and learners alike. A number of Free applications
+exist that substitute particular components in the package. For
+instance, Abiword is a solid replacement for Microsoft Word; Gnumeric
+can substitute Microsoft Excel quite well;. MagicPoint is a
+replacement for Microsoft Powerpoint; and TotalRekall is a reasonable
+substitute for Microsoft Access, though rather complicated to install
+in its Free version. There is, however, a Free package which
+substitutes for the whole of Microsoft Office (except for Access,
+included only in Microsoft&rsquo;s Professional edition): OpenOffice
+[Community]. This is a complete suite that can be used to edit text
+documents, work with spreadsheets or prepare overhead projections.
+The package is very robust, stable, and comprehensive and many new
+features are planned to be added in the short term. The user
+interface is so similar to that in Microsoft Office that the learning
+curve for an MS Office user is almost non-existent. Furthermore,
+OpenOffice has been translated to a many languages, including some
+not available for Microsoft Office. OpenOffice is a cross-platform
+application that can be installed in both GNU/Linux and Microsoft
+Windows.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Another set of tools of general use, but also important
+in education, are the various internet services including web
+browsers and e-mail clients. There are many Free tools in this area
+but Mozilla is of particular interest. Netscape gave this Free
+version to the community and has now announced that the proprietary
+version is soon to be discontinued. The Mozilla package includes a
+web browser, an e-mail client and a basic webpage editor. The lighter
+Firebird version includes only the web browser. The Mozilla web
+browser and e-mail client is more secure and technologically advanced
+than Microsoft&rsquo;s Internet Explorer or Outlook Express.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>In scientific or technological education it is very
+common to use mathematical packages such as Matlab . Octave is a good
+Free substitute which is used in many research institutions, and
+lacks only some Matlab toolboxes which are not included in the
+regular version.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>For graphics a number of applications can be
+recommended. The Gimp is a graphics and photograph editor which is
+very similar to Photoshop, and is even more advanced in some specific
+functionalities. For drawing diagrams and vector graphics Dia and
+Xfig can be used as substitutes of Microsoft Visio.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Many other Free tools can be used in education including
+some very advanced applications published as Free software by
+universities, or educational/recreational software for small
+children, such as TuxPaint .</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Two examples of applications which are only available as
+Free Software are LaTeX and Emacs. The former is a complete
+environment for generating professional quality texts for publishing,
+and it includes tools for handling bibliographies or a large
+collection of publishing styles. LaTeX is even required by some
+international publishing companies when handing in manuscripts. Emacs
+is a very well-known tool, developed and maintained by Richard
+Stallman. It is a very advanced text editor that has tools for
+editing different formats such as LaTeX or html.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>All these tools can be installed in both GNU/Linux and
+Microsoft Windows. Most have native Windows versions that can be
+installed just like regular Windows applications, while the others
+can be run using the Cygwin environment , which runs a GNU/Linux
+simulation under Microsoft Windows.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Finally, a number of Free Software e-learning
+environments have now been developed. (see [Miguel], for example).</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.42cm; margin-bottom: 0.42cm">
+<FONT SIZE=3 STYLE="font-size: 13pt"><B>A Word on Formats</B></FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm; page-break-after: avoid">
+<FONT SIZE=2>One of the fundamental problems related to the use of
+proprietary software is that of file formats, which is probably one
+of the main factors in the emergence software monopolies. Although
+most Free applications are now capable of opening proprietary formats
+(following substantial development effort), nevertheless, when we
+send someone a proprietary document (e.g. a Microsoft Word file), we
+are telling them to use the same application. Additionally, because
+the file format is not known, we cannot be sure of what information
+is encoded in it. The file could, for example, be attaching personal
+information without our consent. The problem is that in many
+important application areas, such as editing formatted text, there
+are no standard formats, and this is a need which international
+standardization organisations such as ISO could address with
+advantage. </FONT>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>What formats, then, can be used in place of a Microsoft
+Word file? A first alternative is an ASCI text file, and although in
+a text file all formatting is lost, this is the best format for many
+applications. Many people are used to attaching Microsoft Word files
+for simple texts that could well be included in the body of the mail
+or as a separate text attachment, which is also much smaller.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>If on the other hand, it is important to keep the format
+for a text file, one has to decide if it is to be editable. If this
+is not necessary then a Free format such as postscript or PDF may be
+used (although the latest versions of PDF are not Free). If the text
+file is to be editable a good option is html, which is Free and
+highly efficient. It is, of course, also possible to use a Free
+format related to an application such as Open Office. In this case it
+is true that we force receivers to use a particular application that
+they may not have, but this is clearly better than using a
+proprietary application, as the receiver can download the Free
+application.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Finally if what a Free editable professional format for
+publishing is required, LaTeX is the best choice. This should have
+been the case, for instance, in the template of this conference, and
+offering only a Microsoft Word format has forced this author install
+the software specifically to write this paper.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Another area in which formats are important is the
+Internet. We have already mentioned that there are many different
+Free web browsers, but the truth is that it is not always easy to
+browse the internet with some of them. The main reason is that many
+web pages do not using standard html code, but rather code extended
+with some proprietary additions. This is particularly worrying as
+Internet is supposed to promote free access to information and now it
+turns out that this information can only be accessed for an
+application belonging to a particular company. The case of Macromedia
+Flash is also a direct attack on free access to information although
+it must be said that there is still no clear Free alternative to it.
+hen browsing the Internet we must demand the right to access any web
+page through any browser, and punish companies that force the use of
+a particular one (usually Microsoft Internet Explorer) by not using
+their services.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.42cm; margin-bottom: 0.42cm">
+<FONT SIZE=3 STYLE="font-size: 13pt"><B>GNU/Linux</B></FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Although as already mentioned that most of the important
+Free applications can be used both in Microsoft Windows and GNU/Linux
+(and other operating systems as well), if we want to exploit all the
+benefits of Free Software we eventually have to move to GNU/Linux.
+This operating system is the combination of the Linux kernel (the
+minimum part of the operating system that implements the core and
+most important functionality) and the GNU project. Although Linux is
+usually used as a synonym for the whole operating system we agree
+with the GNU project that this is being unfair to the great number of
+people that have worked on GNU functionalities that are now a very
+important part of the operating system.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>GNU/Linux is a Unix-like operating system that is more
+robust, secure, reliable and advanced than Microsoft Windows (which
+is why most critical services such as web servers use GNU/Linux).
+With modern and configurable GNU/Linux desktops (KDE and GNOME) the
+look and feel of the operating system can be very similar to that of
+Microsoft Windows.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>One of the main reasons argued by some people not to
+install GNU/Linux is that it is very difficult to install, but in
+fact modern GNU/Linux installations have complete installers that
+make the process very easy. There may be problems caused by hardware
+companies who do not support GNU/Linux or provide drivers, but this
+situation is usually resolved by an active community which is willing
+to invest time to do what should have been done by the companies.
+Nevertheless users should be warned that if they use uncommon
+hardware they may run into trouble. Once the first installation is
+complete, the process of adding new components or applications is at
+least as easy as in the Microsoft Windows operating system.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>When one decides to move into GNU/Linux one of the first
+problems to faced is which distribution to choose (this is a general
+problem with Free Software, as there is so much available that is
+difficult to decide on what fits ones personal needs). It is beyond
+the scope of this paper to discuss the benefits of each distribution,
+but a comprehensive listing is available at Distrowatch
+[Distrowatch]. The main ones should, however, be mentioned, which
+arguably are: Debian [Debian], Redhat/Fedora [Redhat], and SuSE
+[SuSE]. Once an organisation has decided to use GNU/Linux then a
+personalized distribution can be prepared. The Extremadura regional
+government in Spain, for instance, has promoted the creation of a
+specific distribution for public schools [Linex].</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>One easey way to try GNU/Linux is to use a &ldquo;live-CD&rdquo;
+such as the Knoppix distribution [Knowppix], which provides a
+complete installation of the operating system that can be booted from
+a CD, without having to install anything on the hard-drive.</FONT></P>
+<OL START=6>
+	<LI><P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.85cm; margin-bottom: 0.42cm">
+	<FONT SIZE=3 STYLE="font-size: 13pt"><B>A proposed route map to
+	adopt free software</B></FONT></P>
+</OL>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>When deciding whether to adopt Free Software for an
+institution it should be remembered that this is not an &ldquo;all or
+nothing&rdquo; decision. Free Software can be approached carefully in
+order to lessen the fear factor. We now propose a route map to go
+from an &ldquo;all proprietary&rdquo; to an &ldquo;all Free&rdquo;
+situation in small steps that will minimize the sense of sudden
+novelty and insecurity. This guidelines are intended to help both
+institutions and individuals that are willing to support and use Free
+Software, but are afraid of doing so through a sudden &ldquo;revolution&rdquo;
+and would rather think of it as a &ldquo;transition&rdquo;.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Before describing the route map, we need to respond to
+users who ask &ldquo;Will I be able to do everything I can do in my
+&ldquo;all proprietary&rdquo; environment when I reach the &ldquo;all
+Free&rdquo; environment. The short answer is &ldquo;yes,&rdquo;. The
+long answer is there is a Free alternative for almost 100 percent of
+proprietary software (excluding games), including of course common
+applications such as office suites or internet browsers. In general
+terms, the state and features of these alternatives is comparable to
+the proprietary applications. Nevertheless, one should recognise that
+in some instances certain features and functionality that will have
+to be given up. Should this be the case then this must be balanced
+against the advantages which we have described above, and the
+availability of Free Software of some particular applications which
+are not available in proprietary environments.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>We now outline the proposed route for an average user
+who currently works with Microsoft Windows and uses no Free Software.</FONT></P>
+<OL>
+	<LI><P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.21cm; page-break-after: avoid">
+	<FONT SIZE=2 STYLE="font-size: 11pt"><B>First contact with Free
+	Software</B></FONT></P>
+</OL>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>The first step we propose is to install Free
+alternatives to those applications we use the most, so as to provide
+an initial contact with Free Software. The same operating system can
+be used, and there is no need to get rid of any current applications,
+just to add the new ones and progressively start using them. This
+does not require much effort from the user.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>It is probable that the most used applications are
+Microsoft Office and the Internet browser, and if so a good start
+would be to install the Windows version of both OpenOffice and
+Mozilla. </FONT>
+</P>
+<OL START=2>
+	<LI><P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.21cm; page-break-after: avoid">
+	<FONT SIZE=2 STYLE="font-size: 11pt"><B>All applications with a Free
+	alternative</B></FONT></P>
+</OL>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm; page-break-after: avoid">
+<FONT SIZE=2>By continuing with the process of substitution, users
+should reach the point where most, if not all, the applications they
+use have a Free alternative in the system. An effort is required to
+use the Free versions whenever possible so as to become used to them.</FONT></P>
+<OL START=3>
+	<LI><P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.21cm">
+	<FONT SIZE=2 STYLE="font-size: 11pt"><B>Installing GNU/Linux</B></FONT></P>
+</OL>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>The next step is to decide on which GNU/Linux
+distribution best fits the users needs (see previous section) and
+install it on a separate partition or hard-drive in the system. In
+this way, using Lilo or similar software, a dual booting machine can
+be configured, offering the user a choice of booting in GNU/Linux or
+Windows. A good option at this point is to have a third disk
+partition where all data that should be accessible from any of the
+two operating systems is kept.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>The newly installed GNU/Linux partition should have all
+the various Free applications that were previously installed on
+Microsoft Windows, so as to minimize the sensation of novelty and
+keep work practices stable. Again, the user should make an effort to
+launch GNU/Linux whenever possible.</FONT></P>
+<OL START=4>
+	<LI><P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.21cm">
+	<FONT SIZE=2 STYLE="font-size: 11pt"><B>An All-Free situation</B></FONT></P>
+</OL>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Having reached 3, it is a matter of time before the user
+is ready to switch to an all-free situation. Free Software under
+GNU/Linux can then be used nearly all the time, leaving the Microsoft
+Windows partition only for very exceptional cases such as writing a
+paper for a conference that only provides Microsoft templates.</FONT></P>
+<OL START=7>
+	<LI><P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.85cm; margin-bottom: 0.42cm">
+	<FONT SIZE=3 STYLE="font-size: 13pt"><B>Conclusions</B></FONT></P>
+</OL>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>In this paper we have outlined the main advantages of
+Free Software with particular reference to the educational
+environment. As people who are responsible of some part for this
+academic community we have the duty to defend the independence of
+education, and promote freedom of thought and acquisition of
+knowledge. As we have shown in this paper, Free Software promotes all
+this and more.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Various parts of society are already starting to realize
+the advantages of Free Software and are moving toward it. On this
+important issue educational institutions and universities should not
+be in the last wagon, but should rather take a stand, and adopt a
+leading role in this transformation.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5cm; margin-bottom: 0cm">
+<FONT SIZE=2>Free Software requires a minimal personal investment and
+in return it provides many satisfactions and advantages. Our choice
+of software is no ethically neutral, and Free Software can reassure
+us that we have chosen a coherent and morally defensible solution. </FONT>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.85cm; margin-bottom: 0.42cm">
+<FONT SIZE=3 STYLE="font-size: 13pt"><B>ACKNOWLEDGEMENT</B></FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">
+<FONT SIZE=2>The authors wish to thank Georg Greve, founder of the
+Free Software Foundation Europe (www.fsfeurope.org), for all the
+material supplied for this paper.</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.85cm; margin-bottom: 0.42cm">
+<FONT SIZE=3 STYLE="font-size: 13pt"><B>REFERENCES</B></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">Berkeley
+University, online document. <I>Berkeley Source Distribution License</I>.
+Available at </SPAN><A HREF="http://www.opensource.org/licenses/bsd-license.php"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.opensource.org/licenses/bsd-license.php</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">Cedergren,
+Magnus. 2003, online document. <I>Open Content and Value Creation</I>.
+First Monday. Available at
+</SPAN><A HREF="http://www.firstmonday.org/issues/issue8_8/cedergren"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.firstmonday.org/issues/issue8_8/cedergren</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">Community
+Council. <I>OpenOffice homepage</I>. </SPAN><A HREF="http://www.openofice.org/"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.openofice.org</FONT></SPAN></U></A><SPAN LANG="en-GB">.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">Debian. <I>Debian
+homepage</I>. </SPAN><A HREF="http://www.debian.org/"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.debian.org</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">Distrowatch,
+online document. <I>List of Linux Distributions</I>. Available at
+</SPAN><A HREF="http://www.distowatch.com/"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.distowatch.com</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">*Free Software
+Foundation (FSF), online document (a) . <I>Definition of Free
+Software</I>. Available at </SPAN><A HREF="http://www.gnu.org/philosophy/free-sw.html"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.gnu.org/philosophy/free-sw.html</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">*Free Software
+Foundation (FSF), online document (b). <I>List of Existing Licences</I>.
+Available at </SPAN><A HREF="http://www.fsf.org/licenses/licenses.html"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.fsf.org/licenses/licenses.html</FONT></SPAN></U></A></FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt">Free Software Foundation (FSF),
+online document (c). The GNU Public License. Available at <FONT COLOR="#ff0000">XX</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">Free Software
+Foundation (FSF), online document (d). <I>Why Free Software is better
+than Open Source?</I> Available at
+</SPAN><A HREF="http://www.fsf.org/phylosophy/free-software-for-fredoom.html"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.fsf.org/phylosophy/free-software-for-fredoom.html</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">Ghost, Rishab
+A. et al, 2002, online document. <I>Free/Libre and Open Source
+Software&nbsp;: Survey &amp; Study</I>. Available at
+</SPAN><A HREF="http://www.infonomics.nl/FLOSS/report"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.infonomics.nl/FLOSS/report</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">Kenwood, K.
+2001, online document. <I>A Business Case Study of Open Source
+Software</I>. The Mitre Corporation. Available at
+</SPAN><A HREF="http://www.mitre.org/work/tech_papers/tech_papers01/kenwood_software"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.mitre.org/work/tech_papers/tech_papers01/kenwood_software</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">Knoppix
+community, online document. <I>&iquest;What is Knoppix?</I> Available
+at </SPAN><A HREF="http://www.cylnux.org/knoppix"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.cylnux.org/knoppix</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">LinEx. <I>Linex
+homepage</I>. </SPAN><A HREF="http://www.linex.org/"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.linex.org</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">Massachusetts
+Institute of Technology, online document. <I>What is MIT
+OpenCourseWare? MIT OpenCourseWare FAQs</I>. Available at
+</SPAN><A HREF="http://ocw.mit.edu/OcwWeb/Global/AboutOCW/faq.htm"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://ocw.mit.edu/OcwWeb/Global/AboutOCW/faq.htm</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">Miguel. <I>Miguel
+e-learning platform homepage</I>.
+</SPAN><A HREF="http://www.hidrogeno.unileon.es/e-educa/index.php"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.hidrogeno.unileon.es/e-educa/index.php</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">MySQL. MYSQL
+homepage. </SPAN><A HREF="http://www.mysql.com/"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.mysql.com</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">Open:service.
+Open:educa project. </SPAN><A HREF="http://www.openservice.org/"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.openservice.org</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">Raymond, Eric
+S., 1998, online document. <I>The Cathedral and the Bazaar</I>.
+Firstmonday. Available at
+</SPAN><A HREF="http://www.firstmonday.dk/issues/issues3_3/raymond/#d1"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.firstmonday.dk/issues/issues3_3/raymond/#d1</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">Raymond, Eric.
+1999, online document. <I>The Magic Cauldron</I>, Available at
+</SPAN><A HREF="http://gnuwin.epfl.ch/articles/en/magiccauldron/magic-cauldron/magic-cauldron.html"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://gnuwin.epfl.ch/articles/en/magiccauldron/magic-cauldron/magic-cauldron.html</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">Redhat. <I>Redhat
+homepage</I>. </SPAN><A HREF="http://www.redhat.com/"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.redhat.com</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">SuSE. <I>SusE
+homepage</I>. </SPAN><A HREF="http://www.suse.com/"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.suse.com</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">The Mozilla
+Foundation. <I>Mozilla homepage</I>. </SPAN><A HREF="http://www.mozilla.org/"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.mozilla.org</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">The Open
+Source Initiative (OSI), online document (a). <I>How is Open Source
+related to Free Software? Frequently Asked Questions</I>. Available
+at </SPAN><A HREF="http://www.opensource.org/advocacy/faq.html"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.opensource.org/advocacy/faq.html</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">The Open
+Source Initiative (OSI), online document (b). <I>List of Existing
+Licenses</I>. Available at </SPAN><A HREF="http://www.opensource.org/licenses"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.opensource.org/licenses</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">The Open
+Source Initiative (OSI), online document (c). <I>The Open Source
+Definition</I>. Available at
+</SPAN><A HREF="http://www.opensource.org/docs/definition.php"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.opensource.org/docs/definition.php</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">The Open
+Source Initiative (OSI). 2003, online document (d). <I>Open Source
+Case for Business</I>. Available at
+</SPAN><A HREF="http://www.opensource.org/advocacy/case_for_business.php"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.opensource.org/advocacy/case_for_business.php</FONT></SPAN></U></A></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0.07cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">Trolltech.
+Trolltech homepage. </SPAN><A HREF="http://www.trolltech.com/"><U><SPAN LANG="en-GB"><FONT COLOR="#0000ff">http://www.trolltech.com</FONT></SPAN></U></A>
+</FONT>
+</P>
+<DIV ID="sdfootnote1">
+	<P LANG="en-GB" CLASS="sdfootnote-western" STYLE="margin-bottom: 0.5cm">
+	<A CLASS="sdfootnotesym" NAME="sdfootnote1sym" HREF="#sdfootnote1anc">1</A>Details
+	of both projects can be found at www.ossite.org</P>
+</DIV>
+</BODY>
+</HTML>

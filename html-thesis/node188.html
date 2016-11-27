@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Instruments and Generators</TITLE>
+<META NAME="description" CONTENT="Instruments and Generators">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node189.html">
+<LINK REL="previous" HREF="node187.html">
+<LINK REL="up" HREF="node187.html">
+<LINK REL="next" HREF="node189.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2564"
+  HREF="node189.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2562"
+  HREF="node187.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2556"
+  HREF="node187.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2565"
+  HREF="node189.html">Mappings, Parameters and breakpoint</A>
+<B> Up:</B> <A NAME="tex2html2563"
+  HREF="node187.html">Basics in MetriX</A>
+<B> Previous:</B> <A NAME="tex2html2557"
+  HREF="node187.html">Basics in MetriX</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00741100000000000000">
+Instruments and Generators</A>
+</H3>
+
+<P>
+An Instrument is the class that holds behavior and state for a system
+made up of a set of Generators and the relations that are established
+in between them. When we define a new Instrument in MetriX we are
+actually subclassing the base (and abstract) <TT>Instrument</TT> class
+in order to implement behavior that is particular to the Instrument
+being defined. This subclassifying though can be done at the object
+level by instantiating an object and using some attributes to set
+its behavior (It is well known that instantiation is as a matter of
+fact a form of subclassification, see [<A
+ HREF="node207.html#GrahamOOMethods">Graham, 1991</A>] for
+instance).
+
+<P>
+Defining an Instrument behavior means specifying how the Instrument
+will respond to incoming messages. For doing so we must define what
+Generators make up the Instrument and how each of them responds to
+input messages.
+
+<P>
+In order to produce sound an Instrument needs audio generation primitives
+that can be existing audio waves, analysis results or a set of simple
+functions such as oscillators or waveform Generators. There is no
+need to have one of such primitives for every Generator in the Instrument,
+only those needed to represent the space of possible sound combinations
+to be produced by the different Generators.
+
+<P>
+Therefore, the primitives in MetriX are arranged in what we call the
+<SPAN  CLASS="textit">Timbre Space</SPAN>. The idea of a timbre space is not new (see [<A
+ HREF="node207.html#WesselTimbreSpace">Wessel, 1979</A>],
+for example) but it has specific properties in our framework. A MetriX
+timbre space is an n-dimensional space constructed by placing the
+audio generation primitives. Each of the dimensions in the space represents
+a key feature of the sound such as Pitch or Loudness<A NAME="tex2html97"
+  HREF="footnode.html#foot5709"><SUP><SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">1</SPAN></SUP></A>. The decisions as to how many and which key features are necessary
+for a given Instrument is dependent on the flexibility and quality
+the sound designer wants the Instrument to have. As it will be seen
+later, axes not represented in the timbre space but needed in the
+synthesis can also be obtained by transformation. 
+
+<P>
+The n-dimensional geometric space is constructed by placing the <SPAN  CLASS="textit">samples</SPAN>
+or primitives in precise coordinates belonging to this space. Samples
+located at furthest positions in relation to a given dimension define
+the limits of the timbre space. Once existing samples are located
+at definite positions, intermediate samples can be then obtained by
+interpolating neighboring ones.
+
+<P>
+A first simple example of a timbre space could be a one dimensional
+space formed by placing samples on a single axis, sorted by pitch.
+Notes with intermediate pitch will then be obtained by interpolating
+the two neighboring samples with the appropriate weight factor.
+
+<P>
+Adding some complexity to the example we could add a second dimension
+to our timbre space: loudness. Figure <A HREF="#fig:Two-dimensional-timbre">6.9</A>
+illustrates a two-dimensional timbre space. Note that only A's in
+two different loudness (fortissimo and pianissimo) have been sampled
+from the original Instrument. Intermediate pitches and loudness will
+be obtained by interpolating existing samples.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:Two-dimensional-timbre"></A><A NAME="5710"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.9:</STRONG>
+Two dimensional timbre space</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="276" HEIGHT="173" ALIGN="BOTTOM" BORDER="0"
+ SRC="img85.png"
+ ALT="\includegraphics[%
+width=0.50\textwidth]{images/ch6-MetriX/draft/TimbreSpace.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2564"
+  HREF="node189.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2562"
+  HREF="node187.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2556"
+  HREF="node187.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2565"
+  HREF="node189.html">Mappings, Parameters and breakpoint</A>
+<B> Up:</B> <A NAME="tex2html2563"
+  HREF="node187.html">Basics in MetriX</A>
+<B> Previous:</B> <A NAME="tex2html2557"
+  HREF="node187.html">Basics in MetriX</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

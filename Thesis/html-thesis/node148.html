@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Processing Composites</TITLE>
+<META NAME="description" CONTENT="Processing Composites">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node149.html">
+<LINK REL="previous" HREF="node147.html">
+<LINK REL="up" HREF="node147.html">
+<LINK REL="next" HREF="node149.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2090"
+  HREF="node149.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2088"
+  HREF="node147.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2082"
+  HREF="node147.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2091"
+  HREF="node149.html">Networks</A>
+<B> Up:</B> <A NAME="tex2html2089"
+  HREF="node147.html">Composing with DSPOOM Objects:</A>
+<B> Previous:</B> <A NAME="tex2html2083"
+  HREF="node147.html">Composing with DSPOOM Objects:</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00513100000000000000">
+Processing Composites</A>
+</H3>
+
+<P>
+A Processing Composite is a static composition of DSPOOM Processing
+objects. A Processing Composite is manually implemented by a developer
+and might be fine-tuned for efficiency reasons. But the list of included
+Processing objects and their connections may not be modified at run-time<A NAME="tex2html52"
+  HREF="footnode.html#foot2992"><SUP><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">3</SPAN></SUP></A>. It is a direct implementation of the Composite pattern as defined
+in the Gang of Four catalog [<A
+ HREF="node207.html#GOF">Gamma et&nbsp;al., 1995</A>].
+
+<P>
+A Processing Composite object has one parent that acts as the <SPAN  CLASS="textit">composite</SPAN>
+and any number of children that act as <SPAN  CLASS="textit">components</SPAN>. Any child
+can in turn be the parent of other Processing objects recursively
+defining different levels of composition. A Processing Composite object
+is seen as a regular Processing object from the outside, even in a
+Network-like context. Therefore, and as it happens in the classical
+composite pattern, performing an operation on the Processing Composite
+means performing it in all its children recursively to the lowest
+level. Particularly:
+
+<P>
+
+<UL>
+<LI>Constructing a Processing Composite means constructing all its children.
+</LI>
+<LI>Configuring a Processing Composite means configuring all its children.
+</LI>
+<LI>Starting or stopping a Processing Composite means starting or stopping
+all its children.
+</LI>
+<LI>Executing a Processing Composite means executing all its children.
+</LI>
+</UL>
+The ``construction condition'' implies that the most usual way
+to construct a Processing Composite is by having its children as regular
+member attributes. These attributes will be constructed in their parent
+construction, they will be <SPAN  CLASS="textit">attached</SPAN> to the children list, and
+they will be notified of whom the parent is at that time.
+
+<P>
+The ``configuration condition'' means that a Processing Composite
+has to offer a configuration that at least contains a subset of all
+the configuration parameters in the children. The process of creating
+a composite configuration cannot be automated and depends on design
+decisions. The Processing Composite class developer has to choose
+what parameters will be promoted from the children to the parent layer
+of composition. This list of <SPAN  CLASS="textit">published</SPAN> configuration parameters
+will define the subset of all parameters that will be available for
+the user. It is important to note that in many situations, children
+Processing objects share common configuration parameters or have parameters
+with coupled semantics. For instance, all children Processing objects
+in a Processing Composite may have a <SPAN  CLASS="textit">SamplingRate</SPAN> attribute
+that needs to be consistent. Even in that same Processing Composite
+we may have a spectral domain Processing object that has a <SPAN  CLASS="textit">SpectralRange</SPAN>
+parameter that, although not equivalent, is directly coupled to the
+<SPAN  CLASS="textit">SamplingRate</SPAN>. Because of all of this it is not a good idea
+to simply build the composed configuration by aggregating individual
+children configurations.
+
+<P>
+The ``start/stop condition'' does not imply any complex control
+issues and can be easily automated.
+
+<P>
+And finally the ``execution condition'' is where all the flow
+control issues have to be solved. No automation can be offered at
+this level and it is the designer's responsibility to choose in what
+order the children will be executed or how intermediate data will
+be handled. On the other hand, in reward for this complexity the Processing
+Composite designer is in the position to optimize and fine-tune all
+execution and control issues that could not be addressed in a generic
+environment such as a Network (see below).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="3011"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.7:</STRONG>
+Processing Composite</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="222" HEIGHT="180" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.png"
+ ALT="\includegraphics[%
+width=0.40\textwidth,
+keepaspectratio]{images/ch4-DSPOOM/ps/ProcessingComposite.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2090"
+  HREF="node149.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2088"
+  HREF="node147.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2082"
+  HREF="node147.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2091"
+  HREF="node149.html">Networks</A>
+<B> Up:</B> <A NAME="tex2html2089"
+  HREF="node147.html">Composing with DSPOOM Objects:</A>
+<B> Previous:</B> <A NAME="tex2html2083"
+  HREF="node147.html">Composing with DSPOOM Objects:</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

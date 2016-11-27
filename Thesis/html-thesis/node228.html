@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>External libraries </TITLE>
+<META NAME="description" CONTENT="External libraries ">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node229.html">
+<LINK REL="previous" HREF="node227.html">
+<LINK REL="up" HREF="node224.html">
+<LINK REL="next" HREF="node229.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html3003"
+  HREF="node229.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html3001"
+  HREF="node224.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2995"
+  HREF="node227.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html3004"
+  HREF="node229.html">CLAM User Group</A>
+<B> Up:</B> <A NAME="tex2html3002"
+  HREF="node224.html">Used Tools and Resources</A>
+<B> Previous:</B> <A NAME="tex2html2996"
+  HREF="node227.html">The build system</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001024000000000000000"></A><A NAME="sec:_CLAM_External_Libraries"></A>
+<BR>
+External libraries 
+</H2>
+
+<P>
+We have already mentioned that one of the software engineering maximas
+that CLAM observes is <SPAN  CLASS="textit">reuse</SPAN>. When developing a framework everything
+is designed with future reuse in mind. In a similar sense a framework
+must reuse all possible pre-existing solutions. In CLAM we always
+try not to fall onto the ``redesigning the wheel'' paradigm. Because
+of this a number of external libraries that provide specific functionality
+are used. In this section we will briefly describe their main features.
+
+<P>
+<SPAN  CLASS="textbf">FFTW</SPAN> [<A
+ HREF="node207.html#FFTW98">Frigo and Johnson, 1998</A>,<A
+ HREF="node207.html#www-FFTW">www-FFTW, </A>] is a C subroutine library for
+computing the Discrete Fourier Transform (DFT) in one or more dimensions,
+of both real and complex data, and of arbitrary input size. We believe
+that FFTW, which is free software, should become the FFT library of
+choice for most applications. Our benchmarks, performed on on a variety
+of platforms, show that FFTW's performance is typically superior to
+that of other publicly available FFT software. Moreover, FFTW's performance
+is portable: the program will perform well on most architectures without
+modification. Another FFT library that has been integrated into CLAM
+is the new <SPAN  CLASS="textbf">FFT-Ooura</SPAN>, which is almost as efficient as the
+FFTW but has a BSD-style kind of license.
+
+<P>
+Two different graphical user interface toolkits have been in some
+way integrated into the CLAM framework: FLTK and QT. The Fast and
+Light ToolKit <SPAN  CLASS="textbf"></SPAN>(<SPAN  CLASS="textbf">FLTK</SPAN>) [<A
+ HREF="node207.html#www-FLTK">www-FLTK, </A>] (pronounced
+&#34;fulltick&#34;) is a LGPL'd C++ graphical user interface
+toolkit for X (UNIX), MacOS, and Microsoft Windows, that offers lightweight
+solutions for building GUI's and supports 3D graphics with OpenGL.
+It is currently maintained by a small group of developers across the
+world with a central repository on SourceForge. <SPAN  CLASS="textbf">Qt</SPAN> [<A
+ HREF="node207.html#QTProgramming">Blanchette and Summerfield, 2004</A>,<A
+ HREF="node207.html#www-QT">www-QT, </A>]
+is a C++ framework for application development. It lets application
+developers target all major operating systems with a single application
+source code. Qt provides a platform-independent API to all central
+platform functionality: GUI, database access, networking, file handling,
+etc. The Qt library encapsulates the different APIs of different operating
+systems, providing the application programmer with a single, common
+API for all operating systems. The native C APIs are encapsulated
+in a set of well-designed, fully object-oriented C++ classes. It is
+clear that Qt offers superior features to those found in FLTK. But
+it has a downside: the license can only be considered Free for the
+GNU/Linux platform.
+
+<P>
+Currently most of CLAM's XML support is given through the use of Xerces-C++.
+<SPAN  CLASS="textbf">Xerces-C++</SPAN> [<A
+ HREF="node207.html#www-Xercesc">Xercesc, </A>] is a validating XML parser
+written in a portable subset of C++. Xerces-C++ makes it easy to give
+your application the ability to read and write XML data. A shared
+library is provided for parsing, generating, manipulating, and validating
+XML documents. Xerces-C++ is faithful to the XML 1.0 recommendation
+and associated standards ( DOM 1.0, DOM 2.0. SAX 1.0, SAX 2.0, Namespaces,
+and W3C's XML Schema recommendation version 1.0.) The parser provides
+high performance, modularity, and scalability. Source code, samples
+and API documentation are provided with the parser. For portability,
+care has been taken to make minimal use of templates, no RTTI, no
+C++ namespaces and minimal use of #ifdefs. It must be said though
+that some of those decisions have produced a code that is less efficient
+than desirable. For this reason other solutions for the CLAM XML support
+are already under study.
+
+<P>
+In order to offer transparent audio input/audio on any platform different
+solutions have been used in CLAM. As already explained in section
+<A HREF="node119.html#sec:_CLAMTools">3.2.2</A> CLAM adds an abstraction layer on a number of
+libraries in order to make them homogeneously accessible. These libraries
+are PortAudio, RTAudio, Alsa, and DirectX Sound. The first two are
+indeed cross-platform audio libraries that in CLAM are used both for
+Microsoft Windows and Apple OSX while the other two are platform-specific.
+
+<P>
+<SPAN  CLASS="textbf">Port Audio</SPAN> [<A
+ HREF="node207.html#BencinaPortAudio">Bencina and Burk, 2001</A>,<A
+ HREF="node207.html#BencinaPortAudio03">Bencina, 2003</A>,<A
+ HREF="node207.html#www-PortAudio">www-PortAudio, </A>]
+is a Free cross-platform library for managing audio input and output
+on virtually any platform. It offers thorough support for all the
+platforms offering low latency and high efficiency. <SPAN  CLASS="textbf">RtAudio</SPAN>[<A
+ HREF="node207.html#RtAudioICMC02">Scavone, 2002</A>,<A
+ HREF="node207.html#www-RtAudio">www-RtAudio, </A>]
+is a similar library. Although it may not offer as many features as
+PortAudio, it is much easier to use and deploy as it is just made
+up of a single C++ class and it is more object-oriented. On GNU/Linux
+CLAM directly addresses the <SPAN  CLASS="textbf">ALSA</SPAN> library interface in order
+to ensure low-latency and the highest efficiency. This can also be
+done (up to the operating system's particular limitations) on the
+Microsoft Windows platform using the <SPAN  CLASS="textbf">DirectX Sound</SPAN> interface
+to CLAM.
+
+<P>
+In a similar way <SPAN  CLASS="textbf">PortMIDI</SPAN> [<A
+ HREF="node207.html#www-PortMIDI">www-PortMIDI, </A>] is used for
+MIDI input/output on the Microsoft Windows and Apple OSX operating
+systems while the ALSA interface is directly used on GNU/Linux.
+
+<P>
+Three libraries are used for sound file input/output: Libsndfile,
+LibMad and OggVorbis. <SPAN  CLASS="textbf">Libsndfile</SPAN> is a GPL library that gives
+support to virtually any sound file format. In CLAM it is used especially
+for encoding/decoding PCM audio formats. Both LibMad and OggVorbis
+offer support for compressed formats not available in Libsndfile.
+OggVorbis supports the Free <SPAN  CLASS="textbf">Ogg</SPAN> format while LibMad supports
+the <SPAN  CLASS="textbf">MP3</SPAN> format, which is subject to some patent issues but
+so extended that it seemed a good idea to integrate into CLAM.
+
+<P>
+<SPAN  CLASS="textbf">Id3lib</SPAN>[<A
+ HREF="node207.html#www-id3lib">www-id3lib, </A>] is a Free Software, cross-platform
+software development library for reading, writing, and manipulating
+ID3v1 and ID3v2 tags. ID3 is a standard specification to add metadata
+information (such as author or title) to any sound file.
+
+<P>
+Finally the <SPAN  CLASS="textbf">Win Pthreads</SPAN> library is used to ensure the use
+of this standard in the Microsoft Windows operating system when handling
+multi-threading issues.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3003"
+  HREF="node229.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html3001"
+  HREF="node224.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2995"
+  HREF="node227.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html3004"
+  HREF="node229.html">CLAM User Group</A>
+<B> Up:</B> <A NAME="tex2html3002"
+  HREF="node224.html">Used Tools and Resources</A>
+<B> Previous:</B> <A NAME="tex2html2996"
+  HREF="node227.html">The build system</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

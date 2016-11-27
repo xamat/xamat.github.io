@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Network infrastructure </TITLE>
+<META NAME="description" CONTENT="Network infrastructure ">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node119.html">
+<LINK REL="previous" HREF="node114.html">
+<LINK REL="up" HREF="node110.html">
+<LINK REL="next" HREF="node119.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1754"
+  HREF="node119.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1752"
+  HREF="node110.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1746"
+  HREF="node117.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1755"
+  HREF="node119.html">Tools</A>
+<B> Up:</B> <A NAME="tex2html1753"
+  HREF="node110.html">Infrastructure</A>
+<B> Previous:</B> <A NAME="tex2html1747"
+  HREF="node117.html">Configurations</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00422300000000000000"></A><A NAME="sec:_Network_Infrastructure"></A>
+<BR>
+Network infrastructure 
+</H3>
+
+<P>
+A CLAM Network is a dynamic composition of Processing objects. In
+a Network Processing objects can be added, deleted, connected and
+reconfigured on run-time. All this functionality is implemented in
+the Network class and associated classes, which will be explained
+in the following paragraphs.
+
+<P>
+Apart from an identifying name, a Network has two important attributes
+and an interface for interacting with them. These attributes are:
+
+<P>
+
+<OL>
+<LI>A <SPAN  CLASS="textit">Map</SPAN> of Processing objects. This is a standard stl vector
+than contains pointers to instantiated Processing objects and uses
+a unique name for each Processing object as the key.
+</LI>
+<LI>An associated <SPAN  CLASS="textit">Flow Control</SPAN>. A Network can follow different
+execution and control policies. This policies are encapsulated in
+the <TT>FlowControl</TT> class that will be later explained.
+</LI>
+</OL>
+
+<DIV ALIGN="CENTER"><A NAME="cap:CLAM-Network-class"></A><A NAME="5599"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.6:</STRONG>
+CLAM Network class diagram</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="332" HEIGHT="282" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="\includegraphics[%
+width=0.60\textwidth]{/home/xamat/xamat_cvs/Thesis/images/ch4-DSPOOM/ps/Networkclassdiagram.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+A Processing object is added to the Network by indicating its class
+name. The Network then uses a Processing Factory in order to instantiate
+a new object belonging to that class and assigning it a unique identifier.
+The Processing Factory follows the Factory Method design pattern (see
+[<A
+ HREF="node207.html#GOF">Gamma et&nbsp;al., 1995</A>]) and in particular the idiom described as Object Factory
+in [<A
+ HREF="node207.html#Alexandrescu">Alexandrescu, 2001</A>].
+
+<P>
+Different operations are also offered to remove, check existence or
+configure existing Processing objects. An existing Processing object
+can be accessed by its unique name or using an iterator interface
+for traversing the whole collection.
+
+<P>
+All Ports and Controls in the contained Processing are also identified
+by a name string. Their unique identifier is formed by the concatenation
+of the Processing unique identifier and the Control or Port Name.
+Ports and Controls can be accessed by this unique identifier. Furthermore
+all the InPorts connected to a given <TT>Outport</TT> or all the <TT>InControls</TT>
+connected to a given <TT>OutControl</TT> can be accessed. The <TT>Network</TT>
+interface offers methods for connecting and disconnecting Ports and
+Controls by using these unique identifiers. It also offers a convenience
+operation for disconnecting all Ports at once.
+
+<P>
+The Network also offers an interface similar to a regular Processing
+object. The <TT>Start</TT> and <TT>Stop</TT> operations iterate through
+all the Processing objects calling their <TT>Start</TT> or <TT>Stop</TT>
+operations. The <TT>DoProcessings</TT> operation also iterates through
+all the Processing objects calling their <TT>Do</TT> operation. This
+iteration, though, is performed in different ways, depending on the
+configured Flow Control policy.
+
+<P>
+A Network is a CLAM <TT>Component</TT> and can therefore implement
+storage facilities through the <TT>StoreOn</TT> and <TT>LoadFrom</TT>
+operations (see ``XML Support'' in section <A HREF="node119.html#sec:_CLAMTools">3.2.2</A>).
+A Network is passivated into XML as a collection of Processing objects
+and their connections. See the following example:
+<BR>
+<P>
+<BR>
+<IMG
+ WIDTH="371" HEIGHT="336" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.png"
+ ALT="\begin{spacing}{0.8}
+\texttt{\footnotesize &lt;network id=\char\lq \uml {}FooNetwork\c...
+...
+}
+\par
+\texttt{\footnotesize &lt;/network&gt;}&nbsp;\\
+{\footnotesize\par
+}
+\end{spacing}">
+<BR>
+
+<P>
+Finally, and as already mentioned, the execution policy in a Network
+is encapsulated inside the <TT>FlowControl</TT> class. A Flow Control
+object must be attached to a Network before its execution. This Flow
+Control object is notified whenever a new Processing object is added
+or removed from the Network therefore changing its topology. It is
+also notified when a Processing object is configured, in which case
+the Flow Control is in charge of reconfiguring its Ports if necessary.
+
+<P>
+The <TT>FlowControl</TT> class is an abstract class with a single
+abstract method, the <TT>DoProcessings</TT>. This method has to be
+implemented in the derived classes that will implement a particular
+scheduling policy. At this moment two different policies have been
+implemented: a lazy-evaluation or pull policy and an eager or push
+execution policy.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1754"
+  HREF="node119.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1752"
+  HREF="node110.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1746"
+  HREF="node117.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1755"
+  HREF="node119.html">Tools</A>
+<B> Up:</B> <A NAME="tex2html1753"
+  HREF="node110.html">Infrastructure</A>
+<B> Previous:</B> <A NAME="tex2html1747"
+  HREF="node117.html">Configurations</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Notes</TITLE>
+<META NAME="description" CONTENT="Notes">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node185.html">
+<LINK REL="previous" HREF="node183.html">
+<LINK REL="up" HREF="node182.html">
+<LINK REL="next" HREF="node185.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2506"
+  HREF="node185.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2504"
+  HREF="node182.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2498"
+  HREF="node183.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2507"
+  HREF="node185.html">Songs and scores</A>
+<B> Up:</B> <A NAME="tex2html2505"
+  HREF="node182.html">An Object-Oriented Music Model</A>
+<B> Previous:</B> <A NAME="tex2html2499"
+  HREF="node183.html">Instruments and Generators</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00720000000000000000"></A><A NAME="sec:Notes"></A>
+<BR>
+Notes
+</H1>
+
+<P>
+When an Instrument Generator receives an event or message it responds
+to them by either changing its internal state or by ``activating''
+special objects that also contribute to the Generator state. These
+objects are called <SPAN  CLASS="textit">Notes</SPAN>. A musical Note is defined as a sound
+object that has a precise and explicit active lifespan (i.e. the note
+duration), a certain loudness, an optional pitch and other optional
+attributes. The pitch, just as the other attributes in a Note, is
+not constant and can vary in run-time as the Note object responds
+to an incoming message. Therefore, an incoming message will produce
+a change in the Note internal state by modifying any of its attributes.
+A special message, because of its consequences is the ``Stop''
+message. This will cause the Note object to transition to an inactive
+state but will generally, and as it will be seen in next paragraphs,
+not imply the object destruction.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:The-Note-class"></A><A NAME="5703"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.5:</STRONG>
+The Note class</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="332" HEIGHT="147" ALIGN="BOTTOM" BORDER="0"
+ SRC="img80.png"
+ ALT="\includegraphics[%
+width=0.35\paperwidth,
+keepaspectratio]{images/ch6-MetriX/ps/NoteClass.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+A Note object is associated to its owner Generator and will only respond
+to messages sent through it. A Generator is by nature monophonic,
+this meaning that it can only hold a single sounding note at a certain
+moment. For this reason when a Generator is created it is granted
+an associated inactive Note. This Note will become active whenever
+the Generator receives a ``play note'' message from its Instrument. 
+
+<P>
+It is important to understand, though, that the fact that a Generator
+has a single Note object through all its lifespan is just for convenience
+and could conceptually be understood of a set of Notes that are instantiated
+and de-instantiated every time they start/stop sounding. In this sense
+the concept of Note that we are here using is perfectly compatible
+with the Note obtained in the analysis phase of an OOCTM metamodel
+(see section <A HREF="node160.html#sub:The-Semantic-Transmitter">5.2.1</A>.
+
+<P>
+Ranges of valid attributes for a particular Note, such as its minimum
+and maximum pitch, are handled by its Generator. Clearly the Note
+object is completely transparent to the rest of the musical system
+that will only treat with messages sent to Instruments and particular
+Generators present in it.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:Instrument_-Generators-and"></A><A NAME="5704"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.6:</STRONG>
+Instrument, Generators and Notes Class Diagram</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="427" HEIGHT="219" ALIGN="BOTTOM" BORDER="0"
+ SRC="img81.png"
+ ALT="\includegraphics[%
+width=0.45\paperwidth,
+keepaspectratio]{images/ch6-MetriX/ps/InstrumentGeneratorNote.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Our model of Note is very different from that of event-oriented music
+models such as Music-N where a Note is considered an event. As a matter
+of fact our music model also includes the idea of <SPAN  CLASS="textit">Note event</SPAN>
+that will be explained in next section. But it is important to note
+that this consideration of a Note as something completely different
+from an event is not exclusively ours. As Miller Puckette explains
+in [<A
+ HREF="node207.html#PucketteFTS">Puckette, 1991b</A>] already in RTSKED (see [<A
+ HREF="node207.html#MathewsRTSKED">Mathews and Pasquale, 1981</A>])
+a note was considered as a <SPAN  CLASS="textit">process</SPAN> and this same idea was pushed
+forward in FTS and Max. The combination of our Generator/Note structure
+is also very similar to the note in ZIPI (see section <A HREF="node88.html#sub:ZIPI">2.6.2</A>).
+<BR>
+<BR>
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2506"
+  HREF="node185.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2504"
+  HREF="node182.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2498"
+  HREF="node183.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2507"
+  HREF="node185.html">Songs and scores</A>
+<B> Up:</B> <A NAME="tex2html2505"
+  HREF="node182.html">An Object-Oriented Music Model</A>
+<B> Previous:</B> <A NAME="tex2html2499"
+  HREF="node183.html">Instruments and Generators</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

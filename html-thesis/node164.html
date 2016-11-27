@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Coding Step (Content Description)</TITLE>
+<META NAME="description" CONTENT="The Coding Step (Content Description)">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node161.html">
+<LINK REL="up" HREF="node160.html">
+<LINK REL="next" HREF="node165.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2281"
+  HREF="node165.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2279"
+  HREF="node160.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2275"
+  HREF="node163.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2282"
+  HREF="node165.html">The Semantic Receiver</A>
+<B> Up:</B> <A NAME="tex2html2280"
+  HREF="node160.html">The Semantic Transmitter</A>
+<B> Previous:</B> <A NAME="tex2html2276"
+  HREF="node163.html">High-level Descriptors</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00621200000000000000">
+The Coding Step (Content Description)</A>
+</H3>
+
+<P>
+In the coding step, all the content information extracted and organized
+in the form of objects in previous analysis step needs to be encoded
+in an appropriate format. Ideally binary and textual based versions
+of the format should be provided in order to provide both coding and
+transmission efficiency and readability. It is also important for
+the coding scheme used to offer support to the way that the output
+of our analysis block is organized. In that sense, it is necessary
+to use a highly structured language that enables the description of
+a tree-like data structure giving also support to object-oriented
+concepts.
+
+<P>
+Maybe the first idea that comes to mind is using UML as a way of describing
+our content. UML is indeed a highly structured language and supports
+all OO concepts. It would be an excellent choice for describing our
+Sound Classes. But it is not so appropriate if what we want is to
+describe the state of our objects/instances or, in other words, make
+our objects persistent. On the other hand, and as described in section
+<A HREF="node33.html#sub:MOF">1.4.3</A>, a quite immediate relation can be established between
+in-memory objects declared in any object-oriented language and their
+persistent representation or metadata. 
+
+<P>
+There are many examples of coding schemes used for encoding metadata
+or, more precisely, audiovisual content description, perhaps the most
+ambitious being MPEG7 (see <A HREF="node32.html#sub:MPEG-7">1.4.2</A>). Although MPEG7 is focused
+on search and retrieval issues, the actual encoding of the audiovisual
+content description is flexible enough as for being used in applications
+as the ones envisioned in this thesis [<A
+ HREF="node207.html#MPEG7BeyondDatabase">Ebrahimi and Christopoulos, 1998</A>,<A
+ HREF="node207.html#LindsayMultipleRepresentationsInMPEG7">Lindsay and Kriechbaum, 1999</A>]. 
+
+<P>
+Our Content Transmission metamodel does not enforce a particular description
+scheme such as MPEG-7 but does recommend XML as an appropriate encoding
+format. Besides, our Sound Objects are in fact DSPOOM Processing Data's
+and their attached features are DSPOOM Descriptors. If CLAM is used
+as an appropriate implementation of the metamodel all such object
+have automatic built-in XML persistence (see section <A HREF="node119.html#sec:_CLAMTools">3.2.2</A>).
+Note that, as a matter of fact, XML-Schema will be the language used
+for structuring our content or defining Sound Classes, but the actual
+output of the analysis or content of the identified objects will be
+a standard XML document. 
+
+<P>
+On the other hand, the encoding step must also be in charge of deciding
+the degree of abstraction to be applied to the output of the content
+extraction step. This decision must be taken on the basis of the application
+and the user's requirements although it will obviously affect the
+data transmission rate. The encoder must decide what level of the
+content tree should indeed be encoded depending on the degree of concreteness
+demanded to the transmission process, degree that will usually be
+fixed by the particularities of the receiver. If only high-level semantic
+information is encoded, the receiver will be forced to use more of
+its 'artificial imagination' (see next section). The more low-leveled
+the information encoded is, the more 'real world knowledge' the receiver
+should have.
+
+<P>
+Another subject, which will not be dealt with, is how this textual
+information could be compressed and transformed into a more efficient
+binary format suitable for transmission. Suffice it to say that different
+solutions, such as MPEG7's Binary Format[<A
+ HREF="node207.html#MPEG7Book">Manjunath et&nbsp;al., 2002</A>], have been
+found to this issue.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2281"
+  HREF="node165.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2279"
+  HREF="node160.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2275"
+  HREF="node163.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2282"
+  HREF="node165.html">The Semantic Receiver</A>
+<B> Up:</B> <A NAME="tex2html2280"
+  HREF="node160.html">The Semantic Transmitter</A>
+<B> Previous:</B> <A NAME="tex2html2276"
+  HREF="node163.html">High-level Descriptors</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

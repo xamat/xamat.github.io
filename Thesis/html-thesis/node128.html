@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Network Editor</TITLE>
+<META NAME="description" CONTENT="Network Editor">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node129.html">
+<LINK REL="previous" HREF="node127.html">
+<LINK REL="up" HREF="node124.html">
+<LINK REL="next" HREF="node129.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1856"
+  HREF="node129.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1854"
+  HREF="node124.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1848"
+  HREF="node127.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1857"
+  HREF="node129.html">Others</A>
+<B> Up:</B> <A NAME="tex2html1855"
+  HREF="node124.html">Sample applications</A>
+<B> Previous:</B> <A NAME="tex2html1849"
+  HREF="node127.html">Spectral Delay</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00423400000000000000">
+Network Editor</A>
+</H3>
+
+<P>
+The Network Editor is one of CLAM's most important applications. It
+is a graphical application for directly interacting with CLAM's graphical
+model of computation by editing a <TT>CLAM::Network</TT> object (see
+section <A HREF="node118.html#sec:_Network_Infrastructure">3.2.2</A>). It can by itself be an
+environment comparable (conceptually, not in features) to graphical
+environments such as Max (see section <A HREF="node77.html#sub:Max">2.5</A>). Nevertheless,
+in the context of the CLAM framework, we consider that it is no more
+than a rapid prototyping tool that can help in modeling signal processing
+systems that can later be optimized and converted into real applications.
+
+<P>
+The Network Editor has not been designed with immediate artistic or
+musical usage in mind. Nevertheless, with slight modifications, it
+could clearly have application in this field and some experiences
+in this direction are already under way.
+
+<P>
+The Network Editor interface (see figure <A HREF="#cap:Network-Editor-Graphical">3.14</A>)
+is divided into two parts. On the left side there is list of available
+Processing classes while on the center to right side there is a graphical
+representation of the system under study.
+
+<P>
+The list of Processing classes is obtained from the CLAM framework
+<SPAN  CLASS="textit">factory register</SPAN>, which is a central repository list of available
+Processing classes. So, in order to be able to use a Processing class
+from within the Network Editor it must first be registered in the
+factory. This represents an inconvenience when writing new classes
+as the application has to be rebuilt. For that reason, dynamic loading
+of pre-compiled libraries that would allow a plug-in like functioning
+is on the todo list. Nevertheless the Network Editor does allow to
+load generic Ladspa plugins. Finally, another interesting property
+of the available class list is that it automatically classifies classes
+into categories using the available class information.
+
+<P>
+The graphical representation of a Processing object that is inserted
+in the graph is also obtained automatically from the class definition.
+A Processing object is represented by a rectangle that includes the
+class name on the low inner half. The object name that appears on
+the top inner side can be provided by the user or else is generated
+automatically. Input/output ports are represented as small rectangles,
+input ports located on the left and output ports on the right side
+of the Processing object. Controls are represented by small triangles,
+input controls on top of the Processing object and output controls
+below. and a graphical representation of input/output ports (as small
+rectangles ) and input/output controls (as triangles).
+
+<P>
+Data connections linking input and output ports are represented by
+a thick curved line while control connections are represented by a
+thin line in a different color. The path of the connection is determined
+automatically and, for the time being, cannot be modified by the user
+who is just in charge of deciding the input and output ports to connect.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="cap:Network-Editor-Graphical"></A><A NAME="5625"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.14:</STRONG>
+Network Editor Graphical Interface</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="554" HEIGHT="343" ALIGN="BOTTOM" BORDER="0"
+ SRC="img34.png"
+ ALT="\includegraphics[%
+width=1.0\textwidth,
+keepaspectratio]{images/ch3-CLAM/ps/network_sms.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+When double-clicking on any Processing object representation an automatic
+<SPAN  CLASS="textit">configurator</SPAN> object is shown. This graphical widget allows
+the user to change the configuration of the given Processing object.
+
+<P>
+The resulting Network description can be stored into XML. This XML
+file is composed of two parts: the processing Network description
+and the graphical layout. It therefore acts as a project file that
+can be loaded afterwards to recall the exact project state that was
+stored.
+
+<P>
+The application does not generate code, and therefore nor a compiled
+binary, but this feature is planned for future releases.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1856"
+  HREF="node129.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1854"
+  HREF="node124.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1848"
+  HREF="node127.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1857"
+  HREF="node129.html">Others</A>
+<B> Up:</B> <A NAME="tex2html1855"
+  HREF="node124.html">Sample applications</A>
+<B> Previous:</B> <A NAME="tex2html1849"
+  HREF="node127.html">Spectral Delay</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

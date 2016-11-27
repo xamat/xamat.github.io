@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Descriptors</TITLE>
+<META NAME="description" CONTENT="Descriptors">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node108.html">
+<LINK REL="up" HREF="node102.html">
+<LINK REL="next" HREF="node110.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1650"
+  HREF="node110.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1648"
+  HREF="node102.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1644"
+  HREF="node108.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1651"
+  HREF="node110.html">Infrastructure</A>
+<B> Up:</B> <A NAME="tex2html1649"
+  HREF="node102.html">Data repository</A>
+<B> Previous:</B> <A NAME="tex2html1645"
+  HREF="node108.html">Segment</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H4><A NAME="SECTION00421270000000000000">
+Descriptors</A>
+</H4>
+
+<P>
+Descriptors are a special kind of ProcessingData that describe numerical
+attributes computed from the data in a related Processing Data object.
+This computation is accomplished using 'basic' statistical computations
+such as mean or nth order moments. For computing these statistics
+efficiently, CLAM offers a statistical computation module that uses
+functor objects with memory and template metaprogramming techniques.
+
+<P>
+Descriptor classes are storage classes where the values of these descriptors
+are kept. They make extensive use of the XML storage facilities in
+CLAM as a basic functionality of descriptors is storing them in an
+appropriate way for later using information retrieval techniques.
+Furthermore every descriptor class has an associated <SPAN  CLASS="textit">extractor</SPAN>
+where the actual value computations are implemented as combination
+of basic statistics.
+
+<P>
+CLAM offers low-level Descriptors and associated extractors for Audio,
+Spectrum, Spectral Peaks, Frame and Segment. This latter processing
+data has special descriptors as it includes temporal statistics such
+as mean and deviation for other descriptors computed on a frame base.
+
+<P>
+This is a list of the low-level descriptors currently implemented
+in the framework:
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textbf">Audio Descriptors</SPAN>: Mean, Variance, Temporal Centroid, Attack,
+Decay, Sustain, Release, Log, Attack Time, Energy, Zero Crossing Rate,
+Rise Time, Decrease.
+</LI>
+<LI><SPAN  CLASS="textbf">Spectral Descriptors</SPAN>: Mean, Energy, Centroid, Second to Sixth
+Order Moments, Irregularity, Tilt, Flatness, Kurtosis, Strong Peak,
+High Frequency Coefficient, Mel Cepstrum Coefficients, Mel Cepstrum
+Coefficients Derivative, Band Energy, Maximum Magnitude Frequency,
+Low Frequency Energy Relation, Spread, Skewness, Rolloff, Slope, Pitch
+Contour Profile.
+</LI>
+<LI><SPAN  CLASS="textbf">Spectral Peak Array Descriptors</SPAN>: Magnitude Mean, Harmonic
+Centroid, Spectral Tilt, Harmonic Deviation, First to Third Tristimulus,
+Odd Harmonics, Even Harmonics, Odd to Even Ratio
+</LI>
+<LI><SPAN  CLASS="textbf">Frame Descriptors</SPAN>: Spectrum Descriptors, Spectral Peak Descriptors,
+Residual Spectrum Descriptors, Sinusoidal Spectrum Descriptors, Audio
+Frame Descriptors, Sinusoidal Audio Frame Descriptors, Residual Audio
+Frame Descriptors, Synthesized Audio Frame Descriptors, Morphological
+Frame Descriptors.
+</LI>
+<LI><SPAN  CLASS="textbf">Segment Descriptors</SPAN>: Mean Frame Descriptors, Maximum Frame
+Descriptors, Minimum Frame Descriptors, Variance Frame Descriptors,
+Fundamental Frequency, Audio Descriptors.
+</LI>
+</UL>
+Apart from these low-level descriptors the same infrastructure is
+used for higher-level descriptors such as melodic or rhythmic description.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1650"
+  HREF="node110.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1648"
+  HREF="node102.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1644"
+  HREF="node108.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1651"
+  HREF="node110.html">Infrastructure</A>
+<B> Up:</B> <A NAME="tex2html1649"
+  HREF="node102.html">Data repository</A>
+<B> Previous:</B> <A NAME="tex2html1645"
+  HREF="node108.html">Segment</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

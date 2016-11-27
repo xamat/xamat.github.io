@@ -1,0 +1,427 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Max</TITLE>
+<META NAME="description" CONTENT="Max">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node78.html">
+<LINK REL="previous" HREF="node76.html">
+<LINK REL="up" HREF="node75.html">
+<LINK REL="next" HREF="node78.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1231"
+  HREF="node78.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1229"
+  HREF="node75.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1223"
+  HREF="node76.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1232"
+  HREF="node78.html">WaveWarp</A>
+<B> Up:</B> <A NAME="tex2html1230"
+  HREF="node75.html">Audio and Music Visual</A>
+<B> Previous:</B> <A NAME="tex2html1224"
+  HREF="node76.html">Kyma</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00352000000000000000"></A><A NAME="sub:Max"></A>
+<BR>
+Max
+</H2>
+
+<P>
+Max [<A
+ HREF="node207.html#PucketteMAXEventSignal">Puckette, 1991a</A>,<A
+ HREF="node207.html#PucketteMax2002">Puckette, 2002</A>,<A
+ HREF="node207.html#ZicarelliMax2002">Zicarelli, 2002</A>],
+together with PD and jMax that are particular instances of the same
+model, is, apart from CSound (see section <A HREF="node83.html#sub:CSound">2.6.1</A>), probably
+the most widely used computer music environment and with one of the
+longest development life. Max is, according to its author Miller Puckette,
+``a graphical programming environment for developing real-time
+musical applications'' [<A
+ HREF="node207.html#PucketteMAXEventSignal">Puckette, 1991a</A>]. Max was first
+written for Macintosh, then ported to NeXT workstations and it is
+now available in any of its forms for most operating systems and platforms.
+At the time Max was proposed, graphical applications existed but they
+did not address the real-time issue. On the other hand, other systems
+that had advanced real-time strategies did not have graphical interface.
+Max was born as a compromise in between both approaches. 
+
+<P>
+Although Max has been classified as a graphical language/application,
+its definition is a matter of controversy. According to the author
+Max was not intended to be a programming language [<A
+ HREF="node207.html#PuckettePD96">Puckette, 1996</A>].
+On the other hand, in [<A
+ HREF="node207.html#Dechelle00a">D&#233;chelle, 2000</A>] we find that Max can be
+seen as ``an imperative graphical programming language'' or a
+``graphical interface generator''. Our opinion is that Max is
+not more than a graphical application although its graphical model
+has had so much success that it has almost given place to the Max
+paradigm. As a matter of fact Max can now be seen as a conceptual
+model that has had and still has many different implementations, before
+explaining any of them it is interesting to understand its development
+history.
+
+<P>
+Max's predecessor was called the Patcher and was presented by Miller
+Puckette in 1988 [<A
+ HREF="node207.html#PuckettePatcher">Puckette, 1988</A>]. The Patcher was a Macintosh
+software for treating and controlling MIDI. The Patcher was acquired
+by the Opcode American company where David Zicarelli added many new
+features and enhancements and converted into the popular Max/Opcode.
+
+<P>
+In 1989 Ircam started the Ircam Sound Processing Workstation (ISPW)
+project in order to develop a complete workstation for audio and music
+working on a NeXTSTEP environment. This project enabled to develop
+a new version of the Patcher known as Max/ISPW. The main novelty of
+this version was its client server architecture: on one hand the graphical
+interface and on the other a real-time sound processing environment
+called FTS.
+
+<P>
+Once the ISPW started to evolve, it became clear that Max/ISPW had
+to become more portable to different platforms. For that reason a
+new version was written called Max/FTS. The version was distributed
+for Silicon Graphics computers.
+
+<P>
+Miller Puckette started about the same time with the development of
+the free PD environment [<A
+ HREF="node207.html#PuckettePD96">Puckette, 1996</A>,<A
+ HREF="node207.html#PuckettePD97">Puckette, 1997a</A>,<A
+ HREF="node207.html#PuckettePDRecentProgress">Puckette, 1997b</A>]
+in order to give answer to some Max limitations, namely its lack of
+support for dynamic data structures. PD used many of the results of
+the Animal project and introduced a portable graphical interface based
+on Tcl/Tk. In 1997, he enhanced PD's audio processing module and named
+it MSP (Max Signal Processing). MSP was added to Max/Opcode, introducing
+therefore real-time audio processing.
+
+<P>
+The graphical interface in Max/FTS was re-implemented in Java and
+that gave rise to jMax, a new implementation of the Max language.
+At the moment of this writing the Java interface in jMax is being
+re-written in Python as it depended on some proprietary libraries.
+
+<P>
+Although from the beginning Max was intended to be a unified environment
+both for signal and control flow, it was historically developed as
+a MIDI program. Later on, Max was extended to include signal processing
+capabilities [<A
+ HREF="node207.html#PucketteMAXEventSignal">Puckette, 1991a</A>], these capabilities are
+now in Max through the MSP extension [<A
+ HREF="node207.html#MSP-Dobrian">Dobrian et&nbsp;al., 2000</A>].
+
+<P>
+It is beyond our scope to give a complete view of Max and related
+environments. For this reason we will mostly concentrate in its signal
+processing capabilities and on PD, its free version.
+
+<P>
+The most important issue in MAX is its graphical model. The fundamental
+item is the <SPAN  CLASS="textit">patch</SPAN>, a collection of boxes connected by lines.
+A patch can either be in ``run'' or ``edit'' mode. The boxes
+represent <SPAN  CLASS="textit">objects</SPAN> that wait for messages to be passed to them.
+They may respond by taking an action or by passing messages to other
+boxes. Boxes may have <SPAN  CLASS="textit">inlets</SPAN> and <SPAN  CLASS="textit">outlets</SPAN>, which are
+represented as dark rectangles. Lines connect inlets to outlets and
+a message passed to an outlet is transferred to all inlets connected
+to it. The messages are an ordered list of atoms, each of which may
+be a number or a symbol.
+
+<P>
+Apart from sending/receiving messages through the outlets/inlets,
+objects can access the clock and the MIDI I/O. The clock is accessed
+with a callback mechanism. In order to receive input MIDI messages
+the object must be inserted in the MIDI callback list, output MIDI
+messages are sent by calling a library function.
+
+<P>
+By convention, if an object has more than one inlet, its leftmost
+one is the ``active'' one. Passing a message to it causes something
+to happen, passing it to the other inlets just changes the state of
+the object. In a similar way, output messages are always written to
+outlets from right to left.
+
+<P>
+Before MSP was introduced signal processing in MAX was carried out
+by a collection of <SPAN  CLASS="textit">tilde</SPAN> classes implemented in the FTS engine.
+These objects communicated through inlets and outlets using the <SPAN  CLASS="textit">signal</SPAN>
+message. But the calculations on signals required more communication
+bandwidth than the message passing mechanism can offer [<A
+ HREF="node207.html#PucketteFTS">Puckette, 1991b</A>].
+For that reason they used a special scheduling mechanism based on
+a duty cycle that is carried out regularly to compute a new set of
+output signals.
+
+<P>
+Tilde objects executed processing tasks on fixed-size vectors typically
+between 16 and 64 samples. The DSP computation period was set to the
+sampling rate divided by the buffer size. Tilde objects intercommunicated
+at setup time in order to determine a calling order and the addresses
+of input/output signals to be used. This communication was done through
+the signal message using regular inlets/outlets. The signal message
+took two integers: a selector (<TT>COUNTINPUTS</TT>, <TT>COUNTOUTPUTS</TT>
+or <TT>DOIT</TT>) and the address of a signal object. DSP objects
+cannot initiate messages when in the duty cycle. This may introduce
+a small but non-zero delay between message and actual processing.
+Tilde classes communicated with control objects through their member
+attributes.
+
+<P>
+For building the duty cycle call list the <TT>signal</TT> message
+was used. The signal message acted like a token used by tilde objects
+to simulate data-driven dataflow networks. Each tilde object could
+``run'' only when it had data in all its inputs and then produced
+into all its outputs. Each time a tilde object was run, it appended
+itself to the call list.
+
+<P>
+When a dac object received the <TT>start</TT> message, it traversed
+the list of all tilde objects causing them to send the <TT>COUNTINPUTS</TT>
+message to all its outlets. Each inlet also counted the number of
+outputs connected to it. The list was traversed a second time and
+any tilde object that had no inlets or whose inlets count to zero
+was added to the call list. A change in the network is reflected as
+a change in the DSP duty cycle call list.
+
+<P>
+Each time a tilde object was added to the list, new signals were allocated
+for all its outlets and the outlets were first passed a <TT>COUNTOUTPUTS</TT>
+message and then a DOIT message. The first message was simply passed
+to count the number of inlets connected to each inlet. The <TT>DOIT</TT>
+message passed the address of the newly allocated signal and informed
+the patch that the signal was ready to be used. Therefore when a tilde
+object received a <TT>DOIT</TT> message it could determine whether
+all its inputs were available. After decrementing the inlet's count,
+if all inlets count were set to zero the object could be added to
+the call list, knowing already the addresses of all its inputs and
+outputs.
+
+<P>
+The signal allocated for a signal output could be freed as soon as
+the last tilde object having it as input was put on the call list.
+This way, a chain of tilde objects each with one input and one output
+would typically use the same signal inplace (important for processors
+with limited memory).
+
+<P>
+If at the end of the call list building process, a tilde object was
+not on the list, it meant that a signal loop had been detected. This
+was an unwanted situation as if a signal loop was actually needed
+a delay read/write pair had to be used (set to the minimum of one
+duty cycle).
+
+<P>
+Tilde objects carried out their DSP actions synchronously so execution
+order of inputs and outputs did not matter. But control parts of a
+patch could be activated in different ways yielding different results. 
+
+<P>
+While the previous explanation is basically about Miller Puckette's
+design, David Zicarelli started working in parallel with another implementation
+of Max signal processing capabilities. This new design finally gave
+place to MSP (Max Signal Processing). MSP is now a basic extension
+of Max, up to the point that the current environment is known as Max/MSP.
+
+<P>
+MSP [<A
+ HREF="node207.html#MSP-Dobrian">Dobrian et&nbsp;al., 2000</A>] includes over 170 Max objects for digital
+signal processing. In the graphical environment MSP objects are very
+similar to Max objects with the only difference that their name ends
+with a '~'. MSP objects are connected the same way
+than Max objects but intercommunication is conceptually different.
+Instead of establishing a path for messages, MSP connections establish
+a relationship between objects and that relationship is used to calculate
+the audio information necessary at a particular instant. The configuration
+of MSP objects is known as the <SPAN  CLASS="textit">signal network</SPAN>. 
+
+<P>
+MSP are in constant communication. Max objects sit idle waiting for
+a message to occur, but MSP objects are always active, constantly
+computing the current output samples. For that reason, an MSP signal
+network can be understood as a portion of a patch that runs at a faster
+(audio) rate than Max. Max (and thus the user) can only affect the
+signal portion of the patch every millisecond. What happens in between
+those milliseconds is calculated and performed by MSP.
+
+<P>
+Some MSP objects provide a link between Max and MSP and to translate
+between control rate and audio rate. MSP inlets can accept both signal
+and Max messages (e.g. they can be turned on and off with the Max
+messages <TT>start</TT> and <TT>stop</TT>). A Max patch can contain
+both Max and MSP objects. Nevertheless, for organization, MSP objects
+in a signal network are often encapsulated in a subpatch.
+
+<P>
+Pure Data (or Pd for short) [<A
+ HREF="node207.html#PuckettePD96">Puckette, 1996</A>,<A
+ HREF="node207.html#PuckettePD97">Puckette, 1997a</A>,<A
+ HREF="node207.html#PuckettePDRecentProgress">Puckette, 1997b</A>,<A
+ HREF="node207.html#PDDocumentation">Puckette, 2004</A>,<A
+ HREF="node207.html#www-PD">www-PD, </A>]
+is a real-time graphical programming environment for audio and graphical
+processing. It is very similar to the Max/MSP system but is simpler
+and more portable. Pd also has two basic features that are not available
+in Max/MSP: first, via the GEM package, Pd can be used for simultaneous
+computer graphics animation and computer audio; second, an experimental
+facility is provided for defining and accessing data structures.
+
+<P>
+Pd is an effort to solve some problems in Max while keeping its strength.
+Pd was designed by Max's author Miller Puckette and although he mentions
+that it was not his intention to make a Max clone he recognizes that
+whenever there was no real reason to make something different, the
+solution available in Max was used [<A
+ HREF="node207.html#PDDocumentation">Puckette, 2004</A>]. In parallel
+the GEM [<A
+ HREF="node207.html#DanksGEM">Danks, 1997</A>] project started to develop a real-time graphical
+synthesis/processing/rendering environment which would run with Pd.
+
+<P>
+The main weakness in Max are reported to be its difficulty of maintaining
+compound data structures and of integrating non-audio signals like
+video or audio spectra [<A
+ HREF="node207.html#PuckettePD96">Puckette, 1996</A>]. In order to use Max to
+process data, the project Animal started [<A
+ HREF="node207.html#LinermannANIMAL">Lindermann, 1991</A>].
+Many ideas in PD come from this program. The first thing introduced
+in PD was the ability to plot graphics and figures.
+
+<P>
+The main goals when starting the Pd and GEM projects are summarized
+in [<A
+ HREF="node207.html#PuckettePDRecentProgress">Puckette, 1997b</A>]: (1) a real-time patchable environment
+ala Max: (2) management of audio and image processing in the same
+environment; (3) adaptability to a wide range of platforms; (4) long-term
+stability; (5) newer and more flexible set of tools to manipulate
+data.
+
+<P>
+In Pd, any data structure (called ``Pure Datum'') can become a
+message handled the usual way. Also, users may create their own ``DSP
+blocks'' in which sample rate and vector size vary.
+
+<P>
+The <TT>clock</TT> allows users to attach a symbolic name to a specific
+combination of sample rate and vector size. Any <TT>clock</TT> can
+be turned on/off. The <TT>reclock</TT> object simply converts any
+signal to the desired <TT>clock</TT> (for instance, preparing an input
+signal for overlapped FFT; the overlap-add process in the synthesis
+is accomplished by simply reclocking to the original clock).
+
+<P>
+Pd is designed in two parts: the ``real'' Pd and the Pd-gui. The
+real Pd, does real-time computations using a Max-like interpreter
+and scheduler. The Pd-GUI talks to the computer window system through
+the tk toolkit.
+
+<P>
+Pd shares with MSP a few objects for audio analysis [<A
+ HREF="node207.html#PucketteAnalysisInPD-MSP">Puckette et&nbsp;al., 1998</A>].
+The <TT>fiddle</TT> and <TT>bonk</TT> objects, for instance, are two
+basic implementations, the former for pitch detection and the latter
+for bounded-Q analysis. Their main goal is to get predictable and
+acceptable behavior with easy-to-understand techniques that will not
+place a heavy load on the machine. The output of both objects appears
+as Max-style control messages.
+
+<P>
+<TT>Fiddle</TT> is a maximum-likelihood pitch detector similar that
+can also be used to obtain a raw list of sinusoidal components. <TT>Bonk</TT>
+performs a bounded-Q analysis of the input signal to obtain onsets
+of percussion instruments.
+
+<P>
+Finally jMax [<A
+ HREF="node207.html#Dechelle98a">D&#233;chelle et&nbsp;al., 1998</A>,<A
+ HREF="node207.html#Dechelle99a">D&#233;chelle et&nbsp;al., 1999b</A>,<A
+ HREF="node207.html#Dechelle99c">D&#233;chelle et&nbsp;al., 1999a</A>,<A
+ HREF="node207.html#Dechelle00a">D&#233;chelle, 2000</A>,<A
+ HREF="node207.html#Dechelle00b">D&#233;chelle et&nbsp;al., 2000</A>,<A
+ HREF="node207.html#Dechelle03b">D&#233;chelle and Tisserand, 2003</A>]
+is a new implementation of Max/FTS in which the graphical interface
+is re-implemented in Java. jMax reuses Max/FTS and PD's two component
+architecture (client/server). This architecture allows decoupling
+the two components and executing the processing component independently
+from the user interface (for example inside a VST plug-in). Communication
+between the two components is done through TCP/IP or UDP.
+
+<P>
+jMax's interface offers basically the same functionalities than the
+other Max versions: a patch editor for constructing and controlling
+program patches and a set of specialized editors for objects with
+complex data structures (such as tables or sequences).
+
+<P>
+jMax introduces a textual scripting language for controlling structures
+that were difficult to represent graphically such as operator banks
+and other repetitive operations. jMax used Tcl scripting. But because
+of integration problems of Tcl and Java it was decided to change to
+Scheme (a Lisp dialect). Currently, and because of some problems with
+proprietary Java libraries, the interface is being ported to Python.
+
+<P>
+In any case jMax is available for Silicon Graphics over the IRIX system,
+PC or Macintosh over Linux (using either OSS or ALSA sound devices). 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1231"
+  HREF="node78.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1229"
+  HREF="node75.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1223"
+  HREF="node76.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1232"
+  HREF="node78.html">WaveWarp</A>
+<B> Up:</B> <A NAME="tex2html1230"
+  HREF="node75.html">Audio and Music Visual</A>
+<B> Previous:</B> <A NAME="tex2html1224"
+  HREF="node76.html">Kyma</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

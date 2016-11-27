@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Descriptors</TITLE>
+<META NAME="description" CONTENT="Descriptors">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node145.html">
+<LINK REL="up" HREF="node142.html">
+<LINK REL="next" HREF="node147.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2069"
+  HREF="node147.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2067"
+  HREF="node142.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2063"
+  HREF="node145.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2070"
+  HREF="node147.html">Composing with DSPOOM Objects:</A>
+<B> Up:</B> <A NAME="tex2html2068"
+  HREF="node142.html">Processing Data Objects</A>
+<B> Previous:</B> <A NAME="tex2html2064"
+  HREF="node145.html">Processing Data and Controls</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00512400000000000000">
+Descriptors</A>
+</H3>
+
+<P>
+<SPAN  CLASS="textit">Descriptors</SPAN> are a special kind of Processing Data that are
+obtained from another Processing Data or Descriptor through a simple
+<SPAN  CLASS="textit">extraction</SPAN> process. A descriptor is metadata as it contains
+data that describes its originating data. Generic descriptors can
+be obtained from almost any kind of Processing Data, examples of such
+descriptors are the average or the nth order moment. Nevertheless
+most useful descriptors carry more semantic information and are in
+some way coupled to a particular Processing Data, examples of such
+descriptors are the spectral centroid or the zero crossing rate. 
+
+<P>
+The previous explanation is not enough to clearly distinguish Descriptors
+from regular Processing Data. Should a spectrum be considered a Descriptor
+as it can directly ``extracted'' from a time-domain signal? We
+know that the spectrum is the result of a <SPAN  CLASS="textit">transform</SPAN> and not
+an <SPAN  CLASS="textit">extraction process</SPAN> nevertheless in some cases it may be
+useful to consider and treat it as a Descriptor. Therefore we cannot
+draw a clear line separating regular Processing Data from Descriptors.
+Nevertheless two hints that may be used are the following: first a
+Descriptor should be easily computable using a limited set of simple
+statistical operations; and second a Descriptor cannot be easily converted
+back to its originating Processing Data. Although both these rules
+of thumb clearly discard the spectrum from being a Descriptor, some
+cases are not easy to decide and a given model dealing with descriptors
+must establish what it considers as ``limited operations'' and
+as ``easily converted back''. In the general case we can conclude
+that any Processing Data could be understood as a Descriptor under
+certain circumstances. 
+
+<P>
+An <SPAN  CLASS="textit">Extractor</SPAN> is a special kind of Processing object that is
+input a Processing Data or a Descriptor and outputs a Descriptor after
+having applied the extraction process. This extraction process is
+the result of applying simple statistic tools to the input signal.
+Therefore an Extractor must have an accessible repository of basic
+statistical tools.
+
+<P>
+Expressions can be built by composing with extractors. For instance,
+it is usual to compute Descriptors on a frame basis, accumulate these
+values and then perform a time wise average.
+
+<P>
+We will come again to different kinds of descriptors and their usage
+in chapter <A HREF="node155.html#ch:_OOCTM">5</A> in the context of the Object-Oriented
+Content Transmission Metamodel.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2069"
+  HREF="node147.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2067"
+  HREF="node142.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2063"
+  HREF="node145.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2070"
+  HREF="node147.html">Composing with DSPOOM Objects:</A>
+<B> Up:</B> <A NAME="tex2html2068"
+  HREF="node142.html">Processing Data Objects</A>
+<B> Previous:</B> <A NAME="tex2html2064"
+  HREF="node145.html">Processing Data and Controls</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

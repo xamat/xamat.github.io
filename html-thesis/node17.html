@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Systems</TITLE>
+<META NAME="description" CONTENT="Systems">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node18.html">
+<LINK REL="previous" HREF="node16.html">
+<LINK REL="up" HREF="node16.html">
+<LINK REL="next" HREF="node18.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html550"
+  HREF="node18.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html548"
+  HREF="node16.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html542"
+  HREF="node16.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html551"
+  HREF="node18.html">Models</A>
+<B> Up:</B> <A NAME="tex2html549"
+  HREF="node16.html">Models and Systems</A>
+<B> Previous:</B> <A NAME="tex2html543"
+  HREF="node16.html">Models and Systems</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00221000000000000000"></A><A NAME="sec:_Systems"></A>
+<BR>
+Systems
+</H2>
+
+<P>
+The definition of system given the Institute of Electrical and Electronical
+Engineers professional group in System Science and Cybernetics (from
+[<A
+ HREF="node207.html#RoweSystemCybernetics">Rowe, 1965</A>]): ``a large collection of interacting
+functional units that together achieve a defined purpose''. Or, in
+other words, a system is made up of three main components: a goal,
+a set of things and/or rules, and the way this things and/or rules
+are organized or connected in between them. There is a whole corpus
+of System Engineering but systems are also studied from a psychological
+or even philosophical point of view.
+
+<P>
+In [<A
+ HREF="node207.html#DeGreeneSystemsPsychology">DeGreene, 1970</A>], the author defends that systems
+are studied to: improve the system or its successor, determine general
+theories for new system development, and advance science. He also
+mentions that there are several scientific methods related to systems
+such as generalization across systems, analysis and synthesis, and
+modeling and simulation. All of these methods are of course interrelated.
+When analyzing a system, the basic steps are: (1) recognition that
+a problem exists and the solution may be related to systems analysis
+techniques; (2) definition of the problem in a appropriate form; (3)
+definition of the system itself (iterative process that starts with
+a gross approximation and results in a conceptual model); (4) definition
+of performance criteria; (5) definition of alternative configurations
+and their evaluation; (6) presentation of alternatives and tradeoff
+results to the user; (7) performance of iterative analysis during
+development; (9) analysis of operational systems to gather performance
+data [<A
+ HREF="node207.html#DeGreeneSystemsPsychology">DeGreene, 1970</A>].
+
+<P>
+But one of the most commonly accepted definitions for ``system''
+is surprisingly related to the software engineering corpus. In the
+article entitled ``Definition of System'' [<A
+ HREF="node207.html#HallFagenDefinitionOfSystem">Hall and Fagen, 1956</A>]
+the authors define: ``A system is a set of objects together with
+relationships between the objects and between their attributes.''
+This definition, that is largely referenced and commented in the literature
+about system theory, was made in 1956, much before the term object
+orientation was even coined. So, according to Hall and Fagen, objects
+are simply the parts, or components of a system. 
+
+<P>
+Attributes are the properties of objects. Relationships tie the system
+components together. A system cannot be considered as such if it does
+not have a purpose in itself. This assertion also implies that a system
+has properties, functions or purposes distinct from its constituent
+objects, relationships and attributes. Objects can be physical parts
+or abstract objects such as variables or equations. The relationships
+are those that tie the system together. The question of whether a
+relationship is important or trivial depends on the problem to be
+solved. And another interesting property of any system is that can
+be subdivided hierarchically into subsystems, sub-subsystems, components,
+units, parts and so forth. Any of this levels can be considered to
+be made up of objects as either a subsystem, component, unit or part
+is an object in itself.
+
+<P>
+If we accept Hall and Fagen's definition as approximately valid (note
+that the definition of system given by the IEEE is not conceptually
+very different) we can assert that the object-oriented paradigm is
+the best alternative when modeling a system. A system is in fact made
+of objects that relate in between them, we just have to identify them.
+
+<P>
+According to [<A
+ HREF="node207.html#DeGreeneSystemsPsychology">DeGreene, 1970</A>] different features
+characterize any system analysis: (1) emphasis on an uncertain future;
+(2) tendency to oversimplify; (3) evaluation of alternatives; (4)
+aid to conceptualization; (5) decline pressures resisting analysis;
+(6) use mutually reinforcing techniques; and (7) selection of relevant
+variables. System analysis have a qualitative beginning, quantification
+becomes possible as greater detail and precision is introduced. As
+a matter of fact, and according to [<A
+ HREF="node207.html#BouldingGeneralSystemTheory">Boulding, 1969</A>],
+one possible approach to general systems theory is through the arrangement
+of theoretical systems and constructs in a hierarchy of complexity.
+In any case, and as we will see in next section, this is usually accomplished
+through the use of appropriate <SPAN  CLASS="textit">models</SPAN>.
+
+<P>
+The state of a system is the collection of variables necessary to
+describe a system at a given time. An event is an instantaneous occurrence
+that may change the state of the system. In general, systems are classified
+as discrete or continuous (see [<A
+ HREF="node207.html#LawSimulationModelling">Law and Kelton, 2000</A>]). A
+discrete system is one for which the state variables change instantaneously
+at separated points of time. In a continuous system these variables
+change continuously. Some systems are neither completely discrete
+nor completely continuous: combined discrete-continuous simulation.
+There are three types of interactions between discrete and continuous
+variables:
+
+<P>
+
+<UL>
+<LI>A discrete event may change the value of a continuous variable
+</LI>
+<LI>A discrete event may cause the relationship governing a continuous
+state variable to change at a particular time.
+</LI>
+<LI>A continuous state variable achieving a threshold may cause a discrete
+event to occur or to be scheduled.
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html550"
+  HREF="node18.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html548"
+  HREF="node16.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html542"
+  HREF="node16.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html551"
+  HREF="node18.html">Models</A>
+<B> Up:</B> <A NAME="tex2html549"
+  HREF="node16.html">Models and Systems</A>
+<B> Previous:</B> <A NAME="tex2html543"
+  HREF="node16.html">Models and Systems</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

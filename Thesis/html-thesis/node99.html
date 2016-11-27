@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>General Processing</TITLE>
+<META NAME="description" CONTENT="General Processing">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node100.html">
+<LINK REL="previous" HREF="node98.html">
+<LINK REL="up" HREF="node98.html">
+<LINK REL="next" HREF="node100.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1549"
+  HREF="node100.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1547"
+  HREF="node98.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1541"
+  HREF="node98.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1550"
+  HREF="node100.html">Input/Output</A>
+<B> Up:</B> <A NAME="tex2html1548"
+  HREF="node98.html">Processing repository</A>
+<B> Previous:</B> <A NAME="tex2html1542"
+  HREF="node98.html">Processing repository</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H4><A NAME="SECTION00421110000000000000">
+General Processing</A>
+</H4>
+
+<P>
+In this first category different signal processing algorithms can
+be found. Although these algorithms can be considered general purpose
+and can be applied to different domains, there is a clear focus on
+spectral processing of audio and more precisely on the Spectral Modeling
+Synthesis (SMS) technique (see Annex <A HREF="node230.html#sec:_Spectral_Processing">B</A>). 
+
+<P>
+<SPAN ID="txt1781">Analysis</SPAN>
+
+<P>
+The Processing classes included in this category are used to extract
+different features from the input signal. All the necessary algorithms
+related to the SMS analysis process are included. Therefore, we can
+find Processings for: window generation, signal shifting, performing
+the FFT, detecting and tracking spectral peaks, detecting the fundamental
+frequency, extracting the spectral envelop, performing the LPC autocorrelation,
+and segmenting the audio signal.
+
+<P>
+The spectral analysis and the SMS analysis Processings represent a
+special kind of Processing that do not encapsulate a single algorithm
+but rather use existing simple Processings to build a new one out
+of their composition. Such Processings are called Processing Composites.
+In the case of the spectral analysis Processing is composed from the
+following Processings: window generator, circular shift, FFT and audio
+multiplier. The SMS analysis Processing adds another layer of composition
+as it includes the previously commented spectral analysis plus other
+Processings such as spectral peak detection or fundamental frequency
+detection.
+
+<P>
+<SPAN ID="txt1782">Transformations</SPAN>
+
+<P>
+Transformations are divided into general purpose transformations and
+those that can only be applied to the output of the SMS analysis process.
+General transformations include some time-domain algorithms such as
+delay, normalization or envelope modulator. It also includes spectral
+transformations like frequency domain filtering by applying an ideal
+function or an spectral envelope.
+
+<P>
+But using the SMS model more interesting transformations can be applied
+also in the spectral domain [<A
+ HREF="node207.html#xamatDAFXChapter">Amatriain et&nbsp;al., 2002b</A>]. The repository
+offers SMS-based transformations such as time-stretch, morphing or
+pitch shifting. These transformations are sub-categorized under the
+Transformations-&gt;SMS category.
+
+<P>
+<SPAN ID="txt1784">Synthesis</SPAN>
+
+<P>
+The synthesis algorithms are all the necessary for the SMS model.
+Nevertheless, some of them (such as the inverse FFT or the overlap
+and add) can be applied to different spectral models. 
+
+<P>
+<SPAN ID="txt1785">Generators</SPAN>
+
+<P>
+Generators are special Processings that produce but do not consume
+data. The CLAM repository of generators includes algorithms like oscillators,
+wave generators or ADSR (attack-decay-sustain release) envelopes. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1549"
+  HREF="node100.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1547"
+  HREF="node98.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1541"
+  HREF="node98.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1550"
+  HREF="node100.html">Input/Output</A>
+<B> Up:</B> <A NAME="tex2html1548"
+  HREF="node98.html">Processing repository</A>
+<B> Previous:</B> <A NAME="tex2html1542"
+  HREF="node98.html">Processing repository</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

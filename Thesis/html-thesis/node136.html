@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>DSPOOM as a Classification of DSP Objects</TITLE>
+<META NAME="description" CONTENT="DSPOOM as a Classification of DSP Objects">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node151.html">
+<LINK REL="previous" HREF="node135.html">
+<LINK REL="up" HREF="node135.html">
+<LINK REL="next" HREF="node137.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1951"
+  HREF="node137.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1949"
+  HREF="node135.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1943"
+  HREF="node135.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1952"
+  HREF="node137.html">Processing Objects</A>
+<B> Up:</B> <A NAME="tex2html1950"
+  HREF="node135.html">The Digital Signal Processing</A>
+<B> Previous:</B> <A NAME="tex2html1944"
+  HREF="node135.html">The Digital Signal Processing</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00510000000000000000">
+DSPOOM as a Classification of DSP Objects</A>
+</H1>
+
+<P>
+As presented in section <A HREF="node21.html#sub:Metamodels">1.2.4</A> a metamodel such as
+DSPOOM aims at abstracting commonalities between a set of related
+models and presenting an abstract ``model of models''. Abstract
+metaclasses are actually acting as concrete class classifiers and
+as a matter of fact the relation between a metaclass (abstract class
+in the metamodel) and a concrete class is the same as the relation
+existing between a concrete class and its instances.
+
+<P>
+The infrastructure offered by CLAM and reviewed in the previous chapter
+can be understood as a set of objects and the way they interact. Most
+of these objects belong to three classes: Processing, ProcessingData
+and Network. These classes define the way that most CLAM objects contribute
+to the configuration of a given application, being this application
+in itself a CLAM model of a particular system. The three classes are
+abstract and therefore cannot be instantiated by themselves, but they
+define the model a CLAM system will comply to. In other words, a CLAM
+model can be described by the way that particular instances of these
+classes behave and interact in between them.
+
+<P>
+In a similar way DSPOOM classifies objects into four categories: objects
+that process (Processings), objects that hold data necessary for the
+process (Processing Data), objects that connect or interface (such
+as ports, data nodes or controls), and application or system-level
+objects. 
+
+<P>
+Of these categories, the first two are much more important in their
+scope and the other two can be seen as auxiliary but necessary for
+completing the metamodel. The basic idea is to separate objects that
+encapsulate a process called Processing objects and objects that undergo
+a certain process encapsulating a kind of data object and are called
+Processing Data objects. This clear separation between data and process
+objects is not exclusive of CLAM but can be found more or less explicitly
+in different environments reviewed in chapter <A HREF="node51.html#cha:Environments-for-Audio">2</A>.
+See for instance the clear separation between <SPAN  CLASS="textit">virtual processors</SPAN>
+and <SPAN  CLASS="textit">virtual data</SPAN> in the VDSP framework in section <A HREF="node56.html#sub:VDSP">2.2</A>.
+Each of this categories forms an abstract class of the DSPOOM Metamodel.
+Thus, a particular model, instance of the metamodel cannot instantiate
+objects of this class directly but instances of the subclasses related
+to the model under study.
+
+<P>
+Therefore, and simplifying the four-category metamodel, a DSPOOM based
+model can be viewed as a set of Processing objects deployed as an
+interconnected network. Each Processing can retrieve Processing Data
+tokens and modify them according to some algorithm. Programmers can
+keep control over the Processing Data flow between Processing or they
+can delegate this task to one of the many possible automated Flow
+Control schedulers. When a set of Processing objects is arranged they
+form a new processing. Thus the new processing can be used as an abstraction
+of the whole composition. DSPOOM Processings are compositional and
+scalable. Processing objects can be grouped on compile-time as Processing
+Composites, or dynamically on run-time as Networks.
+
+<P>
+DSPOOM is first, and above all, and object-oriented metamodel. Nevertheless,
+and as a consequence of applying good object-oriented practices, a
+graphical model of computation very much related to Process Networks
+and Actor-Orientation has emerged (see section <A HREF="node34.html#sec:GraphicalMoCs">1.5</A>
+for an overview of this technology).
+
+<P>
+After this first introduction we will first present the main two metaclasses
+(i.e. Processing and Processing Data) in more detail. We will then
+present the composition capabilities of the framework. In the next
+sections we will analyze the object-oriented features of the metamodel
+and will relate it to existing graphical models of computation.
+<BR>
+<BR>
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:Basic-elements-in"></A><A NAME="5638"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.1:</STRONG>
+Basic elements in DSPOOM</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="556" HEIGHT="487" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="\includegraphics[%
+width=1.0\textwidth]{/home/xamat/xamat_cvs/Thesis/images/ch4-DSPOOM/ps/BasicDSPOOM.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1953"
+  HREF="node137.html">Processing Objects</A>
+<UL>
+<LI><A NAME="tex2html1954"
+  HREF="node138.html">The Processing Object Lifecycle</A>
+<LI><A NAME="tex2html1955"
+  HREF="node139.html">Processing Configuration</A>
+<LI><A NAME="tex2html1956"
+  HREF="node140.html">Data and Control Flow</A>
+<LI><A NAME="tex2html1957"
+  HREF="node141.html">Kinds of Processing Classes: Generators, Sinks and Transforms</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1958"
+  HREF="node142.html">Processing Data Objects</A>
+<UL>
+<LI><A NAME="tex2html1959"
+  HREF="node143.html">Data and Value Attributes</A>
+<LI><A NAME="tex2html1960"
+  HREF="node144.html">Dynamic and Static Views of Data Flow</A>
+<LI><A NAME="tex2html1961"
+  HREF="node145.html">Processing Data and Controls</A>
+<LI><A NAME="tex2html1962"
+  HREF="node146.html">Descriptors</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1963"
+  HREF="node147.html">Composing with DSPOOM Objects: Networks and Processing Composites</A>
+<UL>
+<LI><A NAME="tex2html1964"
+  HREF="node148.html">Processing Composites</A>
+<LI><A NAME="tex2html1965"
+  HREF="node149.html">Networks</A>
+<UL>
+<LI><A NAME="tex2html1966"
+  HREF="node150.html">Data Nodes </A>
+</UL></UL></UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1951"
+  HREF="node137.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1949"
+  HREF="node135.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1943"
+  HREF="node135.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1952"
+  HREF="node137.html">Processing Objects</A>
+<B> Up:</B> <A NAME="tex2html1950"
+  HREF="node135.html">The Digital Signal Processing</A>
+<B> Previous:</B> <A NAME="tex2html1944"
+  HREF="node135.html">The Digital Signal Processing</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

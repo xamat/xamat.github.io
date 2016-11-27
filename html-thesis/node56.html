@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>VDSP</TITLE>
+<META NAME="description" CONTENT="VDSP">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node57.html">
+<LINK REL="previous" HREF="node55.html">
+<LINK REL="up" HREF="node53.html">
+<LINK REL="next" HREF="node57.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1005"
+  HREF="node57.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1003"
+  HREF="node53.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html997"
+  HREF="node55.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1006"
+  HREF="node57.html">MET++</A>
+<B> Up:</B> <A NAME="tex2html1004"
+  HREF="node53.html">General Purpose Signal Processing</A>
+<B> Previous:</B> <A NAME="tex2html998"
+  HREF="node55.html">Javelina</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00323000000000000000"></A><A NAME="sub:VDSP"></A>
+<BR>
+VDSP
+</H2>
+
+<P>
+Virtual Signal Processing (VDSP) [<A
+ HREF="node207.html#MellingerVirtualDSP">Mellinger et&nbsp;al., 1991</A>] was an
+environment for digital signal processing in terms of a <SPAN  CLASS="textit">virtual
+processors</SPAN> and its associated <SPAN  CLASS="textit">virtual data</SPAN>. This environment
+for vectorized signal processing was implemented in Smalltalk-80 and
+it was hardware independent. As Javelina, VDSP is currently discontinued.
+
+<P>
+In VDSP a virtual processor is an object that provides a means for
+allocating and deallocating data objects, a standard set of vectors,
+scalar and vector-scalar operations, input/output to external devices
+capable of handling data formats commonly used in signal processing,
+and it provides communication between real processors and the user's
+computing environment.
+
+<P>
+Virtual data encapsulates the data and offered the following functionality:
+they provide a handle that is used by the virtual processor, they
+provide representations of useful data types, and they respond to
+messages requesting operations on their data by invoking the corresponding
+operation on a virtual processor. For instance, multiplying two arrays
+of integers using a virtual processor means: (1) send a message telling
+the virtual processor to allocate two vector objects whose contents
+are obtained from the two Arrays; (2) tell one vector to multiply
+itself by the other; (3) tell the result vector to make a new Smalltalk
+Array whose contents are the data of the result vector.
+
+<P>
+VDSP is not an optimizing compiler but rather a portable high-level
+interface to common signal-processing functionality. It is not a stream
+computation system, at user request it performs one operation on one
+block of data at a time. It has a primitive kernel made up of operations
+such as addition or multiplication.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1005"
+  HREF="node57.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1003"
+  HREF="node53.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html997"
+  HREF="node55.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1006"
+  HREF="node57.html">MET++</A>
+<B> Up:</B> <A NAME="tex2html1004"
+  HREF="node53.html">General Purpose Signal Processing</A>
+<B> Previous:</B> <A NAME="tex2html998"
+  HREF="node55.html">Javelina</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

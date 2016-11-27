@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>SALTO</TITLE>
+<META NAME="description" CONTENT="SALTO">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node127.html">
+<LINK REL="previous" HREF="node125.html">
+<LINK REL="up" HREF="node124.html">
+<LINK REL="next" HREF="node127.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1836"
+  HREF="node127.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1834"
+  HREF="node124.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1828"
+  HREF="node125.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1837"
+  HREF="node127.html">Spectral Delay</A>
+<B> Up:</B> <A NAME="tex2html1835"
+  HREF="node124.html">Sample applications</A>
+<B> Previous:</B> <A NAME="tex2html1829"
+  HREF="node125.html">SMS Analysis/Synthesis Example</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00423200000000000000">
+SALTO</A>
+</H3>
+
+<P>
+SALTO is a software based synthesizer. It is also based on the SMS
+technique (see Annex <A HREF="node230.html#sec:_Spectral_Processing">B</A>). It implements
+a general architecture for these synthesizers but it is currently
+only prepared to produce high quality sax and trumpet synthesis. Pre-analyzed
+data are loaded upon initialization. The synthesizer responds to incoming
+MIDI data or to musical data stored in an XML file. Output sound can
+be either stored to disk or streamed to the sound card on real-time.
+Its GUI allows to modify synthesis parameters on real-time. Figure
+<A HREF="#fig:Salto-block-diagram">3.10</A> reproduces a schematic representation
+of the application.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:Salto-block-diagram"></A><A NAME="5621"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.10:</STRONG>
+SALTO block diagram</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="444" HEIGHT="359" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.png"
+ ALT="\includegraphics[%
+width=0.80\textwidth]{images/ch3-CLAM/ps/SaltoBlockDiagram.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The synthesizer uses a database of SDIF files that contain the result
+of previous SMS analysis. These SDIF files contain spectral analysis
+samples for the steady part of some notes, the residual and the attack
+part of the notes. These SDIF files can be viewed, transformed and
+synthesized with the previously explained SMSTools.
+
+<P>
+Apart from this SDIF input, SALTO has three other possible inputs:
+MIDI, an XML Melody, and the GUI. Using MIDI as an input SALTO can
+be used as a regular MIDI synthesizer on real-time. SALTO is prepared
+to accept MIDI messages coming from a regular MIDI keyboard or a MIDI
+breath controller. On the other hand if an XML melody is used as an
+input this melody is synthesized back. It is the easiest way to try
+that SALTO is working correctly. Finally the GUI can be basically
+used to control the way the synthesis is going to work and to test
+configurations by generating single notes.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:SALTO-graphical-user"></A><A NAME="5622"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.11:</STRONG>
+SALTO graphical user interface</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="443" HEIGHT="385" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="\includegraphics[%
+width=0.80\textwidth,
+keepaspectratio]{images/ch3-CLAM/ps/SaltoGUI.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+As seen in the screenshot in figure <A HREF="#fig:SALTO-graphical-user">3.11</A>,
+the most important part of the interface is on the lower left: the
+buttons to select what part of the sound you would like to synthesize.
+The upper part of the interface is just a graphical display of the
+output. On the right there are two buttons for loading and playing
+an XML melody. Finally, the central part is designed to manage the
+database.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1836"
+  HREF="node127.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1834"
+  HREF="node124.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1828"
+  HREF="node125.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1837"
+  HREF="node127.html">Spectral Delay</A>
+<B> Up:</B> <A NAME="tex2html1835"
+  HREF="node124.html">Sample applications</A>
+<B> Previous:</B> <A NAME="tex2html1829"
+  HREF="node125.html">SMS Analysis/Synthesis Example</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

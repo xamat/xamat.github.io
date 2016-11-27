@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>On methodologies</TITLE>
+<META NAME="description" CONTENT="On methodologies">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node227.html">
+<LINK REL="previous" HREF="node225.html">
+<LINK REL="up" HREF="node224.html">
+<LINK REL="next" HREF="node227.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2983"
+  HREF="node227.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2981"
+  HREF="node224.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2975"
+  HREF="node225.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2984"
+  HREF="node227.html">The build system</A>
+<B> Up:</B> <A NAME="tex2html2982"
+  HREF="node224.html">Used Tools and Resources</A>
+<B> Previous:</B> <A NAME="tex2html2976"
+  HREF="node225.html">The development team</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001022000000000000000">
+On methodologies</A>
+</H2>
+
+<P>
+The truth is that when the CLAM project started not much effort was
+put into studying and applying specific framework development methodologies.
+It turns out though that most decisions have been taken in the right
+direction and the development process now seems to be in line with
+what most authors recommend. In this section we will briefly describe
+the methodologies used in the CLAM development.
+
+<P>
+As already commented, the development of the CLAM framework has followed
+a bottom-up approach, starting from some sample applications that
+have gradually evolve into being usage examples of the framework itself.
+It is important to note that in section <A HREF="node27.html#sec:_FrameworkDevelopment">1.3.4</A>
+we already reflected how this is an important guideline given by most
+authors.
+
+<P>
+User feedback has always been an important component of the CLAM development
+process. As a matter of fact the framework was used ever since it
+began to be implemented and in many occasions, the line between the
+framework developer and its user has been blurred (i.e. even the same
+person can be acting as a part-time framework developer and a part-time
+user).
+
+<P>
+The CLAM project started using quite traditional software engineering
+methodologies but has evolved and come closer to more agile methodologies
+like eXtreme Programming [<A
+ HREF="node207.html#BeckXP">Beck, 1999</A>]. As even the proposers of
+the methodology admit though, it is difficult to apply XP to a framework
+development process. The main reason is that one of XP's fundamental
+principles, which is to promote simplicity and avoid unnecessary generalizations
+if not strictly necessary is hard to observe in a framework development
+process. When developing a framework we are not only interested in
+making an application work but also on generalizing or abstracting
+as much of the common behavior as possible in order to build an infrastructure
+for any further application. Furthermore, organizational issues, such
+as the fact that most developers in an educational institution are
+part-time collaborators, make it even harder. 
+
+<P>
+But we are definitely interested in many of XP's objectives such as
+having a design that is as clean and simple as possible or the idea
+of continuous integration and thorough testing Therefore many XP practices
+have been considered and are used to some extent. These include:
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textit">Small releases</SPAN>: although the public releases are still not
+published as often as possible internal iterations last 15 days.
+</LI>
+<LI><SPAN  CLASS="textit">Testing</SPAN> through the use of the cppunit framework and Test-driven
+development.
+</LI>
+<LI>Refactoring
+</LI>
+<LI><SPAN  CLASS="textit">Collective ownership</SPAN> using the CVS and allowing any developer
+to contribute in any part of the framework.
+</LI>
+<LI><SPAN  CLASS="textit">Code Standards</SPAN> adapted to our own needs.
+</LI>
+</UL>
+Other practices such as <SPAN  CLASS="textit">Simple Design</SPAN>, <SPAN  CLASS="textit">Pair Programming</SPAN>
+or <SPAN  CLASS="textit">On-site Costumer</SPAN> are used as much as possible in our particular
+limitations.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2983"
+  HREF="node227.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2981"
+  HREF="node224.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2975"
+  HREF="node225.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2984"
+  HREF="node227.html">The build system</A>
+<B> Up:</B> <A NAME="tex2html2982"
+  HREF="node224.html">Used Tools and Resources</A>
+<B> Previous:</B> <A NAME="tex2html2976"
+  HREF="node225.html">The development team</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

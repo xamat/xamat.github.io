@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Data and Value Attributes</TITLE>
+<META NAME="description" CONTENT="Data and Value Attributes">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node144.html">
+<LINK REL="previous" HREF="node142.html">
+<LINK REL="up" HREF="node142.html">
+<LINK REL="next" HREF="node144.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2041"
+  HREF="node144.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2039"
+  HREF="node142.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2033"
+  HREF="node142.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2042"
+  HREF="node144.html">Dynamic and Static Views</A>
+<B> Up:</B> <A NAME="tex2html2040"
+  HREF="node142.html">Processing Data Objects</A>
+<B> Previous:</B> <A NAME="tex2html2034"
+  HREF="node142.html">Processing Data Objects</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00512100000000000000">
+Data and Value Attributes</A>
+</H3>
+
+<P>
+Attributes in a Processing Data class can be classified into <SPAN  CLASS="textit">data
+attributes</SPAN> and <SPAN  CLASS="textit">value attributes</SPAN>. Data attributes basically
+act as data containers and they are usually of complex types such
+as arrays. 
+
+<P>
+On the other hand, value attributes act as auxiliary information related
+to the data attributes. They are always of simple types such as integers
+or floating point. Value attributes can in turn be divided into <SPAN  CLASS="textit">informative
+value attributes</SPAN> and <SPAN  CLASS="textit">structural value attributes</SPAN>. Informative
+value attributes are simple value containers that are used to interpret
+the Processing Data content. A modification in such attributes does
+not imply a change in the related data. Conversely structural value
+attributes are meant to inform but also to modify the internal structure
+of Processing Data objects. An example of such an attribute is the
+``size'' of a given Processing Data object, its value must be
+obviously synchronized to the size of the internal buffers and a change
+in it means a resizing of all the buffers.
+
+<P>
+But it is not always obvious to identify whether a value attribute
+is informative or structural and its interpretation is many times
+a design decision. The same value attribute can be interpreted as
+informative or structural in different Processing Data classes, depending
+on what the designer decided. An example of such a dual value attribute
+could be the ``scale'' (linear or logarithmic) of a particular
+data. One may choose to implement it as purely informative in the
+sense that modifying it would not imply a data conversion. In this
+situation the responsibility of keeping data and value attributes
+synchronized is left to the Processing Data class user. But one may
+also choose to implement it as structural and decide to convert data
+any time the scale value is modified.
+
+<P>
+It is generally better to implement ambiguous value attributes as
+structural therefore removing the synchronization responsibility from
+the user. But in some cases the cost and logical complexity of adopting
+this solution may recommend otherwise.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2041"
+  HREF="node144.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2039"
+  HREF="node142.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2033"
+  HREF="node142.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2042"
+  HREF="node144.html">Dynamic and Static Views</A>
+<B> Up:</B> <A NAME="tex2html2040"
+  HREF="node142.html">Processing Data Objects</A>
+<B> Previous:</B> <A NAME="tex2html2034"
+  HREF="node142.html">Processing Data Objects</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

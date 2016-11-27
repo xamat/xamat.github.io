@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Processing Data Objects</TITLE>
+<META NAME="description" CONTENT="Processing Data Objects">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node147.html">
+<LINK REL="previous" HREF="node137.html">
+<LINK REL="up" HREF="node136.html">
+<LINK REL="next" HREF="node143.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2027"
+  HREF="node143.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2025"
+  HREF="node136.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2019"
+  HREF="node141.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2028"
+  HREF="node143.html">Data and Value Attributes</A>
+<B> Up:</B> <A NAME="tex2html2026"
+  HREF="node136.html">DSPOOM as a Classification</A>
+<B> Previous:</B> <A NAME="tex2html2020"
+  HREF="node141.html">Kinds of Processing Classes:</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00512000000000000000"></A><A NAME="sub:DSPOOM::Processing_Data"></A>
+<BR>
+Processing Data Objects
+</H2>
+
+<P>
+All data in a DSPOOM model is contained in <SPAN  CLASS="textit">Processing Data</SPAN>
+objects, a concept that is related to the <SPAN  CLASS="textit">Payloads</SPAN> pattern
+explained in section <A HREF="node45.html#sub:Patterns-of-Graphical">1.5.3</A>. 
+
+<P>
+DSPOOM Processing objects can only process Processing Data objects.
+To be fully usable in such a context, a Processing Data class must
+offer a number of services, namely:
+
+<P>
+
+<OL>
+<LI><SPAN ID="txt2936">Introspection</SPAN>: A Processing Data object must be able to
+respond when queried about the number of attributes it holds and their
+type. It must also be able to know its own type or class name.
+</LI>
+<LI><SPAN ID="txt2937">Homogeneous interface</SPAN>: All Processing Data classes must
+have a homogeneous interface so as to be queried transparently without
+any knowledge of the concrete subclass. 
+</LI>
+<LI><SPAN ID="txt2938">Encapsulation</SPAN>: Attributes must be protected and access
+to them only given through appropriate setters and getters.
+</LI>
+<LI><SPAN ID="txt2939">Persistence</SPAN>: A Processing Data must have automatically
+built-in persistence into an appropriate format.
+</LI>
+<LI><SPAN ID="txt2940">Display facilities</SPAN>: Any Processing Data must be accompanied
+by display facilities that allow for debugging and visualizing its
+content at any time.
+</LI>
+<LI><SPAN ID="txt2941">Composition</SPAN>: An attribute of a Processing Data class may
+be another processing data.
+</LI>
+</OL>
+Note that many of these requirements are related to the services offered
+by MOF meta-objects (see section <A HREF="node33.html#sub:MOF">1.4.3</A>).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="2948"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.6:</STRONG>
+Processing Data Class</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="190" HEIGHT="138" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.png"
+ ALT="\includegraphics[%
+width=0.20\paperwidth,
+keepaspectratio]{images/ch4-DSPOOM/ps/DSPOOM_ProcessingData.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html2029"
+  HREF="node143.html">Data and Value Attributes</A>
+<LI><A NAME="tex2html2030"
+  HREF="node144.html">Dynamic and Static Views of Data Flow</A>
+<LI><A NAME="tex2html2031"
+  HREF="node145.html">Processing Data and Controls</A>
+<LI><A NAME="tex2html2032"
+  HREF="node146.html">Descriptors</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2027"
+  HREF="node143.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2025"
+  HREF="node136.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2019"
+  HREF="node141.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2028"
+  HREF="node143.html">Data and Value Attributes</A>
+<B> Up:</B> <A NAME="tex2html2026"
+  HREF="node136.html">DSPOOM as a Classification</A>
+<B> Previous:</B> <A NAME="tex2html2020"
+  HREF="node141.html">Kinds of Processing Classes:</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

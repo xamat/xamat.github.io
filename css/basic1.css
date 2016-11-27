@@ -1,0 +1,47 @@
+/* begin styles for RSS Feed */
+
+.rss_box {
+	 margin: 10px 5%;
+	 padding: 4px 8px;
+	 width: 260px;
+	 background-color: #ededed;
+	 border: 2px dashed #7485CA;
+}
+
+.rss_title, rss_title a {
+	font-family: "American Typewriter", "Trebuchet MS", Trebuchet, Lucida, sans-serif;
+	font-size: 18px;
+	font-weight:bold;
+	margin: 5px 0;
+	padding: 0;
+	letter-spacing: 1px;
+}
+
+.rss_items {
+  
+}
+
+.rss_item  {
+  font-family: verdana, arial, sans-serif;
+  font-size: 13px;
+  font-weight : bold; 
+  margin: 8px 0;
+}
+
+.rss_item a:link, .rss_item a:visited, .rss_item a:active {
+	text-decoration : none;
+	border-bottom: 1px solid #ededed;
+	color: #88b;
+	}
+
+.rss_item a:hover { 
+	text-decoration : none;
+	color: #e0861e;
+	border-bottom: 1px dotted #e0861e;
+	}
+	
+.rss_date {
+	font-size: 11px;
+	font-weight : normal;
+	color: #999999;
+	}

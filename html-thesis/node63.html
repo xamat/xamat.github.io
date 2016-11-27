@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>STK</TITLE>
+<META NAME="description" CONTENT="STK">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node64.html">
+<LINK REL="previous" HREF="node62.html">
+<LINK REL="up" HREF="node62.html">
+<LINK REL="next" HREF="node64.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1088"
+  HREF="node64.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1086"
+  HREF="node62.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1080"
+  HREF="node62.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1089"
+  HREF="node64.html">Open Sound World (OSW)</A>
+<B> Up:</B> <A NAME="tex2html1087"
+  HREF="node62.html">Synthesis Oriented</A>
+<B> Previous:</B> <A NAME="tex2html1081"
+  HREF="node62.html">Synthesis Oriented</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00332100000000000000"></A><A NAME="sub:STK"></A>
+<BR>
+STK
+</H3>
+
+<P>
+The Synthesis Toolkit in C++ (STK) [<A
+ HREF="node207.html#CookSTK96">Cook, 1996</A>,<A
+ HREF="node207.html#CookSTK99">Cook and Scavone, 1999</A>] is
+a set of open source audio signal processing and algorithmic synthesis
+classes written in C++. It was developed to facilitate rapid development
+of music synthesis and audio processing software, with an emphasis
+on cross-platform functionality, real-time control, ease of use, and
+educational example code. The fundamental design goals of STK were
+defined as follows: (1) Cross-platform functionality; (2) Ease of
+use; (3) User extensibility; (4) Real-time synthesis and control;
+(5) Open source C and C++.
+
+<P>
+STK has been distributed freely since 1996 and included in various
+collections. Perry Cook started developing STK under NeXTStep at CCRMA
+in the early 90's. When he moved to Princeton in 1996 he ported everything
+to C++ on SGI hardware, added real-time and enhanced the synthesis
+algorithms. With the help of Bill Putman he made a port to Windows95.
+Gary Scavone began using STK in 1997 and completed a full port to
+Linux in 1998. He finished the fully compatible Windows port (using
+Direct Sound API) in June 1998. A great deal of improvements and extensions
+have been done since then[<A
+ HREF="node207.html#CookSTKDocumentation">Cook and Scavone, 2003</A>]. It has also
+been ported to Max/MSP on Mac by Dan Trueman and Luke Dubois, and
+distributed as PeRColate. STK is updated on a regular basis.
+
+<P>
+STK is a framework, not a particular application. Some applications
+are distributed as an example of usage but even these will probably
+have to be personalized. Examples don't have a fancy GUI wrapper as,
+according to the author, it goes against the spirit of STK to spend
+many hours developing GUI's that will then not be completely cross-platform.
+
+<P>
+STK works with real-time support (MIDI and audio) on SGI (Irix), Linux,
+Macintosh OS X, and Windows. STK is free for non-commercial use. It
+offers some simple Tcl/Tk GUI that offer the same interface as the
+MIDI input. It can generate SND, WAV, AIFF and MAT file outputs.
+
+<P>
+Almost all STK is regular C/C++ code that can be compiled on any platform.
+OS dependencies are kept within a small number of classes. In order
+to make the GUI cross-platform Tcl/Tk is used. It has no other hardware
+requirements than a regular sound card. STK is object-oriented and
+the code is clear. Some optimization issues are sometimes addressed
+but in general optimization is sacrificed for the sake of clarity.
+
+<P>
+All STK classes inherit from <TT>Object</TT> class. This class does
+not offer any functionality but it is a convenient mechanism for defining
+global program and operating system parameters. For instance, <TT>MY_FLOAT</TT>
+can be defined as either float or double in Object.h. Audio sample
+based classes implement the <TT>tick()</TT> method. This method returns
+a <TT>MY_FLOAT</TT> or a <TT>MY_MULTY</TT> (a pointer to <TT>MY_FLOAT</TT>
+for multichannel audio). Inside this method, all computations take
+place. The <TT>lastOut()</TT> method returns the last result of a
+computation allowing a single source to feed multiple consuming objects
+without having to copy the result in an external variable.
+
+<P>
+STK implements only single-sample <TT>tick()</TT> functions minimizing
+memory usage, allowing to build short recursive loops and guaranteeing
+minimum latency. No specific support for vectorized classes is planned
+but they are designed to allow easy conversion.
+
+<P>
+At its core, STK uses the unit generator paradigm from Music N (see
+section <A HREF="node81.html#sub:Music-N-Languages">2.6.1</A>). All unit generators derive
+from the Instrument base class. Instrument classes include envelopes,
+filters, noise generators, nonlinearities, and data input/output handlers.
+<TT>WvIn</TT> and <TT>WvOut</TT> and associated classes allow to handle
+.wav, .snd, .mat (Matlab) and .raw files as well as real-time audio
+input and output.
+
+<P>
+There are many different synthesis algorithms: oscillator-based additive,
+subtractive, FM, modal, sampling, physical models of string and wind
+instruments and physically inspired particle models. Several models
+are provided for the voice and more are planned for the future. It
+also includes several simple delay based effects for reverberation,
+chorus, flanger and pitch shifting.
+
+<P>
+STK control sources connect to synthesis programs via pipes and sockets
+allowing for networked connections and decoupling audio synthesis
+from control generation. An input handler MD2SKINI converts input
+MIDI controls to the SKINI score format (see section <A HREF="node89.html#sub:SKINI">2.6.2</A>). 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1088"
+  HREF="node64.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1086"
+  HREF="node62.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1080"
+  HREF="node62.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1089"
+  HREF="node64.html">Open Sound World (OSW)</A>
+<B> Up:</B> <A NAME="tex2html1087"
+  HREF="node62.html">Synthesis Oriented</A>
+<B> Previous:</B> <A NAME="tex2html1081"
+  HREF="node62.html">Synthesis Oriented</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

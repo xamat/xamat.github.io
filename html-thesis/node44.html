@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>A New Paradigm?</TITLE>
+<META NAME="description" CONTENT="A New Paradigm?">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node45.html">
+<LINK REL="previous" HREF="node35.html">
+<LINK REL="up" HREF="node34.html">
+<LINK REL="next" HREF="node45.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html843"
+  HREF="node45.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html841"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html835"
+  HREF="node43.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html844"
+  HREF="node45.html">Patterns of Graphical MOC's</A>
+<B> Up:</B> <A NAME="tex2html842"
+  HREF="node34.html">Graphical Models of Computation</A>
+<B> Previous:</B> <A NAME="tex2html836"
+  HREF="node43.html">Context-Aware Process Networks</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00252000000000000000"></A><A NAME="sub:A-New-Paradigm_"></A>
+<BR>
+A New Paradigm?
+</H2>
+
+<P>
+Due to their many practical applications, strong formalisms and distinct
+vocabulary some authors (see [<A
+ HREF="node207.html#StromComparingOOandProcess">Strom, 1986</A>,<A
+ HREF="node207.html#McReynolsSubjectProcessAndObject">McReynolds et&nbsp;al., 1999</A>],
+for example) defend that Process Networks and related models can be
+seen as a sign of a new and underlying paradigm: the Process paradigm.
+Although the process paradigm is usually seen as a vehicle for the
+implementation of applications involving parallel or distributed computing
+it has also been formulated with a broader scope.
+
+<P>
+In the process paradigm, each process is a center of activity that
+holds internal state. The program executing that process is the only
+entity that can modify that state. Other processes may access that
+process indirectly through a message channel. A message channel is
+formed by connecting plugs named &#34;input ports&#34; to
+sockets &#34;output ports&#34;
+
+<P>
+All variables (and ports) are typed. A process communicates with another
+issuing a call on two operands: an output port and a parameter list
+or call-message. The call message is transmitted to a queue associated
+with the input port connected with the output port. The caller then
+waits for the call-message to be returned. The process owning the
+input port issues a receive operation to dequeue the message, it interprets
+the message and performs some action that may involve modifying the
+local state and the call message and finally issues a return operation
+to return the call-message.
+
+<P>
+Each process is a serial computation which can only schedule one activity
+at a time, and will only respond to a message after explicitly dequeuing
+it - this is in contrast to the object-oriented paradigm, in which
+a method is immediately invoked when a message is sent. There are
+no shared variables, global state or global time. Processes do not
+have type, only their ports. Each process may support different interfaces
+and give different services to different &#34;users&#34;.
+In the process paradigm, a type determines only the interface, not
+the internal structure. Processes are active and explicitly schedule
+the receipt of messages.
+
+<P>
+According to [<A
+ HREF="node207.html#StromComparingOOandProcess">Strom, 1986</A>] the more important
+practical difference is that OO puts emphasis in global structure
+and the process paradigm in that all data is local. In the process-oriented
+world there is no superuser, that is no-one has to be in charge of
+managing the overall system.
+
+<P>
+Furthermore, and related especially to dataflow models, some authors
+talk about <SPAN  CLASS="textit">actor-oriented</SPAN> programming as another new and different
+paradigm (see [<A
+ HREF="node207.html#HewitActors">Hewit, 1977</A>,<A
+ HREF="node207.html#AghaActors">Agha, 1986</A>,<A
+ HREF="node207.html#LiuActorOrientation">Liu et&nbsp;al., 2004</A>] or
+[<A
+ HREF="node207.html#PtolemyOverview">Hylands et&nbsp;al., 2003</A>]).
+
+<P>
+In the actor-oriented paradigm, components called actors execute and
+communicate between them in a model. Actors, like objects, have a
+well-defined interface that abstracts internal state and behavior
+and restricts how an actor interacts with its environment. This interface
+includes ports that represent points of communication and parameters
+that are used to configure the operation of the actor. Often but not
+always parameters are part of a priori configuration and do not change
+upon execution. 
+
+<P>
+In actor-oriented design communication channels are very important.
+Instead of transferring control by method call like in the OO paradigm,
+actors interact by sending messages through channels. Actors interact
+only with channels, not with other actors.
+
+<P>
+An actor is an encapsulation of parameterized actions performed on
+input data to produce output data. Actors may be stateless or stateful.
+Input and output data is communicated through well defined ports.
+Ports and parameters are the interface of an actor. A port does not
+follow the call-return semantics of OO.
+
+<P>
+It is our opinion that neither process orientation nor actor orientation
+represent a paradigm beyond object orientation but rather a particular
+subset or instance. As already highlighted in section <A HREF="node19.html#sub:Object-orientation_-systems-and">1.2.3</A>
+object orientation was born from some ideas that were closely related
+to process orientation and this is documented in the seminal works
+by Nygaard. Nevertheless, object-orientation grew way beyond these
+initial ideas becoming valid for describing any kind of software system.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html843"
+  HREF="node45.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html841"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html835"
+  HREF="node43.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html844"
+  HREF="node45.html">Patterns of Graphical MOC's</A>
+<B> Up:</B> <A NAME="tex2html842"
+  HREF="node34.html">Graphical Models of Computation</A>
+<B> Previous:</B> <A NAME="tex2html836"
+  HREF="node43.html">Context-Aware Process Networks</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

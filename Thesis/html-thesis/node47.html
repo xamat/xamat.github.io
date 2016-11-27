@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Payloads</TITLE>
+<META NAME="description" CONTENT="Payloads">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node48.html">
+<LINK REL="previous" HREF="node46.html">
+<LINK REL="up" HREF="node45.html">
+<LINK REL="next" HREF="node48.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html875"
+  HREF="node48.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html873"
+  HREF="node45.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html867"
+  HREF="node46.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html876"
+  HREF="node48.html">Module data protocol</A>
+<B> Up:</B> <A NAME="tex2html874"
+  HREF="node45.html">Patterns of Graphical MOC's</A>
+<B> Previous:</B> <A NAME="tex2html868"
+  HREF="node46.html">Data flow architecture</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00253200000000000000">
+Payloads</A>
+</H3>
+
+<P>
+In dataflow-oriented software systems separate components need to
+exchange information either by sending messages (payloads) through
+a communication channel or with direct calls. If it is restricted
+to message passing, payloads will encapsulate all kinds of information
+but components need a way to distinguish the type as well as other
+message attributes such as asynchronousity, priority... Some overhead
+is associated with every message transfer. Depending on the the kind
+of communication, the mechanism must be optimized.
+
+<P>
+Payloads give a solution to this problem. Payloads are self-identifying,
+dynamically typed objects such that the type of information can be
+easily identified. Payloads have two components: a descriptor component
+and a data component. In the case where different components are on
+different machines, payloads need to offer serialization in order
+to be transmitted over the channel.
+
+<P>
+Payload copying should be avoided as much as possible using references
+whenever possible. If the fan out is larger than one, the payload
+has to be cloned. In order to reduce copies even in that case, the
+cloned copies can be references of the same entities and only perform
+the actual copy if a downstream receiver has to modify its input.
+If it is not possible to avoid copying there are two possibilities:
+shallow copy (copy just the descriptor and share the data component)
+and deep copy (copy the data component as well maybe implementing
+copy-on-write).
+
+<P>
+The greatest disadvantage of the payload pattern compared to direct
+call is its inefficiency, associated with the message passing mechanism.
+One way to minimize it is by grouping different messages and sending
+them in a single package.
+
+<P>
+A consequence of this pattern is that new message types can be added
+without having to modify existing entities. If a component receives
+an unknown token, it just passes it downstream.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html875"
+  HREF="node48.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html873"
+  HREF="node45.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html867"
+  HREF="node46.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html876"
+  HREF="node48.html">Module data protocol</A>
+<B> Up:</B> <A NAME="tex2html874"
+  HREF="node45.html">Patterns of Graphical MOC's</A>
+<B> Previous:</B> <A NAME="tex2html868"
+  HREF="node46.html">Data flow architecture</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

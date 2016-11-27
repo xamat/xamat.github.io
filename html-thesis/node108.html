@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Segment</TITLE>
+<META NAME="description" CONTENT="Segment">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node109.html">
+<LINK REL="previous" HREF="node107.html">
+<LINK REL="up" HREF="node102.html">
+<LINK REL="next" HREF="node109.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1642"
+  HREF="node109.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1640"
+  HREF="node102.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1634"
+  HREF="node107.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1643"
+  HREF="node109.html">Descriptors</A>
+<B> Up:</B> <A NAME="tex2html1641"
+  HREF="node102.html">Data repository</A>
+<B> Previous:</B> <A NAME="tex2html1635"
+  HREF="node107.html">Frame</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H4><A NAME="SECTION00421260000000000000">
+Segment</A>
+</H4>
+
+<P>
+A <TT>Segment</TT> consists basically of an audio frame (<TT>Audio</TT>
+attribute) and an aggregate of <TT>Frames</TT>. This aggregate is
+implemented as a list so as to favor fast insertions and deletions
+and supposing that access is usually going to be sequential. This
+list of frames can be searched upon, using its begin time as the sorting
+criteria. Apart from this, the <TT>Segment</TT> follows a composite
+pattern so a segment can in turn hold an aggregate of other <TT>Segments</TT>
+(which are known as <SPAN  CLASS="textit">children</SPAN>). In the composite structure,
+only the root segment may hold data (frames and audio) but this data
+may be accessed from a child located at any level. For doing so, all
+children have a pointer to their parent. In order to know if the Segment
+holds data or not, a structural attribute is included, which may be
+accessed through the <TT>GetHoldsData</TT>/<TT>SetHoldsData</TT> interface.
+The <TT>SetHoldsData</TT> method is not just an accessor, if set to
+true, the child will actually detach itself from its parent and copy
+the data that corresponds to its time interval. If set to false the
+child will remove the data attributes (frames and audio). 
+
+<P>
+A <TT>Segment</TT> also has two informative attributes: <TT>BeginTime</TT>
+and <TT>EndTime</TT>.
+
+<P>
+The UML class diagram<A NAME="tex2html18"
+  HREF="footnode.html#foot5588"><SUP><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN></SUP></A> in figure <A HREF="#fig:CLAM-Segment">3.3</A> illustrates the inner structure
+of the <TT>Segment</TT> class and its associates:
+<BR>
+<BR>
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:CLAM-Segment"></A><A NAME="5589"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.3:</STRONG>
+CLAM Segment</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="304" HEIGHT="266" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="\includegraphics[%
+width=0.55\textwidth]{/home/xamat/xamat_cvs/Thesis/images/ch3-CLAM/ps/Segment.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1642"
+  HREF="node109.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1640"
+  HREF="node102.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1634"
+  HREF="node107.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1643"
+  HREF="node109.html">Descriptors</A>
+<B> Up:</B> <A NAME="tex2html1641"
+  HREF="node102.html">Data repository</A>
+<B> Previous:</B> <A NAME="tex2html1635"
+  HREF="node107.html">Frame</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

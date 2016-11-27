@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Low-level Descriptors</TITLE>
+<META NAME="description" CONTENT="Low-level Descriptors">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node163.html">
+<LINK REL="previous" HREF="node161.html">
+<LINK REL="up" HREF="node161.html">
+<LINK REL="next" HREF="node163.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2265"
+  HREF="node163.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2263"
+  HREF="node161.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2257"
+  HREF="node161.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2266"
+  HREF="node163.html">High-level Descriptors</A>
+<B> Up:</B> <A NAME="tex2html2264"
+  HREF="node161.html">The Analysis Step (Content</A>
+<B> Previous:</B> <A NAME="tex2html2258"
+  HREF="node161.html">The Analysis Step (Content</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H4><A NAME="SECTION00621110000000000000">
+Low-level Descriptors</A>
+</H4>
+
+<P>
+As mentioned before, low level descriptors are closely related to
+the signal itself. We can distinguish at least three levels of extraction
+granularity from the signal: at any point of the signal, in small
+arbitrary regions (i.e. frames) and in longer pre-segmented regions.
+
+<P>
+The set of features that can be extracted at any point in the signal
+are called instantaneous descriptors. In the case of a time domain
+representation, most of the useful instantaneous values that can be
+computed are related to the amplitude or energy of the signal. 
+
+<P>
+If we are dealing with a frequency-domain representation many spectrum-related
+instantaneous features, such as the spectral centroid or the spectral
+tilt, can be computed on a given point. To be more precise, one should
+consider these descriptors as nearly instantaneous as they are not
+associated to a point in time of the signal but rather to a small
+region or <SPAN  CLASS="textit">frame</SPAN>. 
+
+<P>
+An important step towards a musically useful parameterization is the
+segmentation of a sound into regions that are homogeneous in terms
+of a set of sound attributes. The goal is to identify regions that,
+using the signal properties, can then be classified in terms of their
+content. This way we can identify and extract region attributes that
+will give higher-level control over the sound. 
+
+<P>
+A useful segmentation process applied to a monophonic source divides
+a melody into notes and silences and then each note into an attack,
+a steady state and a release regions. Attack and release regions are
+identified by the way the instantaneous attributes change in time
+and the steady state regions are detected by the stability of these
+same attributes. Global attributes that can characterize attacks and
+releases refer to the average variation of each of the instantaneous
+attributes, such as average fundamental frequency variation, average
+amplitude variation, or average spectral shape change. In the steady
+state regions, it is meaningful to extract the average of each of
+the instantaneous attributes and measure other global attributes such
+as time-varying rate and depth of vibrato [<A
+ HREF="node207.html#EmiliaTabasco">G&#243;mez et&nbsp;al., 2003a</A>].
+
+<P>
+Once a given sound has been segmented into regions we can study and
+extract the attributes that describe each one. Most of the interesting
+attributes are simply the mean and variance of each of the frame attributes
+for the whole region. For example, we can compute the mean and variance
+for the amplitude of sinusoidal and residual components, the fundamental
+frequency, the spectral shape of sinusoidal and residual components,
+or the spectral tilt.
+
+<P>
+Region attributes can be extracted from the frame attributes in the
+same way that the frame attributes are extracted from the frame data.
+The result of the extraction of the frame and region attributes is
+a hierarchical multi-level data structure where each level represents
+a different sound abstraction.
+
+<P>
+From several sound representations it is possible to extract the type
+of attributes mentioned above. The critical issue is how to extract
+them in order to minimize interferences, thus obtaining, as much as
+possible, meaningful high-level attributes free of correlations. 
+
+<P>
+Up until this point, we have extracted and computed features that
+are directly related to the signal-domain characteristics of the sound
+and, although they may have a perceptual meaning, they are not taking
+into account the importance of the listeners perceptual filter. 
+
+<P>
+In that sense, for example, it is well known that the amplitude of
+the sound is not directly related to the sensation of loudness produced
+on the listener, not even in a logarithmic scale (see [<A
+ HREF="node207.html#MooreLoudness">Moore et&nbsp;al., 1997</A>]).
+[<A
+ HREF="node207.html#FletcherLoudness">Fletcher and Munson, 1933</A>] established a set of equal-loudness curves
+called isophones. The main characteristic of these curves is that
+the relation between a logarithmic physical measure and its psychoacoustical
+counterpart is a frequency dependant function. Although this curves
+have proven only valid for the stable part of pure sinus (more than
+500 ms), they have been used as a quite robust approximation for measuring
+loudness of complex mixtures [<A
+ HREF="node207.html#PfeifferPerceptiveAdaptation">Pfeiffer, 1999</A>]. 
+
+<P>
+Any audio signal can be represented as a time-domain signal or as
+its spectral transform, and following this same idea we can separate
+low-level descriptors into two categories: temporal and spectral descriptors.
+
+<P>
+Temporal descriptors can be immediately computed from the actual signal
+or may require a previous adaptation stage in order to extract the
+amplitude or energy envelope of the signal, thus only taking into
+account the overall behavior of the signal and not its short-time
+variations. Examples of temporal descriptors are attack time, temporal
+centroid, zero-crossing rate, etc...
+
+<P>
+Many other useful descriptors can be extracted from the spectrum of
+an audio signal. These descriptors can be mapped to higher-level attributes.
+As a matter of fact, of the basic dimensions of a sound, two of them
+(pitch and brightness) are more easily mapped to frequency domain
+descriptors and a third one (timbre) is also very closely related
+to the spectral characteristics of a sound. A previous analysis step
+needs to be accomplished in order to extract the main spectral features.
+Descriptors directly derived from the spectrum are, for example: spectral
+envelope, power spectrum, spectral amplitude, spectral centroid, spectral
+tilt, spectral irregularity, spectral shape, spectral spread; derived
+from the spectral peaks: number of peaks, peak frequencies, peak magnitudes,
+peak phases, sinusoidality; derived from a fundamental detection:
+fundamental frequency, harmonic deviation; etc... 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2265"
+  HREF="node163.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2263"
+  HREF="node161.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2257"
+  HREF="node161.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2266"
+  HREF="node163.html">High-level Descriptors</A>
+<B> Up:</B> <A NAME="tex2html2264"
+  HREF="node161.html">The Analysis Step (Content</A>
+<B> Previous:</B> <A NAME="tex2html2258"
+  HREF="node161.html">The Analysis Step (Content</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,281 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>MPEG-7</TITLE>
+<META NAME="description" CONTENT="MPEG-7">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node33.html">
+<LINK REL="previous" HREF="node31.html">
+<LINK REL="up" HREF="node30.html">
+<LINK REL="next" HREF="node33.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html704"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html702"
+  HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html696"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html705"
+  HREF="node33.html">The Object Management Group's</A>
+<B> Up:</B> <A NAME="tex2html703"
+  HREF="node30.html">Metadata and Meta Objects</A>
+<B> Previous:</B> <A NAME="tex2html697"
+  HREF="node31.html">XML and XML Schema</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00242000000000000000"></A><A NAME="sub:MPEG-7"></A>
+<BR>
+MPEG-7
+</H2>
+
+<P>
+The Moving Picture Experts Group (MPEG) is a working group of ISO/IEC
+in charge of the development of international standards for compression,
+decompression, processing, and coded representation of moving pictures,
+audio and their combination. 
+
+<P>
+So far MPEG has produced (or is about to produce) the following standards: 
+
+<P>
+
+<UL>
+<LI>MPEG-1, the standard for storage and retrieval of moving pictures
+and audio on storage media (approved Nov. 1992), includes in its layer
+3 the famous mp3 format.
+</LI>
+<LI>MPEG-2, the standard for digital television (approved Nov. 1994),
+includes most of the formats now used in DVD's.
+</LI>
+<LI>MPEG-4, the standard for multimedia applications (first version approved
+in 1998) includes DiVX, AAC (Advanced Audio Coding) and Structured
+Audio.
+</LI>
+<LI>MPEG-7 the content representation standard for multimedia information
+search, filtering, management and processing (approved in 2002). 
+</LI>
+<LI>MPEG-21, the multimedia framework (still to be approved).
+</LI>
+</UL>
+We will now focus in describing the main features of the MPEG-7 standard
+not only as an example of metadata usage but also due to its relation
+with different parts of this thesis and also because of our involvement
+in its development process [<A
+ HREF="node207.html#MPEG7InstrumentSoundDescriptionICMC">Peeters et&nbsp;al., 2000</A>].
+
+<P>
+The MPEG-7 standard [<A
+ HREF="node207.html#MPEG7Book">Manjunath et&nbsp;al., 2002</A>,<A
+ HREF="node207.html#MPEG7Overview">Mart&#237;nez, 2002</A>] also known as
+&#34;Multimedia Content Description Interface&#34; aims
+at providing standardized core technologies allowing description of
+audiovisual data content in multimedia environments. In order to achieve
+this broad goal, MPEG-7 has standardized: 
+
+<P>
+
+<OL>
+<LI>Descriptors (D) or representations of Features, that define the syntax
+and the semantics of each feature representation, 
+</LI>
+<LI>Description Schemes (DS), that specify the structure and semantics
+of the relationships between their components, which may be both Ds
+and DSs,
+</LI>
+<LI>A Description Definition Language (DDL), to allow the creation of
+new DSs and, possibly, Ds and to allows the extension and modification
+of existing DSs,
+</LI>
+<LI>System tools, to support multiplexing of description, synchronization
+issues, transmission mechanisms, file format, etc.
+</LI>
+</OL>
+The MPEG-7 standard consists of the following parts, under the general
+title Information Technology - Multimedia Content Description Interface:
+
+<P>
+
+<UL>
+<LI>Part 1: <SPAN  CLASS="textit">Systems</SPAN>. Architecture of the standard, tools that are
+needed to prepare MPEG-7 Descriptions for efficient transport and
+storage, and to allow synchronization between content and descriptions.
+Also tools related to managing and protecting intellectual property.
+</LI>
+<LI>Part 2: <SPAN  CLASS="textit">Description Definition Language</SPAN> (DDL). Language for
+defining new DSs and perhaps eventually also for new Ds, binary representation
+of DDL expressions.
+</LI>
+<LI>Part 3: <SPAN  CLASS="textit">Visual</SPAN>. Visual elements (Ds and DSs).
+</LI>
+<LI>Part 4: <SPAN  CLASS="textit">Audio</SPAN>. Audio elements (Ds and DSs).
+</LI>
+<LI>Part 5: <SPAN  CLASS="textit">Multimedia Description Schemes</SPAN>. Elements (Ds and DSs)
+that are generic, i.e. neither purely visual nor purely audio. 
+</LI>
+<LI>Part 6: <SPAN  CLASS="textit">Reference Software</SPAN>. Software implementation of relevant
+parts of the MPEG-7 Standard.
+</LI>
+<LI>Part 7: <SPAN  CLASS="textit">Conformance</SPAN>. Guidelines and procedures for testing
+conformance of MPEG-7 implementations.
+</LI>
+</UL>
+The following terminology plays a major role in the understanding
+of the MPEG-7 process: 
+
+<P>
+<SPAN  CLASS="textit">Data</SPAN>: Data is audio-visual information that will be described
+using MPEG-7, regardless of storage, coding, display, transmission,
+medium, or technology. 
+
+<P>
+<SPAN  CLASS="textit">Feature</SPAN>: A Feature is a distinctive characteristic of the data
+which signifies something to somebody. 
+
+<P>
+<SPAN  CLASS="textit">Descriptor</SPAN>: A Descriptor (D) is a representation of a Feature.
+A Descriptor defines the syntax and the semantics of the Feature representation. 
+
+<P>
+<SPAN  CLASS="textit">Descriptor Value</SPAN>: A Descriptor Value is an instantiation of
+a Descriptor for a given data set (or subset thereof). 
+
+<P>
+<SPAN  CLASS="textit">Description Scheme</SPAN>: A Description Scheme (DS) specifies the
+structure and semantics of the relationships between its components,
+which may be both Descriptors and Description Schemes. 
+
+<P>
+<SPAN  CLASS="textit">Description</SPAN>: A Description consists of a DS (structure) and
+the set of Descriptor Values (instantiations) that describe the Data. 
+
+<P>
+<SPAN  CLASS="textit">Coded Description</SPAN>: A Coded Description is a Description that
+has been encoded to fulfil relevant requirements such as compression
+efficiency, error resilience, random access, etc. 
+
+<P>
+<SPAN  CLASS="textit">Description Definition Language</SPAN>: The Description Definition
+Language (DDL) is a language that allows the creation of new Description
+Schemes and, possibly, Descriptors. It also allows the extension and
+modification of existing Description Schemes. 
+
+<P>
+The main tools used to implement MPEG-7 descriptions are the Description
+Definition Language (DDL), Description Schemes (DSs), and Descriptors
+(Ds). Descriptors bind a feature to a set of values. Description Schemes
+are models of the multimedia objects and of the universes that they
+represent e.g. the data model of the description. They specify the
+types of the descriptors that can be used in a given description,
+and the relationships between these descriptors or between other Description
+Schemes. 
+
+<P>
+In this context the DDL defines the syntactic rules to express descriptions
+schemes and their interpretation. MPEG-7's DDL is based on an extension
+of W3s XML-Schema. However, the DDL is not a modeling language such
+as UML. The DDL is rather to be used to represent the result of modeling,
+i.e. DS and Ds. Here is an example of an MPEG-7 definition of an image:
+<BR>
+<P>
+<BR>
+<IMG
+ WIDTH="391" HEIGHT="494" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.png"
+ ALT="\begin{spacing}{0.8}
+\texttt{\footnotesize &lt;Creation&gt;}{\footnotesize\par
+}
+\par
+...
+... &lt;/Creation&gt;}&nbsp;\\
+\texttt{\footnotesize }&nbsp;\\
+{\footnotesize\par
+}
+\end{spacing}">
+<BR>
+
+<P>
+The Experimental Model (XM) software is the simulation platform for
+the MPEG-7 descriptors (Ds), description schemes (DSs), coding schemes
+(CSs), and description definition language (DDL). Besides the normative
+components, the simulation platform needs also some non-normative
+components, essentially to execute some procedural code to be executed
+on the data structures. The data structures and the procedural code
+together form the applications. The XM applications are divided in
+two types: the server applications and the client applications. 
+
+<P>
+The server applications are used to extract the descriptor data from
+the media data. The extracted descriptor data is coded and written
+to an MPEG-7 bit stream. The client application performs the search
+in the MPEG-7 coded database, by computing the distance between the
+query descriptor and all reference descriptor of the database. Therefore,
+one descriptor, the query descriptor, is extracted in the same way
+as in the server application except that the coding is not performed.
+The reference descriptors are all extracted from the MPEG-7 bit stream. 
+
+<P>
+The truth is that in its current state the Experimental Model is far
+from useful due to its complexity, lack of completeness and mixed
+approaches. It is our opinion that more efforts should be put into
+it. As a matter of fact, a standard such as MPEG7 would benefit from
+being an extensible software framework instead of just a set of tools
+and definitions.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html704"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html702"
+  HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html696"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html705"
+  HREF="node33.html">The Object Management Group's</A>
+<B> Up:</B> <A NAME="tex2html703"
+  HREF="node30.html">Metadata and Meta Objects</A>
+<B> Previous:</B> <A NAME="tex2html697"
+  HREF="node31.html">XML and XML Schema</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>CLAM classification</TITLE>
+<META NAME="description" CONTENT="CLAM classification">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node132.html">
+<LINK REL="previous" HREF="node130.html">
+<LINK REL="up" HREF="node130.html">
+<LINK REL="next" HREF="node132.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1887"
+  HREF="node132.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1885"
+  HREF="node130.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1879"
+  HREF="node130.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1888"
+  HREF="node132.html">CLAM and other environments</A>
+<B> Up:</B> <A NAME="tex2html1886"
+  HREF="node130.html">Is CLAM different?</A>
+<B> Previous:</B> <A NAME="tex2html1880"
+  HREF="node130.html">Is CLAM different?</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00431000000000000000">
+CLAM classification</A>
+</H2>
+
+<P>
+Out of the different categories presented in chapter <A HREF="node51.html#cha:Environments-for-Audio">2</A>,
+CLAM fits better into the ``Audio Processing Frameworks'' one,
+in the subcategory of ``General Purpose'' (see <A HREF="node66.html#sub:General-Purpose-Audio-Frmw">2.3.3</A>).
+Nevertheless it shares some properties with environments in other
+categories and has some particular features that make it different
+from the other frameworks included in this subcategory.
+
+<P>
+Let us first highlight the similarities that CLAM shares with other
+environments not in its subcategory. 
+
+<P>
+First, CLAM is a framework with a clear focus on audio and music but
+its generic, open, and flexible model and design make it suitable
+for processing any kind of signal data. Particularly, there are plans
+to use the framework for image and video processing in the short term.
+Therefore, it would be possible that, in the mid-term, CLAM would
+fall into the first ``General Purpose Signal Processing and Multimedia
+Frameworks'' category (see <A HREF="node53.html#sec:General-Purpose-Signal">2.2</A>).
+
+<P>
+Also CLAM is an object-oriented <SPAN  CLASS="textit">application framework</SPAN><A NAME="tex2html37"
+  HREF="footnode.html#foot5631"><SUP><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">4</SPAN></SUP></A> as defined in section <A HREF="node23.html#sec:Frameworks">1.3</A>. Out of the different
+audio and music environment reviewed, only MET++ (see <A HREF="node57.html#sub:MET++">2.2</A>)
+and CSL (see <A HREF="node67.html#sub:CSL">2.3.3</A>) could be naturally defined as application
+frameworks. 
+
+<P>
+But although we have just classified our framework as a ``General
+Purpose Audio Processing Framework'', it includes many analysis tools
+and features only comparable to the two frameworks included in the
+``Analysis-Oriented Audio Processing Frameworks'' category (see
+<A HREF="node59.html#sub:Analysis-Oriented-Audio-Frmw">2.3.1</A>), and particularly the most
+mature one, Marsyas (see <A HREF="node60.html#sub:Marsyas">2.3.1</A>).
+
+<P>
+Furthermore, even though CLAM is probably more oriented toward audio
+signal processing than toward musical symbolic data manipulation there
+are clear examples and applications in which such a data is used extensively.
+Nevertheless it is clear that CLAM does not, as most of the environments
+discussed in section <A HREF="node71.html#sec:Music-Processing-Frameworks">2.4</A>, present
+a particular model of Music. In this sense it is very similar conceptually
+to Max (see <A HREF="node77.html#sub:Max">2.5</A>) although CLAM for being a framework it
+allows to extend it and integrate different music models in it. In
+chapter <A HREF="node182.html#ch:_OO_Music_Model">6</A> we introduce an Object-Oriented
+Music model that has been implemented in the framework.
+
+<P>
+CLAM is not a graphical application, neither is this one of its main
+features. For that reason it would make no sense to include it in
+this category (see <A HREF="node75.html#sec:Audio-and-Music-Graphical-Apps">2.5</A>). Nevertheless
+it includes a graphical ``network edition'' tool similar to that
+present in all the environments in this category (see <A HREF="node124.html#sec:_CLAMApplications">3.2.3</A>).
+This tool, though important, is seen as just a particular instantiation
+of the framework and different graphical representations with distinct
+features could be developed and integrated with not much effort.
+
+<P>
+Finally, CLAM is definitely not a Musical Language (see <A HREF="node80.html#sec:Music-Languages">2.6</A>)
+but it includes one (explained in chapter <A HREF="node182.html#ch:_OO_Music_Model">6</A>)
+as a particular instance of the general framework.
+
+<P>
+In figure <A HREF="node52.html#fig:Classification-of-environments">2.1</A> we presented a
+graphical representation of how the different environments presented
+in that chapter classified. In figure <A HREF="#fig:CLAM-classification-in">3.19</A>
+we illustrate how CLAM would be positioned in respect to the other
+environments. CLAM extends its scope from the general purpose signal
+processing category and into the music processing realm, focusing
+on all audio processing applications, from analysis to synthesis<A NAME="tex2html38"
+  HREF="footnode.html#foot2616"><SUP><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">5</SPAN></SUP></A>. We have also added to the figure CLAM's particular Visual Builder:
+the Network Editor. We have done so in order to stress the fact that
+this particular CLAM application is comparable in its scope to graphical
+applications such as Kyma or Max.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:CLAM-classification-in"></A><A NAME="5632"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.19:</STRONG>
+CLAM classification in respect to other environments</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="554" HEIGHT="328" ALIGN="BOTTOM" BORDER="0"
+ SRC="img39.png"
+ ALT="\includegraphics[%
+width=1.0\textwidth]{images/ch3-CLAM/ps/SimilarFrameworks_with_CLAM.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1887"
+  HREF="node132.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1885"
+  HREF="node130.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1879"
+  HREF="node130.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1888"
+  HREF="node132.html">CLAM and other environments</A>
+<B> Up:</B> <A NAME="tex2html1886"
+  HREF="node130.html">Is CLAM different?</A>
+<B> Previous:</B> <A NAME="tex2html1880"
+  HREF="node130.html">Is CLAM different?</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

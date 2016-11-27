@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Conceptual Roadmap </TITLE>
+<META NAME="description" CONTENT="Conceptual Roadmap ">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node4.html">
+<LINK REL="previous" HREF="node2.html">
+<LINK REL="up" HREF="node1.html">
+<LINK REL="next" HREF="node4.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html357"
+  HREF="node4.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html355"
+  HREF="node1.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html349"
+  HREF="node2.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html358"
+  HREF="node4.html">Contributions</A>
+<B> Up:</B> <A NAME="tex2html356"
+  HREF="node1.html">Introduction</A>
+<B> Previous:</B> <A NAME="tex2html350"
+  HREF="node2.html">Initial Glossary</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00120000000000000000"></A><A NAME="sec:_Roadmap"></A>
+<BR>
+Conceptual Roadmap 
+</H1>
+
+<P>
+First, it may be interesting to briefly discuss what is the purpose
+of coming up with a domain metamodel. As a matter of fact, the main
+reason and advantage of working on a domain metamodel is the same
+as the reason for working on a system model: come up with a simplified
+representation of the domain that helps its understanding and usability.
+The domain metamodel can then be instantiated to model different systems
+related to the domain and therefore build a set of related applications.
+
+<P>
+Note also that when building an application framework we are also
+in some way trying to come up with a (practical) domain metamodel.
+We are in fact trying to find a simplified representation of the domain
+that can be used to easily construct new applications related with
+that domain. A framework does not only give a set of tools that can
+be used as building pieces (black-box framework) but also a conceptual
+interpretation of the domain (white-box framework) (see <A HREF="node26.html#sec:FrameworkClassification">1.3.3</A>).
+One way to see the process of building a framework is that we must
+first have to come up with a domain model and then implement it. Nevertheless,
+if we adopt a more incremental or ``agile'' point of view, we
+are able to see it the other way around: when we start building the
+framework we may have a vague idea of the domain model or metaphor
+but it is the process of designing the framework that actually ends-up
+defining the model. All these issues will be contextualized and further
+developed in chapter <A HREF="node6.html#ch:_FoundationalIssues">1</A>.
+
+<P>
+This thesis presents an object-oriented metamodel for signal processing
+that will be called Digital Signal Processing Object-Oriented Metamodel,
+DSPOOM for short. DSPOOM is a metamodel that, as it will be proven
+throughout this work, can be used to effectively translate any digital
+signal processing system into the software domain. This modeling is
+accomplished through the use of the object oriented paradigm and,
+in doing so, we gain more understanding - and thus control - of the
+different actors and forces present in the original system.
+
+<P>
+After this introduction, in chapter <A HREF="node6.html#ch:_FoundationalIssues">1</A>
+we will review the basic foundational concepts upon which the thesis
+is built. Departing from the initial glossary this chapter will focus
+on establishing a solid ground by clearly defining the main axis:
+the concept of model, the object oriented paradigm and associated
+techniques and uses, and a review of different models that have been
+traditionally been used for modeling signal processing or digital
+communication systems. In this chapter we will also discuss on issues
+such as frameworks, models and metamodels. A somehow more extensive
+review is given of software engineering techniques as the readers
+are not expected to be experts in the software engineering domain.
+
+<P>
+Chapter <A HREF="node51.html#cha:Environments-for-Audio">2</A> presents thorough review
+of software environments for audio and music processing. Each of them
+responds to a different rationale, focus and general model. The analysis
+of these tools is a vital task for understanding the domain in which
+this thesis is built. Many of these environments also represent clear
+predecessors, not only of the framework that will be presented in
+the following chapter but also of the different conceptual models
+and metamodels that are later derived. 
+
+<P>
+In next chapter, number <A HREF="node92.html#ch:_CLAM">3</A>, the CLAM framework for developing
+audio and music applications is presented. CLAM is at the same time
+a proof of concept and the generating seed of the model presented
+in this Thesis and commented in the next chapter. As a matter of fact,
+implicit to this thesis is the idea that frameworks generate models,
+and not the other way around (see <A HREF="node28.html#sub:Frameworks-generate-metamodels">1.3.5</A>).
+
+<P>
+In chapter <A HREF="node135.html#ch:_DSPOOM">4</A> the main issues and concepts that form
+DSPOOM are discussed. The central part of this chapter is devoted
+to explaining a classification of digital signal processing objects
+that may be used to model a system.
+
+<P>
+In chapter <A HREF="node155.html#ch:_OOCTM">5</A> we defend that the model presented, and
+the framework that realizes it, can be effectively used for working
+with new paradigms that go beyond the classical signal processing
+framework. More precisely, DSPOOM is shown to be useful as the basis
+for a content processing or semantic framework.
+
+<P>
+In chapter <A HREF="node182.html#ch:_OO_Music_Model">6</A> we finish the excursion up the
+abstraction ladder and end up presenting an object oriented model
+for music (i.e. symbolic) processing. It is not the first time that
+music and objects meet, but here we discuss how the model is related
+to the one presented for the lower signal level and can use many tools
+included in the CLAM framework.
+
+<P>
+Finally, in chapter <A HREF="node204.html#cha:Conclusions-and-Future">6.5</A> we draw some
+conclusions and envision some future work that could be used to broaden
+the scope of this Thesis.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html357"
+  HREF="node4.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html355"
+  HREF="node1.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html349"
+  HREF="node2.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html358"
+  HREF="node4.html">Contributions</A>
+<B> Up:</B> <A NAME="tex2html356"
+  HREF="node1.html">Introduction</A>
+<B> Previous:</B> <A NAME="tex2html350"
+  HREF="node2.html">Initial Glossary</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

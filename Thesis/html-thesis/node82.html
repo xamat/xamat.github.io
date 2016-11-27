@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Supercollider </TITLE>
+<META NAME="description" CONTENT="Supercollider ">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node83.html">
+<LINK REL="previous" HREF="node81.html">
+<LINK REL="up" HREF="node81.html">
+<LINK REL="next" HREF="node83.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1294"
+  HREF="node83.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1292"
+  HREF="node81.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1286"
+  HREF="node81.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1295"
+  HREF="node83.html">CSound</A>
+<B> Up:</B> <A NAME="tex2html1293"
+  HREF="node81.html">Music-N Languages</A>
+<B> Previous:</B> <A NAME="tex2html1287"
+  HREF="node81.html">Music-N Languages</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00361100000000000000"></A><A NAME="sub:SuperCollider"></A>
+<BR>
+Supercollider 
+</H3>
+
+<P>
+Supercollider [<A
+ HREF="node207.html#McCartneySupercolliderCMJ">McCartney, 2002</A>,<A
+ HREF="node207.html#PopeSuperCollider">Pope, 2004</A>]
+is a language for sound and image processing developed by James McCartney.
+It can be considered as a Music-N style language in its use of unit
+generators and other concepts such as instrument, orchestra or events.
+Nevertheless it presents important differences in respect to traditional
+Music-N languages such as CSound (see <A HREF="node83.html#sub:CSound">2.6.1</A>). The main
+differences are: (1) most Supercollider programs can run in real-time
+and process live sound and MIDI inputs/outputs; (2) Supercollider
+is a comprehensive general-purpose programming language with facilities
+for file input/output, list processing, and OO programming; and (3)
+Supercollider is an integrated development environment.
+
+<P>
+Supercollider has been implemented in Apple Macintosh and Be computers
+though more ports are planned. It is a high-level programming language
+with a syntax derived from C++ and Smalltalk. Its development environment
+includes a program text editor, rapid compiler, run-time system and
+a GUI builder. Supercollider Instruments can take their inputs from
+real-time MIDI controllers and can process audio files and live sound
+input.
+
+<P>
+Motivations for the design of Supercollider were the ability to realize
+sound processes that were different every time they played, write
+pieces describing ranges of possibilities rather than fixed entities
+and to facilitate live improvisation by a composer/performer.
+
+<P>
+Supercollider computes control functions and other values at a lower
+rate than the sampling rate called the ``sub-frame'' size. Its
+default value is 64 though it can be set to any value between 4 and
+256. In Supercollider, data is played as it is generated.
+
+<P>
+SC's syntax is an OO programming language, with a syntax mixture of
+C++ and Smalltalk. In SC one can program in two styles: function-oriented
+or message-passing. As in most programming languages, there are different
+kinds of statements: comments, declarations, assignments and control
+structures. The language includes everything you would expect to find
+in a general programming language but also includes specific functions
+for music and signal processing.
+
+<P>
+In a typical SC program there are several parts: (1) Header: title,
+comment, date, version...; (2) Declarations: declare output buffers,
+sound files, function tables...(required); (3) Init function: run
+at compile time if present (optional); (4) Start function: called
+at run-time if present, runs the instruments (normally present though
+optional); (5) Instrument functions: can be called from the Start
+function.
+
+<P>
+<SPAN  CLASS="textit">Unit generators</SPAN> are regular OO objects with constructors, and
+evaluation methods. SC also has support for OO classes and inheritance.
+The <TT>UGen</TT> class provides the abstraction of a unit generator,
+and the <TT>Synth</TT> class represents a group of <TT>UGens</TT>
+operating as a group to generate an output. The unit generator API
+is a simple C interface.
+
+<P>
+An <SPAN  CLASS="textit">Instrument</SPAN> is constructed functionally. When writing a sound-processing
+function one is actually writing a function that creates and connects
+unit generators. This is different from a static object specification
+of a network of unit generators. Instruments in Supercollider can
+``generate'' a network of unit generators.
+
+<P>
+A <SPAN  CLASS="textit">composition</SPAN> can be considered as a sequence of events and
+this abstraction is accomplished via the concept of a stream. A <SPAN  CLASS="textit">stream</SPAN>
+is an object to which the next message can be sent to get the next
+element. A stream ends when it returns nil. By default, all objects
+in Supercollider respond to next by returning themselves so any object
+can be used as an infinite stream of itself. An event stream returns
+dictionaries that map symbols to values, the composition code does
+not need to know anything about an instrument argument list and may
+contain any set of parameters.
+
+<P>
+Supercollider was originally designed to combine a high-level language
+and a synthesis engine. But later some reasons were found to separate
+the composition language from a synthesis engine [<A
+ HREF="node207.html#McCartneySupercolliderCMJ">McCartney, 2002</A>].
+The main reason is that some synthesis processing time must be consumed
+generating events, if the composition language is separated it can
+run in the background generating events.
+
+<P>
+That is why in Supercollider Server the synthesis engine and the language
+were separated and are now two applications that communicate via a
+slightly modified version of Open Sound Control (OSC) [<A
+ HREF="node207.html#WrightOSC-ICMC">Wright, 1998a</A>].
+This allows to run several instances of the synthesis engine either
+in different processors or machines. Controlling the synthesis engine
+is as simple as opening a socket and sending commands, so any program
+(Max, a C++ program...) could control it.
+
+<P>
+In Supercollider 3 Synth Server, while synthesis is playing new modules
+can be created, destroyed or repatched and sample buffers can be created
+and reallocated. All commands are received via TCP or UDP using the
+simplified version of OSC. If MIDI is desired, it is up to the client
+to convert it to OSC commands for the synthesis engine.
+
+<P>
+There are two versions of the Supercollider Server synthesis engine.
+One uses a block computation model and unit generator plug-ins. Instruments
+are loaded as files that describe patches of these unit generators.
+This version has a control rate and audio rate. The other version
+implements single-sample computation with the instruments loaded as
+compiled plug-ins. The synthesis class library can generate C++ code
+to be loaded by the synthesis engine. Instead of a single control
+rate any unit generator may run at any power of two division of the
+audio clock rate. Only source unit generators need to specify the
+computation rate.
+
+<P>
+All running modules are ordered in a tree of nodes that define an
+order of execution. There are two types of nodes: Synths and Groups.
+A Synth is just a collection of unit generators that can be addressed
+together. A Group is a collection of Nodes.
+
+<P>
+Synths send audio and control signals to each other via a a pair of
+global arrays of audio and control buses. Using buses allows to connect
+Synths without a priori knowledge about them. The lowest-numbered
+audio busses get written to the audio hardware outputs, then there
+are the audio input buses.
+
+<P>
+The Supercollider user interface has a program text editor, a message
+output view and an instrument user interface view. But a GUI can also
+be created with Supercollider.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1294"
+  HREF="node83.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1292"
+  HREF="node81.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1286"
+  HREF="node81.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1295"
+  HREF="node83.html">CSound</A>
+<B> Up:</B> <A NAME="tex2html1293"
+  HREF="node81.html">Music-N Languages</A>
+<B> Previous:</B> <A NAME="tex2html1287"
+  HREF="node81.html">Music-N Languages</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

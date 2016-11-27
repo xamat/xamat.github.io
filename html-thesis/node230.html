@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Spectral Processing</TITLE>
+<META NAME="description" CONTENT="Spectral Processing">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node232.html">
+<LINK REL="previous" HREF="node208.html">
+<LINK REL="up" HREF="Thesis_forHTML.html">
+<LINK REL="next" HREF="node231.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html3021"
+  HREF="node231.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html3019"
+  HREF="Thesis_forHTML.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html3013"
+  HREF="node229.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html3022"
+  HREF="node231.html">Sinusoidal plus Residual Model</A>
+<B> Up:</B> <A NAME="tex2html3020"
+  HREF="Thesis_forHTML.html">Thesis_forHTML</A>
+<B> Previous:</B> <A NAME="tex2html3014"
+  HREF="node229.html">CLAM User Group</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001100000000000000000"></A><A NAME="sec:_Spectral_Processing"></A>
+<BR>
+Spectral Processing
+</H1>
+
+<P>
+Although this subsection may seem a bit off-topic, there are several
+reasons for its inclusion. First, many of the applications that are
+mentioned in different chapters are related to spectral processing
+techniques; second, the CLAM framework was born when the research
+group was basically involved in research into spectral domain and
+that definitely biased and conditioned many of the design decisions;
+and last, much work of the author (see <A HREF="node232.html#ch:_MyPublications">C</A>)
+is directly related with spectral modeling and is not reflected anywhere
+else in this Thesis. 
+
+<P>
+The most common approach for converting a time domain signal into
+its frequency domain representation is the Short-Time Fourier Transform
+(STFT). It is a general technique from which we can implement loss-less
+analysis/synthesis systems. Many sound transformation systems are
+based on direct implementations of the basic algorithm and several
+examples have been presented in chapter 8. 
+
+<P>
+In this chapter, we will briefly mention the Sinusoidal Model and
+will concentrate, with a Matlab sample code, in the Sinusoidal plus
+Residual Model. Anyhow, the decision as to what spectral representation
+to use in a particular situation is not an easy one. The boundaries
+are not clear and there are always compromises to take into account,
+such as: (1) sound fidelity, (2) flexibility, (3) coding efficiency,
+and (4) computational requirements. Ideally, we want to maximize fidelity
+and flexibility while minimizing memory consumption and computational
+requirements. The best choice for maximum fidelity and minimum compute
+time is the STFT that, anyhow, yields a rather inflexible representation
+and inefficient coding scheme. Thus our interest in finding higher-level
+representations as the ones we present in this section.
+
+<P>
+Using the output of the STFT, the Sinusoidal model represents a step
+towards a more flexible representations while compromising both sound
+fidelity and computing time. It is based on modeling the time-varying
+spectral characteristics of a sound as sums of time-varying sinusoids.
+To obtain a sinusoidal representation from a sound, an analysis is
+performed in order to estimate the instantaneous amplitudes and phases
+of the sinusoids. This estimation is generally done by first computing
+the STFT of the sound, then detecting the spectral peaks (and measuring
+the magnitude, frequency and phase of each one), and finally organizing
+them as time-varying sinusoidal tracks.
+
+<P>
+It is a quite general technique that can be used in a wide range of
+sounds and offers a gain in flexibility compared with the direct STFT
+implementation. 
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><UL>
+<LI><UL>
+<LI><A NAME="tex2html3023"
+  HREF="node231.html">Sinusoidal plus Residual Model</A>
+</UL></UL></UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3021"
+  HREF="node231.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html3019"
+  HREF="Thesis_forHTML.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html3013"
+  HREF="node229.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html3022"
+  HREF="node231.html">Sinusoidal plus Residual Model</A>
+<B> Up:</B> <A NAME="tex2html3020"
+  HREF="Thesis_forHTML.html">Thesis_forHTML</A>
+<B> Previous:</B> <A NAME="tex2html3014"
+  HREF="node229.html">CLAM User Group</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

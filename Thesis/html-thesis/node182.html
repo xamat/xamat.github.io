@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>An Object-Oriented Music Model</TITLE>
+<META NAME="description" CONTENT="An Object-Oriented Music Model">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node204.html">
+<LINK REL="previous" HREF="node155.html">
+<LINK REL="up" HREF="Thesis_forHTML.html">
+<LINK REL="next" HREF="node183.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2465"
+  HREF="node183.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2463"
+  HREF="Thesis_forHTML.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2457"
+  HREF="node181.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2466"
+  HREF="node183.html">Instruments and Generators</A>
+<B> Up:</B> <A NAME="tex2html2464"
+  HREF="Thesis_forHTML.html">Thesis_forHTML</A>
+<B> Previous:</B> <A NAME="tex2html2458"
+  HREF="node181.html">Summary and Conclusions</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00700000000000000000"></A><A NAME="ch:_OO_Music_Model"></A>
+<BR>
+An Object-Oriented Music Model
+</H1>
+
+<P>
+In chapter <A HREF="node51.html#cha:Environments-for-Audio">2</A>, and more precisely in
+sections <A HREF="node71.html#sec:Music-Processing-Frameworks">2.4</A> and <A HREF="node80.html#sec:Music-Languages">2.6</A>,
+we reviewed different music frameworks and languages. Each of them
+presented, more or less explicitly, a model of the music domain.
+
+<P>
+In this chapter we will present an object-oriented music model. Departing
+from the basic DSPOOM metamodel presented in chapter <A HREF="node135.html#ch:_DSPOOM">4</A>
+we will create a particular instance of the metamodel for representing
+musical information. It is important to note, though, that the scope
+of our music model is much narrower. We are not trying to build a
+general metamodel useful in all situations but rather a particular
+model to prove the usefulness of object-orientation in general and
+the DSPOOM metamodel in particular in the music domain. Nevertheless,
+it is important to note that this model shares many features with
+others presented in chapter <A HREF="node51.html#cha:Environments-for-Audio">2</A>, particularly
+the one implemented in the NeXT Music Kit (see section <A HREF="node72.html#sub:NeXT-Music-Kit">2.4</A>).
+
+<P>
+Just as in the previous chapter we stated that any entity in an audio
+system is a <SPAN  CLASS="textit">sound object</SPAN>, we will now consider that any entity
+in a music system is a <SPAN  CLASS="textit">music object</SPAN>. A music object cannot
+sound or be heard unless it is somehow converted into a sound object.
+In order to generate a particular sound object usually several musical
+objects have to interact and finally undergo a synthesis process.
+In that sense our idea of music/sound object is somehow similar to
+that of Kyma's, presented in section <A HREF="node76.html#sub:Kyma">2.5</A>.
+
+<P>
+The music domain is made of many different classes whose objects finally
+influence the performance. Nevertheless, and as a first approach,
+our music model distinguishes the following classes: Instrument, Generator,
+Note and Score.
+
+<P>
+It is important to note that our music model is object-oriented and
+not ``event-oriented''. By event-oriented we are referring to
+models such as Siren/MODE (see section <A HREF="node73.html#sub:MODE-and-Siren">2.4</A>)
+where, although objects are used, the key and central modeling concept
+is the <SPAN  CLASS="textit">event</SPAN>. Usually, music event-oriented models center the
+whole model around the concept of <SPAN  CLASS="textit">Note</SPAN>, and a Note is modeled
+as a particular kind of event. An event is in that case defined as
+an object that has a duration and possibly other properties (see [<A
+ HREF="node207.html#PopeEventGenerators">Pope, 1998b</A>]
+or [<A
+ HREF="node207.html#PopeMODE91">Pope, 1991c</A>], for example).
+
+<P>
+In our object-oriented metamodel the word ``event'' is understood
+in the systems engineering sense. According to Law and Kelton ``An
+event is an instantaneous occurrence that may change the state of
+the system'' [<A
+ HREF="node207.html#LawSimulationModelling">Law and Kelton, 2000</A>]. Events are directly
+related to object-oriented messages and messages are sent to objects
+in order to modify their state. Events have no duration, as far as
+we are concerned they are instantaneous occurrences. For that reason,
+it is clear that in our model Notes are objects and not events. An
+event may be the message sent to a Note in order to change its tuning
+or to make it stop. Nevertheless, and using a loose variation of the
+Command pattern (see [<A
+ HREF="node207.html#GOF">Gamma et&nbsp;al., 1995</A>]) we can interpret a message, event
+or command as an object. We will further develop the model in the
+next sections.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html2467"
+  HREF="node183.html">Instruments and Generators</A>
+<LI><A NAME="tex2html2468"
+  HREF="node184.html">Notes</A>
+<LI><A NAME="tex2html2469"
+  HREF="node185.html">Songs and scores</A>
+<LI><A NAME="tex2html2470"
+  HREF="node186.html">MetriX</A>
+<UL>
+<LI><A NAME="tex2html2471"
+  HREF="node187.html">Basics in MetriX</A>
+<UL>
+<LI><A NAME="tex2html2472"
+  HREF="node188.html">Instruments and Generators</A>
+<LI><A NAME="tex2html2473"
+  HREF="node189.html">Mappings, Parameters and breakpoint functions</A>
+</UL>
+<LI><A NAME="tex2html2474"
+  HREF="node190.html">MIDL: The MetriX Instrument Definition Language</A>
+<UL>
+<LI><A NAME="tex2html2475"
+  HREF="node191.html">Generators</A>
+<LI><A NAME="tex2html2476"
+  HREF="node192.html">Timbre Space</A>
+<LI><A NAME="tex2html2477"
+  HREF="node193.html">Break-point Functions</A>
+<LI><A NAME="tex2html2478"
+  HREF="node194.html">Parameters </A>
+<LI><A NAME="tex2html2479"
+  HREF="node195.html">Example</A>
+</UL>
+<LI><A NAME="tex2html2480"
+  HREF="node196.html">MSDL: The MetriX Score Definition Language</A>
+<UL>
+<LI><A NAME="tex2html2481"
+  HREF="node197.html">The Score Header</A>
+<LI><A NAME="tex2html2482"
+  HREF="node198.html">The Score Body</A>
+<LI><A NAME="tex2html2483"
+  HREF="node199.html">Example</A>
+</UL>
+<LI><A NAME="tex2html2484"
+  HREF="node200.html">MetriX in XML= MetriXML</A>
+<UL>
+<LI><A NAME="tex2html2485"
+  HREF="node201.html">MetriXML Instrument Definition</A>
+<LI><A NAME="tex2html2486"
+  HREF="node202.html">MetriXML Score Definition</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html2487"
+  HREF="node203.html">Summary and Conclusions</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2465"
+  HREF="node183.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2463"
+  HREF="Thesis_forHTML.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2457"
+  HREF="node181.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2466"
+  HREF="node183.html">Instruments and Generators</A>
+<B> Up:</B> <A NAME="tex2html2464"
+  HREF="Thesis_forHTML.html">Thesis_forHTML</A>
+<B> Previous:</B> <A NAME="tex2html2458"
+  HREF="node181.html">Summary and Conclusions</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

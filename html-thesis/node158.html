@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>On Sound Objects</TITLE>
+<META NAME="description" CONTENT="On Sound Objects">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node157.html">
+<LINK REL="up" HREF="node156.html">
+<LINK REL="next" HREF="node159.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2210"
+  HREF="node159.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2208"
+  HREF="node156.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2204"
+  HREF="node157.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2211"
+  HREF="node159.html">General Building Blocks</A>
+<B> Up:</B> <A NAME="tex2html2209"
+  HREF="node156.html">Motivation</A>
+<B> Previous:</B> <A NAME="tex2html2205"
+  HREF="node157.html">What is Content?</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00612000000000000000"></A><A NAME="sub:On-Sound-Objects"></A>
+<BR>
+On Sound Objects
+</H2>
+
+<P>
+As already mentioned in the introduction to this chapter, the main
+goal of the content transmission metamodel is to analyze the signal,
+identify sound objects and describe them in an appropriate way. But,
+before getting any deeper into the different modules that make up
+the metamodel, it is necessary to have a clear idea of what we mean
+when talking about Sound Objects.
+
+<P>
+Maybe the most commonly accepted definition of a Sound Object is that
+related to Pierre Schaeffer's theories [<A
+ HREF="node207.html#SchaefferObjects">Schaeffer, 1966</A>]. In
+[<A
+ HREF="node207.html#ChionGuideDesObjectsSonores">Chion, 1983</A>], a Sound Object is defined as
+``any sound phenomenon or event perceived as a coherent whole (...)
+regardless its source or meaning''. Although this definition might
+be useful from a psycho-acoustical or perceptual point of view, it
+is not so from an implementation or engineering point of view. 
+
+<P>
+Other explanations of an object from a multimedia point of view result
+in definitions with a narrower scope (see [<A
+ HREF="node207.html#TolonenObjectBased">Tolonen, 2000</A>]
+, as an example of the use of objects from a physical models perspective).
+In MPEG-7s Multimedia Description Scheme an object is defined as follows:
+``A perceivable object is an entity that exists, i.e. has temporal
+and spatial extent, in a narrative world (e.g. Tom's piano). An abstract
+object is the result of applying abstraction to a perceivable object
+(e.g. any piano)''.
+
+<P>
+In this section we intend to give a clear definition of what is meant
+when talking about this idea. For doing so, we rely on definitions
+given to similar concepts in other areas. Especially we refer to the
+Object-Oriented paradigm as described in section <A HREF="node7.html#sec:The-Object-Oriented-Paradigm">1.1</A>.
+It is interesting to note, though, the strong relation there has traditionally
+been between OO technologies and computer music or sound signal processing
+[<A
+ HREF="node207.html#Welltemperedobject">Pope, 1991a</A>]. As a matter of fact, the definition we
+will later introduce can be seen as a superset and conceptual enhancement
+of other previously introduced concepts (see [<A
+ HREF="node207.html#ScalettiObjectAudioRepresentation">Scaletti and Hebel, 1991</A>]
+, for example).
+
+<P>
+As already commented in section <A HREF="node19.html#sub:Object-orientation_-systems-and">1.2.3</A>
+Alan Kay includes in his definition of OO the maxima that ``everything
+is an object''[<A
+ HREF="node207.html#Kay">Kay, 1993</A>] . Following this same idea, when dealing
+with Object Oriented Sound Processing, everything must be thought
+of as an object: a sound stream is an object, a track is an object,
+a musical note is an object, and an instrument is an object. These
+objects have different properties and relate between them in different
+ways.
+
+<P>
+Let us see a basic example. In a sound stream we have a number of
+tracks one of which contains a trumpet performance. In this track,
+there may be different and identical notes (same pitch, same loudness,
+same attack type). Thus, at first sight, we might distinguish four
+different kinds of objects:
+
+<P>
+
+<OL>
+<LI>The whole sound stream
+</LI>
+<LI>Our set of tracks (out of which we concentrate on the one with the
+trumpet performance)
+</LI>
+<LI>The instrument in that track (trumpet)
+</LI>
+<LI>Any number of notes in the track
+</LI>
+</OL>
+As a first and basic interpretation, Figure <A HREF="#fig:AudioStream-UML-object-diagram">5.2</A>
+illustrates a possible UML object diagram of the system.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:AudioStream-UML-object-diagram"></A><A NAME="5663"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.2:</STRONG>
+UML object diagram of a simple audio stream</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="278" HEIGHT="283" ALIGN="BOTTOM" BORDER="0"
+ SRC="img52.png"
+ ALT="\includegraphics[%
+width=0.50\textwidth]{images/ch5-OOCTM/ps/SimpleStreamObjectDiagram.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+On the other hand, in section <A HREF="node8.html#sec:_Objects">1.1.1</A> we defined a class
+as an abstract representation of a set of objects that comply with
+an identical behavior. Following the previous example, we could define
+what the class Sound_Stream, Audio_Track, Instrument and so on should
+behave like. The UML class diagram of the previous example would become
+the one depicted in Figure <A HREF="#fig:AudioStream-UML-class-diagram">5.3</A>,
+which should be read: ``a Sound Stream is made up of any number
+of Tracks (a Track can only belong to a single Stream); an Audio Track
+is related to a single Instrument and an Instrument can be recorded
+into different Tracks; an Audio Track is also made up of any number
+of notes which have an association relation with the instrument that
+produced them; Trumpet is a particular case of an Instrument (behaves
+like an Instrument but may add specific behavior) and Mono Audio Track
+and Stereo Audio Track are particular cases of Audio Tracks in which
+a Stereo Audio Track must contain two Mono Audio Tracks and a Mono
+Audio Track can be contained in at most one Stereo Audio Track.''<A NAME="tex2html61"
+  HREF="footnode.html#foot5664"><SUP><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">2</SPAN></SUP></A>
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:AudioStream-UML-class-diagram"></A><A NAME="5665"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.3:</STRONG>
+UML simplified class diagram representing an audio stream</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="332" HEIGHT="150" ALIGN="BOTTOM" BORDER="0"
+ SRC="img53.png"
+ ALT="\includegraphics[%
+width=0.60\textwidth]{images/ch5-OOCTM/ps/SoundStream.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+When declaring a class, we must ask ourselves what should be its <SPAN  CLASS="textit">behavior</SPAN>
+declaring methods for that purpose. The class <TT>SoundStream</TT>,
+for example, might have methods such as <TT>AddAudioTrack()</TT>,
+<TT>FindInstrument().</TT> On the other hand we should also identify
+the attributes that will be used to distinguish the state of two objects
+belonging to a same class. In that sense, for example, we should identify
+the attributes that may allow us to distinguish two different instruments
+(trumpet and piano). We may end up having a diagram similar to the
+one depicted in Figure <A HREF="#fig:AudioStream-complex-UML-class-diagram">5.4</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:AudioStream-complex-UML-class-diagram"></A><A NAME="5666"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.4:</STRONG>
+UML class diagram representing an audio stream</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="444" HEIGHT="250" ALIGN="BOTTOM" BORDER="0"
+ SRC="img54.png"
+ ALT="\includegraphics[%
+width=0.80\textwidth]{images/ch5-OOCTM/ps/SoundStreamComplex.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The previous diagram, though, does not explicitly show our first hypothesis
+of everything being an ``Sound Object''. That is, all the elements
+are objects but there is no explicit relation in between them to show
+that they share some commonalities . For doing so, the only missing
+link we should add is the fact that every class in our model should
+be a subclass of the SoundObject superclass. The diagram would then
+become (previously introduced methods and attributes are not shown
+for simplicity) the one illustrated in Figure <A HREF="#fig:The-everything-is-a-SoundObject">5.5</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:The-everything-is-a-SoundObject"></A><A NAME="5667"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.5:</STRONG>
+The ``everything is a sound object'' UML class diagram</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="388" HEIGHT="211" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.png"
+ ALT="\includegraphics[%
+width=0.70\textwidth]{images/ch5-OOCTM/ps/EverythingSoundObject.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Note that following this model we will treat every bit of audio content
+as an object on its own. For that reason, as we will later see, ``content
+description'' is very much related to ``object identification''.
+
+<P>
+It is also important to note that Sound Objects in the Object-Oriented
+Content Transmission Metamodel are in fact Processing Data objects
+instances of the DSPOOM metamodel (see section <A HREF="node142.html#sub:DSPOOM::Processing_Data">4.1.2</A>).
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2210"
+  HREF="node159.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2208"
+  HREF="node156.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2204"
+  HREF="node157.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2211"
+  HREF="node159.html">General Building Blocks</A>
+<B> Up:</B> <A NAME="tex2html2209"
+  HREF="node156.html">Motivation</A>
+<B> Previous:</B> <A NAME="tex2html2205"
+  HREF="node157.html">What is Content?</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Object Oriented Way</TITLE>
+<META NAME="description" CONTENT="The Object Oriented Way">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node10.html">
+<LINK REL="previous" HREF="node8.html">
+<LINK REL="up" HREF="node7.html">
+<LINK REL="next" HREF="node10.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html467"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html465"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html459"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html468"
+  HREF="node10.html">Object Orientation beyond the</A>
+<B> Up:</B> <A NAME="tex2html466"
+  HREF="node7.html">The Object-Oriented Paradigm</A>
+<B> Previous:</B> <A NAME="tex2html460"
+  HREF="node8.html">Objects</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00212000000000000000"></A><A NAME="sec:_The_OO_Way"></A>
+<BR>
+The Object Oriented Way
+</H2>
+
+<P>
+When analyzing a problem from an Object Oriented point of view, the
+first things that are usually identified are <SPAN  CLASS="textit">actors</SPAN> and <SPAN  CLASS="textit">use
+cases</SPAN>. An actor is an external (from the system point of view) entity
+that communicates with the system through a use case. A use case is
+a generic scenario that illustrates the different services that the
+system should provide. Use cases are useful in a very preliminary
+analysis stage but are also interesting to document the system behavior,
+once the design phase has finished. 
+
+<P>
+Once the basic behavior of the system has been exposed, we are ready
+to accomplish the most important and maybe difficult task in an Object
+Oriented process: identify classes. This identification may be performed
+following one of the following approaches: (1) the application domain
+is analyzed and classes are identified as ``important'' entities
+that belong to the system (as opposed to actors); (2) instead of identifying
+classes, we concentrate on identifying objects and the way they communicate,
+classes are later extracted from grouping objects that have an identical
+behavior.I would recommend a mixed approach. First identify most important
+entities in the system and relations in between them. This step does
+not need to get into much detail so attributes and operations do not
+need to be completely identified. Then, scenarios should be illustrated,
+analyzing objects and messages in between them. This step will surely
+bring to light new classes that had not been previously identified.
+Class operations will also be obtained by analyzing messages between
+objects. So, afterwards we can iterate on the first step (class identification)
+and repeat the iteration as many times as needed. 
+
+<P>
+When identifying classes we are partitioning both the problem domain
+and the resulting system. An abstract and probably complex problem
+is methodologically converted into a number of classes. Each class
+should have a strong internal cohesion and low coupling should exist
+between the different classes (see [<A
+ HREF="node207.html#LarmanUMLandPatterns">Larman, 2002</A>]).
+Following this process a new model of the ``complex'' system is
+obtained by partitioning the problem into smaller problems that can
+be treated more easily.
+
+<P>
+A well defined object oriented model of a system has a more or less
+direct mapping into the final program code using an OO programming
+language. Most Computer Assisted Software Engineering (CASE) tools
+are thus capable of generating code from a well-formed class diagram
+plus some information about the dynamic behavior of objects (i.e.
+some sequence, collaboration, state or activity UML diagrams).The
+<SPAN  CLASS="textit">Unified Modeling Language</SPAN> (UML) is the standard used for depicting
+all the different steps in the OO lifecycle. UML is a language, not
+just a notation. As such, it includes vocabulary (i.e. definition
+of basic concepts), notation (the graphical way to represent model
+elements), and rules (guidelines on how to use notation). 
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:Sample-UML-Class"></A><A NAME="5480"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.1:</STRONG>
+Sample UML Class Diagram</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="444" HEIGHT="502" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="\includegraphics[%
+width=0.80\textwidth,
+keepaspectratio]{images/ch1-Foundations/ps/UMLIntroduction.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The Object-Oriented paradigm and related processes define a different
+way of doing things. This has led to the upcoming of different methodologies
+that, although not strictly restricted to, are especially fit for
+the object-oriented paradigm and represent a step forward from the
+traditional waterfall model. One of the most important object-oriented
+methodology is the Rational Unified Process (RUP) [<A
+ HREF="node207.html#RUP">Kruchten, 2000</A>] developed
+by the same main authors than UML as a combination of different already
+existing methodologies such as Booch or Objectory.
+
+<P>
+But probably the most important methodological change due to object-orientation
+is the one introduced by Agile Methodologies [<A
+ HREF="node207.html#CockburnAgile">Cockburn, 2002</A>]
+in general and eXtreme Programming[<A
+ HREF="node207.html#BeckXP">Beck, 1999</A>] in particular. These
+methodologies defend a lightweight developing lifecycle in which human
+values such as communication or courage are favored and formal documentation
+is avoided. Agile methodologies represent a step further from Incremental
+methodologies, the planning is performed in small iteration phases
+and continuously revised. Therefore the line between analysis and
+design phases is completely blurred. eXtreme Programming in particular
+puts a high emphasis on the code and promotes the use of practices
+such as Test-driven Development or Pair Programming. 
+<BR>
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html467"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html465"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html459"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html468"
+  HREF="node10.html">Object Orientation beyond the</A>
+<B> Up:</B> <A NAME="tex2html466"
+  HREF="node7.html">The Object-Oriented Paradigm</A>
+<B> Previous:</B> <A NAME="tex2html460"
+  HREF="node8.html">Objects</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

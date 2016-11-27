@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>MetriXML Instrument Definition</TITLE>
+<META NAME="description" CONTENT="MetriXML Instrument Definition">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node202.html">
+<LINK REL="previous" HREF="node200.html">
+<LINK REL="up" HREF="node200.html">
+<LINK REL="next" HREF="node202.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2696"
+  HREF="node202.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2694"
+  HREF="node200.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2688"
+  HREF="node200.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2697"
+  HREF="node202.html">MetriXML Score Definition</A>
+<B> Up:</B> <A NAME="tex2html2695"
+  HREF="node200.html">MetriX in XML= MetriXML</A>
+<B> Previous:</B> <A NAME="tex2html2689"
+  HREF="node200.html">MetriX in XML= MetriXML</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00744100000000000000">
+MetriXML Instrument Definition</A>
+</H3>
+
+<P>
+By looking at the MIDL example in section <A HREF="node190.html#sub:MIDL">6.4.2</A> we can derive
+the following XML example of a MetriXML Instrument Definition document.
+Note that because of the structure of the CLAM ProcessingConfig class
+and some limitations of the automatic XML facilities in the framework
+we will not use XML <SPAN  CLASS="textit">attributes</SPAN> and declare everything as <SPAN  CLASS="textit">elements</SPAN>.
+We will also avoid some constructions like <SPAN  CLASS="textit">lists</SPAN> and the XML
+<SPAN  CLASS="textit">inheritance</SPAN> mechanism.
+<BR>
+<BR>
+<P>
+&nbsp;
+
+<P>
+<BR>
+
+<BR>
+
+<P>
+And from the previous example we can extract the associated XML-Schema
+that will then be directly mapeable to the class structure. 
+<BR>
+<P>
+<BR>
+<IMG
+ WIDTH="499" HEIGHT="1824" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.png"
+ ALT="\begin{spacing}{0.8}
+\texttt{\footnotesize &lt;xsd:schema xmlns:xsd=\char\lq \uml {}ht...
+...r
+}
+\par
+\texttt{\footnotesize&nbsp;&nbsp;&nbsp;&nbsp;&lt;sequence&gt;}{\footnotesize\par
+}
+\end{spacing}">
+<BR>
+
+<P>
+<TT><SMALL CLASS="FOOTNOTESIZE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:element name=&#34;Generators&#34;
+type=&#34;GeneratorsType&#34;/&gt;</SMALL></TT>
+<P>
+
+
+<P>
+<BR>
+<IMG
+ WIDTH="594" HEIGHT="48" ALIGN="BOTTOM" BORDER="0"
+ SRC="img100.png"
+ ALT="\begin{spacing}{0.8}
+\texttt{\footnotesize&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:element name=\char\lq \uml {}...
+...\par
+\texttt{\footnotesize&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xsd:element&gt;}{\footnotesize\par
+}
+\end{spacing}">
+<BR>
+
+<P>
+<TT><SMALL CLASS="FOOTNOTESIZE">&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:element name=''SampleArray''></SMALL></TT>
+<P>
+
+
+<P>
+<BR>
+<IMG
+ WIDTH="607" HEIGHT="301" ALIGN="BOTTOM" BORDER="0"
+ SRC="img101.png"
+ ALT="\begin{spacing}{0.8}
+\texttt{\footnotesize&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:complexType name=''SampleA...
+...complexType&gt;}&nbsp;\\
+\texttt{\footnotesize }&nbsp;\\
+{\footnotesize\par
+}
+\end{spacing}">
+<BR>
+
+<P>
+Finally, and by looking at the previous XML-Schema, it is immediate
+to derive the Object-Oriented model illustrated in the class diagram
+in Figure <A HREF="#fig:MetriXML-Instrument-Definition">6.12</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:MetriXML-Instrument-Definition"></A><A NAME="5773"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.12:</STRONG>
+MetriXML Instrument Definition class diagram</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="499" HEIGHT="1824" ALIGN="BOTTOM" BORDER="0"
+ SRC="img102.png"
+ ALT="\includegraphics[%
+width=0.75\textwidth,
+keepaspectratio]{images/ch6-MetriX/ps/MetriXMLInstrument.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Note that this class diagram turns out to be an extension/refinement
+of the MetriX model previously illustrated in figure <A HREF="node189.html#cap:MetriX-Instrument-Class">6.10</A>.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2696"
+  HREF="node202.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2694"
+  HREF="node200.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2688"
+  HREF="node200.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2697"
+  HREF="node202.html">MetriXML Score Definition</A>
+<B> Up:</B> <A NAME="tex2html2695"
+  HREF="node200.html">MetriX in XML= MetriXML</A>
+<B> Previous:</B> <A NAME="tex2html2689"
+  HREF="node200.html">MetriX in XML= MetriXML</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

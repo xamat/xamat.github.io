@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Why almost-degenerated objects are sometimes good objects</TITLE>
+<META NAME="description" CONTENT="Why almost-degenerated objects are sometimes good objects">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node151.html">
+<LINK REL="up" HREF="node151.html">
+<LINK REL="next" HREF="node153.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2126"
+  HREF="node153.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2124"
+  HREF="node151.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2120"
+  HREF="node151.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2127"
+  HREF="node153.html">DSPOOM as a Graphical</A>
+<B> Up:</B> <A NAME="tex2html2125"
+  HREF="node151.html">Is DSPOOM ``truly'' Object</A>
+<B> Previous:</B> <A NAME="tex2html2121"
+  HREF="node151.html">Is DSPOOM ``truly'' Object</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00521000000000000000">
+Why almost-degenerated objects are sometimes good objects</A>
+</H2>
+
+<P>
+The ``classical'' way to interpret an object-oriented system is
+as a set of entity objects that hold data inside and respond to messages
+that can modify the internal data and state. According to some design
+methodologies (see [<A
+ HREF="node207.html#AbbotObjectsFromEnglish">Abbot, 1983</A>]) each noun in the
+domain's terminology must become an object and each verb must become
+a method on an object. The Expert pattern included in the GRASP catalogue
+[<A
+ HREF="node207.html#LarmanUMLandPatterns">Larman, 2002</A>], which is dedicated to illustrate basic
+and fundamental concepts in object-oriented analysis and design, recommends
+to assign the operations to the class who owns the data needed by
+the operation. According to some OO purists objects that only hold
+data inside or only have methods but no attributes should be considered
+<SPAN  CLASS="textit">degenerated</SPAN> objects.
+
+<P>
+Nevertheless, there are many signs that this conception of a class
+as an extension of an abstract data type is too constrained and not
+always recommendable. First it is interesting to note that modern
+object-oriented design has not followed this model. Design patterns
+and magical objects such as containers, iterators and traits[<A
+ HREF="node207.html#Alexandrescu">Alexandrescu, 2001</A>]
+are good examples of objects that would be considered ``degenerated''.
+
+<P>
+It would be fairly simple to implement this classical object-oriented
+model (a class is a set of attributes plus a collection of methods
+that can be applied to these data) if we were just to model simple
+time-domain processes. An <TT>Audio</TT> class might have, for example,
+a <TT>DoIIRFilter()</TT> method. The <TT>Audio</TT> class would respond
+to this message by invoking the corresponding Infinite Input Response
+filtering algorithm. Even in this case the class would grow to the
+infinite and would not be maintainable or extensible. 
+
+<P>
+Furthermore such a model does not stand true if more complex processes
+are to be applied, specially if a particular process is meant to change
+the representation of the data. As an example imagine how you would
+model an FFT. We could still have an <TT>Audio</TT> class with a <TT>DoFFT()</TT>
+method. This method, though, would change the representation of the
+signal in such a way that it would be very difficult to maintain this
+same representation as data of the same <TT>Audio</TT> class.
+
+<P>
+In many cases, it is interesting to keep a conceptual distinction
+between operations and data. This idea has been used in many different
+situations. In [<A
+ HREF="node207.html#HalbertTypesAndInheritance">Halbert and O'Brien, 1987</A>], the authors say
+that there are times when operations are so complex that it is better
+they become objects in themselves. The authors list the following
+reasons for doing so:
+
+<P>
+
+<OL>
+<LI>The operation is a useful abstraction.
+</LI>
+<LI>The operation is likely to be shared by different classes.
+</LI>
+<LI>The operation is complex.
+</LI>
+<LI>The operation makes little use of the representation of its operands.
+</LI>
+<LI>Relatively few users of the class will want to use the operation.
+</LI>
+</OL>
+Some other reasons that could be added to this list are: parts of
+the operation are shared between different operations, the operation
+can be applied to different kinds of data, the operation has memory
+or many different operations can be applied to the same class of data.
+
+<P>
+Our domain is digital signal processing and we need to find a metaphor
+that is close to the experts understanding of their domain. In digital
+signal processing, users expect to find a clear distinction between
+a process and its input and output data.
+
+<P>
+At this point it is important to stress that our point of view on
+object-oriented design is very close to that of Nygaard's, already
+described in <A HREF="node19.html#sub:Object-orientation_-systems-and">1.2.3</A>. An object-oriented
+model is always modeling a <SPAN  CLASS="textit">system</SPAN>. And a system, as explained
+in section <A HREF="node17.html#sec:_Systems">1.2.1</A>, is a set of interacting objects, which
+are usually representing processes in the system. Our definition of
+a Processing object is in line with this idea of object-orientation
+and would be even be admitted by more traditional definitions. Booch
+[<A
+ HREF="node207.html#BoochOODesign">Booch, 1994b</A>], for instance, after citing more restrictive
+definitions ends up defining an object as ``anything with a crisply
+defined boundary'' and he gives the example of a chemical process
+in a manufacturing plant.
+
+<P>
+And although the objects in a system are usually representing processes,
+we believe that we should also model as an object all the data involved
+in them. As a matter of fact, a model can be only classified as good
+or bad if it fits its purpose (see section <A HREF="node18.html#sec:_Models">1.2.2</A>). Other
+authors have also agreed on this same idea. In [<A
+ HREF="node207.html#GrahamOOMethods">Graham, 1991</A>],
+Ian Graham describes several methods for deciding what should and
+should not be an object but he also emphasizes the fact that ``purpose
+is the chief determinant of what is to be a class''.
+
+<P>
+Finally, another hint that promote the idea that DSPOOM is ``truly''
+object-oriented is that it provides many of the advantages of object-orientation
+such as:
+
+<P>
+
+<UL>
+<LI>Encapsulation and Information Hiding
+</LI>
+<LI>Inheritance and Polymorphism
+</LI>
+<LI>Modularity and Scalability
+</LI>
+<LI>Composition
+</LI>
+<LI>Re-use
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2126"
+  HREF="node153.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2124"
+  HREF="node151.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2120"
+  HREF="node151.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2127"
+  HREF="node153.html">DSPOOM as a Graphical</A>
+<B> Up:</B> <A NAME="tex2html2125"
+  HREF="node151.html">Is DSPOOM ``truly'' Object</A>
+<B> Previous:</B> <A NAME="tex2html2121"
+  HREF="node151.html">Is DSPOOM ``truly'' Object</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

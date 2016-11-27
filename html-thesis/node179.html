@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Sample application</TITLE>
+<META NAME="description" CONTENT="Sample application">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node181.html">
+<LINK REL="previous" HREF="node169.html">
+<LINK REL="up" HREF="node155.html">
+<LINK REL="next" HREF="node180.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2438"
+  HREF="node180.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2436"
+  HREF="node155.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2430"
+  HREF="node178.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2439"
+  HREF="node180.html">Limitations and Opportunities</A>
+<B> Up:</B> <A NAME="tex2html2437"
+  HREF="node155.html">The Object-Oriented Content Transmission</A>
+<B> Previous:</B> <A NAME="tex2html2431"
+  HREF="node178.html">Beyond Sound Effects: Content-based</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00640000000000000000"></A><A NAME="sec:OOCTM-Sample-applications"></A>
+<BR>
+Sample application
+</H1>
+
+<P>
+In the previous sections we have presented examples of applications
+that represent the implementation of a particular subset of the Object-Oriented
+Content Transmission Metamodel or some of its components. We have
+also a number of content-based transformations that in fact represent
+a minor variation over the basic scheme. But in [<A
+ HREF="node207.html#xamatAES">Amatriain and Herrera, 2001b</A>] we
+presented a system to illustrate the whole OOCTM transmission chain.
+
+<P>
+The system was based on two already existing CLAM applications: SMSTools
+and Salto (see section <A HREF="node124.html#sec:_CLAMApplications">3.2.3</A>). The basic idea
+of the system is to transmit monophonic musical phrases by simply
+transmitting an XML melody description. Figure <A HREF="#fig:OOCTM-Sample-Application">5.25</A>
+illustrates the main components of the system and the basic data flow.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:OOCTM-Sample-Application"></A><A NAME="5695"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.25:</STRONG>
+OOCTM Sample Application</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="501" HEIGHT="162" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.png"
+ ALT="\includegraphics[%
+width=0.90\textwidth,
+keepaspectratio]{images/ch5-OOCTM/ps/SampleApp.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Note how this block diagram represents the complete OOCTM chain. In
+our demo system the transmitter is basically the SMSTools application
+with added melody description capabilities. The receiver is the Salto
+saxophone synthesizer which was until then a real-time MIDI-controlled
+synthesizer but to which we added the capability of understanding
+XML melodies.
+
+<P>
+Just as it usually happens in these kinds of applications in our system
+we can distinguish two different phases: initialization phase and
+transmission phase.
+
+<P>
+In the <SPAN  CLASS="textbf">initialization</SPAN> phase we have to construct and set
+up the receiver. For doing so we have to take audio samples of isolated
+notes, analyze them at the receiver and send them to the transmitter
+as SMS spectral samples. The receiver will then organize them in a
+local database and finally become ready to listen to incoming messages.
+Note that in this sample system this initialization phase is rather
+limited because the synthesizer that we have at the receiver is not
+general enough. In this case we aimed at having a reasonable quality
+and fidelity to the original encoded sound and that is still very
+difficult to achieve with a generic synthesizer. Nevertheless, and
+as a future line of work, it would in theory be possible to actually
+transmit the complete description of the instrument using an instrument
+description language such as MetriX's MIDL (see section <A HREF="node190.html#sub:MIDL">6.4.2</A>).
+Then the idea would be to transmit both the spectral (or whatever
+other kind) samples together with an XML description of how they should
+be organized at the receiver. 
+
+<P>
+In the <SPAN  CLASS="textbf">transmission</SPAN> phase the transmitter receives incoming
+monophonic phrases and extracts the melodic description. For doing
+so it uses a basic segmentation algorithm for identifying note boundaries
+and assigns the analyzed energy and fundamental frequency to that
+particular region (see [<A
+ HREF="node207.html#EmiliaMelodicTransformations">G&#243;mez et&nbsp;al., 2003b</A>] or [<A
+ HREF="node207.html#EmiliaTabasco">G&#243;mez et&nbsp;al., 2003a</A>]
+for more details on the algorithm being used and its implementation).
+The melodic description is then encoded into XML, in an MPEG-7 like
+manner and transmitted. The receiver then reads the XML melodic description,
+decodes it and translates it into internal synthesis control data.
+It finally synthesizes the output sound.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html2440"
+  HREF="node180.html">Limitations and Opportunities</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2438"
+  HREF="node180.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2436"
+  HREF="node155.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2430"
+  HREF="node178.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2439"
+  HREF="node180.html">Limitations and Opportunities</A>
+<B> Up:</B> <A NAME="tex2html2437"
+  HREF="node155.html">The Object-Oriented Content Transmission</A>
+<B> Previous:</B> <A NAME="tex2html2431"
+  HREF="node178.html">Beyond Sound Effects: Content-based</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

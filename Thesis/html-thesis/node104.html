@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Spectrum</TITLE>
+<META NAME="description" CONTENT="Spectrum">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node105.html">
+<LINK REL="previous" HREF="node103.html">
+<LINK REL="up" HREF="node102.html">
+<LINK REL="next" HREF="node105.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1602"
+  HREF="node105.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1600"
+  HREF="node102.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1594"
+  HREF="node103.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1603"
+  HREF="node105.html">SpectralPeak and SpectralPeakArray</A>
+<B> Up:</B> <A NAME="tex2html1601"
+  HREF="node102.html">Data repository</A>
+<B> Previous:</B> <A NAME="tex2html1595"
+  HREF="node103.html">Audio</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H4><A NAME="SECTION00421220000000000000">
+Spectrum</A>
+</H4>
+
+<P>
+The <TT>Spectrum</TT> is possibly the most complex PD class in the
+CLAM repository. It is an important class for the framework's purposes
+and some extra care and effort have been put into it.
+
+<P>
+A CLAM <TT>Spectrum</TT> can be represented in one of the following
+formats: array of complex numbers, array of polar numbers, a pair
+of magnitude/phase arrays, and a pair of magnitude/phase BPF's (Break
+Point Function). The <TT>Spectrum</TT> class is designed in such a
+way so as to always keep consistency of the data in its different
+representations. This is accomplished through some public methods
+to change the <SPAN  CLASS="textit">type</SPAN> of the representation and <SPAN  CLASS="textit">synchronizing</SPAN>
+all existing representation to the data in one of them. 
+
+<P>
+There is an accessory interface for accessing/setting magnitude and
+phase regardless its internal representation. These methods are not
+efficient but help in keeping different representations transparent
+for users or some generic algorithms that do not worry about efficiency.
+
+<P>
+Because of this complexity the <TT>Spectrum</TT> class is the only
+PD class that has an associated configuration. This configuration
+is used for initialization purposes and a local copy is not kept in
+the object. Whenever the <TT>GetConfig(SpectrumConfig&amp; c)</TT> method
+is called, the argument passed and used as output of the method is
+synchronized with the internal structure of the spectrum.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1602"
+  HREF="node105.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1600"
+  HREF="node102.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1594"
+  HREF="node103.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1603"
+  HREF="node105.html">SpectralPeak and SpectralPeakArray</A>
+<B> Up:</B> <A NAME="tex2html1601"
+  HREF="node102.html">Data repository</A>
+<B> Previous:</B> <A NAME="tex2html1595"
+  HREF="node103.html">Audio</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

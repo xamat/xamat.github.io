@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Kahn Process Networks</TITLE>
+<META NAME="description" CONTENT="Kahn Process Networks">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node38.html">
+<LINK REL="previous" HREF="node36.html">
+<LINK REL="up" HREF="node35.html">
+<LINK REL="next" HREF="node38.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html775"
+  HREF="node38.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html773"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html767"
+  HREF="node36.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html776"
+  HREF="node38.html">Dataflow Networks</A>
+<B> Up:</B> <A NAME="tex2html774"
+  HREF="node35.html">A brief catalogue of</A>
+<B> Previous:</B> <A NAME="tex2html768"
+  HREF="node36.html">Petri Nets</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00251200000000000000"></A><A NAME="sub:Kahn-Process-Networks"></A>
+<BR>
+Kahn Process Networks
+</H3>
+
+<P>
+Process Networks is a Model of Computation (MoC) that was originally
+developed for modeling distributed systems but has proven its convenience
+for modeling signal processing systems. Process Networks are also
+called Kahn Process Networks after G. Kahn who first introduced them
+in his thesis (see [<A
+ HREF="node207.html#KahnProcessNetworks">Kahn, 1974</A>]). It is a natural model
+for describing signal processing systems where infinite streams of
+data are incrementally transformed by processes executing in sequence
+or parallel. Nevertheless, and as pointed out by [<A
+ HREF="node207.html#LeeAndTomasDataflowNetworks">Lee and Park, 1995</A>],
+this model of computation does not require multitasking or parallelism
+and usually neither infinite queues; it is in fact usually more efficient
+than comparable methods in functional languages. Process Networks
+have found many applications in modeling embedded systems as it is
+typical for embedded systems to be designed to operate infinitely
+with limited resources.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:A-Kahn-Process"></A><A NAME="5531"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.4:</STRONG>
+A Kahn Process Network</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="304" HEIGHT="243" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="\includegraphics[%
+width=0.55\textwidth,
+keepaspectratio]{images/ch1-Foundations/ps/KPN.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Commercial systems like SPW from Alta Group of Cadence, COSSAP from
+Synopsys, the DSP Station from Mentor Graphics, Hypersignal from Hyperception
+or Simulink by Mathworks and research software like Khoros from the
+University of New Mexico and Ptolemy from the Univ. of California
+at Berkeley are all based on variants of the Process Network model.
+Departing from the original Process Networks by Kahn, a number of
+more specific models have been derived. In this section we will give
+an introduction to the basic Kahn's Process Networks and will leave
+the more specific models for next sections.
+
+<P>
+Process Networks are directed graphs where nodes represent <SPAN  CLASS="textit">Processes</SPAN>
+and arcs are infinite FIFO queues that connect these processes (see
+figure <A HREF="#fig:A-Kahn-Process">1.4</A>). Writing to a channel is non blocking
+(it always succeeds immediately) but reading is blocking. If a process
+tries to read from an empty input it is suspended until it has enough
+input data and the execution context is switched to another process
+or level. A process may not ``test'' channel for presence of data.
+At any given point a process is either ``enabled'' or ``blocked''
+waiting for data on one of its channels. It can not be waiting for
+data on one or another input channel.
+
+<P>
+In Kahn Process Networks processes produce tokens (data elements)
+that are sent along a communication channel and consumed by the destination
+process. Communication channels are the only way processes may exchange
+information. KPN systems are determinate: the history of tokens produced/consumed
+does not depend on execution order. A <SPAN  CLASS="textit">stream</SPAN> is a finite or
+infinite sequence of data elements or tokens X=[x1,x2...] where
+xi is a particular token. A process is in this sense a functional
+mapping from input to output streams.
+
+<P>
+As pointed out by [<A
+ HREF="node207.html#ParksProcessNetworksPhD">Parks, 1995</A>] a parallelism can
+be made with Turing Machines: a Process Network can be seen as a set
+of Turing machines connected with one-way tapes, each machine operating
+on its own tape. Because of the ``halting problem'' we cannot
+tell in a finite time whether an arbitrary Turing machine program
+will halt, and the same is true for Process Networks. Two properties
+of Process Networks are related to this problem: <SPAN  CLASS="textit">termination</SPAN>
+and <SPAN  CLASS="textit">boundness</SPAN>. These properties are undecidable in finite time
+for the general case but, under some restrictions, we can study and
+classify PN before execution.
+
+<P>
+According to [<A
+ HREF="node207.html#WebbProcessNetworks">Webb et&nbsp;al., 1999</A>] interesting properties of
+process networks that make them a suitable model for computation are:
+
+<P>
+
+<UL>
+<LI>Each process is a sequential program that consumes tokens from its
+inputs queues and produces tokens to the output queues.
+</LI>
+<LI>Each queue has one source and one destination.
+</LI>
+<LI>The network has no global data
+</LI>
+<LI>Each process is blocked when it tries to read from a a channel with
+insufficient data. The process resumes when there is enough data again.
+</LI>
+<LI>Although writing is generally non-blocking, blocking can be used to
+be able to use bounded queues.
+</LI>
+<LI>Concurrency can be implemented safely.
+</LI>
+<LI>Scheduling is transparent to the user
+</LI>
+<LI>Hierarchy or scalability.
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html775"
+  HREF="node38.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html773"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html767"
+  HREF="node36.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html776"
+  HREF="node38.html">Dataflow Networks</A>
+<B> Up:</B> <A NAME="tex2html774"
+  HREF="node35.html">A brief catalogue of</A>
+<B> Previous:</B> <A NAME="tex2html768"
+  HREF="node36.html">Petri Nets</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

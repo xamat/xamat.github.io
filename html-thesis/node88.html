@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>ZIPI</TITLE>
+<META NAME="description" CONTENT="ZIPI">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node89.html">
+<LINK REL="previous" HREF="node87.html">
+<LINK REL="up" HREF="node87.html">
+<LINK REL="next" HREF="node89.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1353"
+  HREF="node89.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1351"
+  HREF="node87.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1345"
+  HREF="node87.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1354"
+  HREF="node89.html">SKINI</A>
+<B> Up:</B> <A NAME="tex2html1352"
+  HREF="node87.html">Score Languages</A>
+<B> Previous:</B> <A NAME="tex2html1346"
+  HREF="node87.html">Score Languages</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00362100000000000000"></A><A NAME="sub:ZIPI"></A>
+<BR>
+ZIPI
+</H3>
+
+<P>
+ZIPI [<A
+ HREF="node207.html#ZIPI">Mc&nbsp;Millen, 1994</A>] was a comprehensive musical protocol similar to
+MIDI [<A
+ HREF="node207.html#MIDISpecification">MMA, 1998</A>] in its scope but much more flexible
+and structured. Some of its concepts are also very relevant for the
+MetriX language that will be presented in chapter <A HREF="node182.html#ch:_OO_Music_Model">6</A>.
+This latter is the main reason for including ZIPI in this review.
+
+<P>
+The first ideas of what would later become ZIPI started in 1989 as
+a collaboration between Zeta Music and CNMAT (Center for New Music
+and Audio Technology at the University of California, Berkeley). It
+all started when trying to break the chain keyboard-MIDI-sampler that
+was already foreseen at that time. The initial idea was to find a
+protocol that allowed to naturally control synthesizers from a guitar.
+
+<P>
+In 1993 and 1994 it was presented at the NAMM event and some enhancements
+were added responding to suggestions by some companies. But soon after
+and when the protocol seemed to be about to see the light, Zeta Music
+disappeared and ZIPI with it.
+
+<P>
+MDPL or Music Parameter Description Language is a musical language
+embedded in the ZIPI protocol. In it, a package is made up of three
+different kinds of information: a header or <SPAN  CLASS="textit">Network Overhead</SPAN>,
+an <SPAN  CLASS="textit">Note Address</SPAN> and a <SPAN  CLASS="textit">Note Descriptor</SPAN>.
+
+<P>
+Each MDPL package reserves some bits at the beginning and some at
+the end. These bits are called Network Overhead and contain low-level
+information related to the network where the package is being transmitted.
+It includes the address of the device in the network that is supposed
+to receive the package.
+
+<P>
+MDPL defines a three level hierarchy: families, instruments and notes.
+Each element in each category has a physical address that identifies
+it. This identifier is known as the Note Address. An MDPL message
+can therefore be addressed to any of the 63 available families, any
+of the 127 instruments in each family or to any of the 127 notes in
+each of the instruments. (There is also a special address to send
+a package to all 63 families at once).
+
+<P>
+Finally, an MDPL package can contain as many Note Descriptors as necessary.
+A Note Descriptor is made up of an identifying byte and an undetermined
+number of data bytes. The identifier defines the parameter that is
+to be modified and the data bytes contain the parameter value.
+
+<P>
+In MDPL there is a clear distinction between parameters directly related
+to the musicians actions and those other low-level parameters that
+are only related to features in the sound. We will finish our brief
+review of ZIPI by commenting the most interesting and innovative parameters
+included in MDPL.
+
+<P>
+
+<UL>
+<LI>Articulation: There are three kinds of articulation (Trigger, Reconfirm
+i Release) that allow to play legato notes.
+</LI>
+<LI>Pitch: Contrary to what happens in MIDI, a note pitch is not tied
+to any other message and is represented in 16 bits, the first 7 being
+the MIDI note and the others semitone fractions.
+</LI>
+<LI>Loudness: It is specified in musical notation (pppp~ffff).
+</LI>
+<LI>Amplitude: It describes the final gain applied to the output sound.
+</LI>
+<LI>Even/Odd Harmonic Balance: Useful to describe some particular timbre
+features in acoustic sounds. 
+</LI>
+<LI>Pitched/Unpitched Balance: Amplitude relation between harmonic and
+inharmonic components of a sound.
+</LI>
+<LI>Space Position: The MDPL offers different parameters to control a
+note position in the space, either in rectangular or polar coordinates.
+</LI>
+<LI>Timbre Control: There are different parameters to control the timbre-related
+features: Brightness, Roughness, Attack character. Furthermore, a
+timbre space of up to three dimensions can be used to interpolate
+the different timbres.
+</LI>
+<LI>Higher-level messages: The MDPL provides different higher-level messages
+that provide means of applying modulations or functions.
+</LI>
+<LI>Synthesizer requests: ZIPI establishes a bidirectional communication
+with the synthesizer. With this set of messages, the synthesizer can
+be queried about its internal features or state.
+</LI>
+<LI>Comments: Any kind of comments can be added using this special message
+that does not affect the synthesizer in any way.
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1353"
+  HREF="node89.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1351"
+  HREF="node87.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1345"
+  HREF="node87.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1354"
+  HREF="node89.html">SKINI</A>
+<B> Up:</B> <A NAME="tex2html1352"
+  HREF="node87.html">Score Languages</A>
+<B> Previous:</B> <A NAME="tex2html1346"
+  HREF="node87.html">Score Languages</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

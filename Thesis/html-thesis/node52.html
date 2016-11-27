@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Introduction. A Classification of Audio and Music Processing Environments</TITLE>
+<META NAME="description" CONTENT="Introduction. A Classification of Audio and Music Processing Environments">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node53.html">
+<LINK REL="previous" HREF="node51.html">
+<LINK REL="up" HREF="node51.html">
+<LINK REL="next" HREF="node53.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html961"
+  HREF="node53.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html959"
+  HREF="node51.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html953"
+  HREF="node51.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html962"
+  HREF="node53.html">General Purpose Signal Processing</A>
+<B> Up:</B> <A NAME="tex2html960"
+  HREF="node51.html">Environments for Audio and</A>
+<B> Previous:</B> <A NAME="tex2html954"
+  HREF="node51.html">Environments for Audio and</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00310000000000000000">
+Introduction. A Classification of Audio and Music Processing Environments</A>
+</H1>
+
+<P>
+As already mentioned the great number of existing environments for
+audio and music processing depart from different requirements and
+many focus on different aspects of audio and music. Before describing
+these different environments we will give a brief, and therefore incomplete,
+classification.
+
+<P>
+Until now, we have intentionally been using the word ``environment''
+instead of ``framework''. The reason is that we will only use
+the word framework when talking about an application or domain framework
+in the sense described in section <A HREF="node23.html#sec:Frameworks">1.3</A>. The environments
+included in this present chapter range from full-fledged application
+frameworks such as Open Sound World (see <A HREF="node64.html#sub:Open-Sound-World">2.3.2</A>)
+or SndObj (see <A HREF="node68.html#sub:SndObj">2.3.3</A>) to simple visual applications with
+some extension capabilities such as WaveWarp (<A HREF="node78.html#sub:WaveWarp">2.5</A>).
+Some environments (see Supercollider in section <A HREF="node82.html#sub:SuperCollider">2.6.1</A>)
+even go a step further and offer a complete programming language.
+This difference offers us a first classifying criteria, with extremely
+flexible application frameworks or programming languages on one end
+and simple applications on the other. Optimizing flexibility often
+compromises other features, namely usability or understandability,
+so a compromise needs to be taken.
+
+<P>
+Another interesting question that is particularly important for music
+and audio environments is whether a particular environment is focused
+on analysis, synthesis or both. Audio and music analysis has quite
+different requirements from synthesis and it is often difficult to
+match both. (As a simple example, in audio synthesis real-time performance
+is a big issue while in analysis application, the most important issue
+is usually how to organize and effectively store the analysis results).
+
+<P>
+In figure <A HREF="#fig:Classification-of-environments">2.1</A> we illustrate
+a temptative graphical classification map of the different environments
+reviewed in this chapter. We distinguish environments that have already
+been discontinued in dotted lines. On the other hand, the most important
+environments are highlighted with a larger font size. Note that although
+special care has been put on the position of each environment in some
+particular cases the fact that one environment is above or below another
+one, especially in overcrowded clusters,  is meaningless and responds
+to purely aesthetic reasons.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:Classification-of-environments"></A><A NAME="5543"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.1:</STRONG>
+Classification of Audio and Music Environments</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="554" HEIGHT="320" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.png"
+ ALT="\includegraphics[%
+width=1.0\textwidth,
+keepaspectratio]{images/ch2-Environments/ps/SimilarFrameworks.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Many other features can be used to classify these environments. After
+presenting the CLAM framework in next chapter we will concentrate
+on some of them in order to highlight its similarities and differences.
+Nevertheless it is already interesting to list them in order to focus
+our attention on those particularly interesting features. When looking
+at one of this environments, apart from the three conceptual issues
+previously commented we will also be interested in the following issues:
+
+<P>
+
+<UL>
+<LI>Is it cross-platform?
+</LI>
+<LI>Is it Free Software?
+</LI>
+<LI>What are its limitations regarding the kind of signals that can be
+processed?
+</LI>
+<LI>Is it efficient?
+</LI>
+<LI>Is it maintained, updated and documented?
+</LI>
+<LI>Does it include both an algorithm repository as well as general infrastructure?
+</LI>
+<LI>What programming language is it written in?
+</LI>
+<LI>Is the model presented object-oriented?
+</LI>
+</UL>
+Bearing all this issues in mind we will now give an overview of existing
+music and audio processing environments<A NAME="tex2html13"
+  HREF="footnode.html#foot5544"><SUP><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN></SUP></A>. We have classified them into four main categories: general purpose
+signal processing and multimedia environments, audio processing frameworks,
+music processing frameworks, audio and music graphical programming
+applications and music languages. It is important to note that although
+we have forced every environment to be classified in one of the categories,
+it is seldom the case that they perfectly fit into it, having some
+features that probably belong to a different one. Therefore we should
+think of this classification as a fuzzy set with blurred border lines.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html961"
+  HREF="node53.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html959"
+  HREF="node51.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html953"
+  HREF="node51.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html962"
+  HREF="node53.html">General Purpose Signal Processing</A>
+<B> Up:</B> <A NAME="tex2html960"
+  HREF="node51.html">Environments for Audio and</A>
+<B> Previous:</B> <A NAME="tex2html954"
+  HREF="node51.html">Environments for Audio and</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

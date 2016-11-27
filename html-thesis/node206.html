@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Future Work</TITLE>
+<META NAME="description" CONTENT="Future Work">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node204.html">
+<LINK REL="up" HREF="node204.html">
+<LINK REL="next" HREF="node207.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2740"
+  HREF="node207.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2738"
+  HREF="node204.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2734"
+  HREF="node205.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2741"
+  HREF="node207.html">Bibliography</A>
+<B> Up:</B> <A NAME="tex2html2739"
+  HREF="node204.html">Conclusions and Future Work</A>
+<B> Previous:</B> <A NAME="tex2html2735"
+  HREF="node205.html">Final Glossary</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00810000000000000000"></A><A NAME="ch:_Future_Work"></A>
+<BR>
+Future Work
+</H1>
+
+<P>
+Finally we will mention the main lines of research that remain open
+after finishing this Thesis. We will outline them in relation to the
+main contributions of the thesis: the CLAM framework, the DSPOOM metamodel,
+the OOCTM metamodel and the MetriX object-oriented music model.
+
+<P>
+In relation to the CLAM framework, in section <A HREF="node214.html#sec:CLAMWhat_sNext">A.1</A>
+we describe what are the main future lines of development. The main
+idea is that the framework's usability can still be improved in different
+ways and by doing so we believe that it will be accepted more naturally
+by more users. In order to do so we must address issues such as an
+easier deployment in any platform, a cleaner and clearer interface
+or the addition of more automatic flow control tools. All these issues
+are detailed in annex <A HREF="#ch:_Future_Work">6.5</A>.
+
+<P>
+The Digital Signal Processing Object-Oriented Metamodel (DSPOOM) is
+complete and demonstrated through the CLAM framework. Nevertheless,
+we claimed that the metamodel is valid for any digital signal processing
+model and this still has to be tested thoroughly. Although some initial
+experiments confirm that the metamodel is useful in other domains
+such as image processing it should be tested in different situations
+and under different conditions. It is possible that the usage of the
+metamodel in different situations may end up reverting into the metamodel
+itself clarifying some details such as the convenience of using one
+graphical MoC or another (see section <A HREF="node153.html#sec:DSPOOM-graphical-MoC">4.3</A>).
+
+<P>
+The Object-Oriented Content Transmission Metamodel (OOCTM) has been
+partially instantiated and demonstrated especially through content-based
+transformations (see <A HREF="node178.html#sec:Content-based-transformations">5.3.4</A>). Nevertheless,
+the overall metamodel could be only proven through a rather limited
+application (see <A HREF="node179.html#sec:OOCTM-Sample-applications">5.4</A>). These limitations
+are due to some restrictions especially on the analyzer process. This
+block addresses problems such as automatic instrument classification
+or musical transcription, which are still unsolved research topics.
+The full strength of the metamodel will only be visible when this
+technologies are finally available. Nevertheless we believe that its
+formulation will help in structuring related systems and already gives
+a conceptual framework for research in this area. In this sense it
+will also be important to exploit OOCTM's relation to other more well-stablished
+models/metamodels such as Structured Audio or S&amp;W (see <A HREF="node169.html#sec:OOCTM-and-related-models">5.3</A>).
+
+<P>
+Finally we already commented that the MetriX music model presented
+in chapter <A HREF="node182.html#ch:_OO_Music_Model">6</A> does not intend to be as general
+as the other metamodels previously presented. MetriX is used as a
+proof of concept and demonstration that the object-oriented paradigm
+and the DSPOOM metamodel in particular may be used to effectively
+model the symbolic music domain. Nevertheless, we believe that the
+resulting model could with minor enhancements become of general applicability.
+The major shortcomings of the models are that it lacks a way of describing
+performers and that analysis information is not fully integrated. 
+
+<P>
+Concentrating on the former limitation we observe that any music performance
+is made of at least three main actors: the score, the instrument,
+and the performer. The performer reads and interprets the score and
+acts on the instrument accordingly. The definition of Score in our
+OO music model is a hybrid between the traditional score written by
+a composer and the interpretation given by the performer. We would
+like to have a more clear distinction between the three levels and
+would therefore be interested in defining a third ``document''
+specifying how a performer behaves. This file would contain a list
+of constraints to be applied to the way score events would be sent
+to the instrument.
+
+<P>
+As for the second limitation, it would be interesting to better integrate
+MetriX with our OOCTM. In order to do so new ways to include analysis
+information into both the Score and the Instrument definition need
+to be devised. By doing so we would be accomplishing a more compact
+conceptual integration of the three main axis in this thesis: CLAM/DSPOOM,
+OOCTM and MetriX.
+
+<P>
+It is clear that any piece of work leaves many open issues and lines
+of future research. It is even more so in a Thesis such as this where
+models of very general applicability are presented. Nevertheless it
+is important to ask oneself whether the ground that has been built
+is solid enough so as to continue constructing from it. In this sense
+we believe that we have accomplished our goals and we hope to have
+contributed to the advance of not only present but also future research
+in our field.
+
+<P>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2740"
+  HREF="node207.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2738"
+  HREF="node204.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2734"
+  HREF="node205.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2741"
+  HREF="node207.html">Bibliography</A>
+<B> Up:</B> <A NAME="tex2html2739"
+  HREF="node204.html">Conclusions and Future Work</A>
+<B> Previous:</B> <A NAME="tex2html2735"
+  HREF="node205.html">Final Glossary</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

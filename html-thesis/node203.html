@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Summary and Conclusions</TITLE>
+<META NAME="description" CONTENT="Summary and Conclusions">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node186.html">
+<LINK REL="up" HREF="node182.html">
+<LINK REL="next" HREF="node204.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2712"
+  HREF="node204.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2710"
+  HREF="node182.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2706"
+  HREF="node202.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2713"
+  HREF="node204.html">Conclusions and Future Work</A>
+<B> Up:</B> <A NAME="tex2html2711"
+  HREF="node182.html">An Object-Oriented Music Model</A>
+<B> Previous:</B> <A NAME="tex2html2707"
+  HREF="node202.html">MetriXML Score Definition</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00750000000000000000">
+Summary and Conclusions</A>
+</H1>
+
+<P>
+In this chapter we have presented an object-oriented music model that
+can be interpreted as an instance of the basic Digital Signal Processing
+Object-Oriented Metamodel dealing in this case with higher-level symbolic
+musical data.
+
+<P>
+Following again the object-oriented paradigm we model a music system
+as a set of interrelated objects. These objects will in general belong
+to one of the following abstract classes: Instrument, Generator, Note
+or Score.
+
+<P>
+An <SPAN  CLASS="textit">Instrument</SPAN> is a generating Processing object that receives
+input controls and generates an output sound. An Instrument is as
+a matter of fact a logical grouping of autonomous units named <SPAN  CLASS="textit">Generators</SPAN>.
+A Generator is the atomic sound producing unit in an Instrument and
+can be independently controlled from the other Generators (although
+it often receives their influence). Examples are the six strings in
+a guitar or each of the keys in a piano.
+
+<P>
+A Note is the actual sounding object attached to each Generator. A
+Note can be turned on and off and its properties depend on the internal
+state of its associated Generator and Instrument.
+
+<P>
+Finally the internal state of the whole object-oriented music system
+changes in response to events that are sent to particular Instruments
+or Generators. A time-ordered collection of such events is known as
+a <SPAN  CLASS="textit">Score</SPAN>.
+
+<P>
+The abstract model just described is implemented in the MetriX language
+or in its XML-based version MetriX-ML. MetriX-ML is a Music-N language
+that therefore offers a way of defining both Instruments and Scores.
+It is implemented in CLAM and, apart from the concepts previously
+presented, includes support for defining timbre spaces, break-point-functions
+and relations between control parameters in an Instrument.
+
+<P>
+Therefore the model and its implementation is fully usable. Nevertheless
+the model is not complete as it has not been adapted to different
+synthesis techniques apart from Spectral Modelling Synthesis. But
+its definition and implementation in the context of the CLAM framework
+make it extensible and adaptable to future needs.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2712"
+  HREF="node204.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2710"
+  HREF="node182.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2706"
+  HREF="node202.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2713"
+  HREF="node204.html">Conclusions and Future Work</A>
+<B> Up:</B> <A NAME="tex2html2711"
+  HREF="node182.html">An Object-Oriented Music Model</A>
+<B> Previous:</B> <A NAME="tex2html2707"
+  HREF="node202.html">MetriXML Score Definition</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

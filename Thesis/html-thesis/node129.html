@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Others</TITLE>
+<META NAME="description" CONTENT="Others">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node128.html">
+<LINK REL="up" HREF="node124.html">
+<LINK REL="next" HREF="node130.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1864"
+  HREF="node130.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1862"
+  HREF="node124.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1858"
+  HREF="node128.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1865"
+  HREF="node130.html">Is CLAM different?</A>
+<B> Up:</B> <A NAME="tex2html1863"
+  HREF="node124.html">Sample applications</A>
+<B> Previous:</B> <A NAME="tex2html1859"
+  HREF="node128.html">Network Editor</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00423500000000000000">
+Others</A>
+</H3>
+
+<P>
+Apart from the main sample applications CLAM has been used in many
+different projects that are not included in the public version either
+because the projects themselves have not reached an stable stage or
+because their results are protected by non-disclosure agreements with
+third parties. In this section we will outline these other users of
+CLAM.
+
+<P>
+The Time Machine project implemented a high quality time stretching
+algorithm that was later integrated and included in a commercial product
+[<A
+ HREF="node207.html#TimeMachineICMC">Bonada, 2000</A>]. The algorithm uses multi-band processing
+and works in real-time. It is a clear example of how the core of CLAM
+processing can be used in isolation as it lacks of any GUI or audio
+input/output infrastructure.
+
+<P>
+The Vocal Processor (see figure <A HREF="#cap:The-Vocal-Processor">3.15</A>) is
+a prototype also developed for a third party. It is a VST plug-in
+for singing voice transformations. It includes transformations such
+as smart harmonization, hoarseness, whispering or formant change.
+This prototype was a chance to test CLAM integration into VST API
+and also to check the efficiency of the framework in highly demanding
+situations (see <A HREF="node14.html#sec:_OO_efficiency">1.1.5</A>). Most transformations are
+implemented in the frequency domain and the plug-in must work in real-time
+consuming as few resources as possible.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="cap:The-Vocal-Processor"></A><A NAME="5626"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.15:</STRONG>
+The Vocal Processor</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="443" HEIGHT="440" ALIGN="BOTTOM" BORDER="0"
+ SRC="img35.png"
+ ALT="\includegraphics[%
+width=0.80\textwidth,
+keepaspectratio]{images/ch3-CLAM/ps/VocalProcessor.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The CUIDADO IST European project [<A
+ HREF="node207.html#Cuidado">Vinet et&nbsp;al., 2002</A>] was completely developed
+with CLAM. The focus of the project was on automatic analysis of audio
+files. In particular rhythmic and melodic descriptions were implemented.
+The CLAM code was integrated as a binary dll into a commercial product
+named the Sound Palette (see figure <A HREF="#cap:The-Sound-Palette">3.16</A>).
+The algorithms and research applications are currently being integrated
+into the CLAM project and incorporated into standalone sample applications
+such as the Swinger, an application that computes rhythmic descriptors
+from a sound file and applying a time-stretching algorithm is able
+to change the <SPAN  CLASS="textit">swing</SPAN> of the piece (see figure <A HREF="#cap:The-Swinger">3.17</A>).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="cap:The-Sound-Palette"></A><A NAME="5627"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.16:</STRONG>
+The Sound Palette</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="444" HEIGHT="365" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="\includegraphics[%
+width=0.80\textwidth,
+keepaspectratio]{images/ch3-CLAM/ps/sp.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="cap:The-Swinger"></A><A NAME="5628"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.17:</STRONG>
+The Swinger</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="444" HEIGHT="333" ALIGN="BOTTOM" BORDER="0"
+ SRC="img37.png"
+ ALT="\includegraphics[%
+width=0.80\textwidth,
+keepaspectratio]{images/ch3-CLAM/ps/screenshot_swinger.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The Open Drama project was another IST European project that used
+CLAM extensively. The project focus was on finding new interactive
+ways to present opera. In particular, a prototype application called
+MDTools was built to create an MPEG-7 compliant description of a complete
+opera play (see figure <A HREF="#cap:MD-Tools">3.18</A>).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="cap:MD-Tools"></A><A NAME="5629"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.18:</STRONG>
+MD Tools</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="444" HEIGHT="389" ALIGN="BOTTOM" BORDER="0"
+ SRC="img38.png"
+ ALT="\includegraphics[%
+width=0.80\textwidth,
+keepaspectratio]{images/ch3-CLAM/ps/mdtools.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The AudioClass project aims at building automatic tools for managing
+large collections of audio effects. Analysis algorithms implemented
+in CLAM have been integrated and are called from a web application.
+The results are then added to a large metadata database.
+
+<P>
+Also CLAM is being used for educational purposes in different ways.
+On one hand, it is the base for a course on Music and Audio Programming.
+On the other hand it is the base of many Master Thesis. In this context,
+it has been used for applications such as Voice-to-MIDI conversion,
+Timbre Space based synthesis and morph, or song identification. All
+these results are by definition public and will be integrated into
+the public repository.
+
+<P>
+Finally, CLAM is also currently being used in different internal projects
+that will also someday be integrated. Probably the most important
+is the SIMAC IST European project. The software output of this project
+will be three prototypes: a music annotator application, a music collection
+organizer and browser, and a music recommendation engine. All of them
+are being developed in CLAM.
+
+<P>
+Rappid [<A
+ HREF="node207.html#RAPPID">Robledo, 2002</A>] is a testing workbench for the CLAM framework
+in high demanding situations. The first version of Rappid implements
+a quite simple time-domain amplitude modulation algorithm. Any other
+CLAM based algorithm, though, can be used in its place. Next picture
+illustrates the basic diagrams of the application. The most interesting
+thing about Rappid is the way that multithreading issues are handled,
+using a watchdog mechanism. The current implementation works only
+under GNU/Linux. Rappid has been tested in a live-concert situation.
+Gabriel Brnic used Rappid as a essential part of his composition for
+harp, viola and tape, presented at the Multiphonies 2002 cycle of
+concerts in Paris.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1864"
+  HREF="node130.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1862"
+  HREF="node124.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1858"
+  HREF="node128.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1865"
+  HREF="node130.html">Is CLAM different?</A>
+<B> Up:</B> <A NAME="tex2html1863"
+  HREF="node124.html">Sample applications</A>
+<B> Previous:</B> <A NAME="tex2html1859"
+  HREF="node128.html">Network Editor</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

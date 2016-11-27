@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Synthesis Step</TITLE>
+<META NAME="description" CONTENT="The Synthesis Step">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node168.html">
+<LINK REL="previous" HREF="node166.html">
+<LINK REL="up" HREF="node165.html">
+<LINK REL="next" HREF="node168.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2312"
+  HREF="node168.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2310"
+  HREF="node165.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2304"
+  HREF="node166.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2313"
+  HREF="node168.html">A Combined Receiver Scheme</A>
+<B> Up:</B> <A NAME="tex2html2311"
+  HREF="node165.html">The Semantic Receiver</A>
+<B> Previous:</B> <A NAME="tex2html2305"
+  HREF="node166.html">The Decoding Step (Content</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00622200000000000000">
+The Synthesis Step</A>
+</H3>
+
+<P>
+As commented in the previous paragraphs the decoder is in charge of
+translating the input metadata into a synthesis language. Once the
+transmitted metadata has been translated into some language/format
+understandable by the synthesizer, the synthesis step is reduced to
+a traditional synthesis process. We therefore only need the synthesizer
+to be prepared to respond to the different decoded parameters.
+
+<P>
+Therefore, in the synthesis step the key issue is the language of
+choice. Many languages have been developed for the purpose of controlling
+a synthesizer. Among them, the most extended one is MIDI [<A
+ HREF="node207.html#MIDISpecification">MMA, 1998</A>]
+although its limitations make it clearly not sufficient for the system
+proposed in this paper. Another synthesis language that deserves consideration
+at this point is MPEG4's SAOL (Structured Audio Orchestra Language)
+[<A
+ HREF="node207.html#ScheirerSAOL_CMJ">Scheirer, 1999b</A>]. See section <A HREF="node174.html#sec:Structured-Audio">5.3.2</A>
+for a more in depth explanation on Structured Audio and its relation
+to the OOCTM.
+
+<P>
+But, as it will be explained in section <A HREF="node174.html#sec:Structured-Audio">5.3.2</A>,
+Structured Audio and SAOL present several limitations and are not
+well suited for our purposes. In next chapter, an object-oriented
+synthesis language is presented. The MetriXML language is proposed
+as a link between analysis, encoding, and synthesis specification
+and it presents a model of music that is a particular instance of
+DSPOOM and very much related to OOCTM. Note that a further advantage
+of the MetriXML is that it is an XML-based language, just as the one
+proposed as result of the encoding process. A transformation from
+one XML document containing analysis results and another XML document
+containing synthesis parameters can be as simple as defining an XSLT<A NAME="tex2html73"
+  HREF="footnode.html#foot5674"><SUP><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">4</SPAN></SUP></A>.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2312"
+  HREF="node168.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2310"
+  HREF="node165.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2304"
+  HREF="node166.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2313"
+  HREF="node168.html">A Combined Receiver Scheme</A>
+<B> Up:</B> <A NAME="tex2html2311"
+  HREF="node165.html">The Semantic Receiver</A>
+<B> Previous:</B> <A NAME="tex2html2305"
+  HREF="node166.html">The Decoding Step (Content</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

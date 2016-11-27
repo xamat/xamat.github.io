@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Classification of frameworks</TITLE>
+<META NAME="description" CONTENT="Classification of frameworks">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node27.html">
+<LINK REL="previous" HREF="node25.html">
+<LINK REL="up" HREF="node23.html">
+<LINK REL="next" HREF="node27.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html643"
+  HREF="node27.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html641"
+  HREF="node23.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html635"
+  HREF="node25.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html644"
+  HREF="node27.html">The framework development process</A>
+<B> Up:</B> <A NAME="tex2html642"
+  HREF="node23.html">Frameworks</A>
+<B> Previous:</B> <A NAME="tex2html636"
+  HREF="node25.html">Properties of a well-designed</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00233000000000000000"></A><A NAME="sec:FrameworkClassification"></A>
+<BR>
+Classification of frameworks
+</H2>
+
+<P>
+Different views can be used for classifying software frameworks. 
+
+<P>
+Taligent, for instance, elaborated different ways of classifying frameworks
+[<A
+ HREF="node207.html#TaligentBuildingOOFrameworks">Taligent, 1994</A>]. On one hand, a framework can
+be classified as an <SPAN  CLASS="textit">application framework</SPAN>, a <SPAN  CLASS="textit">domain framework</SPAN>
+or a <SPAN  CLASS="textit">support framework</SPAN>. Application frameworks are those that
+intend to just offer support for developing one kind of software application
+or part of an application. An example could be a framework for developing
+graphical user interfaces. Support frameworks offer horizontal, system-level
+services like file access or support for distributed computing. Finally
+domain frameworks are those that give support to 
+
+<P>
+Another Taligent classification separated frameworks into <SPAN  CLASS="textit">architecture-driven</SPAN>
+or <SPAN  CLASS="textit">data-driven</SPAN>. Architecture-driven frameworks rely on inheritance
+for customization while data-driven frameworks rely on object composition.
+Architecture-driven frameworks can be difficult to use because they
+require the client to write a lot of code but data-driven can result
+very limiting. Typically, a well-designed framework offers and architecture-driven
+base with a data-driven layer.
+
+<P>
+The most accepted classification, though, is probably that of Ralph
+E. Johnson according to which software frameworks can be basically
+classified into <SPAN  CLASS="textit">white-box frameworks</SPAN> and <SPAN  CLASS="textit">black-box frameworks</SPAN>
+[<A
+ HREF="node207.html#JohnsonReusableClasses">Johnson and Foote, 1988</A>,<A
+ HREF="node207.html#EvolvingFrameworksRobertsJohnson">Roberts and Johnson, 1996</A>]. In
+a white-box framework, the user adds methods to existing super-classes.
+The implementation of the framework must be understood in order to
+use it. The framework relies heavily on the use of inheritance, classes
+are generalized from the individual existing applications. In a black-box
+framework, components are offered and must be interconnected in order
+to build an application. The user only needs to understand the interface
+or protocol of these components. Inheritance can be used to organize
+the component library but it has the drawback that it cannot be easily
+changed at run-time. For that reason, composition is used to combine
+components into applications. White-box frameworks have also been
+named ``calling'' while black-box are ``called''. With this
+simple black or white classification, it is clear that very few frameworks
+can be classified into completely white or black-box, most of them
+are laying in an intermediate grey.
+
+<P>
+Out of these two basic kinds of frameworks, a number of patterns are
+identified: ``Component Library'', ``Hot Spots'', ``Pluggable
+Objects'', ``Fine-grained Objects'', ``Visual Builder'',
+and ``Language Tools''. In a framework similar classes must be
+written for each new problem that arises, the Component Library pattern
+proposes to solve this by starting with a simple library of obvious
+classes and add the others as they are needed. Hot Spots are parts
+of code that need to be written over and over again for every new
+application to the framework. The solution is to separate code that
+changes from code that doesn't. Encapsulating varying code in objects,
+we will show the user where the code is expected to change. Another
+observation when writing a framework is that most of the subclasses
+are trivial. To avoid boosting the number of trivial classes the Pluggable
+Objects pattern proposes to parameterize classes with the messages
+to send, blocks to access or whatever distinguishes one trivial subclass
+from the other. On the other hand, the Fine-grained Objects patterns
+tries to answer the question of how far a framework designer should
+go in dividing objects into smaller ones. The answer is to continue
+dividing objects until it makes no sense in the domain of that particular
+framework. The rationale behind this idea is that domain experts,
+which are the targeted users for a framework, are better at understanding
+a complex system in their domain than at understanding complex programming.
+The last two patterns in the framework catalogue deal with what should
+be the aimed final objective in framework design. The Visual Builder
+pattern arises from the observation that in a black-box framework,
+when connecting objects the connection script is very similar from
+one application to another. The proposed solution is to create a graphical
+program that allows to generate an application by graphically connecting
+objects. Finally, the Language Tools pattern tries to solve the problem
+of how to inspect and debug complex composite objects created in the
+visual builder. The answer is to create specialized tools adapted
+to the domain of the framework.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html643"
+  HREF="node27.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html641"
+  HREF="node23.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html635"
+  HREF="node25.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html644"
+  HREF="node27.html">The framework development process</A>
+<B> Up:</B> <A NAME="tex2html642"
+  HREF="node23.html">Frameworks</A>
+<B> Previous:</B> <A NAME="tex2html636"
+  HREF="node25.html">Properties of a well-designed</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

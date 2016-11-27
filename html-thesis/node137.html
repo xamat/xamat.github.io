@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Processing Objects</TITLE>
+<META NAME="description" CONTENT="Processing Objects">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node142.html">
+<LINK REL="previous" HREF="node136.html">
+<LINK REL="up" HREF="node136.html">
+<LINK REL="next" HREF="node138.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1975"
+  HREF="node138.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1973"
+  HREF="node136.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1967"
+  HREF="node136.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1976"
+  HREF="node138.html">The Processing Object Lifecycle</A>
+<B> Up:</B> <A NAME="tex2html1974"
+  HREF="node136.html">DSPOOM as a Classification</A>
+<B> Previous:</B> <A NAME="tex2html1968"
+  HREF="node136.html">DSPOOM as a Classification</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00511000000000000000"></A><A NAME="sub:DSPOOM::Processing_Object"></A>
+<BR>
+Processing Objects
+</H2>
+
+<P>
+We usually understand the verb ``to process'' as the action of
+transforming some existing data. This transformation can be a change
+in the data state or even its essence.
+
+<P>
+The DSPOOM Processing class is the abstract encapsulation of a process
+following the object-oriented paradigm. We call any instance of a
+Processing subclass a Processing object. Just as any object (see section
+<A HREF="node8.html#sec:_Objects">1.1.1</A>) a Processing object has its own identity, behavior,
+structure and sequence of valid states. A DSPOOM Processing object
+is directly related to Processing objects in CLAM (see <A HREF="node111.html#sec:_ProcessingInfrastructure">3.2.2</A>)
+but also to similar concepts in other environments. Therefore a DSPOOM
+Processing object can be seen as an abstraction of Marsyas' <SPAN  CLASS="textit">transformations</SPAN>
+(see <A HREF="node60.html#sub:Marsyas">2.3.1</A>), OSW's and Kyma's <SPAN  CLASS="textit">transforms</SPAN> (see
+<A HREF="node64.html#sub:Open-Sound-World">2.3.2</A> and <A HREF="node76.html#sub:Kyma">2.5</A>), <SPAN  CLASS="textit">objects</SPAN> in
+Max (see <A HREF="node77.html#sub:Max">2.5</A>) and <SPAN  CLASS="textit">sound objects</SPAN> in SndObj (see <A HREF="node68.html#sub:SndObj">2.3.3</A>),
+<SPAN  CLASS="textit">unit generators</SPAN> in CSL and Aura (see <A HREF="node67.html#sub:CSL">2.3.3</A> and <A HREF="node65.html#sub:W_Aura">2.3.2</A>),
+STK's <SPAN  CLASS="textit">instruments</SPAN> (see <A HREF="node63.html#sub:STK">2.3.2</A>), <SPAN  CLASS="textit">processes</SPAN> in
+FORMES (see <A HREF="node69.html#sub:FORMES">2.3.3</A>) or <SPAN  CLASS="textit">virtual processors</SPAN> in VSDP
+(see <A HREF="node56.html#sub:VDSP">2.2</A>).
+
+<P>
+The Processing objects are the main building blocks of a DSPOOM modeled
+system. All processing in a DSPOOM model must be performed inside
+a Processing object. While the Processing object is running it receives
+and emits two kinds of output: synchronous data and asynchronous controls. 
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:DSPOOM-Processing-class"></A><A NAME="5640"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.2:</STRONG>
+DSPOOM Processing class</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="549" HEIGHT="371" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.png"
+ ALT="\includegraphics[%
+width=1.0\textwidth,
+keepaspectratio]{/home/xamat/xamat_cvs/Thesis/images/ch4-DSPOOM/ps/DetailedProcessingObject.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Figure <A HREF="#fig:DSPOOM-Processing-class">4.2</A> illustrates the different
+concepts that are encapsulated in the Processing abstract class and
+therefore in any concrete Processing object. Its main components are
+a <SPAN  CLASS="textit">configuration</SPAN>, incoming and outgoing data <SPAN  CLASS="textit">ports</SPAN>, incoming
+and outgoing <SPAN  CLASS="textit">controls</SPAN> and any number of internal <SPAN  CLASS="textit">algorithms</SPAN>.
+We will now introduce all of these concepts and the way they interrelate.
+
+<P>
+First though it is important to note that in a processing object we
+define two different flows: from left to right we have the <SPAN  CLASS="textit">data
+flow</SPAN> and from top to bottom we have the <SPAN  CLASS="textit">control flow</SPAN>. The
+data flow is synchronous and thus controlled by an external clock.
+The control flow is asynchronous and event-driven. We will come back
+to the definition of different flows in section <A HREF="node140.html#sub:Data-and-Control_Flow">4.1.1</A>,
+when we are a bit more familiar with the processing internal structure.
+
+<P>
+When triggering the process, we are asking the Processing object to
+access some incoming data and, using the encapsulated algorithm(s),
+transform it to some output data. A Processing object is able to access
+external data through its connection Ports. Input ports, or Inports
+for short, access incoming data and Output ports, or Outports, send
+outgoing data. This same idea is found in other environments apart
+from CLAM. Ports, for instance are called <SPAN  CLASS="textit">inlets</SPAN> and <SPAN  CLASS="textit">outlets</SPAN>
+in OSW and Max (see <A HREF="node64.html#sub:Open-Sound-World">2.3.2</A> and <A HREF="node77.html#sub:Max">2.5</A>)
+
+<P>
+Apart from the obvious interface for accessing encapsulated Processing
+Data, Ports must offer connection facilities. Pairs of ports can be
+connected as long as one of them is an Inport and the other and Outport
+and meet a further condition: they are of the same Processing Data
+type. Although this condition may be somehow relaxed by allowing connections
+of polymorphic Processing Data Ports, this is not the recommended
+nor the usual situation.
+
+<P>
+Besides receiving and sending data at a fixed rate through its Ports,
+a Processing object may also receive asynchronous Control events.
+These events affect the Processing object internal state and therefore
+are able to influence the result of the process itself. The Processing
+object can also broadcast these received events or some internally
+generated ones through its output Controls.
+
+<P>
+But all this mechanisms can be seen as auxiliary to the processing
+object main functionality, which is that of encapsulating one or more
+particular algorithms that work towards a clearly defined purpose.
+These algorithms are the ones actually in charge of transforming or
+processing the input data. The selection of one of the maybe alternative
+algorithms available is usually done upon configuration though some
+particular processing objects may be able to implement an Strategy
+pattern[<A
+ HREF="node207.html#GOF">Gamma et&nbsp;al., 1995</A>] for dynamically selecting one algorithm or the
+other. Whether this policy is possible or not will depend, as in many
+other situations, on whether a change in the algorithm means a structural
+change or not. 
+
+<P>
+The execution of the Processing functionality is triggered by sending
+it a Do message. This should be the only way to access a Processing
+object functionality and the response to this message must be well
+defined. On the other hand, dynamic changes (and by dynamic we mean
+those that can be applied without the object having to transition
+from one of the main states to the other) will be triggered by the
+acknowledgement of an input control. The response of a Processing
+object to a Do message depends on the values of the data in the input
+ports but also on the internal state, which depends on the input controls
+received.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="2848"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.3:</STRONG>
+Processing Class</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="190" HEIGHT="146" ALIGN="BOTTOM" BORDER="0"
+ SRC="img42.png"
+ ALT="\includegraphics[%
+width=0.20\paperwidth,
+keepaspectratio]{images/ch4-DSPOOM/ps/DSPOOM_Processing.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1977"
+  HREF="node138.html">The Processing Object Lifecycle</A>
+<LI><A NAME="tex2html1978"
+  HREF="node139.html">Processing Configuration</A>
+<LI><A NAME="tex2html1979"
+  HREF="node140.html">Data and Control Flow</A>
+<LI><A NAME="tex2html1980"
+  HREF="node141.html">Kinds of Processing Classes: Generators, Sinks and Transforms</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1975"
+  HREF="node138.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1973"
+  HREF="node136.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1967"
+  HREF="node136.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1976"
+  HREF="node138.html">The Processing Object Lifecycle</A>
+<B> Up:</B> <A NAME="tex2html1974"
+  HREF="node136.html">DSPOOM as a Classification</A>
+<B> Previous:</B> <A NAME="tex2html1968"
+  HREF="node136.html">DSPOOM as a Classification</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

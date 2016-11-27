@@ -1,0 +1,314 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Kristen Nygaard and the Scandinavian School: Object-Orientation
+as a system simulation tool</TITLE>
+<META NAME="description" CONTENT="Kristen Nygaard and the Scandinavian School: Object-Orientation
+as a system simulation tool">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node19.html">
+<LINK REL="up" HREF="node19.html">
+<LINK REL="next" HREF="node21.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html579"
+  HREF="node21.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html577"
+  HREF="node19.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html573"
+  HREF="node19.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html580"
+  HREF="node21.html">Metamodels</A>
+<B> Up:</B> <A NAME="tex2html578"
+  HREF="node19.html">Object-orientation, systems and models</A>
+<B> Previous:</B> <A NAME="tex2html574"
+  HREF="node19.html">Object-orientation, systems and models</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00223100000000000000">
+Kristen Nygaard and the Scandinavian School: Object-Orientation
+as a system simulation tool</A>
+</H3>
+
+<P>
+Simula I is usually referred to as the first object-oriented language.
+Nevertheless, in Simula I the words <SPAN  CLASS="textit">objects</SPAN> and <SPAN  CLASS="textit">classes</SPAN>
+were never used. Instead objects were called <SPAN  CLASS="textit">processes</SPAN> and
+classes <SPAN  CLASS="textit">activities</SPAN> [<A
+ HREF="node207.html#NygaardTeachingOO">Nygaard, 2001</A>]. Simula I aimed
+at being a system description language and a programming language
+[<A
+ HREF="node207.html#NyggardBasicOOConcepts">Nygaard, 1986</A>]. The original goals of the authors
+was to create a language that included definitions of basic concepts,
+allowed a formal description of any system, and in which system descriptions
+should be easy to read and useful for communication [<A
+ HREF="node207.html#DahlNygaardSimula">Dahl and Nygaard, 1966</A>].
+The interest of converting Simula into a general purpose language,
+more than just a simulation language, and the idea of adding inheritance
+capabilities between <SPAN  CLASS="textit">activities</SPAN> brought up a new version of
+Simula called Simula 67 [<A
+ HREF="node207.html#NygaardDevelopmentOfSimula">Nygaard and Dahl, 1978</A>].
+
+<P>
+By reading the (very few) articles that the main authors of the Simula
+language, Nygaard and Dahl, wrote it is clear that they were conscious
+of the definition of a system as a set of interacting objects and
+the role of object-orientation as a modeling or simulation paradigm.
+What follows can be read as a summary of the Scandinavian school of
+object-orientation extracted from [<A
+ HREF="node207.html#NygaardDevelopmentOfSimula">Nygaard and Dahl, 1978</A>,<A
+ HREF="node207.html#NygaardTeachingOO">Nygaard, 2001</A>,<A
+ HREF="node207.html#NyggardBasicOOConcepts">Nygaard, 1986</A>]and
+[<A
+ HREF="node207.html#DahlNygaardSimula">Dahl and Nygaard, 1966</A>]. In this description we will concentrate
+on the basic ideas that led to the formulation of the object-oriented
+paradigm but will also include some definitions of concepts that are
+useful for my dissertation.
+
+<P>
+According to Nygaard, the idea that led to Simula and object-oriented
+programming was to create a language that made it possible for people
+to comprehend, describe, and communicate about systems and to analyze
+existing and proposed systems through computer based models. The basic
+concept in Simula is the process, being characterized by a data structure
+and an operation rule. The individual members of the data structure
+of a process were called attributes. Simula I was mostly used as a
+system description language. Most of the time, it was used as a way
+to gather more information about the system under study and understand
+it better.
+
+<P>
+At first, Simula defined a system as containing active components
+(<SPAN  CLASS="textit">stations</SPAN>) and passive components (<SPAN  CLASS="textit">costumers</SPAN>). A costumer
+was generated by the service part of a station, transferred to the
+queue part of another... The whole structure was called a <SPAN  CLASS="textit">network</SPAN>
+and actions from stations were regarded as happening in discrete moments
+in time therefore becoming discrete event networks. Then the idea
+of network was substituted by the more powerful concept of <SPAN  CLASS="textit">model</SPAN>,
+consisting of processes that were declared collectively by <SPAN  CLASS="textit">activity</SPAN>
+declarations.
+
+<P>
+Nygaard was not very keen on using the term <SPAN  CLASS="textit">Computer Science</SPAN>,
+he preferred to ad-scribe himself to the discipline of <SPAN  CLASS="textit">Informatics</SPAN>.
+He had a personal discourse about the meaning of the word and the
+discipline itself that is interesting for us to understand the whole
+idea behind object-orientation. Informatics is an applied or empirical
+science. While mathematics is about relations between specified quantities
+and operations valid in specified domains, Informatics is about processes
+and the description of their state transitions. Informatics should
+be defined like most other sciences (like physics, chemistry, botany,
+sociology or political science but unlike mathematics) as the study
+by scientific methods of a domain of phenomena and a perspective selecting
+a set of characteristics of those phenomena. And the particular perspective
+selected by Informatics is that of the information aspects or processes.
+So Informatics is not an abstract science, it is related to real-world
+phenomena.
+
+<P>
+If we follow this intellectual discussion and continue defining some
+of the terms and concepts that already appeared in the previous definition
+we will end up getting to the concept of model itself. We just mentioned
+that Informatics is related to real-world phenomena. But what is a
+phenomenon? A <SPAN  CLASS="textit">phenomenon</SPAN> is defined by Nygaard as a thing that
+has definite, individual existence in reality or the mind, anything
+real in itself. A <SPAN  CLASS="textit">concept</SPAN> is a generalized idea of a collection
+of phenomena, based on knowledge of common properties of instances
+in the collection. A concept is defined by its extension (the collection
+of phenomena that the concept covers), intension (the collection of
+properties that characterize the phenomena represented by the concept)
+and designation (the collection of names by which the concept is known).
+A phenomenon M is a <SPAN  CLASS="textit">model</SPAN> of a phenomenon R, according to some
+perspective P, if a person regards M and R as similar according to
+P. M is called the model, R the referent and P is the perspective.
+
+<P>
+In the first definition, we also mentioned the idea of process. We
+will now dive into it and discover its relation to systems. A <SPAN  CLASS="textit">process</SPAN>
+is a phenomenon that we choose to regard as a development of a part
+of the world through transformations during a time interval called
+its life span. The basic qualities of a process are: its substance,
+its states, its transitions, and its structure. A state of an information
+process is expressed by describing: - the moment at which the state
+is recorded, its substance, measurement of properties and transformations
+going on, all at that moment. The <SPAN  CLASS="textit">structure</SPAN> of the process
+is the limitations of its sets of states and thus of its possible
+sequences of states. A process is regarded as an information process
+when the qualities considered are: its substance, the physical matter
+that it transforms, the state of its substance, in terms of measurable
+properties, the results of measurements represented by values, its
+transitions, the transformations of its substance and thus of its
+state.
+
+<P>
+A <SPAN  CLASS="textit">system</SPAN> is a part of the world that is regarded as a whole,
+its substance consisting of components, each components state characterized
+by the states of properties, called attributes, that are selected
+as being relevant, and by state transitions relating to these attributes
+and to other components and their attributes.
+
+<P>
+In object oriented programming an information process is regarded
+as a system developing through transformations of its state. The substance
+of the process is organized as the system components, called objects.
+A measurable property of the substance is a property of an object.
+Transformations of state are regarded as actions by objects. The substance
+of the system is organized as objects, building the system's components.
+All attributes of the substance are properties of objects. Transitions
+- transformations of state - are regarded as being the result of actions
+of objects.
+
+<P>
+<BLOCKQUOTE>
+<SMALL CLASS="FOOTNOTESIZE">``Q: But what is OO then suited to describe?</SMALL></BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE><SMALL CLASS="FOOTNOTESIZE">A: Systems.</SMALL></BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE><SMALL CLASS="FOOTNOTESIZE">Q: What is a system?</SMALL></BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE><SMALL CLASS="FOOTNOTESIZE">A: A system is something that you have decided to regard
+as a system.</SMALL></BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE><SMALL CLASS="FOOTNOTESIZE">Q: What does it imply to regard something as a system?</SMALL></BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE><SMALL CLASS="FOOTNOTESIZE">A: You regard it as a whole, consisting of components,
+each component has properties and may interact with other components.''</SMALL></BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+<DIV ALIGN="CENTER">
+From [<A
+ HREF="node207.html#NygaardTeachingOO">Nygaard, 2001</A>]
+</DIV>
+</BLOCKQUOTE>
+As a conclusion, the basic ideas behind object orientation that make
+it different from other perspectives, is that: (1) A program execution
+is regarded as a physical model system simulating the behavior of
+either a real or imaginary part of the world; (2) physical modeling
+is based upon the conception of reality in terms of phenomena and
+concepts (3) a physical model system is constructed, modeling phenomena
+by objects and concepts by categories of objects or classes.
+
+<P>
+At this point it is also important to highlight another important
+figure: Alan Kay. Apart from also being considered one of the most
+important people in the birth of object-orientation, Alan Kay is also
+the father of modern graphical user interfaces and the laptop, the
+main creator of the Smalltalk programming language and the author
+of such famous sentences as ``the best way to predict future is
+to invent it''. In [<A
+ HREF="node207.html#Kay">Kay, 1993</A>] he summarizes Smalltalk, and therefore
+object-orientation, in the following principles:
+
+<P>
+
+<UL>
+<LI>Everything is an object
+</LI>
+<LI>Objects communicate by sending and receiving messages (in terms of
+objects)
+</LI>
+<LI>Objects have their own internal memory (in terms of objects)
+</LI>
+<LI>Every object is an instance of a class (which in turn must be an object)
+</LI>
+<LI>The class holds the shared behavior for its instances
+</LI>
+<LI>To evaluate a program list control is passed to the first object and
+the remainder is treated as its message.
+</LI>
+</UL>
+What is particularly interesting for our discussion is the fact that
+at the time of formulating the basis of the object-oriented paradigm
+he was very much interested in system simulation after his work in
+the Air Force and the National Center for Atmospheric Research. Furthermore,
+he also acknowledges the deep influence that the Simula language had
+on his ideas and he explicitly mentions the relation between object-orientation
+and system modeling when stating that ``object-oriented design
+is a successful attempt to qualitatively improve the efficiency of
+modeling the ever more complex dynamic systems and user relationships...''
+[<A
+ HREF="node207.html#Kay">Kay, 1993</A>].
+
+<P>
+Other renowned authors have also highlighted this relation between
+object-orientation and simulation. Timothy Budd in [<A
+ HREF="node207.html#BuddOOProgramming">Budd, 1991</A>]
+describes the existing relationship between object-oriented programming
+and discrete event simulation. He finishes the discussion stating
+that ``computation is simulation''.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html579"
+  HREF="node21.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html577"
+  HREF="node19.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html573"
+  HREF="node19.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html580"
+  HREF="node21.html">Metamodels</A>
+<B> Up:</B> <A NAME="tex2html578"
+  HREF="node19.html">Object-orientation, systems and models</A>
+<B> Previous:</B> <A NAME="tex2html574"
+  HREF="node19.html">Object-orientation, systems and models</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

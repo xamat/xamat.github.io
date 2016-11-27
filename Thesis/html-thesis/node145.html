@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Processing Data and Controls</TITLE>
+<META NAME="description" CONTENT="Processing Data and Controls">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node146.html">
+<LINK REL="previous" HREF="node144.html">
+<LINK REL="up" HREF="node142.html">
+<LINK REL="next" HREF="node146.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2061"
+  HREF="node146.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2059"
+  HREF="node142.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2053"
+  HREF="node144.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2062"
+  HREF="node146.html">Descriptors</A>
+<B> Up:</B> <A NAME="tex2html2060"
+  HREF="node142.html">Processing Data Objects</A>
+<B> Previous:</B> <A NAME="tex2html2054"
+  HREF="node144.html">Dynamic and Static Views</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00512300000000000000">
+Processing Data and Controls</A>
+</H3>
+
+<P>
+At this point it may still not be completely clear how we can decide
+in a particular model if some data should be modeled as Processing
+Data or a Control. There are several issues though that can illustrate
+the existing difference between Processing Data Objects and Controls.
+
+<P>
+To start with, Controls are simple data types such as integers, floats
+or boolean. Any structure more complex than that cannot be sent as
+a Control. This feature may be seen as a limitation of the metamodel
+but it is in fact a feature. It is important to bear in mind that
+controls are sent asynchronously whenever they generate or are modified.
+The control associated to a slider, for instance, can be transmitted
+several times before actually affecting the result of the process,
+which will happen next time that the Processing Do is called. It would
+be a waste of resources to transmit complex structures with this mechanism. 
+
+<P>
+<BR><HR>
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

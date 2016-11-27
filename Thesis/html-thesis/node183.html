@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Instruments and Generators</TITLE>
+<META NAME="description" CONTENT="Instruments and Generators">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node184.html">
+<LINK REL="previous" HREF="node182.html">
+<LINK REL="up" HREF="node182.html">
+<LINK REL="next" HREF="node184.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2496"
+  HREF="node184.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2494"
+  HREF="node182.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2488"
+  HREF="node182.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2497"
+  HREF="node184.html">Notes</A>
+<B> Up:</B> <A NAME="tex2html2495"
+  HREF="node182.html">An Object-Oriented Music Model</A>
+<B> Previous:</B> <A NAME="tex2html2489"
+  HREF="node182.html">An Object-Oriented Music Model</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00710000000000000000"></A><A NAME="sec:Instruments-and-generators"></A>
+<BR>
+Instruments and Generators
+</H1>
+
+<P>
+A <SPAN  CLASS="textit">musical system</SPAN> can be seen as a set of musical objects called
+<SPAN  CLASS="textit">Instruments</SPAN> that collaborate for a common goal or <SPAN  CLASS="textit">performance</SPAN>.
+Therefore, at the first level, the most important objects in this
+kind of system are the Instruments. Instrument objects are instances
+of the last level of a class hierarchy that has the abstract Instrument
+class as the base class that is then specialized into different families
+of Instruments such as string, percussion or wind. In the last level
+of the hierarchy we find particular Instruments such as piano or guitar,
+see Figure <A HREF="#fig:InstrumentHierarchy">6.1</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:InstrumentHierarchy"></A><A NAME="5698"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.1:</STRONG>
+An Instrument Class Hierarchy</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="474" HEIGHT="355" ALIGN="BOTTOM" BORDER="0"
+ SRC="img76.png"
+ ALT="\includegraphics[%
+width=0.50\paperwidth,
+keepaspectratio]{images/ch6-MetriX/ps/InstrumentHierarchy.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+An Instrument responds to incoming events by generating music. These
+events are generated from the interaction of the performers (system
+actors) on the Instrument interface.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:Performer-instrument-event"></A><A NAME="5699"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.2:</STRONG>
+Performer, instrument and events</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="332" HEIGHT="163" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.png"
+ ALT="\includegraphics[%
+width=0.35\paperwidth]{images/ch6-MetriX/ps/Events.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+But if we look closer into an Instrument we discover that Instruments
+are not the atomic physical objects in a musical system. As a matter
+of fact, an Instrument is in itself a set of more or less independent
+elements that produce sound by themselves. A clear and extreme example
+of this are the drums, where a single Instrument is in fact the result
+of many different possible combinations of individual Instruments.
+
+<P>
+When focusing on the properties of the internal mechanism, a first
+classification could divide Instruments into monophonic and polyphonic.
+In Instruments belonging to the first category it is clear that no
+more than a single Note can be sounding at the same time. But even
+polyphonic Instruments have limited amount of voices (simultaneous
+sounding notes). For instance, in a guitar no more than six simultaneous
+notes can be produced.
+
+<P>
+We define a <SPAN  CLASS="textit">Generator</SPAN> as the atomic entity that can generate
+a sound by itself. A Generator usually generates sound in response
+to an incoming control event, therefore Generators must have the ability
+of receiving and interpreting such events. A Generator is part of
+an Instrument although there can be Instruments with just a single
+single Generator (e.g. a flute). An Instrument is therefore a set
+of Generators that can be controlled independently but always according
+to the rules dictated by the Instrument definition.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:UML-Instrument-Generators"></A><A NAME="5700"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.3:</STRONG>
+Instrument and Generators Class Diagram</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="332" HEIGHT="230" ALIGN="BOTTOM" BORDER="0"
+ SRC="img78.png"
+ ALT="\includegraphics[%
+width=0.35\paperwidth,
+keepaspectratio]{images/ch6-MetriX/ps/InstrumentGenerators.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The relation between the Instrument and Generator classes is modeled
+at an abstract level and must be made concrete when modeling a particular
+Instrument. If, for example, we have to define a standard acoustic
+guitar we may describe it as having six Generators, one for each of
+its six strings. 
+
+<P>
+The guitar Instrument itself is in charge of defining pitch range
+and other important properties for each of its Generators. On the
+other hand it may be interesting to define a seventh Generator: the
+guitar body. The guitar body can indeed be seen as a percussive Generator
+in itself. This Generator can be controlled independently from the
+others and responds to completely different behavior rules. Therefore
+both <TT>String</TT> and <TT>Body</TT> would be subclasses of the
+abstract <TT>Generator</TT> class.
+
+<P>
+In a piano it is fairly intuitive to define each key as a different
+Generator. But one may be tempted to discuss that a piano cannot naturally
+have all the keys sound at the same time. As a matter of fact the
+number of simultaneous sounding notes is limited by the number of
+fingers or hands that are playing. Then, why not say that the actual
+Generators in a piano are the player's fingers? It is important to
+remember that according to our object-oriented model Generators are
+related only to the production mechanism in the system and not to
+the way controls from the outside actor arrive to them. A piano Generators
+can be excited by two or four hands but also with a foot or even an
+automatic mechanism. In other words, all keys in a piano can sound
+simultaneously and that is enough to prove that each of them is an
+``independent'' Generator.
+
+<P>
+Therefore, an Instrument can be considered as a system made up of
+almost autonomous units or objects called Generators. The <TT>Instrument</TT>
+class is in charge of instantiating each Generator and assigning it
+a particular behavior which is in fact a subset of the Instrument
+behavior in itself. But the Instrument also has supra-Generator behavior
+that can be used, for example, for describing the way that different
+Generators will interactuate in between them. For instance an Instrument
+may have a constraint that if Generator N is active, Generator N+1
+cannot become active.
+
+<P>
+From the description given up to now, it is clear that some sort of
+relation exists between the music model that we are starting to define
+and the DSPOOM metamodel presented in chapter <A HREF="node135.html#ch:_DSPOOM">4</A>. Figure
+<A HREF="#fig:Instrument-in-DSPOOM">6.4</A> illustrates the interpretation of
+an Instrument as a particular instance of the DSPOOM metamodel.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:Instrument-in-DSPOOM"></A><A NAME="5701"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.4:</STRONG>
+Instrument as a DSPOOM Composite</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="334" HEIGHT="319" ALIGN="BOTTOM" BORDER="0"
+ SRC="img79.png"
+ ALT="\includegraphics[%
+width=0.60\textwidth]{images/ch6-MetriX/ps/DSPOOMInstrument.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The figure illustrates the DSPOOM modeling of a 4-Generator Instrument.
+Note that we model an Instrument as a DSPOOM Processing Composite
+(see <A HREF="node147.html#sub:DSPOOM::Networks_and_Composites">4.1.3</A>) because in a general
+situation we do not need the Instrument definition to be dynamic,
+in which case we would need a Network. In most implementations we
+will build the Instrument in configuration time when reading an Instrument
+definition file (see <A HREF="node190.html#sub:MIDL">6.4.2</A>) that is in fact a DSPOOM configuration.
+On the other hand, Generators are regular DSPOOM Processing objects.
+
+<P>
+The Instrument is a DSPOOM Generating Processing object as it has
+output ports but no input ports. The Instrument responds to incoming
+controls by producing an output signal through one of its output ports.
+These Outports correspond directly to the Outports in each of the
+Generators. In a similar way, there is a direct mapping between the
+input controls published by the Instrument and those in the Generators.
+
+<P>
+Note that the Instrument that we have described so far is the simplest
+one, made of only Generators. Nevertheless, as in a regular DSPOOM
+model, we could integrate non-generating Processing objects as secondary
+Generators. Think for instance on an Instrument that adds a filter
+for each Generator. This way we are able to use the metamodel for
+constructing a modular synthesizer or similar applications.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2496"
+  HREF="node184.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2494"
+  HREF="node182.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2488"
+  HREF="node182.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2497"
+  HREF="node184.html">Notes</A>
+<B> Up:</B> <A NAME="tex2html2495"
+  HREF="node182.html">An Object-Oriented Music Model</A>
+<B> Previous:</B> <A NAME="tex2html2489"
+  HREF="node182.html">An Object-Oriented Music Model</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

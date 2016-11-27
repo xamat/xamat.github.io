@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>A Combined Receiver Scheme (Content-based Synthesis)</TITLE>
+<META NAME="description" CONTENT="A Combined Receiver Scheme (Content-based Synthesis)">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node167.html">
+<LINK REL="up" HREF="node165.html">
+<LINK REL="next" HREF="node169.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2320"
+  HREF="node169.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2318"
+  HREF="node165.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2314"
+  HREF="node167.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2321"
+  HREF="node169.html">OOCTM and related Models</A>
+<B> Up:</B> <A NAME="tex2html2319"
+  HREF="node165.html">The Semantic Receiver</A>
+<B> Previous:</B> <A NAME="tex2html2315"
+  HREF="node167.html">The Synthesis Step</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00622300000000000000"></A><A NAME="sub:A-Combined-Receiver"></A>
+<BR>
+A Combined Receiver Scheme (Content-based Synthesis)
+</H3>
+
+<P>
+Although sometimes it may be useful to conceptually separate the receiver
+into a decoder and a synthesizer, many other times, a combined scheme
+that treats the receiver as a whole will be more feasible.
+
+<P>
+In that case, the resulting receiver scheme is what we call a Content-based
+Synthesizer, or Object-based Synthesizer which, at first sight, does
+not differ much from that of a traditional synthesizer. As illustrated
+in Figure <A HREF="#fig:Combined-Synth-scheme">5.13</A> the input metadata is converted
+to control events and mapped to synthesizer paramatersparameters.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:Combined-Synth-scheme"></A><A NAME="5676"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.13:</STRONG>
+Combined scheme for modeling the receiver in a content-transmission
+system</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="389" HEIGHT="195" ALIGN="BOTTOM" BORDER="0"
+ SRC="img63.png"
+ ALT="\includegraphics[%
+width=0.70\textwidth]{images/ch5-OOCTM/ps/MappingSynthesizer.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+In a general situation, a simple mapping strategy may be sufficient.
+But if the level of abstraction of the input metadata is higher, the
+gap between the information transmitted and the parameters that are
+to be fed to the synthesis engine might be impossible to fill using
+conventional techniques. Imagine for example a situation where the
+transmitted metadata included a content description such as: (genre:
+jazz, mood: sad, user_profile: musician).
+
+<P>
+The latter example leads to the fact that we are facing a problem
+of search and retrieval more than one of finding an appropriate mapping
+strategy. We could have a database made up of sound files with an
+attached content description in the form of metadata. The goal of
+the system is then to find what object in the database fulfils the
+requirements of the input metadata.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:Search-and-retrieval-synth"></A><A NAME="5677"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.14:</STRONG>
+Search and retrieval as a means for synthesizing</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="389" HEIGHT="213" ALIGN="BOTTOM" BORDER="0"
+ SRC="img64.png"
+ ALT="\includegraphics[%
+width=0.70\textwidth]{images/ch5-OOCTM/ps/DBSynthesizer.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+A problem we still have to face with such a model is the difficulty
+to automatically extract parameters with such a level of abstraction
+from the signal itself. We can find examples of existing applications
+that implement the system depicted in Figure <A HREF="#fig:Search-and-retrieval-synth">5.14</A>
+but they always need a previous step of manually annotating the content
+of the whole database.
+
+<P>
+A possible solution to this inconvenience is the use of machine learning
+techniques. It is recently becoming usual in this sort of frameworks
+to implement, for example, collaborative filtering engines (classification
+based on the analysis of users preferences: if most of our users classify
+item X as being Y, we label it that way). In that case though, the
+classification and identification is performed without taking into
+account any inner property of the sounds. On the other hand, if what
+we intend to have is a system capable of learning from the sound features,
+we may favor a Case-Based Reasoning (CBR) engine as the one used in
+[<A
+ HREF="node207.html#SaxexJNMR">Arcos et&nbsp;al., 1998</A>].
+
+<P>
+Anyhow, a first precondition for deciding on the system's viability
+would be to reduce the size of the resulting database. We observe
+though that there is no need to store sounds that could be easily
+obtained from other already existing in the database. In the case
+that no sound exactly matched the content description at the input
+we could then just find the most similar one and adapt it in the desired
+direction. This adaptation step is basically a content-based transformation
+(see section <A HREF="node178.html#sec:Content-based-transformations">5.3.4</A>)<A NAME="tex2html76"
+  HREF="footnode.html#foot3331"><SUP><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">5</SPAN></SUP></A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="3336"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.15:</STRONG>
+A Case-based Reasoning Receiver</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="555" HEIGHT="316" ALIGN="BOTTOM" BORDER="0"
+ SRC="img65.png"
+ ALT="\includegraphics[%
+width=1.0\textwidth]{images/ch5-OOCTM/ps/CBR_Receiver.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+One of the problems that still remains is what similarity measure
+the system has to deal with. Similarity in sound and music is obviously
+a many-dimensional measure that can be highly dependent on a particular
+application. Furthermore, it may turn out that our database has more
+than one case that is similar to the content description received.
+All of them may need a further adaptation (transformation) but the
+problem is how to decide on what transformation is more immediate
+and effective. In that sense, it may be interesting to identify and
+classify items for the database not only for what they actually are
+but for what they may become. A sound can thus be classified as bright-able,
+piano-able, fast-able . If a solution is confirmed as accepted by
+the user we may not only add the resulting sound and its content description
+to the database but also the knowledge derived from the adaptation
+process.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2320"
+  HREF="node169.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2318"
+  HREF="node165.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2314"
+  HREF="node167.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2321"
+  HREF="node169.html">OOCTM and related Models</A>
+<B> Up:</B> <A NAME="tex2html2319"
+  HREF="node165.html">The Semantic Receiver</A>
+<B> Previous:</B> <A NAME="tex2html2315"
+  HREF="node167.html">The Synthesis Step</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

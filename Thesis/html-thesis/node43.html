@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Context-Aware Process Networks</TITLE>
+<META NAME="description" CONTENT="Context-Aware Process Networks">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node42.html">
+<LINK REL="up" HREF="node35.html">
+<LINK REL="next" HREF="node44.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html833"
+  HREF="node44.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html831"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html827"
+  HREF="node42.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html834"
+  HREF="node44.html">A New Paradigm?</A>
+<B> Up:</B> <A NAME="tex2html832"
+  HREF="node35.html">A brief catalogue of</A>
+<B> Previous:</B> <A NAME="tex2html828"
+  HREF="node42.html">Computation Graphs</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00251800000000000000"></A><A NAME="sub:Context-Aware-Process-Networks"></A>
+<BR>
+Context-Aware Process Networks
+</H3>
+
+<P>
+A special kind of Process Network introduced as an extension to the
+basic model but that is interesting for our purposes is that of Context-aware
+Process Networks [<A
+ HREF="node207.html#DijkContextAwareProcessNetworks">van Dijk et&nbsp;al., 2002</A>]. This new
+model emerges from the addition of asynchronous coordination to basic
+Kahn Process Networks so process can immediately respond to changes
+in their context. This situation is very common in embedded systems. 
+
+<P>
+In Context-aware Process Networks, stream oriented communication of
+data is done through regular FIFO channels but context information
+is sent through unidirectional register links (REG). These links have
+destructive and replicative behavior: writing to a full register overwrites
+the previous value and reading from a register returns the last value
+regardless if it has been read before or not. Thus, register links
+are an event-driven asynchronous mechanism. As a consequence, the
+behavior of a CAPN depends on the applied schedule or context.
+
+<P>
+A simple example of a system that can be effectively modeled by a
+context- aware network is a transmitter/receiver scheme in which the
+receiver needs to send information about its consumption rate to the
+transmitter so transmission speed can be optimized. The basic transmitter/receiver
+scheme can be implemented with a Kahn Process Network but in order
+to implement feedback coordination we need to use the register link
+provided by context-aware process networks.
+
+<P>
+Context-aware systems are indeterminate by nature. Unless the indeterminate
+behavior can be isolated, a composition of indeterminate components
+becomes a non-deterministic system, which is possible but not practical.
+Nevertheless as mentioned in [<A
+ HREF="node207.html#DijkContextAwareProcessNetworks">van Dijk et&nbsp;al., 2002</A>]
+some techniques can be used in order to oraclise indetermination.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html833"
+  HREF="node44.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html831"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html827"
+  HREF="node42.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html834"
+  HREF="node44.html">A New Paradigm?</A>
+<B> Up:</B> <A NAME="tex2html832"
+  HREF="node35.html">A brief catalogue of</A>
+<B> Previous:</B> <A NAME="tex2html828"
+  HREF="node42.html">Computation Graphs</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Timbre Space</TITLE>
+<META NAME="description" CONTENT="Timbre Space">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node193.html">
+<LINK REL="previous" HREF="node191.html">
+<LINK REL="up" HREF="node190.html">
+<LINK REL="next" HREF="node193.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2607"
+  HREF="node193.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2605"
+  HREF="node190.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2599"
+  HREF="node191.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2608"
+  HREF="node193.html">Break-point Functions</A>
+<B> Up:</B> <A NAME="tex2html2606"
+  HREF="node190.html">MIDL: The MetriX Instrument</A>
+<B> Previous:</B> <A NAME="tex2html2600"
+  HREF="node191.html">Generators</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00742200000000000000">
+Timbre Space</A>
+</H3>
+
+<P>
+The definition of a Timbre Space with the MIDL consists on the definition
+of three different aspects. 
+
+<P>
+First, the number of dimensions to be used. The Instrument designer
+must decide what features of the Instrument represent a substantial
+change in the sound that cannot be achieved using the different transformations
+available. These dimensions such as loudness, pitch, articulation,
+etc... must have the corresponding SMS data extracted from a previous
+analysis of those features in the Instrument. A compromise between
+sound quality and amount of synthesizer memory used must be adopted.
+
+<P>
+Next, the kind of Interpolation to use between the Data stored. A
+set of standard interpolation types are available. 
+
+<P>
+Finally, the positioning of each sample in a concrete location in
+the space must be given. The <TT>Instrument</TT> Class will be capable
+of solving intermediate positions by the interpolation of the SMS
+data loaded from the files.
+
+<P>
+E.g. A good quality piano sound can be obtained by storing the SMS
+Data from just eight of the piano keys (A0 thru A7) and obtaining
+the rest by interpolation. Thus, only one dimension is used (pitch).
+Other features such as loudness can be obtained by applying different
+transformations on the data available [<A
+ HREF="node207.html#SolaPiano">Sol&#224;, 1997</A>].
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2607"
+  HREF="node193.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2605"
+  HREF="node190.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2599"
+  HREF="node191.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2608"
+  HREF="node193.html">Break-point Functions</A>
+<B> Up:</B> <A NAME="tex2html2606"
+  HREF="node190.html">MIDL: The MetriX Instrument</A>
+<B> Previous:</B> <A NAME="tex2html2600"
+  HREF="node191.html">Generators</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

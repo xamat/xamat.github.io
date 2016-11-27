@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Mappings, Parameters and breakpoint functions</TITLE>
+<META NAME="description" CONTENT="Mappings, Parameters and breakpoint functions">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node188.html">
+<LINK REL="up" HREF="node187.html">
+<LINK REL="next" HREF="node190.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2572"
+  HREF="node190.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2570"
+  HREF="node187.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2566"
+  HREF="node188.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2573"
+  HREF="node190.html">MIDL: The MetriX Instrument</A>
+<B> Up:</B> <A NAME="tex2html2571"
+  HREF="node187.html">Basics in MetriX</A>
+<B> Previous:</B> <A NAME="tex2html2567"
+  HREF="node188.html">Instruments and Generators</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00741200000000000000">
+Mappings, Parameters and breakpoint functions</A>
+</H3>
+
+<P>
+When defining an Instrument, apart from constructing the space of
+Generators and pre-existing samples, the most important thing is to
+define what events the Instrument may acknowledge and how it can respond
+to them. We distinguish three kinds of events or parameters: low-level
+parameters, timbre space parameters and high-level parameters. 
+
+<P>
+The first kind of parameters address low level features in the sound
+like its amplitude or fundamental frequency. These parameters represent
+transformations can be more or less immediately applied to the sounding
+note using regular signal processing techniques.
+
+<P>
+The timbre space parameters are indeed a specific kind of low-level
+parameters that affect one of the dimensions integrated into the defined
+timbre space. A variation in the parameter just represents a new coordinate
+in the space and therefore a new interpolation between the existing
+samples.
+
+<P>
+Finally, the high-level parameters represent concepts that cannot
+be obtained by an immediate transformation or that have been assigned
+to one o the timbre space dimensions. Usually, a variation in a high-level
+parameter represents a variation in several low-level parameters and
+even in the timbre space coordinate. For defining those relations
+we need ways of describing mapping strategies.
+
+<P>
+In MetriX, for describing mappings as well as transformation there
+is a simple language tool that allows to define break point functions
+and refer to things like the number of the Generator, or the value
+of the parameter. We will comment more details on these matters in
+next section.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="cap:MetriX-Instrument-Class"></A><A NAME="5711"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.10:</STRONG>
+MetriX Instrument Class</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="388" HEIGHT="261" ALIGN="BOTTOM" BORDER="0"
+ SRC="img86.png"
+ ALT="\includegraphics[%
+width=0.70\textwidth,
+keepaspectratio]{images/ch6-MetriX/ps/MetriXInstrument.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Finally it is interesting to note that this distinction between low-level
+and high-level parameters in the synthesis process is very similar
+to the distinction between low-level and high-level analysis parameters
+or <SPAN  CLASS="textit">descriptors</SPAN> that we explained in the OOCTM (see section
+<A HREF="node160.html#sub:The-Semantic-Transmitter">5.2.1</A>).
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2572"
+  HREF="node190.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2570"
+  HREF="node187.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2566"
+  HREF="node188.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2573"
+  HREF="node190.html">MIDL: The MetriX Instrument</A>
+<B> Up:</B> <A NAME="tex2html2571"
+  HREF="node187.html">Basics in MetriX</A>
+<B> Previous:</B> <A NAME="tex2html2567"
+  HREF="node188.html">Instruments and Generators</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The CLAM Framework</TITLE>
+<META NAME="description" CONTENT="The CLAM Framework">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node135.html">
+<LINK REL="previous" HREF="node51.html">
+<LINK REL="up" HREF="Thesis_forHTML.html">
+<LINK REL="next" HREF="node93.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1389"
+  HREF="node93.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1387"
+  HREF="Thesis_forHTML.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1381"
+  HREF="node91.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1390"
+  HREF="node93.html">Introduction</A>
+<B> Up:</B> <A NAME="tex2html1388"
+  HREF="Thesis_forHTML.html">Thesis_forHTML</A>
+<B> Previous:</B> <A NAME="tex2html1382"
+  HREF="node91.html">Summary and Conclusions</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00400000000000000000"></A><A NAME="ch:_CLAM"></A>
+<BR>
+The CLAM Framework
+</H1>
+
+<P>
+CLAM (C++ Library for Audio and Music) is a framework that aims at
+offering extensible, generic and efficient design and implementation
+solutions for developing Audio and Music applications as well as for
+doing more complex research related with the field. CLAM is both the
+origin and the prove of concept of the Digital Signal Processing Object-Oriented
+Metamodel that is central to this Thesis and will be presented in
+the next chapter. 
+
+<P>
+In the current chapter we will give a thorough overview of CLAM's
+main features and we will introduce some contextual information that
+will help in understanding why some design decisions have been taken.
+We will finish the chapter by comparing our framework to some of the
+similar solutions presented in the previous chapter.
+
+<P>
+It is important to note that most of the more conceptual and generic
+models and metamodels that will be presented in the next chapters
+were obtained during the design and development of the CLAM framework,
+usually as the generalization of solutions found for particular situations.
+It is therefore important to understand what the framework offers
+and what were the design decisions. In that sense we repeat here again
+our hypothesis that ``frameworks generate metamodels''.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1391"
+  HREF="node93.html">Introduction</A>
+<UL>
+<LI><A NAME="tex2html1392"
+  HREF="node94.html">Another Audio Library?</A>
+<LI><A NAME="tex2html1393"
+  HREF="node95.html">CLAM as an Object-Oriented Framework</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1394"
+  HREF="node96.html">What CLAM has to offer</A>
+<UL>
+<LI><A NAME="tex2html1395"
+  HREF="node97.html">Repository</A>
+<UL>
+<LI><A NAME="tex2html1396"
+  HREF="node98.html">Processing repository</A>
+<UL>
+<LI><A NAME="tex2html1397"
+  HREF="node99.html">General Processing</A>
+<LI><A NAME="tex2html1398"
+  HREF="node100.html">Input/Output</A>
+<LI><A NAME="tex2html1399"
+  HREF="node101.html">Control</A>
+</UL>
+<LI><A NAME="tex2html1400"
+  HREF="node102.html">Data repository</A>
+<UL>
+<LI><A NAME="tex2html1401"
+  HREF="node103.html">Audio</A>
+<LI><A NAME="tex2html1402"
+  HREF="node104.html">Spectrum</A>
+<LI><A NAME="tex2html1403"
+  HREF="node105.html">SpectralPeak and SpectralPeakArray</A>
+<LI><A NAME="tex2html1404"
+  HREF="node106.html">Fundamental</A>
+<LI><A NAME="tex2html1405"
+  HREF="node107.html">Frame</A>
+<LI><A NAME="tex2html1406"
+  HREF="node108.html">Segment</A>
+<LI><A NAME="tex2html1407"
+  HREF="node109.html">Descriptors</A>
+</UL>
+</UL>
+<LI><A NAME="tex2html1408"
+  HREF="node110.html">Infrastructure</A>
+<UL>
+<LI><A NAME="tex2html1409"
+  HREF="node111.html">Processing infrastructure</A>
+<UL>
+<LI><A NAME="tex2html1410"
+  HREF="node112.html">ProcessingComposites</A>
+<LI><A NAME="tex2html1411"
+  HREF="node113.html">Controls</A>
+</UL>
+<LI><A NAME="tex2html1412"
+  HREF="node114.html">Data Infrastructure </A>
+<UL>
+<LI><A NAME="tex2html1413"
+  HREF="node115.html">Dynamic Types</A>
+<LI><A NAME="tex2html1414"
+  HREF="node116.html">Processing Data</A>
+<LI><A NAME="tex2html1415"
+  HREF="node117.html">Configurations</A>
+</UL>
+<LI><A NAME="tex2html1416"
+  HREF="node118.html">Network infrastructure </A>
+<LI><A NAME="tex2html1417"
+  HREF="node119.html">Tools </A>
+<UL>
+<LI><A NAME="tex2html1418"
+  HREF="node120.html">XML support</A>
+<LI><A NAME="tex2html1419"
+  HREF="node121.html">Platform abstraction</A>
+<LI><A NAME="tex2html1420"
+  HREF="node122.html">Visualization</A>
+</UL>
+<LI><A NAME="tex2html1421"
+  HREF="node123.html">Application infrastructure</A>
+</UL>
+<LI><A NAME="tex2html1422"
+  HREF="node124.html">Sample applications </A>
+<UL>
+<LI><A NAME="tex2html1423"
+  HREF="node125.html">SMS Analysis/Synthesis Example</A>
+<LI><A NAME="tex2html1424"
+  HREF="node126.html">SALTO</A>
+<LI><A NAME="tex2html1425"
+  HREF="node127.html">Spectral Delay</A>
+<LI><A NAME="tex2html1426"
+  HREF="node128.html">Network Editor</A>
+<LI><A NAME="tex2html1427"
+  HREF="node129.html">Others</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html1428"
+  HREF="node130.html">Is CLAM different?</A>
+<UL>
+<LI><A NAME="tex2html1429"
+  HREF="node131.html">CLAM classification</A>
+<LI><A NAME="tex2html1430"
+  HREF="node132.html">CLAM and other environments</A>
+<UL>
+<LI><A NAME="tex2html1431"
+  HREF="node133.html">CLAM as an Audio Processing Framework</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html1432"
+  HREF="node134.html">Summary and Conclusions</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1389"
+  HREF="node93.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1387"
+  HREF="Thesis_forHTML.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1381"
+  HREF="node91.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1390"
+  HREF="node93.html">Introduction</A>
+<B> Up:</B> <A NAME="tex2html1388"
+  HREF="Thesis_forHTML.html">Thesis_forHTML</A>
+<B> Previous:</B> <A NAME="tex2html1382"
+  HREF="node91.html">Summary and Conclusions</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

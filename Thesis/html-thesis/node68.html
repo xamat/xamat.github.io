@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>SndObj</TITLE>
+<META NAME="description" CONTENT="SndObj">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node69.html">
+<LINK REL="previous" HREF="node67.html">
+<LINK REL="up" HREF="node66.html">
+<LINK REL="next" HREF="node69.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1138"
+  HREF="node69.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1136"
+  HREF="node66.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1130"
+  HREF="node67.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1139"
+  HREF="node69.html">FORMES</A>
+<B> Up:</B> <A NAME="tex2html1137"
+  HREF="node66.html">General Purpose</A>
+<B> Previous:</B> <A NAME="tex2html1131"
+  HREF="node67.html">The Create Signal Library</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00333200000000000000"></A><A NAME="sub:SndObj"></A>
+<BR>
+SndObj
+</H3>
+
+<P>
+SndObj [<A
+ HREF="node207.html#LazzariniSndObjOrganized00">Lazzarini, 2000b</A>] is an OO sound synthesis
+and processing programming library released under the GPL designed
+for the development of music applications as well as research and
+implementation of DSP algorithms. SndObj is written in C++ and it
+can be deployed in music software applications as a toolkit or as
+a framework for developing and implemented new sound processing algorithms.
+In the first releases SndObj processed on a sample by sample basis
+but as this proved not efficient, from version 2.0 on it processes
+vectors (see the following references for an overview of the library's
+evolution: [<A
+ HREF="node207.html#LazzariniOrganizedSound98">Lazzarini, 1998</A>,<A
+ HREF="node207.html#LazzariniBrazil98">Lazzarini and Accorsi, 1998</A>,<A
+ HREF="node207.html#LazzariniSndObjOrganized00">Lazzarini, 2000b</A>,<A
+ HREF="node207.html#LazzariniBrazil00">Lazzarini, 2000a</A>,<A
+ HREF="node207.html#LazzariniSndObjDafx01">Lazzarini, 2001</A>,<A
+ HREF="node207.html#www-SndObj">www-SndObj, </A>]).
+
+<P>
+SndObj has three important characteristics: (1) Encapsulation: it
+encapsulates all the processes involved with production, control,
+manipulation, storage and performance of audio data. (2) Modularity:
+processing objects can be freely associated as modules in an analogue
+synthesizer or unit generators in a computer music system. (3) Portability:
+the core is portable to any platform with a POSIX compliant C++ compiler.
+Some classes as real-time IO are platform specific. It has been developed
+on different platforms: Sun Sparc under Solaris, IBM RISC 2000 under
+AIX, SGI O2 under IRIX, and Intel PC under Linux and Windows (using
+Cygwin and gnu g++). The latest beta version has been released for
+Windows, Linux and IRIX.
+
+<P>
+There are four base classes in the framework: <TT>SndObj</TT> for
+signal processing related objects, <TT>SndIO</TT> for signal input/output
+objects, Table for mathematical functions and <TT>SndThread</TT> for
+thread management.
+
+<P>
+Objects of the <TT>SndObj</TT> class share some properties such as
+the sampling rate, output vector size, an output buffer, a <TT>SndObj</TT>
+input object and an on/off switch. They also share methods for the
+basic operations such as addition, subtraction and multiplication
+as well as methods for setting and retrieving their basic attributes,
+this includes retrieving samples from the output buffer. The <TT>SndObj</TT>
+classes also include a main processing method, <TT>DoProcess()</TT>
+which is overridable. This is where each derived class implements
+a particular algorithm. The <TT>SndObj</TT> object will typically
+access the output signal of an input object and perform the processing
+that will eventually fill the output buffer. The default <TT>DoProcess()</TT>
+implemented in the base class just copies from the input object to
+the output buffer. The <TT>SndObj</TT> base class has a single input
+but derived classes can have any number (even none as is the case
+of some generators).
+
+<P>
+Objects of the <TT>SndIO</TT> class tree are designed to deal with
+input and output of audio. They implement five basic tasks: standard
+IO, soundfile IO, digital-to-analog and analog-to-digital IO, buffer
+memory (RAM) IO and MIDI input. The base <TT>SndIO</TT> class implements
+a very simple standard IO. The most important methods are the <TT>Read</TT>
+and <TT>Write</TT> operations. They operate on vectors just like the
+<TT>SndObj</TT> classes. <TT>SndIO</TT> classes can receive input
+from <TT>SndObj</TT> objects and can send signal to special <TT>SndObj</TT>
+classes such as <TT>MidiIn</TT> and <TT>Bend</TT>. Some <TT>SndIO</TT>
+classes are platform dependent and even have different interface depending
+on the platform. <TT>SndRTIO</TT> and <TT>SndMidi/SndMidiIn</TT> are
+only implemented in three platforms (Linux/OSS, SGI and Windows)
+
+<P>
+Finally, the <TT>SndThread</TT> class encapsulates the main process
+loop as a separate POSIX thread. Apart from that it offers very small
+functionality as it is still ongoing work.
+
+<P>
+The library is distributed with a number of examples that present
+in a simple way the use of SndObj. Cvoc, for instance, is a simple
+phase vocoder based on Butterworth filters. There are also some examples
+of MIDI usage such as Pluck, a Karplus-Strong based plucked-string
+synthesizer. SndObj can be integrated into GUI frameworks such as
+MFC and V and there some examples of such functionality. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1138"
+  HREF="node69.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1136"
+  HREF="node66.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1130"
+  HREF="node67.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1139"
+  HREF="node69.html">FORMES</A>
+<B> Up:</B> <A NAME="tex2html1137"
+  HREF="node66.html">General Purpose</A>
+<B> Previous:</B> <A NAME="tex2html1131"
+  HREF="node67.html">The Create Signal Library</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

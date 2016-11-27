@@ -1,0 +1,147 @@
+
+v 0.95 July 30th, 2004
+======================
+
+General
+
+* Because of a printed test changed most formatting (note: this gave place to a boost in pages)
+* Added a short summary and conclusions at the end of each chapter.
+* Removed many comments and updated missing references
+* Updated some figures
+* Updated the bibliography
+
+Introduction
+
+* Added a summary of all the chapters
+
+Chapter 1
+
+* Added a few things on Model-driven design
+* Added definition of software patterns in the metaphor and patterns section
+* Added patterns of Data flow software systems
+
+Chapter 2
+
+* Integrated latest Aura information from R. Dannenberg
+
+Chapter 3
+
+* Added and updated some information on CLAM's sample applications
+
+Chapter 4
+
+* Related many of the concepts in DSPOOM to other environments presented in Chapter 2 and to Dataflow patterns
+
+Chapter 6
+
+* Also related many of the presented concepts to those of other environments/models.
+
+Annex
+
+* Added a short annex with the Free Software tools used for this work
+
+
+v 0.9, July 5th, 2004
+=====================
+
+General
+
+* Changed general formating preparing for final version
+* Most of the figures have been redone and some new ones have been added
+* Added a "summary and conclusions" section to every chapter (many still to fill)
+
+Introduction
+
+* Minor changes
+
+Chapter 1
+
+* Changed structure moving subsections around
+* Filled the summary and conclusions section.
+* Added a part on a particular experiment that demonstrates that OO is not unefficient.
+* Other minor changes
+
+Chapter 2
+
+* Added a picture of the classification of all environments
+* Added an introduction to each of the subsections
+* Added a subsection on Synthesis Oriented Audio Processing frameworks
+* Added newer information on Aura
+
+Chapter 3
+
+* Added tables and graphics for CLAM comparison.
+* Moved some information (history and tools) to appendix
+* Added some information on the visualization module
+* Added some information on the CLAM Network infrastructure
+* Added information on some other CLAM sample applications
+* General revision
+
+Chapter 4
+
+* Redone section on "is DSPOOM really OO?"
+
+Chapter 5
+
+* Redone sections on comparing OOCTM to Shannon&Weaver, Structured Audio, Parametric Encoding...
+* General revision
+* Figures redone
+
+Chapter 6
+
+* Added further explanations
+* Wrote section on MetriX-ML almost from scratch
+* Added figures
+
+Conclusions
+
+* Pending
+
+
+
+v 0.3, June 1st, 2004
+=================
+
+Introduction
+
+*Very minor revision
+
+Chapter 1
+
+*Added a subsection on a practical experience when dealing with OO efficiency issues (The Vocal Processor Experience).
+*Added a section on Metadata and Meta Objects, which introduces XML, MPEG7 and MOF
+*Removed section on Models for Information Transmission and sent to chapter 5.
+
+Chapter 2
+
+*Minor additions on some environments, especially related to current status.
+
+
+Chapter 3
+
+*Added a subsection on CLAM as an Object-Oriented Framework
+*Re-structured some sections/subsections
+
+Chapter 4
+
+*Major revision
+*Added UML diagrams and other graphics
+*Removed text that had more to do with CLAM than DSPOOM
+*Re-structured sections
+*Added almost from scratch subsections on Composing with DSPOOM objects and DSPOOM as a graphical Model of Computation.
+
+Chapter 5
+
+*Restructured the subsections
+*Added a section on comparing OOCTM to other models such as Structured Audio or Shannon and Weaver's
+*Added a section on a sample application
+*Added section on Opportunities and limitations of OOCTM
+
+Chapter 6
+
+*Major revision
+*Added UML diagrams
+
+Conclusions
+
+*Added a final glossary

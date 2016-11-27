@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Graphical Models of Computation </TITLE>
+<META NAME="description" CONTENT="Graphical Models of Computation ">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node50.html">
+<LINK REL="previous" HREF="node30.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node35.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html722"
+  HREF="node35.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html720"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html714"
+  HREF="node33.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html723"
+  HREF="node35.html">A brief catalogue of</A>
+<B> Up:</B> <A NAME="tex2html721"
+  HREF="node6.html">Foundational Issues</A>
+<B> Previous:</B> <A NAME="tex2html715"
+  HREF="node33.html">The Object Management Group's</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00250000000000000000"></A><A NAME="sec:GraphicalMoCs"></A>
+<BR>
+Graphical Models of Computation 
+</H1>
+
+<P>
+Models of Computation (MoC's) are abstract representations of a family
+of related computer-based systems. Although the word ``model''
+will be kept for consistency with existing literature, it is clear
+that following the definitions given in the previous sections, the
+word ``metamodel'' would be much more appropriate. A MoC offers
+a particular abstract vision with a particular purpose that can be
+instantiated to model many different systems. Using the proper model
+of computation improves the development process and yields a better
+understanding of the system under design and its properties. Selecting
+the appropriate model of computation depends on the purpose but the
+choice is also generally conditioned by the application domain: DSP
+applications, for instance, will generally benefit from Dataflow models
+while control-intensive application mostly use Finite State Machine
+or similar models.
+
+<P>
+General design paradigms such as object-oriented, functional or logic
+may be interpreted as being models of computations. Nevertheless,
+such paradigms are still too abstract and generic to be really useful
+as a model of computation. As a matter of fact, a single paradigm
+may be used to model different models of computations and a single
+model of computation may be well consist on applying different general
+purpose paradigms. After having decided to use the object-oriented
+paradigm, much work in this thesis will be on finding the most appropriate
+Model of Computation it is therefore important to first understand
+what are the ones most related to our domain of interest.
+
+<P>
+Most useful models of computation belong to the category of ``graphical
+MoC's''. By <SPAN  CLASS="textit">graphical</SPAN> we are expressing the fact that according
+to the model, the system being modeled can be explicitly specified
+by a graph, being a graph a general mathematical construct formed
+by ``arcs'' and ``nodes''. Many MoC's are obtained by assigning
+a concrete semantic to arcs and nodes and by restricting the general
+structure of the graph (see figure <A HREF="#fig:Graph">1.2</A>). A non-exhaustive
+list of graphical MoC's includes: Queueing Models, Finite State Machines,
+State Charts, Petri Nets, Process Networks and Dataflow Networks<A NAME="tex2html6"
+  HREF="footnode.html#foot5526"><SUP><SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">4</SPAN></SUP></A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:Graph"></A><A NAME="5527"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.2:</STRONG>
+Graph</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="278" HEIGHT="252" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="\includegraphics[%
+width=0.50\textwidth]{images/ch1-Foundations/ps/Graph.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Although the rest of this section will give a more detailed view of
+the models of interest, we will now briefly give a description of
+each of these models in order to have a first general overview:
+
+<P>
+
+<UL>
+<LI>Queueing Models is a graphical model where nodes represent complex
+operators such as Poisson queues or decision nodes and arcs represent
+events/tokens/requests. They are used for performance estimation,
+like determining the total latency of a network of queueing nodes.
+</LI>
+<LI>Finite State Machines <SPAN ID="txt815"></SPAN>are especially useful for specifying
+sequential control in control-intensive tasks and protocols. An FSM
+graph is made up of <SPAN  CLASS="textit">inputs</SPAN>, <SPAN  CLASS="textit">outputs</SPAN>, <SPAN  CLASS="textit">states</SPAN>,
+<SPAN  CLASS="textit">initial state</SPAN>, <SPAN  CLASS="textit">next state</SPAN> and <SPAN  CLASS="textit">outs</SPAN>. The model
+is not Turing complete and it renders models that are more suitable
+for formal analysis. 
+</LI>
+<LI>State Charts is a graphical model consisting on <SPAN  CLASS="textit">states</SPAN>, <SPAN  CLASS="textit">events</SPAN>,
+<SPAN  CLASS="textit">conditions</SPAN> and <SPAN  CLASS="textit">actions</SPAN>. Events and conditions cause
+transitions and there are AND and OR compositions of states.
+</LI>
+<LI>Petri Nets is a graphical model for describing and studying systems
+with concurrent, asynchronous, distributed, non-deterministic, and
+parallel characteristics. It consists of <SPAN  CLASS="textit">places</SPAN>, <SPAN  CLASS="textit">transitions</SPAN>
+and <SPAN  CLASS="textit">arcs</SPAN> that connect them. A Petri net is executed by the
+firing rules that transmit the marks or tokens from one place to another
+and such firing is enabled just when each input place has a token
+inside.
+</LI>
+<LI>Process Networks or Kahn Process Networks is a concurrent model of
+computation that is a superset of data flow models. As a directed
+graph, each arc represents a FIFO queue for communication and each
+node represents an independent, concurrent process.
+</LI>
+<LI>Dataflow Networks is a special case of Process Networks where nodes
+are actors that respond to <SPAN  CLASS="textit">firing rules</SPAN>.
+</LI>
+</UL>
+We will now describe the last three of these models for their relation
+to the CLAM network model.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html724"
+  HREF="node35.html">A brief catalogue of Graphical MOC's</A>
+<UL>
+<LI><A NAME="tex2html725"
+  HREF="node36.html">Petri Nets</A>
+<LI><A NAME="tex2html726"
+  HREF="node37.html">Kahn Process Networks</A>
+<LI><A NAME="tex2html727"
+  HREF="node38.html">Dataflow Networks</A>
+<LI><A NAME="tex2html728"
+  HREF="node39.html">Synchronous Dataflow Networks</A>
+<LI><A NAME="tex2html729"
+  HREF="node40.html">Boolean Dataflow Networks</A>
+<LI><A NAME="tex2html730"
+  HREF="node41.html">Dynamic Dataflow Networks</A>
+<LI><A NAME="tex2html731"
+  HREF="node42.html">Computation Graphs</A>
+<LI><A NAME="tex2html732"
+  HREF="node43.html">Context-Aware Process Networks</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html733"
+  HREF="node44.html">A New Paradigm?</A>
+<LI><A NAME="tex2html734"
+  HREF="node45.html">Patterns of Graphical MOC's</A>
+<UL>
+<LI><A NAME="tex2html735"
+  HREF="node46.html">Data flow architecture</A>
+<LI><A NAME="tex2html736"
+  HREF="node47.html">Payloads</A>
+<LI><A NAME="tex2html737"
+  HREF="node48.html">Module data protocol</A>
+<LI><A NAME="tex2html738"
+  HREF="node49.html">Out-of-band and in-band partitions</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html722"
+  HREF="node35.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html720"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html714"
+  HREF="node33.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html723"
+  HREF="node35.html">A brief catalogue of</A>
+<B> Up:</B> <A NAME="tex2html721"
+  HREF="node6.html">Foundational Issues</A>
+<B> Previous:</B> <A NAME="tex2html715"
+  HREF="node33.html">The Object Management Group's</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

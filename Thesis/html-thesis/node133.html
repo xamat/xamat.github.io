@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>CLAM as an Audio Processing Framework</TITLE>
+<META NAME="description" CONTENT="CLAM as an Audio Processing Framework">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node132.html">
+<LINK REL="up" HREF="node132.html">
+<LINK REL="next" HREF="node134.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1904"
+  HREF="node134.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1902"
+  HREF="node132.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1898"
+  HREF="node132.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1905"
+  HREF="node134.html">Summary and Conclusions</A>
+<B> Up:</B> <A NAME="tex2html1903"
+  HREF="node132.html">CLAM and other environments</A>
+<B> Previous:</B> <A NAME="tex2html1899"
+  HREF="node132.html">CLAM and other environments</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00432100000000000000">
+CLAM as an Audio Processing Framework</A>
+</H3>
+
+<P>
+In the previous paragraphs we have seen that CLAM presents substantial
+differences in respect to some other environments approaches. Nevertheless,
+all those compared environments are not in the same category (General
+Purpose Audio Processing Framework) than CLAM so these differences
+may in some sense be justified. The previous comparison has been useful
+to justify CLAM's overall approach. 
+
+<P>
+We will now justify its detailed approach and some design decisions
+by commenting on the main conceptual similarities and differences
+that CLAM presents in respect to the different environments in its
+subcategory. These are: the Create Signal Library (CSL), Open Sound
+World (OSW), Synthesis ToolKit (STK), Aura, SndObj, FORMES and the
+NeXT Sound Kit. We will leave the last two out of the general comparison
+only including them when necessary. Both FORMES and the NeXT are no
+longer in use, have just been included for historical completeness
+and particularly the latter has a slightly different focus aiming
+at providing operating system level audio tools.
+
+<P>
+Let us first comment what are the main similarities between these
+frameworks and CLAM. It is important to highlight that most of the
+frameworks in this category have goals very similar to CLAM, particularly
+STK, CSL, SndObj and FORMES explicitly recognize subsets of CLAM's
+goals as exposed in section <A HREF="node93.html#sec:CLAM::Introduction">3.1</A>. In this
+sense, for instance, it is interesting to note that all of them are
+implemented in C++ and aim at being cross-platform (although some
+of them have still reached this goal). They are also all open source
+although this assertion is redundant for a framework as you always
+need the source code to build and extend applications.
+
+<P>
+In a more conceptual ground, all of them are also object-oriented
+and offer some sort of graph-based model in which processes are nodes
+of the graph. The concept of <SPAN  CLASS="textit">Processing objects</SPAN> in CLAM has
+more or less direct equivalents in all of them: they are called <SPAN  CLASS="textit">unit
+generators</SPAN> in CSL, <SPAN  CLASS="textit">transforms</SPAN> in OSW, <SPAN  CLASS="textit">instruments</SPAN> in
+STK, either <SPAN  CLASS="textit">unit generators</SPAN> in Aura, <SPAN  CLASS="textit">sound objects</SPAN> in
+SndObj, and <SPAN  CLASS="textit">processes</SPAN> in FORMES. Note that this concept is
+not exclusive of this category of environments but is rather an idea
+that is repeated in many other environments (they are called <SPAN  CLASS="textit">transformations</SPAN>
+in Marsyas, <SPAN  CLASS="textit">transforms</SPAN> in Kyma, <SPAN  CLASS="textit">objects</SPAN> in Max, or <SPAN  CLASS="textit">EventGenerators</SPAN>
+and <SPAN  CLASS="textit">EventModifiers</SPAN> in Mode).
+
+<P>
+In all of these frameworks, the ``processing objects'' are connected
+in some way in order to build a more complex ``network'' that
+conforms the base of a given application. As mentioned in this section
+CLAM offers two different mechanisms for composing with processing
+objects. If the composition is static we call the result a <SPAN  CLASS="textit">Processing
+Composite Object</SPAN> while if it is dynamic we call it <SPAN  CLASS="textit">Processing
+Network</SPAN>. In many aspects CLAM's Processing Composites are equivalent
+to Aura's <SPAN  CLASS="textit">instruments</SPAN> or FORMES' relation between parent and
+children processes while CLAM Processing Networks are like CSL's,
+OSW's or Max's <SPAN  CLASS="textit">patches</SPAN>.
+
+<P>
+We will now comment the main differences that CLAM presents in respect
+to these same frameworks. As a general difference, it must be noted
+that all of them have followed a development process that differs
+from CLAM's. As a matter of fact, all of them can be considered &#34;one-man-systems&#34;,
+they have been thought out, designed and even developed by one or
+two people: CSL by Stephen Travis Pope, Open Sound World by Amar Chaudray,
+STK by Perry Cook and Gary Scavone, Aura by Roger Dannenberg and Eli
+Brandt, SndObj by Victor Lazzarini, FORMES by Xavier Rodet and Pierre
+Conte and the NEXT Sound Kit by M. Lentezner. None of them has had
+such a large development team as CLAM's (see annex <A HREF="node208.html#cha:CLAM-Additional-Information">A</A>
+for more practical information on this issue).
+
+<P>
+But most importantly, none of them has a defined or explicit policy
+of acknowledging and adding user feedback into the development life
+cycle. Moreover, none of them declares having a truly incremental
+or agile process methodology and the number of releases of the frameworks
+are much less frequent than in CLAM.
+
+<P>
+The CSL library (see <A HREF="node67.html#sub:CSL">2.3.3</A>) is still not mature enough and
+as the authors recognize their experience with the C++ programming
+language is rather limited and the framework needs further design
+refactorings [<A
+ HREF="node207.html#PopeCSL">Pope and Ramakrishnan, 2003</A>]. On the other hand although CSL is clearly
+object-oriented and presents a clean design, the graphical model of
+computation is not explicit and ends-up being a bit confusing.
+
+<P>
+Open Sound World (see <A HREF="node64.html#sub:Open-Sound-World">2.3.2</A>) is, out of all
+these frameworks, the one that probably presents a cleaner and most
+mature design. It is clearly object-oriented and the graphical model
+of computation is clearly stated. It is efficient and offers many
+tools. Nevertheless, it has some differences with CLAM that should
+be noted. OSW goal is not to become an application framework but rather
+to offer a music composition tool ala Max. Therefore by aiming at
+being at artistic/creative tool, its focus is clearly not that of
+CLAM, which is to offer a research/development environment. On the
+other hand, OSW is mostly a ``one-man system'' and is therefore
+mostly synthesis-oriented. This developer is no longer working on
+the framework and although some other people work on it, it is not
+very active nor updated regularly.
+
+<P>
+Although the Synthesis Toolkit or STK (see <A HREF="node63.html#sub:STK">2.3.2</A>) is also
+a ``one-man system'' (or more exactly ``two-men'') it has
+a long history and it is still updated and maintained on a regular
+basis. Nevertheless, it presents a fundamental difference with CLAM
+in being clearly synthesis-oriented. STK offers very few tools for
+audio or music analysis. Another difference is that in STK there is
+no clear distinction between process and data, this is possibly a
+feasible decision for a synthesis-only application but not so if data
+can be the result of a previous analysis process.
+
+<P>
+The Aura framework (see <A HREF="node65.html#sub:W_Aura">2.3.2</A>) is Free Software and is
+available from the author. Nevertheless, at the time of this writing
+Aura does still not have a publicly supported version because of lack
+of documentation and because of its steep learning curve. In its current
+state it is not truly cross-platform as it is only being developed
+and tested on the Windows platform. Aura aims at offering an efficient
+real-time implementation, not only for audio but for general real-time
+applications. Because of this the framework sometimes compromises
+the understandability and easiness of use of the model. Other practical
+differences are that Aura only operates on fixed size data chunks
+of audio (it would be difficult to integrate other data such as spectrums)
+and there is no clear distinction between control and signal data.
+
+<P>
+Finally, SndObj (see <A HREF="node68.html#sub:SndObj">2.3.3</A>) is not a very mature framework
+and does not offer many tools or examples. This is so because SndObj
+is the most clear example of an strictly speaking ``one-man system''.
+SndObj is object-oriented and graph-based but its model is not very
+clear. On the other hand it does not focus on efficiency issues and
+it is not likely to work on complex real-time situations.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1904"
+  HREF="node134.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1902"
+  HREF="node132.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1898"
+  HREF="node132.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1905"
+  HREF="node134.html">Summary and Conclusions</A>
+<B> Up:</B> <A NAME="tex2html1903"
+  HREF="node132.html">CLAM and other environments</A>
+<B> Previous:</B> <A NAME="tex2html1899"
+  HREF="node132.html">CLAM and other environments</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

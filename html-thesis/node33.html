@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Object Management Group's Meta Object Facility</TITLE>
+<META NAME="description" CONTENT="The Object Management Group's Meta Object Facility">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node32.html">
+<LINK REL="up" HREF="node30.html">
+<LINK REL="next" HREF="node34.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html712"
+  HREF="node34.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html710"
+  HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html706"
+  HREF="node32.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html713"
+  HREF="node34.html">Graphical Models of Computation</A>
+<B> Up:</B> <A NAME="tex2html711"
+  HREF="node30.html">Metadata and Meta Objects</A>
+<B> Previous:</B> <A NAME="tex2html707"
+  HREF="node32.html">MPEG-7</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00243000000000000000"></A><A NAME="sub:MOF"></A>
+<BR>
+The Object Management Group's Meta Object Facility
+</H2>
+
+<P>
+The Meta Object Facility (MOF) is another standard from the ACM's
+Object Management Group (OMG) just as UML. MOF is defined like an
+standard that ``provides a metadata management framework, and a
+set of services to enable the development and interoperability of
+model and metadata systems'' [<A
+ HREF="node207.html#MOF2">Adaptive et&nbsp;al., 2003</A>].
+
+<P>
+Therefore MOF can be viewed both as a metadata interchange framework
+or as a metamodeling framework. Although MOF has not been formally
+used in this Thesis it is interesting to note the many similarities
+exist between this standard and the solutions provided in CLAM (see
+chapter <A HREF="node92.html#ch:_CLAM">3</A>) or the conceptual metamodel presented in
+the Object-Oriented Content Transmission Metamodel (see chapter <A HREF="node155.html#ch:_OOCTM">5</A>).
+
+<P>
+MOF is platform and implementation independent and can be mapped to
+different languages such as XML or Java.
+
+<P>
+MOF defines separate concerns or capabilities for reuse by other models
+and metamodels. These concerns are organized into packages and the
+main packages addressing modeling and metadata management concerns
+are: Reflection, Identity and Extension. 
+
+<P>
+The <SPAN  CLASS="textbf">Reflection</SPAN> package extends a model with the ability to
+be self-describing, that is it provides all the necessary infrastructure
+to use an object without prior knowledge of its specific features.
+In MOF an object's class (i.e. its meta object) reveals the nature,
+kind and features of the object. 
+
+<P>
+The Reflection package includes the <SPAN  CLASS="textit">Object</SPAN> class, which is
+the the superclass of all model elements. This abstract class has
+the following main operations:
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textit">getMetaClass()</SPAN>: returns the class that describes this object
+</LI>
+<LI><SPAN  CLASS="textit">container()</SPAN>: returns the parent container of the object if
+any
+</LI>
+<LI><SPAN  CLASS="textit">equals(element)</SPAN>: returns true if the element and the 'this'
+reference the same instance.
+</LI>
+<LI><SPAN  CLASS="textit">get(property)</SPAN>: returns the value of the given property
+</LI>
+<LI><SPAN  CLASS="textit">set(property, element)</SPAN>: sets the element to the given property
+of the object.
+</LI>
+<LI><SPAN  CLASS="textit">isSet(property)</SPAN>: true if value is different from the default
+value (if multiplicity is &gt;1 is true if there is at least 1 element).
+</LI>
+<LI><SPAN  CLASS="textit">unset(property)</SPAN>: sets the value to default
+</LI>
+</UL>
+The other important class in the Reflection package is the <SPAN  CLASS="textit">Factory</SPAN>
+class, which is in charge of creating MOF instances and offers the
+following interface:
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textit">createFromString(datatype, string)</SPAN>: creates an Element from
+the value of the String with a format defined by the XML Schema Simple
+Type corresponding to that data type.
+</LI>
+<LI><SPAN  CLASS="textit">convertToString(datatype,element)</SPAN>: creates a string representation
+of the Element
+</LI>
+<LI><SPAN  CLASS="textit">create(metaClass)</SPAN>: creates an object with all properties unset
+that is an instance of the metaclass.
+</LI>
+</UL>
+The <SPAN  CLASS="textbf">Identity</SPAN> package provides an extension for uniquely identifying
+metamodel objects without relying on model data subject to change.
+The main concept in this package is the <SPAN  CLASS="textit">identifier</SPAN>. The identifier
+of an object is a formal representation of the object identity (see
+section <A HREF="node8.html#sec:_Objects">1.1.1</A>), it distinguishes a given object from
+all the rest. Identifiers allow the serialization of references to
+external objects, can be used to coordinate data updates where there
+has been replication, and can provide clear identification in communication.
+Identifiers also facilitate Model-Driven Development by providing
+an identifier immutable to model transformations (see section <A HREF="node18.html#sec:_Models">1.2.2</A>
+for a brief summary on Model-Driven Development).
+
+<P>
+The Identity package provides the concept of <SPAN  CLASS="textit">extents</SPAN>. An Extent
+is a context in which an object can be identified. An object may be
+the member of zero or more extents. An Extent is not an object, it
+is part of a MOF capability. It has the following operations:
+
+<P>
+
+<UL>
+<LI>useContainment(): returns true if it includes all objects contained
+by members of the objects.
+</LI>
+<LI>objects(): returns a ReflectiveSequence of the objects directly referenced
+by this extent.
+</LI>
+</UL>
+Identity extends the Basic::Package with a URI that can be used for
+externally identifying it. It also extends the Basic::Property with
+the ability to designate a property as an identifier for the containing
+object.
+
+<P>
+An <SPAN  CLASS="textit">URIExtent</SPAN> is an Extent that provides URI identity. It has
+the following operations:
+
+<P>
+
+<UL>
+<LI>contextURI(): returns a string specifying the URI established for
+the context of the extent.
+</LI>
+<LI>uri(object): returns the uri of a given object in the extent.
+</LI>
+<LI>object(string): returns the object identified by a given uri in an
+extent.
+</LI>
+</UL>
+Finally, the <SPAN  CLASS="textbf">Extension</SPAN> package offers a simple way of extending
+model elements with name/value pairs. MOF offers the ability to define
+metamodel elements like classes with properties and operations. But
+sometimes it is necessary to extend model elements with additional
+information such as information missing from the model or data required
+for a particular application.
+
+<P>
+The Extension package includes the <SPAN  CLASS="textit">Tag</SPAN> class. A Tag is a single
+piece of information that can be associated with model elements. It
+has the following properties:
+
+<P>
+
+<UL>
+<LI>name: string
+</LI>
+<LI>value: string (MOF places no meaning on the value)
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html712"
+  HREF="node34.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html710"
+  HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html706"
+  HREF="node32.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html713"
+  HREF="node34.html">Graphical Models of Computation</A>
+<B> Up:</B> <A NAME="tex2html711"
+  HREF="node30.html">Metadata and Meta Objects</A>
+<B> Previous:</B> <A NAME="tex2html707"
+  HREF="node32.html">MPEG-7</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

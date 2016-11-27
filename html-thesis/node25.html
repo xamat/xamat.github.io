@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Properties of a well-designed framework</TITLE>
+<META NAME="description" CONTENT="Properties of a well-designed framework">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node26.html">
+<LINK REL="previous" HREF="node24.html">
+<LINK REL="up" HREF="node23.html">
+<LINK REL="next" HREF="node26.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html633"
+  HREF="node26.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html631"
+  HREF="node23.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html625"
+  HREF="node24.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html634"
+  HREF="node26.html">Classification of frameworks</A>
+<B> Up:</B> <A NAME="tex2html632"
+  HREF="node23.html">Frameworks</A>
+<B> Previous:</B> <A NAME="tex2html626"
+  HREF="node24.html">Definitions</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00232000000000000000"></A><A NAME="sec:FrameworkProperties"></A>
+<BR>
+Properties of a well-designed framework
+</H2>
+
+<P>
+Bearing these definitions in mind, a number of properties arise from
+a well-designed framework.
+
+<P>
+A framework defines the behavior of a collection of objects. It provides
+ways of reusing analysis, design and code and includes a set of software
+building blocks that programmers can use, extend, or customize for
+specific computing solutions. These building blocks usually make up
+a library of subclasses.
+
+<P>
+A framework, though, is more than a well-written class library, it
+is an abstract specification of a kind of application. Libraries reuse
+code but little analysis or design. A class library does not enforce
+a particular design on an application, it just provides functionality
+that can help the application to do its job. Nevertheless, some libraries
+exhibit framework-like behavior and some frameworks can be used as
+class libraries. It can be seen as a continuum with traditional class
+libraries at one end and sophisticated frameworks at the other.
+
+<P>
+With frameworks, developers don't have to start from scratch every
+time they write a particular application. Frameworks help developers
+provide solutions for problem domains and better maintain those solutions.
+They also provide a well-designed and thought out infrastructure so
+that when new pieces are created and added, they can be integrated
+with minimal impact on other pieces of the framework [<A
+ HREF="node207.html#NelsonForum">Nelson, 1994</A>].
+
+<P>
+No matter how elegant and well-designed a framework is, it won't be
+used unless the cost of understanding it and then using its abstractions
+is lower than the perceived cost of writing these functionalities
+from scratch, without using the framework [<A
+ HREF="node207.html#BoochDesigningFrameworks">Booch, 1994a</A>].
+It is important to remember that Software is not reusable until it
+has been reused [<A
+ HREF="node207.html#JohnsonDesignFrameworksOOPSLATutorial">Johnson, 1993</A>]. 
+
+<P>
+To be successful, a framework must be complete, flexible, extensible,
+and understandable [<A
+ HREF="node207.html#TaligentBuildingOOFrameworks">Taligent, 1994</A>]. A framework
+should also observe ways of minimizing potential client errors and
+enhance platform portability. It should be illustrated with examples.
+Examples make frameworks more concrete and make them easier to understand
+[<A
+ HREF="node207.html#JohnsonDocumentingFrameworks">Johnson, 1992</A>]. As a matter of fact, a framework
+is just a generalization of preexisting examples in a particular application
+domain. An example of a framework is a use case.
+
+<P>
+Frameworks impose a model that the the developer must adapt to. But
+on the other hand frameworks improve developer productivity [<A
+ HREF="node207.html#MoserNierstraszOOFrameworksAndProductivity">Moser and Nierstrasz,
+  1996</A>].
+
+<P>
+The goals of framework design should be to build applications from
+preexisting components, use a small number of types of components
+over and over and write as little code as possible (ultimate goal
+is no-code: build programs by direct manipulation) [<A
+ HREF="node207.html#JohnsonDesignFrameworksOOPSLATutorial">Johnson, 1993</A>].
+With a framework it shouldn't take a good programmer to build a good
+program. Frameworks are designed by experts in that domain but can
+then be used by non-experts.
+
+<P>
+A framework usually plays the role of the main program in coordinating
+and sequencing application activity and flow control. In a framework,
+the main program is reused, and the developer decides what is plugged
+into it and makes new components that are plugged in. The developers
+code gets called by the framework code. The framework determine the
+overall structure and flow of control of the program [<A
+ HREF="node207.html#JohnsonComponents">Johnson, 1997</A>].
+
+<P>
+Frameworks are related to designing components. When designing a component
+we also have to trade simplicity for power. A component with many
+parameters can be used often but will be hard to learn [<A
+ HREF="node207.html#JohnsonComponents">Johnson, 1997</A>].
+
+<P>
+Finally, a framework reuses analysis. It describes the kinds of objects
+that are important and provides a vocabulary for talking about a problem.
+An expert in a particular framework sees the world in terms of the
+framework, and will naturally divide it into the same components.
+Two expert users of the same framework will find it easier to understand
+each others designs, since they will come up with similar components
+and will describe the systems they want to build in similar ways [<A
+ HREF="node207.html#JohnsonComponents">Johnson, 1997</A>].
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html633"
+  HREF="node26.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html631"
+  HREF="node23.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html625"
+  HREF="node24.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html634"
+  HREF="node26.html">Classification of frameworks</A>
+<B> Up:</B> <A NAME="tex2html632"
+  HREF="node23.html">Frameworks</A>
+<B> Previous:</B> <A NAME="tex2html626"
+  HREF="node24.html">Definitions</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

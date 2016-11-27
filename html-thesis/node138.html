@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Processing Object Lifecycle</TITLE>
+<META NAME="description" CONTENT="The Processing Object Lifecycle">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node139.html">
+<LINK REL="previous" HREF="node137.html">
+<LINK REL="up" HREF="node137.html">
+<LINK REL="next" HREF="node139.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1989"
+  HREF="node139.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1987"
+  HREF="node137.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1981"
+  HREF="node137.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1990"
+  HREF="node139.html">Processing Configuration</A>
+<B> Up:</B> <A NAME="tex2html1988"
+  HREF="node137.html">Processing Objects</A>
+<B> Previous:</B> <A NAME="tex2html1982"
+  HREF="node137.html">Processing Objects</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00511100000000000000">
+The Processing Object Lifecycle</A>
+</H3>
+
+<P>
+As already stated in section <A HREF="node8.html#sec:_Objects">1.1.1</A>, the state of an
+object is defined by the value of its attributes at a moment in time.
+The sequence of states on an object define its lifecycle. Nevertheless,
+not all variations on attribute values produce an important transition
+in the lifecycle. That is why we talk about main states or supra states
+and sub-states.
+
+<P>
+A Processing object lifecycle is made up of the following main states:
+<SPAN  CLASS="textit">Unconfigured</SPAN>, <SPAN  CLASS="textit">Ready</SPAN>, and <SPAN  CLASS="textit">Running</SPAN> (see figure
+<A HREF="#fig:DSPOOM-Processing-state">4.4</A>). While in the <SPAN  CLASS="textit">Unconfigured</SPAN>
+state the Processing object is waiting to be configured; in the <SPAN  CLASS="textit">Ready</SPAN>
+state it can be reconfigured or started; in the <SPAN  CLASS="textit">Running</SPAN> state,
+once the Processing object has been configured and started, the actual
+process can be executed; finally the Processing object can be stopped
+in order to start the cycle again.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:DSPOOM-Processing-state"></A><A NAME="5641"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.4:</STRONG>
+DSPOOM Processing state diagram</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="443" HEIGHT="289" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="\includegraphics[%
+width=0.80\textwidth]{/home/xamat/xamat_cvs/Thesis/images/ch3-CLAM/ps/ProcessingStates.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The messages that can be sent to a Processing object in order to change
+its state are: <SPAN  CLASS="textit">Configure</SPAN>, <SPAN  CLASS="textit">Start</SPAN>, <SPAN  CLASS="textit">Do</SPAN> and <SPAN  CLASS="textit">Stop</SPAN>.
+Any of these operations has a generic part and a concrete part that
+is coupled to the concrete Processing class. The generic part of the
+operation is in charge of controlling the state transitions and life
+life cycle invariants. It is reasonable to think that the use of the
+Template Method design pattern (see [<A
+ HREF="node207.html#GOF">Gamma et&nbsp;al., 1995</A>]) will offer an optimum
+solution to this situation, implementing the commonalities in the
+abstract Processing class and delegating any particular issues to
+the concrete classes. We will now see how all these state transitions
+affect a general Processing object.
+
+<P>
+The Processing object can only respond to the Configure message if
+it is in the Unconfigured or Ready states. In any case if the configuration
+that is passed is well-formed and valid the Processing object will
+enter the Ready state, else it will stay or go to the Unconfigured
+state. In this configuration process different internal operations
+may take place:
+
+<P>
+
+<OL>
+<LI>Initialization of the <SPAN  CLASS="textit">configuration variables</SPAN>, member variables
+that contain parameters that are not supposed to change during the
+execution phase.
+</LI>
+<LI>Initialization of internal tables that need to be allocated taking
+into account some configuration parameter such as the size.
+</LI>
+</OL>
+The Start message will only be acknowledged if the object is in the
+Ready state and will produce a transition to the Running state. In
+this transition, two activities are to take place:
+
+<P>
+
+<OL>
+<LI>Asserting that the Configuration process has taken place and left
+the Processing object in a valid concrete Ready state.
+</LI>
+<LI>Initialization of <SPAN  CLASS="textit">execution variables</SPAN>. Execution member variables
+are defined as those that are bound to change during execution and
+they include items such as internal counters, timers or memories.
+These execution variables also include input and output <SPAN  CLASS="textit">controls</SPAN>. 
+</LI>
+</OL>
+A Processing object can only respond to the Do message and therefore
+process when it is in the Running state. During this phase the Processing
+object can only receive this message and any other communication must
+be done through the control mechanism. In this state we can identify
+two other sub-states: <SPAN  CLASS="textit">Idle</SPAN> and <SPAN  CLASS="textit">Processing</SPAN>. In the <SPAN  CLASS="textit">Processing</SPAN>
+state the object is actually performing the computations as a response
+to a Do call while in the <SPAN  CLASS="textit">Idle</SPAN> state the object has already
+handed control to the Flow Control and is waiting to be called again.
+
+<P>
+Finally, the Stop operation will make a Running processing object
+enter the Configured state. In this transition, memory can be deallocated
+and execution variables reset.
+
+<P>
+It is interesting to note that this lifecycle is a variation/enhancement
+of the lifecycle of a process in the Simula language. In [<A
+ HREF="node207.html#DahlNygaardSimula">Dahl and Nygaard, 1966</A>]
+it was stated that a process could be in one of four possible states:
+(1) active, (2) suspended (3) passive and (4) terminated. On the other
+hand, in section <A HREF="node54.html#sub:Ptolemy">2.2</A> we commented how Ptolemy, as many
+other frameworks, distinguishes three execution phases: <SPAN  CLASS="textit">set-up</SPAN>,
+<SPAN  CLASS="textit">run</SPAN> and <SPAN  CLASS="textit">wrap-up</SPAN>. Note that in our case these three phases
+are also explicit, with the Configure operation making most of the
+<SPAN  CLASS="textit">set-up</SPAN> operations, the Start operation finishing up the <SPAN  CLASS="textit">set-up</SPAN>
+and making the transition to the <SPAN  CLASS="textit">run</SPAN> phase where the Do operation
+is called, and the Stop operation in charge of the <SPAN  CLASS="textit">wrap-up</SPAN>. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1989"
+  HREF="node139.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1987"
+  HREF="node137.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1981"
+  HREF="node137.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1990"
+  HREF="node139.html">Processing Configuration</A>
+<B> Up:</B> <A NAME="tex2html1988"
+  HREF="node137.html">Processing Objects</A>
+<B> Previous:</B> <A NAME="tex2html1982"
+  HREF="node137.html">Processing Objects</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

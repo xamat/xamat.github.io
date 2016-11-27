@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Limitations and Opportunities</TITLE>
+<META NAME="description" CONTENT="Limitations and Opportunities">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node179.html">
+<LINK REL="up" HREF="node179.html">
+<LINK REL="next" HREF="node181.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2447"
+  HREF="node181.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2445"
+  HREF="node179.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2441"
+  HREF="node179.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2448"
+  HREF="node181.html">Summary and Conclusions</A>
+<B> Up:</B> <A NAME="tex2html2446"
+  HREF="node179.html">Sample application</A>
+<B> Previous:</B> <A NAME="tex2html2442"
+  HREF="node179.html">Sample application</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00641000000000000000">
+Limitations and Opportunities</A>
+</H2>
+
+<P>
+The system just presented should be understood as a proof of concept.
+It has several limitations that make it unpractical. Just to name
+a few:
+
+<P>
+As already mentioned the receiver holds a particular model of a sax/trumpet
+synthesizer. In its current implementation the model cannot be modified
+or configured, just controlled. Nevertheless, as we will show in the
+next chapter, it is easy to foresee a solution to this issue by allowing
+the model to transmit complete instrument descriptions such as those
+allowed by the MetriX Instrument Definition Language.
+
+<P>
+On the other hand, the encoded and transmitted melody has severe limitations.
+To start with, the instrument that has produced it is not encoded
+into the stream. Encoding the exact instrument that has produced the
+melody would mean having a robust and precise instrument classification
+algorithm. Although many people, including some from our own group
+(see [<A
+ HREF="node207.html#HerreraInstrumentSegmentation">Herrera et&nbsp;al., 2000</A>]), are working on it but
+this is right now far from solved.
+
+<P>
+Another limitation of the encoded melody is its limited information.
+As a matter of fact the only data being transmitted is the note boundaries,
+pitch and energy. This is in fact the same information contained in
+a MIDI stream. In order to have more realistic performances other
+information such as the energy envelope, ADSR curve or vibrato characteristics
+should be encoded. Most of these descriptors though can be easily
+computed.
+
+<P>
+Finally, and also on the transmitter side, there is a great limitation
+on the content analysis component. The algorithms used can only work
+on monophonic melodic phrases. Other more complex signals should be
+analyzed using other techniques such as PCA or multipitch, which are
+still not robust and precise enough.
+
+<P>
+Nevertheless, and regardless of all these limitations, we believe
+that the presented sample system already highlights many of the opportunities
+of the Object-Oriented Content Transmission Metamodel.
+
+<P>
+To start with, any of the components of the system, though maybe limited,
+is already useful by itself. We have a content analyzer, a content
+description XML encoding tool, a decoder that interprets XML and translates
+it into MIDI or information understandable by the user and a content-based
+synthesizer.
+
+<P>
+But the most important novelty is the use of coherent and compatible
+formats all through the chain. XML, or any other compatible metadata
+format, can be used in the analysis, transmission and synthesis step,
+opening up a whole range of possible future applications of the metamodel.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2447"
+  HREF="node181.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2445"
+  HREF="node179.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2441"
+  HREF="node179.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2448"
+  HREF="node181.html">Summary and Conclusions</A>
+<B> Up:</B> <A NAME="tex2html2446"
+  HREF="node179.html">Sample application</A>
+<B> Previous:</B> <A NAME="tex2html2442"
+  HREF="node179.html">Sample application</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>CLAM as an Object-Oriented Framework</TITLE>
+<META NAME="description" CONTENT="CLAM as an Object-Oriented Framework">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node94.html">
+<LINK REL="up" HREF="node93.html">
+<LINK REL="next" HREF="node96.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1461"
+  HREF="node96.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1459"
+  HREF="node93.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1455"
+  HREF="node94.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1462"
+  HREF="node96.html">What CLAM has to</A>
+<B> Up:</B> <A NAME="tex2html1460"
+  HREF="node93.html">Introduction</A>
+<B> Previous:</B> <A NAME="tex2html1456"
+  HREF="node94.html">Another Audio Library?</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00412000000000000000">
+CLAM as an Object-Oriented Framework</A>
+</H2>
+
+<P>
+CLAM is both a black-box and white-box framework (see section <A HREF="node26.html#sec:FrameworkClassification">1.3.3</A>
+for a definition of these terms). But as already mentioned, this is
+a common property of all software frameworks. It is a black-box framework
+in the sense that already built-in components can be connected with
+minimum programmer-effort in order to build new applications. And
+it is white-box in the sense that abstract classes can be derived
+in order to extend the framework components with new processes or
+data containers.
+
+<P>
+CLAM is a framework for audio and music programming. It offers a general
+infrastructure that can be used for any signal processing application.
+But the ready-to-use components and tools focus on the music and audio
+domain.
+
+<P>
+The framework can be used to construct general audio or music applications
+for end-users or artists. But its main focus in on developing prototype
+applications for research purposes. CLAM can be used as a framework
+for rapid prototyping, testing new algorithms or ideas and general
+research on the music and audio field.
+
+<P>
+The framework is truly object-oriented and its design promotes and
+to some extent ensures modularity, re-usability, separation of aspects,
+and conceptual encapsulation. It is important to note that targeted
+users of the framework are mainly signal processing engineers that
+may not have acquired good programming and design practices before
+they are exposed to the framework. A lot of care has been put in enforcing
+these good practices and ensuring that the framework, when used as
+white-box, is extended without violating its philosophy. For example,
+data classes are declared using a mechanism called Dynamic Types (see
+<A HREF="node114.html#sec:_DataInfrastructure">3.2.2</A>). For declaring a member attribute
+in a Dynamic Type, a set of special macros must be used. These macros
+(apart from doing much more interesting things that will later be
+explained) expand a private attribute and GetX()-SetX() accessors
+with a user-defined visibility.
+
+<P>
+Apart from the object-oriented metamodel, or rather as a consequence
+of, CLAM presents and enforces a particular graphical Model of Computation.
+The CLAM MoC helps engineers in modeling signal processing systems
+and as a consequence has immediate benefits on both the analysis of
+the system itself as its design and implementation. Both the object-oriented
+model and the MoC derived from CLAM will be introduced in the next
+chapter.
+
+<P>
+As already mentioned, CLAM is implemented in C++. This allows for
+the design of very demanding or time-critical applications. Several
+real-time applications such as a vocal processor with spectral analysis/synthesis
+or a sax synthesizer have implemented in the framework. In these cases
+implementations based on the framework have proven to be even more
+efficient than the original implementations. 
+
+<P>
+CLAM is also completely cross-platform and portable. A CLAM application
+developed in GNU/Linux is immediately portable to Microsoft Windows
+and Mac OSX. Even system-level primitives such as access to sound
+devices or multi-threading handling are encapsulated in such a way
+that the target operating system is transparent to the user. 
+
+<P>
+The framework is also completely Free Software (as for the definition
+given by the Free Software Foundation [<A
+ HREF="node207.html#FSF">Free Software Foundation, </A>]) and licensed under
+the GPL. Thus it can be used under no restriction as long as the resulting
+application remains Free. Access is therefore granted to the source
+code and the knowledge accumulated during the framework design process
+is transmitted and reused without restriction.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1461"
+  HREF="node96.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1459"
+  HREF="node93.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1455"
+  HREF="node94.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1462"
+  HREF="node96.html">What CLAM has to</A>
+<B> Up:</B> <A NAME="tex2html1460"
+  HREF="node93.html">Introduction</A>
+<B> Previous:</B> <A NAME="tex2html1456"
+  HREF="node94.html">Another Audio Library?</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

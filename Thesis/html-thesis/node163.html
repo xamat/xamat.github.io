@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>High-level Descriptors</TITLE>
+<META NAME="description" CONTENT="High-level Descriptors">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node162.html">
+<LINK REL="up" HREF="node161.html">
+<LINK REL="next" HREF="node164.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2273"
+  HREF="node164.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2271"
+  HREF="node161.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2267"
+  HREF="node162.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2274"
+  HREF="node164.html">The Coding Step (Content</A>
+<B> Up:</B> <A NAME="tex2html2272"
+  HREF="node161.html">The Analysis Step (Content</A>
+<B> Previous:</B> <A NAME="tex2html2268"
+  HREF="node162.html">Low-level Descriptors</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H4><A NAME="SECTION00621120000000000000">
+High-level Descriptors</A>
+</H4>
+
+<P>
+While descriptors presented until now are purely morphologic (i.e.
+they do not carry any information on the actual meaning of the source
+and just refer to its inner structural elements), high-level descriptors
+can carry either semantic or syntactic meaning.
+
+<P>
+Syntactic high-level descriptors can be sometimes computed as a combination
+of low-level descriptors. They refer to features that can be understood
+by an end-user without previous signal processing knowledge but do
+not carry semantic meaning. In other words, syntactic descriptors
+cannot be used to label a piece of sound according to what actually
+is but rather to describe how it is distributed or what is made of
+(i.e. its structure). Thus, syntactic descriptors can be seen as attributes
+of our sound classes but, by themselves, cannot be used to identify
+objects and classify them. For that reason, the computation of syntactic
+descriptors (either low or high-leveled) is not dependent on any kind
+of musical knowledge, symbolic or real-world knowledge. In [<A
+ HREF="node207.html#MPEG7TimbreCE">Petters et&nbsp;al., 1999</A>],
+for example, we presented a way of describing timbre of isolated monophonic
+instrument notes (the scheme for computing the descriptors of a harmonic
+timbre is depicted in Figure <A HREF="#fig:_MPEG7-TimbreDescriptors">5.8</A>).
+In the case of our timbre descriptor, for example, the resulting descriptor
+is not sufficient to label a note as being violin or piano but rather
+to compute relative perceptual distances between different instrument
+samples.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:_MPEG7-TimbreDescriptors"></A><A NAME="5671"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.8:</STRONG>
+Combining low-level descriptors for creating higher-level descriptors:
+MPEG-7's Timbre Descriptor Scheme</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="388" HEIGHT="211" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.png"
+ ALT="\includegraphics[%
+width=0.70\textwidth]{images/ch5-OOCTM/ps/TimbreDescriptors.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+On the other hand, semantic descriptors refer to meaningful features
+of the sound and are ``understandable'' for the end-user. We therefore
+need to apply more high-level or real world knowledge. The degree
+of abstraction of a semantic descriptor though has a wide range, labels
+such as ``scary'' or more concrete such as ``violin sound''
+can be considered semantic descriptors. 
+
+<P>
+The main purpose of a semantic descriptor is to label the piece of
+sound to which it refers using a commonly accepted concept or term
+that corresponds to a given sound class (e.g. instrument, string instrument,
+violin...). Descriptors used as the result of a classification process
+are called <SPAN  CLASS="textit">classifying descriptors</SPAN>. It is interesting to
+note that, in this case, the classification process is performed in
+a top-down manner. Using low-level or high-level syntactic descriptors
+we might be more or less immediately be able to identify our piece
+of sound in as belonging to an abstract class (in the worst case we
+are always able to classify it as a Sound Object). Applying both real-world
+knowledge and signal processing knowledge we may be able to get our
+problem to a more concrete ground and start down-casting our description
+to something like ``string instrument'' or ``violin''. Note
+that for this classification process different techniques may be used
+being the most obvious a basic decision tree.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="3257"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.9:</STRONG>
+Multilevel semantic analysis/classification and polymorphic objects</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="555" HEIGHT="284" ALIGN="BOTTOM" BORDER="0"
+ SRC="img59.png"
+ ALT="\includegraphics[%
+width=1.0\textwidth]{images/ch5-OOCTM/ps/MultilevelSemanticAnalysis.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Other semantic descriptors, though, do not aim at classifying the
+sound but rather at describing some important feature or attribute.
+These descriptors can label a sound as being ``loud'', ``bright''
+or ``scary''. As a matter of fact these descriptors are not binary
+and can indeed quantify how much a sound belongs to a given category
+(i.e. How bright or scary a sound is). We call such descriptors <SPAN  CLASS="textit">quantifying
+descriptors</SPAN>. In this case, conversely to what happened with the previous
+classifiers, the more concrete a feature is the easier it will be
+to derive it from our previously computed low-level or high-level
+syntactic descriptors. For example, a label like ``bright'' might
+be directly derived from the spectral centroid low-level descriptor.
+Much more real-world knowledge must be applied to be able to classify
+a sound as ``sad'' or ``frightening''. 
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="3270"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.10:</STRONG>
+Multilevel semantic analysis for adding higher-level abstract features</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="555" HEIGHT="217" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.png"
+ ALT="\includegraphics[%
+width=1.0\textwidth]{images/ch5-OOCTM/ps/MultilevelSemanticAnalysisWithDescriptors.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Different proposals have been made in order to create a semantic map
+or multi-level structure for describing an audio scene, one of them
+being the ten-level map presented in the MPEG Geneva meeting (May,
+2000) [<A
+ HREF="node207.html#MPEG7MultipleLevel">Jaimes et&nbsp;al., 2000</A>]. This proposal includes four syntactic
+levels and six semantic levels: Type/Technique, Global Distribution,
+Local Structure, Global Composition, Generic Objects, Generic Scene,
+Specific Objects, Specific Scene, Abstract Objects, and Abstract Scene<A NAME="tex2html70"
+  HREF="footnode.html#foot5672"><SUP><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">3</SPAN></SUP></A>. Another example of multilevel hierarchies in the context of MPEG-7
+is Michael Casey's multilevel content hierarchy for sound effects
+(see [<A
+ HREF="node207.html#CaseySoundRecognitioninMPEG7">Casey, 2001</A>]).
+
+<P>
+While that proposal is quite theoretical and simple, and comes from
+a generalization of a similar structure proposed for video description,
+other proposals come from years of studies on the specific characteristics
+of an audio scene and have even had practical applications. One of
+the most renowned techniques that can fit into this category is CASA
+(Computer Auditory Scene Analysis) [<A
+ HREF="node207.html#BregmanCASA">Bregman, 1990</A>]. It is far
+beyond the scope of this section to go deep into any of these proposals,
+but it is interesting to note that CASA has addressed the issue of
+describing complex sound mixtures that include music, speech and sound
+effects, also providing techniques for separating these different
+kinds of streams into sound objects (see [<A
+ HREF="node207.html#NakataniCASASoundOntology">Nakatani and Okuno, 1998</A>],
+for example).
+
+<P>
+It is now important to relate the different kinds of descriptors to
+the generic DSPOOM classes presented in the previous chapter. At first
+sight it may seem that all of them are subclasses of the Descriptor
+class presented in section <A HREF="node114.html#sec:_DataInfrastructure">3.2.2</A>. And that
+is true for all of them except for one category: the ``high-level
+classifying descriptors''. These descriptors carry the description
+in their own class label and not as attached or independent information.
+Classifying descriptors are therefore DSPOOM Processing Datas. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2273"
+  HREF="node164.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2271"
+  HREF="node161.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2267"
+  HREF="node162.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2274"
+  HREF="node164.html">The Coding Step (Content</A>
+<B> Up:</B> <A NAME="tex2html2272"
+  HREF="node161.html">The Analysis Step (Content</A>
+<B> Previous:</B> <A NAME="tex2html2268"
+  HREF="node162.html">Low-level Descriptors</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

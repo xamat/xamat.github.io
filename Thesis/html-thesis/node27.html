@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The framework development process</TITLE>
+<META NAME="description" CONTENT="The framework development process">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node28.html">
+<LINK REL="previous" HREF="node26.html">
+<LINK REL="up" HREF="node23.html">
+<LINK REL="next" HREF="node28.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html653"
+  HREF="node28.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html651"
+  HREF="node23.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html645"
+  HREF="node26.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html654"
+  HREF="node28.html">Frameworks generate metamodels</A>
+<B> Up:</B> <A NAME="tex2html652"
+  HREF="node23.html">Frameworks</A>
+<B> Previous:</B> <A NAME="tex2html646"
+  HREF="node26.html">Classification of frameworks</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00234000000000000000"></A><A NAME="sec:_FrameworkDevelopment"></A>
+<BR>
+The framework development process
+</H2>
+
+<P>
+There are quite a few documented methodologies for developing a framework.
+Most of them, though, admit the fact that the objective is to identify
+abstractions with a bottom-up approach: start by examining existing
+solutions and be able to generalize from them. When adopting a framework
+development process it is important to take into account that any
+framework will usually start as a white-box framework and ideally
+evolve into a black-box one. It is also important to understand that
+developing a framework is more difficult than developing and application
+because users must be able to understand many design decisions. For
+this reason it is even more important to follow good design practices
+and principles.
+
+<P>
+In [<A
+ HREF="node207.html#JohnsonDesignFrameworksOOPSLATutorial">Johnson, 1993</A>] the author explains
+the difference between the ``ideal'' and the ``good'' way
+to develop frameworks and software in general. The ideal consists
+on three basic phases. First analyze the problem domain, learning
+abstractions and collecting examples of programs to be built. Then
+design abstractions that can be specialized to cover all the examples
+and derive a theory to explain these applications. And finally test
+the framework by using it to solve the examples. This ideal is impossible
+to follow thoroughly for two main reasons: it is very difficult and
+time consuming to do an exhaustive domain analysis, analyzing all
+the possible existing examples; and old applications work so there
+is no financial incentive to convert them to use new software. So
+a less-than-ideal-but-good way to develop a framework is to first
+pick two applications in the domain that are supposed to be solved
+using the framework; make sure that at least some of the developers
+in the team have developed applications for that particular domain;
+and divide project into three groups: a framework group, which both
+gives and takes software, considers how other applications would reuse
+the framework and develops documentation and training; and two application
+groups that try to reuse as much software in the framework as possible
+and complain about how hard it is to reuse.
+
+<P>
+In [<A
+ HREF="node207.html#BoschFrameworksProblemsExperiences">Bosch et&nbsp;al., 1999</A>] the authors give a different
+(though complementary) overview of the framework development process.
+First they distinguish two different activities in framework development:
+<SPAN  CLASS="textit">core framework design</SPAN> and <SPAN  CLASS="textit">framework internal increments</SPAN>.
+Core framework design comprises both abstract and concrete classes
+in the domain. The concrete classes are intended to be invisible and
+transparent to the end user (e.g. a basic storage utility) while the
+abstract classes are either intended to be invisible or to be used
+through subclassing. On the other hand framework internal increments
+build additional classes that form a number of class libraries. They
+capture common implementations of the core framework design and they
+can be either subclasses representing common realizations of the concepts
+captured by the superclasses or a collection of classes representing
+the specification for a complete instantiation of the framework in
+a particular context. A final application built from the framework
+consists of some core framework designs, the framework internal increments
+and an ``application-specific increment''.
+
+<P>
+In this model, the main phases in the development are: (1) a framework
+development phase that is usually the most effort-consuming phase
+and is aimed at producing a reusable design in a particular domain;
+(2) a framework usage or instantiation phase where applications are
+developed; and (3) a framework evolution and maintenance phase.
+
+<P>
+A number of activities can be identified in the first development
+phase, namely domain analysis, architectural design, framework design,
+framework implementation, framework testing an application testing.
+When determining the domain scope there is a problem of choosing the
+correct size: if the framework is too large, many specialists maybe
+needed in the team and the process may become long and expensive;
+if the framework is too narrow it may have to be tailored for every
+new application that comes up. Since the framework may be used in
+many, sometimes unknown ways, it may simply not be feasible to test
+all aspects of the framework. Since the framework relies on some parts
+implemented by the user it may be impossible to test completely before
+its release.
+
+<P>
+In the framework usage phase, the main activities involved are: domain
+analysis, architectural design, framework design, framework implementation,
+framework testing an application testing. In this phase an important
+question is to be faced. If an error in the framework is found when
+developing an application: who is going to fix the error in the framework?
+and, should the applications that are working and are apparently not
+affected by this error upgrade to the latest release of the framework?
+
+<P>
+It is also interesting to take a look at how a company such as the
+Swiss Ericsson models the framework development process. Ericsson
+Software Technology Frameworks have a template methodology that is
+instantiated with every new framework design and that can be summarized
+in the following guidelines (see [<A
+ HREF="node207.html#EricssonOOFrameworks">Landis and Niklasson, 1995</A>]): A
+list of requirements on at least two applications should be provided
+together with a list of requirements on the framework. A list of future
+requirements should also be provided. The project team should include
+members with knowledge of each application and a member with knowledge
+on framework design. Information should be gathered from as many sources
+as possible. Requirements and use cases should be separated into framework-specific
+and application-specific and they should also be divided into functional
+and non-functional. High-level abstractions should be identified,
+preparing for the identification of the framework. But only abstractions
+that are in the framework domain should be introduced and afterwards
+they should be named the same in the static model. Existing solutions
+should be examined and large frameworks should be structured into
+sub-frameworks. A static model for each application should be developed
+then introducing abstractions common to several applications into
+the framework. Using graphical notations the project should be presented
+clearly to all project members. Subsystems should have high cohesion
+and little coupling. Finally existing frameworks should be studied
+trying to reuse as much design as possible.
+
+<P>
+And according to the previously mentioned Taligent, the process for
+developing frameworks must observe four important guidelines that
+can be understood as a summary of the previous list [<A
+ HREF="node207.html#AdairBuildingOOFrameworks">Adair, 1995</A>]:
+
+<P>
+
+<UL>
+<LI>Derive frameworks from existing problems and solutions
+</LI>
+<LI>Develop small, focused frameworks.
+</LI>
+<LI>Build frameworks using an iterative process driven by client participation
+and prototyping.
+</LI>
+<LI>Treat frameworks as products by providing documentation and support,
+and by planning for distribution and maintenance.
+</LI>
+</UL>
+And related to the framework development process it is finally interesting
+to note that as Opdyke points out [<A
+ HREF="node207.html#OpdykeThesis">Opdyke, 1992</A>,<A
+ HREF="node207.html#OpdykeJohnsonRefactoringInFrameworks">Opdyke and Johnson, 1990</A>]
+one of the main characteristics of a framework is that it is designed
+to be refined, good frameworks are usually the result of many design
+iterations and a lot of work involving sometimes structural changes.
+<BR>
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html653"
+  HREF="node28.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html651"
+  HREF="node23.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html645"
+  HREF="node26.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html654"
+  HREF="node28.html">Frameworks generate metamodels</A>
+<B> Up:</B> <A NAME="tex2html652"
+  HREF="node23.html">Frameworks</A>
+<B> Previous:</B> <A NAME="tex2html646"
+  HREF="node26.html">Classification of frameworks</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

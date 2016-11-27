@@ -1,0 +1,186 @@
+This is TeX, Version 3.14159 (Web2C 7.4.5) (format=latex 2004.7.19)  18 OCT 2004 16:01
+**./images.tex
+(./images.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, nohyphenation, loaded.
+
+(/usr/share/texmf/tex/latex/base/book.cls
+Document Class: book 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/bk10.clo
+File: bk10.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (/usr/share/texmf/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/share/texmf/tex/latex/base/fontenc.sty
+Package: fontenc 2001/06/05 v1.94 Standard LaTeX package
+(/usr/share/texmf/tex/latex/base/t1enc.def
+File: t1enc.def 2001/06/05 v1.94 Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 38.
+)) (/usr/share/texmf/tex/latex/base/inputenc.sty
+Package: inputenc 2001/07/10 v0.99a Input encoding file 
+(/usr/share/texmf/tex/latex/base/latin1.def
+File: latin1.def 2001/07/10 v0.99a Input encoding file 
+)) (/usr/share/texmf/tex/latex/tools/array.sty
+Package: array 1998/05/13 v2.3m Tabular extension package (FMi)
+\col@sep=\dimen103
+\extrarowheight=\dimen104
+\NC@list=\toks14
+\extratabsurround=\skip43
+\backup@length=\skip44
+) (/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+(/usr/share/texmf/tex/latex/config/color.cfg
+File: color.cfg 2001/08/31 v1.1 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: dvips.def on input line 125.
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+) (/usr/share/texmf/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)) (/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks15
+) (/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+) (/usr/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2001/08/31 v1.1 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 80.
+)
+\Gin@req@height=\dimen105
+\Gin@req@width=\dimen106
+) (/usr/local/share/texmf/tex/latex/thesis/setspace.sty) (/usr/share/texmf/tex/
+generic/babel/babel.sty
+Package: babel 2001/03/01 v3.7h The Babel package
+(/usr/share/texmf/tex/generic/babel/english.ldf
+Language: english 2001/04/15 v3.3l English support from the babel system
+(/usr/share/texmf/tex/generic/babel/babel.def
+File: babel.def 2001/03/01 v3.7h Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen107
+)
+\l@canadian = a dialect from \language\l@english 
+) (/usr/share/texmf/tex/generic/babel/english.ldf
+Language: english 2001/04/15 v3.3l English support from the babel system
+))
+\sizebox=\box26
+\lthtmlwrite=\write3
+(./images.aux)
+\openout1 = `images.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 127.
+LaTeX Font Info:    ... okay on input line 127.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 127.
+LaTeX Font Info:    ... okay on input line 127.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 127.
+LaTeX Font Info:    ... okay on input line 127.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 127.
+LaTeX Font Info:    ... okay on input line 127.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 127.
+LaTeX Font Info:    ... okay on input line 127.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 127.
+LaTeX Font Info:    ... okay on input line 127.
+
+latex2htmlLength hsize=349.0pt
+
+latex2htmlLength vsize=676.36243pt
+
+latex2htmlLength hoffset=0.0pt
+
+latex2htmlLength voffset=0.0pt
+
+latex2htmlLength topmargin=0.0pt
+
+latex2htmlLength topskip=0.00003pt
+
+latex2htmlLength headheight=0.0pt
+
+latex2htmlLength headsep=0.0pt
+
+latex2htmlLength parskip=0.0pt plus 1.0pt
+
+latex2htmlLength oddsidemargin=28.0pt
+
+latex2htmlLength evensidemargin=79.0pt
+
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 337.
+
+(/usr/share/texmf/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 788--790
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 788--790
+
+ []
+
+l2hSize :spacing3993:1157.69098pt::0.0pt::349.0pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[1
+
+
+
+]
+Overfull \vbox (481.32855pt too high) has occurred while \output is active []
+
+[2]
+File: images/chAnnex/png/SMSTools2.ps Graphic file (type eps)
+<images/chAnnex/png/SMSTools2.ps>
+l2hSize :tex2html_wrap21892:209.45638pt::0.0pt::349.0pt.
+[3
+
+
+]
+File: images/ch3-CLAM/draft/SpectralDelayBlockDiagram.ps Graphic file (type eps
+)
+<images/ch3-CLAM/draft/SpectralDelayBlockDiagram.ps>
+l2hSize :tex2html_wrap21896:170.04596pt::0.0pt::349.0pt.
+[4
+
+
+]
+File: images/chAnnex/ps/SMSAnalysis.eps Graphic file (type eps)
+<images/chAnnex/ps/SMSAnalysis.eps>
+l2hSize :tex2html_wrap21926:146.7801pt::0.0pt::349.0pt.
+[5
+
+
+]
+File: images/chAnnex/ps/SMSSynthesis.eps Graphic file (type eps)
+<images/chAnnex/ps/SMSSynthesis.eps>
+l2hSize :tex2html_wrap21930:117.55977pt::0.0pt::349.0pt.
+[6
+
+
+] (./images.aux) ) 
+Here is how much of TeX's memory you used:
+ 1932 strings out of 95870
+ 27630 string characters out of 1196419
+ 85652 words of memory out of 1000001
+ 4854 multiletter control sequences out of 10000+50000
+ 5793 words of font info for 18 fonts, out of 500000 for 1000
+ 14 hyphenation exceptions out of 1000
+ 25i,5n,21p,286b,224s stack positions out of 1500i,500n,5000p,200000b,5000s
+
+Output written on images.dvi (6 pages, 5412 bytes).

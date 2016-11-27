@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Sinusoidal plus Residual Model</TITLE>
+<META NAME="description" CONTENT="Sinusoidal plus Residual Model">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node230.html">
+<LINK REL="up" HREF="node230.html">
+<LINK REL="next" HREF="node232.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html3030"
+  HREF="node232.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html3028"
+  HREF="node230.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html3024"
+  HREF="node230.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html3031"
+  HREF="node232.html">Publications by the Author</A>
+<B> Up:</B> <A NAME="tex2html3029"
+  HREF="node230.html">Spectral Processing</A>
+<B> Previous:</B> <A NAME="tex2html3025"
+  HREF="node230.html">Spectral Processing</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION001100100000000000000">
+Sinusoidal plus Residual Model</A>
+</H3>
+
+<P>
+The Sinusoidal plus Residual model can cover a wide &#34;compromise
+space&#34; and can in fact be seen as the generalization of both
+the STFT and the Sinusoidal models. Using this approach, we can decide
+what part of the spectral information is modeled as sinusoids and
+what is left as STFT. With a good analysis, the Sinusoidal plus Residual
+representation is very flexible while maintaining a good sound fidelity,
+and the representation is quite efficient. In this approach, the Sinusoidal
+representation is used to model only the stable partials of a sound.
+The residual, or its approximation, models what is left, which should
+ideally be a stochastic component. This model is less general than
+either the STFT or the Sinusoidal representations but it results in
+an enormous gain in flexibility [<A
+ HREF="node207.html#SerraPhd">Serra, 1989</A>,<A
+ HREF="node207.html#SerraSMSBook">Serra, 1996</A>,<A
+ HREF="node207.html#SerraSMSCMJ">Serra, 1990</A>].
+
+<P>
+The sinusoidal plus residual model assumes that the sinusoids are
+stable partials of the sound with a slowly changing amplitude and
+frequency. With this restriction, we are able to add major constraints
+to the detection of sinusoids in the spectrum and omit the detection
+of the phase of each peak. 
+
+<P>
+Within this model we can either leave the residual signal, , to be
+the difference between the original sound and the sinusoidal component,
+resulting into an identity system, or we can assume that&nbsp; is a stochastic
+signal. In this case, the residual can be described as filtered white
+noise. That is, the residual is modeled by the time-domain convolution
+of white noise with a time-varying frequency-shaping filter. 
+
+<P>
+The implementation of the analysis for the Sinusoidal plus Residual
+Model is more complex than the one for the Sinusoidal Model. Figure
+<A HREF="#fig:SMS-analysis-algorithm">B.1</A> shows a simplified block- diagram
+of this analysis. 
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:SMS-analysis-algorithm"></A><A NAME="5826"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure B.1:</STRONG>
+SMS analysis algorithm</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="527" HEIGHT="269" ALIGN="BOTTOM" BORDER="0"
+ SRC="img111.png"
+ ALT="\includegraphics[%
+width=0.90\textwidth]{images/chAnnex/ps/SMSAnalysis.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+The first few steps are the same than in a sinusoidal-only analysis.
+The major differences start on the peak continuation process since
+in order to have a good partial-residual decomposition we have to
+refine the peak-continuation process in such a way as to be able to
+identify the stable partials of the sound. Several strategies can
+be used to accomplish this. The simplest case is when the sound is
+monophonic and pseudo-harmonic. By using the fundamental frequency
+information in the peak continuation algorithm, we can identify the
+harmonic partials.
+
+<P>
+The residual component is obtained by first generating the sinusoidal
+component with additive synthesis, and then subtracting it from the
+original waveform. This is possible because the instantaneous phases
+of the original sound are matched and therefore the shape of the time
+domain waveform preserved. A spectral analysis of this time domain
+residual is done by first windowing it, window which is independent
+of the one used to find sinusoids, and thus we are free to choose
+a different time-frequency compromise. An amplitude correction step
+can improve the time smearing produced in the sinusoidal subtraction.
+Then the FFT is computed and the resulting spectrum can be modeled
+using several existing techniques. The spectral phases might be discarded
+if the residual can be approximated as a stochastic signal.
+
+<P>
+Once the different components in the SMS have been obtained, different
+interesting transformations can be applied in the spectral domain
+[<A
+ HREF="node207.html#xamatDAFXChapter">Amatriain et&nbsp;al., 2002b</A>]. After processing the spectral components,
+these must be synthesized back to produce the output sound. The diagram
+in figure <A HREF="#fig:SMS-Synthesis-Algorithm">B.2</A> illustrates the SMS synthesis
+algorithm.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:SMS-Synthesis-Algorithm"></A><A NAME="5827"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure B.2:</STRONG>
+SMS Synthesis Algorithm</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="500" HEIGHT="234" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="\includegraphics[%
+width=0.90\textwidth]{images/chAnnex/ps/SMSSynthesis.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The original sinusoidal plus residual model has led to other different
+spectral models that still share some of its basis. [Ding and Qian,
+1997; Fitz, Haken and Christensen, 2000; Verma, 2000]
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3030"
+  HREF="node232.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html3028"
+  HREF="node230.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html3024"
+  HREF="node230.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html3031"
+  HREF="node232.html">Publications by the Author</A>
+<B> Up:</B> <A NAME="tex2html3029"
+  HREF="node230.html">Spectral Processing</A>
+<B> Previous:</B> <A NAME="tex2html3025"
+  HREF="node230.html">Spectral Processing</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

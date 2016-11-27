@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Music-N Languages </TITLE>
+<META NAME="description" CONTENT="Music-N Languages ">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node87.html">
+<LINK REL="previous" HREF="node80.html">
+<LINK REL="up" HREF="node80.html">
+<LINK REL="next" HREF="node82.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1279"
+  HREF="node82.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1277"
+  HREF="node80.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1271"
+  HREF="node80.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1280"
+  HREF="node82.html">Supercollider</A>
+<B> Up:</B> <A NAME="tex2html1278"
+  HREF="node80.html">Music Languages</A>
+<B> Previous:</B> <A NAME="tex2html1272"
+  HREF="node80.html">Music Languages</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00361000000000000000"></A><A NAME="sub:Music-N-Languages"></A>
+<BR>
+Music-N Languages 
+</H2>
+
+<P>
+The Music-N paradigm was introduced by Max Mathews as a result of
+his continuous iterations over his Music program. Out of all of them
+it was probably Music-V the one that had most impact on the community
+and most influenced the future evolution of computer music [<A
+ HREF="node207.html#MathewsTechnology">Mathews, 1969</A>].
+Music-V was written in Fortran and could therefore run on any computer
+while previous attempts had been written directly in assembler and
+could only run on specific hardware. Music-V and its derivatives,
+thereafter known as Music-N languages, became popular in the 70's
+but are still in use today. 
+
+<P>
+While designing Music-V, Max Mathews addressed two fundamental issues:
+first, the great amount of data needed to specify a sound function;
+and second, the need for a simple, powerful language to specify complex
+sequences of sound. The way he tried to give solution to these problems
+was to store functions to speed up computations,  to use <SPAN  CLASS="textit">unit
+generator</SPAN> building blocks to provide flexibility, and to define the
+concept of <SPAN  CLASS="textit">note</SPAN> for describing sound sequences [<A
+ HREF="node207.html#PopeSuperCollider">Pope, 2004</A>].
+
+<P>
+The concept of unit generator is a central issue in Music-N languages.
+A unit generator can be defined as the minimum functional entity in
+a Music-N system. Traditional unit generators receive input control
+signals and produce sound at their outputs and include functionalities
+such as simple oscillators or envelope generators. Unit generators
+can be combined into composite structures called <SPAN  CLASS="textit">instruments</SPAN>
+or <SPAN  CLASS="textit">patches</SPAN>.
+
+<P>
+Another fundamental issue in Music-N languages is that a sound structure
+is defined or programmed in two different parts: the <SPAN  CLASS="textit">instrument</SPAN>
+or <SPAN  CLASS="textit">orchestra definition</SPAN> and the <SPAN  CLASS="textit">score</SPAN> or note list.
+This model implicitly assumes that the composer can express everything
+as a list of notes and that all sound processing or generation can
+happen inside an instrument. In the synthesis process the composer
+uses a group of sound objects (or <SPAN  CLASS="textit">instruments</SPAN>) known as the
+orchestra. This orchestra is controlled from a score and is defined
+using a programming language with specific functions. These functions
+or <SPAN  CLASS="textit">modules</SPAN> can be organized and combined in multiple ways in
+order to define instruments. These instruments sounds can be controlled
+from the score parameters or from other parameters in the same instrument.
+A traditional Music-N orchestra file is very similar to a program
+source code. The score initializes the system (with information usually
+contained in the header) and then contains a list of time-stamped
+notes that control the different instruments.
+
+<P>
+In this section we will present some music languages that comply to
+the Music-N paradigm although most of them extend it in some particular
+way.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1281"
+  HREF="node82.html">Supercollider </A>
+<LI><A NAME="tex2html1282"
+  HREF="node83.html">CSound </A>
+<LI><A NAME="tex2html1283"
+  HREF="node84.html">SAOL and SASL</A>
+<LI><A NAME="tex2html1284"
+  HREF="node85.html">Common Lisp Music</A>
+<LI><A NAME="tex2html1285"
+  HREF="node86.html">Nyquist</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1279"
+  HREF="node82.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1277"
+  HREF="node80.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1271"
+  HREF="node80.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1280"
+  HREF="node82.html">Supercollider</A>
+<B> Up:</B> <A NAME="tex2html1278"
+  HREF="node80.html">Music Languages</A>
+<B> Previous:</B> <A NAME="tex2html1272"
+  HREF="node80.html">Music Languages</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

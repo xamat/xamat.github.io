@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Dynamic Dataflow Networks</TITLE>
+<META NAME="description" CONTENT="Dynamic Dataflow Networks">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node42.html">
+<LINK REL="previous" HREF="node40.html">
+<LINK REL="up" HREF="node35.html">
+<LINK REL="next" HREF="node42.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html815"
+  HREF="node42.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html813"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html807"
+  HREF="node40.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html816"
+  HREF="node42.html">Computation Graphs</A>
+<B> Up:</B> <A NAME="tex2html814"
+  HREF="node35.html">A brief catalogue of</A>
+<B> Previous:</B> <A NAME="tex2html808"
+  HREF="node40.html">Boolean Dataflow Networks</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00251600000000000000"></A><A NAME="sub:Dynamic-Dataflow-Networks"></A>
+<BR>
+Dynamic Dataflow Networks
+</H3>
+
+<P>
+Dynamic Dataflow Networks are a Boolean Dataflow Networks with one
+additional variation: the control actors mentioned in the BDF model
+can now read multiple token values and the data actors can be fired
+conditionally based on the control actors read. Although dynamic scheduling
+might also be used for any of the previous models, it is a must for
+this model as production/consumption rates may vary during execution.
+
+<P>
+Dynamic scheduling can be classified as <SPAN  CLASS="textit">data-driven</SPAN> (<SPAN  CLASS="textit">eager</SPAN>
+execution), <SPAN  CLASS="textit">demand-driven</SPAN> (<SPAN  CLASS="textit">lazy</SPAN> execution) or a combination
+of the two. In eager execution a process is activated as soon as it
+has enough data as required by any of its firing rules. In lazy execution
+a process is activated only if the consumer process does not have
+enough data tokens. When using bounded scheduling (see [<A
+ HREF="node207.html#ParksProcessNetworksPhD">Parks, 1995</A>])
+three rules must be applied: (a) a process is suspended when trying
+to read from an empty input, (b) a process is suspended when trying
+to write onto a full queue and (c) on artificial deadlock, increase
+the capacity of the smallest full queue until its producer can fire.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html815"
+  HREF="node42.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html813"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html807"
+  HREF="node40.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html816"
+  HREF="node42.html">Computation Graphs</A>
+<B> Up:</B> <A NAME="tex2html814"
+  HREF="node35.html">A brief catalogue of</A>
+<B> Previous:</B> <A NAME="tex2html808"
+  HREF="node40.html">Boolean Dataflow Networks</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

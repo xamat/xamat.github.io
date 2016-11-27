@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>NEXT MusicKit ScoreFile Language</TITLE>
+<META NAME="description" CONTENT="NEXT MusicKit ScoreFile Language">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node89.html">
+<LINK REL="up" HREF="node87.html">
+<LINK REL="next" HREF="node91.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1371"
+  HREF="node91.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1369"
+  HREF="node87.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1365"
+  HREF="node89.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1372"
+  HREF="node91.html">Summary and Conclusions</A>
+<B> Up:</B> <A NAME="tex2html1370"
+  HREF="node87.html">Score Languages</A>
+<B> Previous:</B> <A NAME="tex2html1366"
+  HREF="node89.html">SKINI</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00362300000000000000"></A><A NAME="sub:NEXT-MusicKit.-ScoreFile"></A>
+<BR>
+NEXT MusicKit ScoreFile Language
+</H3>
+
+<P>
+ScoreFile [<A
+ HREF="node207.html#NextScoreFile">NeXT, 1990</A>] is a musical score language included
+in the already commented Music Kit from NeXT Computer Inc. (see section
+<A HREF="node72.html#sub:NeXT-Music-Kit">2.4</A>). A NeXT ScoreFile is a regular ASCII text
+file that can be edited with any text editor.
+
+<P>
+A ScoreFile is divided in two sections: the <SPAN  CLASS="textit">Header</SPAN> and the
+<SPAN  CLASS="textit">Body</SPAN>. These two parts are divided by the reserved word BEGIN,
+and the file ends when the END word or and EOF (regular end-of-file)
+is found.
+
+<P>
+The Header is made up of different kinds of statements: <SPAN  CLASS="textit">Score
+Information</SPAN> Statements, <SPAN  CLASS="textit">Part Statements</SPAN>, <SPAN  CLASS="textit">Part Information
+Declarations</SPAN>, and <SPAN  CLASS="textit">Range Statements</SPAN>. Score Information Statements
+are used to assign values to global score parameters such as tempo
+or sampling rate. Part Statements declare the names of the parts that
+will be used throughout the score. Part Information Statements are
+made up of the previously declared name and a collection of parameters.
+And finally, Range Statements allow to define note ranges.
+
+<P>
+The Body consists on a sequence of time-ordered statements. These
+statements are usually <SPAN  CLASS="textit">Temporal Statements</SPAN> or <SPAN  CLASS="textit">Note Statements</SPAN>.
+Temporal Statements specify a particular moment in which all the following
+Note Statements will take place until the next Temporal Statement
+is received. They use the following syntax:
+
+<P>
+t[+]expression
+
+<P>
+Where the reserved word ``t'' means the current time in musical
+notation (0.0 at the beginning of the score). If the ``+'' sign
+is included, current time is increased by the expression value, else
+it will directly be assigned the value.
+
+<P>
+Every time a Note Statement is read, a ``note object'' is created.
+A Note Statement is made up of the name of the part where it belongs,
+a type and name declaration, and a list of parameters.
+
+<P>
+Finally, there are some Statements that can be included both in the
+Header or the Body. These are: <SPAN  CLASS="textit">Variable Declaration and Assignments</SPAN>,
+<SPAN  CLASS="textit">Envelope Statements</SPAN>, <SPAN  CLASS="textit">WaveTable Statements</SPAN>, <SPAN  CLASS="textit">Object
+Statements</SPAN>, <SPAN  CLASS="textit">Include Statements</SPAN>, <SPAN  CLASS="textit">Printing Statements</SPAN>,
+<SPAN  CLASS="textit">Tuning Statements</SPAN>, and <SPAN  CLASS="textit">Comment Statements</SPAN>. Variable
+declaration and assignments follow syntax conventions of C language.
+The available variable types are: double, int, string, env (envelopes),
+wave, object, var (generic variable that can be of any type). Envelope
+Statements allow to declare envelopes from a list of points and a
+smoothing value. In the same way, WaveTable Statements are used to
+declare a wave table from a list of partials with their frequency,
+amplitude and (optionally) phase. Object Statements allow to add any
+kind of user-defined object. Include Statements are useful to include
+other scores into the current one while Print Statements include control
+statements to use when printing out the document. Tuning Statements
+are used for defining scales other than the temperate twelve tone
+scale that is used by default.
+
+<P>
+The ScoreFile language has a number of operators for those statements
+that need to use them in an expression. These operators include the
+arithmetic ones plus a special list that adds dB computation, pitch
+transposition or envelope computation.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1371"
+  HREF="node91.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1369"
+  HREF="node87.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1365"
+  HREF="node89.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1372"
+  HREF="node91.html">Summary and Conclusions</A>
+<B> Up:</B> <A NAME="tex2html1370"
+  HREF="node87.html">Score Languages</A>
+<B> Previous:</B> <A NAME="tex2html1366"
+  HREF="node89.html">SKINI</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

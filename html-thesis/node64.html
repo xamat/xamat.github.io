@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Open Sound World (OSW)</TITLE>
+<META NAME="description" CONTENT="Open Sound World (OSW)">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node65.html">
+<LINK REL="previous" HREF="node63.html">
+<LINK REL="up" HREF="node62.html">
+<LINK REL="next" HREF="node65.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1098"
+  HREF="node65.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1096"
+  HREF="node62.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1090"
+  HREF="node63.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1099"
+  HREF="node65.html">Aura</A>
+<B> Up:</B> <A NAME="tex2html1097"
+  HREF="node62.html">Synthesis Oriented</A>
+<B> Previous:</B> <A NAME="tex2html1091"
+  HREF="node63.html">STK</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00332200000000000000"></A><A NAME="sub:Open-Sound-World"></A>
+<BR>
+Open Sound World (OSW)
+</H3>
+
+<P>
+Open Sound World (OSW) [<A
+ HREF="node207.html#ChaudrayOSW">Chaudhary et&nbsp;al., 1999</A>,<A
+ HREF="node207.html#www-OSW">www-OSW, </A>] is a scalable,
+extensible programming environment that allows to process sound in
+response to expressive real-time control. OSW combines the familiar
+visual patching paradigm with solid programming-language features
+such as a strong type system and hierarchical name spaces and an intuitive
+model for specifying new components. OSW is also highly dynamic and
+allows users to both edit <SPAN  CLASS="textit">transforms</SPAN> and manipulate performance
+controls simultaneously, run audio signals at several rates simultaneously
+and change patches or the basic configuration even while the audio
+is running.
+
+<P>
+OSW allows development of audio applications using patching, C++,
+high-level specifications and scripting. New components can be expressed
+using familiar mathematical constructs without a deep knowledge of
+C++ programming and the processed data can have any valid C++ type.
+OSW uses a reactive real-time scheduler that safely and efficiently
+handles multiple processors, time sources, and synchronous dataflows.
+
+<P>
+OSW is a dataflow programming language: users connect primitive components
+to form a network. Each component accepts data, processes and sends
+it back to the network. OSW is also an OO language because components
+are instances of classes that specify their behavior. OSW employs
+a visual programming environment that allows users to instantiate
+and connect graphical representations of components. 
+
+<P>
+Primitive components in OSW are called <SPAN  CLASS="textit">transforms</SPAN>. They accept
+data through their <SPAN  CLASS="textit">inlets</SPAN>, and produce results in their <SPAN  CLASS="textit">outlets</SPAN>.
+For instance, in OSW an oscillator is a transform with two inlets
+(timeIn and frequency) and one outlet (samplesOut). Transforms can
+be very simple or extremely complex. Because computations are more
+efficient between a single transform, complex ones are often favored 
+
+<P>
+Transforms can be connected to form larger networks called <SPAN  CLASS="textit">patches</SPAN>
+which are themselves also transforms. Connections are strongly typed
+and each outlet is connected at most at one inlet. In order to connect
+one outlet to different inlets a special FanOut transform must be
+used. The same way, one inlet must only be connected to one outlet
+or else use the FanIn transform.
+
+<P>
+The work in transforms is done inside <SPAN  CLASS="textit">activation expressions.</SPAN>
+An activation expression is a piece of C++ code that is executed when
+certain inlet or state variable is modified. If the expression depends
+on more than one input variable, all of them must be modified in order
+to trigger the expression and then the activation can be executed
+immediately or be delayed for a previously specified amount of time.
+The result of an activation expression is usually assigned to one
+or more outlets. Whenever an outlet is assigned a new value, this
+value is sent to the connected inlet; if the receiving transform is
+<SPAN  CLASS="textit">active</SPAN> it will respond with an activation expression, if it
+is <SPAN  CLASS="textit">passive</SPAN> the value is assigned to the inlet but no further
+processing occurs.
+
+<P>
+OSW provides a set of primitive data types (integers, floating point...)
+as well as some useful datatypes for music and signal processing such
+as samples (as floating point or integer numbers), frequency domain
+spectra, notes, MIDI events, and SDIF. It is relatively easy to add
+new data types as C++ classes. OSW uses a hierarchical namespace that
+can be used to reference instances or variables (e.g. ``/sinewaveplayer1/sinewave/frequency'').
+In a similar way transform classes are grouped into packages PackageName::Transform.
+
+<P>
+The Get and Set transform can be used to query and modify variables
+by their pathname. They are similar to the ``goto'' in structured
+programming. Its expressive power is that you can break the dataflow
+model and access variables in a transform that is not connected. Abusing
+of such feature though may make the resulting program hard to read
+and debug.
+
+<P>
+OSW provides abstractions for the input/output devices as well as
+transforms for communicating with them. OSW supports audio hardware,
+MIDI I/O, Ethernet and serial ports. It can also be extended to support
+additional devices such as graphics tablets.
+
+<P>
+Some transforms include outlets of type <SPAN  CLASS="textit">any</SPAN> that can be connected
+to any kind of inlet. Every time a new data is sent from the outlet
+to the connected inlet, it must be checked if it is a compatible type.
+The use of <SPAN  CLASS="textit">any</SPAN> is inefficient and seldom used (usually only
+for <TT>Get</TT> and <TT>Set</TT> on global or <SPAN  CLASS="textit">free</SPAN> variables).
+On the other hand some transforms include <SPAN  CLASS="textit">dynamically typed
+inlets</SPAN> that are assigned a type at connection time. These transforms
+though do not introduce any run-time efficiency penalty and they are
+used for polymorphic operations such as arithmetic operators.
+
+<P>
+In dataflow languages for signal processing several copies of the
+same connected transforms are often done (e.g. for multichannel processing).
+OSW offers a different abstraction (apart from the obvious of creating
+a separate patch): transform arrays. An <TT>Array</TT> transform takes
+a transform class name, an integer, an instance name and arguments
+for the transform class and makes a single object containing n copies
+of the transform.
+
+<P>
+<SPAN  CLASS="textit">Bundles</SPAN> are an abstraction of buses in audio engineering, they
+are used to transmit n data objects over a single connection (especially
+useful in <TT>Array</TT> connections). Special transforms are used
+in order to convert to an form bundles.
+
+<P>
+Transforms are implemented in C++ while the graphical interface is
+implemented in Tcl/Tk and Tcl scripting is also used for defining
+patches. OSW offers an extensible object-oriented model that allows
+users to develop at different levels including visual patching, high-level
+C++ and Tcl scripting. Users can provide C++ code or Tcl script to
+override the default behavior of the transform in the graphical environment.
+
+<P>
+OSW includes a tool called the ``Externalizer'' that automatically
+converts a high-level specification into efficient C++ code. The code
+is then compiled and can be loaded into the OSW environment. The Externalizer
+presents a transform as a collection of inlets, outlets, state variables
+and activation expressions that the user can modify. The externalizer
+also allows to define new data types to be used for transform variables
+(a conversion to string must be included).
+
+<P>
+Expert programmers can bypass the Externalizer and write the transforms
+in C++ directly deriving from one the base transform classes: Transform
+or TimeDomainTransform. All derived classes include members for inlets,
+outlets, state variables and activations, a member function for each
+activation and a constructor.
+
+<P>
+OSW allows users to write familiar mathematical expressions instead
+of hand optimized C++ code, this is accomplished through the use of
+operator overloading and the osw::vector class. 
+
+<P>
+OSW is designed for implementing <SPAN  CLASS="textit">reactive real-time</SPAN> audio and
+music applications. Reactive real-time involves maintaining output
+quality while minimizing <SPAN  CLASS="textit">latency</SPAN>, delay between input and output
+of the system, and <SPAN  CLASS="textit">jitter</SPAN> (change of latency over time). In
+OSW there is also a notion of <SPAN  CLASS="textit">real time</SPAN> and <SPAN  CLASS="textit">virtual time</SPAN>.
+Real time is a quantity that increases at a fixed rate as measured
+by a clock while virtual time can be scaled or translated (e.g. tempo
+changing, fast-forward...). 
+
+<P>
+An audio output device is a transform that has only state variables
+and no inputs or outputs and is not part of any patch but can be accessed
+using Get and Set. The output device controls when the transforms
+produce the samples by controlling the device clock. When the clock
+is updated it triggers the queue of activations, evaluating those
+scheduled to occur in that time.
+
+<P>
+<SPAN  CLASS="textit">Synchronous</SPAN> transforms are those that produce samples as a
+function of virtual time. Activation expressions are guaranteed to
+occur exactly once each period of the clock to which the transform
+is synchronized. The order in which they are executed within a period
+is also fixed. This is true of more general <SPAN  CLASS="textit">synchronous dataflow
+graphs</SPAN>. Because OSW allows multiple audio devices and clock sources,
+several synchronous dataflow graphs that run at different sample rates
+and buffer sizes are supported.
+
+<P>
+Unlike transforms in the synchronous chains, the relative execution
+times of asynchronous transforms (events coming from GUI or MIDI device)
+cannot be predicted. Some inlets and state variables that are sensible
+to asynchronous updates must be protected. (e.g. If the coefficients
+of the filters are updated asynchronously the filter may become unstable)
+This protection is included in the more general parallel scheduler
+as asynchronous events are a special case of parallelism.
+
+<P>
+OSW is designed to take advantage of multi-processor capabilities.
+Given enough processors, each transform could be executed on a different
+processor, executing whenever its inlets or state variables change,
+but processor utilization would be poor.
+
+<P>
+A <SPAN  CLASS="textit">chain</SPAN> is a set of connected transforms in which no outlet
+or inlet in the chain is connected to a transform not in the chain.
+A chain has no branches. It is said to be a <SPAN  CLASS="textit">maximal chain</SPAN> if
+no other chain can contain it (i.e. if we add another transform it
+will no longer be a chain). Maximal chains must be scheduled sequentially
+while separate maximal chains can run in parallel. They are considered
+the formal unit of parallel computation in OSW. Deferred deallocation
+can be performed between execution calls to maximal chains or in a
+low-priority separate thread.
+
+<P>
+OSW provides methods for locking and unlocking variables. When a value
+is written onto a locked variable they are placed in a buffer and
+assigned to the variable only when this is unlocked (this technique
+is known as double buffering).
+
+<P>
+OSW supports networking. Open Sound Control (OSC) is a protocol for
+high-level control of sound synthesis and other applications. It divides
+the world into clients that generate control messages and servers
+that produce sound. OSW is a natural server for OSC.
+
+<P>
+OSW also supports the SDIF format and OSW patches are tcl scripts
+that can be downloaded and executed in a browser with a plug-in. 
+<BR>
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1098"
+  HREF="node65.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1096"
+  HREF="node62.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1090"
+  HREF="node63.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1099"
+  HREF="node65.html">Aura</A>
+<B> Up:</B> <A NAME="tex2html1097"
+  HREF="node62.html">Synthesis Oriented</A>
+<B> Previous:</B> <A NAME="tex2html1091"
+  HREF="node63.html">STK</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

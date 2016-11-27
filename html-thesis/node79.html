@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>OpenMusic</TITLE>
+<META NAME="description" CONTENT="OpenMusic">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node78.html">
+<LINK REL="up" HREF="node75.html">
+<LINK REL="next" HREF="node80.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1249"
+  HREF="node80.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1247"
+  HREF="node75.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1243"
+  HREF="node78.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1250"
+  HREF="node80.html">Music Languages</A>
+<B> Up:</B> <A NAME="tex2html1248"
+  HREF="node75.html">Audio and Music Visual</A>
+<B> Previous:</B> <A NAME="tex2html1244"
+  HREF="node78.html">WaveWarp</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00354000000000000000"></A><A NAME="sub:Open-Music"></A>
+<BR>
+OpenMusic
+</H2>
+
+<P>
+OpenMusic [<A
+ HREF="node207.html#OpenMusicAgon02c">Agon and Assayag, 2002</A>,<A
+ HREF="node207.html#OpenMusicAssayag00a">Assayag and Agon, 2000</A>,<A
+ HREF="node207.html#OpenMusicDechelle03a">D&#233;chelle, 2003</A>]
+is an object-oriented visual environment for musical composition based
+on Common Lisp. It represents a completely different approach from
+other applications in this category as it is restricted only to the
+symbolic manipulation of musical material and problems such as performance
+and real-time processing are outside of its scope. OpenMusic deals
+with models and proposes a composition based on structures and relations.
+OpenMusic is available for most operating systems [<A
+ HREF="node207.html#OpenMusicSarria03a">Sarria and Diago, 2003</A>].
+
+<P>
+OpenMusic is a continuation of Patchwork. This environment was used
+and valued by many composers but several limitations evidenced that
+it needed a major rework. First, Patchwork was the result of numerous
+incremental improvements and it was difficult to maintain. Also, Patchwork
+was centered around the patch editor window where functional modules
+could be connected to perform any calculation. These functions were
+made available as standard kernel boxes, as standard Common Lisp functions,
+as parts of user-libraries, or could be directly programmed by the
+user in Common Lisp. But the main problem was that it was extremely
+difficult to collect information from one patch to use in another.
+
+<P>
+OpenMusic aims at improving the patches relationships, to dynamically
+create object definitions, to facilitate communication between different
+forms of the same musical structure and to place all this into an
+easy editable temporal context. The other problem of relations between
+patches is solved with the Maquette Editor (see below).
+
+<P>
+A program (patch) is a graphical layout on the screen. This layout
+is made of <SPAN  CLASS="textit">simple frames</SPAN> or <SPAN  CLASS="textit">composed frames,</SPAN> which contain
+simple frames or are empty. All the computing objects in OpenMusic
+are represented as simple or composed frames and several different
+frames can be produced for the same object. A simple frame representing
+an object is called <SPAN  CLASS="textit">object view</SPAN> and generally appear as icons.
+Composed frames representing an object are called <SPAN  CLASS="textit">object containers</SPAN>
+and generally provide a graphical editor for the object. The container
+for a class is an ordered collection of simple frames representing
+<SPAN  CLASS="textit">slots</SPAN>. Slots have information about their name, type, a default
+value, and a flag that indicates if the slot is public or private.
+
+<P>
+Users can create instances of a class with the aid of a particular
+box called a factory. They can also create new methods or modify existing
+ones. In the same way users can create and redefine their own classes.
+
+<P>
+Instead of a simple graphical interface to CLOS, OpenMusic is regarded
+as an extension of CLOS with metaprogramming techniques. A protocol
+of generic functions applicable to all OM objects has been defined,
+some of them to relate classes and their graphical representation.
+By using metaprogramming the user can also make extensions to the
+OpenMusic language. The following tools are available: subclassing
+inside the static class definition and redefining functions in the
+dynamic protocol.
+
+<P>
+Open Music contains a simple musical class hierarchy. <TT>Note</TT>,
+<TT>Rest</TT>, <TT>Sound</TT> and <TT>Midifile</TT> derive from <TT>Simple-score-element</TT>.
+<TT>Voice</TT>, <TT>Measure</TT> and <TT>Group</TT> derive from <TT>Sequence</TT>.
+And <TT>Chord</TT> and <TT>Poly</TT> derive from <TT>Superposition</TT>.
+
+<P>
+A set of musical operators are also defined. They work on musical
+structures such as voices. For instance the operator <TT>fusion</TT>
+merges two different voices and the result is a voice that contains
+simultaneously the notes in both initial structures. The <TT>masking</TT>
+operator also operates on two voices and performs a masking effect
+on one of them (data voice) using the other (masking voice) as the
+mask.
+
+<P>
+The Maquette is an interface that allows the creation of blocks placed
+in spatial and/or temporal relationships. These blocks are linked
+to patches. The Maquette is an original concept in OM used for combining
+the design of high-level musical structures, arrange musical material
+in time, and specify musical algorithms. A Maquette editor is an editor
+with 2D surface with time on the x-axis on which temporal boxes are
+laid. Temporal boxes can reference a temporal object (object with
+start time and duration such as chord or voice), patches (which are
+not temporal objects but can deliver one as result), and another Maquette
+(a Maquette can be embedded in another Maquette). The user can choose
+to see the Maquette as a score (in traditional or graphical notation)
+or a set of interconnected processes.
+
+<P>
+It is also interesting to note that OpenMusic has been used as a control
+language for sound synthesis [<A
+ HREF="node207.html#OpenMusicAgon00a">Agon et&nbsp;al., 2000</A>]. In this case
+the basic idea was not to implement synthesis engines but to handle
+musical structures visually and then generate low-level parameters
+to send to whatever engine is available. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1249"
+  HREF="node80.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1247"
+  HREF="node75.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1243"
+  HREF="node78.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1250"
+  HREF="node80.html">Music Languages</A>
+<B> Up:</B> <A NAME="tex2html1248"
+  HREF="node75.html">Audio and Music Visual</A>
+<B> Previous:</B> <A NAME="tex2html1244"
+  HREF="node78.html">WaveWarp</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

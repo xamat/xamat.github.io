@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Polymorphism</TITLE>
+<META NAME="description" CONTENT="Polymorphism">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node11.html">
+<LINK REL="up" HREF="node10.html">
+<LINK REL="next" HREF="node13.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html497"
+  HREF="node13.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html495"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html491"
+  HREF="node11.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html498"
+  HREF="node13.html">Why Objects anyway?</A>
+<B> Up:</B> <A NAME="tex2html496"
+  HREF="node10.html">Object Orientation beyond the</A>
+<B> Previous:</B> <A NAME="tex2html492"
+  HREF="node11.html">Inheritance Hierarchies</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00213200000000000000"></A><A NAME="sec:_Polymorphism"></A>
+<BR>
+Polymorphism
+</H3>
+
+<P>
+<SPAN  CLASS="textit">Polymorphism</SPAN> refers to the ability of executing different operations
+in response to the same message. Polymorphism can also be static or
+dynamic. In dynamic polymorphism the response to the message is decided
+on run-time while in static polymorphism it is decided out of run-time
+(i.e. on compile-time). The mechanism used to link the message with
+the method in dynamic polymorphism is known as late or dynamic binding
+while if the linking is done on compile time it is known as early
+or static binding.
+
+<P>
+Polymorphism is implemented using four different mechanisms:
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textit">Overloading</SPAN>: an operation name refers to two different method
+implementations that differs either in its scope or signature. It
+uses early binding.
+</LI>
+<LI><SPAN  CLASS="textit">Generics</SPAN>: also called <SPAN  CLASS="textit">templates</SPAN>, they define a way to
+declare generic classes parameterizing some of its types. It uses
+early binding.
+</LI>
+<LI><SPAN  CLASS="textit">Overriding</SPAN>: a derived class re-defines a method inherited from
+the base class. It may use late binding.
+</LI>
+<LI><SPAN  CLASS="textit">Polymorphic variable</SPAN>: also called assignment polymorphism,
+it refers to a variable that can have different types during execution.
+By performing an <SPAN  CLASS="textit">upcast</SPAN> we convert a variable referring to
+an object of a derived class to one referring to its base class. It
+is the most common situation for using a polymorphic variable as we
+can ensure that a derived object can always be treated as one of its
+base class. On the other hand if we convert an object of base class
+to one of its derived class we are performing a <SPAN  CLASS="textit">downcast</SPAN>. In
+this case we cannot ensure the correctness of the operation unless
+the variable had been previously upcasted. Assignment polymorphism
+is known as <SPAN  CLASS="textit">pure polymorphism</SPAN> if the variable is used as a
+parameter of an operation. It uses late binding.
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html497"
+  HREF="node13.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html495"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html491"
+  HREF="node11.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html498"
+  HREF="node13.html">Why Objects anyway?</A>
+<B> Up:</B> <A NAME="tex2html496"
+  HREF="node10.html">Object Orientation beyond the</A>
+<B> Previous:</B> <A NAME="tex2html492"
+  HREF="node11.html">Inheritance Hierarchies</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

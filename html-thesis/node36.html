@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Petri Nets</TITLE>
+<META NAME="description" CONTENT="Petri Nets">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node37.html">
+<LINK REL="previous" HREF="node35.html">
+<LINK REL="up" HREF="node35.html">
+<LINK REL="next" HREF="node37.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html765"
+  HREF="node37.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html763"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html757"
+  HREF="node35.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html766"
+  HREF="node37.html">Kahn Process Networks</A>
+<B> Up:</B> <A NAME="tex2html764"
+  HREF="node35.html">A brief catalogue of</A>
+<B> Previous:</B> <A NAME="tex2html758"
+  HREF="node35.html">A brief catalogue of</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00251100000000000000"></A><A NAME="sub:Petri-Nets"></A>
+<BR>
+Petri Nets
+</H3>
+
+<P>
+Petri Nets is a graphical model of computation introduced by C.A.
+Petri in his PhD ``Communication with Automata''[<A
+ HREF="node207.html#PetriThesis">Petri, 1962</A>]
+. Petri Nets are used for describing and studying information processing
+systems that are characterized as being concurrent, asynchronous,
+distributed, parallel, nondeterministic and/or stochastic. It is an
+asynchronous model that describes graphically and explicitly: sequencing/casualty,
+conflict/non-deterministic choice, and concurrency and has been applied
+to different areas such as distributed computing, manufacturing, control,
+communication networks or transportation. 
+
+<P>
+A Petri Net is a particular case of directed graph with an initial
+state called the <SPAN  CLASS="textit">initial marking</SPAN>. There are two kinds of nodes:
+<SPAN  CLASS="textit">places</SPAN> and <SPAN  CLASS="textit">transitions</SPAN>. Arcs are either from a place
+to a transition or a transition to a place. Therefore Petri Nets are
+formed by a six tuple N=(P, T, A, w, x0) where P is a finite set of
+places and T is a finite set of transitions, A is a set of arcs, w
+is a weight function and x0 is an initial marking vector. 
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:Petri-net-representation"></A><A NAME="5529"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.3:</STRONG>
+Petri net representation of water composition</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="218" HEIGHT="202" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="\includegraphics[%
+width=0.40\textwidth]{images/ch1-Foundations/ps/PetriNet.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+In modeling, places represent conditions and transitions represent
+events. A marking (state) assigns to each place a nonnegative integer.
+If a marking assigns a place p with a nonnegative integer k we say
+that ``p is marked with k tokens''. A transition (event) has a
+certain number of input an output places representing the preconditions
+and postconditions of the event. The presence of a token in a place
+is interpreted as holding the truth condition related to that place.
+In other words, k tokens are put in a place to indicate that k data
+items or resources are available. Typical modeling correspondences
+of input places - transitions - output places are:
+
+<P>
+
+<UL>
+<LI>preconditions-event-postconditions
+</LI>
+<LI>input data-computation step-output data
+</LI>
+<LI>input signal-signal process-output signal
+</LI>
+<LI>resources needed-task or job-resources released
+</LI>
+<LI>buffers-processor-buffers
+</LI>
+</UL>
+Figure <A HREF="#fig:Petri-net-representation">1.3</A> illustrates a simple Petri
+Net. Note that places are represented by circles, transitions are
+bars or boxes, arcs are arrows labeled with weights and tokens are
+black dots. A marking (state) assigns to each place a nonnegative
+integer. If a marking assigns a place p with a nonnegative integer
+k we say that ``p is marked with k tokens'' and we place k black
+dots inside the circle.
+
+<P>
+As pointed out by [<A
+ HREF="node207.html#MurataPetriNets">Murata, 1989</A>], ``there is only one
+rule to learn about Petri net theory: the rule for transition enabling
+and firing''. A state or marking in a Petri Net is changed according
+to the following transition (firing) rule:
+
+<P>
+
+<UL>
+<LI>A transition t is enabled if each input place p is marked with at
+least w(p,t) tokens, where w(p,t) is the weight of the arc from p
+to t.
+</LI>
+<LI>An enabled transition may or may not fire, depending on whether the
+event actually takes place.
+</LI>
+<LI>A firing of an enabled transition t removes w(p,t) tokens from each
+input place p of t and adds w(p,t) tokens to each output place p of
+t.
+</LI>
+</UL>
+A transition with no input places is called a ``source'' transition
+and one without output places is called a ``sink'' transition.
+Source transitions are always enabled while the firing of a sink transition
+does not produce any tokens. A ``self-loop'' occurs when a place
+p is ate same time input and output to a transition t. A Petri Net
+without any self loop is called ``Pure Petri Net''. A Petri Net
+is said to be ordinary if the weight of all its arcs is 1. A finite
+capacity Petri Net is that in which there is a maximum of tokens defined
+for each place. For such Petri Nets there is an additional firing
+rule that says that after firing a transition, the number of tokens
+in its output places must not exceed their maximum.
+
+<P>
+Petri Nets is a very general model. Finite State Machines, Process
+Networks and Dataflow Networks are all subclasses of Petri Nets. As
+a mathematical model, it is possible to set up state equations, algebraic
+equations and other models governing the behavior of the system. Due
+to its generality and permissiveness, the model can be applied to
+any area or system that can be described graphically. But the more
+general the model is, the more complex it is. A major weakness of
+Petri Nets is its complexity. The problem may become unsolvable even
+for modest sized systems. That's why special modifications or restrictions
+need to be added suited to the particular application or domain.
+
+<P>
+Another of the problems of basic Petri Nets, its lack of composition
+and scalability, is addressed by a modification of the model called
+Higher-level Petri Nets[<A
+ HREF="node207.html#JanneckHigherOrderPetriNets">Janneck and Esser, 2002</A>]. In a higher-level
+Petri Net, a Petri Net can appear wherever a data object can appear:
+as a token, as a parameter, or as the value of a computation. Tokens
+may carry arbitrary data objects as well as functions and petri nets.
+The main addition to the basic Petri Net model is the ``Component''.
+A component has parameters, can be instantiated and connected to the
+environment through ports. Input ports may be connected to places
+and output ports to transitions. To be able to connect components,
+places in a Petri Net are also granted ports and they become ``container
+places''. When a transition produces a token, that token is not put
+onto the container place itself but rather on its input port. 
+
+<P>
+The basic problem with Petri Nets, though, is that they are so simple
+that even a small system needs many states and transitions. This problem
+is known as the ``state explosion''. Because of this, different
+approaches to high-level and higher-order Petri Nets modelling have
+been attempted although with irregular results (see [<A
+ HREF="node207.html#JanneckHigherOrderPetriNets">Janneck and Esser, 2002</A>]). 
+
+<P>
+But one of those approaches that have been quite successful is of
+particular interest to our study: <SPAN  CLASS="textit">Object-Oriented Petri Nets</SPAN>.
+As a matter of fact, as Bastide points out in [<A
+ HREF="node207.html#BastideOOPetriNets">Bastide, 1995</A>]
+the relation between Object-Orientation and Petri Nets can be observed
+in two different ways: ``Petri Nets inside Objects'' and ``Objects
+inside Petri Nets''. In the first case Petri Nets may be used to
+model the inner state of an object where transitions in the net model
+the execution of a method in the object. The second case is much more
+common, as a matter of fact Object-Oriented concepts such as abstraction,
+encapsulation and inheritance have been used since the 1980's to build
+``layered'' Petri Nets as opposite to ``flat'' ones. The basic
+idea in this approach is to increase the information available in
+the tokens considering that they are instances of a class. But a transition
+does not have to create or destroy objects, it can just move objects
+from one place to another. In OO Petri Nets the net models the control
+structure while the tokens model the data structure of the system.
+Finally, it is interesting to note that many different languages have
+been created to integrate OO concepts into Petri Net modeling, see
+for instance OOPN in [<A
+ HREF="node207.html#NiuOOPetriNets">Niu et&nbsp;al., 2004</A>].
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html765"
+  HREF="node37.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html763"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html757"
+  HREF="node35.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html766"
+  HREF="node37.html">Kahn Process Networks</A>
+<B> Up:</B> <A NAME="tex2html764"
+  HREF="node35.html">A brief catalogue of</A>
+<B> Previous:</B> <A NAME="tex2html758"
+  HREF="node35.html">A brief catalogue of</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

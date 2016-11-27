@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Configurations</TITLE>
+<META NAME="description" CONTENT="Configurations">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node116.html">
+<LINK REL="up" HREF="node114.html">
+<LINK REL="next" HREF="node118.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1744"
+  HREF="node118.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1742"
+  HREF="node114.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1738"
+  HREF="node116.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1745"
+  HREF="node118.html">Network infrastructure</A>
+<B> Up:</B> <A NAME="tex2html1743"
+  HREF="node114.html">Data Infrastructure</A>
+<B> Previous:</B> <A NAME="tex2html1739"
+  HREF="node116.html">Processing Data</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H4><A NAME="SECTION00422230000000000000">
+Configurations</A>
+</H4>
+
+<P>
+Configurations are a special case of Dynamic Types that are used to
+configure Processing objects and, eventually, Processing Data objects
+(only complex Processing Data classes such as spectrum use this option).
+Configurations make use of all mechanisms provided by Dynamic Types
+and already mentioned. Configurations also include default initializers
+that add compulsory attributes and set them with default values.
+
+<P>
+Configurations are particular to each Processing class. As a matter
+of fact, every Processing class in the CLAM repository must have an
+associated Configuration class. Furthermore, when extending the framework,
+this requirement must also be made: every new Processing class introduced
+must be accompanied by a related Configuration class. Processing configuration
+classes must derive from the base <TT>ProcessingConfig</TT> class.
+The name of the configuration class should be the same as the name
+of the Processing object, adding the ``Config'' suffix. In some
+cases several processing classes may share the same configuration
+class. The FFT is a clear example of this. For example, figure <A HREF="node111.html#fig:FFT_s-and-FFTConfig">3.4</A>
+shows that several FFT classes exist for different algorithm implementations,
+but they all derive from a common <TT>FFT_base</TT> class, and they
+share a common configuration class: <TT>FFTConfig</TT>.
+
+<P>
+The role of the configuration class is to store all the necessary
+information to instantiate an object of the related Processing class.
+In fact, configuration classes may be described as a place-holder
+for parameters which would otherwise be specified as individual arguments
+in the processing class constructors.
+
+<P>
+Usual attributes that are implemented when writing a configuration
+class are number of inputs or outputs, values for parameters of the
+processing algorithm which the user may want to specify, and which
+will be fixed during the execution. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1744"
+  HREF="node118.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1742"
+  HREF="node114.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1738"
+  HREF="node116.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1745"
+  HREF="node118.html">Network infrastructure</A>
+<B> Up:</B> <A NAME="tex2html1743"
+  HREF="node114.html">Data Infrastructure</A>
+<B> Previous:</B> <A NAME="tex2html1739"
+  HREF="node116.html">Processing Data</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

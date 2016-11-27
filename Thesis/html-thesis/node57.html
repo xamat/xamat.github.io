@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>MET++</TITLE>
+<META NAME="description" CONTENT="MET++">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node56.html">
+<LINK REL="up" HREF="node53.html">
+<LINK REL="next" HREF="node58.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1013"
+  HREF="node58.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1011"
+  HREF="node53.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1007"
+  HREF="node56.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1014"
+  HREF="node58.html">Audio Processing Frameworks</A>
+<B> Up:</B> <A NAME="tex2html1012"
+  HREF="node53.html">General Purpose Signal Processing</A>
+<B> Previous:</B> <A NAME="tex2html1008"
+  HREF="node56.html">VDSP</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00324000000000000000"></A><A NAME="sub:MET++"></A>
+<BR>
+MET++
+</H2>
+
+<P>
+MET++ (Multimedia ET++) is general compositional environment for multimedia
+with interactive editing facilities in which multimedia presentations
+are regarded as a hierarchical composition of time objects. MET ++
+was developed at the University of Zurich by Philip Ackermann [<A
+ HREF="node207.html#AckermannMETICMC">Ackermann, 1994a</A>].
+It was published and distributed as Free Software in 1996 but no updates
+have been added since then as the author joined a startup company
+shortly after and discontinued its support<A NAME="tex2html15"
+  HREF="footnode.html#foot1042"><SUP><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN></SUP></A>. Nevertheless, the framework has been used for several developments
+and it is a reference for multimedia software design.
+
+<P>
+Much of its impact is due to the fact that the media framework is
+based on the ET++ framework written in C++ also developed at the Univ.
+of Zurich. ET++[<A
+ HREF="node207.html#WeinandET++89">Weinand et&nbsp;al., 1989</A>] is an OO framework that integrates
+user interface building blocks, basic data structures, support for
+object input/output, printing, and high-level application framework
+components. ET++ is a classical reference in OO literature for being
+a test-bed for software engineering practices such as design patterns
+and refactoring. To the already existing support for 2D objects present
+in ET++, MET++ added support for 3D graphical objects, camera objects,
+and audio and music object.
+
+<P>
+MET++ is an object-oriented application framework that addresses the
+main difficulties that can be encountered when designing applications
+for multimedia authoring or editing, namely: integration of several
+media types with different real-time constraints at low-level device
+interfaces; support for media compositions to define high-level inter-media
+synchronization and real-time control; intuitive user interface interactions
+with direct manipulations of graphical representations and high semantic
+feedback; and flexibility and portability for different hardware configurations
+and platforms.
+
+<P>
+Although the main development platform of MET++ was a Silicon Graphics
+Indigo workstation, the framework is cross-platform and hardware dependencies
+are hidden in a portability layer that provides abstract interfaces
+to operating system, windows system, as well as audio and MIDI input/output.
+
+<P>
+Perhaps the most important aspect in the framework is the way it handles
+time synchronization [<A
+ HREF="node207.html#AckermannMET++Time">Ackermann, 1994b</A>]. The temporal information
+is represented through a hierarchical composition that includes information
+about part-of relations, grouping, and temporal constraints and allows
+automatic time calculation. The components in the structure are modelled
+as time events that have their own starting point, duration and virtual
+line. The base class of the time dependent objects is the <TT>TEvent</TT>.
+The high-level synchronization accuracy is based on milliseconds time
+resolution. In a multimedia presentation temporal relationships are
+configured by composing several universal time objects such as <TT>TSequence</TT>,
+<TT>TimeLine</TT>, <TT>TSynchro</TT>, <TT>TShift</TT> and <TT>TLoop</TT>
+with special media objects. Any time dependent object inherited from
+TEvent can be inserted into the composition.
+
+<P>
+The time dynamic behavior of a time wrapper is supported through time
+functions expressing actions such as fading, scaling or positioning.
+A time function can manipulate the time itself so that every object
+can have its local time. In real-time presentations there is usually
+a <TT>Conductor</TT> object that periodically sends <TT>Perform</TT>
+messages to the time dependent objects in the hierarchy. Media objects
+compute only the necessary data for the next interval. Continuous
+media data is computed incrementally ahead into a buffer. Interactions
+such as fast-forward or slow-motion are realized by changing the parameters
+of the <TT>Perform</TT> message: start time, presentation duration
+and real-time duration (the behavior of the media objects depend on
+the way they respond to the relation between these two).
+
+<P>
+The <TT>Intensity</TT> class is used for representing values for amplitude,
+gain, volume... It can operate and convert itself to byte, integer,
+floating-point, decibel and MIDI value. The <TT>Pitch</TT> class is
+able to handle information about pitch key and frequency. It uses
+the Tonal System to map symbolic keys to Hz. The <TT>Beat</TT> class
+models beat and bar properties and delegates quantization and the
+mapping from symbolic beat measure to physical seconds to the <TT>MusicalContext</TT>
+class. The <TT>PitchScale</TT> class can represent symbolic scales
+(chromatic, dorian...) or physical intervals for tuning purposes.
+
+<P>
+Audio resources are modelled with the abstract <TT>AudioUnit</TT>
+class as modules of a source-filter-sink architecture. The output
+of an <TT>AudioUnit</TT> can be sent to another <TT>AudioUnit</TT>
+and define an audio signal flow graph. Audio files can be played in
+real-time from disk or converted to a Sound object.
+
+<P>
+The interpretation of a musical performance is modelled in the time-dependent
+<TT>MusicalContext</TT> class. It holds information about the tonal
+system, tonality, signature, measure, and tempo. The <TT>MusicPlayer</TT>
+interprets its notes in the context and delegates the note playing
+to the abstract <TT>MusicInstrument</TT> class. The concrete
+classes <TT>MIDIInstrument</TT>, <TT>CSoundInstrument</TT>, and <TT>Synthesizer</TT>
+(allocates Oscillators) map the note representation to device specific
+synthesis parameters.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1013"
+  HREF="node58.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1011"
+  HREF="node53.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1007"
+  HREF="node56.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1014"
+  HREF="node58.html">Audio Processing Frameworks</A>
+<B> Up:</B> <A NAME="tex2html1012"
+  HREF="node53.html">General Purpose Signal Processing</A>
+<B> Previous:</B> <A NAME="tex2html1008"
+  HREF="node56.html">VDSP</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

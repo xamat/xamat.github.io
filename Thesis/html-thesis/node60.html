@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Marsyas</TITLE>
+<META NAME="description" CONTENT="Marsyas">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node61.html">
+<LINK REL="previous" HREF="node59.html">
+<LINK REL="up" HREF="node59.html">
+<LINK REL="next" HREF="node61.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1057"
+  HREF="node61.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1055"
+  HREF="node59.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1049"
+  HREF="node59.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1058"
+  HREF="node61.html">Maaate</A>
+<B> Up:</B> <A NAME="tex2html1056"
+  HREF="node59.html">Analysis Oriented</A>
+<B> Previous:</B> <A NAME="tex2html1050"
+  HREF="node59.html">Analysis Oriented</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00331100000000000000"></A><A NAME="sub:Marsyas"></A>
+<BR>
+Marsyas
+</H3>
+
+<P>
+Marsyas [<A
+ HREF="node207.html#TzanetakisEuromicron99">Tzanetakis and Cook, 1999</A>,<A
+ HREF="node207.html#TzanetakisMarsyasBook">Tzanetakis and Cook, 2002</A>,<A
+ HREF="node207.html#TzanetakisMarsyasOS">Tzanetakis and Cook, 2000</A>,<A
+ HREF="node207.html#TzanetakisPhD">Tzanetakis, 2002</A>]
+or MusicAl Research SYStem for Analysis and Synthesis is a framework
+for experimenting, evaluating and integrating techniques for audio
+content analysis. Although the name includes the word Synthesis, Marsyas'
+focus is clearly on sound analysis tools and information retrieval
+techniques. The framework allows to integrate these tools using a
+semi-automatic approach and a graphical interface. On the other hand
+Marsyas is released under the GPL license and is therefore Free Software.
+
+<P>
+In order to come up with a valid model for Marsyas, different algorithms
+and techniques were studied and common behavior and features were
+abstracted. OO programming techniques were used to implement abstract
+classes that provide a common API for the building blocks of the system
+and inheritance is used to factor out common operations.
+
+<P>
+The environment is able to combine traditional bottom-up processing
+(from signal to metadata) as well as top-down (according to the author
+prediction-driven, for instance, has proven to be interesting). Although
+the objects form a natural bottom-up hierarchy, top-down flow of information
+can be expressed in the framework (e.g. a silence feature can be used
+by an iterator for music/speech to avoid calculating features on silent
+frames).
+
+<P>
+The framework design is based on a client-server architecture. The
+server is written in C++ and contains all the signal processing and
+pattern recognition algorithms, optimized for performance. The client
+is written in Java, contains only the graphical interface and communicates
+with the server using sockets. Both the server and the client run
+on Solaris, SGI, Linux and Windows.
+
+<P>
+The main classes of the system can roughly be divided into process-like
+and data-structure-like.
+
+<P>
+The Process-like classes can be divided in the following categories:
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textit">Transformations</SPAN> are low-level signal processing units used
+by the system. They take as input a frame of sound samples and output
+a transformation of that frame (e.g. power spectral density, caepstrum,
+windowing...)
+</LI>
+<LI><SPAN  CLASS="textit">Features</SPAN> process a frame of sound samples and output a vector
+which unlike transformations is reduced significantly in dimensionality.
+More than one ``physical'' feature can be combined in a single
+vector.
+</LI>
+<LI><SPAN  CLASS="textit">Memories</SPAN> are circular buffers that hold previously calculated
+features for a limited time. They are used to compute means and variances
+of features over large windows.
+</LI>
+<LI><SPAN  CLASS="textit">Iterators</SPAN> break up a sound stream into frames. For each frame
+they use memories and features to compute a feature vector. The time-series
+of feature vectors is called the feature map. Typically there is a
+different iterator for each classification scheme (e.g. silence/non
+silence iterator uses only energy as a feature and no memories, the
+music/speech iterator uses 9 features and 2 memories (of different
+sizes).
+</LI>
+<LI><SPAN  CLASS="textit">Classifiers</SPAN> take as input a feature vector and output its estimated
+class. They are trained using labeled feature maps.
+</LI>
+<LI><SPAN  CLASS="textit">Segmentators</SPAN> take as input feature maps and output a signal
+with peaks corresponding to segmentation boundaries.
+</LI>
+</UL>
+Data structure classes can in turn be categorized in:
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textit">Vectors</SPAN> are the basic data components of the system. They are
+float arrays tagged with sizes. Operator overloading is used for vector
+operations to avoid writing many nested loops for signal processing
+code. The operators are inlined and optimized and the resulting code
+is easy to read without compromising performance. 
+</LI>
+<LI><SPAN  CLASS="textit">Sound data</SPAN> contain samples of audio as vectors with header
+information such as sample rate or channels.
+</LI>
+<LI><SPAN  CLASS="textit">Feature maps</SPAN> are time-series of feature vectors. They can be
+class labeled for evaluation and training.
+</LI>
+<LI><SPAN  CLASS="textit">Time regions</SPAN> are time intervals tagged with annotation information.
+</LI>
+<LI><SPAN  CLASS="textit">Time lines</SPAN> are lists of time regions.
+</LI>
+<LI><SPAN  CLASS="textit">Time trees</SPAN> are arbitrary trees of time regions. They represent
+a hierarchical decomposition of audio into successively smaller segments.
+</LI>
+</UL>
+All objects contain methods to read/write them to file and transport
+them using the socket interface.
+
+<P>
+Implemented features in the framework include spectral centroid, spectral
+moments, spectral flux, pitch, harmonicity, mel-frequency cepstral
+coefficients (MFCC), linear prediction (LPC) reflection coefficients,
+zero crossings, RMS, and spectral rolloff. For all of them means,
+variances and higher-order statistics can be computed using memories.
+New features can be easily added by just writing the code for computing
+the feature over a frame of samples.
+
+<P>
+Two classifiers have been implemented: the Gaussian (MAP) classifier
+and the K-Nearest Neighbor (KNN). 
+
+<P>
+Different applications such as music/speech discriminator have been
+implemented in order to test the architecture. 
+
+<P>
+The user interface looks like a typical tape-recorder wave editor
+but in addition it allows skipping by either user-defined fixed duration
+blocks or time lines containing regions of different duration.
+
+<P>
+At the moment of this writing Marsyas is going an overall rewrite
+towards a 0.2 version of the framework.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1057"
+  HREF="node61.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1055"
+  HREF="node59.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1049"
+  HREF="node59.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1058"
+  HREF="node61.html">Maaate</A>
+<B> Up:</B> <A NAME="tex2html1056"
+  HREF="node59.html">Analysis Oriented</A>
+<B> Previous:</B> <A NAME="tex2html1050"
+  HREF="node59.html">Analysis Oriented</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

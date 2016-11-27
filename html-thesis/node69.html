@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>FORMES</TITLE>
+<META NAME="description" CONTENT="FORMES">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node70.html">
+<LINK REL="previous" HREF="node68.html">
+<LINK REL="up" HREF="node66.html">
+<LINK REL="next" HREF="node70.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1148"
+  HREF="node70.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1146"
+  HREF="node66.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1140"
+  HREF="node68.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1149"
+  HREF="node70.html">The NeXT Sound Kit</A>
+<B> Up:</B> <A NAME="tex2html1147"
+  HREF="node66.html">General Purpose</A>
+<B> Previous:</B> <A NAME="tex2html1141"
+  HREF="node68.html">SndObj</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00333300000000000000"></A><A NAME="sub:FORMES"></A>
+<BR>
+FORMES
+</H3>
+
+<P>
+FORMES [<A
+ HREF="node207.html#RodetFORMES-CMJ">Rodet and Cointe, 1984</A>,<A
+ HREF="node207.html#RodetFORMES">Rodet and Cointe, 1991</A>] was an interactive system
+developed in VLisp first intended for Musical Composition and Synthesis.
+But due to its architecture and flexibility it found applications
+in areas such as speech synthesis or graphics animation. FORMES is
+currently discontinued but its design has influenced the frameworks
+that have been designed thereafter.
+
+<P>
+The main goals of FORMES were: generality; universality; independence
+from a particular synthesis technique; compatibility, models compatible
+in any context; simplicity of program text; ease of use; modularity;
+and hierarchical construction.
+
+<P>
+In FORMES time-dependent objects are called <SPAN  CLASS="textit">processes</SPAN>, built
+from sub-objects called <SPAN  CLASS="textit">offspring</SPAN>. A FORMES process groups
+<SPAN  CLASS="textit">rules</SPAN> (procedure bodies), a <SPAN  CLASS="textit">monitor</SPAN> (a kind of scheduler),
+and <SPAN  CLASS="textit">environment</SPAN> (local variables) and <SPAN  CLASS="textit">offspring</SPAN> (or
+children). A process has the ability to ``sleep'', ``wakeup'',
+``wait'' and ``synchronize'' when asked.
+
+<P>
+The role of each process is to ensure the calculation of a particular
+musical characteristic. This calculation takes place during a precise
+duration called span, from a begin time (btime) and an end time (etime).
+These times, though do not need to be explicitly specified. Computation
+is accomplished through rules in the process environment.
+
+<P>
+A process is defined by instantiating an original process called generator.
+New processes can be defined from this original one by deriving from
+it and adding features. A process may be built from subparts, themselves
+built from subparts an so on. Therefore a process can have children
+and a parent. The structure in which processes are organized can be
+represented as a tree.
+
+<P>
+FORMES programs and commands can be prepared in files and then loaded
+or typed on-line. A FORMES program is a structure of processes and
+the execution involves the repetition of the following two steps:
+(1) update the list of rules that make the calculation tree and (2)
+execute or evaluate the rules.
+
+<P>
+Users communicate with processes by passing or sending messages whenever
+they want to query a process on its nature, state, or capabilities
+or they want it to do something. The user of FORMES can compose by
+connecting already existing objects or by defining new processes.
+All this is done in Lisp.
+
+<P>
+A <SPAN  CLASS="textit">monitor</SPAN> defines a temporal control structure. The monitor
+of a process is the scheduler of its children. The monitor has three
+tasks: (1) Determine the start time (btime) for each child and start
+it; (2) Update the calculation tree when the state of the process
+is modified; (3) If possible, determine the duration of the process
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1148"
+  HREF="node70.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1146"
+  HREF="node66.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1140"
+  HREF="node68.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1149"
+  HREF="node70.html">The NeXT Sound Kit</A>
+<B> Up:</B> <A NAME="tex2html1147"
+  HREF="node66.html">General Purpose</A>
+<B> Previous:</B> <A NAME="tex2html1141"
+  HREF="node68.html">SndObj</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

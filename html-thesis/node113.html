@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Controls</TITLE>
+<META NAME="description" CONTENT="Controls">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node112.html">
+<LINK REL="up" HREF="node111.html">
+<LINK REL="next" HREF="node114.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1703"
+  HREF="node114.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1701"
+  HREF="node111.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1697"
+  HREF="node112.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1704"
+  HREF="node114.html">Data Infrastructure</A>
+<B> Up:</B> <A NAME="tex2html1702"
+  HREF="node111.html">Processing infrastructure</A>
+<B> Previous:</B> <A NAME="tex2html1698"
+  HREF="node112.html">ProcessingComposites</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H4><A NAME="SECTION00422120000000000000">
+Controls</A>
+</H4>
+
+<P>
+Some processing classes need to allow external entities to change
+the behavior of the objects asynchronously during their execution.
+Input <SPAN  CLASS="textit">controls</SPAN> are the mechanism to perform this kind of run-time
+changes. Also, a processing class may be used to detect some kind
+of event. Output controls are the way to make notifications on asynchronous
+events. A Processing object output controls can be connected to the
+input controls of other Processing objects. In CLAM control values
+are floating point numbers that are sent using an event-driven asynchronous
+mechanism. 
+
+<P>
+There are two different mechanisms to implement input controls. Regular
+controls simply store a value, and allow an externally connected output
+control to change this value. 
+
+<P>
+On the other hand, ``extended controls'' use a callback-based
+mechanism. For using such controls call-back method that will be called
+whenever a new value is sent to the input control must be added to
+the class. Some reasons for wanting to use such mechanism might be:
+
+<P>
+
+<UL>
+<LI>An output control must be sent as a response to an incoming control.
+</LI>
+<LI>The processing class needs to have some sort of memory where control
+events received between two consecutive calls to the <TT>Do()</TT>
+operation must be stored.
+</LI>
+<LI>To avoid having to check all the controls every time a <TT>Do()</TT>
+operation is called in order to find the ones that have changed.
+</LI>
+</UL>
+In order to use extended controls, three steps must also be followed:
+
+<P>
+Output controls are added in the same way than regular input controls,
+but taking into account that the name of the control class is now
+<TT>OutControl</TT>. Output controls are usually sent from time to
+time in the <TT>Do()</TT> method, using the <TT>SendControl(TControlData
+val)</TT> method of the <TT>OutControl</TT> class.
+
+<P>
+Input controls must be initialized in the <TT>ConcreteStart()</TT>
+method. If the initial value of a control should be chosen by the
+user, a configuration attribute can be provided in the associated
+configuration class for this task.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1703"
+  HREF="node114.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1701"
+  HREF="node111.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1697"
+  HREF="node112.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1704"
+  HREF="node114.html">Data Infrastructure</A>
+<B> Up:</B> <A NAME="tex2html1702"
+  HREF="node111.html">Processing infrastructure</A>
+<B> Previous:</B> <A NAME="tex2html1698"
+  HREF="node112.html">ProcessingComposites</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Decoding Step (Content Interpretation)</TITLE>
+<META NAME="description" CONTENT="The Decoding Step (Content Interpretation)">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node167.html">
+<LINK REL="previous" HREF="node165.html">
+<LINK REL="up" HREF="node165.html">
+<LINK REL="next" HREF="node167.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2302"
+  HREF="node167.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2300"
+  HREF="node165.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2294"
+  HREF="node165.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2303"
+  HREF="node167.html">The Synthesis Step</A>
+<B> Up:</B> <A NAME="tex2html2301"
+  HREF="node165.html">The Semantic Receiver</A>
+<B> Previous:</B> <A NAME="tex2html2295"
+  HREF="node165.html">The Semantic Receiver</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00622100000000000000">
+The Decoding Step (Content Interpretation)</A>
+</H3>
+
+<P>
+The main task of the decoder is to interpret the information received
+through the channel in order to be able to feed the Synthesizer with
+the correct parameters. Encoded sound objects must be interpreted
+and prepared for the next module requirements. A very common of such
+requirements is that the Synthesizer does not expect to receive synchronous
+Processing Data but rather asynchronous Controls. Because of this,
+and as already illustrated in Figure <A HREF="node159.html#fig:Detailed-OOCTM-diagram">5.6</A>,
+the Decoder may output either Processing Data or Controls depending
+on the particular needs of the Synthesizer. In case of the Synthesizer
+needing Controls the conversion from Processing Data to Controls is
+performed by basically reading the incoming encoded objects and sequencing
+them as events when the associated time tags correspond to the current
+synthesis time. From here on we will assume that the Decoder will
+by default work this way, outputting Controls that are sequenced from
+Processing Data Sound Objects received through the channel. 
+
+<P>
+The transmitted stream may have a varying degree of abstraction that
+will affect the way the receiver will respond. The stream may contain
+from signal related processing data with associated low-level descriptors
+to high-level processing data representing high-level classifying
+descriptors. The way the receiver has to process the input stream
+depends on how high or low-leveled the content description received
+is. Two main processes are involved in bringing the description into
+the optimal <SPAN  CLASS="textit">level: abstraction</SPAN> and <SPAN  CLASS="textit">inference</SPAN>. We
+will now detail their main characteristics.
+
+<P>
+If the decoder is input low-leveled descriptions, there are two options,
+depending on the application requirements. The low-level descriptors
+can be directly fed into the Synthesis engine or there can be an intermediate
+<SPAN  CLASS="textit">abstraction process</SPAN>. At first sight it may seem that the first
+approach is more sensible and obviously more economical. But it has
+a inherent problem that is difficult to solve: if the description
+is very low-level it also has to be exhaustive and this, in many situations,
+is not easy to accomplish or is not worth it in terms of channel bandwidth
+(we may end-up having a description that is a few times the original
+size). An example of a situation where a non-exhaustive low-leveled
+description is received would be an input like ``sound object,
+centroid=120Hz''. It is obvious that many sound objects comply with
+this low-level description, the decoder would be in charge of adjusting
+other necessary parameters.
+
+<P>
+For all those reasons it may be usually interesting to include the
+intermediate abstraction process. In this process the decoder has
+to use 'real world' knowledge in order to convert low-level information
+into mid-level information, more understandable from the synthesizer
+point of view. If the abstraction process is omitted and the synthesizer
+receives low-level information but this description is not exhaustive,
+those parameters not specified should be taken as default. Thus, paradoxically,
+the synthesizer is granted some degrees of freedom and the result
+may loose concretion. 
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="3299"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.11:</STRONG>
+Low-level input to the Decoder: the Abstraction process</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="334" HEIGHT="196" ALIGN="BOTTOM" BORDER="0"
+ SRC="img61.png"
+ ALT="\includegraphics[%
+width=0.60\textwidth]{images/ch5-OOCTM/ps/Abstraction.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+On the other hand, if the input to the decoder consists only of high-level
+semantic information, an intermediate <SPAN  CLASS="textit">inference process</SPAN> is
+always needed in order to make the content description understandable
+by the synthesis engine. This process, contrary of the abstraction
+process earlier mentioned, might be better understood by using an
+example. Imagine the decoder's input is 'violin.note'. The synthesizer
+will be unable to interpret that content description because of its
+degree of abstraction. The decoder is therefore forced to lower the
+level of abstraction by suppressing degrees of freedom. The output
+of the decoder should be something like 'violin note, pitch: C4, loudness:
+mf'.
+
+<P>
+Both abstraction and inference are indeed one-to-many process, that
+is, the same input should yield a finite set of different outputs.
+The way the decoding process gets rid of the degrees of freedom should
+rely on user or application preferences as well as on random processes
+or context awareness. In the previous example, the decision on the
+note and loudness to be played could be based on knowledge on the
+author, the style, the user's likes, previous or future notes, harmony
+and a final random process to choose one of the best alternatives.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="3306"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.12:</STRONG>
+High-level input to the Decoder: the Inference process</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="333" HEIGHT="199" ALIGN="BOTTOM" BORDER="0"
+ SRC="img62.png"
+ ALT="\includegraphics[%
+width=0.60\textwidth]{images/ch5-OOCTM/ps/Inference.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+In any case, the decoder must translate the input metadata into some
+sort of synthesis language that can be easily interpreted by the synthesizer.
+Therefore the key point of the language used for expressing synthesis
+parameters is that it must not only meet the requirements of the synthesizer's
+input but also the needs of the decoder's output. Note that this translation
+means in most cases a translation from Processing Data into asynchronous
+control events as most synthesis languages handle simple events, not
+complex synchronous data.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2302"
+  HREF="node167.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2300"
+  HREF="node165.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2294"
+  HREF="node165.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2303"
+  HREF="node167.html">The Synthesis Step</A>
+<B> Up:</B> <A NAME="tex2html2301"
+  HREF="node165.html">The Semantic Receiver</A>
+<B> Previous:</B> <A NAME="tex2html2295"
+  HREF="node165.html">The Semantic Receiver</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

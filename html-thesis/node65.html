@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Aura</TITLE>
+<META NAME="description" CONTENT="Aura">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node64.html">
+<LINK REL="up" HREF="node62.html">
+<LINK REL="next" HREF="node66.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1106"
+  HREF="node66.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1104"
+  HREF="node62.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1100"
+  HREF="node64.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1107"
+  HREF="node66.html">General Purpose</A>
+<B> Up:</B> <A NAME="tex2html1105"
+  HREF="node62.html">Synthesis Oriented</A>
+<B> Previous:</B> <A NAME="tex2html1101"
+  HREF="node64.html">Open Sound World (OSW)</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00332300000000000000"></A><A NAME="sub:W_Aura"></A>
+<BR>
+Aura
+</H3>
+
+<P>
+Aura [<A
+ HREF="node207.html#DannenbergAuraICMC">Dannenberg and Brandt, 1996b</A>,<A
+ HREF="node207.html#DannenbergAuraICMC04">Dannenberg, 2004</A>,<A
+ HREF="node207.html#DannenbergAuraICMC96">Dannenberg and Brandt, 1996a</A>]
+is a framework for software processing of audio and music signals
+mainly developed by Roger B. Dannenberg as a generalization of the
+CMU MIDI Toolkit. Although Aura has been under development for some
+years the author considers that it is still not mature and stable
+enough to offer it publicly mainly because of its lack of a packaging
+infrastructure and appropriate documentation. Nevertheless, the author
+plans on offering it as Free Software. 
+
+<P>
+The first versions of Aura ran on MS Windows but the latest ones work
+on GNU/Linux using Port Audio, Port MIDI and wxWidgets for the graphical
+interface. Although the use of system-dependent features is sometimes
+necessary for real-time performance, Aura aims at being as much portable
+as possible, encapsulating all system-dependent code for things such
+as graphics, MIDI or audio. On the other hand, Aura tries to reuse
+as much code as possible from previous efforts by the author and intends
+to be itself reusable.
+
+<P>
+Aura offers a way to create, connect and control signal processing
+modules. It was designed with audio processing in mind and offers
+support to multiple threads and low-latency real-time audio computation.
+
+<P>
+The framework was in its first versions divided into an architecture
+for audio signal processing, which was called Aura, and a framework
+for building event-driven real-time software called W (see [<A
+ HREF="node207.html#DannenbergWICMC">Dannenberg and Rubine, 1995</A>]
+for a description of the framework in its inital versions). W was
+designed as a framework for general real-time computing. W was a successor
+of V, itself a successor of Garnet, a constraint system written in
+Lisp. In a musical context, W was used for handling user interaction
+and MIDI data. The combination of W and Aura allowed operations such
+as controlling synthesis software from a MIDI keyboard. But in its
+latest versions (see [<A
+ HREF="node207.html#DannenbergAuraICMC04">Dannenberg, 2004</A>]) the name Aura is
+used to refer to the whole framework including the features and functionalities
+inherited from W.
+
+<P>
+The Aura model involves objects that send messages to other objects.
+Objects have typed attributes (integer, double-precision float...).
+Some objects are made by the users while others are part of the standard
+Aura environment (debugging tools, I/O ports for MIDI or audio, and
+interface components).
+
+<P>
+The basic concepts in Aura are the <SPAN  CLASS="textit">unit generator</SPAN> (or <SPAN  CLASS="textit">ugen</SPAN>)
+and the <SPAN  CLASS="textit">instrument</SPAN>. A unit generator is the encapsulation of
+a DSP algorithm in an object that has inputs, outputs and some sort
+of internal state. The concept is borrowed from the Music N paradigm
+(see <A HREF="node81.html#sub:Music-N-Languages">2.6.1</A>) and it is shared by most other
+environments reviewed in this chapter. An instrument is a static composition
+of unit generators that is designed on pre-compile time.
+
+<P>
+According to the author, all of the previously existing solutions
+suffer from focusing on a single paradigm: graphical edition or textual-based
+programming and control. Graphical systems are easy to use but make
+it difficult to reconfigure at run-time. Textual systems offer more
+flexibility but lose some intuitive feel and debugging support. Aura
+offers both graphical edition and textual programming in an attempt
+to offer the best from both worlds.
+
+<P>
+But more than textual vs. graphical the author is interested in static
+vs. dynamic systems. Static connections can be more efficient but
+are far less flexible. Aura 2 supports from fully static to fully
+dynamic systems. Static graphs are created with the visual editor
+forming instruments members of the Aura Instr class. The instruments
+then can be dynamically allocated and connected at run time. 
+
+<P>
+Although the first versions of Aura intended to offer a computing
+graph as dynamic as possible, experience indicated that most designs
+were mainly static. By using static instruments the main advantages
+are: more efficiency avoiding the overhead of dynamic patching; better
+debugging; inlining and other tricks can help improve performance;
+and users can reason better about their code when it is static. 
+
+<P>
+In dynamic graphs, when graphs are updated Aura recalculates the execution
+order. It also uses reference counting to delete objects that are
+no longer referenced. Aura also uses global names for instruments
+and a remote procedure-call system. Instruments can be controlled
+from process running asynchronously.
+
+<P>
+The Aura visual editor is used to integrate unit generators into instruments
+and it is integrated with text-based programming. When the user creates
+a new instrument, the editor can automatically update the user's makefile
+and write scripting language functions to create an instance of the
+instrument, integrating the new instrument automatically into the
+user's program. 
+
+<P>
+After the user creates a valid instrument, the editor can generate
+its C++ implementation. A <TT>set</TT> method is generated for each
+signal input to an instrument. The user can then make a remote procedure
+call to this method using C++ or Serpent (Aura's real-time scripting
+language). This can be done dynamically. A topological sort is performed
+on the instrument graph so that signal flows from input to output
+in a single pass. Buffers are allocated for intermediate results and
+they are reused whenever possible to minimize storage. Although it
+is assumed that an optimized buffer allocation policy is necessary
+to have efficient DSP applications, the author made exhaustive testing
+to find out that this only slightly matters for large collections
+of unit generators.
+
+<P>
+Aura supports different kinds of signals and the editor helps by selecting
+compatible types and unit generators. The types are:
+
+<P>
+
+<UL>
+<LI>Audio-rate signals are streams of floating-point numbers processed
+one block at a time (typically 32 samples by block).
+</LI>
+<LI>Block-rate signals are computed synchronously with audio but have
+only one sample per block.
+</LI>
+<LI>Constant-rate unit generators remain at the same value until changed
+by a message.
+</LI>
+<LI>Interpolated inputs accept block-rate signals and convert them internally
+to audio-rate.
+</LI>
+</UL>
+In the Editor the user selects the unit generator by a generic name
+and the editor selects the appropriate one depending on the input/output
+types. Different code and name is needed for each combination of input
+rates. This could lead to an explosion of different implementations
+for the same ugen but according to the author, no ugen has needed
+more than a dozen.
+
+<P>
+Furthermore the Aura graphical Editor is capable of automatically
+generating a visual interface for any new instrument in order to test
+and debug it. 
+
+<P>
+Messages are time-stamped with the time stamp indicating when the
+message should be received. An object can send a message to a particular
+target or simply send it to all objects that have been connected to
+its outputs. These connections are created on run-time. 
+
+<P>
+Aura supports a model of computation based on fixed-priority scheduling
+and the notion that all computation within an object should run at
+the same priority. Each object is assigned a priority level called
+a <SPAN  CLASS="textit">zone</SPAN>. Computation of different objects within a zone is non-preemptive
+and runs on a single thread. E.g. an application can be divided in
+three zones, one for GUI objects, one for MIDI objects and the other
+for audio objects. It is up to the application designer to insure
+that the total computation in a zone (and all higher priority zones)
+does not exceed the shortest latency required in that zone but Aura
+can assist in measuring computation times and detecting exceptions.
+Messages are delivered synchronously within a zone. Messages between
+zones are sent asynchronously. All interzone messages are enqueued
+by the sender and later delivered to the receiver.
+
+<P>
+A message stamped for the future is usually stored until its time
+comes. But a <SPAN  CLASS="textit">precomputation</SPAN> zone may run ahead of real time,
+reading incoming messages before it otherwise would, it can then compute
+and send messages to a real-time zone where they are automatically
+buffered. (E.g. a precomputation zone can be used for reading audio
+or video files).
+
+<P>
+For efficiency, data is usually calculated in blocks of 32 samples.
+According to the author Aura gains roughly a factor-of-two performance
+increase over previous systems. In particular CSound (see <A HREF="node83.html#sub:CSound">2.6.1</A>)
+does not use interpolation to smooth control signals so users must
+compensate by computing with short inefficient sample blocks. And
+the ISPW (see <A HREF="node77.html#sub:Max">2.5</A>) does not offer low sample rates for
+control signals so it computes twice as many samples as Aura to achieve
+the same result. But, as the author acknowledges, these other systems
+are more mature an offer a more complete library.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1106"
+  HREF="node66.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1104"
+  HREF="node62.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1100"
+  HREF="node64.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1107"
+  HREF="node66.html">General Purpose</A>
+<B> Up:</B> <A NAME="tex2html1105"
+  HREF="node62.html">Synthesis Oriented</A>
+<B> Previous:</B> <A NAME="tex2html1101"
+  HREF="node64.html">Open Sound World (OSW)</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

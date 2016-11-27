@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Data flow architecture</TITLE>
+<META NAME="description" CONTENT="Data flow architecture">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node47.html">
+<LINK REL="previous" HREF="node45.html">
+<LINK REL="up" HREF="node45.html">
+<LINK REL="next" HREF="node47.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html865"
+  HREF="node47.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html863"
+  HREF="node45.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html857"
+  HREF="node45.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html866"
+  HREF="node47.html">Payloads</A>
+<B> Up:</B> <A NAME="tex2html864"
+  HREF="node45.html">Patterns of Graphical MOC's</A>
+<B> Previous:</B> <A NAME="tex2html858"
+  HREF="node45.html">Patterns of Graphical MOC's</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00253100000000000000">
+Data flow architecture</A>
+</H3>
+
+<P>
+A variety of applications apply a series of transformations to a data
+stream. The architectures emphasize data flow and control flow is
+not represented explicitly. They consist of a set of <SPAN  CLASS="textit">modules</SPAN>
+that interconnect forming a new module or <SPAN  CLASS="textit">network</SPAN>. The modules
+are self-contained entities that perform generic operations that can
+be used in a variety of contexts. A module is a computational unit
+while a network is an operational unit. The application functionality
+is determined by: types of modules and interconnections between modules.
+The application could also be required to adapt dynamically to new
+requirements.
+
+<P>
+In this context, sometimes a high-performance toolkit applicable to
+a wide range of problems is required. The application may need to
+adapt dynamically or at run-time. In complex applications it is not
+possible to construct a set of components that cover all potential
+combinations. The loose coupling associated with the black-box paradigm
+usually has performance penalties: generic context-free efficient
+algorithms are difficult to obtain. Software modules could have different
+incompatible interfaces, share state, or need global variables.
+
+<P>
+The Solution is to highlight the data flow such that the application's
+architecture can be seen as a network of modules. Inter-module communication
+is done by passing messages (sometimes called tokens) through unidirectional
+input and output ports (replacing direct calls). Depending on the
+number and types of ports, modules can be classified into <SPAN  CLASS="textit">sources</SPAN>
+(only have output ports and interface with an input device), <SPAN  CLASS="textit">sinks</SPAN>
+(only have input ports and interface with output devices), and <SPAN  CLASS="textit">filters</SPAN>
+(have both input and output ports). 
+
+<P>
+Because any of the component depends only on the upstream modules
+it is possible to change output connections at run-time. For two modules
+to be connected the output port of the upstream module and the input
+port of the downstream module must be plug-compatible. Having more
+than one data type means that some modules perform specialized processing.
+Filters that do not have internal state could be replaced while the
+system is running. The network usually triggers recomputations whenever
+a filter output changes.
+
+<P>
+In a network, adjacent performance-critical modules could be regarded
+as a larger filter and replaced with an optimized version, using the
+<SPAN  CLASS="textit">Adaptive Pipeline</SPAN> pattern [<A
+ HREF="node207.html#PosnakAdaptivePipeline">Posnak et&nbsp;al., 1996</A>] which
+trades flexibility for performance. Modules that use static composition
+cannot be dynamically configured. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html865"
+  HREF="node47.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html863"
+  HREF="node45.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html857"
+  HREF="node45.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html866"
+  HREF="node47.html">Payloads</A>
+<B> Up:</B> <A NAME="tex2html864"
+  HREF="node45.html">Patterns of Graphical MOC's</A>
+<B> Previous:</B> <A NAME="tex2html858"
+  HREF="node45.html">Patterns of Graphical MOC's</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

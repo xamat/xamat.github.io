@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>SAOL and SASL</TITLE>
+<META NAME="description" CONTENT="SAOL and SASL">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node85.html">
+<LINK REL="previous" HREF="node83.html">
+<LINK REL="up" HREF="node81.html">
+<LINK REL="next" HREF="node85.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1314"
+  HREF="node85.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1312"
+  HREF="node81.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1306"
+  HREF="node83.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1315"
+  HREF="node85.html">Common Lisp Music</A>
+<B> Up:</B> <A NAME="tex2html1313"
+  HREF="node81.html">Music-N Languages</A>
+<B> Previous:</B> <A NAME="tex2html1307"
+  HREF="node83.html">CSound</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00361300000000000000"></A><A NAME="sub:SAOL-and-SASL"></A>
+<BR>
+SAOL and SASL
+</H3>
+
+<P>
+SAOL and SASL are languages included in MPEG-4's Structured Audio
+component. In section <A HREF="node155.html#ch:_OOCTM">5</A> we will comment on the whole
+conceptual model behind Structured Audio. But we will now concentrate
+on its Music-N facet represented by the SAOL language for defining
+orchestras and the SASL language for musical scores.
+
+<P>
+The Structured Audio Orchestra Language (SAOL) [<A
+ HREF="node207.html#ScheirerSAOL_CMJ">Scheirer, 1999b</A>,<A
+ HREF="node207.html#ScheirerSAOLICMC">Scheirer, 1998a</A>]
+is a general purpose synthesis language derived from CSound. Compared
+to CSound, SAOL presents improved syntax, a smaller set of core functions,
+and a number of additional syntactic features. SAOL is optimized for
+digital audio synthesis and digital audio effects but any digital
+signal processing that can be expressed as a signal flow can be expressed
+in SAOL [<A
+ HREF="node207.html#ScheirerMP4SA_ICASSP">Scheirer, 1998b</A>].
+
+<P>
+SAOL is a two rate synthesis language: every variable represents either
+an audio signal that varies with the sampling rate or a control signal
+that varies at the control rate. The sampling rate limits the audio
+frequencies and the control rate limits the speed with which the parameters
+can vary.
+
+<P>
+Stored function tables are called wavetables. SAOL has about 100 primitive
+processing instructions, signal generators, and operators. A typical
+decoding process may also include a step that resembles linking a
+high-level language with a fixed library of abstract functions. These
+primitives hold most complexity for SAOL and can be optimized for
+specific implementations.
+
+<P>
+In practice, two different implementations of SAOL decoders exist
+at the moment of this writing. The reference software included in
+the standard uses the interpreter approach resulting in a very inefficient
+application. The other implementation is called sfront [<A
+ HREF="node207.html#LazzaroSfront">Lazzaro and Wawrzynek, 2001</A>]
+and consists on a program that translates SAOL into a C program that
+is then compiled and executed.
+
+<P>
+SAOL defines a two-level syntax: at the bit level to describe the
+messages that will be streamed into a network and at a higher level
+to provide an understandable representation of the language. We will
+briefly mention this latter, which is more directly related to our
+interests.
+
+<P>
+The language is a BNF (Backus-Naur Form) grammar. It contains punctuation
+signs that are used to give messages a particular syntax; identifiers
+that define orchestra symbols; numbers that describe constant values;
+comments that add internal documentation; and whitespaces that lexically
+separate the different text elements.
+
+<P>
+The orchestra is the set of signal processing routines and declarations
+that conform a procedure description in Structured Audio. It is made
+up of four different elements:
+
+<P>
+The <SPAN  CLASS="textit">Global Block</SPAN> contains the definition of those parameters
+that are global to the orchestra. It must be unique for an orchestra
+and it can hold five different kinds of messages: <SPAN  CLASS="textit">global parameters</SPAN>
+such as sampling rate, control rate, or number of audio inputs and
+outputs; definition of <SPAN  CLASS="textit">global variables</SPAN> that can be used from
+different instruments; <SPAN  CLASS="textit">path</SPAN> definitions describing how the
+instrument outputs will be addressed to the buses; and <SPAN  CLASS="textit">sequence</SPAN>
+definitions in order to control instruments on real-time.
+
+<P>
+After the Global Block we find the instrument definitions where the
+necessary sequences in order to process SASL or MIDI instructions
+are defined. An instrument declaration is made up of the following
+parts (in the given order): an <SPAN  CLASS="textit">identifier</SPAN> that defines the
+instrument name; a <SPAN  CLASS="textit">list of identifiers</SPAN> that define the names
+of the parameters involved in that particular instrument (pfield);
+an optional value to specify the <SPAN  CLASS="textit">MIDI preset</SPAN>; an optional value
+specifying the <SPAN  CLASS="textit">MIDI channel</SPAN>; a list of <SPAN  CLASS="textit">variable declarations</SPAN>;
+and a set of messages that define the instrument functionality.
+
+<P>
+An <SPAN  CLASS="textit">Opcode</SPAN> is simply a function that can have several inputs
+or variables and a single output or result. Opcodes can be used from
+any instrument in the orchestra. SAOL offers a set of ready-to-use
+Opcodes called <SPAN  CLASS="textit">Core Opcodes</SPAN> that include things such as mathematical
+functions or noise generators. The user can use the implemented opcodes
+or define new ones.
+
+<P>
+A function declaration has different elements in the following order:
+a number that defines the <SPAN  CLASS="textit">velocity</SPAN> with which it is executed;
+an <SPAN  CLASS="textit">identifier</SPAN> that defines the name of the function; a list
+of the <SPAN  CLASS="textit">formal parameters</SPAN> in the function; a list of <SPAN  CLASS="textit">variable
+declarations</SPAN>; and a set of <SPAN  CLASS="textit">messages</SPAN> that define the functionality.
+
+<P>
+<SPAN  CLASS="textit">Template Instruments</SPAN> describe multiple instruments that are
+made slightly different using a limited syntax of parameters.
+
+<P>
+Elements in the orchestra can appear in any order. For instance, a
+function definition can appear before or after being used.
+
+<P>
+The other language in Structured Audio is the Structured Audio Score
+Language (SASL), an event description language that will be used to
+generate sounds in the orchestra. SASL syntax has been kept very simple
+and includes very few high-level control structures, this is left
+for the implementer of the specific tool (sequencer, editor...).
+
+<P>
+Just as SAOL, SASL describes a two-level control language although
+we will just mention the user level, based on a list of text messages.
+
+<P>
+Any event in a SASL score has a temporal statement that defines at
+what moment it takes place. This time statement can only be specified
+in musical notation and therefore the absolute time depends on the
+value of the tempo global variable.
+
+<P>
+A SASL score has different kinds of lines: <SPAN  CLASS="textit">Instrument Lines</SPAN>,
+<SPAN  CLASS="textit">Control Lines</SPAN>, <SPAN  CLASS="textit">Tempo Lines</SPAN>, <SPAN  CLASS="textit">Table Lines</SPAN>, and
+<SPAN  CLASS="textit">End Lines</SPAN>. 
+
+<P>
+An Instrument Line (InstrLine) specifies an instrument initialization
+at a particular moment. It has the following elements: the first identifier
+is the label that will be used to refer to the instrument; the first
+number is the initial time of the instrument; the second identifier
+is the instrument name that is used to select one of the instruments
+described in the SAOL file; the second number is the temporal duration
+of the instrument initialization (if it is -1, the initialization
+has no temporal limit); and finally it has a list of parameters (pfields)
+that will be passed to the instrument for its creation.
+
+<P>
+A Control Line specifies an instruction that is sent to the orchestra
+or a set of instruments. It is made of the following elements: the
+first number specifies the initial time of the event; the first identifier
+(optional) specifies what instruments will receive the event; the
+second identifier is the name of the variable that will receive the
+event; finally the second number is the new value for the control
+variable.
+
+<P>
+A Tempo Line specifies the new value for this global variable for
+the decoding process. It has two elements: the first number is the
+time when the tempo change will be applied; and the second number
+is the new tempo value specified in ppm.
+
+<P>
+A Table Line specifies the creation or destruction of a wavetable.
+It contains the following elements: the first identifier is the name
+of the table; the second identifier is the name of the table generator
+or the ``destroy'' instruction; the list of pfields id the list
+of parameter for the wavetable; and the sample refers to the sound
+from which the wavetable is extracted.
+
+<P>
+And finally a Final Line specifies the end of the sound generating
+process.
+
+<P>
+Structured Audio also offers a simpler format for music synthesis.
+A format for representing banks of wavetables, the Structured Audio
+Sample Bank Format (SASBF) was created in collaboration with the MIDI
+Manufacturer's Association. Wavetables can be downloaded into the
+synthesizer and controlled with MIDI sequences.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1314"
+  HREF="node85.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1312"
+  HREF="node81.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1306"
+  HREF="node83.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1315"
+  HREF="node85.html">Common Lisp Music</A>
+<B> Up:</B> <A NAME="tex2html1313"
+  HREF="node81.html">Music-N Languages</A>
+<B> Previous:</B> <A NAME="tex2html1307"
+  HREF="node83.html">CSound</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

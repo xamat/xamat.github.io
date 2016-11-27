@@ -1,0 +1,295 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Create Signal Library (CSL) </TITLE>
+<META NAME="description" CONTENT="The Create Signal Library (CSL) ">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node68.html">
+<LINK REL="previous" HREF="node66.html">
+<LINK REL="up" HREF="node66.html">
+<LINK REL="next" HREF="node68.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1128"
+  HREF="node68.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1126"
+  HREF="node66.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1120"
+  HREF="node66.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1129"
+  HREF="node68.html">SndObj</A>
+<B> Up:</B> <A NAME="tex2html1127"
+  HREF="node66.html">General Purpose</A>
+<B> Previous:</B> <A NAME="tex2html1121"
+  HREF="node66.html">General Purpose</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00333100000000000000"></A><A NAME="sub:CSL"></A>
+<BR>
+The Create Signal Library (CSL) 
+</H3>
+
+<P>
+The Create Signal Library (CSL) [<A
+ HREF="node207.html#PopeCSL">Pope and Ramakrishnan, 2003</A>], pronounced ``Sizzle'',
+is a general purpose C++ library for digital audio processing mainly
+designed by Stephen Travis Pope, also author of the Mode and Siren
+frameworks (see section <A HREF="node73.html#sub:MODE-and-Siren">2.4</A>). The first implementation
+dates back to 1998 when it was called the CREATE Oscillator or CO.
+But the current implementation was started by students in 2002. CSL
+has been used to build stand-alone applications, interactive installations,
+MIDI instruments, and light-weight plug-ins.
+
+<P>
+CSL programs are written in standard C++ and linked against the library.
+CSL has no graphical interface but GUIs are expected to be built for
+manipulating patches. CSL is not a music representation language rather
+it is a low-level signal processing and synthesis engine. 
+
+<P>
+CSL works on Linux, Unix (Solaris, Iris, OpenBSD), and MacOSX. Windows
+is supported but some features (such as abstraction for network and
+threads) are missing .
+
+<P>
+CSL applications can be controlled via Siren (see <A HREF="node73.html#sub:MODE-and-Siren">2.4</A>)
+or MIDI messages. CSL has no scheduler, it simply responds to incoming
+control messages as fast as it can. CSL has no notion of time but
+unit generators may have state.
+
+<P>
+The goals of the CSL project can be summarized in the framework being
+<SPAN  CLASS="textit">a scalable</SPAN>, <SPAN  CLASS="textit">portable</SPAN>, and <SPAN  CLASS="textit">flexible</SPAN> network-driven
+sound synthesis package . By scalable, the author means ``orchestrascalable'':
+large groups of instruments with complex synthesis models. This scalability
+will be accomplished by running clusters of CSL-based synthesis and
+processing server programs on many computers connected by a fast LAN.
+Portable means that the software must not depend on any hardware platform
+or operating system. It is written in standard C++ and uses hardware
+abstraction classes for I/O ports, network interfaces and thread APIs.
+Flexible means that the library should support several techniques
+of sound synthesis or processing and also be useful for embedding
+in other applications.
+
+<P>
+In a CSL program there are C++ objects called ``unit generators''.
+They can be connected using C++ variables representing their inputs
+and outputs. In order to connect an object A to the input of object
+B a simple method must be called: B.root(A). The scheduling is done
+by pull. The output device asks for samples and this request is propagated.
+
+<P>
+The CSL library consists of several components: (1) The object framework
+for the synthesis/processing engine; (2) The unit generator class
+library; (3) The start-up, configuration and system save/restore facilities;
+(4) The OSC control interfaces; (5) The database interface for sound
+samples and spectra; (6) The CRAM interface for managing multiple
+CSL instances over a network.
+
+<P>
+The OO domain model consists of abstractions for objects that create
+or process blocks of samples (Buffer, FrameStream, SampleStream, Processor...);
+objects representing control variables (StaticVariable, DymanicVariable...);
+objects that connect to I/O driver (<TT>IO</TT> and its subclasses);
+and objects that help manage CSL patches and instrument libraries.
+
+<P>
+The heart of CSL is its unit generator and signal processing class
+library: the subclasses of FrameStream. There are several ``control
+sources'' such as wavetable oscillators, noise sources, chaotic generators,
+FFT/IFFT. Signal processors such as filters and panners take synthesis
+graphs as inputs. They are subclasses of both FrameStream and the
+mix-in Processor class. CSL includes canonical form FIR filters, panners,
+mixers, convolution and flexible delay lines. Simple operators are
+handled by the <TT>AddOp</TT> and <TT>MulOp</TT> unit generator.
+
+<P>
+A CSL program is a graph of DSP units, generally a number of <SPAN  CLASS="textit">patches</SPAN>
+(subgraphs) connected to a mixer. This graph has a single <SPAN  CLASS="textit">root</SPAN>
+node, usually the output unit generator or a mixer taking several
+subgraphs at its inputs. Different sound file formats can be loaded
+into a graph. The evaluation of a graph is triggered by the pull of
+an <TT>IO</TT> object (an instance of the <TT>IO</TT> class) that
+is usually connected to a direct output API such as PortAudio [<A
+ HREF="node207.html#BencinaPortAudio">Bencina and Burk, 2001</A>],
+to a socket-base network protocol or a sound file.
+
+<P>
+The blocks of samples can be sent through sockets using a protocol
+based on UDP in which data packets have a header that incorporates
+an instance ID and sequence number. The mixer and the spatializer
+are CSL programs that perform no synthesis but instead read sample
+blocks from other CSL instances over a network and process them. 
+
+<P>
+CSL can be used in distributed systems. The framework is callable
+from Open Sound Control [<A
+ HREF="node207.html#WrightOSC-ICMC">Wright, 1998a</A>] or Corba. Its output
+samples can be sent directly to an output device or to a network socket.
+Process in different machines support inter-machine sample streaming
+and are integrated in the CREATE Real-Time Application Manager [<A
+ HREF="node207.html#PopeCRAM">Pope et&nbsp;al., 2001</A>].
+
+<P>
+In the basic CSL framework there is no essential difference between
+constant values, control signals and audio signals. Samples are usually
+32 bits floats though this can be changed to integer or 64 bits with
+a single definition. All processing is done in blocks typically between
+32 and 1024 sample frame in size. Envelopes are breakpoint functions
+of time. There are helper classes that provide constructors for standard
+envelope types: triangle, AR, ADSR, various windows, etc...
+
+<P>
+The main declarations are in the FrameStream.h file which defines
+the following classes: <TT>Buffer</TT>, the basic n-channel sample
+buffer class; <TT>FrameStream</TT>, the central abstraction in CSL;
+<TT>SampleStream</TT>, an l-channel frame stream; <TT>Processor</TT>,
+a mix-in for framestreams that process an input frame stream; <TT>Writeable</TT>,
+a mix-in for framestreams that one can write into; <TT>Phased</TT>,
+a mix-in for framestreams with phase accumulators; <TT>Positionable</TT>,
+a mix-in for framestreams that one can position; <TT>IO</TT>, an input/output
+stream or driver abstraction.
+
+<P>
+Instances of the <TT>Buffer</TT> class represent multi-channel sample
+buffers. They have memory pointers to sample storage as well as a
+set of flags about the storage state (allocated, zero, populated...).
+<TT>FrameStreams</TT> are objects that can generate buffers of frames
+where a frame is a collection of samples that are meant to be manipulated
+simultaneously. <TT>SampleStream</TT> is a <TT>FrameStream</TT> of
+special importance. It is a one channel <TT>FrameStream</TT> that
+copies the single channel to all its outputs. The class <TT>Gestalt</TT>
+has static methods for the sample rate, default buffer size, safe
+memory allocation. <TT>ThreadedFrameStream</TT> uses a background
+thread to compute samples. It caches buffers from its producing subgraphs
+and feeds them to its consumer thread on demand. It controls the scheduling
+of the producer. This introduces latency but not jitter. When <TT>FrameStreams</TT>
+and <TT>Processors</TT> need different buffer sizes, a <TT>BlockResizer</TT>
+object can be placed between two elements of the DSP graph.
+
+<P>
+An Instrument has a DSP graph, a set of reflective accessors and a
+list of envelopes. The DSP graph is the instrument's ``patch'',
+the accessors define the controls and the envelope list holds the
+envelopes that need to be triggered to start a new note. Using the
+instrument/accessor framework one can set a CSL program to respond
+to commands coming from a variety of sources such as OSC, MIDI, CORBA
+or score file readers.
+
+<P>
+There are several versions of the CSL <TT>main()</TT> although in
+some uses CSL is not even involved in the <TT>main()</TT>. Since CSL
+is simply a C++ class, it can be used in different ways: incorporate
+it as a component of another application, use CSL to build plug-ins,
+build an application with a graphical user interface than controls
+CSL synthesis and processing.
+
+<P>
+Different applications have been developed using CSL:
+
+<P>
+<SPAN  CLASS="textit">Sensing/Speaking Space</SPAN> is an interactive audio/video installation.
+A computer vision system analyzes the movement of spectators and sends
+OSC messages to a sound synthesis server. The first version of the
+server was written in Supercollider (see <A HREF="node82.html#sub:SuperCollider">2.6.1</A>)
+but suffered from low reliability, excessive memory usage (1 GB) and
+poor debuggability. The final version written in CSL was very reliable
+during a week and sounded just like the first version. In both versions
+the code is about 1200 lines, including helper classes and a GUI with
+sliders to mix different layers.
+
+<P>
+<SPAN  CLASS="textit">Ouroboros</SPAN> is an application for processing, sampling, and looping
+audio input and sound files. In this case, CSL is not used for processing,
+the program hosts AudioUnits, the standard plug-in format for MacOSX,
+and lets the users create graphs of AudioUnits to process sound. CSL
+is used for simplifying the reading and writing of audio files and
+for capturing and looping the sound. <SPAN  CLASS="textit">OndeCorner</SPAN> is an AudioUnit
+plug-in written in CSL. It transforms audio to the wavelet domain
+and lets users modify coefficients with a variety of processes. Apart
+from being an example of plug-in writing in CSL it also shows how
+to integrate DSP code from different sources.
+
+<P>
+The <SPAN  CLASS="textit">Reverb plug-in</SPAN> was developed on a graduate course on spatial
+sound, when students used CSL to implement reverberation algorithms.
+It was later used for a convolution-based reverberator and HRTF-based
+spatializer using the FFTW library.
+
+<P>
+The <SPAN  CLASS="textit">Expert Mastering Assistant</SPAN> is the largest project using
+CSL. It is an expert system that uses fine-grained multi-level music
+analysis to suggest parameters for signal processing to be applied
+during music mastering. It uses a combination of CSL, AudioUnits and
+third-party DSP code.
+
+<P>
+CSL is still in its first stages of development and the authors recognize
+not feeling particularly comfortable with the C++ language. Nevertheless
+this first approach is already more important than it may seem. The
+main author is highly experienced, has designed other related environments
+(see <A HREF="node73.html#sub:MODE-and-Siren">2.4</A>, for instance) and may be considered
+an authority in the field. CSL is a clear recognition of two facts:
+(1) C++ is better suited than Smalltalk for building efficient audio
+frameworks, and (2) languages like Supercollider (see <A HREF="node82.html#sub:SuperCollider">2.6.1</A>)
+end-up not being convenient for building some efficient applications
+(the author presents the framework as a substitute of Supercollider
+for some particular tasks).
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1128"
+  HREF="node68.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1126"
+  HREF="node66.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1120"
+  HREF="node66.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1129"
+  HREF="node68.html">SndObj</A>
+<B> Up:</B> <A NAME="tex2html1127"
+  HREF="node66.html">General Purpose</A>
+<B> Previous:</B> <A NAME="tex2html1121"
+  HREF="node66.html">General Purpose</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

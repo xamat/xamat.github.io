@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Application infrastructure</TITLE>
+<META NAME="description" CONTENT="Application infrastructure">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node119.html">
+<LINK REL="up" HREF="node110.html">
+<LINK REL="next" HREF="node124.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1803"
+  HREF="node124.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1801"
+  HREF="node110.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1797"
+  HREF="node122.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1804"
+  HREF="node124.html">Sample applications</A>
+<B> Up:</B> <A NAME="tex2html1802"
+  HREF="node110.html">Infrastructure</A>
+<B> Previous:</B> <A NAME="tex2html1798"
+  HREF="node122.html">Visualization</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00422500000000000000">
+Application infrastructure</A>
+</H3>
+
+<P>
+When implementing a new application, the developer has two options
+in order to design the architecture. First, the different examples
+included in the CLAM repository must be visited, it is very probable
+that one of the included examples is closely related or can be used
+as a base for developing the new application at hand. But if a fast
+development of a completely new application is sought, the framework
+also includes some application skeletons that can be particularized
+to the new application.
+
+<P>
+CLAM includes several Application classes that provide a basic framework
+for typical application situations, such as audio, or audio + graphical
+user interface. When necessary, threads or setup, and several virtual
+functions are provided, which can be implemented by deriving from
+the relevant application subclass (<TT>AudioApplication</TT> or <TT>GUIAudioApplication</TT>).
+
+<P>
+The <TT>BaseAudioApplication</TT> class is the base class of all <TT>AudioApplication</TT>
+classes. It sets up a high priority audio thread, and specifies several
+virtual functions: an <TT>AudioMain()</TT> that will be executed inside
+the audio thread, this is where the derived classes implement the
+actual audio processing; a <TT>UserMain()</TT> that will be executed
+by the main thread, this is where the derived classes implement the
+actual (graphical) user interface; an <TT>AppCleanup()</TT> that will
+be executed when the applications ends, this is where the derived
+classes implement any extra resource cleanup; and a <TT>bool Canceled()</TT>
+that can be used in the <TT>AudioMain</TT> to check if the audio thread
+has been canceled. 
+
+<P>
+This class should never be used directly. <TT>AudioApplication</TT>
+should be used instead when looking for a simple non-graphical application.
+
+<P>
+The <TT>GUIAudioApplication</TT> class is derived from <TT>BaseAudioApplication</TT>,
+and additionally provides a standard user-interface, with start/stop
+functionality. This user interface must use the FLTK library. The
+virtual function <TT>UserMain()</TT> by default just calls the execution
+of the FLTK library, but a derived class could add a more complex
+user interface,. The operation <TT>Run(int argc,char** argv)</TT>
+has to be called to execute the application.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1803"
+  HREF="node124.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1801"
+  HREF="node110.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1797"
+  HREF="node122.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1804"
+  HREF="node124.html">Sample applications</A>
+<B> Up:</B> <A NAME="tex2html1802"
+  HREF="node110.html">Infrastructure</A>
+<B> Previous:</B> <A NAME="tex2html1798"
+  HREF="node122.html">Visualization</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

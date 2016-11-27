@@ -1,0 +1,309 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Summary and Conclusions</TITLE>
+<META NAME="description" CONTENT="Summary and Conclusions">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node130.html">
+<LINK REL="up" HREF="node92.html">
+<LINK REL="next" HREF="node135.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1912"
+  HREF="node135.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1910"
+  HREF="node92.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1906"
+  HREF="node133.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1913"
+  HREF="node135.html">The Digital Signal Processing</A>
+<B> Up:</B> <A NAME="tex2html1911"
+  HREF="node92.html">The CLAM Framework</A>
+<B> Previous:</B> <A NAME="tex2html1907"
+  HREF="node133.html">CLAM as an Audio</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00440000000000000000">
+Summary and Conclusions</A>
+</H1>
+
+<P>
+In this chapter we present the CLAM framework. This software framework
+is a comprehensive environment for developing audio and music applications.
+It may be also used as a research platform for the same domain. CLAM
+can be seen both as the origin and the prove of concept of the conceptual
+models and metamodels that are included in this thesis.
+
+<P>
+CLAM is written in C++, it is efficient, object-oriented, and cross-platform.
+It presents a clean and clear design result of applying thorough software
+engineering techniques. The framework can be used as a black-box,
+relying on the offered <SPAN  CLASS="textit">repository</SPAN>, or as a white-box framework,
+extending its functionality through its <SPAN  CLASS="textit">infrastructure</SPAN>.
+
+<P>
+CLAM's repository is made up of a large collection of signal processing
+algorithms encapsulated as <SPAN  CLASS="textit">Processing</SPAN> classes and a number
+of data structures included in its <SPAN  CLASS="textit">Processing Data</SPAN> repository.
+The Processing repository basically includes algorithms for signal
+analysis, synthesis and transformation. Furthermore it also includes
+encapsulated platform and system-level tools such as audio and MIDI
+input/audio both in streaming and file mode. On the other hand the
+Processing Data repository offers those data types that are needed
+as inputs or outputs of the processing algorithms. These include classes
+such as Audio, Spectrum or Fundamental Frequency. It also includes
+a collection of statistical <SPAN  CLASS="textit">Descriptors</SPAN> that can be obtained
+from the basic Processing Data objects.
+
+<P>
+On the other hand CLAM's infrastructure offers ways of extending the
+already existing repository by deriving new Processing or Processing
+data classes. In the case of Processing classes this is accomplished
+by a simple inheritance mechanism in which the user is forced to implement
+some particular behavior in his/her concrete Processing class. Mechanisms
+for composing with Processing objects, handling input and output data
+through <SPAN  CLASS="textit">Ports</SPAN> and control data through <SPAN  CLASS="textit">Controls</SPAN> are
+also offered. The Processing Data Infrastructure is based on CLAM's
+Dynamic Types. This is a special C++ class that, using macros and
+template metaprogramming techniques, offers a very simple way of creating
+data containers with a homogeneous interface and automatic services
+such as introspection or passivation facilities. CLAM's infrastructure
+is completed by a set of tools for platform abstraction, such as audio
+and MIDI or multithreading handling mechanisms, a cross-platform toolkit-independent
+visualization module, XML serialization facilities or application
+skeletons.
+
+<P>
+CLAM also offers a number of usage examples and ready-to-use applications.
+These applications include SMSTools, a graphical environment for audio
+analysis/synthesis/transformation, and Salto, a spectral-sample based
+sax and trumpet synthesizer. Another important application is the
+Network Editor, a graphical tool for creating CLAM Networks using
+a graphical boxes-and-connections metaphor ala Max. This application
+can be used as a rapid prototyping and research tool. But CLAM has
+also been used in many other internal projects for instance for developing
+a voice processing VST plugin, a high-quality time-stretching algorithm
+or content-based analysis applications.
+
+<P>
+CLAM can be compared to some other frameworks presented in chapter
+<A HREF="node51.html#cha:Environments-for-Audio">2</A>. After the discussion in section
+<A HREF="node130.html#sec:IsCLAMDifferent">3.3</A>, and using the different information that
+we have gathered in it, we will now build a comparison table as a
+conclusion for this chapter. For doing so we will use some of the
+features that we most value about CLAM and we think are essential
+of any framework. A framework that may aim at substituting CLAM should
+be :
+
+<P>
+
+<OL>
+<LI><SPAN  CLASS="textbf">Comprehensive</SPAN>. It should offer a complete infrastructure
+and tools for audio and music analysis, processing and synthesis.
+Furthermore, it should offer tools for object passivation, visualization
+or input/output of any kind of audio and music source. 
+</LI>
+<LI><SPAN  CLASS="textbf">Cross-platform</SPAN>. It should be fully portable at least across
+major operating systems and platforms.
+</LI>
+<LI><SPAN  CLASS="textbf">Free/Open Source</SPAN>. It should be at least Open Source and preferably
+Free in the sense defined by the Free Software Foundation (see [<A
+ HREF="node207.html#FSF">Free Software Foundation, </A>]).
+</LI>
+<LI><SPAN  CLASS="textbf">Active</SPAN>. In order to be successful a software framework must
+be active and have a community that offers support and feedback.
+</LI>
+<LI><SPAN  CLASS="textbf">Complete software framework</SPAN>. It should be usable as a white-box
+/ black-box framework but should also offer a visual builder or similar
+tool.
+</LI>
+<LI><SPAN  CLASS="textbf">Efficient</SPAN>. Any usable framework for audio processing should
+have efficiency as one of its fundamental goals.
+</LI>
+<LI><SPAN  CLASS="textbf">Well-implemented</SPAN>. The framework should be implemented in
+C++ as this is the best suited language for our purposes. Furthermore,
+it should use good coding practices and design principles such as
+Design Patters and the like.
+</LI>
+</OL>
+Taking those features into account we in Table <A HREF="#tab:Comparing-CLAM-to">3.1</A>
+we summarize how the environments most closely related to CLAM stand
+the comparison with our framework.
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="5635"></A>
+<TABLE>
+<CAPTION><STRONG>Table 3.1:</STRONG>
+Comparing Frameworks similar to CLAM </CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=50>&nbsp;</TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=60>
+<DIV ALIGN="CENTER">
+(1)
+</DIV></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=36>
+<DIV ALIGN="CENTER">
+(2)
+</DIV></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=50>
+<DIV ALIGN="CENTER">
+(3)
+</DIV></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=50>
+<DIV ALIGN="CENTER">
+(4)
+</DIV></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=36>
+<DIV ALIGN="CENTER">
+(5)
+</DIV></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=36>
+<DIV ALIGN="CENTER">
+(6)
+</DIV></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=50>
+<DIV ALIGN="CENTER">
+(7)
+<BR>
+ 
+<SMALL CLASS="SMALL">CSL</SMALL>
+</DIV></TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+</TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+As a final conclusion it is important to mention that although CLAM
+has already proven useful, it is well designed and presents many interesting
+features, it is success is not guaranteed. The success of a framework
+depends on many internal but also external factors. In [<A
+ HREF="node207.html#ScalettiKyma2002">Scaletti, 2002</A>],
+Carla Scaletti outlines the most important factors that (``apart
+from the lucky accidents'') will make a computer music language successful.
+These are applicable extensible to not only computer music languages
+but also any kind of music related environment. We will reproduce
+the complete list as a conclusion for this chapter:
+
+<P>
+
+<UL>
+<LI>Reasons intrinsic to the language. A language is successful...
+
+<P>
+
+<UL>
+<LI>if people are using successfully
+
+<P>
+
+<UL>
+<LI>if it answers a need that is not otherwise satisfied
+</LI>
+<LI>if it is able to express the unanticipated
+</LI>
+<LI>if its underlying data structure can support extensions and multiple
+interpretations without violating the original model
+</LI>
+<LI>if its authors can strike a balance between providing users with what
+they say they need and what they do not yet know that they need.
+</LI>
+</UL>
+</LI>
+</UL>
+</LI>
+<LI>Reasons extrinsic to the language. A language is successful...
+
+<P>
+
+<UL>
+<LI>if one can learn it and learn from it
+</LI>
+<LI>when it has a community of users
+</LI>
+<LI>when it serves as a nexus for interdisciplinary cross-fertilization
+</LI>
+<LI>when its author uses it regularly
+</LI>
+<LI>when the people behind it are committed to its success.
+</LI>
+<LI>when people are ready for it
+</LI>
+<LI>when people say it is successful
+</LI>
+<LI>sometimes due to pure luck
+</LI>
+<LI>if it has contributed ideas and stimulated new developments in the
+field.
+</LI>
+<LI>A language cannot be successful unless it first exists
+</LI>
+</UL>
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1912"
+  HREF="node135.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1910"
+  HREF="node92.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1906"
+  HREF="node133.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1913"
+  HREF="node135.html">The Digital Signal Processing</A>
+<B> Up:</B> <A NAME="tex2html1911"
+  HREF="node92.html">The CLAM Framework</A>
+<B> Previous:</B> <A NAME="tex2html1907"
+  HREF="node133.html">CLAM as an Audio</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

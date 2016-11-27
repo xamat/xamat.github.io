@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>XML support</TITLE>
+<META NAME="description" CONTENT="XML support">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node121.html">
+<LINK REL="previous" HREF="node119.html">
+<LINK REL="up" HREF="node119.html">
+<LINK REL="next" HREF="node121.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1777"
+  HREF="node121.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1775"
+  HREF="node119.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1769"
+  HREF="node119.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1778"
+  HREF="node121.html">Platform abstraction</A>
+<B> Up:</B> <A NAME="tex2html1776"
+  HREF="node119.html">Tools</A>
+<B> Previous:</B> <A NAME="tex2html1770"
+  HREF="node119.html">Tools</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H4><A NAME="SECTION00422410000000000000">
+XML support</A>
+</H4>
+
+<P>
+Any CLAM <SPAN  CLASS="textit">Component</SPAN> can be stored to XML as long as a <TT>StoreOn</TT>
+and <TT>Load</TT> methods are provided for that particular type [<A
+ HREF="node207.html#DavidXML">Garcia and Amatrian, 2001</A>].
+Dynamic Types, and therefore Processing Data and Processing Configs,
+are Components. But DTs can make use of their introspection capabilities
+and offer automatic built-in XML persistence. When implementing a
+new Dynamic Type class, XML storage facilities are obtained for free,
+without adding a single line of code. Nevertheless if the user wants
+a different output from the one automatically derived, the <TT>StoreOn</TT>
+operation of the concrete component can be overridden.
+
+<P>
+For passivating a Component an <TT>XMLStorage</TT> object has to be
+instantiated. Then the <TT>Dump</TT> operation of this object must
+be called, sending the component that has to be passivated, and the
+filename as arguments of the operation.
+
+<P>
+For activating a Component the interface is very similar. An <TT>XMLStorage</TT>
+must be instantiated and then the <TT>Restore</TT> operation must
+be called sending the component and the filename as arguments of the
+operation.
+
+<P>
+It is interesting to note that other application frameworks such as
+Ptolemy (see <A HREF="node54.html#sub:Ptolemy">2.2</A>) have also relied on XML for data
+persistence.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1777"
+  HREF="node121.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1775"
+  HREF="node119.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1769"
+  HREF="node119.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1778"
+  HREF="node121.html">Platform abstraction</A>
+<B> Up:</B> <A NAME="tex2html1776"
+  HREF="node119.html">Tools</A>
+<B> Previous:</B> <A NAME="tex2html1770"
+  HREF="node119.html">Tools</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

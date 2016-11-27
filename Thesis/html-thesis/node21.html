@@ -1,0 +1,246 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Metamodels</TITLE>
+<META NAME="description" CONTENT="Metamodels">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node22.html">
+<LINK REL="previous" HREF="node19.html">
+<LINK REL="up" HREF="node16.html">
+<LINK REL="next" HREF="node22.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html589"
+  HREF="node22.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html587"
+  HREF="node16.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html581"
+  HREF="node20.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html590"
+  HREF="node22.html">Metaphors</A>
+<B> Up:</B> <A NAME="tex2html588"
+  HREF="node16.html">Models and Systems</A>
+<B> Previous:</B> <A NAME="tex2html582"
+  HREF="node20.html">Kristen Nygaard and the</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00224000000000000000"></A><A NAME="sub:Metamodels"></A>
+<BR>
+Metamodels
+</H2>
+
+<P>
+Sometimes when modeling a set of related systems, usually belonging
+to a given domain, we realize that these models share many constructs.
+We are then able to generalize across these different models and come
+up with a model of what the set of related models should conform to.
+This is what we call a ``metamodel'', a model of models. As a
+a matter of fact the term metamodel is still quite controversial and
+a matter of discussion (see [<A
+ HREF="node207.html#www-Metamodel">www-Metamodel, </A>]). The concept has
+been especially used in relation to UML. The language itself is used
+to describe the syntactic rules that all models written in UML must
+adopt thus defining a metamodel: a model of models. Metamodeling and
+UML are very much related to another OMG standard: the Meta Object
+Facility or MOF 
+
+<P>
+In many senses a metamodel is similar to a regular domain model. A
+domain model though usually has a much less ambitious scope as it
+models the domain of a given application but already bearing this
+application in mind. For this reason, important domain activities
+that do not directly relate to the system being modeled are left out
+of the domain model or just modeled at a very abstract level. On the
+other hand, when building a metamodel the restriction is not a particular
+system or application but rather a set of systems or applications
+that might be modeled according to this metamodel.
+
+<P>
+In the rest of this section we will reflect how metamodeling is understood
+and used in different communities related to software design.
+
+<P>
+In [<A
+ HREF="node207.html#OOPSLAMetamodeling">Mili et&nbsp;al., 1995</A>] they concluded that metamodeling results
+in ``cognitive economy'' as it replaces extensions (explicit occurrences
+of a given concept) by intensions (the definition of the concept itself).
+It is thus a mechanism very similar to regular classification: the
+relation between a model and its meta equivalent is that between an
+instance an a class. Three dimensions of metamodeling were also identified:
+
+<P>
+
+<OL>
+<LI>Metamodeling as the modeling of a modeling/representation language.
+</LI>
+<LI>Metamodeling as the multiple instantiation levels of application knowledge.
+</LI>
+<LI>Metamodeling as the modeling of information about how to use and manipulate
+application models.
+</LI>
+</OL>
+Thus, going ``meta'' may mean developing a computational model
+for the family of applications at hand, developing an architecture
+for simulating and executing such applications, or implementing such
+an architecture in the form of a development platform/framework.
+
+<P>
+Going along the first of the three dimensions previously identified
+we conclude that a kind of metamodel is the language in which a model
+can be expressed. And this is precisely the interpretation that the
+Object Management Group (OMG) of the ACM uses when describing UML
+as a metamodel. Even more, the OMG has defined a Meta Modeling Facility
+(MMF) in order to create a precise definition of UML in its 2.0 version
+[<A
+ HREF="node207.html#ReggioMetamodelingUML">Reggio, 2002</A>,<A
+ HREF="node207.html#UML2.0">OMG, 2003</A>]. The semantics and syntax of
+UML itself can be defined using a subset of the language. Furthermore,
+UML and MOF (see section <A HREF="node33.html#sub:MOF">1.4.3</A>) can be used to describe an
+object-oriented model that can then be transformed into a different
+domain (e.g. Petri Nets or Dataflow Networks) by applying formal transformations
+[<A
+ HREF="node207.html#VarroMathematicalMetamodelling">Varr&#243; and Patarizca, 2002</A>].
+
+<P>
+Metamodeling is also sometimes understood as the definition of a semantic
+model for a family of related domain models. In this sense, metamodeling
+becomes very much related to Ontological Engineering. We define an
+ontology as being the explicit representation of domain concepts.
+An ontology is thus a system of concepts that defines the vocabulary
+of the problem domain and restricts the way that these terms may be
+combined to model the domain. Under this definition, the process of
+building an analysis domain model in a standard object-oriented methodology
+can be understood as metamodeling as long as the resulting model is
+precise and general enough as to be used to model different systems
+apart from the one under study. As pointed out in [<A
+ HREF="node207.html#DevedzicUnderstandingOntology">Devedzic, 2002</A>],
+the properties of a well designed ontology are the same than those
+of any software system including classes in an object-oriented design:
+decomposability, understandability, extensibility, maintainability,
+modularity and interfaceability. An ontology is a domain metamodel
+that will be used by the different models related to that particular
+domain. It conveys to a hierarchical representation where higher layers
+correspond to domain-independent or core concepts and lower layers
+correspond to concepts only meaningful in a particular domain. The
+Java class library is, for instance, a good example of general usage
+ontology.
+
+<P>
+But in system engineering, metamodeling is understood in a quite different
+sense. A metamodel is here a simple approximation (usually mathematical)
+of a complex system model [<A
+ HREF="node207.html#BartonMetamodelingReview">Barton, 1994</A>,<A
+ HREF="node207.html#CaughlinAutomatingMetamodelling">Caughlin, 1997</A>].
+Here the model input-output behavior is seen as black-box and is approximated
+by a polynomial metamodel. The first thing to do in the metamodeling
+process is to clearly identify the purpose of the metamodel. After
+that, there is an iterative process consisting on [<A
+ HREF="node207.html#CaughlinAutomatingMetamodelling">Caughlin, 1997</A>]: 
+
+<P>
+
+<OL>
+<LI>Select an experimental design
+</LI>
+<LI>Run the simulation
+</LI>
+<LI>Collect Data
+</LI>
+<LI>Select a metamodel set
+</LI>
+<LI>Select identification methodology
+</LI>
+<LI>Generate the metamodel
+</LI>
+</OL>
+The simpler form of a metamodel can reveal the behavior of a more
+complex model. Beside, the metamodel requires less computer resources
+and can be run intensively under controlled parameters to reveal what
+affects the system performance.
+
+<P>
+But if we accept the broader definition of Metamodel given when starting
+this section - a metamodel is just a model of a set of related models
+- we can conclude that most modeling engineering ends up related to
+metamodeling. When modeling a system we usually want to reuse our
+abstraction or modeling effort and try to come up with a model that
+is not only useful for the particular problem at hand but can be re-used
+in similar situations, that is a metamodel.
+
+<P>
+In this sense, metamodeling is very much related to the activity of
+<SPAN  CLASS="textit">classifying classes</SPAN>. When we identify classes from a set of
+existing object we are applying an abstraction process that is very
+similar to the one we apply once we have the classes and we try to
+group them together in different categories or meta-classes. This
+is usually accomplished by defining inheritance hierarchies.
+
+<P>
+The first levels of the inheritance hierarchy and the way these, usually
+abstract, classes relate define a metamodel that can be then instantiated
+by defining different concrete classes that give place to a new model.
+This is particularly so when defining a white-box framework (see section
+<A HREF="node23.html#sec:Frameworks">1.3</A>).
+
+<P>
+As a matter of fact, one of the main goals of this Thesis is to classify
+classes related to the digital signal processing domain. This classification
+will result in the metamodel that will be presented in chapter <A HREF="node135.html#ch:_DSPOOM">4</A>.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html589"
+  HREF="node22.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html587"
+  HREF="node16.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html581"
+  HREF="node20.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html590"
+  HREF="node22.html">Metaphors</A>
+<B> Up:</B> <A NAME="tex2html588"
+  HREF="node16.html">Models and Systems</A>
+<B> Previous:</B> <A NAME="tex2html582"
+  HREF="node20.html">Kristen Nygaard and the</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

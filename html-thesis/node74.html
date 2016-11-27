@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Common Music </TITLE>
+<META NAME="description" CONTENT="Common Music ">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node73.html">
+<LINK REL="up" HREF="node71.html">
+<LINK REL="next" HREF="node75.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1197"
+  HREF="node75.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1195"
+  HREF="node71.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1191"
+  HREF="node73.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1198"
+  HREF="node75.html">Audio and Music Visual</A>
+<B> Up:</B> <A NAME="tex2html1196"
+  HREF="node71.html">Music Processing Frameworks</A>
+<B> Previous:</B> <A NAME="tex2html1192"
+  HREF="node73.html">MODE and Siren</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00343000000000000000"></A><A NAME="sub:Common-Music"></A>
+<BR>
+Common Music 
+</H2>
+
+<P>
+Common Music [<A
+ HREF="node207.html#TaubeCommonMusic90">Taube, 1990</A>,<A
+ HREF="node207.html#TaubeCommonMusic98">Taube, 1998</A>] is an object-oriented
+musical composition interface that bases its results in the definition
+of classes and objects that interact between them at the program level.
+CM is Free and it is updated regularly.
+
+<P>
+Common Music treats the composition process as an experimental process
+aimed at describing the sound and its higher-level structure. It has
+a number of composition tools as well as a public interface. It can
+be used in conjunction with many different existing protocols and
+languages such as MIDI, CSound, Common Lisp Music or Music Kit. 
+
+<P>
+Common Music is implemented in Common Lisp and CLOS and runs on different
+platforms including PC, Macintosh, SGI, NeXT and SUN. Source code
+is publicly available.
+
+<P>
+Common Music structure is based on the separation of three different
+levels in the music composition process. On one level, the composer
+concentrates on developing musical ideas. On another level, the composer
+worries about how these ideas can be translated to the real world.
+An on the last level, the musician must understand how the composer's
+ideas have to be conceived. This separation allows the re-use of common
+higher level structures.
+
+<P>
+Common Music provides three different interaction modes that can act
+in parallel. The most basic way to interact with the system is through
+the program Lisp source code. This mode of interaction offers much
+flexibility to control algorithms but ignores many of the system utilities.
+The second mode implies working through the command interpreter, which
+translates text messages into system actions. The command interpreter
+in Common Music is called Stella. The main advantage of this mode
+is that it allows for flexible edition but, on the downside, the creation
+of complex commands results into very complex messages. And finally,
+the third interaction mode is through the use of a graphical interface
+called Capella that is only available for the Macintosh platform.
+
+<P>
+Common Music defines six kinds of collections, which can be specialized
+or enhanced by the user. The existing collections are: <TT>Thread</TT>,
+<TT>Merge</TT>, <TT>Heap</TT>, <TT>Algorithm</TT>, <TT>Network</TT>,
+and <TT>Layout</TT>. A <TT>Thread</TT> represents a line of events
+to be sequentially processed. A <TT>Merge</TT> represents parallel
+or multiple temporal command lines. A <TT>Heap</TT> is a collection
+that represents a random grouping that is converted into a temporal
+line after mixing its substructure and then processing it sequentially
+like a <TT>Thread</TT>. An <TT>Algorithm</TT> represents a program
+description, that is the temporal line of events is produced by calling
+a user-specified program. A <TT>Network</TT> is a collection that
+represents a user-defined order, the temporal line of events is produced
+by the call to a condition that can be expressed through a pattern
+or a function. Finally, a <TT>Layout</TT> refers to arbitrary chunks
+of an existing structure.
+
+<P>
+The act of translating the high-level information introduced by the
+user into a lower-level information understandable by the synthesizer
+is known as <SPAN  CLASS="textit">realization</SPAN>. This realization can happen at different
+levels and through two working modes: <SPAN  CLASS="textit">run-time</SPAN> and <SPAN  CLASS="textit">real-time</SPAN>.
+In the first mode, events receive a time tag but the clock advances
+as fast as it can. In the second mode the time tag is exactly that
+of the real time.
+
+<P>
+In Common Music, the final result depends both in the events and in
+the context. This context is known as <SPAN  CLASS="textit">stream</SPAN> and can include
+outputs such as Postscript or sound files or MIDI ports. All these
+different streams are controlled by the protocol that is in charge
+of taking the right actions depending on the current combination of
+events and stream.
+
+<P>
+Common Music has different procedures and classes that are designed
+to give support to the musical composition process. These tools include
+high-level macros to create musical structures, musical data representation
+or envelopes. The user can combine these functions with the functionality
+included in the Common Lisp programming language.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1197"
+  HREF="node75.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1195"
+  HREF="node71.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1191"
+  HREF="node73.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1198"
+  HREF="node75.html">Audio and Music Visual</A>
+<B> Up:</B> <A NAME="tex2html1196"
+  HREF="node71.html">Music Processing Frameworks</A>
+<B> Previous:</B> <A NAME="tex2html1192"
+  HREF="node73.html">MODE and Siren</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

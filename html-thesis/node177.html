@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Beyond Parametric Encoding: Content Analysis</TITLE>
+<META NAME="description" CONTENT="Beyond Parametric Encoding: Content Analysis">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node178.html">
+<LINK REL="previous" HREF="node174.html">
+<LINK REL="up" HREF="node169.html">
+<LINK REL="next" HREF="node178.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2420"
+  HREF="node178.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2418"
+  HREF="node169.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2412"
+  HREF="node176.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2421"
+  HREF="node178.html">Beyond Sound Effects: Content-based</A>
+<B> Up:</B> <A NAME="tex2html2419"
+  HREF="node169.html">OOCTM and related Models</A>
+<B> Previous:</B> <A NAME="tex2html2413"
+  HREF="node176.html">Structured Audio and the</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00633000000000000000"></A><A NAME="sec:Beyond-Parametric-Encoding:"></A>
+<BR>
+Beyond Parametric Encoding: Content Analysis
+</H2>
+
+<P>
+Any parameterized audio coding format can be considered as a combination
+of: a sound-understanding algorithm that sets parameter according
+to some model by analyzing the audio; the transmission of these parameters;
+and a sound-synthesis algorithm that maps from the transmitted parameters
+to a new sound [<A
+ HREF="node207.html#ScheirerSAKolmogorov">Scheirer, 2001</A>]. 
+
+<P>
+The understanding step is usually called <SPAN  CLASS="textit">encoding</SPAN> and the
+synthesis step <SPAN  CLASS="textit">decoding</SPAN> but if the parameters are obtained
+directly from a sound, the process may be also termed as analysis/synthesis.
+If we want to communicate the sound description over a channel we
+need an encoder and a decoder, both with a priori knowledge of the
+model being used. But it is impossible to devise an encoding method
+that always gives the optimal coding of any input sound. In other
+words, not a single model can fit all kinds of input signals. For
+this reason we may sum up different specialized models and add some
+extra bits to the stream in order to indicate what model is being
+chosen.
+
+<P>
+Parametric encoding has been used extensively in speech transmission,
+where a general model of the input signal has existed for a long time.
+Most commonly used parametric models for speech are simple variations
+of the classical Linear Predictive Coding (LPC) scheme[<A
+ HREF="node207.html#LPC">Makhoul, 1975</A>],
+which somehow exploits the knowledge of the vocal production mechanism.
+
+<P>
+Parametric coding for non-speech signals is much more complex to implement
+as not many assumptions can be made about the source characteristics
+or its production mechanisms. MPEG-4 standardized different parametric
+encoding schemes although the one recommended for non-speech or musical
+signals is the HILN or Harmonic and Individual Lines plus Noise (see
+[<A
+ HREF="node207.html#HILN-MP4Parametric">Purnhagen and Meine, 2000</A>]). This parametric scheme is as a matter
+of fact a variation of the SMS or Spectral Modelling Synthesis technique
+(see further explanation in annex <A HREF="node230.html#sec:_Spectral_Processing">B</A>).
+
+<P>
+The Object-Oriented Content Transmission metamodel represents a step
+beyond parametric encoding. The basic scheme is the same: the sound
+is analyzed, some parameters are extracted, transmitted and then synthesized
+back at the receiver.
+
+<P>
+But the main difference is on the kind of parametric model used in
+each case. In traditional parametric encoding, the model makes assumptions
+about the low-level features of the signal. For instance, the input
+signal may be supposed to be harmonic and therefore modeled as a set
+of time varying sinusoids (see Annex <A HREF="node230.html#sec:_Spectral_Processing">B</A>
+for a more in depth explanation of one of these models).
+
+<P>
+In the Object-Oriented Content Transmission Metamodel we make assumptions
+about the semantics of the input data and the way it is organized
+in the real world. We may, for instance, assume that the input signal
+will be monophonic musical phrases and then apply a model in which
+a musical phrase is modelled as a sequence of <SPAN  CLASS="textit">notes</SPAN>.
+
+<P>
+The OOCTM encodes data as Sound Objects. This is, as already mentioned
+in the previous section, a particular case of Parametric encoding.
+Parameters extracted from the signal become attributes of concrete
+objects. In that sense, all parameters have a particular meaning and
+contribute to the content description. The final encoded signal also
+has a clear structure, given by the resulting object-oriented model.
+
+<P>
+In that sense, the result of an OOCTM encoding is generally understandable
+while a Parametric encoding is usually not.
+
+<P>
+Finally, in a Parametric encoding scheme the synthesis capabilities
+of the receiver are very much limited to a simple signal model. In
+the OOCTM scheme the synthesizer is able to not only apply different
+models but also to infer or abstract a sound from an incomplete description
+(see <A HREF="node165.html#sub:The-Semantic-Receiver">5.2.2</A>). 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2420"
+  HREF="node178.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2418"
+  HREF="node169.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2412"
+  HREF="node176.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2421"
+  HREF="node178.html">Beyond Sound Effects: Content-based</A>
+<B> Up:</B> <A NAME="tex2html2419"
+  HREF="node169.html">OOCTM and related Models</A>
+<B> Previous:</B> <A NAME="tex2html2413"
+  HREF="node176.html">Structured Audio and the</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>MetriX in XML= MetriXML</TITLE>
+<META NAME="description" CONTENT="MetriX in XML= MetriXML">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node196.html">
+<LINK REL="up" HREF="node186.html">
+<LINK REL="next" HREF="node201.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2684"
+  HREF="node201.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2682"
+  HREF="node186.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2678"
+  HREF="node199.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2685"
+  HREF="node201.html">MetriXML Instrument Definition</A>
+<B> Up:</B> <A NAME="tex2html2683"
+  HREF="node186.html">MetriX</A>
+<B> Previous:</B> <A NAME="tex2html2679"
+  HREF="node199.html">Example</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00744000000000000000"></A><A NAME="sub:MetriX-ML"></A>
+<BR>
+MetriX in XML= MetriXML
+</H2>
+
+<P>
+The MetriX framework was ported to CLAM. This meant on one hand fitting
+the MetriX object-oriented music model to the DSPOOM metamodel. As
+it will be seen in this section, and has already been suggested earlier
+on in this same chapter, this adaption was completely natural. On
+the other hand, adapting MetriX to the CLAM framework implied gaining
+XML representation ``for free''. Therefore, the substitution of
+the textual format for XML was also natural. The overall process gave
+place to MetriXML.
+
+<P>
+The first thing to do when adapting a previously existing model to
+the DSPOOM metamodel is to identify what metaclass each of the model
+elements belong to. In our case the basic model classes that should
+find a DSPOOM metaclass are: <TT>Instrument</TT>, <TT>Generator</TT>,
+<TT>Note</TT>, <TT>Event</TT>, and <TT>Score</TT>.
+
+<P>
+The relation of the first two classes with the DSPOOM metamodel are
+as it was already illustrated in figure <A HREF="node183.html#fig:Instrument-in-DSPOOM">6.4</A>:
+an <TT>Instrument</TT> is a ProcessingComposite made up of Processing
+objects that are instances of the <TT>Generator</TT> subclass. Then
+the question is how the Instrument definition expressed in MIDL (see
+section <A HREF="node190.html#sub:MIDL">6.4.2</A> ) is related to the metamodel. The answer
+is that an Instrument definition is a DSPOOM <TT>Configuration</TT>
+that will be used to configure the <TT>Instrument</TT> Processing
+object before its execution. Note that this configuration will also
+be in charge of ``subclassifying'' the generic Instrument to a
+particular one as shown in figure <A HREF="node183.html#fig:InstrumentHierarchy">6.1</A>.
+
+<P>
+The other subelements present in an Instrument such as the Timbre
+Space or the Break Point Functions (see figure <A HREF="node189.html#cap:MetriX-Instrument-Class">6.10</A>)
+will have no direct interpretation in the DSPOOM metamodel. On execution
+time they play a secondary role as auxiliary mechanisms of the Instrument
+and on configuration time they will already be represented by fields
+in the overall configuration.
+
+<P>
+In a similar way, the <TT>Note</TT> class is seen as a conceptual
+shortcut with no direct interpretation in the DSPOOM metamodel. As
+a matter of fact a Note corresponds to the internal state of each
+of the Generators. As such we should be able to query a Generator
+for its Note-state, but no more direct access nor representation is
+needed.
+
+<P>
+It is clear that a music <TT>Event</TT> should somehow relate to a
+DSPOOM Control. But the representation of an Event in a Score, which
+includes for instance a time tag, is too complex to make it directly
+compatible with the simple asynchronous control mechanism based on
+simple data types that is included in the DSPOOM metamodel. The solution
+is the same that is usually recommended when this situation arises
+in modeling a particular system in DSPOOM (see section <A HREF="node141.html#sub:Generators__Sinks_and_Transforms">4.1.1</A>).
+First, a related Processing Data class must be defined. In our case,
+the Event class will therefore be a Processing Data. Then we need
+a special sink Processing object class that receives this incoming
+Processing Data and converts it into DSPOOM control events. In our
+case we will call this class the <TT>Scheduler</TT>.
+
+<P>
+The <TT>Scheduler</TT> is the class responsible for receiving input
+Events as Processing Data, enqueueing them if necessary, and firing
+DSPOOM control events when it corresponds according to their time
+tag and the system current time.
+
+<P>
+Finally, the <TT>Score</TT> class contains Events that have already
+been defined as Processing Data objects. It naturally derives that
+the Score is also a Processing Data class. Figure <A HREF="#fig:MetriXML-DSPOOM">6.11</A>
+illustrates the class diagram of the MetriXML model in terms of the
+DSPOOM metamodel.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:MetriXML-DSPOOM"></A><A NAME="5739"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.11:</STRONG>
+MetriXML as a DSPOOM model</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="474" HEIGHT="299" ALIGN="BOTTOM" BORDER="0"
+ SRC="img97.png"
+ ALT="\includegraphics[%
+width=0.50\paperwidth,
+keepaspectratio]{images/ch6-MetriX/ps/MetriXinDSPOOM.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+As explained in section <A HREF="node114.html#sec:_DataInfrastructure">3.2.2</A> any Configuration
+implemented in CLAM has automatic XML passivation services. 
+
+<P>
+In the following subsections we will illustrate the process of converting
+the MetriX textual formats into XML and finding the Object-Oriented
+Model related to them. For doing so, both for the MetriX Instrument
+Definition Language and MetriX Score Definition Language we will follow
+the following steps:
+
+<P>
+
+<OL>
+<LI>First, we will translate the examples given in previous sections for
+the textual formats into XML.
+</LI>
+<LI>Then we will abstract the format model and specify it in XML Schema.
+</LI>
+<LI>Using the XML Schema abstract specification we will derive the OO
+model that will be illustrated in an UML class diagram.
+</LI>
+</OL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html2686"
+  HREF="node201.html">MetriXML Instrument Definition</A>
+<LI><A NAME="tex2html2687"
+  HREF="node202.html">MetriXML Score Definition</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2684"
+  HREF="node201.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2682"
+  HREF="node186.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2678"
+  HREF="node199.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2685"
+  HREF="node201.html">MetriXML Instrument Definition</A>
+<B> Up:</B> <A NAME="tex2html2683"
+  HREF="node186.html">MetriX</A>
+<B> Previous:</B> <A NAME="tex2html2679"
+  HREF="node199.html">Example</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

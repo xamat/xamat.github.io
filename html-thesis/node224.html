@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Used Tools and Resources</TITLE>
+<META NAME="description" CONTENT="Used Tools and Resources">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node209.html">
+<LINK REL="up" HREF="node208.html">
+<LINK REL="next" HREF="node225.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2958"
+  HREF="node225.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2956"
+  HREF="node208.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2952"
+  HREF="node223.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2959"
+  HREF="node225.html">The development team</A>
+<B> Up:</B> <A NAME="tex2html2957"
+  HREF="node208.html">CLAM Additional Information</A>
+<B> Previous:</B> <A NAME="tex2html2953"
+  HREF="node223.html">Graphical interfaces</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001020000000000000000">
+Used Tools and Resources</A>
+</H1>
+
+<P>
+The cross-platform spirit of the CLAM framework has influenced and
+condition the selection of tools and the way they were used. We will
+first explain the development tools used such as compiler and concurrent
+version control systems and later explain the tools and resources
+that CLAM offers to its users.
+
+<P>
+CLAM is implemented in C++[<A
+ HREF="node207.html#StroustrupC++">Stroustrup, 1997</A>]. The choice of the
+language was obvious at that time and during this time we have had
+nothing to make us thing it was not the correct decision. C++ was
+chosen for the following reasons:
+
+<P>
+
+<OL>
+<LI>It was the language traditionally used in the group (as well as in
+most other projects related with signal processing)
+</LI>
+<LI>It is efficient 
+</LI>
+<LI>It is object-oriented but also allows other paradigms to be integrated
+[<A
+ HREF="node207.html#StroustrupWhyC++">Stroustrup, 1995</A>]. 
+</LI>
+<LI>It allows low-level access to operating system, sound cards...
+</LI>
+<LI>There are plenty of tools and libraries that could be integrated in
+the framework
+</LI>
+<LI>It is a standard language (versus a proprietary one like Java) and
+is usually the language of choice for Free Software.
+</LI>
+</OL>
+When the project started there were two obvious choices for C++ compiler
+support: gcc 2.95 on GNU/Linux and Microsoft Visual 6.0 on Windows.
+Portability to the Power PC platform was not an immediate need and,
+although some parts of the framework were compiled with CodeWarrior<A NAME="tex2html106"
+  HREF="footnode.html#foot5194"><SUP>A.<SPAN CLASS="arabic">2</SPAN></SUP></A>, we knew the best policy was to wait for the release of Mac OSX,
+a Unix-like operating system where portability was almost guaranteed.
+
+<P>
+From the very beginning many incompatibility issues between gcc and
+Visual C++ compiler had to be addressed. Microsoft Visual C++ 6.0
+came with a compiler full of flaws and bugs and lacked support for
+some important parts of the C++ ISO standard such as the absence of
+template partial specialization. Microsoft Visual C++ 6 also came
+with other major problems like an extremely bad implementation of
+the C++ Standard Template Library (STL). As a matter of fact, Microsoft's
+development environment was always the one that limited the development.
+Some solutions existed at that time, for instance using Intel's C++
+compiler that turned out to be much more robust and compliant to the
+standard. But we could not make our development depend on yet another
+proprietary tool that is no that much extended in the development
+community.
+
+<P>
+As for gcc, some major problems had to be faced with version 2.96.
+This was an unstable version of the compiler but that made it through
+to the RedHat 7 GNU/Linux distribution. The main flaw in this implementation
+of the GNU compiler was that lacked support for dynamic casting. The
+CLAM framework could not do without some dynamic casts that were applied
+on polymorphic variables at crucial points of the code. For this reason,
+CLAM did not (and still does not) support gcc version 2.96. When version
+3.X of the compiler were published, some minor changes had to be applied
+to the code, especially due to the increased strictness in some syntax
+rules. But the framework was soon compiling under this version. When
+CLAM was ported to Mac OSX and compiled with the gcc version there
+included no major problems were found either.
+
+<P>
+All these problems are specially true when it comes to the use of
+the most recent C++ features, such as templates, and related techniques,
+such as meta-programming and static dispatching. These techniques
+where initially considered as potentially useful in the CLAM framework,
+but the lack of language support in most compilers, together with
+the need of optimizing the compiling speed of the library, has led
+to a rather scarce use of them.
+
+<P>
+On the other hand, a technique considered obsolete as it is the use
+of C macros, has proven very useful to minimize programmer's effort
+and enable the implementation of rather complex behaviors (one of
+the good things of developing with a multi-paradigm language like
+C++ is that you can always find a more or less immediate workaround).
+Also, C macros are a simple compiler feature which is available in
+all C++ development platforms.
+
+<P>
+All code for CLAM is written in a collaborative manner and no code
+ownership is promoted. CVS [<A
+ HREF="node207.html#FogelCVS">Fogel, 1999</A>] was used from the very
+beginning although its usage has been improved and rationalized with
+every new release. First there was a single CVS branch. Later on,
+a second branch called ``devel'' was introduced. Major development
+was on this branch while the ``main'' branch was far more stable
+and only bugfixes were committed in between releases. When CLAM became
+public a new ``public'' repository was started. This repository
+was a mirror of the internal main-trunk except for the exclusion of
+folders marked as ``private'' (mainly drafts). It was updated
+on every new release or major bugfix using a semi-automatic script.
+Internal projects that used CLAM had their own repositories in which
+they had some particular CLAM-related applications. In release 0.5
+the public CVS repository was removed and substituted by tarballs
+that are automatically generated from the main branch of the internal
+repository. Nevertheless, public CVS access is planned when the framework
+becomes more stable (i.e. reaches the 1.0 version).
+
+<P>
+Other web-based tools are used in order to manage the framework. Mantis
+[<A
+ HREF="node207.html#www-Mantis">www-Mantis, </A>] is used for bug reporting and tracking. A public
+mailing list is also available at clam@iua.upf.es.
+
+<P>
+As for documentation, several approaches are followed. On one hand
+Doxygen [<A
+ HREF="node207.html#www-Doxygen">www-Doxygen, </A>] is used to automatically generate html
+source code documentation from javadocs comments available in the
+source files [<A
+ HREF="node207.html#Javadoc">Microsystems, </A>]. On the other hand an html document is
+maintained through CVS and published in the web in different formats
+including an automatically generated pdf file.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html2960"
+  HREF="node225.html">The development team</A>
+<LI><A NAME="tex2html2961"
+  HREF="node226.html">On methodologies</A>
+<LI><A NAME="tex2html2962"
+  HREF="node227.html">The build system</A>
+<LI><A NAME="tex2html2963"
+  HREF="node228.html">External libraries </A>
+<LI><A NAME="tex2html2964"
+  HREF="node229.html">CLAM User Group</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2958"
+  HREF="node225.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2956"
+  HREF="node208.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2952"
+  HREF="node223.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2959"
+  HREF="node225.html">The development team</A>
+<B> Up:</B> <A NAME="tex2html2957"
+  HREF="node208.html">CLAM Additional Information</A>
+<B> Previous:</B> <A NAME="tex2html2953"
+  HREF="node223.html">Graphical interfaces</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

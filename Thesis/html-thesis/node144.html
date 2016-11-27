@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Dynamic and Static Views of Data Flow</TITLE>
+<META NAME="description" CONTENT="Dynamic and Static Views of Data Flow">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node145.html">
+<LINK REL="previous" HREF="node143.html">
+<LINK REL="up" HREF="node142.html">
+<LINK REL="next" HREF="node145.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2051"
+  HREF="node145.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2049"
+  HREF="node142.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2043"
+  HREF="node143.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2052"
+  HREF="node145.html">Processing Data and Controls</A>
+<B> Up:</B> <A NAME="tex2html2050"
+  HREF="node142.html">Processing Data Objects</A>
+<B> Previous:</B> <A NAME="tex2html2044"
+  HREF="node143.html">Data and Value Attributes</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00512200000000000000">
+Dynamic and Static Views of Data Flow</A>
+</H3>
+
+<P>
+Processing objects synchronously receive incoming data through their
+input ports and output the processed data through their output ports.
+Though it is many times convenient to keep this metaphor of travelling
+data that enters the processing, is transformed and is fed to the
+output, it is also important to sometimes think in terms of its ``static''
+representation. Therefore two different interpretations may be given
+to the flow of processing data through a DSPOOM network: a dynamic
+view and a static view. Both of them are valid and their use will
+depend on the goal of the particular model. 
+
+<P>
+In the dynamic view we think of a processing data as a travelling
+entity that enters every processing in its path and exits sometimes
+even in a different form. This interpretation is useful for analyzing
+dynamic behavior of a given system specially regarding its latency
+or real-time performance. It is also useful for understanding overall
+effect of a processing network on the input signal.
+
+<P>
+When using the static dataflow view we interpret that processing data
+all ``live'' in nodes or slots where different processing objects
+are connected. A processing always reads from the same position in
+memory and writes to the same position in memory so its input and
+output ports can be seen as a static (in space) processing data that
+is constantly changing. This view is interesting in order to study
+flow related issues and the interaction that occur between neighboring
+processing objects. We will later see more details about the network
+structure, including the definition of <SPAN  CLASS="textit">data nodes</SPAN> (see section
+<A HREF="node150.html#sub:Data-Nodes">4.1.3</A>), and understand more about this static view.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2051"
+  HREF="node145.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2049"
+  HREF="node142.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2043"
+  HREF="node143.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2052"
+  HREF="node145.html">Processing Data and Controls</A>
+<B> Up:</B> <A NAME="tex2html2050"
+  HREF="node142.html">Processing Data Objects</A>
+<B> Previous:</B> <A NAME="tex2html2044"
+  HREF="node143.html">Data and Value Attributes</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

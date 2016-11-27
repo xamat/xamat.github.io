@@ -1,0 +1,85 @@
+<html>
+
+<head>
+<title>Xavier Amatriain</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="xavier, amatriain, metrix, clam, c++, maijalas, music, signal, programming">
+<meta name="description" content="Xavier Amatriain's Home Page">
+<meta name="title" content="Xavier Amatriain's Teaching">
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+
+<body id="body" onload="parent.pageManager('page_is_loaded','','700px')">
+
+	<p class="main"> What follows is a rather literary resume. If you are interested in a 
+	more formal CV please look <a href="cv.pdf">here</a>. </p>
+
+	<div class="title">	
+		A Brief Professional BIO
+	</div>
+	<p class="main">
+		During my primary education I changed of school very often. Most of these were 
+      		in Barcelona's area of influence but I even studied for a year at Twin Falls 
+      		(Idaho, USA) primary school.
+	<br/>
+    	<br/>
+		I studied Telecommunication Engineering at the <a href="http://www.upc.es" target="_blank">UPC</a> 
+      		university in Barcelona. I really decided to take that career as, at that 
+      		time, it was the only one that had something to do with audio (as a matter 
+      		of fact it only had a very dissappointing subject during the fourth year). 
+      		The truth is that I had more interesting things to do than concentrate on 
+      		my studies like playing music and as a result my university grades are not 
+      		very &quot;exciting&quot;.
+	<br/>
+    	<br/>
+		Ever since I was 13, I have taught at different levels. First, it was private 
+      		classes (mainly English and technical subjects), then some after-school 
+      		academies. But before I left university I started to teach at a Professional 
+      		School called ITES. I was in charge of the sound department and taught different 
+      		theoretical and practical subjects (like studio recording or live sound 
+      		PA). It was quite interesting, the only pity was that the owner of the school 
+      		was much more interested in making money than in teaching quality.
+	<br/>
+	<br/>
+		When I finished my studies at university I had to look for a Final Studies project 
+      		to do. I was very happy to find an small announcement from Xavier Serra 
+      		offering a project on Audio Morphing. Although that project was assigned 
+      		to Jordi Bonada (good friend of mine and also member of the MTG), I was 
+      		able to start a project to define a textual-based format for describing 
+      		music scores and spectral-based instruments. You can learn more of 
+		<a href="http://www.iua.upf.es/%7Examat/metrix.htm" target="_blank">METRIX</a>.
+	<br/>
+	<br/>	
+		After that, I decided to go and work in an engineering and consulting company. 
+      		REDEX does all kinds of projects related to installations in public buildings 
+      		(libraries, theaters and the like). I was in charge of managing projects 
+      		which included electrical engineering, communications or air conditioning. 
+      		The last project I managed was the building of the new Convention Center 
+      		in Barcelona (La Fira de l'Hospitalet). During my last year in REDEX I started 
+      		to collaborate again with the MTG.
+	<br/>
+    	<br/>
+		In this second phase with the MTG I worked in the CUIDAD project. The main 
+      		goal of the CUIDAD working group (which included partners like IRCAM or 
+      		NOKIA) was to influence on the MPEG7 standard for multimedia description. 
+      		Our group proposed a description scheme for musical instrument timbre description.
+	<br/>
+	<br/>
+		Then came my work related to the CUIDADO and TABASCO projects and the CLAM framework. 
+      		You can learn more about these current projects in &quot;<a href="projects.htm">Projects 
+      		and Research</a>&quot; and about my teaching activities in &quot;
+		<a href="teaching.htm">Teaching</a>&quot;.
+	</p>
+	<p align="center">
+		<a href="#" 
+			onmousedown="pageManager('load_page','resume-personal.htm')"
+			onMouseOut="tornaImatgeOriginal()" 
+			onMouseOver="canviImatge('Image23','','Personal2.gif',1)">
+			<img src="Personal1.gif" width="77" height="20" border="0" name="Image24">
+		</a>
+	</p>    
+	
+</body>
+
+</html>

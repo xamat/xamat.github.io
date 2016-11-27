@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Visualization</TITLE>
+<META NAME="description" CONTENT="Visualization">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node121.html">
+<LINK REL="up" HREF="node119.html">
+<LINK REL="next" HREF="node123.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1795"
+  HREF="node123.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1793"
+  HREF="node119.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1789"
+  HREF="node121.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1796"
+  HREF="node123.html">Application infrastructure</A>
+<B> Up:</B> <A NAME="tex2html1794"
+  HREF="node119.html">Tools</A>
+<B> Previous:</B> <A NAME="tex2html1790"
+  HREF="node121.html">Platform abstraction</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H4><A NAME="SECTION00422430000000000000">
+Visualization</A>
+</H4>
+
+<P>
+Just as almost any other framework in any domain, CLAM had to think
+about ways of integrating the core of the framework tools with a graphical
+user interface that may be used as a front-end of the framework functionalities.
+
+<P>
+The usual way to work around this issue is to decide on a graphical
+toolkit or framework and add support to it, offering ways of connecting
+the framework under development to the widgets and other graphical
+tools included in the graphical framework. In CLAM though we aimed
+at offering an toolkit-independent support. This is accomplished through
+the CLAM Visualization Module.
+
+<P>
+In order to do so a variant of the Model-View-Controller architectural
+pattern was implemented. In this new version the main actors are the
+<SPAN  CLASS="textit">Presentation</SPAN>, the <SPAN  CLASS="textit">Model Adapter</SPAN>, and the <SPAN  CLASS="textit">Model
+Controller</SPAN>.
+
+<P>
+A Presentation is a graphical metaphor through which some information
+contained in the model object is shown to the user. A Presentation
+can be anything from a simple widget to a full application graphical
+interface, depending on the complexity of the model object to be presented.
+A Presentation can be activated and deactivated, therefore its existence
+does not imply its visibility.
+
+<P>
+The <TT>ModelAdapter</TT> class defines the interface that is common
+to all model object adapters in CLAM Visualization Module. It offers
+the interface required by the Observable actor in the GOF Observer
+pattern [<A
+ HREF="node207.html#GOF">Gamma et&nbsp;al., 1995</A>]. The Adapter concept was chosen in order not to
+taint the model object interface and to separate effectively the model
+objects from its representation. The main operation in the <TT>ModelAdapter</TT>
+class is the abstract <TT>Publish</TT> operation that must be implemented
+in all subclasses in order to publish the updated model object internal
+state.
+
+<P>
+The <TT>ModelController</TT> class is similar to the <TT>ModelAdapter</TT>
+except in that, besides from publishing the model object state, it
+also allows to modify it. For that reason it adds the <TT>Update</TT>
+operation to the previously mentioned <TT>Publish</TT>.
+
+<P>
+The CLAM Visualization Module also implements a Signal&amp;Slots mechanism
+similar to that offered by frameworks such as QT [<A
+ HREF="node207.html#QTProgramming">Blanchette and Summerfield, 2004</A>].
+The basic rationale behind the Signal&amp;Slot mechanism is the following:
+Sometimes it is required that an object notifies a change in internal
+state or the reception of a message to any number of <SPAN  CLASS="textit">listeners</SPAN>.
+This situation can be modeled in different ways but most of them suffer
+from a major drawback: coupling. In this sense, the caller must know
+to some extent the callee interface. Because of this, reuse capabilities
+are reduced. The Signal&amp;Slot idiom gives solution to this problem.
+The Signal models the concept of ``event notifying'', and signals
+are connected to Slots that represent ``event handlers''.
+
+<P>
+In CLAM the Signal&amp;Slot idiom is implemented through three main classes:
+the <TT>Signal</TT> class, the <TT>Slot</TT> class and the <TT>Connection</TT>
+class. The <TT>Signal</TT> and <TT>Slot</TT> classes model the obvious
+concepts previously explained. On the other hand, the <TT>Connection</TT>
+class models the knowledge a signal has about who has to be notified
+whenever a client invokes the <TT>Emit()</TT> operation on it. Each
+time a <TT>Signal</TT> and <TT>Slot</TT> objects are bound together
+a <TT>Connection</TT> object is created, tagged by a Global Unique
+IDentifierIdentifier (GUID). This particular implementation was loosely
+derived from [<A
+ HREF="node207.html#HickeyCallbacks">Hickey, 1995</A>].
+
+<P>
+Apart from the previous tools, the non-dependency from graphical toolkit
+implementation is also accomplished through the use of a Widget Toolkit
+Wrapper. This Creator/Singleton class produces objects that are abstract
+wrappers for accessing a GUI Toolkit low-level functionality such
+as triggering the event loop, triggering the execution of a single
+iteration of the event loop or setting the refresh rate for graphic
+displays.
+
+<P>
+All this general Visualization infrastructure is completed by some
+already implemented presentations and widgets. These are offered both
+for the FLTK toolkit [<A
+ HREF="node207.html#www-FLTK">www-FLTK, </A>] and the QT framework [<A
+ HREF="node207.html#QTProgramming">Blanchette and Summerfield, 2004</A>,<A
+ HREF="node207.html#www-QT">www-QT, </A>].
+An example of such utilities are convenience debugging tools called
+Plots are also offered. Plots offer ready-to-use independent widgets
+that include the presentation of the main Processing Data's in the
+CLAM framework such as audio and spectrum.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1795"
+  HREF="node123.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1793"
+  HREF="node119.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1789"
+  HREF="node121.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1796"
+  HREF="node123.html">Application infrastructure</A>
+<B> Up:</B> <A NAME="tex2html1794"
+  HREF="node119.html">Tools</A>
+<B> Previous:</B> <A NAME="tex2html1790"
+  HREF="node121.html">Platform abstraction</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

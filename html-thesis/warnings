@@ -1,0 +1,7 @@
+No implementation found for style `fontenc'
+No implementation found for style `graphicx'
+No implementation found for style `setspace'
+Unrecognized option  to \includegraphics
+
+Thesis_forHTML.tex is newer than Thesis_forHTML.bbl: Please rerun latex and bibtex.
+couldn't convert character inodot into available encodings

@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Ptolemy</TITLE>
+<META NAME="description" CONTENT="Ptolemy">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node55.html">
+<LINK REL="previous" HREF="node53.html">
+<LINK REL="up" HREF="node53.html">
+<LINK REL="next" HREF="node55.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html985"
+  HREF="node55.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html983"
+  HREF="node53.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html977"
+  HREF="node53.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html986"
+  HREF="node55.html">Javelina</A>
+<B> Up:</B> <A NAME="tex2html984"
+  HREF="node53.html">General Purpose Signal Processing</A>
+<B> Previous:</B> <A NAME="tex2html978"
+  HREF="node53.html">General Purpose Signal Processing</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00321000000000000000"></A><A NAME="sub:Ptolemy"></A>
+<BR>
+Ptolemy
+</H2>
+
+<P>
+The Ptolemy Project [<A
+ HREF="node207.html#PtolemyOverview">Hylands et&nbsp;al., 2003</A>,<A
+ HREF="node207.html#www-Ptolemy">www-Ptolemy, </A>] is an informal
+group of researchers that is part of the Chess (Center for Hybrid
+and Embedded Software Systems) at the University of California, Berkeley.
+According to its authors, Ptolemy is above all ``a laboratory for
+experimenting with design techniques''. 
+
+<P>
+The main focus of the Ptolemy Project is on embedded systems (embedded
+software is software that resides in devices that are not first-and-foremost
+computers), particularly those that mix technologies including, for
+example, analog and digital electronics, hardware and software, and
+electronics and mechanical devices. But the group is also interested
+on systems that are complex in the sense that they mix different operations
+such as networking, signal processing, or user interfaces.
+
+<P>
+Ptolemy is open source but its BSD license allows commercial software
+to be created with it, therefore maximizing its impact.
+
+<P>
+The Ptolemy group has produced three different frameworks: Gabriel,
+Ptolemy Classic and Ptolemy II.
+
+<P>
+Gabriel was developed between 1986 and 1991. It was written in Lisp
+and focused on signal processing. It included code generators for
+DSP's that produced efficient assembly code, especially for Motorola
+processors, and also hardware/software simulators which ran a parallel
+processor simulation.
+
+<P>
+Ptolemy Classic was developed between 1990 and 1997 but it has been
+still in use thereafter. It is written in C++. It was the first modeling
+environment to support multiple MoCs, hierarchically combined. The
+SDF (see <A HREF="node39.html#sub:Synchronous-Dataflow-Networks">1.5.1</A>) MoC implementation
+was ported from Gabriel and Boolean Dataflow (BDF), Dynamic Dataflow
+(DDF), multidimensional synchronous dataflow (MDSDF) and Process Networks
+(PN) were also added. DSP code generators were ported and C and VHDL
+code generators were developed. They developed a discrete-event domain
+and demonstrated joint modeling of communication networks and signal
+processing. And they also developed a hardware simulation domain called
+Thor. Portions of Ptolemy Classic were commercialized in different
+products.
+
+<P>
+The Ptolemy II version was started in 1996. The main reason for starting
+it was to exploit the capabilities of Java. It introduced the notion
+of domain polymorphism (a component could be designed to work on different
+domains) and modal models (where FSM are combined hierarchically with
+other MoC's). Ptolemy II added a sophisticated type system where components
+can be designed to operate on multiple data types and an expression
+language. Ptolemy II uses XML for data persistence. Some (but not
+all) the SDF capabilities of Ptolemy Classic were ported. The Ptolemy
+project contributed to a user-interface toolkit called Diva and used
+it to design a user-interface called Vergil. They built models that
+could be used as applets from a web browser. Different experimental
+domains for real-time and distributed computing were also implemented.
+Instead of components as generators Ptolemy II uses a component-specialization
+framework built on top of a Java compiler toolkit called Soot. From
+now on when talking about ``Ptolemy'' we will be referring to
+the Ptolemy II version.
+
+<P>
+Ptolemy has a visual (block diagram) programming interface and a textual
+interface that offer two different ways of defining and modifying
+networks. Furthermore, the primitive actors or processes can be extended
+using the host language (Java).
+
+<P>
+The Model of Computation is not completely integrated into the framework
+and as a matter of fact, one of the goals of Ptolemy is to offer a
+platform for testing different MoCs[<A
+ HREF="node207.html#LeeAndTomasDataflowNetworks">Lee and Park, 1995</A>].
+Nevertheless, some models of computation are already available and
+don't have to be provided by the user. Ptolemy offers support for
+Synchronous Dataflow Networks (SDF), Dynamic Dataflow Networks (DDF)*,
+Boolean Dataflow Networks (BDF)* and a more generic Process Network
+model (PN)<A NAME="tex2html14"
+  HREF="footnode.html#foot5547"><SUP><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">2</SPAN></SUP></A>. Ptolemy also offers support for some other MoC's that are less interesting
+from our point of view. These include Component Interaction (CI),
+Communicating Sequential Processes (CSP) ,Continuous Time (CT), Discrete
+Events (DE), Distributed Discrete Events (DDE), Discrete Time (DT),
+Finite State Machines (FSM), Process Networks (PN), Synchronous Dataflow
+(SDF), Synchronous Reactive (SR), and Timed Multitasking (TM).
+
+<P>
+The amount of MoC's makes it difficult to choose one although most
+developers are usually just faced with a small subset of them. Nevertheless
+to design interesting systems heterogeneous models need to be used.
+According to the authors a grand unified approach could try to seek
+a model that serves all purposes. This could be accomplished by creating
+a mix of all the previous ones but such a mixture would be extremely
+complex and difficult to use. 
+
+<P>
+Ptolemy supports both interpreted and compiled execution modes. Nevertheless,
+the code generation mechanism does not implement optimizations as
+these require more knowledge about the primitives than simply gluing
+together code fragments from each process.
+
+<P>
+Subgraphs can be encapsulated into a single node but it is always
+important to make sure that the resulting hierarchical node preserves
+properties of the conforming actors (see [<A
+ HREF="node207.html#LeeAndTomasDataflowNetworks">Lee and Park, 1995</A>]
+for examples of how this is not always guaranteed).
+
+<P>
+In Ptolemy, like in many similar software environments there are three
+phases to the execution of a program: setup, run and wrap-up. 
+
+<P>
+In the first phase the hierarchical graph is traversed in order to
+initialize delays and state variables, evaluate parameters and the
+part of the schedule that can be statically evaluated, and perform
+other setup operations. Parameters evaluated during this phase represent
+the part of the operation that does not operate on streams, defining
+a clear syntactic difference between <SPAN  CLASS="textit">parameter arguments</SPAN> and
+<SPAN  CLASS="textit">stream arguments</SPAN>. When compiled mode is used, code generation
+is done after the parameters have been evaluated, allowing for highly-optimized
+code. In Ptolemy, an actor or process that only has parameters as
+inputs is called a <SPAN  CLASS="textit">source</SPAN> as it has no dynamic inputs.
+
+<P>
+In the Run phase, the execution is carried on following either a precomputed
+schedule or computing the schedule on the fly.
+
+<P>
+Finally, in the Wrap-up phase if the run is finite (it is often not
+the case) the memory is freed and final results are presented to the
+user.
+
+<P>
+Ptolemy uses polymorphism for process data transmission. Input and
+output ports are strongly typed but they only expect data <SPAN  CLASS="textit">tokens</SPAN>.
+Any data type, even an array, can be encapsulated in a token.
+
+<P>
+Ptolemy is highly modular and has a careful package structure: <SPAN  CLASS="textit">core
+packages</SPAN>: support data model or abstract syntax and offer abstract
+semantics; <SPAN  CLASS="textit">UI packages</SPAN>: support for XML file format and visual
+interface; <SPAN  CLASS="textit">library packages</SPAN>: provide actor libraries that can
+operate on a variety of domains; <SPAN  CLASS="textit"></SPAN>and <SPAN  CLASS="textit">domain packages</SPAN>:
+provide domains each of which implements a MOC and some of which provide
+their own domain-specific actor libraries.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html985"
+  HREF="node55.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html983"
+  HREF="node53.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html977"
+  HREF="node53.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html986"
+  HREF="node55.html">Javelina</A>
+<B> Up:</B> <A NAME="tex2html984"
+  HREF="node53.html">General Purpose Signal Processing</A>
+<B> Previous:</B> <A NAME="tex2html978"
+  HREF="node53.html">General Purpose Signal Processing</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

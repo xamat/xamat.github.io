@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Enforcing CLAM's framework good practices. </TITLE>
+<META NAME="description" CONTENT="Enforcing CLAM's framework good practices. ">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node218.html">
+<LINK REL="previous" HREF="node216.html">
+<LINK REL="up" HREF="node214.html">
+<LINK REL="next" HREF="node218.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2892"
+  HREF="node218.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2890"
+  HREF="node214.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2884"
+  HREF="node216.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2893"
+  HREF="node218.html">Clarifying Processing Data usage</A>
+<B> Up:</B> <A NAME="tex2html2891"
+  HREF="node214.html">What is next?</A>
+<B> Previous:</B> <A NAME="tex2html2885"
+  HREF="node216.html">CLAM deployment.</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION001015300000000000000">
+Enforcing CLAM's framework good practices. </A>
+</H3>
+
+<P>
+Another change related with the Processing infrastructure <A HREF="node111.html#sec:_ProcessingInfrastructure">3.2.2</A>
+is the clarification of a single way of doing things, removing accessory
+behavior that has not proven as useful as expected. In the first phases
+of the framework design, there were obvious problems of ``over-design'',
+which resulted in offering different ways of doing similar things.
+This flexibility promotes misuse and unnecessary complexity. There
+are now many Processing classes and in some cases some of them do
+similar things such as type checking or default initialization in
+different ways. A clear guideline in how all Processing objects should
+behave has been issued but now needs to be promoted into the whole
+repository.
+
+<P>
+
+<UL>
+<LI>Cleaning up and clarifying of Processing interface. The goal is to
+remove all unnecessary interface and enforce the strict use of some
+design principles for all CLAM users developing their own Processing
+class.
+</LI>
+<LI>Cleaning up duplicated, old fashioned or unused code around CLAM and
+CLAM examples.
+</LI>
+<LI>Testing has been already introduced in the framework and is spreading
+at a steady state. Both unit tests and functional tests are compiled
+and run on a daily basis and help ensure the framework stability and
+confidence. Nevertheless, a lot has to be done in order to have a
+well-covered framework. The goal is to extend the test coverage to
+most of the CLAM code, and enhancing the test infrastructure in order
+to be easier for the processing writers to do their own testing.
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2892"
+  HREF="node218.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2890"
+  HREF="node214.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2884"
+  HREF="node216.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2893"
+  HREF="node218.html">Clarifying Processing Data usage</A>
+<B> Up:</B> <A NAME="tex2html2891"
+  HREF="node214.html">What is next?</A>
+<B> Previous:</B> <A NAME="tex2html2885"
+  HREF="node216.html">CLAM deployment.</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

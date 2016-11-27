@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Networks</TITLE>
+<META NAME="description" CONTENT="Networks">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node148.html">
+<LINK REL="up" HREF="node147.html">
+<LINK REL="next" HREF="node150.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2098"
+  HREF="node150.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2096"
+  HREF="node147.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2092"
+  HREF="node148.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2099"
+  HREF="node150.html">Data Nodes</A>
+<B> Up:</B> <A NAME="tex2html2097"
+  HREF="node147.html">Composing with DSPOOM Objects:</A>
+<B> Previous:</B> <A NAME="tex2html2093"
+  HREF="node148.html">Processing Composites</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00513200000000000000">
+Networks</A>
+</H3>
+
+<P>
+A DSPOOM Network is a set of interconnected Processing objects that
+collaborate for a common goal and can be modified on run-time. As
+illustrated in figure <A HREF="#cap:DSPOOM-Network-Class">4.8</A>, it can be seen
+as a set of Processing objects with connected input and output ports
+and input and output controls.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="cap:DSPOOM-Network-Class"></A><A NAME="5648"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.8:</STRONG>
+DSPOOM Network Class Diagram</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="380" HEIGHT="493" ALIGN="BOTTOM" BORDER="0"
+ SRC="img47.png"
+ ALT="\includegraphics[%
+width=0.40\paperwidth,
+keepaspectratio]{images/ch4-DSPOOM/ps/Network.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Nevertheless, if we take a closer look the network entity is made
+up of the following elements <A NAME="tex2html55"
+  HREF="footnode.html#foot5649"><SUP><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">4</SPAN></SUP></A>:
+
+<P>
+
+<UL>
+<LI>A list of processing objects
+</LI>
+<LI>A list of pairs of connected output port / input port.
+</LI>
+<LI>A list of reading and writing data types and window sizes (i.e. firing
+rules) for all ports in the network
+</LI>
+<LI>A list of pairs of connected output control / input controls
+</LI>
+<LI>A flow control policy that will possibly yield an associated schedule
+</LI>
+</UL>
+A Network has a dynamic list of Processing objects that can be updated
+at run-time. Therefore, the Network must offer facilities for inserting
+or deleting new Processing objects. This operation could be done while
+the network is executing. As a matter of fact the addition or suppression
+of a Processing object from the network does not necessarily affect
+the result of the process. The existence of a Processing object is
+not relevant as long as it is not connected to the process graph.
+
+<P>
+In order to define this process graph, the network must keep track
+of the list of connected pairs of input and output Ports. An output
+Port may have any number of input Ports connected to it while an input
+port can only be connected to a single output Port. 
+
+<P>
+All interconnected Ports should be strongly typed and expect the same
+Processing Data type. But the amount of data tokens needed by every
+Port is not predetermined, does not have to be the same for all ports
+and does not even need to be fixed on run-time. The amount of data
+tokens that a given Port needs to consume or produce in every execution
+is determined by its associated <SPAN  CLASS="textit">region</SPAN> or <SPAN  CLASS="textit">window size</SPAN>.
+In principle, and in a generic application, there is no forced relation
+between the region sizes of connected ports. That is, an Outport many
+have a very small region while the connected Inports have larger reading
+regions. In this case the producing Processing object will have to
+be triggered several times before the reading Processing objects can
+proceed with an execution.
+
+<P>
+Apart from the main process graph defined by interconnected Ports,
+a Network has a secondary graph defined by Controls and their connections.
+As already commented in previous sections, while data flow is handled
+in a synchronous manner, the control mechanism is event-driven. A
+control event is transmitted from the output control to the connected
+input controls as soon as it generates. The new control value overwrites
+the previously existing one, even if it has still not been read.
+
+<P>
+But while the Control mechanism is very simple and does not need any
+supervision, the data flow does need of some sort of external control.
+The Network itself is in charge of managing writing and reading of
+data. For doing so the Network must respond to a flow control policy
+that has been pre-determined and fire the execution of the Processing
+objects accordingly and by calling their Do operation. 
+
+<P>
+If, for instance, a static schedule is decided, window sizes for all
+ports must remain fixed during execution. Then the network will determine
+a static schedule complete cycle consisting of <!-- MATH
+ $\mathrm{\mathcal{F\left(n\right)}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img48.png"
+ ALT="$\mathrm{\mathcal{F\left(n\right)}}$"></SPAN>firings
+for each nth Processing object. The execution of a network will stop
+whenever a stop control is received at the network level (this control
+may be generated, for instance, by the user or by the absence of data
+at the network input).
+
+<P>
+Different dynamic flow control policies can be used depending on the
+particular problem or system under study. Using a <SPAN  CLASS="textit">pull</SPAN> or <SPAN  CLASS="textit">lazy</SPAN>
+policy the execution thread starts by the outermost Processing object
+in the Network (the one whose output Port corresponds to the output
+of the Network). If this Processing object checks that it does not
+have enough input data it hands the control to the Processing object
+whose output Port is connected to its inputs and so on. In the <SPAN  CLASS="textit">push</SPAN>
+or <SPAN  CLASS="textit">eager</SPAN> version, the process starts with the Processing object
+that acts as the input to the chain and generating data until all
+Processing objects connected to its output Port can process. Then
+it hands control to them and they repeat the process.
+
+<P>
+A Network has compositional properties so it can be made of interconnected
+Networks that in turn have other internal Networks, etc. Therefore,
+when looking at a Network from the distance, it behaves also like
+a Processing object and has input and output data as well as controls.
+
+<P>
+A Network is very much related to Processing Composites. The main
+difference is that Processing Composites are decided at compile time.
+Defining a new Processing Composite requires programming a new class
+and combining existing Processing classes or Processing Composite
+classes. A Processing Composite is seen at run-time as a regular Processing
+object and therefore must have all flow control behavior coded into
+the class. This behavior cannot be parameterized or changed and is
+usually very much case-dependant. A Processing Composite is less flexible
+than a corresponding Network but can be more efficient as it is designed
+knowing the particular characteristics of the components and the overall
+process being implemented. 
+
+<P>
+On the other hand, a Network is much more flexible, can be decided
+at run-time without any programming. A Network is more flexible but
+can sometimes result less efficient than a tuned processing composite.
+In general terms, we will prefer a Network to a processing composite
+and will only use Processing Composite after having used the corresponding
+Network and having decided on optimization that would be necessary
+in order to yield a more efficient result.
+
+<P>
+As a Network can be seen as a Processing object when looked from a
+distance, it can also be classified into the same categories than
+a Processing object. A Network is a <SPAN  CLASS="textit">generating</SPAN> Network if it
+has no inputs and a Network is a <SPAN  CLASS="textit">sink</SPAN> Network if it has no
+outputs.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html2100"
+  HREF="node150.html">Data Nodes </A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2098"
+  HREF="node150.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2096"
+  HREF="node147.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2092"
+  HREF="node148.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2099"
+  HREF="node150.html">Data Nodes</A>
+<B> Up:</B> <A NAME="tex2html2097"
+  HREF="node147.html">Composing with DSPOOM Objects:</A>
+<B> Previous:</B> <A NAME="tex2html2093"
+  HREF="node148.html">Processing Composites</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

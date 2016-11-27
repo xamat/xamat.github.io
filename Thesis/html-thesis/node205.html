@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Final Glossary</TITLE>
+<META NAME="description" CONTENT="Final Glossary">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node204.html">
+<LINK REL="up" HREF="node204.html">
+<LINK REL="next" HREF="node206.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2732"
+  HREF="node206.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2730"
+  HREF="node204.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2726"
+  HREF="node204.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2733"
+  HREF="node206.html">Future Work</A>
+<B> Up:</B> <A NAME="tex2html2731"
+  HREF="node204.html">Conclusions and Future Work</A>
+<B> Previous:</B> <A NAME="tex2html2727"
+  HREF="node204.html">Conclusions and Future Work</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00801000000000000000">
+Final Glossary</A>
+</H2>
+
+<P>
+Just as in the introduction we gave a brief glossary of the fundamental
+concepts upon which this Thesis was to be built, we will now summarize
+the most important ideas also in the form of a glossary. We will give
+short definitions and refer to the related section in this document.
+
+<P>
+
+<UL>
+<LI><SPAN ID="txt5046">CLAM</SPAN>: Acronym for ``C++ Library for Audio and Music''.
+Audio and music development framework that represents the practical
+realization of the DSPOOM metamodel. See chapter <A HREF="node92.html#ch:_CLAM">3</A>.
+</LI>
+<LI><SPAN ID="txt5049">DSPOOM</SPAN>: Acronym for ``Digital Signal Processing Object-Oriented
+Metamodel''. Abstract metamodel that includes a complete object-oriented
+approach and a graphical model of computation that can be instantiated
+to model any digital signal processing system especially in the audio
+and music domain. See chapter <A HREF="node135.html#ch:_DSPOOM">4</A>.
+</LI>
+<LI><SPAN ID="txt5052">Processing Object</SPAN>: Basic building block of a DSPOOM model.
+It is the object-oriented encapsulation of a process. See section
+<A HREF="node137.html#sub:DSPOOM::Processing_Object">4.1.1</A>
+</LI>
+<LI><SPAN ID="txt5054">Processing Data Object</SPAN>: Object that encapsulates all data
+in a DSPOOM model offering general services such as a homogeneous
+interface or passivation/activation facilities. Inputs and outputs
+to a Processing object are all Processing Data objects (or Controls
+if the input is asynchronous). See <A HREF="node142.html#sub:DSPOOM::Processing_Data">4.1.2</A>
+</LI>
+<LI><SPAN ID="txt5056">Network</SPAN>: Dynamic grouping of Processing objects in DSPOOM.
+A Network basically contains a list of Processing objects and a list
+of connections between Ports and Controls. Internal flow control issues
+are automatically handled. See section <A HREF="node147.html#sub:DSPOOM::Networks_and_Composites">4.1.3</A>.
+</LI>
+<LI><SPAN ID="txt5058">Processing Composite</SPAN>: Static grouping of DSPOOM Processing
+objects. In a Processing Composite class the developer defines the
+internal behavior and flow control issues. See section <A HREF="node147.html#sub:DSPOOM::Networks_and_Composites">4.1.3</A>.
+</LI>
+<LI><SPAN ID="txt5060">OOCTM</SPAN>: Acronym for Object-Oriented Content Transmission
+Metamodel. Following this abstract model, information transmission
+can be seen as a sequence of the following processes: analysis, understanding,
+encoding, transmission, decoding, interpreting and synthesis. See
+chapter <A HREF="node155.html#ch:_OOCTM">5</A>.
+</LI>
+<LI><SPAN ID="txt5062">Content</SPAN>: Any semantic information contained in a signal
+that can be interpreted by the targeted user. See <A HREF="node157.html#sub:What-is-Content_">5.1.1</A>
+</LI>
+<LI><SPAN ID="txt5064">Sound Object</SPAN>: A Sound Object is considered to be any entity
+in a sound system. Following the DSPOOM metamodel Sound Objects can
+also be classified into Processing Sound Object such as Instruments
+or Generators and Data Sound Objects such as Tracks or Notes. See
+section <A HREF="node158.html#sub:On-Sound-Objects">5.1.2</A>.
+</LI>
+<LI><SPAN ID="txt5066">Semantic Transmitter</SPAN>: Transmitter that, in the OOCTM, is
+in charge of analyzing, understanding, encoding and transmitting the
+content in a signal. See section <A HREF="node160.html#sub:The-Semantic-Transmitter">5.2.1</A>.
+</LI>
+<LI><SPAN ID="txt5068">Semantic Receiver</SPAN>: Receiver that, in the OOCTM is in charge
+of receiving, decoding, interpreting, and synthesizing the transmitted
+content into a signal. See <A HREF="node165.html#sub:The-Semantic-Receiver">5.2.2</A>.
+</LI>
+<LI><SPAN ID="txt5070">Content-based Analysis</SPAN>: Multi-step signal analysis in which
+the goal is to extract content description. See <A HREF="node177.html#sec:Beyond-Parametric-Encoding:">5.3.3</A>.
+</LI>
+<LI><SPAN ID="txt5072">Content-based Transformation</SPAN>: Signal transformation that
+addresses the content-level by offering the user semantically meaningful
+control. The basic scheme is based on an analysis-synthesis process
+derived from the OOCTM (see <A HREF="node178.html#sec:Content-based-transformations">5.3.4</A>).
+</LI>
+<LI><SPAN ID="txt5074">Instrument Object</SPAN>: Music object that receives input controls
+in the form of music events and maps them into Generator controls.
+See <A HREF="node183.html#sec:Instruments-and-generators">6.1</A>.
+</LI>
+<LI><SPAN ID="txt5076">Generator Object</SPAN>: A Generator is the minimum entity in
+an Instrument capable of producing sound by itself. See <A HREF="node183.html#sec:Instruments-and-generators">6.1</A>.
+</LI>
+<LI><SPAN ID="txt5078">Note Object</SPAN>: A musical Note is defined as a sound object
+that has a precise and explicit active lifespan (i.e. the note duration),
+a certain loudness, an optional pitch and other optional attributes.
+A Note Object is actually a placeholder for a Generator state and
+can be directly synthesized into audio. See <A HREF="node184.html#sec:Notes">6.2</A>
+</LI>
+<LI><SPAN ID="txt5080">MetriX</SPAN>: Framework that provides an implementation of the
+Object-Oriented Music Model and offers two languages: the MIDL and
+the MSDL. See section <A HREF="node186.html#sec:MetriX">6.4</A>.
+</LI>
+<LI><SPAN ID="txt5082">MIDL</SPAN>: MetriX Instrument Definition Language. Language for
+describing an Instrument subclass behavior by specifying its Generators,
+Timbre Space and Parameter mappings. See <A HREF="node190.html#sub:MIDL">6.4.2</A>.
+</LI>
+<LI><SPAN ID="txt5084">MSDL</SPAN>: MetriX Score Definition Language. Language for describing
+a musical score as a sequence of time ordered events. See <A HREF="node196.html#sub:MSDL">6.4.3</A>.
+</LI>
+<LI><SPAN ID="txt5086">MetriXML</SPAN>: Implementation of MetriX in the CLAM framework,
+mapping concepts to DSPOOM metaclasses and obtaining XML representation
+for free.
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2732"
+  HREF="node206.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2730"
+  HREF="node204.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2726"
+  HREF="node204.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2733"
+  HREF="node206.html">Future Work</A>
+<B> Up:</B> <A NAME="tex2html2731"
+  HREF="node204.html">Conclusions and Future Work</A>
+<B> Previous:</B> <A NAME="tex2html2727"
+  HREF="node204.html">Conclusions and Future Work</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,382 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>MODE and Siren</TITLE>
+<META NAME="description" CONTENT="MODE and Siren">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node74.html">
+<LINK REL="previous" HREF="node72.html">
+<LINK REL="up" HREF="node71.html">
+<LINK REL="next" HREF="node74.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1189"
+  HREF="node74.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1187"
+  HREF="node71.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1181"
+  HREF="node72.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1190"
+  HREF="node74.html">Common Music</A>
+<B> Up:</B> <A NAME="tex2html1188"
+  HREF="node71.html">Music Processing Frameworks</A>
+<B> Previous:</B> <A NAME="tex2html1182"
+  HREF="node72.html">The NeXT MusicKit</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00342000000000000000"></A><A NAME="sub:MODE-and-Siren"></A>
+<BR>
+MODE and Siren
+</H2>
+
+<P>
+The MODE [<A
+ HREF="node207.html#PopeMODE91">Pope, 1991c</A>,<A
+ HREF="node207.html#PopeMODE94">Pope, 1994</A>,<A
+ HREF="node207.html#PopeOOinMODE">Pope, 1991b</A>] was a collection
+of OO classes for general sound, event, event list and score processing
+as well as a music oriented user interface tool kit, embedded in the
+Smalltalk-80 Programming System. The MODE was substituted by Siren
+[<A
+ HREF="node207.html#PopeSirenBookChapter">Pope, 2001</A>,<A
+ HREF="node207.html#PopeSirenOOPSLA">Pope, 1998a</A>,<A
+ HREF="node207.html#PopeSirenRecentDevelopments">Pope, 2003</A>,<A
+ HREF="node207.html#www-Siren">www-Siren, </A>]
+in 1998.
+
+<P>
+Both frameworks are the result of the author's, Stephen Travis Pope,
+continuous iterations in order to find a tool for his compositions
+as well as a platform for practically demonstrating his research on
+object-oriented programming and software engineering[<A
+ HREF="node207.html#PopeMachineTonguesIX">Pope, 1991d</A>].
+As such, they implement a quite particular vision of musical composition
+that is tightly integrated with an object-oriented model[<A
+ HREF="node207.html#PopeOOinMODE">Pope, 1991b</A>,<A
+ HREF="node207.html#PopeOOMusic">Pope, 1997</A>].
+Both frameworks have been developed taking into account very little
+inputs from users and as the author observes ``(...) if Siren works
+well for other composers, it is because of its idiosyncratic approach,
+rather than its attempted generality''[<A
+ HREF="node207.html#PopeSirenBookChapter">Pope, 2001</A>].
+
+<P>
+Before taking a look at the MODE and Siren, let us summarize the different
+packages and versions the author has worked on.
+
+<P>
+The MODE was already the result of several iterations of Smalltalk-80
+based toolkits for musical score and sound processing and performance.
+It was itself a reimplementation of the author's earlier package,
+the HyperScore ToolKit [<A
+ HREF="node207.html#PopeSmalltalkMusikKit">Pope, 1987</A>], son of DoubleTalk,
+son of ARA. ARA was a Lisp system. Double-Talk was a Petri net editing
+system in Smalltalk-80.
+
+<P>
+Siren is a software framework that includes a set of flexible and
+reusable components that are designed for extension and customization
+but also carries with it a ``way of thinking'' about music and
+composition. It has been developed in the Smalltalk language and it
+is intended to be used by Smalltalk-80 programmers. Previous systems
+strove for extreme flexibility at the expense of additional complexity
+but Siren makes decisions differently.
+
+<P>
+The system is designed to accept pluggable front ends and back ends.
+It is efficient for real-time composition and portable as it runs
+in several OS. Application areas are: sound and score editors, real-time
+algorithmic composition, and music performance front ends. The purpose
+of the framework is to provide comprehensive note, score and sound
+processing tools for the rapid prototyping of music applications.
+The framework includes an abstract music representation language,
+an interface for real-time I/O, a user interface framework, and connection
+to object databases. It is also integrated with a scalable distributed
+processing framework.
+
+<P>
+Siren is a software framework for sound and music composition and
+production made of about 350 Smalltalk classes. It is platform independent
+and runs on Macintosh, Windows, and Unix-based computers. The Smalltalk
+code is available for free.
+
+<P>
+The motivation behind the MODE and now Siren was to build a powerful,
+flexible, and portable computer-based composer's tool and instrument.
+Siren is designed to support composition, off-line realization, and
+live performance. Other desired applications are music databases,
+music analysis and music scholarship and pedagogy.
+
+<P>
+On the other hand, the technical goal is to present good OO design
+principles and elegant state-of-the-art software engineering practice.
+It needs to be easily extensible, to provide abstract models of high-level
+musical constructs and flexible management of large datasets.
+
+<P>
+The main components or packages in Siren are:
+
+<P>
+
+<UL>
+<LI>The Smoke music representation language (classes for music magnitudes,
+events, event list, generators, functions and sounds).
+</LI>
+<LI>voices, schedules and I/O drivers (real-time and file-based I/O for
+sound, OSC, and MIDI).
+</LI>
+<LI>user interface components for musical applications (tools and music/sound
+widget).
+</LI>
+<LI>several built-in applications (editors and browsers for Siren objects).
+</LI>
+</UL>
+It is possible to use inheritance for building specialized versions
+of existing components.
+
+<P>
+Smoke [<A
+ HREF="node207.html#PopeSmoke">Pope, 1992</A>] is the ``kernel'' of Siren. It is a set
+of classes organized in meta-categories such as Magnitudes, Events
+and EventLists, Schedulers, or Interfaces. Smoke is described in terms
+of two description languages: a compact binary interchange format
+and a mapping onto concrete data structures.
+
+<P>
+According to the author Smoke can be summarized as follows: Music
+can be represented as a series of <SPAN  CLASS="textit">events</SPAN>. Events are simply
+property lists or dictionaries that can have named properties with
+arbitrary values. These properties may be music-specific objects and
+for that reason models of many common musical magnitudes are provided.
+
+<P>
+<SPAN  CLASS="textit">Music Magnitudes</SPAN> are extensible abstract representations for
+the properties of musical events such as pitch, duration and loudness.
+Each Music Magnitude can have different representations (e.g. pitch
+can be represented in integer, float, string or fraction). Their primary
+behavior is that they can translate freely between their representations.
+<TT>MusicMagnitude</TT> objects are characterized by their <SPAN  CLASS="textit">identity</SPAN>,
+<SPAN  CLASS="textit">class</SPAN>, <SPAN  CLASS="textit">species</SPAN> and <SPAN  CLASS="textit">values</SPAN> (e.g. the pitch object
+representing the note C3 is a member of the class <TT>SymbolicPitch</TT>,
+of the species Pitch and has a value of c3 (note that class+species
+allows for multiple inheritance).
+
+<P>
+The basic abstract model classes are <TT>Pitch</TT>, <TT>Loudness</TT>
+and <TT>Duration</TT>. They are abstract and have no subclasses, they
+are used by species for families of classes.
+
+<P>
+The basic event classes, <TT>Event</TT> and <TT>EventList</TT> both
+of which derive from <TT>AbstractEvent</TT>, are used for describing
+musical structures. In Smoke, an event is simply an object that has
+a duration and possibly arbitrary other properties. The <TT>AbstractEvent</TT>
+in Smoke is modeled as a property-list dictionary with a duration.
+There is no prescribed grain size or level for events.
+
+<P>
+<TT>EventList</TT> hold collections of events sorted by start time.
+Event lists are events in themselves and can therefore be nested into
+trees in a hierarchical structure. An event can be in more than one
+list at different relative start times and with different properties
+mapped into it. <TT>Events</TT> don't know their start-time, which
+is always relative to some outer scope. 
+
+<P>
+<TT>Events</TT> and <TT>EventLists</TT> are ``performed'' by the
+action of a scheduler that passes them to an interpretation object
+or <SPAN  CLASS="textit">Voice</SPAN>. Voices map event properties onto IO parameters.
+
+<P>
+<TT>NoteEvent</TT> classes are like generic <TT>Events</TT> that represent
+musical notes with the default parameters pitch, amplitude and voice.
+Links between events and event lists can have some symbolic description
+(e.g. <TT>isVariationOf</TT>, <TT>isTonalAnswerTo</TT>...)
+
+<P>
+Sampled sounds can be properties of events. The <TT>Sound</TT> class
+allows reading and writing a number of file formats and maintains
+a list of named cue points in the sound.
+
+<P>
+Siren has classes for representing ``middle-level'' structures
+e.g. cluster, chord, ostinato or rubato. Music formats can be characterized
+in a very compact way. Two abstract classes are defined: <TT>EventGenerator</TT>
+and <TT>EventModifier</TT>. Composers can enrich the generator hierarchy
+for a specific composition. 
+
+<P>
+<TT>EventGenerators</TT> can either return an <TT>EventList</TT> or
+behave like processes and be told to play and stop. The three abstract
+<TT>EventGenerators</TT> are <TT>Cluster</TT>, <TT>Cloud</TT> and
+<TT>Ostinato</TT>. <TT>Cluster</TT> classes describe a one-dimensional
+collection of pitches or rhythms (their events occur simultaneously
+or are repetitions of the same event). Concrete types of <TT>Clusters</TT>
+are chords and arpeggi. <TT>Cloud</TT> classes are random generators
+that produce notes from a given range. Most process-oriented generators
+take the form of <TT>Ostinati</TT>, which create repeating versions
+or variations of the input material or parameters.
+
+<P>
+The <TT>EventModifier</TT> class models objects that have a function
+object and a property name so they can apply the function to the given
+property of an <TT>Event</TT> or an <TT>EventList</TT>. <TT>EventModifiers</TT>
+can be lazy or eager. Eager <TT>EventModifiers</TT> apply the function
+as soon as they are given an <TT>EventList</TT> while lazy wait until
+scheduling time.
+
+<P>
+Using the messages to the previous basic classes one can make scripts
+(programs) of messages to <TT>Events</TT>, <TT>EventLists</TT> and
+<TT>Functions</TT> to describe simple musical processes. Regular messages
+from the Smalltalk-80 environment can be used to inspect objects.
+
+<P>
+Siren has a special structure that allows the same score to be played
+independently of the final synthesis method. Properties of events
+are encoded in an abstract symbolic way that is then expanded into
+device-specific or output format-specific parameters.
+
+<P>
+Siren also has a complete graphical environment that can be used to
+develop graphical applications for music processing.
+
+<P>
+One of the basic problems for making cross-platform music tools was
+the lack of good portable APIs for sound and MIDI I/O. This has been
+helped recently by cross-platform libraries such PortAudio [<A
+ HREF="node207.html#BencinaPortAudio">Bencina and Burk, 2001</A>],
+PortMIDI [<A
+ HREF="node207.html#www-PortMIDI">www-PortMIDI, </A>] or LibSndFile [<A
+ HREF="node207.html#www-libsndfile">www-libsndfile, </A>].
+All of these libraries are implemented in C/C++ and it was difficult
+to integrate them into Smalltalk. But VisualWorks has a powerful for
+interfacing Smalltalk code to C libraries. 
+
+<P>
+For network and file-oriented IO, it uses Open Sound Control (OSC)[<A
+ HREF="node207.html#WrightOSC-ICMC">Wright, 1998a</A>].
+Siren has also been used as a front-end to CSL (see <A HREF="node67.html#sub:CSL">2.3.3</A>)
+through OSC messages.
+
+<P>
+The author of Siren has also implement the Create Real-Time Application
+Manager (CRAM) [<A
+ HREF="node207.html#PopeCRAM">Pope et&nbsp;al., 2001</A>] for large-scale distributed processing.
+Siren and CSL are designed to be used in distributed systems controlled
+by CORBA and with messages sent through OSC.
+
+<P>
+Also recently new class libraries have been added to support using
+large speech databases with phoneme segmentation and detailed feature
+extraction. The analysis core of the Siren speech database is the
+Segmenter, which uses a combination of time-domain and spectral-domain
+features to break continuous speech into phonemes.
+
+<P>
+Although as already commented most of the applications developed with
+the Siren/MODE framework are musical composition environments, the
+frameworks is sufficiently flexible so as to be used in different
+situations. Paleo, for instance, is a suite of sound and music analysis
+tools integrated with an OO persistence mechanism in Siren. Paleo
+uses dynamic feature vectors and on-demand indexing. Annotational
+information derived from analysis can be added to the database at
+any time. Paleo performs analysis of MIDI files and allows for complex
+queries.
+
+<P>
+Most of the advantages and disadvantages of Siren are related to its
+language of choice, Smalltalk. These are, according to its author
+the most important advantages of Smalltalk and therefore Siren:
+
+<P>
+Smalltalk is a simple programming language; the class library is quite
+compact and extense especially when compared to C++; Smalltalk has
+an extensive development environment with code browsers or in-place
+debugger; finally, it is important to point out that the language,
+libraries and IDE have been quite stable for the last 20 years.
+
+<P>
+As disadvantages he cites the following: Smalltalk now is not a mainstream
+language; the VisualWorks/Smalltalk implementation is large (2000
+classes + 300 Siren classes), this is a very large system to learn;
+like in Java, Smalltalk programs are generally compiled to a virtual
+machine which may be interpreted, translated or cross-compiled at
+run-time, this provides cross-platform portability of object code
+but at the cost of some run-time performance; garbage collection also
+makes development easier but also adds overhead; finally the Siren
+package itself is complex and implements a very particular design
+approaches. It does not include MIDI sequencing or common music notation
+editors due to lack of interest by the authors. They do with Siren
+what they cannot do with a combination of SuperCollider, Peak, Finale
+and ProTools.
+
+<P>
+New applications in different areas are planned for Siren [<A
+ HREF="node207.html#PopeSirenRecentDevelopments">Pope, 2003</A>]
+such as controlling graphical animation from Siren. But probably the
+most surprising news is that, after 20 years of Smalltalk development,
+the author is thinking on changing to a different language. At the
+moment of this writing, they are experimenting with Ruby, Self, and
+Supercollider. Porting Siren to another language means keeping Smoke's
+class library specification but abandoning its syntax that is too
+Smalltalk-oriented. Smoke event list are then written in the language
+as the implementation being used.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1189"
+  HREF="node74.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1187"
+  HREF="node71.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1181"
+  HREF="node72.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1190"
+  HREF="node74.html">Common Music</A>
+<B> Up:</B> <A NAME="tex2html1188"
+  HREF="node71.html">Music Processing Frameworks</A>
+<B> Previous:</B> <A NAME="tex2html1182"
+  HREF="node72.html">The NeXT MusicKit</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>XML and XML Schema</TITLE>
+<META NAME="description" CONTENT="XML and XML Schema">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node32.html">
+<LINK REL="previous" HREF="node30.html">
+<LINK REL="up" HREF="node30.html">
+<LINK REL="next" HREF="node32.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html694"
+  HREF="node32.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html692"
+  HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html686"
+  HREF="node30.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html695"
+  HREF="node32.html">MPEG-7</A>
+<B> Up:</B> <A NAME="tex2html693"
+  HREF="node30.html">Metadata and Meta Objects</A>
+<B> Previous:</B> <A NAME="tex2html687"
+  HREF="node30.html">Metadata and Meta Objects</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00241000000000000000">
+XML and XML Schema</A>
+</H2>
+
+<P>
+XML [<A
+ HREF="node207.html#www-XML">www-XML, </A>] is a text based format to represent hierarchical
+data. XML uses named tags enclosed between angle brackets to mark
+the begin and the end of the hierarchical organizers, the XML elements.
+Elements contains other elements, attributes and plain content. Let's
+see a sample XML document: 
+<BR>
+<P>
+<BR>
+<IMG
+ WIDTH="358" HEIGHT="211" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="\begin{singlespace}
+\textsf{\footnotesize &lt;?XML version='1.0' encoding='ISO-8859...
+...
+\textsf{\footnotesize &lt;/mainElement&gt;}\\
+{\footnotesize\par
+}
+\end{singlespace}">
+<BR>
+
+<P>
+Both attributes and plain content are simple text data. The main different
+between them is that an attribute is named and plain content is not.
+Elements also have a name. Names for attributes must be unique inside
+its hierarchic context, though this restriction doesn't apply to elements'
+name.
+
+<P>
+The power of XML is that you can adapt your own tags (elements) and
+tag attributes (attributes) in order to describe your own data. This
+is one of the reasons why XML is starting to spread rapidly. The XML
+specification defines the concepts of well-formedness and validity.
+We say that an XML document is well-formed if it has a correct nesting
+of tags. In order for a document to be valid, it must conform to some
+constraints expressed in its document type definition (DTD) or its
+associated XML Schema.
+
+<P>
+A DTD file defines the constraints and structure of a set of XML files
+but by using a completely different syntax from XML. Here is an example
+of a basic DTD file: 
+<BR>
+<P>
+<BR>
+<IMG
+ WIDTH="222" HEIGHT="108" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="\begin{spacing}{0.8}
+\texttt{\footnotesize &lt;!DOCTYPE letter{[} }{\footnotesize\p...
+...e\par
+}
+\par
+\texttt{\footnotesize {]}&gt; }&nbsp;\\
+{\footnotesize\par
+}
+\end{spacing}">
+<BR>
+
+<P>
+The presented DTD defines: Nesting rules, e.g., a letter is composed
+of a header and a text. Very simple datatypes, e.g., a name is a PCDATA
+(parsed character data). Two kinds of items can be defined in a DTD:
+elements and attributes. Basically elements are tags (name between
+angle brackets), while attributes are parameters of elements. 
+
+<P>
+On the other hand XML-Schema is a definition language for describing
+the structure of an XML document using the same XML syntax and it
+is bound to replace the existing DTD language. It is thus a tagged
+textual format but it also includes support for most Object Oriented
+concepts[<A
+ HREF="node207.html#www-XMLSchema">www-XMLSchema, </A>]. The purpose of a schema is to define
+a class of XML documents by using particular constructs to constrain
+their structure: datatypes, elements and their content, attributes
+and their values. Schema can be seen as an extended DTD. More important
+for many purposes is that schemas may be written in XML. Using XML
+as the document format for schemas allows users to employ standard
+XML tools instead of specialized applications. See the following example<A NAME="tex2html5"
+  HREF="footnode.html#foot5506"><SUP><SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">3</SPAN></SUP></A>:
+<BR>
+<P>
+<TT><SMALL CLASS="FOOTNOTESIZE">&lt;xsd:schema xmlns:xsd=&#34;http://www.w3.org/1999/XMLSchema&#34;&gt;</SMALL></TT>
+<P>
+
+
+<P>
+<BR>
+<IMG
+ WIDTH="581" HEIGHT="36" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="\begin{spacing}{0.8}
+\texttt{\footnotesize&nbsp;&nbsp;&lt;xsd:element name=\char\lq \uml {}Metr...
+...r
+}
+\par
+\texttt{\footnotesize&nbsp;&nbsp;&nbsp;&nbsp;&lt;sequence&gt;}{\footnotesize\par
+}
+\end{spacing}">
+<BR>
+
+<P>
+<TT><SMALL CLASS="FOOTNOTESIZE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:element name=&#34;Generators&#34;
+type=&#34;GeneratorsType&#34;/&gt;</SMALL></TT>
+<P>
+
+
+<P>
+<BR>
+<IMG
+ WIDTH="620" HEIGHT="95" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="\begin{spacing}{0.8}
+\texttt{\footnotesize&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:element name=\char\lq \uml {}...
+...\par
+\texttt{\footnotesize &lt;/xsd:schema&gt;}&nbsp;\\
+{\footnotesize\par
+}
+\end{spacing}">
+<BR>
+
+<P>
+It is important to note that there are already quite a few multimedia
+applications of the XML language. See for example [<A
+ HREF="node207.html#www-XMLMusic">www-XMLMusic, </A>]
+for a list of music-related XML applications. But probably the most
+ambitious project for using XML metadata is that of MPEG-7, the multimedia
+description standard, which will be described in the next section.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html694"
+  HREF="node32.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html692"
+  HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html686"
+  HREF="node30.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html695"
+  HREF="node32.html">MPEG-7</A>
+<B> Up:</B> <A NAME="tex2html693"
+  HREF="node30.html">Metadata and Meta Objects</A>
+<B> Previous:</B> <A NAME="tex2html687"
+  HREF="node30.html">Metadata and Meta Objects</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

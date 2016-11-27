@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Data Nodes </TITLE>
+<META NAME="description" CONTENT="Data Nodes ">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node149.html">
+<LINK REL="up" HREF="node149.html">
+<LINK REL="next" HREF="node151.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2107"
+  HREF="node151.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2105"
+  HREF="node149.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2101"
+  HREF="node149.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2108"
+  HREF="node151.html">Is DSPOOM ``truly'' Object</A>
+<B> Up:</B> <A NAME="tex2html2106"
+  HREF="node149.html">Networks</A>
+<B> Previous:</B> <A NAME="tex2html2102"
+  HREF="node149.html">Networks</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H4><A NAME="SECTION00513210000000000000"></A><A NAME="sub:Data-Nodes"></A>
+<BR>
+Data Nodes 
+</H4>
+
+<P>
+A <SPAN  CLASS="textit">Data Node</SPAN> is defined from the logical grouping of all arcs
+(or FIFO queues) in the graph sharing a common source Port (see Figure
+<A HREF="#fig:DSPOOM-DataNodes">4.9</A>). The interesting feature that leads us
+to this logical grouping is that arcs with a common source may in
+fact share the same FIFO queue, avoiding many unnecessary data copying
+and moving at the only price of making flow control issues a bit more
+complex. But then again, these issues should be automatic and transparent
+to anyone not wishing to understand the details of this low-level
+layer.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:DSPOOM-DataNodes"></A><A NAME="5652"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.9:</STRONG>
+DSPOOM Network and Data Nodes</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="555" HEIGHT="203" ALIGN="BOTTOM" BORDER="0"
+ SRC="img49.png"
+ ALT="\includegraphics[%
+width=1.0\textwidth]{images/ch4-DSPOOM/ps/NetworkWithNode.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+A DSPOOM Data Node acts as a connection slot where several Processing
+objects can be connected. Out of all the connected Processing objects,
+only one can be a <SPAN  CLASS="textit">producer</SPAN> while the rest will act as <SPAN  CLASS="textit">consumers</SPAN>.
+In other words, all connected Ports except one must be Inports. As
+already commented, connected Ports may have different and varying
+sizes. The amount of data tokens that an Inport needs to process is
+its only firing rule and these firing rules may be interpreted as
+sliding windows or <SPAN  CLASS="textit">regions</SPAN>.
+
+<P>
+But a Data Node is more than a simple connection slot. First it must
+be interpreted as a data container as it is here where the physical
+FIFO queues are actually implemented. The implementation of these
+FIFO queues in the Data Node admits different solutions but the most
+immediate is based on a circular buffer with several reading and only
+one writing region.
+
+<P>
+The Data Node is also in charge of keeping track of the different
+regions connected to it. It is the Data Node responsibility to avoid
+inconsistent situations and notify the flow control entity of any
+exceptional state. Reading regions may be of any size and advance
+at any rate. They may also overlap. Therefore, the only unwanted conditions
+that the Data Node has to avoid are:
+
+<P>
+
+<OL>
+<LI>A reading region reads non-written data.
+</LI>
+<LI>The writing region advances a reading region and overwrites non-read
+data
+</LI>
+</OL>
+Although the Data Node can be understood as an implementation issue
+that in most cases should be transparent to the user there may be
+special cases in which the user would like to access a Data Node contents.
+Some possible reasons for having to do so are:
+
+<P>
+
+<UL>
+<LI>A Processing object has to be directly connected to an external data
+source and this data has to be directly fed to the Data Node. This
+is a common situation when developing plug-ins for APIs such as VST.
+</LI>
+<LI>The contents of a Data Node need to be visualized. In most cases it
+will be sufficient to offer special Visualizer sink Processing objects
+that are connected to the Data Node as just another regular Processing
+object. But in other cases it may impossible to avoid accessing the
+Data Node directly.
+</LI>
+<LI>The state of a Network may have to be passivated. The contents of
+the Data Node are an important part of the Network state. They may
+have to be passivated when passivating the Network.
+</LI>
+</UL>
+We can therefore conclude as for what the Data Node issue concerns
+that although it is an implementation detail located in a lower layer
+than the rest of the Network facilities, it needs to offer a clear
+and accessible interface as sometimes it will be interesting not to
+completely hide it from the user.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2107"
+  HREF="node151.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2105"
+  HREF="node149.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2101"
+  HREF="node149.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2108"
+  HREF="node151.html">Is DSPOOM ``truly'' Object</A>
+<B> Up:</B> <A NAME="tex2html2106"
+  HREF="node149.html">Networks</A>
+<B> Previous:</B> <A NAME="tex2html2102"
+  HREF="node149.html">Networks</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

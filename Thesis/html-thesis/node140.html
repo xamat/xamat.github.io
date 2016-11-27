@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Data and Control Flow</TITLE>
+<META NAME="description" CONTENT="Data and Control Flow">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node141.html">
+<LINK REL="previous" HREF="node139.html">
+<LINK REL="up" HREF="node137.html">
+<LINK REL="next" HREF="node141.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2009"
+  HREF="node141.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2007"
+  HREF="node137.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2001"
+  HREF="node139.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2010"
+  HREF="node141.html">Kinds of Processing Classes:</A>
+<B> Up:</B> <A NAME="tex2html2008"
+  HREF="node137.html">Processing Objects</A>
+<B> Previous:</B> <A NAME="tex2html2002"
+  HREF="node139.html">Processing Configuration</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00511300000000000000"></A><A NAME="sub:Data-and-Control_Flow"></A>
+<BR>
+Data and Control Flow
+</H3>
+
+<P>
+While a Processing object is in the Running state it will receive,
+process and produce two different kinds of information:
+
+<P>
+
+<UL>
+<LI>Synchronous data: That will be fed from and to the Ports every time
+a Do method is called. Processing objects consume Processing Data
+through their input Ports and produce Processing Data to their output
+Ports.
+</LI>
+<LI>Asynchronous data: Fed from and to the Controls whenever a control
+event happens. They usually change the internal state/mode of the
+algorithm
+</LI>
+</UL>
+These two kinds of data clearly define two different graphs and flow
+control policies. We will now explain how these kinds of data affect
+a Processing object and will leave flow control issues to future sections
+(see section on Networks in <A HREF="node147.html#sub:DSPOOM::Networks_and_Composites">4.1.3</A>).
+
+<P>
+Processing objects consume Processing Data through their input Ports,
+process it and leave the result in their output Ports. The Processing
+Data is consumed and produced in response to a call to the Do operation
+therefore when receiving such a message the Processing object must
+have valid data in its inputs and must have a valid location where
+to write the result.
+
+<P>
+It is important to note that in DSPOOM a data token is the atomic
+partition of any processing data that refers to an instant in time.
+Therefore a whole spectrum, whatever its size, is a data token. But
+a chunk of audio is not considered a token as its data spreads over
+time, in this case the data token is each of its sample. Processing
+objects though, do not consume a unique, not even fixed, amount of
+data tokens. Each processing object may configure the size of the
+data chunk needed for a single execution. A processing may need n
+spectrums or n audio samples in order to produce a valid output. In
+section <A HREF="node142.html#sub:DSPOOM::Processing_Data">4.1.2</A> we will review the main
+features and services that these Processing Data objects must offer
+in the context of a DSPOOM metamodel.
+
+<P>
+Ports in a processing may be also understood as pointers that point
+to somewhere where the data to be processed is located (usually a
+memory location). If both the outport and one of the inputs are pointing
+to the same location, the processing object is said to be processing
+<SPAN  CLASS="textit">inplace</SPAN>. Not all the processing objects have the ability of
+processing inplace as this greatly depends on the algorithm that they
+encapsulate. Furthermore, input and output ports do not even have
+to be the same kind: the transformation or process introduced by the
+processing object on the incoming data can be so structural that even
+the data kind may change (e.g. a processing object may convert an
+input ``tree'' into and output ``piece of furniture'').
+
+<P>
+But, as already mentioned, apart from the synchronous data flow, Processing
+objects can respond to an asynchronous flow of events. This mechanism
+is encapsulated in the concept of Controls. A Processing object may
+have any number of input controls and output Controls. An input Control
+affects the non-structural aspect of the Processing object state.
+This means that the reception of an input Control does not produce
+a transition from one of the four main states to another, it rather
+produces an inter-state transition from one of the possible sub-states
+to the other. On the other hand, output Controls maybe generated at
+any time although it is usual for them to be the result of one of
+the two following cases: (1) a response to a received input Control
+or (2) a result of a particular algorithm that apart from (or instead
+of) producing output data also generates a number of asynchronous
+events.
+
+<P>
+Controls must also have a clear initial value. In most cases this
+value is set in the construction of the owner Processing object. In
+other cases, though it is interesting to associate this initial value
+to a particular configuration parameter. The initialization of the
+control value is performed in the Start transition so that every time
+that the Stop/Start cycle is followed the control is able to return
+to its initial value.
+
+<P>
+This distinction between data and control is directly related to the
+<SPAN  CLASS="textit">In-band Out-of-band Partitions</SPAN> pattern commented in section
+<A HREF="node45.html#sub:Patterns-of-Graphical">1.5.3</A>. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2009"
+  HREF="node141.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2007"
+  HREF="node137.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2001"
+  HREF="node139.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2010"
+  HREF="node141.html">Kinds of Processing Classes:</A>
+<B> Up:</B> <A NAME="tex2html2008"
+  HREF="node137.html">Processing Objects</A>
+<B> Previous:</B> <A NAME="tex2html2002"
+  HREF="node139.html">Processing Configuration</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

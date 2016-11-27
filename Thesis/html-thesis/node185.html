@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Songs and scores</TITLE>
+<META NAME="description" CONTENT="Songs and scores">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node186.html">
+<LINK REL="previous" HREF="node184.html">
+<LINK REL="up" HREF="node182.html">
+<LINK REL="next" HREF="node186.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2516"
+  HREF="node186.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2514"
+  HREF="node182.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2508"
+  HREF="node184.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2517"
+  HREF="node186.html">MetriX</A>
+<B> Up:</B> <A NAME="tex2html2515"
+  HREF="node182.html">An Object-Oriented Music Model</A>
+<B> Previous:</B> <A NAME="tex2html2509"
+  HREF="node184.html">Notes</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00730000000000000000"></A><A NAME="sec:Songs-and-scores"></A>
+<BR>
+Songs and scores
+</H1>
+
+<P>
+From the previous definition of note it is derived that a Song is
+defined as the state chart of all Notes present in a musical system
+(in the case of the conceptually equivalent model of Notes being born
+and dying on receiving the start/stop message this would rather correspond
+to the state chart of all the Generators). This definition is very
+different from its classical equivalent in which a song or musical
+piece is directly related to its score.
+
+<P>
+In the object-oriented music model here presented a musical Score
+must be understood as the sequence of events or messages that will
+be sent to the different objects present in the musical system. These
+events, as we already illustrated in figure <A HREF="node183.html#fig:Performer-instrument-event">6.2</A>,
+are the result of a supposed interaction between a Performer and an
+Instrument. As a matter of fact, an event can be sent to a musical
+Instrument or directly to any of its Generators and as a result it
+modifies its internal state.
+
+<P>
+Two different kind of events can be distinguished. Note events are
+those that through an Instrument or a Generator modify a Note as defined
+in the previous section. And Global Control Events are those that
+modify the whole musical system setting parameters such as tempo or
+key. 
+
+<P>
+A Note Event is made of a <SPAN  CLASS="textit">Time Statement</SPAN> that specifies when
+the event is to occur, a <SPAN  CLASS="textit">Variable</SPAN> that indicates what object
+(Instrument, Generator...) will receive the event, and any number
+of pairs Parameter/Parameter Value, where a <SPAN  CLASS="textit">Parameter</SPAN> specifies
+what attribute of the object will be modified, and a <SPAN  CLASS="textit">Parameter
+Value</SPAN> contains the new value for the given parameter.
+
+<P>
+Note that, as illustrated in figure <A HREF="#cap:Score-Class-Diagram">6.7</A>,
+Note Events are in fact also objects. This fact makes our model somehow
+similar in this sense to the event-oriented models such as Siren (see
+section <A HREF="node73.html#sub:MODE-and-Siren">2.4</A>) from which we have from the very
+beginning established a clear difference. We also acknowledge the
+fact that a purely object-oriented model is not incompatible with
+event-driven behavior. This same conclusion was drawn by the authors
+of Kyma when they added an event language in version 4.5 (see [<A
+ HREF="node207.html#ScalettiKyma2002">Scaletti, 2002</A>]).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="cap:Score-Class-Diagram"></A><A NAME="5706"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.7:</STRONG>
+Score Class Diagram</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="474" HEIGHT="212" ALIGN="BOTTOM" BORDER="0"
+ SRC="img82.png"
+ ALT="\includegraphics[%
+width=0.50\paperwidth,
+keepaspectratio]{images/ch6-MetriX/ps/Score.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+An example of a score in pseudo-code would therefore be:
+<BR>
+<P>
+<BR>
+<IMG
+ WIDTH="337" HEIGHT="38" ALIGN="BOTTOM" BORDER="0"
+ SRC="img83.png"
+ ALT="\begin{spacing}{0.8}
+\texttt{\footnotesize At time=0 Note.start at InstrumentX.G...
+...ize\par
+}
+\par
+\texttt{\footnotesize At time=2 Tempo(120)}\\
+\par
+\end{spacing}">
+<BR>
+
+<P>
+The first line is a note event that indicates that Note at GeneratorN
+in InstrumentX should start sounding. Note that as no other parameters
+are set these would be taken as default. In the second line we send
+another Note event modifying the existing pitch for the previously
+started Note. Finally in the third line we send a global parameter
+change that will affect the whole score.
+
+<P>
+It is interesting to note that, as S. T. Pope points out in [<A
+ HREF="node207.html#PopeSuperCollider">Pope, 2004</A>],
+most software synthesis systems have some sort of note statement consisting
+of a <SPAN  CLASS="textit">keyword</SPAN>, the <SPAN  CLASS="textit">start time</SPAN> and <SPAN  CLASS="textit">duration</SPAN> of
+the event, the <SPAN  CLASS="textit">Instrument</SPAN> and the <SPAN  CLASS="textit">parameters</SPAN> of the
+Instrument. <SPAN  CLASS="textit"></SPAN>In our model the variable is equivalent to the
+keyword, the time statement to the start time and the parameter/parameter
+value pairs to the generic parameters. But there are some differences.
+A first important difference is that the note event does not necessarily
+have to address an Instrument as it can address a particular Generator
+or a whole Instrument section or Instrument. Another important difference
+is that we do not require a note event to include a duration and this
+is treated as another regular parameter that may or may not be specified
+in a note event. This is in fact one of the main limitations of the
+Music-N model reported by different authors. Miller Puckette, for
+instance, states in [<A
+ HREF="node207.html#PucketteFTS">Puckette, 1991b</A>] that the Music-N model is
+not well suited to situations in which some aspects of a sound are
+not defined at its beginning and he adds that those are in fact most
+of the interesting situations.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2516"
+  HREF="node186.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2514"
+  HREF="node182.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2508"
+  HREF="node184.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2517"
+  HREF="node186.html">MetriX</A>
+<B> Up:</B> <A NAME="tex2html2515"
+  HREF="node182.html">An Object-Oriented Music Model</A>
+<B> Previous:</B> <A NAME="tex2html2509"
+  HREF="node184.html">Notes</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

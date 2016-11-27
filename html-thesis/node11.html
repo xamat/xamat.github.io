@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Inheritance Hierarchies</TITLE>
+<META NAME="description" CONTENT="Inheritance Hierarchies">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node12.html">
+<LINK REL="previous" HREF="node10.html">
+<LINK REL="up" HREF="node10.html">
+<LINK REL="next" HREF="node12.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html489"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html487"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html481"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html490"
+  HREF="node12.html">Polymorphism</A>
+<B> Up:</B> <A NAME="tex2html488"
+  HREF="node10.html">Object Orientation beyond the</A>
+<B> Previous:</B> <A NAME="tex2html482"
+  HREF="node10.html">Object Orientation beyond the</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00213100000000000000"></A><A NAME="sec:_Inheritance_Hierarchies"></A>
+<BR>
+Inheritance Hierarchies
+</H3>
+
+<P>
+As already mentioned in previous sections, inheritance is one of the
+basic properties of object-oriented languages and is in part responsible
+for the strength of the object-oriented paradigm. We will now give
+some more details of its significance and properties, most of which
+are necessary to understand particular concepts that will be presented
+in next chapters.
+
+<P>
+Inheritance implies both <SPAN  CLASS="textit">extension</SPAN> and <SPAN  CLASS="textit">contraction</SPAN>.
+Because a derived class behavior is, strictly speaking, broader than
+that of its parents we can say that the child class is an extension
+of its parent classes. And because the derived class can <SPAN  CLASS="textit">override</SPAN>
+some of its base class behavior, it is also a contraction.
+
+<P>
+The main reasons for using inheritance is that it provides both code
+and concept reuse. Code reuse because the operations implemented in
+the base class are available in its derived classes without needing
+to add any extra code. But most importantly, concept reuse because
+even if methods in the base class are overridden and specialized,
+the concept that they represent is reused and a better abstraction
+management is possible. Other benefits of using inheritance are that
+it enhances robustness, it gives consistency to the interface, it
+couples well with rapid prototyping techniques, and it promotes information
+hiding and encapsulation. 
+
+<P>
+But inheritance may also imply some disadvantages. Among the most
+commonly listed we find that it may compromise execution speed and
+efficiency (but see next section for a more detailed discussion on
+this issue), it introduces an abstraction effort overhead in the design
+phase, it compromises the system flexibility once the hierarchy is
+established, it tends to de-localize code (responsibility may be distributed
+in such a way that it may be difficult to identify who does what and
+where), and it may even introduce some code complexity. Nevertheless,
+all these inconvenients can be minimized to non-noticeable levels
+by a an organized and disciplined use of inheritance and the use of
+supporting technologies such as design patterns[<A
+ HREF="node207.html#GOF">Gamma et&nbsp;al., 1995</A>], unit testing,
+and CASE tools.
+
+<P>
+An <SPAN  CLASS="textit">abstract</SPAN> class is defined as a class that cannot be instantiated
+and is therefore only used in the context of an inheritance hierarchy.
+An abstract class cannot be instantiated because it has non-defined
+behavior (abstract or pure virtual methods) that must be defined in
+any non-abstract derived class. An <SPAN  CLASS="textit">interface</SPAN> class is one that
+has no defined behavior. Therefore all its methods are abstract and
+it can be considered as an extreme case of the abstract class. Obviously
+an interface class cannot be instantiated either and is only used
+as a way of specifying an interface to which all derived classes should
+conform. It is indeed a clear example of <SPAN  CLASS="textit">concept reuse</SPAN> as opposed
+to <SPAN  CLASS="textit">code reuse</SPAN> in the object-oriented paradigm.
+
+<P>
+If we look at the origin and properties for the inheritance relationships,
+we may classify them into different categories: 
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textit">Specialization</SPAN>: the derived class is a special case of its
+base class, it specializes its behavior and it is a subtype.
+</LI>
+<LI><SPAN  CLASS="textit">Generalization</SPAN>: the base class is obtained as result of finding
+common behavior in different classes that become its children; these
+derived classes override some of the methods in the base class.
+</LI>
+<LI><SPAN  CLASS="textit">Specification</SPAN>: the base class defines some behavior that it
+is only implemented in the derived class.
+</LI>
+<LI><SPAN  CLASS="textit">Extension</SPAN>: the derived class adds some behavior but does not
+change the inherited behavior.
+</LI>
+<LI><SPAN  CLASS="textit">Combination</SPAN>: the derived class inherits some behavior from
+more than one base class (multiple inheritance).
+</LI>
+<LI><SPAN  CLASS="textit">Construction</SPAN>: the derived class uses the behavior implemented
+in the base class but it is not a subtype.
+</LI>
+<LI><SPAN  CLASS="textit">Limitation</SPAN>: the derived class restricts the use of some of
+the behavior implemented in the base class.
+</LI>
+<LI><SPAN  CLASS="textit">Variance</SPAN>: the derived and base class are variants one of the
+other and the relation class/subclass is arbitrary.
+</LI>
+</UL>
+Out of all these kinds of inheritance the first two are by far the
+more common and most of the others can be see as a special case of
+one of them. The last three are not recommended. On the other hand,
+while the origin and intent is different in all of the different inheritance
+kinds, the result of applying them may be indistinguishable. Particularly,
+by looking at an inheritance hierarchy it is usually impossible to
+decide whether it has been the result of a generalization or specialization
+process. In a generalization process the derived classes exist before
+and the base class is obtained by realizing the commonalities in them.
+In the specialization process the base class is ``broken down''
+into different derived classes.
+
+<P>
+Inheritance hierarchies allow to manage a system complexity. We want
+all branches in an inheritance hierarchy to be <SPAN  CLASS="textit">disjoint</SPAN> and
+<SPAN  CLASS="textit">balanced</SPAN>. Disjoint means that any given object may not be an
+instance of two of the subclasses found at the same level of the hierarchy<A NAME="tex2html3"
+  HREF="footnode.html#foot259"><SUP><SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">1</SPAN></SUP></A>. By balanced we mean that two subclasses should represent comparable
+sized sets of objects, having a very general class and a very particular
+one at the same level of the hierarchy is not a good idea.
+
+<P>
+Inheritance can also be classified into <SPAN  CLASS="textit">static</SPAN> or <SPAN  CLASS="textit">dynamic</SPAN>.
+In a static specialization an object belonging to a particular level
+of the hierarchy is not intended to change in run-time from one subclass
+to another. In a dynamic specialization the belonging of the object
+to a particular subclass depends on its state and therefore can change
+on run-time. Dynamic inheritance, although theoretically correct,
+introduces many practical problems and is often substituted, following
+the <SPAN  CLASS="textit">delegation</SPAN> principle, by an association and a static inheritance.
+
+<P>
+Delegation can be used in other situations in order to reduce coupling.
+This mechanism introduces another indirection and therefore the client
+needs not to know the provider and this provider can change dynamically.
+Delegation also allows multiple inheritance to be implemented in single
+inheritance programming languages.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html489"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html487"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html481"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html490"
+  HREF="node12.html">Polymorphism</A>
+<B> Up:</B> <A NAME="tex2html488"
+  HREF="node10.html">Object Orientation beyond the</A>
+<B> Previous:</B> <A NAME="tex2html482"
+  HREF="node10.html">Object Orientation beyond the</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Introduction</TITLE>
+<META NAME="description" CONTENT="Introduction">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node6.html">
+<LINK REL="previous" HREF="Thesis_forHTML.html">
+<LINK REL="up" HREF="Thesis_forHTML.html">
+<LINK REL="next" HREF="node2.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html333"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html331"
+  HREF="Thesis_forHTML.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html325"
+  HREF="Thesis_forHTML.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html334"
+  HREF="node2.html">Initial Glossary</A>
+<B> Up:</B> <A NAME="tex2html332"
+  HREF="Thesis_forHTML.html">Thesis_forHTML</A>
+<B> Previous:</B> <A NAME="tex2html326"
+  HREF="Thesis_forHTML.html">Thesis_forHTML</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00100000000000000000"></A><A NAME="ch:_Introduction"></A>
+<BR>
+<BIG CLASS="XXLARGE">Introduction</BIG>
+</H1>
+
+<P>
+
+<P>
+In this introduction we will define the general scope and goals of
+this thesis, outlining its most important contents and setting the
+basis for the conceptual framework that will be later described.
+
+<P>
+First, it is important to describe its contextual situation. The work
+here presented is the result of our research in the Music Technology
+Group of the Institut Universitari de l'Audiovisual at the Universitat
+Pompeu Fabra in Barcelona. This group focuses its research on the
+analysis, processing and synthesis of audio in general and musical
+signals in particular. The research area defined as Musical Technology
+is very much related, though broader in its scope, to Computer Music.
+The basic disciplines that are mostly related to it are Computer Science
+and Signal Processing.
+
+<P>
+Nevertheless, this Thesis is not about Computer Science nor about
+Signal Processing techniques. We would ascribe its content to the
+area of Software Engineering. Although it may not seem obvious in
+the first place, Software Engineering uses completely different approaches
+from Computer Science, although it shares some of its basis. Computer
+Science as a discipline is more related to abstract sciences like
+Mathematics than to practical ones such as Biology. On the other hand
+Software Engineering is not a science in its methodology or its approaches,
+it is an engineering more related in this sense to other engineering
+areas or architecture. As Herbert A. Simon puts it ``Engineering
+is about synthesis and science is about analysis'' [<A
+ HREF="node207.html#SimonArtificial">Simon, 1996</A>].
+
+<P>
+Because of this, the formal approach in this work is somehow different
+to what one would may expect in the first place. Very few mathematical
+formulas are included and no experimental data results are thoroughly
+analyzed. On the other hand formal modelling languages such as UML
+are used throughout. Software engineering is still a fairly new discipline
+and as such not many research models are available and some of them
+are too much influenced by the tradition of Computer Science. With
+this thesis we hope also to have contributed in this direction.
+
+<P>
+This thesis has five different parts that may be read and treated
+differently. Chapter <A HREF="node6.html#ch:_FoundationalIssues">1</A> introduces the
+concepts and terms that will be use throughout the following sections.
+It should not only be seen as a documentation exercise but also as
+a presentation of a conceptual framework that is new, maybe not in
+its parts but as a whole. In chapter <A HREF="node51.html#cha:Environments-for-Audio">2</A>
+we introduce a thorough review of environments for music and audio
+processing, all of them represent a different approach but are also
+somehow related to both the conceptual and development frameworks
+that will be presented in the next chapters. Chapter <A HREF="node92.html#ch:_CLAM">3</A>
+contains the more practical side of this work as it presents a framework
+for audio and music applications we have developed and implemented
+and from which the metamodel presented as the main thesis of this
+work has been abstracted. Chapter <A HREF="node135.html#ch:_DSPOOM">4</A> presents the core
+thesis of this work, introducing an object-oriented metamodel for
+signal processing derived from the framework presented in the previous
+chapter. Finally, in chapters <A HREF="node155.html#ch:_OOCTM">5</A> and <A HREF="node182.html#ch:_OO_Music_Model">6</A>,
+two different and complementary extensions are given to the basic
+model. The first one deals with the addition of a higher abstraction
+layer and the idea of using the framework as a base for content processing.
+The second one enhances the object-oriented metamodel by adapting
+it to the music domain and gives some examples of implementations.
+
+<P>
+We will now try to offer a more schematic view of this thesis. This
+may be used as a guide for the whole work here presented if, reading
+one of the parts, it is not clear how it is related to the main thesis
+or hypothesis.
+
+<P>
+
+<UL>
+<LI>Main Thesis: The object-oriented paradigm may be used to model any
+signal processing system in an effective and thorough manner.
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textit">Hypothesis 1</SPAN>: The Object-Oriented model is not just another
+model, it is the <SPAN  CLASS="textbf">paradigm</SPAN> to use when modeling a system.
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textit">Hypothesis 1.1</SPAN>: By using the Object-Oriented paradigm to model
+the signal processing domain we come up with a graphical Metamodel
+of Computation that can be instantiated to model any signal processing
+system. This graphical metamodel is very much related to Process Networks.
+</LI>
+</UL>
+</LI>
+<LI><SPAN  CLASS="textit">Hypothesis 2</SPAN>: Using this metamodel for signal processing, it
+is possible to derive a new communication metamodel as an extension
+of the classical Shannon and Weaver theory.
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textit">Hypothesis 2.1</SPAN>: The object-oriented metamodel for communication
+promotes the importance of meaning and semantics in the communication
+chain.
+</LI>
+</UL>
+</LI>
+<LI><SPAN  CLASS="textit">Hypothesis 3</SPAN>: Frameworks generate metamodels
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textit">Hypothesis 3.1</SPAN>: Although traditionally the first thing to do
+when implementing a framework is to come up with a domain model, using
+an incremental process methoda we are able to see it the other way
+around: it is the process of implementing a reusable framework that
+generates the domain metamodel.
+</LI>
+</UL>
+</LI>
+<LI><SPAN  CLASS="textit">Hypothesis 4</SPAN>: The object-oriented paradigm is also useful for
+modeling more symbolic domains like music.
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textit">Hypothesis 4.1</SPAN>: Music - and by extension any other symbolic
+domain related to signal processing - is also well suited for using
+the object-oriented paradigm as long as a system is properly identified,
+this paradigm acting as a bridge between different abstraction levels.
+The resulting music model is in fact a particular instance of the
+basic object-oriented metamodel for signal processing.
+</LI>
+</UL>
+</LI>
+</UL>
+</LI>
+</UL>
+All these different thesis are also backed by practical examples that
+demonstrate their viability. Out of all these examples the CLAM framework,
+presented in chapter <A HREF="node92.html#ch:_CLAM">3</A> is the most important as it sets
+the basis for the general metamodel that will be later particularized,
+extended or instantiated.
+
+<P>
+As a matter of fact one may ask how hypothesis are tested in a discipline
+such as Software Engineering. The way hypothesis about models and
+metamodels related to Software Engineering are validated is very similar
+to how hypothesis are tested in experimental sciences: by empirical
+testing. The only difference is that instead of analyzing resulting
+data to conclude whether it fits the model under study, here we analyze
+the systems derived from the metamodel to conclude whether they are
+useful in the domain under study. That is why, of all the metamodels
+and models here presented include a practical or empirical demonstration
+of their validity. Namely:
+
+<P>
+
+<UL>
+<LI>Hypothesis: DSPOOM (see <A HREF="node135.html#ch:_DSPOOM">4</A>) -- Validation: CLAM (see
+<A HREF="node92.html#ch:_CLAM">3</A>)
+</LI>
+<LI>Hypothesis: OOCTM (see <A HREF="node155.html#ch:_OOCTM">5</A>) -- Validation: Several related
+applications (see <A HREF="node178.html#sec:Content-based-transformations">5.3.4</A> and <A HREF="node179.html#sec:OOCTM-Sample-applications">5.4</A>)
+</LI>
+<LI>Hypothesis: Object-Oriented Music Model (see <A HREF="node182.html#ch:_OO_Music_Model">6</A>)
+-- Validation: MetriX (see <A HREF="node186.html#sec:MetriX">6.4</A>)
+</LI>
+</UL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html335"
+  HREF="node2.html">Initial Glossary </A>
+<LI><A NAME="tex2html336"
+  HREF="node3.html">Conceptual Roadmap </A>
+<LI><A NAME="tex2html337"
+  HREF="node4.html">Contributions</A>
+<LI><A NAME="tex2html338"
+  HREF="node5.html">Extended Summary</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html333"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html331"
+  HREF="Thesis_forHTML.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html325"
+  HREF="Thesis_forHTML.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html334"
+  HREF="node2.html">Initial Glossary</A>
+<B> Up:</B> <A NAME="tex2html332"
+  HREF="Thesis_forHTML.html">Thesis_forHTML</A>
+<B> Previous:</B> <A NAME="tex2html326"
+  HREF="Thesis_forHTML.html">Thesis_forHTML</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

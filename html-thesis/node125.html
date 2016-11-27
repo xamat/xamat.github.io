@@ -1,0 +1,509 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>SMS Analysis/Synthesis Example</TITLE>
+<META NAME="description" CONTENT="SMS Analysis/Synthesis Example">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node126.html">
+<LINK REL="previous" HREF="node124.html">
+<LINK REL="up" HREF="node124.html">
+<LINK REL="next" HREF="node126.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1826"
+  HREF="node126.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1824"
+  HREF="node124.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1818"
+  HREF="node124.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1827"
+  HREF="node126.html">SALTO</A>
+<B> Up:</B> <A NAME="tex2html1825"
+  HREF="node124.html">Sample applications</A>
+<B> Previous:</B> <A NAME="tex2html1819"
+  HREF="node124.html">Sample applications</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00423100000000000000">
+SMS Analysis/Synthesis Example</A>
+</H3>
+
+<P>
+At the time CLAM was started the MTG's flagship applications were
+SMSCommandLine and SMSTools. As a matter of fact one of the main goals
+when starting CLAM was to develop the substitute for those applications
+(see Annex <A HREF="node208.html#cha:CLAM-Additional-Information">A</A>). The SMS Analysis/Synthesis
+example substitutes those applications and therefore illustrates the
+core of the research being carried out at the MTG.
+
+<P>
+The application has three different versions: SMSTools, which has
+a FLTK graphical user interface; SMSConsole, which is a command-line
+based version; and SMSBatch, which can be used for batch processing
+a whole directory. Out of these three it is clearly the graphical
+version that can find more usages, the other two are only used for
+very specific problems. The rest of this section will concentrate
+on the graphical version and only mention some differences with the
+other versions where strictly necessary.
+
+<P>
+The main goal of the application is to analyze, transform and synthesize
+back a given sound. For doing so, it uses the Sinusoidal plus Residual
+model (see section <A HREF="node230.html#sec:_Spectral_Processing">B</A>). In order to do
+so the application has a number of possible different inputs:
+
+<P>
+1. An XML <SPAN  CLASS="textbf">configuration</SPAN> file. This configuration file is
+used to configure both the analysis and synthesis processes. 
+
+<P>
+2. An SDIF or XML <SPAN  CLASS="textbf">analysis</SPAN> file. This file will be the result
+of a previously performed and stored analysis. The XML parser is rather
+slow and the XML format is rather verbose. For all those reasons the
+storing/loading of analysis data, although fully working, is not recommended
+unless you want to have a textual/readable representation of your
+analysis result, else you will be better off using the SDIF format
+(see next paragraph). 
+
+<P>
+3. A <SPAN  CLASS="textbf">Transformation score</SPAN> in XML format. This file includes
+a list of all transformations that will be applied to the result of
+the analysis and the configuration for each of the transformations. 
+
+<P>
+Note that all of them can be selected and generated on run-time from
+the user interface in the SMSTools version.
+
+<P>
+From these inputs, the application is able to generate the following
+outputs:
+
+<P>
+1. An XML or SDIF <SPAN  CLASS="textbf">Analysis data</SPAN> file. 
+
+<P>
+2. An XML <SPAN  CLASS="textbf">Melody</SPAN> file. 
+
+<P>
+3. <SPAN  CLASS="textbf">Output sound</SPAN>: global sound, sinusoidal component, residual
+component 
+
+<P>
+Figure <A HREF="#fig:SMS-Tools-block-diagram">3.7</A> illustrates the main blocks
+of the application.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:SMS-Tools-block-diagram"></A><A NAME="5609"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.7:</STRONG>
+SMS Tools block diagram</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="556" HEIGHT="457" ALIGN="BOTTOM" BORDER="0"
+ SRC="img26.png"
+ ALT="\includegraphics[%
+width=1.0\textwidth]{images/ch3-CLAM/ps/SMSBlockDiagram.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The output of the analysis is a <TT>CLAM::Segment</TT> that contains
+an ordered list of <TT>CLAM::Frames</TT>. Each of these frames has
+a number of attributes, but the most important are: a <TT>CLAM::SpectralPeakArray</TT>
+that models the sinusoidal component (including information about
+sinusoidal track), a residual spectrum and the result of the fundamental
+frequency detection algorithm.
+
+<P>
+The output of this analysis can be (1) stored in XML or SDIF format,
+(2) transformed and (3) synthesized back.
+
+<P>
+In order to make the application work, a valid configuration XML file
+must be loaded although the the default one can also be edited through
+the graphical interface. This configuration includes all the different
+parameters for the analysis/synthesis process. The following is an
+example of a valid XML configuration:
+<BR>
+<P>
+<BR>
+<IMG
+ WIDTH="454" HEIGHT="370" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.png"
+ ALT="\begin{spacing}{0.8}
+\textsf{\footnotesize &lt;SMSAnalysisSynthesisConfig&gt;}{\footno...
+...f{\footnotesize &lt;/SMSAnalysisSynthesisConfig&gt;}{\footnotesize\par
+}
+\end{spacing}">
+<BR>
+
+<P>
+&nbsp;
+
+<P>
+We will now briefly describe the different parameters involved:
+<BR>
+<P>
+<SPAN ID="txt2409">Global Parameters:</SPAN>
+
+<P>
+<SPAN  CLASS="textsf">&lt;Name&gt;</SPAN>: particular name for the configuration file. 
+
+<P>
+<SPAN  CLASS="textsf">&lt;InputSoundFile&gt;</SPAN>: path and name of the input sound file to
+analyze. 
+
+<P>
+<SPAN  CLASS="textsf">&lt;OutputSoundFile&gt;</SPAN>: path and name of where the output synthesized
+sound file must be stored. The application will add a &#34;_sin.wav&#34;
+termination to the Sinusoidal component and a &#34;_res.wav&#34;
+termination the residual file name. In the graphical version of the
+program (SMSTools) though, this parameter is not used as when the
+output sound is to be stored, a file browser dialog pops-up.
+
+<P>
+<SPAN  CLASS="textsf">&lt;OutputAnalysisFile&gt;</SPAN>: path and name of where the output analysis
+data is to be stored. The extension of the file can be .xml or .sdif.
+The application will choose the correct format depending on the extension
+you give. Not used in the GUI version as it is obtained from the dialog.
+
+<P>
+<SPAN  CLASS="textsf">&lt;InputAnalysisFile&gt;</SPAN>: path and name of where the input analysis
+data to is be loaded from. Not used in the GUI version as it is obtained
+from the dialog.
+<BR>
+<P>
+<SPAN ID="txt2419">Analysis Parameters:</SPAN>
+
+<P>
+<SPAN  CLASS="textsf">&lt;AnalysisWindowSize&gt;</SPAN>: window size in number of samples for
+the analysis of the sinusoidal component. 
+
+<P>
+<SPAN  CLASS="textsf">&lt;ResAnalysisWindowSize&gt;</SPAN>: window size in number of samples
+for the analysis of the residual component. 
+
+<P>
+<SPAN  CLASS="textsf">&lt;AnalysisWindowType&gt;</SPAN>: type of window used for the sinusoidal
+analysis. Available: Hamming, Triangular, BlackmannHarris62,
+BlackmannHarris70, BlackmannHarris74, BlackmannHarris92,
+KaisserBessel17, KaisserBessel18, KaisserBessel19,
+KaisserBessel20, KaisserBessel25, KaisserBessel30,
+KaisserBessel35.
+
+<P>
+<SPAN  CLASS="textsf">&lt;ResAnalysisWindowType&gt;</SPAN>: type of window used for the residual
+analysis. Available: Same as in sinusoidal. Recommended: as sinusoidal
+spectrum is synthesized using the transform of the BlackmannHarris
+92dB, it is necessary to use that window in the analysis of the residual
+component in order to get good results.
+
+<P>
+<SPAN  CLASS="textsf">&lt;AnalysisHopSize&gt;</SPAN>: hop size in number of samples. It is the
+same both for the sinusoidal and residual component. If this parameter
+is set to -1 (which means default), it is taken as half the residual
+window size. Recommended values range from half to a quarter of the
+residual window size.
+
+<P>
+<SPAN  CLASS="textsf">&lt;AnalysisZeroPaddingFactor&gt;</SPAN> Zero padding factor applied to
+both components. 0 means that zeros will be added to the input audio
+frame till it reaches the next power of two, 1 means that zeros will
+be added to the next power of two etc...
+
+<P>
+<SPAN  CLASS="textsf">&lt;AnalysisPeakDetectMagThreshold&gt;</SPAN>: magnitude threshold in
+dB's in order to say that a given peak is valid or not. Recommended:
+depending on the window type and the main-to-secondary lobe relation
+and the characteristics of the input sound, a good value for this
+parameter may range between -80 to -150 dB.
+
+<P>
+<SPAN  CLASS="textsf">&lt;AnalysisPeakDetectMaxFreq&gt;</SPAN>: Frequency of the highest sinusoid
+to be tracked. This parameter can be adjusted, for example, if you
+are analyzing a sound that you know only has harmonics up to a certain
+frequency. Recommended: It depends on the input sound but, in general,
+a sensible value is 8000 to 10000 Hz.
+
+<P>
+<SPAN  CLASS="textsf">&lt;AnalysisSinTrackingFreqDeviation&gt;</SPAN>: maximum deviation in
+hertz for a sinusoidal track.
+
+<P>
+<SPAN  CLASS="textsf">&lt;AnalyisReferenceFundFreq&gt;</SPAN>: in hertz, reference fundamental.
+
+<P>
+<SPAN  CLASS="textsf">&lt;AnalyisLowestFundFreq&gt;</SPAN>: in hertz, lowest fundamental frequency
+to be acknowledged.
+
+<P>
+<SPAN  CLASS="textsf">&lt;AnalyisHighestFundFreq&gt;</SPAN>: in hertz, highest fundamental frequency
+to be acknowledged.
+
+<P>
+<SPAN  CLASS="textsf">&lt;AnalyisMaxFundFreqError&gt;</SPAN>: maximum error in hertz for the
+fundamental detection algorithm.
+
+<P>
+<SPAN  CLASS="textsf">&lt;AnalyisMaxFundCandidates&gt;</SPAN>: maximum number of candidate frequencies
+for the fundamental detection algorithm.
+
+<P>
+<SPAN  CLASS="textsf">&lt;AnalysisHarmonic&gt;</SPAN>: if 1, harmonic analysis is performed
+on all segments that have a valid pitch. In those segments the track
+number assigned to each peak corresponds to the harmonic number. On
+unvoiced segments, inharmonic analysis is still performed. 
+<BR>
+<P>
+<SPAN ID="txt2435">Synthesis Parameters:</SPAN>
+
+<P>
+<SPAN  CLASS="textsf">&lt;SynthesisFrameSize&gt;</SPAN>: in number of samples, size of the synthesis
+frame. If set to -1, it is computed as (ResAnalysisWindowSize-1)/2. 
+
+<P>
+<SPAN  CLASS="textsf">&lt;SynthesisWindowType&gt;</SPAN>: type of window used for the residual
+analysis. Available: Same as in sinusoidal.
+<BR>
+<P>
+<SPAN ID="txt2438">Morph Parameters</SPAN>
+
+<P>
+<SPAN  CLASS="textsf">&lt;MorphSoundFile&gt;</SPAN>: Optional name of the second file to do
+a morph on. Only necessary if a morphing transformation is planned.
+Note that the file to morph will be analyzed with the same parameters
+as the input sound file and that it must have the same sampling rate.
+
+<P>
+&nbsp;
+
+<P>
+Apart from storing the result of the analysis, more interesting things
+can be accomplished. The first thing that may be interesting to do
+is to synthesize it back, separating each component: residual, sinusoidal,
+and the sum of both. 
+
+<P>
+To transform your sound an XML transformation score must be loaded
+or created using the graphical transformation editor available in
+SMSTools. New transformations can be implemented and added to the
+CLAM repository very easily.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="2444"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.8:</STRONG>
+SMSTools Graphical User Interface</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="498" HEIGHT="374" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="\includegraphics[%
+width=0.90\textwidth,
+keepaspectratio]{images/ch3-CLAM/ps/SMSToolsGUI.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+We will now comment how the application architecture is organized.
+Figure <A HREF="#fig:SMS-tools-UML">3.9</A> illustrates its UML class diagram.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:SMS-tools-UML"></A><A NAME="5610"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.9:</STRONG>
+SMS tools UML class diagram</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="527" HEIGHT="562" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.png"
+ ALT="\includegraphics[%
+width=0.95\textwidth]{images/ch3-CLAM/ps/SMSApp.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The main class of the application is the <TT>SMSApplication</TT> class.
+This is an abstract class (thus cannot be instantiated), but contains
+the core of the process flow. The three derived classes, <TT>SMSTools</TT>,
+<TT>SMSBatch</TT> and <TT>SMSStdio</TT> implement the particular versions
+of the base class.
+
+<P>
+So let us briefly mention what this base class holds inside. All the
+methods illustrated in the diagram (<TT>LoadConfig</TT>, <TT>Analyze</TT>,...)
+correspond to functionalities of the program that, in the case of
+the GUI version, are mapped directly to menu options. 
+
+<P>
+The associated <TT>SMSAppState</TT> class is responsible for maintaining
+the current state of the application. The boolean (<TT>mHaveConfig</TT>,
+<TT>mHaveInputAudio</TT>,....) attributes of the class hold important
+values to control the flow of the program because they inform of whether
+a previous action has taken place and the desired operation can then
+be invoked.
+
+<P>
+The class has two <TT>ProcessingComposite</TT> attributes (see <A HREF="node111.html#sec:_ProcessingInfrastructure">3.2.2</A>),
+instances of the <TT>SMSAnalysis</TT> and <TT>SMSSynthesis</TT> classes.
+These <TT>ProcessingComposites</TT> are configured when the global
+configuration is loaded and then run from the <TT>Analyze</TT> and
+<TT>Synthesize</TT> methods. Some intermediate Processing Data (a
+<TT>Segment</TT>, a <TT>Melody</TT> and different <TT>Audio</TT> objects)
+are used to hold the input/output data generated during the process.
+These data are then stored/played using the corresponding method (i.e.
+<TT>StoreAnalysis</TT> or <TT>PlayOutputSound</TT>).
+
+<P>
+Although the <TT>SMSApplication</TT> class concentrates most of the
+functionality of the application and has a great deal of operations,
+these methods are fairly simple and rarely need more than 10/20 lines
+of code. In order to invoke an analysis, for instance, only the <TT>SMSAnalysis::Do</TT>
+method needs to be called. This is possible because these Processing
+Composites hide all the processing complexity. If we take a look again
+to the UML diagram we see that these classes contain inside a great
+deal of other Processing classes. Let us enumerate them and their
+basic functionality.
+
+<P>
+Inside the <TT>SMSAnalysis</TT> we have:
+
+<P>
+<TT><SPAN  CLASS="textbf">SpectralAnalysis</SPAN></TT>: Performs an STFT of the sound.
+For doing so, it holds a number of Processing objects inside, namely
+a <TT>WindowGenerator</TT>, an <TT>AudioMultiplier</TT>, a <TT>CircularShift</TT>
+(for zero-phase buffer centering) and an <TT>FFT</TT>. Note that the
+<TT>SMSAnalysis</TT> has two instances of this class: one for the
+sinusoidal component and another one for the residual. This Processing
+Composite is quite complex in itself but we won't go into details.
+
+<P>
+<TT><SPAN  CLASS="textbf">SpectralPeakDetect</SPAN></TT>: Implements an algorithm for
+choosing the spectral peaks out of the previously computed spectrum.
+
+<P>
+<TT><SPAN  CLASS="textbf">FundFreqDetect</SPAN></TT>: Processing for computing the fundamental
+frequency.
+
+<P>
+<TT><SPAN  CLASS="textbf">SinTracking</SPAN></TT>: This Processing performs sinusoidal
+tracking or peak continuation from one frame to the next one. It implements
+an inharmonic and harmonic version of the algorithm.
+
+<P>
+<TT><SPAN  CLASS="textbf">SynthSineSpectrum</SPAN></TT>: Once we have analyzed the sinusoidal
+component and we have the continued peaks we have to synthesize it
+back to spectrum in order to compute the residual component. This
+is the Processing in charge of this synthesis of the sinusoidal component.
+
+<P>
+<TT><SPAN  CLASS="textbf">SpectrumSubstracter2</SPAN></TT>: Once we have the sinusoidal
+synthesized spectrum and the original one (coming out from the residual
+Spectral Analysis), we can subtract them in order to obtain the residual
+spectrum.
+
+<P>
+The <TT>SMSSynthesis</TT> Processing Composite contains:
+
+<P>
+<TT><SPAN  CLASS="textbf">PhaseManagement</SPAN></TT>: This Processing is in charge of
+managing phase of spectral peaks, from one frame to the next one.
+
+<P>
+<TT><SPAN  CLASS="textbf">SynthSineSpectrum</SPAN></TT>: As already commented in the <TT>SMSAnalysis</TT>,
+this object is in charge of creating a synthetic spectrum out of the
+array of spectral peaks.
+
+<P>
+<TT><SPAN  CLASS="textbf">SpectrumAdder2</SPAN></TT>: It is used to add the residual and
+the synthesized sinusoidal spectrum.
+
+<P>
+<TT><SPAN  CLASS="textbf">SpectralSynthesis</SPAN></TT>: This processing composite implements
+the inverse STFT. That is, is the object in charge of computing an
+output audio frame from an input spectrum. The <TT>SMSSynthesis</TT>
+class has three instances of this class: one for the global output
+sound, one for the residual and one for the sinusoidal component.
+The <TT>SpectralSynthesis</TT> Processing Composite has the following
+processing inside: an <TT>IFFT</TT>, two <TT>WindowGenerators</TT>
+(one for the inverse Analysis window and one for the Synthesis Triangular
+window), an <TT>AudioProduct</TT> to actually perform the windowing,
+a <TT>CircularShift</TT> to undo the circular shift or buffer-centering
+introduced in the analysis and an <TT>OverlapAdd</TT> object to finally
+apply this process to the output windowed audio frames. It is fairly
+complex in itself and we would need to go into too many signal processing
+details in order to explain it completely (see Annex <A HREF="node230.html#sec:_Spectral_Processing">B</A>
+for more details on these signal processing algorithms).
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1826"
+  HREF="node126.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1824"
+  HREF="node124.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1818"
+  HREF="node124.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1827"
+  HREF="node126.html">SALTO</A>
+<B> Up:</B> <A NAME="tex2html1825"
+  HREF="node124.html">Sample applications</A>
+<B> Previous:</B> <A NAME="tex2html1819"
+  HREF="node124.html">Sample applications</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

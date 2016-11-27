@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>SKINI</TITLE>
+<META NAME="description" CONTENT="SKINI">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node90.html">
+<LINK REL="previous" HREF="node88.html">
+<LINK REL="up" HREF="node87.html">
+<LINK REL="next" HREF="node90.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1363"
+  HREF="node90.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1361"
+  HREF="node87.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1355"
+  HREF="node88.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1364"
+  HREF="node90.html">NEXT MusicKit ScoreFile Language</A>
+<B> Up:</B> <A NAME="tex2html1362"
+  HREF="node87.html">Score Languages</A>
+<B> Previous:</B> <A NAME="tex2html1356"
+  HREF="node88.html">ZIPI</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00362200000000000000"></A><A NAME="sub:SKINI"></A>
+<BR>
+SKINI
+</H3>
+
+<P>
+SKINI [<A
+ HREF="node207.html#CookSkini">Cook, 2004</A>] is a score language integrated with the already
+commented STK environment and developed by the same author, Perry
+Cook (see section <A HREF="node63.html#sub:STK">2.3.2</A>). 
+
+<P>
+SKINI is a textual language that is presented both as compatible and
+as an extension of MIDI. Its main advantages in respect to MIDI are
+first that text-based messages are easy to read and understand, and
+second that it uses floating point numbers to enhance resolution.
+
+<P>
+A SKINI message is therefore a line of text where there are three
+compulsory fields: the kind of message (ASCII string), the time (in
+absolute or relative notation) and the channel number (integer that
+is used to identify the MIDI channel, the synthesizer identifier or
+even its serial number).
+
+<P>
+Different fields in a SKINI messages are delimited by spaces, commas
+or tabs. SKINI operates one line at the time. Any message can be of
+one of the following kinds: a regular MIDI message such as NoteOn
+or NoteOff; an extended MIDI message (messages that look different
+from regular MIDI messages but at the end have to be converted to
+one) such as LipTension or StringDamping; and No-MIDI messages such
+as SetPath, OpenReadFile (to, for instance, insert effect files),
+or Trilling and HammerOn (messages that are directly translated into
+musical gestures and can be controlled by a MIDI pedal).
+
+<P>
+SKINI is implemented in C and there is an interface that allows for
+its extension.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1363"
+  HREF="node90.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1361"
+  HREF="node87.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1355"
+  HREF="node88.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1364"
+  HREF="node90.html">NEXT MusicKit ScoreFile Language</A>
+<B> Up:</B> <A NAME="tex2html1362"
+  HREF="node87.html">Score Languages</A>
+<B> Previous:</B> <A NAME="tex2html1356"
+  HREF="node88.html">ZIPI</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

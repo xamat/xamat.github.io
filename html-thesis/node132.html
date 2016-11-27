@@ -1,0 +1,332 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>CLAM and other environments</TITLE>
+<META NAME="description" CONTENT="CLAM and other environments">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node131.html">
+<LINK REL="up" HREF="node130.html">
+<LINK REL="next" HREF="node133.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1895"
+  HREF="node133.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1893"
+  HREF="node130.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1889"
+  HREF="node131.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1896"
+  HREF="node133.html">CLAM as an Audio</A>
+<B> Up:</B> <A NAME="tex2html1894"
+  HREF="node130.html">Is CLAM different?</A>
+<B> Previous:</B> <A NAME="tex2html1890"
+  HREF="node131.html">CLAM classification</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00432000000000000000">
+CLAM and other environments</A>
+</H2>
+
+<P>
+In the previous section we have classified CLAM as being a General
+Purpose Audio Processing Framework. Nevertheless, we have also mentioned
+that it shares some features with other environments classified in
+different categories. We may now question whether the overall philosophy
+of CLAM is adequate or not. Is it really necessary to build an application
+framework? Wouldn't it be better and simpler to offer a graphical
+builder &#224; la Max or Kyma? On the other hand, wouldn't it be better
+to design a completely new programming language more adapted to our
+domain &#224; la Supercollider?
+
+<P>
+It is important to remember that CLAM's focus is on research and development
+of applications. It is not an artistic or creative tool (although
+such a tool could be developed within the framework). For developing
+efficient applications and for doing research on low-level details
+of the algorithms it is necessary to access the programming language
+level. Visual programming is indeed of great help and ideal for prototyping,
+and as already mentioned in <A HREF="node23.html#sec:Frameworks">1.3</A> it is a natural
+evolution of any application framework. On the other hand, as R. Dannenberg
+points out [<A
+ HREF="node207.html#DannenbergAuraICMC04">Dannenberg, 2004</A>] the ``boxes and arrows''
+representation for signal processing systems has stood the test of
+time. This is no surprise as this representation is directly related
+to the graphical MoCs explained in section <A HREF="node34.html#sec:GraphicalMoCs">1.5</A>.
+That is why CLAM offers the Network Editor (see <A HREF="node124.html#sec:_CLAMApplications">3.2.3</A>),
+its particular graphical MoC visual builder, but this is not designed
+to substitute the code level.
+
+<P>
+On the other extreme, one may have the temptation to implement a full-fledged
+programming language, adapted to this particular domain. This would
+be an interesting idea to explore if it had the slightest chance of
+being viable. A programming language has many associated tools, from
+editors with syntax highlighting to debugging and profiling tools.
+Offering a completely new programming environment based on a new language
+is a titanic effort that needs of a very large development team. On
+the other hand, the language has to offer very unique and outstanding
+features in order to convince new users that the effort of learning
+it is worth the while. Supercollider represents the clearest example
+of such an approach. An now its author, James McCartney questions
+whether that was a good decision. In [<A
+ HREF="node207.html#McCartneySupercolliderCMJ">McCartney, 2002</A>]
+he wanders whether specialized computer music languages are necessary.
+He concludes that the set of abstractions available in general purpose
+computer languages are sufficient to build useful dedicated frameworks
+such as CLAM. This is also our opinion, no specialized computer language
+is needed, it is much wiser to build tools and frameworks around already
+existing and proven languages.
+
+<P>
+As for CLAM's model of computation it is interesting to compare it
+to three environments that have a sufficiently long tradition and
+that clearly state their conceptual model<A NAME="tex2html40"
+  HREF="footnode.html#foot2630"><SUP><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">6</SPAN></SUP></A>: Max (see <A HREF="node77.html#sub:Max">2.5</A>), Siren (see <A HREF="node73.html#sub:MODE-and-Siren">2.4</A>)
+and Kyma (see <A HREF="node76.html#sub:Kyma">2.5</A>). To our purposes they also represent
+the extremes in between which CLAM's MoC could stand. On the one hand,
+Max offers a highly intuitive graphical (and graph-based) MoC while
+Siren and Kyma offer a very formal object-oriented approach<A NAME="tex2html41"
+  HREF="footnode.html#foot2634"><SUP><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">7</SPAN></SUP></A>. 
+
+<P>
+It has already been commented that the main feature of CLAM's MoC
+is that it is object-oriented. Object-oriented techniques have been
+applied throughout the development process and we have always followed
+Alan Kay's maxima of ``everything is an object''. As already outlined
+in chapter <A HREF="node6.html#ch:_FoundationalIssues">1</A>, we believe that the object-oriented
+approach not only has many advantages but it also represents the most
+recommended paradigm when modelling a system. We believe that most
+opinions against object-orientation come from misunderstanding some
+basic concepts related to the object-oriented paradigm. It is interesting
+to note that already in early frameworks such as FORMES (see <A HREF="node69.html#sub:FORMES">2.3.3</A>)
+the benefits of object-orientation were reported. In [<A
+ HREF="node207.html#RodetFORMES">Rodet and Cointe, 1991</A>]
+the author, Xavier Rodet, states that ``object-orientation matches
+most of the requirement of Music Composition Synthesis''.
+
+<P>
+The case of Max is a clear example of this. The authors state that
+Max is not a dataflow language but rather represents an object-oriented
+approach [<A
+ HREF="node207.html#PucketteMAXEventSignal">Puckette, 1991a</A>]. Nevertheless they do not
+use an object-oriented programming language like C++ and decide to
+base their developments in the C language. Because of this they implement
+a limited form of polymorphism themselves (see [<A
+ HREF="node207.html#PucketteFTS">Puckette, 1991b</A>])
+although recognizing that this method has much overhead over using
+one in a language like C++. 
+
+<P>
+The reasons for not using C++ do not appear clear but two reasons
+are at least outlined. On one hand in [<A
+ HREF="node207.html#PucketteMax2002">Puckette, 2002</A>], Miller
+Puckette, the main author of Max argues against object-orientation
+in general saying that the transmissibility of practice and ideas
+does not depend of code reuse, and inheritance is essentially about
+code reuse. Although the author states that this is a general opinion
+in the computer science community, we cannot agree with him. The benefits
+of object-orientation in general and inheritance in particular are
+always set on two grounds: reuse of code and, most importantly, reuse
+of concepts. Reuse of code plays no role at all in very important
+mechanisms related to inheritance like abstract methods and classes
+or interfaces. Code reuse is a valuable side-effect of inheritance,
+but not its most important benefit. The author also states that ``(...)
+elegance matters but it has nothing to do with the creative adaptation
+of the underlying ideas''. Again, we cannot agree with this opinion.
+Elegance, understood as a property related to well-structured code
+and design, is indeed a crucial point for adaptation of any kind.
+In order to adapt an idea, a concept, or a piece of code, the first
+thing we have to do is to understand it. And it is much easier to
+understand an elegant idea, concept or a piece of code.
+
+<P>
+On the other hand in [<A
+ HREF="node207.html#ZicarelliMax2002">Zicarelli, 2002</A>] we find another reason.
+The author (David Zicarelli in this case) exposes a rather confusing
+view about dynamic binding. According to him Max uses dynamic binding
+while C++ uses static binding. We cannot accept this assertion. C++,
+as most programming languages, accepts both static and dynamic binding
+(see section <A HREF="node10.html#sec:_OO_beyond_the_basics">1.1.3</A> for an explanation on
+these concepts). As a matter of fact dynamic binding is the base of
+two of the four different kinds of polymorphism introduced in <A HREF="node10.html#sec:_OO_beyond_the_basics">1.1.3</A>.
+It is true that C++, differently to other object-oriented languages
+like Smalltalk, uses strong typing, but that has nothing to do with
+the discussion. Symbols can be associated to functions on run-time
+and the mechanism implemented in Max, based on a pointer to a list
+of symbols, is simply a primitive version of C++ polymorphism and
+the pointer to virtual function table that is added to any polymorphic
+object.
+
+<P>
+The main drawbacks of the Max model that are reported by other music
+environments developers are the problems it presents related to extensibility
+and portability (see [<A
+ HREF="node207.html#ChaudrayOSW">Chaudhary et&nbsp;al., 1999</A>] or [<A
+ HREF="node207.html#CookSTK99">Cook and Scavone, 1999</A>]). In
+this sense it is also interesting to note how the supposed dynamic
+features in Max are the reasons why some authors qualify it as a basically
+static environment.  Stephen Travis Pope states in [<A
+ HREF="node207.html#PopeSuperCollider">Pope, 2004</A>]
+that ``Max (...) provides some object-oriented features, including
+dynamically typed data, dynamic binding but no inheritance, limited
+data types, only one data structure for inter-object messaging and
+few control structures. Max has a static object structure and although
+jMax and Pd do something about it they are still generally static.''
+
+<P>
+The authors mention that there is a disagreement in the community
+whether Max should be considered object-oriented [<A
+ HREF="node207.html#PucketteMax2002">Puckette, 2002</A>].
+Max uses the object-oriented message passing mechanism but not anything
+else. Because of this and all the reasons previously exposed it is
+our opinion that Max is not object-oriented.
+
+<P>
+On the other hand a clear difference between Max or similar environments
+and CLAM is that their design makes it difficult to process complex
+data structures. Max's focus is on real-time performance and therefore
+can handle very well simple control events but its design does not
+accept naturally other kind of data such as Spectrums and the like.
+
+<P>
+Finally possibly the biggest diference between Max and CLAM is that
+CLAM, as it has already been explained, is not a framework but rather
+a Visual Application.
+
+<P>
+Siren (see <A HREF="node73.html#sub:MODE-and-Siren">2.4</A>) is another example of a long
+standing and well-established paradigm that started with the MODE.
+Siren is a music oriented framework written in Smalltalk and heavily
+influenced by the ``Smalltalk-way-of-doing-things''. The motivation
+for creating the MODE and Siren was ``to build a powerful, flexible,
+and portable computer-based composer's tool and instrument''. It
+therefore represents a different approach from that of CLAM as it
+is completely music-oriented.
+
+<P>
+Siren presents a complete and mature object-oriented approach and
+it is indeed one of the main technical goals of the framework [<A
+ HREF="node207.html#PopeSirenBookChapter">Pope, 2001</A>].
+But the model that is used is not modelling a particular domain (music
+and music composition) but rather the author's point of view and requirements.
+In [<A
+ HREF="node207.html#PopeSirenBookChapter">Pope, 2001</A>] he recognizes that although he is
+not the only user that he has listened to, this assertion is not completely
+false: the framework has evolved through many years to meet the needs
+of the author for a particular musical composition.
+
+<P>
+Now Siren has been extended to other applications rather than simply
+musical composition and it is also being ported to different languages
+(see more details in <A HREF="node73.html#sub:MODE-and-Siren">2.4</A>). The former possibility
+does not seem a plausible line of future. The author is promoting
+another more generic framework in parallel (see CSL in section <A HREF="node67.html#sub:CSL">2.3.3</A>)
+and we see this as the effort with most guarantees. Nevertheless,
+the fact that it is being ported to different languages opens up a
+completely different view as the framework model has always been very
+much related to that of Smalltalk.
+
+<P>
+Kyma represents a similar approach, it is not strange as it has also
+been developed on the Smalltalk environment. Kyma presents a rather
+extreme object-oriented musical model (see section <A HREF="node76.html#sub:Kyma">2.5</A>)
+where everything is considered a sound object, from a single timbre
+to the structure of the whole composition or a transform of several
+sounds. This underlying model is defended in a rather romantic way
+as the core and fundamental issue in Kyma. The truth is that the final
+user has no access to the source code and, on the other hand, the
+graphical interface has evolved in a completely different direction,
+now basically focusing on the temporal and graph-based views. The
+``fundamental'' model is completely transparent to the final user
+and is not even mentioned in the program description (see [<A
+ HREF="node207.html#www-SymbolicSound">www-SymbolicSound, </A>])
+
+<P>
+It is our opinion that Kyma's object-oriented model is a clear example
+of overdesign. The conceptual model is not clear and, in some sense,
+is ``too much object-oriented''<A NAME="tex2html42"
+  HREF="footnode.html#foot5633"><SUP><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">8</SPAN></SUP></A>, forgetting about the domain that is being modeled and the way that
+people understand it. There has been a clear tension between the author's
+model and what the users demanded. This has forced the graphical interface
+to grow in other directions in order to hide the model. It is clear
+not the way to go, as these modifications should also have to reach
+the underlying model.
+
+<P>
+The fact that CLAM has followed an evolutionary, application and user-driven
+development process leads to the fact that the framework has not been
+built around a pre-existing conceptual model but rather the model
+has emerged as a result of the development process. It has already
+been stated in <A HREF="node28.html#sub:Frameworks-generate-metamodels">1.3.5</A> that it is
+our opinion that frameworks generate metamodels and not the other
+way around. As already noted, this approach is completely different
+from that of most musical environments (i.e. Kyma, Siren or Max),
+which depart from the author's model and build the environment around
+it.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1897"
+  HREF="node133.html">CLAM as an Audio Processing Framework</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1895"
+  HREF="node133.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1893"
+  HREF="node130.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1889"
+  HREF="node131.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1896"
+  HREF="node133.html">CLAM as an Audio</A>
+<B> Up:</B> <A NAME="tex2html1894"
+  HREF="node130.html">Is CLAM different?</A>
+<B> Previous:</B> <A NAME="tex2html1890"
+  HREF="node131.html">CLAM classification</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

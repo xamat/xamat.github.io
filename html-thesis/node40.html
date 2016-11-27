@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Boolean Dataflow Networks</TITLE>
+<META NAME="description" CONTENT="Boolean Dataflow Networks">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node41.html">
+<LINK REL="previous" HREF="node39.html">
+<LINK REL="up" HREF="node35.html">
+<LINK REL="next" HREF="node41.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html805"
+  HREF="node41.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html803"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html797"
+  HREF="node39.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html806"
+  HREF="node41.html">Dynamic Dataflow Networks</A>
+<B> Up:</B> <A NAME="tex2html804"
+  HREF="node35.html">A brief catalogue of</A>
+<B> Previous:</B> <A NAME="tex2html798"
+  HREF="node39.html">Synchronous Dataflow Networks</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00251500000000000000"></A><A NAME="sub:Boolean-Dataflow-Networks"></A>
+<BR>
+Boolean Dataflow Networks
+</H3>
+
+<P>
+Although SDF is adequate for representing large parts of systems it
+is rarely enough for representing an entire program. A more general
+model is needed to represent data-dependent iteration, conditionals
+and recursion. We can generalize synchronous dataflow to allow conditional,
+data-dependent execution and still use the balance equations. Boolean
+Dataflow Networks (BDF) is an extension of Synchronous Dataflow that
+allows conditional token consumption and production. 
+
+<P>
+By adding two simple control actors like switch and select we can
+build conditional constructs like if-then-else and do-while loops.
+The switch actor gets a control token and then copies a token from
+the input to the appropriate output, determined by the boolean value
+of the control token. The select actor gets a control token and then
+copies a token from the appropriate input, determined by the boolean
+value of the control token, to the output. These actors are not SDF
+because the number of produced/consumed tokens is not fixed and depends
+on an input boolean control [<A
+ HREF="node207.html#BuckTokenFlow">Buck and Lee, 1994</A>].
+
+<P>
+<BR><HR>
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

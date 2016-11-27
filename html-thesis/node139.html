@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Processing Configuration</TITLE>
+<META NAME="description" CONTENT="Processing Configuration">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node140.html">
+<LINK REL="previous" HREF="node138.html">
+<LINK REL="up" HREF="node137.html">
+<LINK REL="next" HREF="node140.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1999"
+  HREF="node140.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1997"
+  HREF="node137.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1991"
+  HREF="node138.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2000"
+  HREF="node140.html">Data and Control Flow</A>
+<B> Up:</B> <A NAME="tex2html1998"
+  HREF="node137.html">Processing Objects</A>
+<B> Previous:</B> <A NAME="tex2html1992"
+  HREF="node138.html">The Processing Object Lifecycle</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00511200000000000000">
+Processing Configuration</A>
+</H3>
+
+<P>
+A Processing Configuration is an object that contains values for a
+Processing object's non-execution variables, that is all the variable
+structural attributes that can only be changed when the Processing
+object is not in the Running state. The Configuration is used for
+setting the initial state of the processing object. It may contain
+attributes related to any structural characteristic like the algorithms
+or strategy to be selected and values for structural parameters ,
+such as the expected size of the incoming data, that will be used
+to also initialize the algorithms or internal tables that may be used
+for convenience. A Configuration though may also have initial values
+for non-structural attributes such as the controls (see paragraph
+on ``Data and Control Flow'').
+
+<P>
+Processing Configuration classes are in fact very much related to
+Processing Data classes and need to offer the same mechanisms and
+services. We will review them in section <A HREF="node142.html#sub:DSPOOM::Processing_Data">4.1.2</A>.
+
+<P>
+It is important to keep in mind that the configuration mechanism cannot
+be used to change parameters of a Processing object on execution state,
+only during an initial configuration stage. If the class needs to
+offer an interface for changing parameters or values on run-time the
+Control mechanism must be used.
+
+<P>
+Configuration related data is known as <SPAN  CLASS="textit">parameter arguments</SPAN>
+in Ptolemy, in order to make a clear distinction between such data
+and that related to data and control flow, which is known as <SPAN  CLASS="textit">stream
+arguments</SPAN> (see <A HREF="node54.html#sub:Ptolemy">2.2</A>).
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1999"
+  HREF="node140.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1997"
+  HREF="node137.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1991"
+  HREF="node138.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2000"
+  HREF="node140.html">Data and Control Flow</A>
+<B> Up:</B> <A NAME="tex2html1998"
+  HREF="node137.html">Processing Objects</A>
+<B> Previous:</B> <A NAME="tex2html1992"
+  HREF="node138.html">The Processing Object Lifecycle</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

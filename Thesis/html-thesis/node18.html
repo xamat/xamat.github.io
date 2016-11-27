@@ -1,0 +1,246 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Models</TITLE>
+<META NAME="description" CONTENT="Models">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node19.html">
+<LINK REL="previous" HREF="node17.html">
+<LINK REL="up" HREF="node16.html">
+<LINK REL="next" HREF="node19.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html560"
+  HREF="node19.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html558"
+  HREF="node16.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html552"
+  HREF="node17.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html561"
+  HREF="node19.html">Object-orientation, systems and models</A>
+<B> Up:</B> <A NAME="tex2html559"
+  HREF="node16.html">Models and Systems</A>
+<B> Previous:</B> <A NAME="tex2html553"
+  HREF="node17.html">Systems</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00222000000000000000"></A><A NAME="sec:_Models"></A>
+<BR>
+Models
+</H2>
+
+<P>
+Once we have a more clear view on what a system is we can come back
+to the definition of model, which we said is ``an abstract representation
+of a system''. The main goal when analyzing a system is to come up
+with a valid model for a given purpose. If it is possible to alter
+the actual system and evaluate it under the new conditions, it may
+be desirable to do so. But this is seldom the case. It is usually
+necessary to build a model and study it in place of the actual system. 
+
+<P>
+A model consciously focuses on some of the subject matters leaving
+others out. Therefore a model needs not be complete. But incompleteness
+and a high degree of abstraction does not mean imprecision.
+
+<P>
+It is important to note that a given system can be represented by
+many different models. These models may have different level of abstraction
+and purpose and the ``best'' model is only the one that is the
+most useful for a particular application or purpose[<A
+ HREF="node207.html#HallFagenDefinitionOfSystem">Hall and Fagen, 1956</A>].
+On the other hand a single model may have multiple interpretations,
+where the <SPAN  CLASS="textit">interpretation</SPAN> is defined as the relation of the
+model to the thing being modeled [<A
+ HREF="node207.html#SeidewitzWhatModelsMean">Seidewitz, 2003</A>].
+Finally, the relation of all the possible models derived from a particular
+system is called a <SPAN  CLASS="textit">theory</SPAN>. More precisely, and according to
+[<A
+ HREF="node207.html#AndersonCognition">Anderson, 1983</A>], a theory is a precise deductive system
+that is more general than a model. As a matter of fact, a model is
+the application of a theory to a specific phenomenon. We can deduce
+the quality of a theory by the quality of the models that it generates.
+
+<P>
+A first classification of models is into static and dynamic models.
+A static model is a representation of a system at a particular time.
+A dynamic model represents a system as it evolves over time.
+
+<P>
+Another way of classifying models is according to the domain in which
+the model will be deployed. We can then classify models into <SPAN  CLASS="textit">physical</SPAN>
+models, <SPAN  CLASS="textit">mathematical</SPAN> models and <SPAN  CLASS="textit">software</SPAN> models. Out
+of these we are interested in the latter but as software and mathematical
+models share many of their properties we will first summarize the
+main properties of a mathematical one.
+
+<P>
+A mathematical model is a set of mathematical expressions that are
+sufficient to explain the behavior of a given system for a particular
+purpose. Once a mathematical model is built, if it is simple enough,
+it may be possible to get an exact ``analytical'' solution. But
+this is almost impossible in many cases and then it is necessary to
+study the model by <SPAN  CLASS="textit">simulation</SPAN> (numerically exercising the model
+and studying how input variations affect outputs). If a simulation
+model does not contain any probabilistic (random) components, it is
+called <SPAN  CLASS="textit">deterministic</SPAN>: once the input and the internal relations
+are known, the outputs can be determined. Many systems though must
+be modeled as having one or more random inputs, these are called <SPAN  CLASS="textit">stochastic</SPAN>
+simulation models [<A
+ HREF="node207.html#LawSimulationModelling">Law and Kelton, 2000</A>].
+
+<P>
+Software models built in order to have an executable software version
+of the system under study are called <SPAN  CLASS="textit">constructive</SPAN> or <SPAN  CLASS="textit">executable</SPAN>
+models [<A
+ HREF="node207.html#PtolemyOverview">Hylands et&nbsp;al., 2003</A>]. Constructive models define a computational
+procedure that mimics a set of properties of the system. Software
+models that are clearly different from the system are often referred
+to as simulations. But in many systems a model that starts off as
+a simulation ends up being a software implementation, blurring the
+distinction between the model and the system itself.
+
+<P>
+The use of executable models in software engineering has given place
+to a methodology known as <SPAN  CLASS="textit">model-driven development</SPAN> (MDD) [<A
+ HREF="node207.html#AmblerAgileMDD">Ambler, 2003</A>,<A
+ HREF="node207.html#MellerModelDrivenDevelopment">Meller et&nbsp;al., 2003</A>,<A
+ HREF="node207.html#SeidewitzWhatModelsMean">Seidewitz, 2003</A>].
+In traditional or code-driven development models are treated as simple
+sketches that are thrown away once the code is done but in model-driven
+development the models themselves become the primary artifacts in
+the development in software. In MDD different models are use throughout
+the developing process and are divided into two main categories: <SPAN  CLASS="textit">conceptual</SPAN>
+or <SPAN  CLASS="textit">analysis</SPAN> models that express requirements and <SPAN  CLASS="textit">engineering</SPAN>
+or <SPAN  CLASS="textit">design</SPAN> models that are ready to be turned into code or an
+executable. Successive model transformation offer a way of mapping
+analysis models to design models. Model-driven development is also
+very much related to the Meta Object Facility or MOF (see section
+<A HREF="node33.html#sub:MOF">1.4.3</A>)
+
+<P>
+Nevertheless it is probably in the Analysis phase of the development
+cycle when it is most used. We talk about the ``domain model''
+to describe a high-level, abstract model that is used to partition
+the original domain of the application (e.g. ``cattle growing''
+or ``car traffic regulation'') usually into objects. When building
+the domain model we do not intend to have a nearly implementable design,
+we are only trying to understand the context of the application, partitioning
+the problem to make it more understandable and easily translatable
+to the software domain. The domain model focuses on requirements (either
+functional or non-functional) that a particular domain comprises. 
+
+<P>
+The domain model is many times combined with the ``business model''.
+While the domain model focused on requirements, this latter focuses
+on the internal processes involved in the business we are trying to
+model. It is somehow in between the domain model and the design model
+that will latter become the real application. Note though that, in
+any case, the model is neither the original problem, nor the solution
+given to the problem in the software application. Both the original
+problem and the final software implementation have an abstract representation
+through either a domain model or a design model. As M.A. Jackson points
+out, from the domain we get a description model true only of the domain,
+from the machine we get a description true only of the machine; but
+in the middle we have an intermediate description that is true of
+both domain and machine maybe under certain restrictions [<A
+ HREF="node207.html#JacksonSoftwareRequirements">Jackson, 1995</A>].
+
+<P>
+Software models are usually expressed using the Unified Modeling Language
+(UML) but can also be expressed in any other programming language.
+
+<P>
+To summarize, we can say that a model is a representation of a system
+that has been built for one of the following purposes:
+
+<P>
+
+<UL>
+<LI>Communication of ideas between people and machines
+</LI>
+<LI>Completeness checking
+</LI>
+<LI>Race condition analysis
+</LI>
+<LI>Test case generation
+</LI>
+<LI>Transformation into an executable
+</LI>
+</UL>
+And observes the following properties:
+
+<P>
+
+<UL>
+<LI>Under whatever restrictions specified, the model must yield the same
+output to an input than the original system.
+</LI>
+<LI>It has the shape or appearance of the original (it is an iconic representation).
+</LI>
+<LI>But it is always different from the system being modeled (the original)
+in scale, implementation or behavior under certain conditions.
+</LI>
+<LI>It can be manipulated or exercised in such a way that its behavior
+or properties can be used to predict the behavior or properties of
+the original (it is a simulation tool).
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html560"
+  HREF="node19.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html558"
+  HREF="node16.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html552"
+  HREF="node17.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html561"
+  HREF="node19.html">Object-orientation, systems and models</A>
+<B> Up:</B> <A NAME="tex2html559"
+  HREF="node16.html">Models and Systems</A>
+<B> Previous:</B> <A NAME="tex2html553"
+  HREF="node17.html">Systems</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

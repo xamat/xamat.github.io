@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>What CLAM has to offer</TITLE>
+<META NAME="description" CONTENT="What CLAM has to offer">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node130.html">
+<LINK REL="previous" HREF="node93.html">
+<LINK REL="up" HREF="node92.html">
+<LINK REL="next" HREF="node97.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1471"
+  HREF="node97.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1469"
+  HREF="node92.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1463"
+  HREF="node95.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1472"
+  HREF="node97.html">Repository</A>
+<B> Up:</B> <A NAME="tex2html1470"
+  HREF="node92.html">The CLAM Framework</A>
+<B> Previous:</B> <A NAME="tex2html1464"
+  HREF="node95.html">CLAM as an Object-Oriented</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00420000000000000000">
+What CLAM has to offer</A>
+</H1>
+
+<P>
+At the time of this writing, around 300 C++ classes (70.000 loc) exist
+in our CVS repository. 
+
+<P>
+CLAM brings the world of software design and engineering to DSP developers
+who could care less about it. For doing so, it offers some general
+infrastructure like ADT's, XML serialization or a GUI module. But,
+most importantly, it forces users to follow some good coding principles
+and it provides a general model for easy (re)usability. Thus, the
+user of the framework only has to concentrate on writing signal processing
+algorithms and, eventually, modeling new data structures or implementing
+particular flow control schemes.
+
+<P>
+CLAM offers a repository of ready-to-use components that conform the
+black-box aspect of the framework. These components include containers
+for data related to signal processing data and algorithms properly
+encapsulated. But, most importantly, CLAM also includes infrastructure
+for adding newly developed components that can be easily integrated
+into the framework. This white-box aspect of the framework does not
+only include infrastructure for extending the available data and processing
+classes but also ways of interconnecting components and building applications.
+
+<P>
+The core of the library is a repository of digital signal processing
+algorithms related to audio and music. These algorithms can be used
+for a wide range of applications but, at the time of this writing,
+they are mostly related with the MTG's research field, which is mainly
+spectral analysis synthesis and transformations. Nevertheless, the
+framework has been designed so that further additions can be done
+without much hassle. This is mainly due to the fact that a CLAM processing
+network can acknowledge any kind of processing data as long as it
+complies to the required interface.
+
+<P>
+Processing classes encapsulate all processing algorithms in a CLAM
+system. A CLAM system can therefore be seen as a set of interconnected
+Processing objects. Processing objects offer scalability so that any
+final CLAM network can be looked at as a Processing composite that
+includes any number (and levels) of Processing components inside.
+Processing objects respond to synchronous processing data and asynchronous
+control events. 
+
+<P>
+CLAM also offers a Visualization module that allows the decoupling
+of any particular third party toolkit from the system model. This
+service can be used with any toolkit. The Visualization module implements
+a model abstraction based on a modified version of the MVC called
+Model-View-Presentation. The decoupling between the view and the presentation
+is accomplished through the implementation of a template functor based
+callback library. It also implements some particular presentations
+for basic data types (like audio or spectrum) using FLTK [<A
+ HREF="node207.html#www-FLTK">www-FLTK, </A>]
+or QT [<A
+ HREF="node207.html#www-QT">www-QT, </A>] and OpenGL [<A
+ HREF="node207.html#OpenGL">Shreiner, 2004</A>].
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="1758"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.1:</STRONG>
+CLAM components</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="555" HEIGHT="407" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="\includegraphics[%
+width=1.0\textwidth]{images/ch3-CLAM/ps/Components.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+In this section we will describe in more details the different components
+in the repository, and the infrastructure, including general tools
+and sample applications that are offered as part of the framework. 
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1473"
+  HREF="node97.html">Repository</A>
+<UL>
+<LI><A NAME="tex2html1474"
+  HREF="node98.html">Processing repository</A>
+<UL>
+<LI><A NAME="tex2html1475"
+  HREF="node99.html">General Processing</A>
+<LI><A NAME="tex2html1476"
+  HREF="node100.html">Input/Output</A>
+<LI><A NAME="tex2html1477"
+  HREF="node101.html">Control</A>
+</UL>
+<LI><A NAME="tex2html1478"
+  HREF="node102.html">Data repository</A>
+<UL>
+<LI><A NAME="tex2html1479"
+  HREF="node103.html">Audio</A>
+<LI><A NAME="tex2html1480"
+  HREF="node104.html">Spectrum</A>
+<LI><A NAME="tex2html1481"
+  HREF="node105.html">SpectralPeak and SpectralPeakArray</A>
+<LI><A NAME="tex2html1482"
+  HREF="node106.html">Fundamental</A>
+<LI><A NAME="tex2html1483"
+  HREF="node107.html">Frame</A>
+<LI><A NAME="tex2html1484"
+  HREF="node108.html">Segment</A>
+<LI><A NAME="tex2html1485"
+  HREF="node109.html">Descriptors</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html1486"
+  HREF="node110.html">Infrastructure</A>
+<UL>
+<LI><A NAME="tex2html1487"
+  HREF="node111.html">Processing infrastructure</A>
+<UL>
+<LI><A NAME="tex2html1488"
+  HREF="node112.html">ProcessingComposites</A>
+<LI><A NAME="tex2html1489"
+  HREF="node113.html">Controls</A>
+</UL>
+<LI><A NAME="tex2html1490"
+  HREF="node114.html">Data Infrastructure </A>
+<UL>
+<LI><A NAME="tex2html1491"
+  HREF="node115.html">Dynamic Types</A>
+<LI><A NAME="tex2html1492"
+  HREF="node116.html">Processing Data</A>
+<LI><A NAME="tex2html1493"
+  HREF="node117.html">Configurations</A>
+</UL>
+<LI><A NAME="tex2html1494"
+  HREF="node118.html">Network infrastructure </A>
+<LI><A NAME="tex2html1495"
+  HREF="node119.html">Tools </A>
+<UL>
+<LI><A NAME="tex2html1496"
+  HREF="node120.html">XML support</A>
+<LI><A NAME="tex2html1497"
+  HREF="node121.html">Platform abstraction</A>
+<LI><A NAME="tex2html1498"
+  HREF="node122.html">Visualization</A>
+</UL>
+<LI><A NAME="tex2html1499"
+  HREF="node123.html">Application infrastructure</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1500"
+  HREF="node124.html">Sample applications </A>
+<UL>
+<LI><A NAME="tex2html1501"
+  HREF="node125.html">SMS Analysis/Synthesis Example</A>
+<LI><A NAME="tex2html1502"
+  HREF="node126.html">SALTO</A>
+<LI><A NAME="tex2html1503"
+  HREF="node127.html">Spectral Delay</A>
+<LI><A NAME="tex2html1504"
+  HREF="node128.html">Network Editor</A>
+<LI><A NAME="tex2html1505"
+  HREF="node129.html">Others</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1471"
+  HREF="node97.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1469"
+  HREF="node92.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1463"
+  HREF="node95.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1472"
+  HREF="node97.html">Repository</A>
+<B> Up:</B> <A NAME="tex2html1470"
+  HREF="node92.html">The CLAM Framework</A>
+<B> Previous:</B> <A NAME="tex2html1464"
+  HREF="node95.html">CLAM as an Object-Oriented</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The build system</TITLE>
+<META NAME="description" CONTENT="The build system">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node228.html">
+<LINK REL="previous" HREF="node226.html">
+<LINK REL="up" HREF="node224.html">
+<LINK REL="next" HREF="node228.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2993"
+  HREF="node228.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2991"
+  HREF="node224.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2985"
+  HREF="node226.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2994"
+  HREF="node228.html">External libraries</A>
+<B> Up:</B> <A NAME="tex2html2992"
+  HREF="node224.html">Used Tools and Resources</A>
+<B> Previous:</B> <A NAME="tex2html2986"
+  HREF="node226.html">On methodologies</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001023000000000000000">
+The build system</A>
+</H2>
+
+<P>
+CLAM provides a quite automated Build System that allows to generate
+and maintain, with little effort, GNU Makefiles and VisualC++ project
+files to build large volumes of source files. Note that this build
+system is specialized on building CLAM distribution binaries and CLAM
+based applications and although it could be surely be adapted to other
+kind of projects it has not been used outside the framework.
+
+<P>
+In any project it is difficult to deal with a complex source files
+dependency graph. Without a build system helper you have to add by
+hand each .cxx file into the Project IDE or build script in order
+to compile it. CLAM Build System is able to do this task with little
+supervision: <SPAN  CLASS="textit">srcdeps</SPAN> is a small and smart application that
+is able to deduce the source files that need to be compiled following
+the following simple rule:
+
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'If main.cxx must be compiled and includes both blue.hxx
+and green.hxx
+
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; then blue.cxx and green.cxx must be also compiled'
+
+<P>
+This rule to is based on the hypothesis that for each header named
+Foo.hxx a Foo.cxx file exists somewhere, a thing that may or may not
+be true. Also there can be additional .cxx not related to any .hxx
+that should be compiled. In both cases, you can provide additional
+starting points to look for dependencies. 
+
+<P>
+The CLAM build system is designed to be used to build CLAM examples,
+libraries and tests that are inside the CLAM source tree. But it also
+provides facilities to anybody building their own applications with
+CLAM. In order to use CLAM internal build system for building your
+App you must consider the source tree structure suggested in the documentation
+and use the following configuration files: defaults.cfg, settings.cfg,
+clam-location.cfg, system.cfg, and system-win.cfg or system-linux.cfg.
+Out of these, three need to be edited: the particular path to clam
+must be introduced into clam-location.cfg, the default global configuration
+variables must be edited into defaults.cfg and the settings related
+to the particular project must be entered into settings.cfg.
+
+<P>
+<SPAN ID="hue5221">There are two main kinds of config variables depending
+on the values they may take: Boolean variables - these can only have
+values of 0 or 1. Usually 0 means that the variable effect is disabled,
+and 1 that it is enabled; and Textual variables - they are a string,
+for instance, a relative path to some file. Also depending on the
+effect, there are three kinds of variables: Build System variables
+- variables whose value just affects the CLAM build system behavior
+while naming binaries or searching for certain files; External Libraries
+variables - variables whose value determines whether the build system
+will make your application link or not to some ( or any ) of CLAM
+external libraries; and CLAM internal variables - these variables
+are mainly compile-time flags that activate/deactivate certain framework
+features or change some framework behavior. </SPAN>
+<P>
+<SPAN ID="hue5223">Build system variables reference include the following:</SPAN>
+<P>
+<SPAN ID="hue5225">TOP (Textual) - Should contain the relative path
+from the settings.cfg file to the 'top' of the project source tree </SPAN>
+<P>
+<SPAN ID="hue5227">PROGRAM (Textual) - Should contain the name for
+the program binary </SPAN>
+<P>
+<SPAN ID="hue5821">PRJ_SEARCH_INCLUDES (Textual) - Should contain
+the lists relative paths, from settings.cfg location, to folders where
+you want srcdeps to look for binary dependencies, usually the folders
+where you have your sources. Note that srcdeps *will not* perform
+a recursively descent search on these folders. </SPAN>
+<P>
+<SPAN ID="hue5822">PRJ_SEARCH_RECURSE_INCLUDES (Textual) - Should
+contain the list relative paths, from settings.cfg location, to folders
+where you want srcdeps to look for binary dependencies, usually the
+folders where you have your sources. Note that srcdeps *will*
+perform a recursively descent search on these folders. </SPAN>
+<P>
+<SPAN ID="hue5235">SOURCES (Textual) - Should contain the source file
+that contains the application entry point. While building library
+binaries or not following for some reason the rule 'for each header
+file there exists a source file with the same name' then you should
+add the source relative paths, from current settings.cfg location. </SPAN>
+<P>
+<SPAN ID="hue5237">CLAM configuration variables include: </SPAN>
+<P>
+<SPAN ID="hue5239">CLAM_DOUBLE(Boolean) - This variable controls whether
+CLAM::TData datatype is either a single precision floating-point number
+( ANSI C++ float type ) or a double precision floating-point number
+( ANSI C++ double type ). </SPAN>
+<P>
+<SPAN ID="hue5241">CLAM_USE_XML(Boolean) - This variable controls
+whether CLAM code is built with XML-based Object External Storage
+support. Disabling it could improve compiling speed as well as reduce
+code size. </SPAN>
+<P>
+<SPAN ID="hue5243">CLAM_DISABLE_CHECKS(Boolean) - This variable controls
+whether CLAM internal precondition, postcondition and invariant verification
+checks are performed or not. Deactivating it could improve code speed
+in spite of robustness. </SPAN>
+<P>
+<SPAN ID="hue5823">CLAM_USE_RELEASE_ASSERTS(Boolean) - This variable
+controls whether CLAM Asserts behave equally in &#34;debug&#34;
+and &#34;not debug&#34; mode. </SPAN>
+<P>
+<SPAN ID="hue5250">And finally external libraries variables are:</SPAN>
+<P>
+<SPAN ID="hue5252">USE_ALSA(Boolean) - Tells the build system to make
+applications to link against ALSA. Note that this variable can only
+have effect on GNU/Linux systems. </SPAN>
+<P>
+<SPAN ID="hue5254">USE_FFTW(Boolean) - Tells the build system to make
+applications to link against the FFTW library. </SPAN>
+<P>
+<SPAN ID="hue5256">USE_FLTK(Boolean) - Tells the build system to make
+applications to link against FLTK. </SPAN>
+<P>
+<SPAN ID="hue5258">USE_DIRECTX(Boolean) - Tells the build system to
+make applications to link against DirectX SDK. Note that this variable
+only has effect on Microsoft Windows(c) systems. </SPAN>
+<P>
+<SPAN ID="hue5260">USE_PORTMIDI(Boolean) - Tells the build system
+to make applications to link against Portmidi. Note that this variable
+only has effect on Microsoft Windows(c) systems. </SPAN>
+<P>
+<SPAN ID="hue5262">USE_RTAUDIO(Boolean) - Tells the build system to
+make applications to link against RtAudio. Note that this variable
+only has effect on Microsoft Windows(c) systems. </SPAN>
+<P>
+<SPAN ID="hue5264">USE_PTHREADS(Boolean) - Tells the build system
+to make applications to link against pthreads (POSIX threads library).
+Note that this variable only has effect on Microsoft Windows(c) systems. </SPAN>
+<P>
+<SPAN ID="hue5266">USE_QT(Boolean) - Tells the build system to make
+applications to link against Qt Toolkit. </SPAN>
+<P>
+<SPAN ID="hue5268">USE_CPPUNIT(Boolean) - Tells the build system to
+make applications to link against cppUnit library. </SPAN>
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2993"
+  HREF="node228.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2991"
+  HREF="node224.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2985"
+  HREF="node226.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2994"
+  HREF="node228.html">External libraries</A>
+<B> Up:</B> <A NAME="tex2html2992"
+  HREF="node224.html">Used Tools and Resources</A>
+<B> Previous:</B> <A NAME="tex2html2986"
+  HREF="node226.html">On methodologies</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

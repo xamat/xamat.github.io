@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Spectral Delay</TITLE>
+<META NAME="description" CONTENT="Spectral Delay">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node128.html">
+<LINK REL="previous" HREF="node126.html">
+<LINK REL="up" HREF="node124.html">
+<LINK REL="next" HREF="node128.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1846"
+  HREF="node128.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1844"
+  HREF="node124.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1838"
+  HREF="node126.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1847"
+  HREF="node128.html">Network Editor</A>
+<B> Up:</B> <A NAME="tex2html1845"
+  HREF="node124.html">Sample applications</A>
+<B> Previous:</B> <A NAME="tex2html1839"
+  HREF="node126.html">SALTO</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00423300000000000000">
+Spectral Delay</A>
+</H3>
+
+<P>
+SpectralDelay is also known as CLAM's Dummy Test. In this application
+it is no important to actually implement an impressive application
+but rather to show what can be accomplished using the CLAM framework.
+Especial care has been taken on the way things are done and why they
+are done.
+
+<P>
+The SpectralDelay implements a delay in the spectral domain. What
+that basically means is that you can divide your input audio signal
+in three bands and delay them separately, obtaining interesting or
+weird effects. The block diagram of the process is illustrated in
+Figure <A HREF="#fig:Spectral-Delay-block">3.12</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:Spectral-Delay-block"></A><A NAME="5623"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.12:</STRONG>
+Spectral Delay block diagram</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="555" HEIGHT="314" ALIGN="BOTTOM" BORDER="0"
+ SRC="img32.png"
+ ALT="\includegraphics[%
+width=1.0\textwidth]{images/ch3-CLAM/ps/SpectralDelayBlockDiagram.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The core of the process is an STFT that performs the analysis of the
+input signal and converts it to the spectral domain. The STFT is implemented
+in the <TT>SpectralAnalysis</TT> Processing Composite class, which
+contains a number of other Processing objects (i.e. <TT>WindowGenerator</TT>
+or <TT>FFT</TT>, see SMS Analysis/Synthesis Example UML diagram in
+figure <A HREF="node125.html#fig:SMS-Tools-block-diagram">3.7</A>). The signal is synthesized
+using a <TT>SpectralSynthesis</TT> Processing that implements the
+inverse process. It is transformed, in between these two steps, in
+the spectral domain.
+
+<P>
+The output data of the <TT>SpectralAnalysis</TT> is read by three
+<TT>AudioMultiplier</TT> Processing objects that also take the spectral
+transform transfer function of a pre-defined filter as input. As a
+matter of fact we apply three different filters: a low-pass, a band-pass
+and a high-pass. We then have the signal divided into three different
+bands. Each of them is delayed with a different delay time. Finally,
+and before the synthesis, these three bands are summed up again.
+
+<P>
+The graphical interface depicted in Figure <A HREF="#fig:SpectralDelay-Graphical-Interface">3.13</A>
+controls the frequency cut-offs and gains of the filters and the delay
+times of the delays.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:SpectralDelay-Graphical-Interface"></A><A NAME="5624"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.13:</STRONG>
+SpectralDelay Graphical Interface</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="443" HEIGHT="296" ALIGN="BOTTOM" BORDER="0"
+ SRC="img33.png"
+ ALT="\includegraphics[%
+width=0.80\textwidth,
+keepaspectratio]{images/ch3-CLAM/ps/SpectralDelay.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1846"
+  HREF="node128.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1844"
+  HREF="node124.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1838"
+  HREF="node126.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1847"
+  HREF="node128.html">Network Editor</A>
+<B> Up:</B> <A NAME="tex2html1845"
+  HREF="node124.html">Sample applications</A>
+<B> Previous:</B> <A NAME="tex2html1839"
+  HREF="node126.html">SALTO</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

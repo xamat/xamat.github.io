@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>CSound </TITLE>
+<META NAME="description" CONTENT="CSound ">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node84.html">
+<LINK REL="previous" HREF="node82.html">
+<LINK REL="up" HREF="node81.html">
+<LINK REL="next" HREF="node84.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1304"
+  HREF="node84.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1302"
+  HREF="node81.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1296"
+  HREF="node82.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1305"
+  HREF="node84.html">SAOL and SASL</A>
+<B> Up:</B> <A NAME="tex2html1303"
+  HREF="node81.html">Music-N Languages</A>
+<B> Previous:</B> <A NAME="tex2html1297"
+  HREF="node82.html">Supercollider</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00361200000000000000"></A><A NAME="sub:CSound"></A>
+<BR>
+CSound 
+</H3>
+
+<P>
+CSound [<A
+ HREF="node207.html#VercoeCSound">Vercoe, 1992</A>] is a Music-N language that was first designed
+to make this technology portable and available in any platform with
+the only requirement of having a C language compiler. CSound has suffered
+several revisions during the years and now includes contributions
+from many different collaborators, most of them computer music composers.
+But, above all, CSound is the project of Barry Vercoe [<A
+ HREF="node207.html#www-BarryVercoe">www-BarryVercoe, </A>].
+
+<P>
+CSound has gained a great acceptance in the academic community but
+has not become a mainstream tool, possibly because of the relative
+complexity of the language and the requirement of some previous programming
+experience.
+
+<P>
+In CSound an orchestra definition file is a regular text file written
+according to a specified protocol. This orchestra file is made up
+of a header and a list of instruments. In the header we can find global
+parameters such as the output sampling rate (sr) or the control frequency
+(kr).
+
+<P>
+The instrument definition starts with an instrument label and finishes
+with an end declaration. In between those two statements, different
+declarations are included. These declarations define the modules or
+functions that will be used and the way that they will interact.
+
+<P>
+The CSound score file is also a standard text file that follows a
+particular syntax and protocol. As a matter of fact it is just an
+ordered list of labels and numbers separated by a whitespace.
+
+<P>
+The score file can begin by defining a set of function tables that
+will be used to generate the synthesis waveforms. From the score body
+itself there is the possibility of sending messages to these functions
+or to an instrument in the orchestra. If the message is to be sent
+to a function it will start with ``f(x)'' and if it is intended
+to affect an instrument with ``i(x)'', where in both cases ``(x)''
+is the number of the function or the instrument in the orchestra where
+the message is addressed. The next elements in a message are the temporal
+definition of the event start and its duration. The following values
+are addressed to the different parameters and their meaning is determined
+by the particular instrument definition.
+
+<P>
+In the following example we can see the two different kind of instruments
+available in a score. The first one is addressed to a table that generates
+sinusoidal waveforms and the second one is addressed to an orchestra
+instrument, asking it to produce a 5 seconds note starting at time
+0.
+
+<P>
+<TT><SMALL CLASS="FOOTNOTESIZE">f1 0 4096 10 1</SMALL></TT>
+<P>
+
+
+<P>
+<TT><SMALL CLASS="FOOTNOTESIZE">i1 0 5 ... ... ... ... ... ... ... </SMALL></TT>
+<P>
+
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1304"
+  HREF="node84.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1302"
+  HREF="node81.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1296"
+  HREF="node82.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1305"
+  HREF="node84.html">SAOL and SASL</A>
+<B> Up:</B> <A NAME="tex2html1303"
+  HREF="node81.html">Music-N Languages</A>
+<B> Previous:</B> <A NAME="tex2html1297"
+  HREF="node82.html">Supercollider</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

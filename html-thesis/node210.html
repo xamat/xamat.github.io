@@ -1,0 +1,308 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>How it all started</TITLE>
+<META NAME="description" CONTENT="How it all started">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node211.html">
+<LINK REL="previous" HREF="node209.html">
+<LINK REL="up" HREF="node209.html">
+<LINK REL="next" HREF="node211.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2815"
+  HREF="node211.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2813"
+  HREF="node209.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2807"
+  HREF="node209.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2816"
+  HREF="node211.html">CLAM becomes public</A>
+<B> Up:</B> <A NAME="tex2html2814"
+  HREF="node209.html">A brief history of</A>
+<B> Previous:</B> <A NAME="tex2html2808"
+  HREF="node209.html">A brief history of</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001011000000000000000">
+How it all started</A>
+</H2>
+
+<P>
+CLAM was started in October 2000. At that time, it had become clear
+that some sort of organization had to be introduced to the source
+code that was being generated at the Music Technology Group [<A
+ HREF="node207.html#www-MTG">www-MTG, </A>].
+The SMSTools, application that had become some sort of flagship of
+the group[<A
+ HREF="node207.html#PFCBonada">Bonada, 1997</A>], was the result of the work of a single
+person and not much care had been put into applying any sort of strategy
+that would enable maintainability or re-usability. Furthermore, the
+application had been developed exclusively for the Microsoft Windows
+platform. On the other hand, new projects were being started all of
+the time. Many of them saw the potential benefits of reusing code
+and algorithms that were in the SMS code. But the learning curve to
+understand the code and internal organization was unbearable. This
+is even more if we take into account that the code had also been intensively
+optimized for real-time processing, compromising understandability
+and maintainability to speed, many times with misconceptions.
+
+<P>
+In this context, the idea of starting the CLAM project was born. The
+original name was MTG-Classes, name that already reflects two of the
+original restrictions (which latter were suppressed): MTG, thus the
+project was to be an internal project, and Classes, thus the initial
+intention was not to build a framework but rather a class library.
+The original goal, as quoted from the first draft, was:
+
+<P>
+``To offer a complete, flexible and platform independent Sound
+Analysis/Synthesis C++ platform to meet current and future needs of
+all MTG projects.''
+
+<P>
+The three main axes of this goal were defined as (from CLAM first
+draft document):
+
+<P>
+
+<UL>
+<LI>Complete: Should include all utilities needed in a Sound Processing
+Project (input/output, processing, storage, display...)
+</LI>
+<LI>Flexible: Easy to use and adapt to any kind of need.
+</LI>
+<LI>Platform Independent: Compile under UNIX, Windows and Mac platforms.
+</LI>
+</UL>
+Note how similar these main objectives are to those mentioned in [<A
+ HREF="node207.html#TaligentBuildingOOFrameworks">Taligent, 1994</A>]
+where they state that to be successful, you should design your framework
+to be complete, flexible, extensible, and understandable.
+
+<P>
+These initial objectives have slightly changed since then mainly to
+accommodate to the fact that the library is no longer seen as an internal
+tool for the MTG but as a library that is made public under the GNU-GPL
+in the course of the AGNULA IST European Project. But the truth is
+that as a summary of the philosophy of the framework they are as valid
+as the first day.
+
+<P>
+When CLAM was started it was not seen as a framework but rather as
+a class library that would some day offer ready-to-use C++ classes
+that would be incorporated in any audio or music processing project.
+Because of this, in this first phase most effort was put forward in
+the development of useful signal processing and basic tools such as
+sound input/output. The implementation of some algorithms was put
+in the hand of signal processing engineers with hardly any knowledge
+in programming, object-orientation or C++.
+
+<P>
+Although some basic coding conventions had been defined, no real effort
+was put in defining a common infrastructure. The result was highly
+unstructured and hardly maintainable. All of the algorithms were encapsulated
+in classes but the classes interfaces often differed and the framework
+presented too many ``hot spots''[<A
+ HREF="node207.html#JohnsonReusableClasses">Johnson and Foote, 1988</A>,<A
+ HREF="node207.html#EvolvingFrameworksRobertsJohnson">Roberts and Johnson, 1996</A>]. 
+
+<P>
+This first phase should be understood as a exploratory phase in which
+the idea of a ``class library'' was studied and discarded as not
+sufficient: MTG-Classes should become a framework and even the name
+now seemed not appropriate.
+
+<P>
+About this same time it was clear that the development of the framework
+should be application-driven as recommended in [<A
+ HREF="node207.html#JohnsonDesignFrameworksOOPSLATutorial">Johnson, 1993</A>].
+Three different applications were chosen for different reasons. SMSTools
+was at that time the flagship application of the group (see figure
+<A HREF="#cap:Original-SMSTools-interface">A.1</A>) and had been, as already mentioned,
+the main reason for starting the development of the project. It was
+obvious that this application should be one of the chosen to drive
+the development. SMSTools is an off-line application for analyzing,
+transforming and re-synthesizing sounds. Another application was what
+we called the ``dummy test'' (see Figure <A HREF="#fig:_DummyTest">A.2</A>).
+This application is a multi band spectral delay artificially designed
+for testing what were thought to be the most demanding signal processing
+related requirements: spectral domain real-time processing, multiple
+branch processing graph with variable delay and interacting graphical
+interface. The last application, Salto, did not exist at that time.
+It is a real-time spectral domain sax synthesizer designed to be played
+through a wind controller MIDI interface. (See section <A HREF="node124.html#sec:_CLAMApplications">3.2.3</A>
+for more details on these and other CLAM sample applications).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="cap:Original-SMSTools-interface"></A><A NAME="5817"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure A.1:</STRONG>
+Original SMSTools interface</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="499" HEIGHT="1824" ALIGN="BOTTOM" BORDER="0"
+ SRC="img109.png"
+ ALT="\includegraphics[%
+width=0.80\textwidth]{images/chAnnex/png/SMSTools2.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:_DummyTest"></A><A NAME="5818"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure A.2:</STRONG>
+Dummy test block diagram</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="444" HEIGHT="333" ALIGN="BOTTOM" BORDER="0"
+ SRC="img110.png"
+ ALT="\includegraphics[%
+width=0.95\textwidth]{images/ch3-CLAM/draft/SpectralDelayBlockDiagram.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+These applications introduced more focused requirements for both tools
+and architecture. New people joined the team and on this next phase
+many efforts were put on the development of a general infrastructure.
+The XML format was chosen as a general format for passivation in the
+framework. MIDI input was also implemented. But the biggest challenge
+of all was to define a general infrastructure for two basic concepts:
+Processing and Processing Data classes.
+
+<P>
+Following the idea of a white-box framework [<A
+ HREF="node207.html#JohnsonReusableClasses">Johnson and Foote, 1988</A>]
+abstract classes should be offered so as to enforce a common interface.
+The base Processing<A NAME="tex2html105"
+  HREF="footnode.html#foot5819"><SUP>A.<SPAN CLASS="arabic">1</SPAN></SUP></A> class was implemented and all encapsulated algorithms were forced
+to follow a common abstract interface (see section <A HREF="node111.html#sec:_ProcessingInfrastructure">3.2.2</A>.
+As for the data infrastructure a big investment was made in order
+to have data classes with the following requirements: dynamically
+instantiable attributes, tree-like structure, introspection and passivation.
+For all these reasons Dynamic Types were implemented and have been
+one of the trademarks of the framework ever since (see section <A HREF="node114.html#sec:_DataInfrastructure">3.2.2</A>). 
+
+<P>
+Soon after the project was born the idea of having two different modes
+related to the framework was discussed. The two modes were called
+supervised and non-supervised (names that will be kept to honor the
+history of the framework but that are admittedly ambiguous). In the
+supervised mode some entity of the system called Flow Control should
+be in charge of managing the whole data and control flow. The final
+idea was to create some sort of ``visual builder'' [<A
+ HREF="node207.html#JohnsonReusableClasses">Johnson and Foote, 1988</A>]
+so the user could create rapid prototypes by just combining pre-existing
+blocks. In the non-supervised mode the user/programmer should be in
+charge of managing the system flow. The framework was in this sense
+understood as a combination of black-box and white-box (see section
+<A HREF="node26.html#sec:FrameworkClassification">1.3.3</A>) where ready-to-use components
+were combined with code completely developed by the application builder.
+
+<P>
+Ever since the beginning and up until release 0.4, the development
+has concentrated in the non-supervised mode as it was the one that
+had the clearest requirements and was first needed, especially due
+to the example-driven development that had been imposed on the process.
+Even so, compatibility with the supervised mode was intended in every
+new feature that was added: the functionality was not added but the
+code was ready to accept this addition with minor refactorings.
+
+<P>
+After the basic infrastructure in the framework was more or less useful,
+more internal users were convinced of the benefits of using the framework.
+Now the time investment needed to master CLAM was less than the time
+most of the developers would need to implement their application from
+scratch [<A
+ HREF="node207.html#BoochDesigningFrameworks">Booch, 1994a</A>]. It must be said that at
+that time (and still now) many of the framework users had very limited
+programming skills and with the help of the framework they were able
+to implement quite complex applications.
+
+<P>
+New projects joined the CLAM community. Especially important was the
+CUIDADO project, an IST European project focused on the analysis
+and extraction of semantic information from audio signals. This project
+made extensive use of the XML facilities of the framework in order
+to produce MPEG7 compliant descriptions [<A
+ HREF="node207.html#MPEG7Book">Manjunath et&nbsp;al., 2002</A>]. But CUIDADO
+also contributed notably to the framework by improving and enhancing
+analysis algorithms and procedures.
+
+<P>
+Not only newly started projects decided to use CLAM but also some
+existing ones decided that it was worth to port the code to CLAM before
+continuing. The most notable case was that of the Time Machine project.
+Time Machine is a near-lossless time-stretching algorithm developed
+for the Yamaha company and included in their SOL software sequencer
+package. The algorithm was ported to CLAM, gaining in performance,
+efficiency and code understandability/re-usability.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2815"
+  HREF="node211.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2813"
+  HREF="node209.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2807"
+  HREF="node209.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2816"
+  HREF="node211.html">CLAM becomes public</A>
+<B> Up:</B> <A NAME="tex2html2814"
+  HREF="node209.html">A brief history of</A>
+<B> Previous:</B> <A NAME="tex2html2808"
+  HREF="node209.html">A brief history of</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

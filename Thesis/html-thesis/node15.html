@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Vocal Processor Experience</TITLE>
+<META NAME="description" CONTENT="The Vocal Processor Experience">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node14.html">
+<LINK REL="up" HREF="node14.html">
+<LINK REL="next" HREF="node16.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html524"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html522"
+  HREF="node14.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html518"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html525"
+  HREF="node16.html">Models and Systems</A>
+<B> Up:</B> <A NAME="tex2html523"
+  HREF="node14.html">A note on efficiency:</A>
+<B> Previous:</B> <A NAME="tex2html519"
+  HREF="node14.html">A note on efficiency:</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00215100000000000000">
+The Vocal Processor Experience</A>
+</H3>
+
+<P>
+The Vocal Processor was a research project developed in our group
+for the Yamaha Company, Japan. The Vocal Processor is a VST plugin
+for singing voice processing that implements spectral domain techniques.
+It is designed to run on real-time and, because of its complex algorithms,
+demands many computer resources.
+
+<P>
+The initial implementation was done in C++ but the code was highly
+unstructured and hardly maintainable. For that reason it was decided
+to port the code to the CLAM framework (see chapter <A HREF="node92.html#ch:_CLAM">3</A>).
+Once the VST plugin was running in its CLAM version, it was discovered
+that this implementation was almost one hundred percent slower. The
+first impression was that the Object-Oriented techniques and overall
+design of the framework were causing this and that it would not be
+possible to compete with the fine-tuned but highly unstructured original
+code. The process that followed, and demonstrated that other reasons
+were behind that bad performance, illustrates the overall message
+of this section.
+
+<P>
+None of the efficiency problems found in this application were related
+to any of the previously mentioned prejudices against object-orientation:
+encapsulation, modularity, or inheritance. As a matter of fact, having
+a clear and clean design and code enabled a fast refactoring that
+ended up in having a fully object-oriented CLAM version of the plugin
+that was even about thirty percent faster than the original one.
+
+<P>
+Using specialized profiling tools, the efficiency hotspots were found.
+These are the main actions that had to be taken in order to improve
+the first CLAM version:
+
+<P>
+
+<OL>
+<LI>Algorithm improvement: some algorithms were not well implemented and
+contained efficiency bugs. These efficiency bugs were usually related
+to unnecessary memory allocations and independent loops.
+</LI>
+<LI>VST interface improvement: the incoming data from the VST host was
+not being correctly handled and this meant having unnecessary memory
+allocations of large memory blocks.
+</LI>
+<LI>Inefficient low level routines: the Microsoft Windows implementation
+of some low level routines such as float to integer conversion or
+absolute number were causing an overall slow down of the process.
+Surprisingly, this was one of the most significant factors. Such functions
+were being called millions of times during the whole process and the
+overall effect was really worrying. We finally ended up implementing
+these routines in assembler code.
+</LI>
+<LI>Compiler settings. The VST plugin was being compiled for Windows with
+the Microsoft Visual Studio environment. This compiler has some obscure
+settings that had to be tuned in order to find the best combination.
+</LI>
+<LI>Incorrect thread handling.
+</LI>
+</OL>
+From this use case it is clear that the object-oriented paradigm did
+not introduce any efficiency trap. Furthermore, it facilitated the
+improvement of the original code because of its modularity and clear
+structure.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html524"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html522"
+  HREF="node14.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html518"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html525"
+  HREF="node16.html">Models and Systems</A>
+<B> Up:</B> <A NAME="tex2html523"
+  HREF="node14.html">A note on efficiency:</A>
+<B> Previous:</B> <A NAME="tex2html519"
+  HREF="node14.html">A note on efficiency:</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Processing infrastructure</TITLE>
+<META NAME="description" CONTENT="Processing infrastructure">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node114.html">
+<LINK REL="previous" HREF="node110.html">
+<LINK REL="up" HREF="node110.html">
+<LINK REL="next" HREF="node112.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1683"
+  HREF="node112.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1681"
+  HREF="node110.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1675"
+  HREF="node110.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1684"
+  HREF="node112.html">ProcessingComposites</A>
+<B> Up:</B> <A NAME="tex2html1682"
+  HREF="node110.html">Infrastructure</A>
+<B> Previous:</B> <A NAME="tex2html1676"
+  HREF="node110.html">Infrastructure</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00422100000000000000"></A><A NAME="sec:_ProcessingInfrastructure"></A>
+<BR>
+Processing infrastructure
+</H3>
+
+<P>
+All algorithms in CLAM are encapsulated in a class derived from the
+abstract <TT>Processing</TT> base class. Thus it can be said that
+every concrete derived class is a ``Processing class'' and each
+of its instances is a ``Processing object''. The main goal of
+this abstract class is to minimize the developer's effort when introducing
+a new algorithm while enforcing good programming practices that produces
+a code that results both efficient and understandable. For this reason,
+the class provides some services and enforces some particular implementations
+through its interface.
+
+<P>
+The Processing base class forces all derived classes to implement
+a <SPAN  CLASS="textit">port</SPAN> mechanism. Processing objects communicate with other
+Processing objects through the use of ports. Input ports introduce
+data into a Processing unit and the result of the process is written
+into the output port. 
+
+<P>
+All concrete Processing classes also need to declare a related configuration
+class. This class is derived from the base <TT>ProcessingConfig</TT>
+class and its name is recommended to be the same as the one of its
+associated Processing class adding the ``Config'' suffix. In some
+cases several processing classes may share the same configuration
+class. The FFT is a clear example of this. For example, several FFT
+classes exist for different algorithm implementations in the CLAM
+repository, but they all derive from a common <TT>FFT_base</TT> class,
+and they share a common configuration class: <TT>FFTConfig</TT>. 
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:FFT_s-and-FFTConfig"></A><A NAME="5591"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.4:</STRONG>
+FFT's and FFTConfig</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="332" HEIGHT="177" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="\includegraphics[%
+width=0.60\textwidth]{images/ch3-CLAM/ps/FFT&amp;Config.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The configuration will be used for initializing the Processing object
+before its execution. For enforcing the use of this configuration
+mechanism, the base Processing class declares a <TT>ConcreteConfigure()</TT>
+pure virtual method that must be implemented in any concrete derived
+class. In this method all initialization operations related to the
+configuration stage must be implemented. As a matter of fact, the
+configuration is accomplished by calling the <TT>Configure()</TT>
+operation in the base class. This operation implements the Template
+Method design pattern [<A
+ HREF="node207.html#GOF">Gamma et&nbsp;al., 1995</A>]: general operations like internal
+state modification is modified in the base class while concrete and
+particular configuration issues are delegated to each derived class.
+It is also very common for Processing classes to keep an internal
+copy of the configuration object to be able to respond when queried
+about their current configuration.
+
+<P>
+Two operations are used in order to get a Processing into execution
+state and to force it to leave this state: <TT>Start()</TT> and <TT>Stop()</TT>.
+These operations also implement the Template Method design pattern
+by implementing the default behavior (i.e. a simple change of state)
+in the base class and leaving specific issues to the <TT>ConcreteStart()</TT>
+and <TT>ConcreteStop()</TT> method in derived classes. These methods,
+though, are not abstract and its implementation is therefore not mandatory.
+
+<P>
+Processing classes must provide two constructors: a default constructor
+and a constructor with the configuration class as its argument type.
+In most cases the former will call the <TT>Configure</TT> operation
+with a default constructed configuration while the second will call
+it passing the received configuration object. It is also usual to
+include some explicit calls to member constructors for initializing
+members like Controls or Ports that do not have default constructors.
+Apart from that, most of the initialization functionality will be
+left to the <TT>ConcreteConfigure()</TT> method.
+
+<P>
+The main execution methods in a Processing class are the <TT>Do</TT>
+methods. They are the ones which actually perform the processing action.
+
+<P>
+There are two different kinds of <TT>Do</TT> methods:
+
+<P>
+
+<OL>
+<LI>A <TT>Do(void)</TT> method, with no arguments. This is the standard
+way of using Processing objects connected to a Network (see <A HREF="node118.html#sec:_Network_Infrastructure">3.2.2</A>).
+</LI>
+<LI><TT>Do(...)</TT> methods taking data objects as arguments. They will
+have some input data arguments first, and then some output data arguments.
+A typical processing class will need a single <TT>Do</TT> method of
+this kind. 
+</LI>
+</OL>
+Both kinds of <TT>Do()</TT> methods operate in the same way: they
+read a certain number of data objects from each of the inputs, and
+write a certain number of data objects to each of the outputs. The
+difference is that the non-network <TT>Do()</TT> method takes this
+data objects as arguments (and thus does not use ports), while the
+network <TT>Do()</TT> method has no arguments, an accesses the Data
+through the Ports objects. It is very usual that this latter version
+of the <TT>Do</TT> operation calls the explicit argument version after
+having extracted the data from the corresponding ports.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="1917"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.5:</STRONG>
+Typical CLAM execution sequence</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="444" HEIGHT="399" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.png"
+ ALT="\includegraphics[%
+width=0.80\textwidth]{images/ch3-CLAM/ps/ExecutionSequence.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1685"
+  HREF="node112.html">ProcessingComposites</A>
+<LI><A NAME="tex2html1686"
+  HREF="node113.html">Controls</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1683"
+  HREF="node112.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1681"
+  HREF="node110.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1675"
+  HREF="node110.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1684"
+  HREF="node112.html">ProcessingComposites</A>
+<B> Up:</B> <A NAME="tex2html1682"
+  HREF="node110.html">Infrastructure</A>
+<B> Previous:</B> <A NAME="tex2html1676"
+  HREF="node110.html">Infrastructure</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

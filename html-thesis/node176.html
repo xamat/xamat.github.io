@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Structured Audio and the Object-Oriented Content Transmission Metamodel</TITLE>
+<META NAME="description" CONTENT="Structured Audio and the Object-Oriented Content Transmission Metamodel">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node175.html">
+<LINK REL="up" HREF="node174.html">
+<LINK REL="next" HREF="node177.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2410"
+  HREF="node177.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2408"
+  HREF="node174.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2404"
+  HREF="node175.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2411"
+  HREF="node177.html">Beyond Parametric Encoding: Content</A>
+<B> Up:</B> <A NAME="tex2html2409"
+  HREF="node174.html">Beyond Structured Audio</A>
+<B> Previous:</B> <A NAME="tex2html2405"
+  HREF="node175.html">The Structured Audio metamodel</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00632200000000000000">
+Structured Audio and the Object-Oriented Content Transmission Metamodel</A>
+</H3>
+
+<P>
+After the previous description it must have become clear that Structured
+Audio is very much related to our Object-Oriented Content Transmission
+Metamodel. We will now highlight the main differences of both approaches.
+
+<P>
+Structural audio's focus in on <SPAN  CLASS="textit">structure</SPAN>: it is designed to
+exploit structural redundancy. The focus of our OOCTM is on <SPAN  CLASS="textit">content</SPAN>
+and its <SPAN  CLASS="textit">meaning</SPAN>: we aim at <SPAN  CLASS="textit">understanding</SPAN> the signal
+and representing it accordingly. Although the final results in some
+particular applications might not differ much, the difference in focus
+is clear: SA is a syntactic metamodel while OOCTM is a semantic metamodel.
+
+<P>
+According to the authors Structured Audio can surpass the Shannon&amp;Weaver
+theoretical channel limit except if the encoded signal was completely
+random. Our metamodel can surpass the limit even if the signal is
+completely random. As a matter of fact, OOCTM performs extremely well
+in such situations. If the data source is completely random then it
+means that it has no meaning. Therefore, it can be transmitted as
+a simple ``play random signals'' sound object that will be rendered
+at the receiver. The result will obviously not resemble the original
+signal but we insist that we are not interested in mathematical nor
+perceptual accuracy, only in semantic accuracy. SA performs well on
+highly structured signals, the OOCTM performs well on both highly
+meaningful and meaningless signals just as long as a meaningful signal
+is not classified as meaningless.
+
+<P>
+As already commented at the beginning of this chapter the idea of
+<SPAN  CLASS="textit">synthesizability</SPAN> in SA is different from ours. While in SA
+a given representation is said to be synthesizable if the original
+sound can be obtained from it in OOCTM a representation is synthesizable
+simply if it can render a sound. Whether the result is meaningful
+or not relates to other measures of the description such as <SPAN  CLASS="textit">meaningfulness</SPAN>,
+but not to its <SPAN  CLASS="textit">synthesizability</SPAN>.
+
+<P>
+SA encodes data sources parametrically, based on signal models. Nevertheless,
+it does not impose any limitation or conceptual metamodel on these
+models. The OOCTM encodes data sources as Sound Objects and forces
+these object-oriented data models to comply with the DSPOOM metamodel.
+Object-oriented data models can be interpreted as a subset of Parametric
+models, therefore OOCTM is more restrictive in that sense. But it
+is only because of this restriction that we can ensure that all models
+that might be instantiated from the metamodel will carry some semantic
+information.
+
+<P>
+In SA the message always includes the transmission of a particular
+model, to be used by the receiver. Although model transmission can
+also be provided and used in OOCTM it is not compulsory. In many situations
+the model may be known beforehand as all components share the same
+metamodel and may be able to deduce it. On other situations, the degree
+of abstraction might be so high that no model is necessary at the
+receiver except from ``real-world'' knowledge. 
+
+<P>
+Structured Audio needs to standardize language with precise semantics
+such as SAOL or SASL. In the Object-Oriented Content Transmission
+Metamodel no languages need to be standardized. XML is used as a general
+purpose content-description language but any other similar general
+purpose language could be used. Different particular instances of
+XML can be used (see MetriXML) but they are not part of the metamodel.
+In our metamodel even the language description can be transmitted
+dynamically in a schema.
+
+<P>
+A key issue in the OOCTM is that the same language is consistently
+used throughout the metamodel and in any of its components. This is
+something that cannot be said about SA. SAOL and SASL are basically
+synthesis languages and they are not suitable for encoding the result
+of a general signal analysis, even less if this analysis addresses
+the content level. This fact has been explicitly recognized by the
+MPEG working group when constructing a completely different standard,
+MPEG-7 (see section <A HREF="node32.html#sub:MPEG-7">1.4.2</A>). MPEG-7's content description
+and MPEG-4's Structured Audio tools are not even compatible and efforts
+to bring both world together, if ever started, are, in our opinion,
+not going to succeed.
+
+<P>
+Our OOCTM is a particular instance of the Digital Signal Processing
+Object-Oriented Metamodel. And DSPOOM does not stand on any specific
+language but is rather instantiated in a framework such as CLAM implemented
+in a general purpose programming language.
+
+<P>
+It is interesting to note how the Eric Scheirer, main creator of MPEG-4's
+Structured Audio, points out that a general-purpose computer programming
+language could be used instead than a language like SAOL, specifically
+designed for structured audio description (see [<A
+ HREF="node207.html#ScheirerSAKolmogorov">Scheirer, 2001</A>]).
+According to him the approach of having a specific language has a
+number of advantages, namely:
+
+<P>
+
+<UL>
+<LI>MPEG4 structured audio behaves like an audio decoder, it accepts audio
+blocks, runs real-time, communicates with a DAC, etc...
+</LI>
+<LI>General purpose programming languages cannot satisfy system level
+requirements (no portable way of connecting to a DAC...).
+</LI>
+<LI>SA is written with the implementation of costum hardware in mind.
+The fundamental constructs of SAOL are those that run efficiently
+on DSP's and thus will run more efficient than C or Java implementations
+of these algorithms. It is interesting to move the processing to off-side
+processors.
+</LI>
+<LI>It is more convenient to write algorithms in SAOL due to the number
+of available primitives 
+</LI>
+</UL>
+A Software framework such as CLAM provides most of the aforementioned
+advantages. It accepts audio blocks and may run real-time; it can
+satisfy system level requirements thanks to its operating system abstraction;
+and it provides even more primitives than Structured Audio. The only
+point that it does not satisfy is that it is not written with custom
+hardware in mind, but we see this rather as a disadvantage than as
+an advantage of SAOL.
+
+<P>
+He also states that the process of decoding the bitstream header and
+reconfiguring the synthesizer is similar to parsing and compiling
+a computer language. According to [<A
+ HREF="node207.html#ScheirerMP4SA_ICASSP">Scheirer, 1998b</A>] for
+implementing a SAOL system, similar skills in software engineering
+and computer science than those used for implementing a compiler are
+needed. Then why waste all those resources when there are many general
+purpose programming language compilers that can do the job?
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2410"
+  HREF="node177.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2408"
+  HREF="node174.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2404"
+  HREF="node175.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2411"
+  HREF="node177.html">Beyond Parametric Encoding: Content</A>
+<B> Up:</B> <A NAME="tex2html2409"
+  HREF="node174.html">Beyond Structured Audio</A>
+<B> Previous:</B> <A NAME="tex2html2405"
+  HREF="node175.html">The Structured Audio metamodel</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

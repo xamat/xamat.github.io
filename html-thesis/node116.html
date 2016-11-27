@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Processing Data</TITLE>
+<META NAME="description" CONTENT="Processing Data">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node117.html">
+<LINK REL="previous" HREF="node115.html">
+<LINK REL="up" HREF="node114.html">
+<LINK REL="next" HREF="node117.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1736"
+  HREF="node117.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1734"
+  HREF="node114.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1728"
+  HREF="node115.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1737"
+  HREF="node117.html">Configurations</A>
+<B> Up:</B> <A NAME="tex2html1735"
+  HREF="node114.html">Data Infrastructure</A>
+<B> Previous:</B> <A NAME="tex2html1729"
+  HREF="node115.html">Dynamic Types</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H4><A NAME="SECTION00422220000000000000">
+Processing Data</A>
+</H4>
+
+<P>
+Therefore, one of the main traits of CLAM is the ability to process
+multiple data types related to the audio and music domain. All these
+data types are subclasses of the ProcessingData class. <SPAN ID="hue2049"></SPAN>In
+CLAM terminology, a Processing Data class is a class designed for
+storing all sort of data that will be used in the processing system.
+All Processing objects are input Processing Data objects (either through
+Ports when connected in a Network or as arguments of the non-network
+<TT>Do()</TT> operation). Examples of already provided Processing
+Data classes include <TT>Spectrum</TT>, <TT>Audio</TT>, <TT>SpectralPeakArray</TT>,
+<TT>Fundamental</TT>, <TT>Segment</TT>, or <TT>Frame</TT> (see section
+<A HREF="node102.html#sec:_CLAMDataRepository">3.2.1</A>).
+
+<P>
+Any PD class is in fact a concrete Dynamic Type class therefore and
+as just explained most of their attributes are macro-derived dynamic
+attributes (i.e. in the code you will see something like <TT>DYN_ATTRIBUTE(1,public,
+Spectrum, ResidualSpectrum)</TT>, which means that the given class
+has a public dynamic attribute called <TT>ResidualSpectrum</TT> that
+is an object of the <TT>Spectrum</TT> class).
+
+<P>
+All dynamic attributes have associated automatically derived Setters
+and Getters that may be used from outside the class. Furthermore,
+they can be Added and Removed at run-time as explained in the previous
+paragraphs.
+
+<P>
+Some classes have private dynamic attributes that cannot be accessed
+directly but through a given public interface. If you encounter a
+private or protected attribute with a name starting with the 'pr'
+prefix (i.e. <TT>prSize</TT>) you should look for its associated public
+interface (i.e. <TT>GetSize()</TT> and <TT>SetSize()</TT>). Also very
+rarely, some PD class have an attribute that is not dynamic. In that
+case, the corresponding Set/Get interface should be offered so its
+usage is not different than that <TT>of a Dynamic Attribute</TT>.
+
+<P>
+Most PD classes offer convenient shortcuts for accessing and setting
+elements in their buffers that should be very useful in a developing
+stage but should be avoided if seeking efficiency in a given algorithm.
+
+<P>
+A data storage class derives publicly from ProcessingData. Thus, it
+is a concrete Dynamic Type class and must use the <TT>DYNAMIC_TYPE_USING_INTERFACE</TT>
+macro.
+<BR>
+<P>
+Ex:
+<BR>
+<P>
+<BR>
+<IMG
+ WIDTH="453" HEIGHT="155" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="\begin{spacing}{0.8}
+\textsf{\footnotesize class SpectralPeak: public Processing...
+...notesize&nbsp; (.)}\\
+\textsf{\footnotesize }\\
+{\footnotesize\par
+}
+\end{spacing}">
+<BR>
+
+<P>
+Apart from the default constructor (already available as a result
+of the Dynamic Type macros), other constructors may be implemented.
+All these constructors must call the constructor of the <TT>ProcessingData</TT>
+base class using the member initialization syntax and passing the
+number of Dynamic Attributes as parameter. Apart from that, these
+constructors must call a macro-derived method called <TT>MandatoryInit()</TT>,
+which is in charge of initializing concrete Dynamic Type's internal
+structure.
+
+<P>
+Another initializer that is often useful is the <TT>DefaultInit()</TT>
+method. This method has to be implemented by the developer and is
+in charge of initializing default attributes and values. This method
+is automatically called from the Processing Data's default constructor
+and may also be called from all other constructors.
+
+<P>
+The most usual non-default constructors that a Processing Data class
+is bound to have are the Copy constructor and the Configuration constructor.
+The former is already implemented in the <TT>ProcessingData</TT> base
+class and this implementation is sufficient as long as all attributes
+of the concrete class are Dynamic and require no initialization. If
+not (for example if the class has a non Dynamic member), the developer
+may make use of the <TT>CopyInit()</TT> method. This method has to
+be implemented by hand, but is automatically called from the macro
+derived Copy constructor.
+
+<P>
+The configuration constructor is sometimes desirable for constructing
+a Processing Data out of its associated configuration object or out
+of some sort of initial value (flags, size.). In this case the constructor
+must explicitly call the <TT>MandatoryInit()</TT> method and then
+call any other necessary configuration methods.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1736"
+  HREF="node117.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1734"
+  HREF="node114.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1728"
+  HREF="node115.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1737"
+  HREF="node117.html">Configurations</A>
+<B> Up:</B> <A NAME="tex2html1735"
+  HREF="node114.html">Data Infrastructure</A>
+<B> Previous:</B> <A NAME="tex2html1729"
+  HREF="node115.html">Dynamic Types</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

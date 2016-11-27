@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>A note on efficiency: OO is not inefficient </TITLE>
+<META NAME="description" CONTENT="A note on efficiency: OO is not inefficient ">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node13.html">
+<LINK REL="up" HREF="node7.html">
+<LINK REL="next" HREF="node15.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html515"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html513"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html509"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html516"
+  HREF="node15.html">The Vocal Processor Experience</A>
+<B> Up:</B> <A NAME="tex2html514"
+  HREF="node7.html">The Object-Oriented Paradigm</A>
+<B> Previous:</B> <A NAME="tex2html510"
+  HREF="node13.html">Why Objects anyway?</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00215000000000000000"></A><A NAME="sec:_OO_efficiency"></A>
+<BR>
+A note on efficiency: OO is not inefficient 
+</H2>
+
+<P>
+Signal processing software applications have traditionally been developed
+under the structured programming paradigm and more precisely in C
+language. In many DSP applications, specially in embedded systems
+where the final code is in assembly language, the program efficiency
+both in execution speed and size is one of the most important factors.
+It is still not strange finding that some algorithms are implemented
+directly in assembler. All the benefits attributed to object-orientation
+are many times put aside with the intent of building something ``fast''
+and ``light''.
+
+<P>
+In this context, it is of course difficult to convince signal processing
+engineers that object-oriented (and in fact any sort of code structuring
+that focuses on reusability and understandability) is worthwhile.
+In the course of the CLAM framework development (see chapter <A HREF="node92.html#ch:_CLAM">3</A>)
+we have had the opportunity to convince many different people that
+well-structured object-oriented code is not inefficient and can indeed
+yield more efficient and far more robust applications (see [<A
+ HREF="node207.html#ChampeauxOOSystemDevelopment">de&nbsp;Champeaux et&nbsp;al., 1993</A>],
+for instance).
+
+<P>
+At this point though the choice of an appropriate object-oriented
+programming language is very important. Typically languages such as
+Java, running on a virtual machine, cannot yield efficient code. It
+is also important to be able to manage low-level issues like memory
+allocation policies whenever necessary. The choice of C++ as the most
+appropriate object-oriented language comes naturally, even more when
+C++ is already a de facto standard for DSP applications and a natural
+follow-up of the C programming language. It may be argued that C++
+is not a ``true'' object-oriented language, even its creator advertises
+it as a multiparadigm language [<A
+ HREF="node207.html#StroustrupWhyC++">Stroustrup, 1995</A>]. Nevertheless
+this language can be effectively be used to build a completely object-oriented
+framework, abandoning the paradigm only for strictly necessary low-level
+issues such as hardware access or memory handling but hiding these
+details in such a way that the user does not even need to be aware
+they exist.
+
+<P>
+But the choice of an object-oriented language does not guarantee the
+quality of the resulting code. Many signal processing applications
+are in fact written in C++ in its ``a better C'' meaning, forgetting
+about all the advantages and tools offered by the object-oriented
+paradigm. A non-exhaustive list of common FUDs about object oriented
+efficiency, particularized to the case of the C++ language, are summarized
+in the following<A NAME="tex2html4"
+  HREF="footnode.html#foot5486"><SUP><SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">2</SPAN></SUP></A>:
+
+<P>
+
+<OL>
+<LI><SPAN  CLASS="textit">Encapsulation is inefficient</SPAN>: Some signal processing developers
+argue that the indirection introduced by adding a Set or Get operation
+to an attribute yields a less efficient executable. Because of this
+they consciously break the encapsulation principle by making all attributes
+public. The disadvantages of doing so are as important as the mixing-up
+of state and behavior, the existence of a non-homogeneous interface,
+or the lack of an implementation that can evolve independently from
+its interface. On the other hand it is definitely not true that the
+introduction of an operation call introduces inefficiency. In C++
+an operation can be ``inlined'' so the call of an operation does
+not introduce a memory indirection. Although this is only feasible
+in methods with very little computation time and space requirements,
+this is exactly what we face when implementing a Getter or a Setter.
+</LI>
+<LI><SPAN  CLASS="textit">Modularity is inefficient</SPAN>: Clearly a memory indirection introduces
+some overhead that at the end may result in a less efficient final
+application. But, as already mentioned, this is only so whenever inlining
+is not feasible. And inlining is not possible when the operation executed
+in the method is so complex that the time of its execution is several
+orders of magnitude greater than the time taken for the memory indirection.
+In this case it is also clear that the overhead of the indirection
+can be neglected and is by far surpassed by the benefits introduced,
+which will be later commented.
+</LI>
+<LI><SPAN  CLASS="textit">Inheritance is inefficient</SPAN>: When declaring a base class with
+a virtual operation (needed in any case in order to implement polymorphism)
+all objects instance of any of its subclasses will have a virtual
+function pointer table. This produces memory inefficiency as objects
+will occupy more memory than the strictly necessary for storing their
+attributes. Furthermore, whenever a virtual operation is invoked on
+a pointer or reference, dynamic binding is introduced and therefore
+a new indirection that will add inefficiency. Also, virtual operations
+cannot be inlined. The solution is to treat inheritance with care
+and not introduce virtuality on any method that could be inlined (i.e.
+the cost of an indirection is comparable to the cost of the method
+itself). On the other hand, inheritance, just as modularity, introduces
+far more benefits than inconveniences.
+</LI>
+</OL>
+Although these previous and other related misbelieves can, as already
+commented, be minimized the main benefit of object-orientation can
+be better understood in the mid-term. When building a well-structured
+system we are not only worrying about short-term efficiency issues
+as the ones commented but we are also setting the grounds for further
+refactorings in order to improve overall efficiency. In a well-structured
+system it is much easier to detect efficiency bugs and treat them
+in a correct way. The clearer, more modular and well-structured the
+code is the easier it is to optimize. 
+
+<P>
+We will better understand all these issues in the following example.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html517"
+  HREF="node15.html">The Vocal Processor Experience</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html515"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html513"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html509"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html516"
+  HREF="node15.html">The Vocal Processor Experience</A>
+<B> Up:</B> <A NAME="tex2html514"
+  HREF="node7.html">The Object-Oriented Paradigm</A>
+<B> Previous:</B> <A NAME="tex2html510"
+  HREF="node13.html">Why Objects anyway?</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

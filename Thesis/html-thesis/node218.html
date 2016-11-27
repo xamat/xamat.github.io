@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Clarifying Processing Data usage</TITLE>
+<META NAME="description" CONTENT="Clarifying Processing Data usage">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node219.html">
+<LINK REL="previous" HREF="node217.html">
+<LINK REL="up" HREF="node214.html">
+<LINK REL="next" HREF="node219.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2902"
+  HREF="node219.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2900"
+  HREF="node214.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2894"
+  HREF="node217.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2903"
+  HREF="node219.html">Descriptors infrastructure</A>
+<B> Up:</B> <A NAME="tex2html2901"
+  HREF="node214.html">What is next?</A>
+<B> Previous:</B> <A NAME="tex2html2895"
+  HREF="node217.html">Enforcing CLAM's framework good</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION001015400000000000000">
+Clarifying Processing Data usage</A>
+</H3>
+
+<P>
+Just as in the previous point, we have seen that most Processing Data
+classes offer a too complex interface.
+
+<P>
+
+<UL>
+<LI>Making Dynamic only what needs to be Dynamic. Dynamic Types <A HREF="node114.html#sec:_DataInfrastructure">3.2.2</A>
+have proven as a very useful mechanism and they offer many interesting
+services (such as automatic XML storage, homogeneous interface...)
+but its usage needs to be rationalized. The dynamic mechanism for
+adding and removing attributes at run-time is sometimes more annoying
+than useful. The overhead introduced by having the possibility of
+instantiating and de-instantiating attributes on run-time, for example,
+is seldom needed. On the other hand, some limitations in the Dynamic
+Types Structure, such as not being able to use inheritance, have already
+been solved and a new, improved version of these service is already
+developed. The problem is that introducing this change will break
+backward version compatibility in many ways, so the right moment is
+still to be chosen. The goal is to identify when and where DT are
+strictly necessary and only use them there. 
+</LI>
+<LI>In some Processing Data classes it would be interesting to have inheritance
+capabilities. This is now limited because of the use of DT. The changes
+in Dynamic Types will clearly affect the way that CLAM Processing
+Data are structured in some ways. The fact that inheritance is introduced
+into Dynamic Types, and therefore into Processing Data, opens up the
+possibility of implementing a Processing Data hierarchy.
+</LI>
+<LI>Clarifying the use of the Spectrum class. The Spectrum class is very
+flexible but also too complex. Also by making some conversions transparent
+it is hiding from the user the fact that some practices are not efficient
+and should not be done inside a Do() operation. We may need to offer
+specialized spectrums which are efficient and explicit while keeping
+the current interface as a wrapper only to use in particular cases.
+</LI>
+<LI>To dB or not to dB. The use of linear/dB magnitudes in CLAM is not
+well solved so we need to devise a mechanism for taking care of this
+issue. This solution should aim at being both transparent and efficient.
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2902"
+  HREF="node219.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2900"
+  HREF="node214.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2894"
+  HREF="node217.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2903"
+  HREF="node219.html">Descriptors infrastructure</A>
+<B> Up:</B> <A NAME="tex2html2901"
+  HREF="node214.html">What is next?</A>
+<B> Previous:</B> <A NAME="tex2html2895"
+  HREF="node217.html">Enforcing CLAM's framework good</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

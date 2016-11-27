@@ -1,0 +1,239 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Maaate</TITLE>
+<META NAME="description" CONTENT="Maaate">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node60.html">
+<LINK REL="up" HREF="node59.html">
+<LINK REL="next" HREF="node62.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1065"
+  HREF="node62.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1063"
+  HREF="node59.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1059"
+  HREF="node60.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1066"
+  HREF="node62.html">Synthesis Oriented</A>
+<B> Up:</B> <A NAME="tex2html1064"
+  HREF="node59.html">Analysis Oriented</A>
+<B> Previous:</B> <A NAME="tex2html1060"
+  HREF="node60.html">Marsyas</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00331200000000000000"></A><A NAME="sub:Maaate"></A>
+<BR>
+Maaate
+</H3>
+
+<P>
+Maaate is an audio analysis toolkit that supports the extraction of
+structure and content of MPEG-encoded audio files as well as raw files.
+Maaate was implemented by Silvia Pfeiffer and other researchers of
+the Commonwealth Scientific and Industrial Research Organization (CSIRO),
+Mathematical and Information Sciences (CMIS) in Australia. It is offered
+as Free Software under the GPL license for GNU/Linux and Windows.
+Maaate is implemented in C++ but a C wrapper interface is also offered.
+The framework is functional but not updated regularly, with the author's
+focus turning in other directions.
+
+<P>
+There are several reasons for which the authors justify the use of
+MPEG encoded files. First, MPEG is a de facto standard not only for
+internet audio for also for audio encoding in video formats. Second,
+the encoding process usually removes non-perceivable sounds that are
+not interesting either for content description applications. And finally,
+MPEG encoded files already have frequency domain information that
+can be used to extract some descriptors more easily and efficiently
+as the library allows to access directly the fields of the MPEG encoded
+file without having to decode it.
+
+<P>
+Apart for the general infrastructure, Maaate also includes modules
+with analysis algorithms such as loudness approximation, segmentation,
+silence or background noise level.
+
+<P>
+Maaate's architecture allows to easily add new algorithms. It is designed
+in tiers in order to separate functionalities and offer a cleaner
+API.
+
+<P>
+Tier 1 is in charge of parsing MPEG streams and offers access to the
+encoded fields. The most important class in this tier is the MPEGfile
+class.
+
+<P>
+Tier 2 offers two generic data containers (<TT>SegmentData</TT> and
+<TT>SegmentTable</TT>) that can be used from the analysis modules.
+<TT>SegmentData</TT>: contains analysis data for one segment (continuous
+time range) of the audio file. A <TT>SegmentTable</TT> contains a
+collection of segment of an audio file. These segments are ordered
+by their start time. Tier 2 also offers a module interface to plugin
+analysis routines that are stored in dynamic libraries. By using the
+offered plugin interface modules can be developed and compiled separately
+from Maaate and the toolkit can be extended without ever having to
+recompile it. The boundary between Maaate and the analysis modules
+is explicit so the author can clearly keep his/her authorship.
+
+<P>
+A module is simply a collection of related functions that offer a
+particular functionality. Modules that analyze content usually collect
+information on several MPEG audio frames and calculate information
+from these. Tier 2 was constructed for such modules but other kinds
+are also possible. Modules can be broadly classified into feature
+extraction, feature analysis and content analysis. Feature extraction
+modules make use of tier 1 access functions and store the result in
+tier 2 containers. Feature analysis modules use the already extracted
+features for further (usually statistical) analysis such as clustering
+or segmentation. Finally content analysis modules calculate higher
+level information such as silence/music/speech discrimination using
+feature extraction and analysis modules and storing the result in
+convenience containers.
+
+<P>
+A module is in fact an instance of the Module class, which also offers
+convenience functions to access the information, handle parameters,
+check constraints, and call the module functions. The <SPAN  CLASS="textit">apply</SPAN>
+method contains the implementation of all the analysis functionality,
+taking a list of parameters as input and producing another list of
+parameters as output. 
+
+<P>
+Any module must offer an appropriate constructor and a function to
+add itself to the list of available modules. The other important operations
+present in the Module class and all its subclasses are the following:
+
+<P>
+
+<UL>
+<LI><TT>init</TT> (required): sets up basic module information (name,
+author...) and the input/output parameter specification.
+</LI>
+<LI><TT>default</TT> (required): sets default values for input parameters
+and returns the parameter list.
+</LI>
+<LI><TT>suggest</TT> (optional, recommended): takes an input parameter
+list, suggests parameter values based on information from other parameters
+and changes constraints on input parameters.
+</LI>
+<LI><TT>reset</TT> (optional): resets a module by reseting internal processing
+information or parameter values.
+</LI>
+<LI><TT>apply</TT> (required): takes an input parameter list, performs
+the analysis function and returns the calculated output parameters.
+</LI>
+<LI><TT>destroy</TT> (optional): cleans up allocated memory and deletes
+parameter specification.
+</LI>
+</UL>
+A parameter is an instance of the <TT>ModuleParam</TT> class. The
+<TT>init</TT> function sets up the list of input/output parameter
+specification and the application calls the <TT>default</TT> function
+to set default values. From there on, the input parameters may be
+modified by the application. It can also call the <TT>suggest</TT>
+function at any time for filling-in necessary parameter values and
+constraints and performing sanity checks. Finally, the application
+may then call the <TT>apply</TT> function, which first checks for
+parameters to be within the constraints.
+
+<P>
+There is a short list of allowed simple or complex data types for
+parameters. Basic types may be: boolean, integer, real and string
+(all of them defined in Maaate with particular conditions). Complex
+types may be: a pointer to an opened MPEG file, a pointer to a segment
+data structure, or a pointer to a segment table. All of them have
+their particular <TT>MAAATE_</TT> define.
+
+<P>
+There are three types of constraints: no constraints, a list of single
+values that allow the parameter to take as value any on the list,
+and a list of ranges according to which parameters may take any value
+in any range on the list. A constraint is an instance of the <TT>ModuleParameterConstraint</TT>
+class that can handle either single values or a single range. For
+a single value there is usually a list of constraints realized by
+instantiating the <TT>MaateConstraint</TT> class, a class that provides
+functions for such things as adding constraints or checking whether
+values satisfy them.
+
+<P>
+On the other hand, a parameter specification is an instance of the
+<TT>ModuleParamSpec</TT> class, which contains the specification of
+a single parameter. The specification consists of a name, a description,
+a data type, default values and constraints.
+
+<P>
+The <TT>Plugins</TT> class provides functionality to load and unload
+single modules and whole libraries, and administrates the list of
+available modules. For building a shared library a function loadModules
+must be supplied that instantiates the modules and returns their list
+to Maaate. For dynamically loading modules into an application an
+instance of the <TT>Plugins</TT> class must be declared and the particular
+library must be loaded using the class' <TT>AddLibrary</TT> function.
+Then the different loaded modules can be accessed with the <TT>GetModule(string)</TT>
+function. 
+
+<P>
+Bewdy is a sample graphical application that demonstrates Maaate by
+using a few of its modules. It runs on GNOME and needs the OSS sound
+system.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1065"
+  HREF="node62.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1063"
+  HREF="node59.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1059"
+  HREF="node60.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1066"
+  HREF="node62.html">Synthesis Oriented</A>
+<B> Up:</B> <A NAME="tex2html1064"
+  HREF="node59.html">Analysis Oriented</A>
+<B> Previous:</B> <A NAME="tex2html1060"
+  HREF="node60.html">Marsyas</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

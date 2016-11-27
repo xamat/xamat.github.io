@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>MetriXML Score Definition</TITLE>
+<META NAME="description" CONTENT="MetriXML Score Definition">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="previous" HREF="node201.html">
+<LINK REL="up" HREF="node200.html">
+<LINK REL="next" HREF="node203.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2704"
+  HREF="node203.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html2702"
+  HREF="node200.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html2698"
+  HREF="node201.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html2705"
+  HREF="node203.html">Summary and Conclusions</A>
+<B> Up:</B> <A NAME="tex2html2703"
+  HREF="node200.html">MetriX in XML= MetriXML</A>
+<B> Previous:</B> <A NAME="tex2html2699"
+  HREF="node201.html">MetriXML Instrument Definition</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00744200000000000000">
+MetriXML Score Definition</A>
+</H3>
+
+<P>
+We can do the same process transforming the textual MSDL (see <A HREF="node196.html#sub:MSDL">6.4.3</A>)
+into XML:
+<BR>
+<P>
+<BR>
+<IMG
+ WIDTH="416" HEIGHT="344" ALIGN="BOTTOM" BORDER="0"
+ SRC="img103.png"
+ ALT="\begin{spacing}{0.8}
+\texttt{\footnotesize &lt;MetriXMLScore&gt;}{\footnotesize\par
+}
+...
+...r
+\texttt{\footnotesize &lt;/MetriXMLScore&gt;}&nbsp;\\
+{\footnotesize\par
+}
+\end{spacing}">
+<BR>
+
+<P>
+And we can now build the associated XML-Schema:
+<BR>
+<P>
+<BR>
+<IMG
+ WIDTH="416" HEIGHT="344" ALIGN="BOTTOM" BORDER="0"
+ SRC="img104.png"
+ ALT="\begin{spacing}{0.8}
+\texttt{\footnotesize &lt;xsd:schema xmlns:xsd=\char\lq \uml {}ht...
+...\par
+\texttt{\footnotesize&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:sequence&gt;}{\footnotesize\par
+}
+\end{spacing}">
+<BR>
+
+<P>
+<TT><SMALL CLASS="FOOTNOTESIZE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:element name=&#34;Header&#34;&gt;</SMALL></TT>
+<P>
+
+
+<P>
+<BR>
+<IMG
+ WIDTH="614" HEIGHT="1340" ALIGN="BOTTOM" BORDER="0"
+ SRC="img105.png"
+ ALT="\begin{spacing}{0.8}
+\texttt{\footnotesize&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:complexType name=\char\lq \...
+...
+name=\char\lq \uml {}VariableKind\char\lq \uml {}&gt;}{\footnotesize\par
+}
+\end{spacing}">
+<BR>
+
+<P>
+<TT><SMALL CLASS="FOOTNOTESIZE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:simpleType=''VariableKindType''></SMALL></TT>
+<P>
+
+
+<P>
+<TT><SMALL CLASS="FOOTNOTESIZE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:restriction
+base=''xsd:string''></SMALL></TT>
+<P>
+
+
+<P>
+<TT><SMALL CLASS="FOOTNOTESIZE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:enumeration
+value=''Instrument''/&gt;</SMALL></TT>
+<P>
+
+
+<P>
+<TT><SMALL CLASS="FOOTNOTESIZE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:enumeration
+value=''Generator''/&gt;</SMALL></TT>
+<P>
+
+
+<P>
+<BR>
+<IMG
+ WIDTH="391" HEIGHT="96" ALIGN="BOTTOM" BORDER="0"
+ SRC="img106.png"
+ ALT="\begin{spacing}{0.8}
+\texttt{\footnotesize&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xsd:restriction&gt;}{\footnotesize\par
+}
+\end{spacing}">
+<BR>
+
+<P>
+<TT><SMALL CLASS="FOOTNOTESIZE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xsd:simpleType&gt;</SMALL></TT>
+<P>
+
+
+<P>
+<TT><SMALL CLASS="FOOTNOTESIZE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:element
+name=&#34;Name&#34; type=''xsd:string''/&gt;</SMALL></TT>
+<P>
+
+
+<P>
+<BR>
+<IMG
+ WIDTH="593" HEIGHT="359" ALIGN="BOTTOM" BORDER="0"
+ SRC="img107.png"
+ ALT="\begin{spacing}{0.8}
+\texttt{\footnotesize&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:element
+name=\...
+...exttt{\footnotesize&nbsp;&nbsp;&lt;/xsd:complexType&gt;}&nbsp;\\
+{\footnotesize\par
+}
+\end{spacing}">
+<BR>
+
+<P>
+And as we did for the Instrument Definition, by looking at the previous
+schema we can now build the object-oriented class diagram of the MetriXML
+Score. This class diagram is illustrated in Figure <A HREF="#fig:MetriXML-Score-class">6.13</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:MetriXML-Score-class"></A><A NAME="5813"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.13:</STRONG>
+MetriXML Score class diagram</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="391" HEIGHT="96" ALIGN="BOTTOM" BORDER="0"
+ SRC="img108.png"
+ ALT="\includegraphics[%
+width=0.60\paperwidth]{images/ch6-MetriX/ps/MetriXMLScore.ps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR><HR>
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>

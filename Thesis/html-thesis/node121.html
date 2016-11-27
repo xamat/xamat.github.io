@@ -1,0 +1,252 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Platform abstraction</TITLE>
+<META NAME="description" CONTENT="Platform abstraction">
+<META NAME="keywords" CONTENT="Thesis_forHTML">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Thesis_forHTML.css">
+
+<LINK REL="next" HREF="node122.html">
+<LINK REL="previous" HREF="node120.html">
+<LINK REL="up" HREF="node119.html">
+<LINK REL="next" HREF="node122.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1787"
+  HREF="node122.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1785"
+  HREF="node119.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1779"
+  HREF="node120.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1788"
+  HREF="node122.html">Visualization</A>
+<B> Up:</B> <A NAME="tex2html1786"
+  HREF="node119.html">Tools</A>
+<B> Previous:</B> <A NAME="tex2html1780"
+  HREF="node120.html">XML support</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H4><A NAME="SECTION00422420000000000000">
+Platform abstraction</A>
+</H4>
+
+<P>
+Under this category we include all those CLAM tools that encapsulate
+system-level functionalities and allow a CLAM user to access them
+transparently from the operating system or platform.
+<BR>
+<P>
+<SPAN ID="txt2218">Audio I/O</SPAN>
+
+<P>
+The core of CLAM audio input/output is the <TT>AudioManager</TT> class.
+The Audio Manager takes care of all administrative tasks concerning
+the creation and initialization of audio input and output streams,
+using the internal, system dependent <TT>AudioDevice</TT> class.
+
+<P>
+The first thing that needs to be done in order to use audio is create
+an <TT>AudioManager</TT> object. While this object is present all
+subsequent audio I/O objects created will use it. Samplerate and latency
+should also be specified. The latency is used to control the internal
+buffer size, and depends on the hardware. 
+
+<P>
+The actual audio I/O classes, called <TT>AudioIn</TT> and <TT>AudioOut</TT>,
+can than be uses to create processing endpoints to retrieve audio
+from, or write audio to. The <TT>AudioIn</TT> and <TT>AudioOut</TT>
+objects have to be created with an <TT>AudioIOConfig</TT> object that
+can be used to specify the device, the channel and the sample rate
+to use.
+
+<P>
+The device is referred to with a string that has the following form:
+
+<P>
+<TT>&#34;ARCHITECTURE:DEVICE&#34;</TT>
+
+<P>
+The available devices depend on the hardware and system configuration.
+A list of available devices for the platform in use can be obtained
+from the <TT>AudioDeviceList</TT> class. However, if the device is
+not specified, or the string &#34;<TT>default:default</TT>&#34;
+is used, the Audio Manager will choose the device that seems most
+adequate for the current architecture. 
+
+<P>
+In order to have a flexible multi channel system, the channel for
+each <TT>AudioIn</TT> and <TT>AudioOut</TT> can be specified. The
+Audio Manager will use this information to initialize the internal
+audio handling. 
+
+<P>
+We can consider the AudioFile I/O tools as a complement to the general
+Audio I/O ones. Nevertheless, these tools do much more than this.
+To start with, using some external libraries (see <A HREF="node228.html#sec:_CLAM_External_Libraries">A.2</A>)
+the CLAM <TT>AudioFileIn</TT> and <TT>AudioFileOut</TT> classes are
+able to handle multiple audio formats such as MPEG1-Layer3 (alias
+mp3), Ogg-Vorbis (a similar yet better and Free compressed format),
+or any flavor of the PCM formats.
+
+<P>
+On the other hand, using the <TT>AudioFile</TT> class, we access other
+interesting information available in the file other than what is strictly
+the audio signal. ID3 metadata is handled and can be used for any
+content-based application.
+<BR>
+<P>
+<SPAN ID="txt2239">MIDI I/O</SPAN>
+
+<P>
+The MIDIIO approach has several similarities with the AudioIO one.
+The core of CLAM midi input is the <TT>MIDIManager</TT> class. The
+MIDI Manager takes care of all administrative tasks concerning the
+creating and initialization of MIDI input streams, using the internal,
+system dependent <TT>MIDIDevice</TT> class. Inorder to use MIDI, a
+<TT>MIDIManager</TT> object has to be instantiated. This object will
+be a Singleton (see [<A
+ HREF="node207.html#GOF">Gamma et&nbsp;al., 1995</A>]), and all subsequent MIDI input objects
+created will use it.
+
+<P>
+The actual MIDI input class, called <TT>MIDIIn</TT>, can be used to
+parse incoming MIDI data, and handle it in any way. A derived class,
+<TT>MIDIInControl</TT>, has one or more <TT>OutControls</TT>, and
+can be used to convert the MIDI data to CLAM <TT>ControlData</TT>.
+The <TT>MIDIIn</TT> objects have to be created with a <TT>MIDIInConfig</TT>
+object, that can be used to specify the device, and settings for the
+filter that decides which MIDI data will be parsed to this <TT>MIDIIn</TT>
+object. The MIDI Manager and MIDI Devices use this information to
+create a very efficient MIDI parsing table.
+
+<P>
+The device is referred to with a string that has the following form:
+
+<P>
+<TT>&#34;ARCHITECTURE:DEVICE&#34;</TT>
+
+<P>
+Currently, the implemented architectures are ALSA and Port MIDI, and
+the &#34;virtual&#34; MIDI file device. The available devices
+depend on the hardware and system configuration. A list of available
+devices for the platform in use can be obtained from the <TT>MIDIDeviceList</TT>
+class. However, as in the AudioIO layer, if no device is specified
+or if &#34;default:default&#34; is selected, the MIDI Manager
+will choose the device that seems most adequate for the current architecture. 
+
+<P>
+The <TT>MIDIInConfig</TT> class has three parameters that control
+which MIDI data will be delivered to a certain <TT>MIDIInput</TT>
+object: <TT>ChannelMask</TT>, <TT>MessageMask</TT>, and <TT>Filter</TT>.
+<TT>ChannelMask</TT> and <TT>MessageMask</TT> are bitmasks, and <TT>Filter</TT>
+optionally specifies a filter on the second byte of the MIDI message.
+The <TT>ChannelMask</TT> allows to create a <TT>MIDIIn</TT> that receives
+MIDI messages on a certain channel or channels only. The <TT>MessageMask</TT>
+allows to create a <TT>MIDIIn</TT> that receives MIDI messages of
+a certain type only. The <TT>Filter</TT> allows to create a <TT>MIDIIn</TT>
+that receives MIDI messages where the second byte (first data byte)
+has a certain value. This is particularly useful for control change
+messages, where the second byte specifies the type of control change. 
+
+<P>
+The derived class <TT>MIDIInControl</TT> implements <TT>MIDIIn</TT>
+with one or more OutControls. The actual amount depends on the filtering
+used. Outputs will be generated for each message that the <TT>MIDIInControl</TT>
+will receive. If. for example, a <TT>MIDIInControl</TT> is configured
+for eNoteOn messages, two OutControls will be used, one for key, and
+one for velocity.
+
+<P>
+When the MIDI input comes from a device, typically live input, MIDI
+messages gets delivered through the controls as soon as they come
+in. In the case of the special &#34;virtual&#34; <TT>FileMIDIDevice</TT>,
+this situation is slightly different, and a <TT>MIDIClocker</TT> should
+be used to control the sequencing of the data in the MIDI file. 
+<BR>
+<P>
+<SPAN ID="txt2280">SDIF SUPPORT</SPAN>
+
+<P>
+SDIF or Sound Description Interchange Format is a binary format defined
+and supported by various research teams [<A
+ HREF="node207.html#SchwarzSDIF">Schwarz and Wright, 2000</A>,<A
+ HREF="node207.html#WrightSDIFAudioApplications">Wright, 1999</A>,<A
+ HREF="node207.html#WrightSDIFNewApplications">Wright, 1998b</A>].
+It was created with the goal of having a common format for exchanging
+synthesis samples, usually spectral domain data coming from a previous
+analysis.
+
+<P>
+The mapping of CLAM data to a SDIF File is fairly simple; it is always
+done from a <TT>CLAM::Segment</TT> object (see section <A HREF="node102.html#sec:_CLAMDataRepository">3.2.1</A>).
+The Segment internal structure can very easily be mapped to SDIF as
+it basically holds inside an array of time-ordered frames. Out of
+the different data inside a frame, only the necessary for the synthesis
+process is stored into SDIF. That is, residual spectrum, sinusoidal
+peaks with track number and fundamental frequency. Due to the SDIF
+specification, all magnitude data needs to be stored in linear scale
+(as opposed to what is usual in CLAM, where data is in dB).
+
+<P>
+All this is done using two CLAM Processing: <TT>SDIFIn</TT> and <TT>SDIFOut</TT>.
+<TT>SDIFIn</TT> takes a Segment in its output port because it needs
+a single reference where to store the created frames. <TT>SDIFOut</TT>
+takes frames in its output port and enables storing frames even from
+different segments.
+<BR>
+<BR>
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1787"
+  HREF="node122.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next.png"></A> 
+<A NAME="tex2html1785"
+  HREF="node119.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up.png"></A> 
+<A NAME="tex2html1779"
+  HREF="node120.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1788"
+  HREF="node122.html">Visualization</A>
+<B> Up:</B> <A NAME="tex2html1786"
+  HREF="node119.html">Tools</A>
+<B> Previous:</B> <A NAME="tex2html1780"
+  HREF="node120.html">XML support</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2004-10-18
+</ADDRESS>
+</BODY>
+</HTML>
