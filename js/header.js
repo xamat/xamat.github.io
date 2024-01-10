@@ -11,8 +11,8 @@ document.getElementById('closeChatbot').addEventListener('click', function() {
     if (chatbot.style.display === 'none') {
         chatbot.style.display = 'block';
         this.textContent = 'X';
-	this.style.right = '20px'; // Position near the top right of the iframe
-        this.style.bottom = '520px'; // Adjust based on the iframe's position
+	this.style.right = 'calc(20px + 285px - 50px)'; 
+        this.style.bottom = 'calc(520px + 500px - 50px)';
     } else {
         chatbot.style.display = 'none';
         this.textContent = 'Open Chatbot';
