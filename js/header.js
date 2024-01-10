@@ -13,7 +13,7 @@ document.getElementById('closeChatbot').addEventListener('click', function() {
         this.textContent = 'X';
         // Position for the open chatbot (inside the iframe)
         this.style.right = 'calc(20px)'; 
-        this.style.bottom = 'calc(520px  - 20px)';
+        this.style.bottom = 'calc(520px  - 25px)';
     } else {
         chatbot.style.display = 'none';
         this.textContent = 'Open Chatbot';
