@@ -29,13 +29,6 @@ body {
 }
 
 #sidebar {
-	min-width:210px;
-	margin-top:0px;
-	margin-bottom:20px;
-		
-	margin-right:40px;
-	float:left;
-	line-height:140%;
 	background-color:#EEE;
 	border: 5px solid #E5E5E5;
 }
