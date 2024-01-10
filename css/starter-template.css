@@ -39,11 +39,11 @@ body {
 
 #closeChatbot {
     cursor: pointer;
-    background-color: #ff4444; /* Red background for visibility */
+    background-color: #2b6e9b; /* Red background for visibility */
     color: white; /* White text */
     border: none; /* No border */
-    border-radius: 50%; /* Circular shape */
-    font-size: 16px; /* Readable text size */
+    border-radius: 15px; /* Rectangular shape small round corners */
+    font-size: 14px; /* Readable text size */
     padding: 10px 15px; /* Padding to make the button larger */
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Shadow for a subtle 3D effect */
     text-align: center; /* Center the text */
