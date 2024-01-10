@@ -5,3 +5,14 @@ function header(){
 function footer(){
 	document.write('<a target="_blank" href="http://www.colorado.edu"><img src="wordmark.png" alt="University of Colorado at Boulder" /></a>');	
 }
+
+document.getElementById('closeChatbot').addEventListener('click', function() {
+    var chatbot = document.getElementById('chatbot');
+    if (chatbot.style.display === 'none') {
+        chatbot.style.display = 'block';
+        this.textContent = 'Close';
+    } else {
+        chatbot.style.display = 'none';
+        this.textContent = 'Open Chatbot';
+    }
+});
