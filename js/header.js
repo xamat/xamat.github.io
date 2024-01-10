@@ -11,6 +11,14 @@ document.getElementById('closeChatbot').addEventListener('click', function() {
     if (chatbot.style.display === 'none') {
         chatbot.style.display = 'block';
         this.textContent = 'X';
+	this.style.right = '20px'; // Position near the top right of the iframe
+        this.style.bottom = '520px'; // Adjust based on the iframe's position
+    } else {
+        chatbot.style.display = 'none';
+        this.textContent = 'Open Chatbot';
+        this.style.right = '20px'; // Keep this at the right edge of the page
+        this.style.bottom = '20px'; // Move to the bottom of the page
+    }
     } else {
         chatbot.style.display = 'none';
         this.textContent = 'Open Chatbot';
