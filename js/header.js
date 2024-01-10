@@ -11,16 +11,15 @@ document.getElementById('closeChatbot').addEventListener('click', function() {
     if (chatbot.style.display === 'none') {
         chatbot.style.display = 'block';
         this.textContent = 'X';
-	this.style.right = 'calc(20px + 285px - 50px)'; 
+        // Position for the open chatbot (inside the iframe)
+        this.style.right = 'calc(20px + 285px - 50px)'; 
         this.style.bottom = 'calc(520px + 500px - 50px)';
     } else {
         chatbot.style.display = 'none';
         this.textContent = 'Open Chatbot';
-        this.style.right = '20px'; // Keep this at the right edge of the page
-        this.style.bottom = '20px'; // Move to the bottom of the page
-    }
-    } else {
-        chatbot.style.display = 'none';
-        this.textContent = 'Open Chatbot';
+        // Position for the closed chatbot (bottom of the page)
+        this.style.right = '20px';
+        this.style.bottom = '20px';
     }
 });
+
